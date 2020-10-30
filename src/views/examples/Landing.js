@@ -97,9 +97,9 @@ class Landing extends React.Component {
                          // href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
+                            <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">Components</span>
+                          <span className="btn-inner--text">Force System</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -107,10 +107,10 @@ class Landing extends React.Component {
                           // href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
+                            <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            Download React
+                            Energy Saving
                           </span>
                         </Button>
                       </div>
