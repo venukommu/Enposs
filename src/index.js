@@ -31,6 +31,9 @@ import Register from "views/examples/Register.js";
 import Portfolio from "views/examples/Portfolio.js";
 import ForceSystem from "views/examples/ForceSystem.js";
 import Download from "views/examples/Download.js";
+import PortfolioReport1 from "views/examples/PortfolioReport1.js";
+import PortfolioReport2 from "views/examples/PortfolioReport2.js";
+import PortfolioReport3 from "views/examples/PortfolioReport3.js";
 
 
 ReactDOM.render(
@@ -57,6 +60,21 @@ ReactDOM.render(
         path="/portfolio-page"
         exact
         render={props => <Portfolio {...props} />}
+      />
+      <Route
+        path="/PortfolioReport1-page"
+        exact
+        render={props => <PortfolioReport1 {...props} />}
+      />
+       <Route
+        path="/PortfolioReport2-page"
+        exact
+        render={props => <PortfolioReport2 {...props} />}
+      />
+       <Route
+        path="/PortfolioReport3-page"
+        exact
+        render={props => <PortfolioReport3 {...props} />}
       />
        <Route
         path="/download-page"
