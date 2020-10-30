@@ -106,7 +106,7 @@ class DemoNavbar extends React.Component {
                     </Col>
                   </Row>
                 </div>
-                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                {/* <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-ui-04 d-lg-none mr-1" />
@@ -177,32 +177,70 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text">Examples</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/landing-page" tag={Link}>
+                      <DropdownItem to="/landing" tag={Link}>
                         Landing
                       </DropdownItem>
-                      <DropdownItem to="/about-company-page" tag={Link}>
+                      <DropdownItem to="/profile" tag={Link}>
+                        Profile
+                      <DropdownItem to="/about" tag={Link}>
                         About Company
                       </DropdownItem>
-                      <DropdownItem to="/forceSystem-page" tag={Link}>
+                      <DropdownItem to="/forceSystem" tag={Link}>
                         Force System
                       </DropdownItem>
-                      <DropdownItem to="/portfolio-page" tag={Link}>
+                      <DropdownItem to="/portfolio" tag={Link}>
                         Project Portfolio
                       </DropdownItem>
-                      <DropdownItem to="/download-page" tag={Link}>
+                      <DropdownItem to="/download" tag={Link}>
                         Download
                       </DropdownItem>
-                      <DropdownItem to="/login-page" tag={Link}>
+                      <DropdownItem to="/login" tag={Link}>
                         Login
                       </DropdownItem>
-                      <DropdownItem to="/register-page" tag={Link}>
+                      <DropdownItem to="/register" tag={Link}>
                         Register
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                </Nav>
+                </Nav> */}
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                  <NavItem>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">HOME</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>                  
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">ABOUT</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>                                    
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">FORCE SYSTEM</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>                                                      
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">PORTFOLIO</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>                                                      
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">DOWNLOAD</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>                                    
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">CONTACT</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>                                                                        
+                  {/* <NavItem>
                     <NavLink
                       className="nav-link-icon"
                       href="https://www.facebook.com/creativetim"
@@ -229,11 +267,11 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text d-lg-none ml-2">
                         Instagram
                       </span>
-                    </NavLink>
+                    </NavLink> 
                     <UncontrolledTooltip delay={0} target="tooltip356693867">
                       Follow us on Instagram
                     </UncontrolledTooltip>
-                  </NavItem>
+                  </NavItem> 
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -280,7 +318,7 @@ class DemoNavbar extends React.Component {
                         Download
                       </span>
                     </Button>
-                  </NavItem>
+                  </NavItem> */}
                 </Nav>
               </UncontrolledCollapse>
             </Container>

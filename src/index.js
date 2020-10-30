@@ -41,48 +41,48 @@ ReactDOM.render(
     <Switch>
       <Route path="/" exact render={props => <Landing {...props} />} />
       <Route
-        path="/landing-page"
+        path="/landing"
         exact
         render={props => <Landing {...props} />}
       />
-      <Route path="/login-page" exact render={props => <Login {...props} />} />
+      <Route path="/login" exact render={props => <Login {...props} />} />
       <Route
-        path="/about-company-page"
+        path="/about"
         exact
         render={props => <Profile {...props} />}
       />
       <Route
-        path="/forceSystem-page"
+        path="/forceSystem"
         exact
         render={props => <ForceSystem {...props} />}
       />
       <Route
-        path="/portfolio-page"
+        path="/portfolio"
         exact
         render={props => <Portfolio {...props} />}
       />
       <Route
-        path="/PortfolioReport1-page"
+        path="/PortfolioReport1"
         exact
         render={props => <PortfolioReport1 {...props} />}
       />
        <Route
-        path="/PortfolioReport2-page"
+        path="/PortfolioReport2"
         exact
         render={props => <PortfolioReport2 {...props} />}
       />
        <Route
-        path="/PortfolioReport3-page"
+        path="/PortfolioReport3"
         exact
         render={props => <PortfolioReport3 {...props} />}
       />
        <Route
-        path="/download-page"
+        path="/download"
         exact
         render={props => <Download {...props} />}
       />
       <Route
-        path="/register-page"
+        path="/register"
         exact
         render={props => <Register {...props} />}
       />

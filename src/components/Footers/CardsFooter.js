@@ -136,10 +136,10 @@ class CardsFooter extends React.Component {
                 <div className="copyright">
                   © {new Date().getFullYear()}{" "}
                   <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
+                    href="https://www.enposs.com"
                     target="_blank"
                   >
-                    Creative Tim
+                    Enposs Inc
                   </a>
                   .
                 </div>
@@ -151,7 +151,7 @@ class CardsFooter extends React.Component {
                       href="https://www.creative-tim.com?ref=adsr-footer"
                       target="_blank"
                     >
-                      Creative Tim
+                      About Us
                     </NavLink>
                   </NavItem>
                   <NavItem>
@@ -159,7 +159,7 @@ class CardsFooter extends React.Component {
                       href="https://www.creative-tim.com/presentation?ref=adsr-footer"
                       target="_blank"
                     >
-                      About Us
+                      Force System
                     </NavLink>
                   </NavItem>
                   <NavItem>
@@ -167,7 +167,7 @@ class CardsFooter extends React.Component {
                       href="http://blog.creative-tim.com?ref=adsr-footer"
                       target="_blank"
                     >
-                      Blog
+                      Project Reference
                     </NavLink>
                   </NavItem>
                   <NavItem>
@@ -175,7 +175,7 @@ class CardsFooter extends React.Component {
                       href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
                       target="_blank"
                     >
-                      MIT License
+                      Contact Us
                     </NavLink>
                   </NavItem>
                 </Nav>
