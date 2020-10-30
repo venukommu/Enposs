@@ -29,6 +29,8 @@ import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 import Portfolio from "views/examples/Portfolio.js";
+import ForceSystem from "views/examples/ForceSystem.js";
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -44,6 +46,11 @@ ReactDOM.render(
         path="/about-company-page"
         exact
         render={props => <Profile {...props} />}
+      />
+      <Route
+        path="/forceSystem-page"
+        exact
+        render={props => <ForceSystem {...props} />}
       />
       <Route
         path="/portfolio-page"

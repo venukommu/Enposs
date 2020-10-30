@@ -227,7 +227,6 @@ class Landing extends React.Component {
                           Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
                           More often, single-phase power is known as “residential voltage,” 
                           since it is that most homes use........
-
                           </p>
                           {/*<div>
                             <Badge color="warning" pill className="mr-1">
@@ -240,11 +239,11 @@ class Landing extends React.Component {
                               launch
                             </Badge>
                           </div>*/}
-                          <Button
+                          <Button to="/forceSystem-page" tag={Link}
                             className="mt-4"
                             color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            //href="#pablo"
+                            //onClick={e => e.preventDefault()}
                           >
                             Read more
                           </Button>
@@ -299,7 +298,7 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="fa fa-plug" />
+                              <i className="ni ni-html5" />
                             </Badge>
                           </div>
                           <div>
