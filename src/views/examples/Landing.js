@@ -18,6 +18,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
@@ -87,29 +88,29 @@ class Landing extends React.Component {
                       Support to our customers in North America, Central America, and South America. 
                       ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                       sales, partners, representatives, dealers, and distributors. ENPOSS America,
-                       Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea
+                       Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                       </p>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="info"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                         // href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
+                            <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">Components</span>
+                          <span className="btn-inner--text">Force System</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                           color="default"
-                          href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                          // href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
+                            <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            Download React
+                            Energy Saving
                           </span>
                         </Button>
                       </div>
@@ -151,13 +152,11 @@ class Landing extends React.Component {
                             About Company
                           </h6>
                           <p className="description mt-3">
-                          ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and Support 
-                          to our customers in North America, Central America, and South America. ENPOSS is the manufacturer of
-                           FORCE energy saving system. Products are marketed through direct sales, partners, representatives, 
-                           dealers, and distributors. 
-                          ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea 
+                          ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective
+                     energy saving technology into our ENPOSS system and sold all different size of system to worldwide market 
+                     including USA, China, Russia,many other countries.
                           </p>
-                          <div>
+                          {/*<div>
                             <Badge color="primary" pill className="mr-1">
                               design
                             </Badge>
@@ -167,14 +166,15 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>
-                          <Button
+                          </div>*/}
+                          
+                          <Button to="/about-company-page" tag={Link}
                             className="mt-4"
                             color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            //href="#pablo"
+                            //onClick={e => e.preventDefault()}
                           >
-                            Learn more
+                            Read More About Company
                           </Button>
                         </CardBody>
                       </Card>
@@ -183,20 +183,16 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                            <i className="ni ni-istanbul" />
+                            <i className="fa fa-product-hunt" />
                           </div>
                           <h6 className="text-success text-uppercase">
                           PRODUCTS & SERVICES 
                           </h6>
                           <p className="description mt-3">
                           Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                          increase their population, reduces leakage and current driven harmonic distortion.Also, 
-                          it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, 
-                          Solar system and much more. We offer the installation and maintenance service for the purchase 
-                          or lease our force system upon the customer 
-                          acceptanceby the confirmation of result after 90 free trial base installation at the actual site. 
+                          increase their population, reduces leakage and current driven harmonic distortion........... 
                           </p>
-                          <div>
+                          {/*<div>
                             <Badge color="success" pill className="mr-1">
                               business
                             </Badge>
@@ -206,14 +202,14 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>
+                          </div>*/}
                           <Button
                             className="mt-4"
                             color="success"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            Learn more
+                            Read more
                           </Button>
                         </CardBody>
                       </Card>
@@ -222,17 +218,17 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                            <i className="ni ni-planet" />
+                            <i className="fa fa-plug" />
                           </div>
                           <h6 className="text-warning text-uppercase">
-                            Prepare Launch
+                            Force System
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
+                          More often, single-phase power is known as “residential voltage,” 
+                          since it is that most homes use........
                           </p>
-                          <div>
+                          {/*<div>
                             <Badge color="warning" pill className="mr-1">
                               marketing
                             </Badge>
@@ -242,18 +238,18 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>
-                          <Button
+                          </div>*/}
+                          <Button to="/forceSystem-page" tag={Link}
                             className="mt-4"
                             color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            //href="#pablo"
+                            //onClick={e => e.preventDefault()}
                           >
-                            Learn more
+                            Read more
                           </Button>
                         </CardBody>
                       </Card>
-                    </Col>
+                        </Col>
                   </Row>
                 </Col>
               </Row>
@@ -266,7 +262,7 @@ class Landing extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/promo-1.png")}
+                    src={require("assets/img/theme/img.jpg")}
                   />
                 </Col>
                 <Col className="order-md-1" md="6">
@@ -276,9 +272,7 @@ class Landing extends React.Component {
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -293,8 +287,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Carefully crafted components
-                            </h6>
+                            Enposs</h6>
                           </div>
                         </div>
                       </li>
@@ -309,7 +302,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
+                            <h6 className="mb-0">Force System</h6>
                           </div>
                         </div>
                       </li>
@@ -379,14 +372,13 @@ class Landing extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>More About Company</h3>
+                    <h3>Products & Services</h3>
                     <p className="lead">
-                    ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective
-                     energy saving technology into our ENPOSS system and sold all different size of system to worldwide market 
-                     including USA, China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries.
-                      ENPOSS is continuously building strong business relations with diverse global energy saving industries. 
-                      We strive to be effective, efficient, while delivering integrity in everything we do.
-                     We are excited to be in an industry where we can help cut electric energy consumption. 
+                    Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
+                          increase their population, reduces leakage and current driven harmonic distortion.Also, 
+                          it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, 
+                          Solar system and much more. We offer the installation and maintenance service for the purchase 
+                          or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site. 
                     </p>
                     {/*<p>
                       The kit comes with three pre-built pages to help you get
@@ -450,11 +442,10 @@ class Landing extends React.Component {
                           <h5 className="title text-success">
                             A Single Phase
                           </h5>
-                          <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={require("assets/img/theme/u02_1.jpg")}
-                  />
+                          <p>
+                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. More often, single-phase power is known as “residential voltage,” since it is that most homes use. 
+                          In the distribution of power, a single-phase uses the phase and neutral wires.
+                          </p>
                           <a
                             className="text-success"
                             href="#pablo"
@@ -478,50 +469,20 @@ class Landing extends React.Component {
                           <h5 className="title text-warning">
                             Three Phases
                           </h5>
-                          <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={require("assets/img/theme/u02_2.jpg")}
-                  />
+                          <p>Three-phase power can be defined as the common method of alternating current power generation, 
+                          transmission, and distribution. ... It is a type of polyphase system, 
+                          and is the most common method used by electric grids worldwide to transfer power.</p>
                           <a
                             className="text-warning"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            Learn more
+                            {/*Learn more*/}
                           </a>
                         </div>
                       </div>
                     </CardBody>
-                  </Card>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                            <i className="ni ni-active-40" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          {/*<h5 className="title text-warning">
-                            Three Phases
-                </h5>*/}
-                          <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={require("assets/img/theme/u02_3.jpg")}
-                  />
-                          <a
-                            className="text-warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
+                  </Card>                  
                 </Col>
               </Row>
             </Container>
@@ -560,7 +521,7 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-1-800x800.jpg")}
+                      src={require("assets/img/theme/default.png")}
                       style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
@@ -602,7 +563,7 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-2-800x800.jpg")}
+                      src={require("assets/img/theme/team-4-800x800.jpg")}
                       style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">

@@ -28,11 +28,18 @@ import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
+import Portfolio from "views/examples/Portfolio.js";
+import ForceSystem from "views/examples/ForceSystem.js";
+import Download from "views/examples/Download.js";
+import PortfolioReport1 from "views/examples/PortfolioReport1.js";
+import PortfolioReport2 from "views/examples/PortfolioReport2.js";
+import PortfolioReport3 from "views/examples/PortfolioReport3.js";
+
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={props => <Index {...props} />} />
+      <Route path="/" exact render={props => <Landing {...props} />} />
       <Route
         path="/landing-page"
         exact
@@ -40,9 +47,39 @@ ReactDOM.render(
       />
       <Route path="/login-page" exact render={props => <Login {...props} />} />
       <Route
-        path="/profile-page"
+        path="/about-company-page"
         exact
         render={props => <Profile {...props} />}
+      />
+      <Route
+        path="/forceSystem-page"
+        exact
+        render={props => <ForceSystem {...props} />}
+      />
+      <Route
+        path="/portfolio-page"
+        exact
+        render={props => <Portfolio {...props} />}
+      />
+      <Route
+        path="/PortfolioReport1-page"
+        exact
+        render={props => <PortfolioReport1 {...props} />}
+      />
+       <Route
+        path="/PortfolioReport2-page"
+        exact
+        render={props => <PortfolioReport2 {...props} />}
+      />
+       <Route
+        path="/PortfolioReport3-page"
+        exact
+        render={props => <PortfolioReport3 {...props} />}
+      />
+       <Route
+        path="/download-page"
+        exact
+        render={props => <Download {...props} />}
       />
       <Route
         path="/register-page"

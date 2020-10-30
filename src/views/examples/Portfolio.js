@@ -16,15 +16,17 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
-import { Button, Card, Container, Row, Col } from "reactstrap";
+import { Button, Card, CardBody,Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
-class Profile extends React.Component {
+
+class Portfolio extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -35,14 +37,11 @@ class Profile extends React.Component {
       <>
         <DemoNavbar />
         <main className="profile-page" ref="main">
+        <div className="position-relative">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default alpha-4"
-            style= {{
-                backgroundPosition: "center",
-                backgroundImage:
-              "url(" + require("assets/img/theme/main2.jpg") + ")",
-               }}>
+            <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
+              
               <span />
               <span />
               <span />
@@ -51,6 +50,15 @@ class Profile extends React.Component {
               <span />
               <span />
             </div>
+            <Container className="shape-container d-flex align-items-center py-lg">
+              <div className="col px-0">
+                <Row className="align-items-center justify-content-center">
+                  <Col className="text-center" lg="6">
+                    <h1 className="display-3 text-white">PROJECT PORTFOLIO </h1>
+                  </Col>
+                </Row>
+              </div>
+            </Container>
             {/* SVG separator */}
             <div className="separator separator-bottom separator-skew">
               <svg
@@ -68,18 +76,22 @@ class Profile extends React.Component {
               </svg>
             </div>
           </section>
-          <section className="section">
+          {/*<section className="section">
             <Container>
               <Card className="card-profile shadow mt--300">
                 <div className="px-4">
                   <Row className="justify-content-center">
-                    <Col className="order-lg-2" lg="3">
+                    <Col className="text-center mt-5">
+                      <h1>Project Portfolio </h1>
+                    </Col>
+                  </Row>
                       <div className="card-profile-image">
+                        
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                           <img
                             alt="..."
-                            className="rectangle-circle"
-                            src={require("assets/img/theme/u01_1.png")}
+                            className="rounded-circle"
+                            src={require("assets/img/theme/team-4-800x800.jpg")}
                           />
                         </a>
                       </div>
@@ -89,7 +101,7 @@ class Profile extends React.Component {
                       lg="4"
                     >
                       <div className="card-profile-actions py-4 mt-lg-0">
-                       {/* <Button
+                        <Button
                           className="mr-4"
                           color="info"
                           href="#pablo"
@@ -106,11 +118,11 @@ class Profile extends React.Component {
                           size="sm"
                         >
                           Message
-                       </Button>*/}
+                        </Button>
                       </div>
                     </Col>
                     <Col className="order-lg-1" lg="4">
-                      {/*<div className="card-profile-stats d-flex justify-content-center">
+                      <div className="card-profile-stats d-flex justify-content-center">
                         <div>
                           <span className="heading">22</span>
                           <span className="description">Friends</span>
@@ -123,17 +135,31 @@ class Profile extends React.Component {
                           <span className="heading">89</span>
                           <span className="description">Comments</span>
                         </div>
-              </div>*/}
+                      </div>
                     </Col>
                   </Row>
+             
+                  <Row className="row-grid">
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                        <img
+                            alt="..."
+                            style={{objectFit: "cover"}}
+                            src={require("assets/img/theme/A18040103_10004_0.jpg")}
+                          />
+                        </CardBody>
+                        </Card>
+                        </Col>
+                    
+                        </Row>
                   <div className="text-center mt-5">
-                    <br></br>
-                    <br></br>
+                      
                     <h3>
-                      About Company{" "}
-                      <span className="font-weight-light"></span>
+                      Jessica Jones{" "}
+                      <span className="font-weight-light">, 27</span>
                     </h3>
-                    {/*<div className="h6 font-weight-300">
+                    <div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
                       Bucharest, Romania
                     </div>
@@ -144,21 +170,20 @@ class Profile extends React.Component {
                     <div>
                       <i className="ni education_hat mr-2" />
                       University of Computer Science
-            </div>*/}
+                    </div>
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
-                        ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective energy saving 
-                        technology into our ENPOSS system and sold all different size of system to worldwide market including USA, 
-                        China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries. ENPOSS is continuously
-                         building strong business relations with diverse global energy saving industries. We strive to be effective, 
-                         efficient, while delivering integrity in everything we do. 
-                        We are excited to be in an industry where we can help cut electric energy consumption. 
+                          An artist of considerable range, Ryan — the name taken
+                          by Melbourne-raised, Brooklyn-based Nick Murphy —
+                          writes, performs and records all of his own music,
+                          giving it a warm, intimate feel with a solid groove
+                          structure. An artist of considerable range.
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
-                         {/* Show more */}
+                          Show more
                         </a>
                       </Col>
                     </Row>
@@ -166,7 +191,51 @@ class Profile extends React.Component {
                 </div>
               </Card>
             </Container>
+          </section>*/}
+          <section className="section section-lg pt-lg-0 mt--200">
+            <Container>
+              <Row className="justify-content-center">
+                <Col lg="12">
+                  <Row className="row-grid">
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5" to="/PortfolioReport1-page" tag={Link}>
+                        <img 
+                            alt="..."
+                            style={{objectFit: "cover", width: "100%"}}
+                            src={require("assets/img/theme/A18040103_10004_0.jpg")}
+                          />
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5" to="/PortfolioReport2-page" tag={Link}>
+                        <img
+                            alt="..."
+                            style={{objectFit: "cover", width: "100%"}}
+                            src={require("assets/img/theme/A18040103_10003_0.jpg")}
+                          />
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5" to="/PortfolioReport3-page" tag={Link}>
+                        <img
+                            alt="..."
+                            style={{objectFit: "cover", width: "100%"}}
+                            src={require("assets/img/theme/A18040103_10002_0.jpg")}
+                          />
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
           </section>
+          </div>
         </main>
         <SimpleFooter />
       </>
@@ -174,4 +243,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default Portfolio;
