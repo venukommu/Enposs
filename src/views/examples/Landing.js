@@ -418,7 +418,7 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/ill/ill-2.svg")}
+                      src={require("assets/img/theme/u02_0.jpg")}
                     />
                   </div>
                 </Col>
@@ -430,12 +430,12 @@ class Landing extends React.Component {
                       </div>
                     </div>
                     <div className="pl-4">
-                      <h4 className="display-3 text-white">Modern Interface</h4>
-                      <p className="text-white">
+                      <h4 className="display-3 text-white">Force System</h4>
+                     {/* <p className="text-white">
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
                         continue whatever.
-                      </p>
+                  </p>*/}
                     </div>
                   </div>
                   <Card className="shadow shadow-lg--hover mt-5">
@@ -448,15 +448,43 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-success">
-                            Awesome Support
+                            A Single Phase
                           </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
+                          <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/u02_1.jpg")}
+                  />
                           <a
                             className="text-success"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            {/*Learn more*/}
+                          </a>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                  <Card className="shadow shadow-lg--hover mt-5">
+                    <CardBody>
+                      <div className="d-flex px-3">
+                        <div>
+                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                            <i className="ni ni-active-40" />
+                          </div>
+                        </div>
+                        <div className="pl-4">
+                          <h5 className="title text-warning">
+                            Three Phases
+                          </h5>
+                          <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/u02_2.jpg")}
+                  />
+                          <a
+                            className="text-warning"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
@@ -475,14 +503,14 @@ class Landing extends React.Component {
                           </div>
                         </div>
                         <div className="pl-4">
-                          <h5 className="title text-warning">
-                            Modular Components
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
+                          {/*<h5 className="title text-warning">
+                            Three Phases
+                </h5>*/}
+                          <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/u02_3.jpg")}
+                  />
                           <a
                             className="text-warning"
                             href="#pablo"
