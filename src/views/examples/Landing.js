@@ -58,7 +58,12 @@ class Landing extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
+              <div className="shape shape-style-1 shape-default"
+              style= {{
+                backgroundPosition: "center",
+                backgroundImage:
+              "url(" + require("assets/img/theme/main1.jpg") + ")",
+               }}>
                 <span />
                 <span />
                 <span />
@@ -74,13 +79,15 @@ class Landing extends React.Component {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">
-                        A beautiful Design System{" "}
-                        <span>completed with examples</span>
+                      ABOUT COMPANY {" "}
+                        {/*<span>completed with examples</span>*/}
                       </h1>
                       <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
+                      ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
+                      Support to our customers in North America, Central America, and South America. 
+                      ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
+                      sales, partners, representatives, dealers, and distributors. ENPOSS America,
+                       Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea
                       </p>
                       <div className="btn-wrapper">
                         <Button
@@ -141,12 +148,14 @@ class Landing extends React.Component {
                             <i className="ni ni-check-bold" />
                           </div>
                           <h6 className="text-primary text-uppercase">
-                            Download Argon
+                            About Company
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and Support 
+                          to our customers in North America, Central America, and South America. ENPOSS is the manufacturer of
+                           FORCE energy saving system. Products are marketed through direct sales, partners, representatives, 
+                           dealers, and distributors. 
+                          ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea 
                           </p>
                           <div>
                             <Badge color="primary" pill className="mr-1">
@@ -177,12 +186,15 @@ class Landing extends React.Component {
                             <i className="ni ni-istanbul" />
                           </div>
                           <h6 className="text-success text-uppercase">
-                            Build Something
+                          PRODUCTS & SERVICES 
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
+                          increase their population, reduces leakage and current driven harmonic distortion.Also, 
+                          it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, 
+                          Solar system and much more. We offer the installation and maintenance service for the purchase 
+                          or lease our force system upon the customer 
+                          acceptanceby the confirmation of result after 90 free trial base installation at the actual site. 
                           </p>
                           <div>
                             <Badge color="success" pill className="mr-1">
@@ -331,7 +343,7 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                      src={require("assets/img/theme/u01_1.png")}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -351,14 +363,14 @@ class Landing extends React.Component {
                           points="0,42 583,95 683,0 0,95"
                         />
                       </svg>
-                      <h4 className="display-3 font-weight-bold text-white">
+                      {/*<h4 className="display-3 font-weight-bold text-white">
                         Design System
                       </h4>
                       <p className="lead text-italic text-white">
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
                         continue whatever happens.
-                      </p>
+              </p>*/}
                     </blockquote>
                   </Card>
                 </Col>
@@ -367,13 +379,16 @@ class Landing extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Our customers</h3>
+                    <h3>More About Company</h3>
                     <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
+                    ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective
+                     energy saving technology into our ENPOSS system and sold all different size of system to worldwide market 
+                     including USA, China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries.
+                      ENPOSS is continuously building strong business relations with diverse global energy saving industries. 
+                      We strive to be effective, efficient, while delivering integrity in everything we do.
+                     We are excited to be in an industry where we can help cut electric energy consumption. 
                     </p>
-                    <p>
+                    {/*<p>
                       The kit comes with three pre-built pages to help you get
                       started faster. You can change the text and images and
                       you're good to go.
@@ -382,14 +397,14 @@ class Landing extends React.Component {
                       The kit comes with three pre-built pages to help you get
                       started faster. You can change the text and images and
                       you're good to go.
-                    </p>
-                    <a
+                    </p>*/}
+                    {/*<a
                       className="font-weight-bold text-warning mt-5"
                       href="#pablo"
                       onClick={e => e.preventDefault()}
                     >
                       A beautiful UI Kit for impactful websites
-                    </a>
+                    </a>*/}
                   </div>
                 </Col>
               </Row>
@@ -403,7 +418,7 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/ill/ill-2.svg")}
+                      src={require("assets/img/theme/u02_0.jpg")}
                     />
                   </div>
                 </Col>
@@ -415,12 +430,12 @@ class Landing extends React.Component {
                       </div>
                     </div>
                     <div className="pl-4">
-                      <h4 className="display-3 text-white">Modern Interface</h4>
-                      <p className="text-white">
+                      <h4 className="display-3 text-white">Force System</h4>
+                     {/* <p className="text-white">
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
                         continue whatever.
-                      </p>
+                  </p>*/}
                     </div>
                   </div>
                   <Card className="shadow shadow-lg--hover mt-5">
@@ -433,15 +448,43 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-success">
-                            Awesome Support
+                            A Single Phase
                           </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
+                          <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/u02_1.jpg")}
+                  />
                           <a
                             className="text-success"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            {/*Learn more*/}
+                          </a>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                  <Card className="shadow shadow-lg--hover mt-5">
+                    <CardBody>
+                      <div className="d-flex px-3">
+                        <div>
+                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                            <i className="ni ni-active-40" />
+                          </div>
+                        </div>
+                        <div className="pl-4">
+                          <h5 className="title text-warning">
+                            Three Phases
+                          </h5>
+                          <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/u02_2.jpg")}
+                  />
+                          <a
+                            className="text-warning"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
@@ -460,14 +503,14 @@ class Landing extends React.Component {
                           </div>
                         </div>
                         <div className="pl-4">
-                          <h5 className="title text-warning">
-                            Modular Components
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
+                          {/*<h5 className="title text-warning">
+                            Three Phases
+                </h5>*/}
+                          <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/u02_3.jpg")}
+                  />
                           <a
                             className="text-warning"
                             href="#pablo"
