@@ -16,6 +16,7 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import { Button, Card, CardBody,Container, Row, Col } from "reactstrap";
@@ -36,6 +37,7 @@ class Portfolio extends React.Component {
       <>
         <DemoNavbar />
         <main className="profile-page" ref="main">
+        <div className="position-relative">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
             <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
@@ -197,8 +199,8 @@ class Portfolio extends React.Component {
                   <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                        <img
+                        <CardBody className="py-5" to="/PortfolioReport1-page" tag={Link}>
+                        <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/A18040103_10004_0.jpg")}
@@ -208,7 +210,7 @@ class Portfolio extends React.Component {
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
+                        <CardBody className="py-5" to="/PortfolioReport2-page" tag={Link}>
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -219,7 +221,7 @@ class Portfolio extends React.Component {
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
+                        <CardBody className="py-5" to="/PortfolioReport3-page" tag={Link}>
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -233,6 +235,7 @@ class Portfolio extends React.Component {
               </Row>
             </Container>
           </section>
+          </div>
         </main>
         <SimpleFooter />
       </>
