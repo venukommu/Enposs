@@ -37,7 +37,12 @@ class Profile extends React.Component {
         <main className="profile-page" ref="main">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default alpha-4">
+            <div className="shape shape-style-1 shape-default alpha-4"
+            style= {{
+                backgroundPosition: "center",
+                backgroundImage:
+              "url(" + require("assets/img/theme/main2.jpg") + ")",
+               }}>
               <span />
               <span />
               <span />
@@ -73,8 +78,8 @@ class Profile extends React.Component {
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                           <img
                             alt="..."
-                            className="rounded-circle"
-                            src={require("assets/img/theme/team-4-800x800.jpg")}
+                            className="rectangle-circle"
+                            src={require("assets/img/theme/u01_1.png")}
                           />
                         </a>
                       </div>
@@ -84,7 +89,7 @@ class Profile extends React.Component {
                       lg="4"
                     >
                       <div className="card-profile-actions py-4 mt-lg-0">
-                        <Button
+                       {/* <Button
                           className="mr-4"
                           color="info"
                           href="#pablo"
@@ -101,11 +106,11 @@ class Profile extends React.Component {
                           size="sm"
                         >
                           Message
-                        </Button>
+                       </Button>*/}
                       </div>
                     </Col>
                     <Col className="order-lg-1" lg="4">
-                      <div className="card-profile-stats d-flex justify-content-center">
+                      {/*<div className="card-profile-stats d-flex justify-content-center">
                         <div>
                           <span className="heading">22</span>
                           <span className="description">Friends</span>
@@ -118,15 +123,17 @@ class Profile extends React.Component {
                           <span className="heading">89</span>
                           <span className="description">Comments</span>
                         </div>
-                      </div>
+              </div>*/}
                     </Col>
                   </Row>
                   <div className="text-center mt-5">
+                    <br></br>
+                    <br></br>
                     <h3>
-                      Jessica Jones{" "}
-                      <span className="font-weight-light">, 27</span>
+                      About Company{" "}
+                      <span className="font-weight-light"></span>
                     </h3>
-                    <div className="h6 font-weight-300">
+                    {/*<div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
                       Bucharest, Romania
                     </div>
@@ -137,20 +144,21 @@ class Profile extends React.Component {
                     <div>
                       <i className="ni education_hat mr-2" />
                       University of Computer Science
-                    </div>
+            </div>*/}
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
-                          An artist of considerable range, Ryan — the name taken
-                          by Melbourne-raised, Brooklyn-based Nick Murphy —
-                          writes, performs and records all of his own music,
-                          giving it a warm, intimate feel with a solid groove
-                          structure. An artist of considerable range.
+                        ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective energy saving 
+                        technology into our ENPOSS system and sold all different size of system to worldwide market including USA, 
+                        China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries. ENPOSS is continuously
+                         building strong business relations with diverse global energy saving industries. We strive to be effective, 
+                         efficient, while delivering integrity in everything we do. 
+                        We are excited to be in an industry where we can help cut electric energy consumption. 
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
-                          Show more
+                         {/* Show more */}
                         </a>
                       </Col>
                     </Row>
