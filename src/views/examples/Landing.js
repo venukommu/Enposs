@@ -218,7 +218,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                            <i className="ni ni-planet" />
+                            <i className="fa fa-plug" />
                           </div>
                           <h6 className="text-warning text-uppercase">
                             Force System
@@ -263,7 +263,7 @@ class Landing extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/promo-1.png")}
+                    src={require("assets/img/theme/img.jpg")}
                   />
                 </Col>
                 <Col className="order-md-1" md="6">
@@ -273,9 +273,7 @@ class Landing extends React.Component {
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -290,8 +288,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Carefully crafted components
-                            </h6>
+                            Enposs</h6>
                           </div>
                         </div>
                       </li>
@@ -302,11 +299,11 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="ni ni-html5" />
+                              <i className="fa fa-plug" />
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
+                            <h6 className="mb-0">Force System</h6>
                           </div>
                         </div>
                       </li>
