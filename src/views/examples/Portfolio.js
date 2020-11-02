@@ -23,7 +23,7 @@ import { Card, CardBody,Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 
 class Portfolio extends React.Component {
@@ -121,7 +121,7 @@ class Portfolio extends React.Component {
           </section>
           </div>
         </main>
-        <SimpleFooter />
+        <CardsFooter />
       </>
     );
   }
