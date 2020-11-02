@@ -21,7 +21,7 @@ import { Button, Card, CardBody,Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 
 class Download extends React.Component {
@@ -369,7 +369,7 @@ class Download extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <CardsFooter />
       </>
     );
   }
