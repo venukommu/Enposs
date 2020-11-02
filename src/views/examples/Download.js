@@ -16,13 +16,12 @@
 
 */
 import React from "react";
-
 // reactstrap components
 import { Card, CardBody,Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 
 class Download extends React.Component {
@@ -36,7 +35,7 @@ class Download extends React.Component {
       <>
         <DemoNavbar />
         <main className="profile-page" ref="main">
-          <section className="section-profile-cover section-shaped my-0">
+          <section className="section-profile-cover section-shaped">
             {/* Circles background */}
             <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
               
@@ -194,15 +193,18 @@ class Download extends React.Component {
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
+                <Row className="row-grid"><h4 className="text-white">1.Certificate</h4></Row>
                   <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_1-1.pdf')} type="application/pdf" rel="noopener noreferrer" target="_blank" >
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_1-1.jpg")}
                           />
+                        </a>
                         </CardBody>
                       </Card>
                       <label>UL Approval Letter</label>
@@ -210,59 +212,81 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_1-2.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_1-2.jpg")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Certification & Test Report</label>
                     </Col>
+                </Row>
+                <Row className="row-grid"><h4>2.Patent</h4></Row>
+                <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_2-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_2-1.jpg")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>US Patent</label>
                     </Col>
+                </Row>
+                <Row className="row-grid"><h4>3.Comparative Report</h4></Row>
+                  <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_3-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_3-1.jpg")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Comparative Report</label>
                     </Col>
+                  </Row>
+                  <Row className="row-grid"><h4>4.Installation Method</h4></Row>
+                  <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_4-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_4-1.jpg")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Installation Method</label>
                     </Col>
+                  </Row>
+                  <Row className="row-grid"><h4>5.Power Saving Device Mechanism</h4></Row>
+                    <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_5-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_5-1.png")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Power Saving Device Mechanism</label>
@@ -270,11 +294,13 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_5-2.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_5-2.png")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Power Saving Device Mechanism</label>
@@ -282,23 +308,29 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_5-3.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_5-3.png")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Power Saving Device Mechanism</label>
                     </Col>
+                    </Row>
+                    <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_5-4.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_5-4.png")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Power Saving Device Mechanism</label>
@@ -306,11 +338,13 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_5-5.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_5-5.png")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Power Saving Device Mechanism</label>
@@ -318,11 +352,13 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
+                        <a href ={require('assets/img/pdf-reports/u03_5-6.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={require("assets/img/theme/u03_5-6.png")}
                           />
+                          </a>
                         </CardBody>
                       </Card>
                       <label>Power Saving Device Mechanism</label>
@@ -333,7 +369,7 @@ class Download extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <CardsFooter />
       </>
     );
   }
