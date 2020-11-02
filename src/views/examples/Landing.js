@@ -22,7 +22,6 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardBody,
@@ -36,6 +35,8 @@ import {
   Row,
   Col
 } from "reactstrap";
+import Carousel from "../IndexSections/Carousel.js";
+import Login from "../IndexSections/Login.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -255,7 +256,8 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-lg">
+          <Carousel />
+           {/* <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
@@ -265,7 +267,7 @@ class Landing extends React.Component {
                     src={require("assets/img/theme/img.jpg")}
                   />
                 </Col>
-                <Col className="order-md-1" md="6">
+               <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
@@ -325,10 +327,10 @@ class Landing extends React.Component {
                       </li>
                     </ul>
                   </div>
-                </Col>
+                        </Col>
               </Row>
-            </Container>
-          </section>
+             </Container>
+          </section>*/}
           <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
@@ -336,7 +338,7 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/u01_1.png")}
+                      src={require("assets/img/theme/Three Circles.png")}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -858,6 +860,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          <Login />
           <Download />
         </main>
         <CardsFooter />

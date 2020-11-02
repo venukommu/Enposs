@@ -18,17 +18,17 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
+import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 
 const items = [
   {
-    src: require("assets/img/theme/img-1-1200x1000.jpg"),
+    src: require("assets/img/theme/bulb.png"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/img-2-1200x1000.jpg"),
+    src: require("assets/img/theme/speedo.png"),
     altText: "",
     caption: "",
     header: ""
@@ -52,20 +52,69 @@ class Carousel extends React.Component {
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
                 <h1 className="text-white font-weight-light">
-                  Bootstrap carousel
-                </h1>
+                ENPOSS             </h1>
                 <p className="lead text-white mt-4">
-                  Argon Design System comes with four pre-built pages to help
-                  you get started faster. You can change the text and images and
-                  you're good to go.
+                ENPOSS is the manufacturer of FORCE energy saving system. 
+                Products are marketed through direct sales, partners, representatives, dealers, and distributors. 
+                ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                 </p>
+                {/*<ul className="list-unstyled mt-5">
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Enposs</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="fa fa-plug" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">Force System</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="ni ni-satisfied" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                              Super friendly support team
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                 <Button
                   className="btn-white mt-4"
                   color="default"
                   href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                 >
                   See all components
-                </Button>
+                </Button>*/}
               </Col>
               <Col className="mb-lg-auto" lg="6">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
