@@ -148,32 +148,36 @@ class CardsFooter extends React.Component {
                 <Nav className="nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
+                      //href="https://www.creative-tim.com?ref=adsr-footer"
+                      //target="_blank"
+                      to="/about" tag={Link}
                     >
                       About Us
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
-                      target="_blank"
+                      //href="https://www.creative-tim.com/presentation?ref=adsr-footer"
+                      //target="_blank"
+                      to="/forceSystem" tag={Link}
                     >
                       Force System
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="http://blog.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
+                      //href="http://blog.creative-tim.com?ref=adsr-footer"
+                      //target="_blank"
+                      to="/portfolio" tag={Link}
                     >
                       Project Reference
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
-                      target="_blank"
+                      //href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
+                      //target="_blank"
+                      to="/login" tag={Link}
                     >
                       Contact Us
                     </NavLink>
