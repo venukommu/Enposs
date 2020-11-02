@@ -168,7 +168,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>*/}
                           
-                          <Button to="/about-company-page" tag={Link}
+                          <Button to="/about" tag={Link}
                             className="mt-4"
                             color="primary"
                             //href="#pablo"
@@ -239,7 +239,7 @@ class Landing extends React.Component {
                               launch
                             </Badge>
                           </div>*/}
-                          <Button to="/forceSystem-page" tag={Link}
+                          <Button to="/forceSystem" tag={Link}
                             className="mt-4"
                             color="warning"
                             //href="#pablo"
