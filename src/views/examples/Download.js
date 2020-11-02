@@ -189,11 +189,11 @@ class Download extends React.Component {
               </Card>
             </Container>
           </section>*/}
-          <section className="section">
+          <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
-                <Row className="row-grid">1.Certificate</Row>
+                <Row className="row-grid"><h4 className="text-white">1.Certificate</h4></Row>
                   <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
@@ -224,7 +224,7 @@ class Download extends React.Component {
                       <label>Certification & Test Report</label>
                     </Col>
                 </Row>
-                <Row className="row-grid">2.Patent</Row>
+                <Row className="row-grid"><h4>2.Patent</h4></Row>
                 <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
@@ -241,7 +241,7 @@ class Download extends React.Component {
                       <label>US Patent</label>
                     </Col>
                 </Row>
-                <Row className="row-grid">3.Comparative Report</Row>
+                <Row className="row-grid"><h4>3.Comparative Report</h4></Row>
                   <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
@@ -258,7 +258,7 @@ class Download extends React.Component {
                       <label>Comparative Report</label>
                     </Col>
                   </Row>
-                  <Row className="row-grid">4.Installation Method</Row>
+                  <Row className="row-grid"><h4>4.Installation Method</h4></Row>
                   <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
@@ -275,7 +275,7 @@ class Download extends React.Component {
                       <label>Installation Method</label>
                     </Col>
                   </Row>
-                  <Row className="row-grid">5.Power Saving Device Mechanism</Row>
+                  <Row className="row-grid"><h4>5.Power Saving Device Mechanism</h4></Row>
                     <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
