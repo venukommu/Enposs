@@ -17,7 +17,7 @@
 */
 import React from "react";
 // reactstrap components
-import { Button, Card, CardBody,Container, Row, Col } from "reactstrap";
+import {Card, CardBody,Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -198,7 +198,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_1-1.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_1-1.pdf')} type="application/pdf" rel="noopener noreferrer" target="_blank" >
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -212,7 +212,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_1-2.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_1-2.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -229,7 +229,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_2-1.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_2-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -246,7 +246,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_3-1.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_3-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -263,7 +263,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_4-1.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_4-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -280,7 +280,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_5-1.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_5-1.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -294,7 +294,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_5-2.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_5-2.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -308,7 +308,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_5-3.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_5-3.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -324,7 +324,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_5-4.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_5-4.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -338,7 +338,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_5-5.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_5-5.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
@@ -352,7 +352,7 @@ class Download extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_5-6.pdf')} type="application/pdf" target="_blank">
+                        <a href ={require('assets/img/pdf-reports/u03_5-6.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
                         <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
