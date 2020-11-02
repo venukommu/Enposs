@@ -205,37 +205,37 @@ class DemoNavbar extends React.Component {
                 </Nav> */}
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/landing" tag={Link} nav>
+                    <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">HOME</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                  
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/about" tag={Link} nav>
+                    <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">ABOUT</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                                    
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav  to="/forceSystem"  tag={Link}>
+                    <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">FORCE SYSTEM</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/portfolio" tag={Link} nav>
+                    <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">PORTFOLIO</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/download" tag={Link} nav>
+                    <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">DOWNLOAD</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                                    
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/login" tag={Link} nav>
+                    <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">CONTACT</span>
                     </DropdownToggle>
