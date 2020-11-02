@@ -18,13 +18,13 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Card, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardBody, Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
-class PortfolioReport3 extends React.Component {
+class ForcePilotReport extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -139,10 +139,10 @@ class PortfolioReport3 extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <CardsFooter />
       </>
     );
   }
 }
 
-export default PortfolioReport3;
+export default ForcePilotReport;

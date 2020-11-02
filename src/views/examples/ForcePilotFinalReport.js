@@ -18,13 +18,13 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Card, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardBody, Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
-class PortfolioReport2 extends React.Component {
+class ForcePilotFinalReport extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -51,7 +51,7 @@ class PortfolioReport2 extends React.Component {
                 <Row className="align-items-center justify-content-center">
                   <Col className="text-center" lg="6">
                     <h1 className="display-3 text-white">PROJECT PORTFOLIO </h1>
-                    <h1 className="display-3 text-white">City of Seymour WWTP</h1>
+                    <h1 className="display-3 text-white">McDonald’s</h1>
                   </Col>
                 </Row>
               </div>
@@ -81,7 +81,8 @@ class PortfolioReport2 extends React.Component {
                 <CardBody className="py-5">
                     <img 
                         alt="..."
-                        src={require("assets/img/theme/A18040103_10003_0.jpg")}
+                        
+                        src={require("assets/img/theme/A18040103_10004_0.jpg")}
                     />
                 </CardBody>
               </Card>
@@ -91,7 +92,7 @@ class PortfolioReport2 extends React.Component {
             <Col>
                 <img 
                     alt="..."
-                    src={require("assets/img/theme/A18040103_10003_1.jpg")}
+                    src={require("assets/img/theme/A18040103_10004_1.jpg")}
                 />
               </Col>
             </Row>
@@ -99,7 +100,7 @@ class PortfolioReport2 extends React.Component {
             <Col>
                 <img 
                     alt="..."
-                    src={require("assets/img/theme/A18040103_10003_2.jpg")}
+                    src={require("assets/img/theme/A18040103_10004_2.jpg")}
                 />
               </Col>
             </Row>
@@ -107,7 +108,7 @@ class PortfolioReport2 extends React.Component {
             <Col>
                 <img 
                     alt="..."
-                    src={require("assets/img/theme/A18040103_10003_3.jpg")}
+                    src={require("assets/img/theme/A18040103_10004_3.jpg")}
                 />
               </Col>
             </Row>
@@ -115,7 +116,7 @@ class PortfolioReport2 extends React.Component {
             <Col>
                 <img 
                     alt="..."
-                    src={require("assets/img/theme/A18040103_10003_4.jpg")}
+                    src={require("assets/img/theme/A18040103_10004_4.jpg")}
                 />
               </Col>
             </Row>
@@ -123,7 +124,7 @@ class PortfolioReport2 extends React.Component {
             <Col>
                 <img 
                     alt="..."
-                    src={require("assets/img/theme/A18040103_10003_5.jpg")}
+                    src={require("assets/img/theme/A18040103_10004_5.jpg")}
                 />
               </Col>
             </Row>
@@ -131,17 +132,17 @@ class PortfolioReport2 extends React.Component {
             <Col>
                 <img 
                     alt="..."
-                    src={require("assets/img/theme/A18040103_10003_6.jpg")}
+                    src={require("assets/img/theme/A18040103_10004_6.jpg")}
                 />
               </Col>
             </Row>
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <CardsFooter />
       </>
     );
   }
 }
 
-export default PortfolioReport2;
+export default ForcePilotFinalReport;

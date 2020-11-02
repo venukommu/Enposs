@@ -23,7 +23,7 @@ import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/font-awesome/css/font-awesome.min.css";
 import "assets/scss/argon-design-system-react.scss?v1.1.0";
 
-import Index from "views/Index.js";
+//import Index from "views/Index.js";
 import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
@@ -31,9 +31,9 @@ import Register from "views/examples/Register.js";
 import Portfolio from "views/examples/Portfolio.js";
 import ForceSystem from "views/examples/ForceSystem.js";
 import Download from "views/examples/Download.js";
-import PortfolioReport1 from "views/examples/PortfolioReport1.js";
-import PortfolioReport2 from "views/examples/PortfolioReport2.js";
-import PortfolioReport3 from "views/examples/PortfolioReport3.js";
+import ForcePilotFinalReport from "views/examples/ForcePilotFinalReport.js";
+import ForceEnergySavingSystem from "views/examples/ForceEnergySavingSystem.js";
+import ForcePilotReport from "views/examples/ForcePilotReport.js";
 
 
 ReactDOM.render(
@@ -62,19 +62,19 @@ ReactDOM.render(
         render={props => <Portfolio {...props} />}
       />
       <Route
-        path="/PortfolioReport1"
+        path="/forcepilotfinalreport"
         exact
-        render={props => <PortfolioReport1 {...props} />}
+        render={props => <ForcePilotFinalReport {...props} />}
       />
        <Route
-        path="/PortfolioReport2"
+        path="/forceenergysavingsystem"
         exact
-        render={props => <PortfolioReport2 {...props} />}
+        render={props => <ForceEnergySavingSystem {...props} />}
       />
        <Route
-        path="/PortfolioReport3"
+        path="/forcepilotreport"
         exact
-        render={props => <PortfolioReport3 {...props} />}
+        render={props => <ForcePilotReport {...props} />}
       />
        <Route
         path="/download"
