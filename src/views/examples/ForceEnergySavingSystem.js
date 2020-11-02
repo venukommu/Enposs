@@ -18,13 +18,13 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Card, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardBody, Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
-class PortfolioReport2 extends React.Component {
+class ForceEnergySavingSystem extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -144,4 +144,4 @@ class PortfolioReport2 extends React.Component {
   }
 }
 
-export default PortfolioReport2;
+export default ForceEnergySavingSystem;
