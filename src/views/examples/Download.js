@@ -37,7 +37,7 @@ class Download extends React.Component {
         <main className="profile-page" ref="main">
           <section className="section-profile-cover section-shaped">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
+            <div className="shape shape-style-1 bg-gradient-success shadow-lg alpha-4">
               
               <span />
               <span />

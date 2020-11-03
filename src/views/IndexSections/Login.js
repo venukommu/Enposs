@@ -22,7 +22,6 @@ import classnames from "classnames";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardHeader,
@@ -58,63 +57,15 @@ class Login extends React.Component {
             <Row className="row-grid justify-content-between align-items-center">
               <Col lg="6">
                 <h3 className="display-3 text-white">
-                Awesome features{" "}
+                Energy Optimizer{" "}
                   {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
-                ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, 
-                and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                Energy Optimizer helps enterprises save energy and reduce emissions.<br></br>
+                5 tons of carbon dioxide emmited per 10,000 kGH of power generation<br></br>
+                1 million KWH / month <br></br>
+                Reduce emissions of 420 tons of carbon dioxide per month.
                 </p>
-                <ul className="list-unstyled mt-5">
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0 text-white">
-                            Enposs</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="fa fa-plug" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0 text-white">Force System</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0 text-white">
-                              Super friendly support team
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
                 <div className="btn-wrapper">
                   <Button color="success" to="/login" tag={Link}>
                     Login

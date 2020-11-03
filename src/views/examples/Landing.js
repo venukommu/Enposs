@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
+  Badge,
   Button,
   Card,
   CardBody,
@@ -257,14 +258,14 @@ class Landing extends React.Component {
             </Container>
           </section>
           <Carousel />
-           {/* <section className="section section-lg">
+            <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/img.jpg")}
+                    src={require("assets/img/theme/en bulb.jpg")}
                   />
                 </Col>
                <Col className="order-md-1" md="6">
@@ -274,7 +275,7 @@ class Landing extends React.Component {
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                    ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -300,7 +301,7 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="ni ni-html5" />
+                              <i className="fa fa-plug" />
                             </Badge>
                           </div>
                           <div>
@@ -330,7 +331,7 @@ class Landing extends React.Component {
                         </Col>
               </Row>
              </Container>
-          </section>*/}
+          </section>
           <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
@@ -445,8 +446,7 @@ class Landing extends React.Component {
                             A Single Phase
                           </h5>
                           <p>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. More often, single-phase power is known as “residential voltage,” since it is that most homes use. 
-                          In the distribution of power, a single-phase uses the phase and neutral wires.
+                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
                           </p>
                           <a
                             className="text-success"
@@ -472,8 +472,7 @@ class Landing extends React.Component {
                             Three Phases
                           </h5>
                           <p>Three-phase power can be defined as the common method of alternating current power generation, 
-                          transmission, and distribution. ... It is a type of polyphase system, 
-                          and is the most common method used by electric grids worldwide to transfer power.</p>
+                          transmission, and distribution.</p>
                           <a
                             className="text-warning"
                             href="#pablo"
@@ -863,6 +862,50 @@ class Landing extends React.Component {
           <Login />
           <Download />
         </main>
+        <section>
+        <Container className="container-lg">
+            <Row>
+              <Col className="mb-5 mb-md-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="#">
+                    <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/single phase.jpg")}
+                    />
+                  </Link>
+                </Card>
+                <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Buy Now
+                        </Button>
+              </Col>
+              <Col className="mb-5 mb-lg-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="#">
+                    <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/3 phase.jpg")}
+                    />
+                  </Link>
+                </Card>
+                <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Buy Now
+                        </Button>
+              </Col>
+            </Row>
+    </Container>
+    </section>
         <CardsFooter />
       </>
     );

@@ -25,23 +25,21 @@ class Download extends React.Component {
   render() {
     return (
       <>
-         {/*<section className="section section-lg">
+         <section className="section section-lg">
           <Container>
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
                 <h2 className="display-3">
-                  Do you love this awesome{" "}
-                  <span className="text-success">
+                Demand for power-saving of enterprises and private are becoming increasingly urgent.{" "}
+                  {/*<span className="text-success">
                     Design System for Bootstrap 4?
-                  </span>
+    </span>*/}
                 </h2>
                 <p className="lead">
-                  Cause if you do, it can be yours for FREE. Hit the button
-                  below to navigate to Creative Tim where you can find the
-                  Design System in React. Start a new project or give an old
-                  Bootstrap project a new look!
+                Nowadays, the power-saving market is growing fast. Force power-saving device is very convenient and easy to install.
+With core technology products independently researched and developed, protecting the environment and customer interests are our company's goals, realizing global layout and fulfilling the world's environmental protection obligations.
                 </p>
-                <div className="btn-wrapper">
+                {/*<div className="btn-wrapper">
                   <Button
                     className="mb-3 mb-sm-0"
                     color="primary"
@@ -49,12 +47,12 @@ class Download extends React.Component {
                   >
                     Download React
                   </Button>
-                </div>
+    </div>*/}
                 <div className="text-center">
-                  <h4 className="display-4 mb-5 mt-5">
-                    Available on these technologies
-                  </h4>
-                  <Row className="justify-content-center">
+                 {/* <h4 className="display-4 mb-5 mt-5">
+                  Force power-saving technology accumulated from 2006 to 2020, has achieved a lot of success and has received several patents, product performance certification of more than 70 countries and has safety certification from Korea Test Center.
+  </h4>*/}
+                  {/*<Row className="justify-content-center">
                     <Col lg="2" xs="4">
                       <a
                         href="https://www.creative-tim.com/product/argon-design-system?ref=adsr-landing-page"
@@ -153,12 +151,12 @@ class Download extends React.Component {
                         manipulation
                       </UncontrolledTooltip>
                     </Col>
-                  </Row>
+    </Row>*/}
                 </div>
               </Col>
             </Row>
           </Container>
-        </section>*/}
+        </section>
       </>
     );
   }

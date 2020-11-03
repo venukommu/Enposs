@@ -51,12 +51,11 @@ class Carousel extends React.Component {
           <Container className="py-md">
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
-                <h1 className="text-white font-weight-light">
-                ENPOSS             </h1>
+                <h4 className="text-white font-weight-light">
+                International Leading Technology Independent Research And Development Patent              </h4>
                 <p className="lead text-white mt-4">
-                ENPOSS is the manufacturer of FORCE energy saving system. 
-                Products are marketed through direct sales, partners, representatives, dealers, and distributors. 
-                ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+               Power Quality emprovement system <br></br>
+               Quality Improvement System transforms the corporate power environment to help companies save energy.
                 </p>
                 {/*<ul className="list-unstyled mt-5">
                       <li className="py-2">
