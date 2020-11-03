@@ -22,6 +22,7 @@ import classnames from "classnames";
 
 // reactstrap components
 import {
+  Badge,
   Button,
   Card,
   CardHeader,
@@ -57,27 +58,74 @@ class Login extends React.Component {
             <Row className="row-grid justify-content-between align-items-center">
               <Col lg="6">
                 <h3 className="display-3 text-white">
-                  A beautiful Design System{" "}
-                  <span className="text-white">completed with examples</span>
+                Awesome features{" "}
+                  {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
-                  The Design System comes with four pre-built pages to help you
-                  get started faster. You can change the text and images and
-                  you're good to go. More importantly, looking at them will give
-                  you a picture of what you can built with this powerful
-                  Bootstrap 4 Design System.
+                ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, 
+                and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                 </p>
+                <ul className="list-unstyled mt-5">
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Enposs</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="fa fa-plug" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">Force System</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="ni ni-satisfied" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                              Super friendly support team
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                 <div className="btn-wrapper">
-                  <Button color="success" to="/login-page" tag={Link}>
-                    Login Page
+                  <Button color="success" to="/login" tag={Link}>
+                    Login
                   </Button>
                   <Button
                     className="btn-white"
                     color="default"
-                    to="/register-page"
+                    to="/register"
                     tag={Link}
                   >
-                    Register Page
+                    Register
                   </Button>
                 </div>
               </Col>
