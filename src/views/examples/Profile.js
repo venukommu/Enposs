@@ -41,7 +41,7 @@ class Profile extends React.Component {
             style= {{
                 backgroundPosition: "center",
                 backgroundImage:
-              "url(" + require("assets/img/theme/main2.jpg") + ")",
+              "url(" + require("assets/img/theme/1588901796_gioithieu3.jpg") + ")",
                }}>
               <span />
               <span />
@@ -70,7 +70,7 @@ class Profile extends React.Component {
           </section>
           <section className="section">
             <Container>
-              <Card className="card-profile shadow mt--300">
+              <Card className="card-profile shadow mt--200">
                 <div className="px-4">
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="3">
