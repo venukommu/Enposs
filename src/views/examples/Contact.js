@@ -31,48 +31,60 @@ class Contact extends React.Component {
       <>
         <DemoNavbar />
         <main ref="main">
-            <section className="section section-lg bg-gradient-default">
+            <section className="section section-lg bg-gradient-primary">
                 <Container className="pt-lg pb-300">
                     <Row className="text-center justify-content-center">
                     <Col lg="10">
-                        <h2 className="display-3 text-white">Build something</h2>
-                        <p className="lead text-white">
+                        <h2 className="display-3 text-white">AFTER SALES SERVICE</h2>
+                        {/*<p className="lead text-white">
                         According to the National Oceanic and Atmospheric
                         Administration, Ted, Scambos, NSIDClead scentist, puts the
                         potentially record low maximum sea ice extent tihs year down
                         to low ice.
-                        </p>
+    </p>*/}
                     </Col>
                     </Row>
                     <Row className="row-grid mt-5">
                     <Col lg="4">
-                        <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="CardsFooterni ni-settings text-primary" />
-                        </div>
-                        <h5 className="text-white mt-3">Building tools</h5>
+                        </div>*/}
+                        <img
+                      alt="..."
+                      //className="img-center img-fluid"
+                      src={require("assets/img/theme/1578730282_1551667336.png")}
+                    />
+                        <h5 className="text-white mt-3">WARRANTY</h5>
                         <p className="text-white mt-3">
-                        Some quick example text to build on the card title and make
-                        up the bulk of the card's content.
+                        8-year equipment warranty (according to the warranty policy).
                         </p>
                     </Col>
                     <Col lg="4">
-                        <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="ni ni-ruler-pencil text-primary" />
-                        </div>
-                        <h5 className="text-white mt-3">Grow your market</h5>
+                    </div>*/}
+                        <img
+                      alt="..."
+                      //className="img-center img-fluid"
+                      src={require("assets/img/theme/1586924757_spok.jpg")}
+                    />
+                        <h5 className="text-white mt-3">COMMITMENTS OF ORIGIN OF PRODUCTS</h5>
                         <p className="text-white mt-3">
-                        Some quick example text to build on the card title and make
-                        up the bulk of the card's content.
-                        </p>CardsFooter
+                        SProducts Imported Directly From Enposs Korea.
+                        </p>
                     </Col>
                     <Col lg="4">
-                        <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="ni ni-atom text-primary" />
-                        </div>
-                        <h5 className="text-white mt-3">Launch time</h5>
+                        </div>*/}
+                        <img
+                      alt="..."
+                      //className="img-center img-fluid"
+                      src={require("assets/img/theme/1578730282_1551674767.png")}
+                    />
+                        <h5 className="text-white mt-3">REPLACE</h5>
                         <p className="text-white mt-3">
-                        Some quick example text to build on the card title and make
-                        up the bulk of the card's content.
+                        Replace new equipment ( according to the warranty policy)
                         </p>
                     </Col>
                     </Row>
@@ -100,7 +112,7 @@ class Contact extends React.Component {
                     <Col lg="8">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
-                            <h4 className="mb-1">Want to work with us?</h4>
+                            <h4 className="mb-1">Want to join with us?</h4>
                             <p className="mt-0">
                             Your project is very important to us.
                             </p>

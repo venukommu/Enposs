@@ -200,8 +200,9 @@ class Landing extends React.Component {
                           <Button
                             className="mt-4"
                             color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            href="#products"
+                            //href="#pablo"
+                            //onClick={e => e.preventDefault()}
                           >
                             Read more
                           </Button>
@@ -360,7 +361,7 @@ class Landing extends React.Component {
                     </blockquote>
                   </Card>
                 </Col>
-                <Col md="6">
+                <Col md="6" id="products">
                   <div className="pl-md-5">
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
