@@ -75,67 +75,67 @@ class ForcePilotReport extends React.Component {
           </section>
           <section className="section section-lg">
             <Container>
-            <Row className="justify-content-center">
-            <Col>
-              <Card className="card-profile shadow mt--300">
+            <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                    <img 
-                        alt="..."
-                        
-                        src={require("assets/img/theme/A18040103_10002_0.jpg")}
-                    />
+                  <Row className="justify-content-center">
+                    <Col>
+                          <img 
+                              alt="..."                        
+                              src={require("assets/img/theme/A18040103_10002_0.jpg")}
+                          />
+                      
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                  <Col>
+                      <img 
+                          alt="..."
+                          src={require("assets/img/theme/A18040103_10002_1.jpg")}
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                  <Col>
+                      <img 
+                          alt="..."
+                          src={require("assets/img/theme/A18040103_10002_2.jpg")}
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                  <Col>
+                      <img 
+                          alt="..."
+                          src={require("assets/img/theme/A18040103_10002_3.jpg")}
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                  <Col>
+                      <img 
+                          alt="..."
+                          src={require("assets/img/theme/A18040103_10002_4.jpg")}
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                  <Col>
+                      <img 
+                          alt="..."
+                          src={require("assets/img/theme/A18040103_10002_5.jpg")}
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                  <Col>
+                      <img 
+                          alt="..."
+                          src={require("assets/img/theme/A18040103_10002_6.jpg")}
+                      />
+                    </Col>
+                  </Row>
                 </CardBody>
               </Card>
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-            <Col>
-                <img 
-                    alt="..."
-                    src={require("assets/img/theme/A18040103_10002_1.jpg")}
-                />
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-            <Col>
-                <img 
-                    alt="..."
-                    src={require("assets/img/theme/A18040103_10002_2.jpg")}
-                />
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-            <Col>
-                <img 
-                    alt="..."
-                    src={require("assets/img/theme/A18040103_10002_3.jpg")}
-                />
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-            <Col>
-                <img 
-                    alt="..."
-                    src={require("assets/img/theme/A18040103_10002_4.jpg")}
-                />
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-            <Col>
-                <img 
-                    alt="..."
-                    src={require("assets/img/theme/A18040103_10002_5.jpg")}
-                />
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-            <Col>
-                <img 
-                    alt="..."
-                    src={require("assets/img/theme/A18040103_10002_6.jpg")}
-                />
-              </Col>
-            </Row>
             </Container>
           </section>
         </main>
