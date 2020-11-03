@@ -5,10 +5,8 @@ import classnames from "classnames";
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
-  Form,
   Input,
   InputGroupAddon,
   InputGroupText,
@@ -49,7 +47,7 @@ class Contact extends React.Component {
                     <Row className="row-grid mt-5">
                     <Col lg="4">
                         <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-settings text-primary" />
+                        <i className="CardsFooterni ni-settings text-primary" />
                         </div>
                         <h5 className="text-white mt-3">Building tools</h5>
                         <p className="text-white mt-3">
@@ -65,7 +63,7 @@ class Contact extends React.Component {
                         <p className="text-white mt-3">
                         Some quick example text to build on the card title and make
                         up the bulk of the card's content.
-                        </p>
+                        </p>CardsFooter
                     </Col>
                     <Col lg="4">
                         <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
@@ -172,6 +170,7 @@ class Contact extends React.Component {
                 </Container>
             </section>
         </main>
+        <CardsFooter />
       </>
     );
   }

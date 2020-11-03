@@ -17,7 +17,7 @@
 */
 import React from "react";
 // nodejs library that concatenates classes
-import classnames from "classnames";
+//import classnames from "classnames";
 import { Link } from "react-router-dom";
 
 // reactstrap components
@@ -27,11 +27,6 @@ import {
   Card,
   CardBody,
   CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col
