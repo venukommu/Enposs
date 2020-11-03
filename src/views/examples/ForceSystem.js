@@ -38,7 +38,7 @@ class ForceSystem extends React.Component {
         <main className="profile-page" ref="main">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
+            <div className="shape shape-style-1 shape-default bg-gradient-info alpha-4">
               <span />
               <span />
               <span />
@@ -81,7 +81,7 @@ class ForceSystem extends React.Component {
                     <Col lg="4">
                         <img
                             alt="..."                          
-                            src={require("assets/img/theme/u02_0.jpg")}
+                            src={require("assets/img/theme/u02_0.png")}
                           />
                     </Col>
                   </Row>

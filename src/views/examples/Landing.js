@@ -31,6 +31,8 @@ import {
   Row,
   Col
 } from "reactstrap";
+import Carousel from "../IndexSections/Carousel.js";
+import Login from "../IndexSections/Login.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -249,24 +251,25 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-lg">
+          <Carousel />
+            <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/img.jpg")}
+                    src={require("assets/img/theme/en bulb.jpg")}
                   />
                 </Col>
-                <Col className="order-md-1" md="6">
+               <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                    ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -292,7 +295,7 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="ni ni-html5" />
+                              <i className="fa fa-plug" />
                             </Badge>
                           </div>
                           <div>
@@ -319,9 +322,9 @@ class Landing extends React.Component {
                       </li>
                     </ul>
                   </div>
-                </Col>
+                        </Col>
               </Row>
-            </Container>
+             </Container>
           </section>
           <section className="section bg-secondary">
             <Container>
@@ -330,7 +333,7 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/u01_1.png")}
+                      src={require("assets/img/theme/Three Circles.png")}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -404,7 +407,7 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/theme/u02_0.jpg")}
+                      src={require("assets/img/theme/u02_0.png")}
                     />
                   </div>
                 </Col>
@@ -437,8 +440,7 @@ class Landing extends React.Component {
                             A Single Phase
                           </h5>
                           <p>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. More often, single-phase power is known as “residential voltage,” since it is that most homes use. 
-                          In the distribution of power, a single-phase uses the phase and neutral wires.
+                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
                           </p>
                           <a
                             className="text-success"
@@ -464,8 +466,7 @@ class Landing extends React.Component {
                             Three Phases
                           </h5>
                           <p>Three-phase power can be defined as the common method of alternating current power generation, 
-                          transmission, and distribution. ... It is a type of polyphase system, 
-                          and is the most common method used by electric grids worldwide to transfer power.</p>
+                          transmission, and distribution.</p>
                           <a
                             className="text-warning"
                             href="#pablo"
@@ -852,8 +853,53 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>*/}
+          <Login />
           <Download />
         </main>
+        <section>
+        <Container className="container-lg">
+            <Row>
+              <Col className="mb-5 mb-md-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="#">
+                    <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/single phase.jpg")}
+                    />
+                  </Link>
+                </Card>
+                <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Buy Now
+                        </Button>
+              </Col>
+              <Col className="mb-5 mb-lg-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="#">
+                    <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/3 phase.jpg")}
+                    />
+                  </Link>
+                </Card>
+                <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Buy Now
+                        </Button>
+              </Col>
+            </Row>
+    </Container>
+    </section>
         <CardsFooter />
       </>
     );

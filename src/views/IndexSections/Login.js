@@ -57,27 +57,26 @@ class Login extends React.Component {
             <Row className="row-grid justify-content-between align-items-center">
               <Col lg="6">
                 <h3 className="display-3 text-white">
-                  A beautiful Design System{" "}
-                  <span className="text-white">completed with examples</span>
+                Energy Optimizer{" "}
+                  {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
-                  The Design System comes with four pre-built pages to help you
-                  get started faster. You can change the text and images and
-                  you're good to go. More importantly, looking at them will give
-                  you a picture of what you can built with this powerful
-                  Bootstrap 4 Design System.
+                Energy Optimizer helps enterprises save energy and reduce emissions.<br></br>
+                5 tons of carbon dioxide emmited per 10,000 kGH of power generation<br></br>
+                1 million KWH / month <br></br>
+                Reduce emissions of 420 tons of carbon dioxide per month.
                 </p>
                 <div className="btn-wrapper">
-                  <Button color="success" to="/login-page" tag={Link}>
-                    Login Page
+                  <Button color="success" to="/login" tag={Link}>
+                    Login
                   </Button>
                   <Button
                     className="btn-white"
                     color="default"
-                    to="/register-page"
+                    to="/register"
                     tag={Link}
                   >
-                    Register Page
+                    Register
                   </Button>
                 </div>
               </Col>

@@ -27,7 +27,7 @@
 	"bugs": {
 		"url": "https://github.com/creativetimofficial/argon-design-system-react/issues"
 	},
-	"homepage": "http://localhost:300/",
+	"homepage": "https://enposs.netlify.app/",
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build && gulp licenses",
