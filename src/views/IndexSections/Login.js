@@ -62,8 +62,10 @@ class Login extends React.Component {
                   {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
-                ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, 
-                and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                Energy Optimizer helps enterprises save energy and reduce emissions.<br></br>
+                5 tons of carbon dioxide emmited per 10,000 kGH of power generation<br></br>
+                1 million KWH / month <br></br>
+                Reduce emissions of 420 tons of carbon dioxide per month.
                 </p>
                 <ul className="list-unstyled mt-5">
                       <li className="py-2">

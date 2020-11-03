@@ -445,8 +445,7 @@ class Landing extends React.Component {
                             A Single Phase
                           </h5>
                           <p>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. More often, single-phase power is known as “residential voltage,” since it is that most homes use. 
-                          In the distribution of power, a single-phase uses the phase and neutral wires.
+                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
                           </p>
                           <a
                             className="text-success"
@@ -472,8 +471,7 @@ class Landing extends React.Component {
                             Three Phases
                           </h5>
                           <p>Three-phase power can be defined as the common method of alternating current power generation, 
-                          transmission, and distribution. ... It is a type of polyphase system, 
-                          and is the most common method used by electric grids worldwide to transfer power.</p>
+                          transmission, and distribution.</p>
                           <a
                             className="text-warning"
                             href="#pablo"
