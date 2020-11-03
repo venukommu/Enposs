@@ -874,6 +874,15 @@ class Landing extends React.Component {
                     />
                   </Link>
                 </Card>
+                <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Add to cart
+                        </Button>
               </Col>
               <Col className="mb-5 mb-lg-0" md="6">
                 <Card className="card-lift--hover shadow border-0">
@@ -884,6 +893,15 @@ class Landing extends React.Component {
                     />
                   </Link>
                 </Card>
+                <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Add to cart
+                        </Button>
               </Col>
             </Row>
     </Container>
