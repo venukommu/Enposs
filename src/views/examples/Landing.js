@@ -17,7 +17,7 @@
 */
 import React from "react";
 // nodejs library that concatenates classes
-import classnames from "classnames";
+//import classnames from "classnames";
 import { Link } from "react-router-dom";
 
 // reactstrap components
@@ -27,11 +27,6 @@ import {
   Card,
   CardBody,
   CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col
@@ -82,7 +77,7 @@ class Landing extends React.Component {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">
-                      ABOUT COMPANY {" "}
+                      ENPOSS Inc {" "}
                         {/*<span>completed with examples</span>*/}
                       </h1>
                       <p className="lead text-white">
@@ -154,9 +149,8 @@ class Landing extends React.Component {
                             About Company
                           </h6>
                           <p className="description mt-3">
-                          ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective
-                     energy saving technology into our ENPOSS system and sold all different size of system to worldwide market 
-                     including USA, China, Russia,many other countries.
+                          ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                     energy saving technology into our ENPOSS system.
                           </p>
                           {/*<div>
                             <Badge color="primary" pill className="mr-1">
@@ -176,7 +170,7 @@ class Landing extends React.Component {
                             //href="#pablo"
                             //onClick={e => e.preventDefault()}
                           >
-                            Read More About Company
+                            Read More
                           </Button>
                         </CardBody>
                       </Card>
@@ -192,7 +186,7 @@ class Landing extends React.Component {
                           </h6>
                           <p className="description mt-3">
                           Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                          increase their population, reduces leakage and current driven harmonic distortion........... 
+                          increase their population. 
                           </p>
                           {/*<div>
                             <Badge color="success" pill className="mr-1">
@@ -208,8 +202,9 @@ class Landing extends React.Component {
                           <Button
                             className="mt-4"
                             color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            href="#products"
+                            //href="#pablo"
+                            //onClick={e => e.preventDefault()}
                           >
                             Read more
                           </Button>
@@ -226,9 +221,8 @@ class Landing extends React.Component {
                             Force System
                           </h6>
                           <p className="description mt-3">
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
-                          More often, single-phase power is known as “residential voltage,” 
-                          since it is that most homes use........
+                          Single-phase power simultaneously changes the supply voltage of an AC power by a system  
+                          and it is also known as “residential voltage”.
                           </p>
                           {/*<div>
                             <Badge color="warning" pill className="mr-1">
@@ -370,7 +364,7 @@ class Landing extends React.Component {
                     </blockquote>
                   </Card>
                 </Col>
-                <Col md="6">
+                <Col md="6" id="products">
                   <div className="pl-md-5">
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
@@ -721,7 +715,7 @@ class Landing extends React.Component {
               </Card>
             </Container>
           </section>
-          <section className="section section-lg bg-gradient-default">
+          {/*<section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 <Col lg="10">
@@ -767,7 +761,7 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-            {/* SVG separator */}
+            {/* SVG separator
             <div className="separator separator-bottom separator-skew zindex-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -858,7 +852,7 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-          </section>
+          </section>*/}
           <Login />
           <Download />
         </main>

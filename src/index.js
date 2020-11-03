@@ -34,6 +34,7 @@ import Download from "views/examples/Download.js";
 import ForcePilotFinalReport from "views/examples/ForcePilotFinalReport.js";
 import ForceEnergySavingSystem from "views/examples/ForceEnergySavingSystem.js";
 import ForcePilotReport from "views/examples/ForcePilotReport.js";
+import Contact from "views/examples/Contact.js";
 
 
 ReactDOM.render(
@@ -85,6 +86,11 @@ ReactDOM.render(
         path="/register"
         exact
         render={props => <Register {...props} />}
+      />
+      <Route
+        path="/contact"
+        exact
+        render={props => <Contact {...props} />}
       />
       <Redirect to="/" />
     </Switch>
