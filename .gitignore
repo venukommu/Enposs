@@ -8,3 +8,6 @@ errorShots/
 screenshots/
 .reg
 reg.json
+
+# Local Netlify folder
+.netlify
