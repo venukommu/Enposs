@@ -40,7 +40,7 @@ class Portfolio extends React.Component {
         <div className="position-relative">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default  section-shaped alpha-4">
+            <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
               
               <span />
               <span />
