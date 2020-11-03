@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
+  Badge,
   Button,
   Card,
   CardBody,
@@ -257,14 +258,14 @@ class Landing extends React.Component {
             </Container>
           </section>
           <Carousel />
-           {/* <section className="section section-lg">
+            <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/img.jpg")}
+                    src={require("assets/img/theme/en bulb.jpg")}
                   />
                 </Col>
                <Col className="order-md-1" md="6">
@@ -274,7 +275,7 @@ class Landing extends React.Component {
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                    ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -300,7 +301,7 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="ni ni-html5" />
+                              <i className="fa fa-plug" />
                             </Badge>
                           </div>
                           <div>
@@ -330,7 +331,7 @@ class Landing extends React.Component {
                         </Col>
               </Row>
              </Container>
-          </section>*/}
+          </section>
           <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
@@ -869,7 +870,7 @@ class Landing extends React.Component {
                   <Link to="/landing">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/landing.jpg")}
+                      src={require("assets/img/theme/single phase.jpg")}
                     />
                   </Link>
                 </Card>
@@ -879,7 +880,7 @@ class Landing extends React.Component {
                   <Link to="/profile">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/profile.jpg")}
+                      src={require("assets/img/theme/3 phase.jpg")}
                     />
                   </Link>
                 </Card>

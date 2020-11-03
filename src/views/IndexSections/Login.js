@@ -22,7 +22,6 @@ import classnames from "classnames";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardHeader,
@@ -58,7 +57,7 @@ class Login extends React.Component {
             <Row className="row-grid justify-content-between align-items-center">
               <Col lg="6">
                 <h3 className="display-3 text-white">
-                Awesome features{" "}
+                Advantages{" "}
                   {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
@@ -67,56 +66,6 @@ class Login extends React.Component {
                 1 million KWH / month <br></br>
                 Reduce emissions of 420 tons of carbon dioxide per month.
                 </p>
-                <ul className="list-unstyled mt-5">
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0 text-white">
-                            Enposs</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="fa fa-plug" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0 text-white">Force System</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0 text-white">
-                              Super friendly support team
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
                 <div className="btn-wrapper">
                   <Button color="success" to="/login" tag={Link}>
                     Login
