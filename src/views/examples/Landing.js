@@ -861,6 +861,32 @@ class Landing extends React.Component {
           <Login />
           <Download />
         </main>
+        <section>
+        <Container className="container-lg">
+            <Row>
+              <Col className="mb-5 mb-md-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="/landing">
+                    <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/landing.jpg")}
+                    />
+                  </Link>
+                </Card>
+              </Col>
+              <Col className="mb-5 mb-lg-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="/profile">
+                    <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/profile.jpg")}
+                    />
+                  </Link>
+                </Card>
+              </Col>
+            </Row>
+    </Container>
+    </section>
         <CardsFooter />
       </>
     );
