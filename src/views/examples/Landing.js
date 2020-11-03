@@ -881,7 +881,7 @@ class Landing extends React.Component {
                           size="lg"
                           type="button"
                         >
-                          Add to cart
+                          Buy Now
                         </Button>
               </Col>
               <Col className="mb-5 mb-lg-0" md="6">
@@ -900,7 +900,7 @@ class Landing extends React.Component {
                           size="lg"
                           type="button"
                         >
-                          Add to cart
+                          Buy Now
                         </Button>
               </Col>
             </Row>
