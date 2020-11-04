@@ -374,7 +374,7 @@ class Landing extends React.Component {
                       <i className="ni ni-settings" />
                     </div>
                     <h3>Products & Services</h3>
-                    <p className="lead">
+                    <p className="lead" style={{textAlign : "justify"}}>
                     Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
                           increase their population, reduces leakage and current driven harmonic distortion.Also, 
                           it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, 
@@ -443,7 +443,7 @@ class Landing extends React.Component {
                           <h5 className="title text-success">
                             A Single Phase
                           </h5>
-                          <p>
+                          <p style={{textAlign : "justify"}}>
                           Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
                           </p>
                           <a
@@ -469,7 +469,7 @@ class Landing extends React.Component {
                           <h5 className="title text-warning">
                             Three Phases
                           </h5>
-                          <p>Three-phase power can be defined as the common method of alternating current power generation, 
+                          <p style={{textAlign : "justify"}}>Three-phase power can be defined as the common method of alternating current power generation, 
                           transmission, and distribution.</p>
                           <a
                             className="text-warning"
