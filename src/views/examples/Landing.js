@@ -80,7 +80,8 @@ class Landing extends React.Component {
                       ENPOSS Inc {" "}
                         {/*<span>completed with examples</span>*/}
                       </h1>
-                      <p className="lead text-white">
+                      <p className="lead text-white"
+                      style={{ textAlign : "justify" }}>
                       ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
                       Support to our customers in North America, Central America, and South America. 
                       ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
@@ -148,7 +149,8 @@ class Landing extends React.Component {
                           <h6 className="text-primary text-uppercase">
                             About Company
                           </h6>
-                          <p className="description mt-3">
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
                           ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
                      energy saving technology into our ENPOSS system.
                           </p>
@@ -184,7 +186,8 @@ class Landing extends React.Component {
                           <h6 className="text-success text-uppercase">
                           PRODUCTS & SERVICES 
                           </h6>
-                          <p className="description mt-3">
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
                           Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
                           increase their population. 
                           </p>
@@ -220,7 +223,8 @@ class Landing extends React.Component {
                           <h6 className="text-warning text-uppercase">
                             Force System
                           </h6>
-                          <p className="description mt-3">
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
                           Single-phase power simultaneously changes the supply voltage of an AC power by a system  
                           and it is also known as “residential voltage”.
                           </p>
