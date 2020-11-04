@@ -78,7 +78,7 @@ class CardsFooter extends React.Component {
                   //href="https://twitter.com/creativetim"
                   href="#"
                   id="tooltip475038074"
-                  target="_blank"
+                  //target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-twitter" />
@@ -93,7 +93,7 @@ class CardsFooter extends React.Component {
                   //href="https://www.facebook.com/creativetim"
                   href="#"
                   id="tooltip837440414"
-                  target="_blank"
+                  //target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-facebook-square" />
@@ -108,7 +108,7 @@ class CardsFooter extends React.Component {
                   //href="https://dribbble.com/creativetim"
                   href="#"
                   id="tooltip829810202"
-                  target="_blank"
+                  //target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-dribbble" />
@@ -123,7 +123,7 @@ class CardsFooter extends React.Component {
                   //href="https://github.com/creativetimofficial"
                   href="#"
                   id="tooltip495507257"
-                  target="_blank"
+                  //target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-github" />
@@ -190,7 +190,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
                       //target="_blank"
-                      to="/login" tag={Link}
+                      to="/contact" tag={Link}
                     >
                       Contact Us
                     </NavLink>
