@@ -520,7 +520,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
+                        <small className="h6 text-muted">Electric Engineer</small>
                       </h5>
                       <div className="mt-3">
                         <Button
@@ -563,7 +563,7 @@ class Landing extends React.Component {
                       <h5 className="title">
                         <span className="d-block mb-1">Romina Hadid</span>
                         <small className="h6 text-muted">
-                          Marketing Strategist
+                          Power Engineer
                         </small>
                       </h5>
                       <div className="mt-3">
@@ -606,7 +606,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
+                        <small className="h6 text-muted">Maintainence Engineer</small>
                       </h5>
                       <div className="mt-3">
                         <Button

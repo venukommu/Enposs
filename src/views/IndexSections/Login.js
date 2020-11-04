@@ -63,7 +63,7 @@ class Login extends React.Component {
                 </h3>
                 <p className="lead text-white">
                 Energy Optimizer helps enterprises save energy and reduce emissions.
-              5 tons of carbon dioxide emmited per 10,000 kGH of power generation.
+              5 tons of carbon dioxide emmited per 10,000 KGH of power generation.
                 1 million KWH / month.Reduce emissions of 420 tons of carbon dioxide per month.
                 </p>
                 <ul className="list-unstyled mt-5">
