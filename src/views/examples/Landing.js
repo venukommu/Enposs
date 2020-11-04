@@ -250,7 +250,7 @@ class Landing extends React.Component {
             </Container>
           </section>
           <Carousel />
-            <section className="section section-lg">
+            <section className="section">
              {/*<Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
