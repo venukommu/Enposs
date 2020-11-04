@@ -22,7 +22,6 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardBody,
@@ -84,8 +83,7 @@ class Landing extends React.Component {
                       ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
                       Support to our customers in North America, Central America, and South America. 
                       ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                      sales, partners, representatives, dealers, and distributors. ENPOSS America,
-                       Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                      sales, partners, representatives, dealers, and distributors.
                       </p>
                       <div className="btn-wrapper">
                         <Button
@@ -253,7 +251,7 @@ class Landing extends React.Component {
           </section>
           <Carousel />
             <section className="section section-lg">
-            <Container>
+             {/*<Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
@@ -262,7 +260,7 @@ class Landing extends React.Component {
                     src={require("assets/img/theme/en bulb.jpg")}
                   />
                 </Col>
-               <Col className="order-md-1" md="6">
+              <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
@@ -324,7 +322,7 @@ class Landing extends React.Component {
                   </div>
                         </Col>
               </Row>
-             </Container>
+             </Container>*/}
           </section>
           <section className="section bg-secondary">
             <Container>
