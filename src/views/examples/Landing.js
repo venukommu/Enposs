@@ -502,9 +502,7 @@ class Landing extends React.Component {
                 <Col lg="8">
                   <h2 className="display-3">The amazing Team</h2>
                   <p className="lead text-muted">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
+                  Teamwork is the ability to work together toward a common vision, the ability to direct individual accomplishments toward organizational objectives. 
                   </p>
                 </Col>
               </Row>
@@ -689,16 +687,15 @@ class Landing extends React.Component {
                   <Row className="align-items-center">
                     <Col lg="8">
                       <h3 className="text-white">
-                        We made website building easier for you.
+                      Force power-saving technology
                       </h3>
                       <p className="lead text-white mt-3">
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
+                      Force power-saving device has won the title of National Excellent 
+                      Product and the Green Technology Certification Award issued by the Korean State. 
                       </p>
                     </Col>
                     <Col className="ml-lg-auto" lg="3">
-                      <Button
+                      {/*<Button
                         block
                         className="btn-white"
                         color="default"
@@ -706,7 +703,7 @@ class Landing extends React.Component {
                         size="lg"
                       >
                         Download React
-                      </Button>
+                      </Button>*/}
                     </Col>
                   </Row>
                 </div>
