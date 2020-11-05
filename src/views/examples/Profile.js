@@ -149,7 +149,7 @@ class Profile extends React.Component {
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
-                        <p>
+                        <p style={{ textAlign : "justify"}}>
                         ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective energy saving 
                         technology into our ENPOSS system and sold all different size of system to worldwide market including USA, 
                         China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries. ENPOSS is continuously
