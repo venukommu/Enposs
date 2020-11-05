@@ -1,5 +1,18 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+//import img from './main2.jpg'; // Tell webpack this JS file uses this image
+//import logo from './logo.png'; // Tell webpack this JS file uses this image
+import {
+  Button,
+  Label,
+  FormGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 
 class App extends React.Component {
   // State of your application
@@ -33,7 +46,7 @@ class App extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({products });
+      this.setState({ products });
     } catch (error) {
       this.setState({ error });
     }
@@ -49,12 +62,11 @@ class App extends React.Component {
 
     return (
       <div>
-
-          {this.state.products.map(product => (
-            <p className="lead text-white"
-            style={{ textAlign : "justify" }}>{product.description}
-            </p>
-          ))}
+        {this.state.products.map(product => (
+          <p className="lead text-white" style={{ textAlign : "justify" }}>
+            {product.description}
+          </p>
+        ))}
       </div>
     );
   }
