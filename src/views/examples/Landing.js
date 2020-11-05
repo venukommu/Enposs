@@ -272,7 +272,7 @@ class Landing extends React.Component {
                     </div> */}
                     <h3>Awesome features</h3>
                     <p>
-                    ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -318,7 +318,7 @@ class Landing extends React.Component {
                   </div>
                         </Col>
               </Row>
-             </Container>*/}
+             </Container>
           </section>
           <section className="section bg-secondary">
             <Container>
