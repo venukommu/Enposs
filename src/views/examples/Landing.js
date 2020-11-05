@@ -37,8 +37,6 @@ import Login from "../IndexSections/Login.js";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import ProductList from "components/Products/ProductList.js";
-
 
 // index page sections
 import Download from "../IndexSections/Download.js";
@@ -82,14 +80,13 @@ class Landing extends React.Component {
                       ENPOSS Inc {" "}
                         {/*<span>completed with examples</span>*/}
                       </h1>
-                      < ProductList />
-                      {/*<p className="lead text-white"
+                      <p className="lead text-white"
                       style={{ textAlign : "justify" }}>
                       ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
                       Support to our customers in North America, Central America, and South America. 
                       ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                       sales, partners, representatives, dealers, and distributors.
-                      </p>*/}
+                      </p>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
