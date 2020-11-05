@@ -268,9 +268,9 @@ class Landing extends React.Component {
                 </Col>
                <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+                    {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
-                    </div>
+                    </div> */}
                     <h3>Awesome features</h3>
                     <p>
                     ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
@@ -337,7 +337,7 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/Three Circles.png")}
+                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -357,47 +357,37 @@ class Landing extends React.Component {
                           points="0,42 583,95 683,0 0,95"
                         />
                       </svg>
-                      {/*<h4 className="display-3 font-weight-bold text-white">
-                        Design System
+                      <h4 className="display-3 font-weight-bold text-white">
+                        FORCE System
                       </h4>
                       <p className="lead text-italic text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
-              </p>*/}
+                      Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, and reduces leakage.
+                      </p>
                     </blockquote>
                   </Card>
                 </Col>
-                <Col md="6" id="products">
+                <Col md="6">
                   <div className="pl-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                    {/*<div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
-                    </div>
-                    <h3>Products & Services</h3>
-                    <p className="lead" style={{textAlign : "justify"}}>
-                    Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                          increase their population, reduces leakage and current driven harmonic distortion.Also, 
-                          it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, 
-                          Solar system and much more. We offer the installation and maintenance service for the purchase 
-                          or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site. 
-                    </p>
-                    {/*<p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                    </div>*/}
+                    <h3>Our customers</h3>
+                    <p className="lead">
+                    Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.
                     </p>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>*/}
-                    {/*<a
+                    Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.
+                    </p>
+                    <p>
+                    We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.
+                    </p>
+                    <a
                       className="font-weight-bold text-warning mt-5"
                       href="#pablo"
                       onClick={e => e.preventDefault()}
                     >
                       A beautiful UI Kit for impactful websites
-                    </a>*/}
+                    </a>
                   </div>
                 </Col>
               </Row>
