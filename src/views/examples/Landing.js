@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
+  Badge,
   Button,
   Card,
   CardBody,
@@ -255,7 +256,7 @@ class Landing extends React.Component {
           </section>
           <Carousel />
             <section className="section">
-             {/*<Container>
+             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
@@ -277,10 +278,7 @@ class Landing extends React.Component {
                       <li className="py-2">
                         <div className="d-flex align-items-center">
                           <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
+                            <Badge className="badge-circle mr-3" color="success">
                               <i className="ni ni-settings-gear-65" />
                             </Badge>
                           </div>
@@ -293,10 +291,7 @@ class Landing extends React.Component {
                       <li className="py-2">
                         <div className="d-flex align-items-center">
                           <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
+                            <Badge className="badge-circle mr-3" color="success">
                               <i className="fa fa-plug" />
                             </Badge>
                           </div>
@@ -308,10 +303,7 @@ class Landing extends React.Component {
                       <li className="py-2">
                         <div className="d-flex align-items-center">
                           <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
+                            <Badge className="badge-circle mr-3" color="success">
                               <i className="ni ni-satisfied" />
                             </Badge>
                           </div>
