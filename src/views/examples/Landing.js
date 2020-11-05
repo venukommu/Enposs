@@ -376,7 +376,7 @@ class Landing extends React.Component {
                       href="#pablo"
                       onClick={e => e.preventDefault()}
                     >
-                      A beautiful UI Kit for impactful websites
+                      {/*A beautiful UI Kit for impactful websites*/}
                     </a>
                   </div>
                 </Col>

@@ -198,7 +198,7 @@ class DemoNavbar extends React.Component {
                 </Nav> */}
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/landing" tag={Link} nav>
+                    <DropdownToggle to="/" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">HOME</span>
                     </DropdownToggle>
