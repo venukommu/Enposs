@@ -52,7 +52,7 @@ class Carousel extends React.Component {
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
                 <h4 className="text-white font-weight-light">
-                International Leading Technology Independent Research And Development Patent              </h4>
+                International Leading Technology Independent Research And Development Patent</h4>
                 <p className="lead text-white mt-4">
                Power Quality emprovement system <br></br>
                Quality Improvement System transforms the corporate power environment to help companies save energy.

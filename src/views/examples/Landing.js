@@ -22,7 +22,6 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardBody,
@@ -85,8 +84,7 @@ class Landing extends React.Component {
                       ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
                       Support to our customers in North America, Central America, and South America. 
                       ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                      sales, partners, representatives, dealers, and distributors. ENPOSS America,
-                       Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
+                      sales, partners, representatives, dealers, and distributors.
                       </p>
                       <div className="btn-wrapper">
                         <Button
@@ -256,8 +254,8 @@ class Landing extends React.Component {
             </Container>
           </section>
           <Carousel />
-            <section className="section section-lg">
-            <Container>
+            <section className="section">
+             {/*<Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
@@ -266,7 +264,7 @@ class Landing extends React.Component {
                     src={require("assets/img/theme/en bulb.jpg")}
                   />
                 </Col>
-               <Col className="order-md-1" md="6">
+              <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
@@ -328,7 +326,7 @@ class Landing extends React.Component {
                   </div>
                         </Col>
               </Row>
-             </Container>
+             </Container>*/}
           </section>
           <section className="section bg-secondary">
             <Container>
@@ -498,9 +496,7 @@ class Landing extends React.Component {
                 <Col lg="8">
                   <h2 className="display-3">The amazing Team</h2>
                   <p className="lead text-muted">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
+                  Teamwork is the ability to work together toward a common vision, the ability to direct individual accomplishments toward organizational objectives. 
                   </p>
                 </Col>
               </Row>
@@ -516,7 +512,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
+                        <small className="h6 text-muted">Electric Engineer</small>
                       </h5>
                       <div className="mt-3">
                         <Button
@@ -559,7 +555,7 @@ class Landing extends React.Component {
                       <h5 className="title">
                         <span className="d-block mb-1">Romina Hadid</span>
                         <small className="h6 text-muted">
-                          Marketing Strategist
+                          Power Engineer
                         </small>
                       </h5>
                       <div className="mt-3">
@@ -602,7 +598,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
+                        <small className="h6 text-muted">Maintainence Engineer</small>
                       </h5>
                       <div className="mt-3">
                         <Button
@@ -685,16 +681,15 @@ class Landing extends React.Component {
                   <Row className="align-items-center">
                     <Col lg="8">
                       <h3 className="text-white">
-                        We made website building easier for you.
+                      Force power-saving technology
                       </h3>
                       <p className="lead text-white mt-3">
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
+                      Force power-saving device has won the title of National Excellent 
+                      Product and the Green Technology Certification Award issued by the Korean State. 
                       </p>
                     </Col>
                     <Col className="ml-lg-auto" lg="3">
-                      <Button
+                      {/*<Button
                         block
                         className="btn-white"
                         color="default"
@@ -702,7 +697,7 @@ class Landing extends React.Component {
                         size="lg"
                       >
                         Download React
-                      </Button>
+                      </Button>*/}
                     </Col>
                   </Row>
                 </div>
