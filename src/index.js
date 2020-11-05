@@ -42,7 +42,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/" exact render={props => <Landing {...props} />} />
       <Route
-        path="/landing"
+        path="/"
         exact
         render={props => <Landing {...props} />}
       />

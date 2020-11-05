@@ -81,7 +81,7 @@ class ForceSystem extends React.Component {
                     <Col lg="4">
                         <img
                             alt="..."                          
-                            src={require("assets/img/theme/u02_0.png")}
+                            src={require("assets/img/theme/u02_00.jpg")}
                           />
                     </Col>
                   </Row>
