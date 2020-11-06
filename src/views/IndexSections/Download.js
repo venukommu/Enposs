@@ -22,7 +22,49 @@ import React from "react";
 import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 
 class Download extends React.Component {
+  state = {
+    downloadcontents: [],
+    error: null,
+ }
+
+// Fetch your restaurants immediately after the component is mounted
+componentDidMount = async () => {
+  // Parses the JSON returned by a network request
+  const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+  // Checks if a network request came back fine, and throws an error if not
+  const checkStatus = resp => {
+    if (resp.status >= 200 && resp.status < 300) {
+      return resp;
+    }
+    return parseJSON(resp).then(resp => {
+      throw resp;
+    });
+  };
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+
+  try {
+    const downloadcontents = await fetch('http://localhost:1337/downloadcontent', {
+      method: 'GET',
+      headers: headers,
+    })
+      .then(checkStatus)
+      .then(parseJSON);
+    this.setState({ downloadcontents });
+  } catch (error) {
+    this.setState({ error });
+  }
+};
   render() {
+    console.log(this.state);
+    const { error, item } = this.state;
+
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
          <section className="section section-lg">
@@ -30,14 +72,13 @@ class Download extends React.Component {
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
                 <h2 className="display-3">
-                Demand for power-saving of enterprises and private are becoming increasingly urgent.{" "}
+              {this.state.downloadcontents.Title}{" "}
                   {/*<span className="text-success">
                     Design System for Bootstrap 4?
     </span>*/}
                 </h2>
                 <p className="lead">
-                Nowadays, the power-saving market is growing fast. Force power-saving device is very convenient and easy to install.
-With core technology products independently researched and developed, protecting the environment and customer interests are our company's goals, realizing global layout and fulfilling the world's environmental protection obligations.
+                {this.state.downloadcontents.description}
                 </p>
                 {/*<div className="btn-wrapper">
                   <Button
