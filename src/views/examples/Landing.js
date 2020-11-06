@@ -37,19 +37,71 @@ import Login from "../IndexSections/Login.js";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import ProductList from "components/Products/ProductList.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
 
 class Landing extends React.Component {
-  state = {};
-  componentDidMount() {
+  
+  state = {
+    homepagebanner: [],
+    homepagevizards: [],
+    error: null,
+  };
+
+  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-  }
+
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const homepagebanner = await fetch('http://localhost:1337/homepagebanner', {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ homepagebanner });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const homepagevizards = await fetch('http://localhost:1337/homepagevizards', {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ homepagevizards });
+    } catch (error) {
+      this.setState({ error });
+    }
+  };
+  
   render() {
+    const { error} = this.state;
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
+
+    //console.log(homepagebanner.image);
     return (
       <>
         <DemoNavbar />
@@ -75,20 +127,25 @@ class Landing extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                  <Row>
+                <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">
-                      ENPOSS Inc {" "}
-                        {/*<span>completed with examples</span>*/}
-                      </h1>
-                      < ProductList />
-                      {/*<p className="lead text-white"
-                      style={{ textAlign : "justify" }}>
-                      ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
-                      Support to our customers in North America, Central America, and South America. 
-                      ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                      sales, partners, representatives, dealers, and distributors.
-                      </p>*/}
+                    {/*< ProductList />*/}
+                    
+                      <div>
+                        <h1 className="display-3 text-white">
+                        {this.state.homepagebanner.title}
+                        {/*ENPOSS Inc {" "}*/}
+                          {/*<span>completed with examples</span>*/}
+                        </h1>
+                        <p className="lead text-white"
+                        style={{ textAlign : "justify" }}>
+                        {this.state.homepagebanner.description}
+                        {/*ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
+                        Support to our customers in North America, Central America, and South America. 
+                        ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
+                        sales, partners, representatives, dealers, and distributors.*/}
+                        </p>
+                      </div>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
@@ -98,7 +155,7 @@ class Landing extends React.Component {
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">Force System</span>
+                          <span className="btn-inner--text">{/*Force System*/}{this.state.homepagebanner.forcesystem}</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -109,7 +166,7 @@ class Landing extends React.Component {
                             <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            Energy Saving
+                            {/*Energy Saving*/}{this.state.homepagebanner.energysaving}
                           </span>
                         </Button>
                       </div>
@@ -141,20 +198,49 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
+                    {this.state.homepagevizards.map(vizards => (
+                      <Col lg="4" key={vizards.id}>
+                        <Card className="card-lift--hover shadow border-0">
+                          <CardBody className="py-5">
+                            <div className={'icon icon-shape icon-shape-' + vizards.classname + ' rounded-circle mb-4'}>
+                              <i className={vizards.iconname} />
+                            </div>
+                              <h6 className={"text-" + vizards.classname + " text-uppercase"}>
+                                {/*About Company*/}
+                                {vizards.title}
+                              </h6>
+                              <p className="description mt-3"
+                              style={{ textAlign : "justify" }}>
+                              {vizards.description}
+                              </p>
+                            <Button to="/about" tag={Link}
+                              className="mt-4"
+                              color={vizards.classname}
+                              //href="#pablo"
+                              //onClick={e => e.preventDefault()}
+                            >
+                              Read More
+                            </Button>
+                          </CardBody>
+                        </Card>
+                      </Col>
+                    ))}
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-check-bold" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
-                            About Company
-                          </h6>
-                          <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
-                     energy saving technology into our ENPOSS system.
-                          </p>
+                          <div>
+                            <h6 className="text-primary text-uppercase">
+                              About Company
+                            </h6>
+                            <p className="description mt-3"
+                            style={{ textAlign : "justify" }}>
+                            ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                      energy saving technology into our ENPOSS system.
+                            </p>
+                          </div>
                           {/*<div>
                             <Badge color="primary" pill className="mr-1">
                               design
@@ -165,7 +251,7 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>*/}
+                          </div>
                           
                           <Button to="/about" tag={Link}
                             className="mt-4"
@@ -184,14 +270,17 @@ class Landing extends React.Component {
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
                             <i className="fa fa-product-hunt" />
                           </div>
-                          <h6 className="text-success text-uppercase">
-                          PRODUCTS & SERVICES 
-                          </h6>
-                          <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                          increase their population. 
-                          </p>
+                          <div>
+                            <h6 className="text-success text-uppercase">
+                            PRODUCTS & SERVICES
+                            </h6>
+                            <p className="description mt-3"
+                            style={{ textAlign : "justify" }}>
+                            Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
+                            increase their population.
+                            
+                            </p>
+                          </div>
                           {/*<div>
                             <Badge color="success" pill className="mr-1">
                               business
@@ -202,7 +291,7 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button
                             className="mt-4"
                             color="success"
@@ -221,6 +310,7 @@ class Landing extends React.Component {
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
                             <i className="fa fa-plug" />
                           </div>
+                          <div>
                           <h6 className="text-warning text-uppercase">
                             Force System
                           </h6>
@@ -229,6 +319,7 @@ class Landing extends React.Component {
                           Single-phase power simultaneously changes the supply voltage of an AC power by a system  
                           and it is also known as “residential voltage”.
                           </p>
+                          </div>
                           {/*<div>
                             <Badge color="warning" pill className="mr-1">
                               marketing
@@ -239,7 +330,7 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button to="/forceSystem" tag={Link}
                             className="mt-4"
                             color="warning"
@@ -250,7 +341,7 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                        </Col>
+                      </Col>*/}
                   </Row>
                 </Col>
               </Row>
