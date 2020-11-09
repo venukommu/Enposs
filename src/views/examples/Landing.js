@@ -46,6 +46,8 @@ class Landing extends React.Component {
   state = {
     homepagebanner: [],
     homepagewidgets: [],
+    ourcustomers: [],
+    productimage: [],
     error: null,
   };
 
@@ -92,16 +94,26 @@ class Landing extends React.Component {
     } catch (error) {
       this.setState({ error });
     }
+    try {
+      const ourcustomers = await fetch('http://localhost:1337/our-customers', {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ ourcustomers, productimage:ourcustomers.image });
+    } catch (error) {
+      this.setState({ error });
+    }
+
   };
   
   render() {
-    const { error} = this.state;
+    const { error,productimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-
-    //console.log(homepagebanner.image);
     return (
       <>
         <DemoNavbar />
@@ -420,7 +432,8 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                      //src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                      src={`http://localhost:1337${productimage.url}`}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -441,11 +454,10 @@ class Landing extends React.Component {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                        FORCE System
+                      {this.state.ourcustomers.imagetitle}
                       </h4>
                       <p className="lead text-italic text-white">
-                      Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, and reduces leakage.
-                      </p>
+                      {this.state.ourcustomers.imagedescription}</p>
                     </blockquote>
                   </Card>
                 </Col>
@@ -454,15 +466,9 @@ class Landing extends React.Component {
                     {/*<div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>*/}
-                    <h3>Our customers</h3>
-                    <p className="lead">
-                    Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.
-                    </p>
-                    <p>
-                    Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.
-                    </p>
-                    <p>
-                    We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.
+                    <h3>{this.state.ourcustomers.title}</h3>
+                    <p className="lead"  style={{ textAlign : "justify" }}>
+                    {this.state.ourcustomers.description}
                     </p>
                     <a
                       className="font-weight-bold text-warning mt-5"
