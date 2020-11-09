@@ -37,6 +37,7 @@ import Login from "../IndexSections/Login.js";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
@@ -48,6 +49,7 @@ class Landing extends React.Component {
     homepagewidgets: [],
     ourcustomers: [],
     productimage: {},
+    homepageimage: [],
     error: null,
   };
 
@@ -72,19 +74,19 @@ class Landing extends React.Component {
     };
 
     try {
-      const homepagebanner = await fetch('http://localhost:1337/homepagebanner', {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/homepagebanner`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner });
+      this.setState({ homepagebanner, homepageimage : homepagebanner.image });
     } catch (error) {
       this.setState({ error });
     }
 
     try {
-      const homepagewidgets = await fetch('http://localhost:1337/homepagewidgets', {
+      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepagewidgets`, {
         method: 'GET',
         headers: headers,
       })
@@ -95,7 +97,7 @@ class Landing extends React.Component {
       this.setState({ error });
     }
     try {
-      const ourcustomers = await fetch('http://localhost:1337/our-customers', {
+      const ourcustomers = await fetch(`${appConfig.apiURL}/our-customers`, {
         method: 'GET',
         headers: headers,
       })
@@ -109,7 +111,7 @@ class Landing extends React.Component {
   };
   
   render() {
-    const { error,productimage} = this.state;
+    const { error,homepagebanner,productimage,homepageimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -124,8 +126,7 @@ class Landing extends React.Component {
               <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage:
-              "url(" + require("assets/img/theme/main1.jpg") + ")",
+                backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />
                 <span />
@@ -145,13 +146,13 @@ class Landing extends React.Component {
                     
                       <div>
                         <h1 className="display-3 text-white">
-                        {this.state.homepagebanner.title}
+                        {homepagebanner.title}
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
                         </h1>
                         <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                        {this.state.homepagebanner.description}
+                        {homepagebanner.description}
                         {/*ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
                         Support to our customers in North America, Central America, and South America. 
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
@@ -167,7 +168,7 @@ class Landing extends React.Component {
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">{/*Force System*/}{this.state.homepagebanner.forcesystem}</span>
+                          <span className="btn-inner--text">{/*Force System*/}{homepagebanner.forcesystem}</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -178,7 +179,7 @@ class Landing extends React.Component {
                             <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            {/*Energy Saving*/}{this.state.homepagebanner.energysaving}
+                            {/*Energy Saving*/}{homepagebanner.energysaving}
                           </span>
                         </Button>
                       </div>
