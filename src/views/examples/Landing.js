@@ -47,7 +47,7 @@ class Landing extends React.Component {
     homepagebanner: [],
     homepagewidgets: [],
     ourcustomers: [],
-    productimage: [],
+    productimage: {},
     error: null,
   };
 
