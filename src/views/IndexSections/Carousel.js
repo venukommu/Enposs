@@ -73,7 +73,7 @@ class Carousel extends React.Component {
   };
 
   render() {
-    const { error, item } = this.state;
+    const { error} = this.state;
 
     // Print errors if any
     if (error) {

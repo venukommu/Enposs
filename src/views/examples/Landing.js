@@ -45,7 +45,7 @@ class Landing extends React.Component {
   
   state = {
     homepagebanner: [],
-    homepagevizards: [],
+    homepagewidgets: [],
     error: null,
   };
 
@@ -82,13 +82,13 @@ class Landing extends React.Component {
     }
 
     try {
-      const homepagevizards = await fetch('http://localhost:1337/homepagevizards', {
+      const homepagewidgets = await fetch('http://localhost:1337/homepagewidgets', {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagevizards });
+      this.setState({ homepagewidgets });
     } catch (error) {
       this.setState({ error });
     }
@@ -198,24 +198,24 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.homepagevizards.map(vizards => (
-                      <Col lg="4" key={vizards.id}>
+                    {this.state.homepagewidgets.map(widgets => (
+                      <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
                           <CardBody className="py-5">
-                            <div className={'icon icon-shape icon-shape-' + vizards.classname + ' rounded-circle mb-4'}>
-                              <i className={vizards.iconname} />
+                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-4'}>
+                              <i className={widgets.iconname} />
                             </div>
-                              <h6 className={"text-" + vizards.classname + " text-uppercase"}>
+                              <h6 className={"text-" + widgets.classname + " text-uppercase"}>
                                 {/*About Company*/}
-                                {vizards.title}
+                                {widgets.title}
                               </h6>
                               <p className="description mt-3"
                               style={{ textAlign : "justify" }}>
-                              {vizards.description}
+                              {widgets.description}
                               </p>
                             <Button to="/about" tag={Link}
                               className="mt-4"
-                              color={vizards.classname}
+                              color={widgets.classname}
                               //href="#pablo"
                               //onClick={e => e.preventDefault()}
                             >
