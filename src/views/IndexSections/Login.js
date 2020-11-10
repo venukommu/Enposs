@@ -19,6 +19,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {
@@ -63,7 +64,7 @@ componentDidMount = async () => {
   };
 
   try {
-    const awesomefeatures = await fetch('http://localhost:1337/awesome-features', {
+    const awesomefeatures = await fetch(`${appConfig.apiURL}/awesome-features`, {
       method: 'GET',
       headers: headers,
     })

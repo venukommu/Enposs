@@ -17,6 +17,7 @@
 */
 /*eslint-disable*/
 import React from "react";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
@@ -46,7 +47,7 @@ componentDidMount = async () => {
   };
 
   try {
-    const downloadcontents = await fetch('http://localhost:1337/downloadcontent', {
+    const downloadcontents = await fetch(`${appConfig.apiURL}/download-content`, {
       method: 'GET',
       headers: headers,
     })

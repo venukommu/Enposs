@@ -16,6 +16,7 @@
 
 */
 import React from "react";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
@@ -60,7 +61,7 @@ class Carousel extends React.Component {
     };
 
     try {
-      const carouselcontent = await fetch('http://localhost:1337/carouselcontent', {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/carousel-content`, {
         method: 'GET',
         headers: headers,
       })

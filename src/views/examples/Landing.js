@@ -74,19 +74,19 @@ class Landing extends React.Component {
     };
 
     try {
-      const homepagebanner = await fetch(`${appConfig.apiURL}/homepagebanner`, {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage-banner`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner, homepageimage : homepagebanner.image });
+      this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
     } catch (error) {
       this.setState({ error });
     }
 
     try {
-      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepagewidgets`, {
+      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepage-widgets`, {
         method: 'GET',
         headers: headers,
       })
@@ -146,7 +146,7 @@ class Landing extends React.Component {
                     
                       <div>
                         <h1 className="display-3 text-white">
-                        {homepagebanner.title}
+                        {homepagebanner.Title}
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
                         </h1>
@@ -168,7 +168,7 @@ class Landing extends React.Component {
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">{/*Force System*/}{homepagebanner.forcesystem}</span>
+                          <span className="btn-inner--text">{/*Force System*/}{homepagebanner.forcesystembutton}</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -179,7 +179,7 @@ class Landing extends React.Component {
                             <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            {/*Energy Saving*/}{homepagebanner.energysaving}
+                            {/*Energy Saving*/}{homepagebanner.energysavingbutton}
                           </span>
                         </Button>
                       </div>
@@ -220,7 +220,7 @@ class Landing extends React.Component {
                             </div>
                               <h6 className={"text-" + widgets.classname + " text-uppercase"}>
                                 {/*About Company*/}
-                                {widgets.title}
+                                {widgets.Title}
                               </h6>
                               <p className="description mt-3"
                               style={{ textAlign : "justify" }}>
