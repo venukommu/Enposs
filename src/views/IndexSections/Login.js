@@ -64,7 +64,7 @@ componentDidMount = async () => {
   };
 
   try {
-    const awesomefeatures = await fetch(`${appConfig.apiURL}/awesome-features`, {
+    const awesomefeatures = await fetch(`${appConfig.apiURL}/features`, {
       method: 'GET',
       headers: headers,
     })

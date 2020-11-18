@@ -50,6 +50,8 @@ class Landing extends React.Component {
     ourcustomers: [],
     productimage: {},
     homepageimage: [],
+    force: [],
+    forceimage: {},
     error: null,
   };
 
@@ -74,7 +76,7 @@ class Landing extends React.Component {
     };
 
     try {
-      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage-banner`, {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
         method: 'GET',
         headers: headers,
       })
@@ -86,7 +88,7 @@ class Landing extends React.Component {
     }
 
     try {
-      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepage-widgets`, {
+      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepagewidgets`, {
         method: 'GET',
         headers: headers,
       })
@@ -97,7 +99,7 @@ class Landing extends React.Component {
       this.setState({ error });
     }
     try {
-      const ourcustomers = await fetch(`${appConfig.apiURL}/our-customers`, {
+      const ourcustomers = await fetch(`${appConfig.apiURL}/ourcustomers`, {
         method: 'GET',
         headers: headers,
       })
@@ -108,10 +110,22 @@ class Landing extends React.Component {
       this.setState({ error });
     }
 
+    try {
+      const force = await fetch(`${appConfig.apiURL}/force`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ force, forceimage:force.image });
+    } catch (error) {
+      this.setState({ error });
+    }
+
   };
   
   render() {
-    const { error,homepagebanner,productimage,homepageimage} = this.state;
+    const { error,homepagebanner,productimage,homepageimage,forceimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -467,7 +481,7 @@ class Landing extends React.Component {
                     {/*<div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>*/}
-                    <h3>{this.state.ourcustomers.title}</h3>
+                    <h3>{this.state.ourcustomers.Title}</h3>
                     <p className="lead"  style={{ textAlign : "justify" }}>
                     {this.state.ourcustomers.description}
                     </p>
@@ -491,7 +505,8 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/theme/u02_0.png")}
+                      //src={require("assets/img/theme/u02_0.png")}
+                      src={`http://localhost:1337${forceimage.url}`}
                     />
                   </div>
                 </Col>
@@ -503,7 +518,7 @@ class Landing extends React.Component {
                       </div>
                     </div>
                     <div className="pl-4">
-                      <h4 className="display-3 text-white">Force System</h4>
+                      <h4 className="display-3 text-white"> {this.state.force.title}</h4>
                      {/* <p className="text-white">
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
@@ -521,10 +536,10 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-success">
-                            A Single Phase
+                          {this.state.force.singlephasetitle}
                           </h5>
                           <p style={{textAlign : "justify"}}>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
+                          {this.state.force.singlephasedesc}
                           </p>
                           <a
                             className="text-success"
@@ -547,10 +562,9 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-warning">
-                            Three Phases
+                          {this.state.force.threephasetitle}
                           </h5>
-                          <p style={{textAlign : "justify"}}>Three-phase power can be defined as the common method of alternating current power generation, 
-                          transmission, and distribution.</p>
+                          <p style={{textAlign : "justify"}}>{this.state.force.threephasedesc}</p>
                           <a
                             className="text-warning"
                             href="#pablo"

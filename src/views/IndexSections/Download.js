@@ -47,7 +47,7 @@ componentDidMount = async () => {
   };
 
   try {
-    const downloadcontents = await fetch(`${appConfig.apiURL}/download-content`, {
+    const downloadcontents = await fetch(`${appConfig.apiURL}/downloadcontent`, {
       method: 'GET',
       headers: headers,
     })

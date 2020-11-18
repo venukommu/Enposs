@@ -61,7 +61,7 @@ class Carousel extends React.Component {
     };
 
     try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/carousel-content`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/carouselcontent`, {
         method: 'GET',
         headers: headers,
       })
