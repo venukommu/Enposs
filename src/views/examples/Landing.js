@@ -52,6 +52,8 @@ class Landing extends React.Component {
     homepageimage: [],
     force: [],
     forceimage: {},
+    awesomefeatures:[],
+    awesomefeaturesimage:{},
     error: null,
   };
 
@@ -122,10 +124,22 @@ class Landing extends React.Component {
       this.setState({ error });
     }
 
+    try {
+      const awesomefeatures = await fetch(`${appConfig.apiURL}/awesomefeatures`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ awesomefeatures,awesomefeaturesimage:awesomefeatures.image});
+    } catch (error) {
+      this.setState({ error });
+    }
+
   };
   
   render() {
-    const { error,homepagebanner,productimage,homepageimage,forceimage} = this.state;
+    const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -382,18 +396,18 @@ class Landing extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/en bulb.jpg")}
-                  />
+                    //src={require("assets/img/theme/en bulb.jpg")}
+                    src={`http://localhost:1337${awesomefeaturesimage.url}`}
+                    />
                 </Col>
               <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
                     </div> */}
-                    <h3>Awesome features</h3>
+                    <h3>{this.state.awesomefeatures.Title}</h3>
                     <p>
-                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
-                    </p>
+                    {this.state.awesomefeatures.description}</p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
@@ -404,7 +418,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                            Enposs</h6>
+                            {this.state.awesomefeatures.item1}</h6>
                           </div>
                         </div>
                       </li>
@@ -416,7 +430,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">Force System</h6>
+                            <h6 className="mb-0">{this.state.awesomefeatures.item2}</h6>
                           </div>
                         </div>
                       </li>
@@ -429,8 +443,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Super friendly support team
-                            </h6>
+                            {this.state.awesomefeatures.item3}</h6>
                           </div>
                         </div>
                       </li>
