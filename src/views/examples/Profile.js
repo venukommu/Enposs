@@ -16,6 +16,7 @@
 
 */
 import React from "react";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -25,12 +26,47 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class Profile extends React.Component {
-  componentDidMount() {
+  state = {
+    aboutcompany: [],
+    error: null,
+ }
+ componentDidMount = async () => {
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+  
+    try {
+      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ aboutcompany });
+    } catch (error) {
+      this.setState({ error });
+    }
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-  }
+  };
   render() {
+    const { error} = this.state;
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <DemoNavbar />
@@ -130,7 +166,7 @@ class Profile extends React.Component {
                     <br></br>
                     <br></br>
                     <h3>
-                      About Company{" "}
+                    {this.state.aboutcompany.title}{" "}
                       <span className="font-weight-light"></span>
                     </h3>
                     {/*<div className="h6 font-weight-300">
@@ -150,12 +186,7 @@ class Profile extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p style={{ textAlign : "justify"}}>
-                        ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective energy saving 
-                        technology into our ENPOSS system and sold all different size of system to worldwide market including USA, 
-                        China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries. ENPOSS is continuously
-                         building strong business relations with diverse global energy saving industries. We strive to be effective, 
-                         efficient, while delivering integrity in everything we do. 
-                        We are excited to be in an industry where we can help cut electric energy consumption. 
+                        {this.state.aboutcompany.description}
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}
