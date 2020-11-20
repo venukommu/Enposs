@@ -29,6 +29,8 @@ class Profile extends React.Component {
   state = {
     aboutcompany: [],
     error: null,
+    bannerimage: [],
+    productimage: []
  }
  componentDidMount = async () => {
     const parseJSON = resp => (resp.json ? resp.json() : resp);
@@ -53,7 +55,7 @@ class Profile extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ aboutcompany });
+      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
     } catch (error) {
       this.setState({ error });
     }
@@ -62,7 +64,8 @@ class Profile extends React.Component {
     this.refs.main.scrollTop = 0;
   };
   render() {
-    const { error} = this.state;
+    const { error,bannerimage,productimage} = this.state;
+    console.log("image",productimage);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -77,7 +80,7 @@ class Profile extends React.Component {
             style= {{
                 backgroundPosition: "center",
                 backgroundImage:
-              "url(" + require("assets/img/theme/sky.jpg") + ")",
+                `url(${appConfig.apiURL}${bannerimage.url})`,
                }}>
               <span />
               <span />
@@ -112,11 +115,13 @@ class Profile extends React.Component {
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">
                         <a href="#pablo" onClick={e => e.preventDefault()}>
+                        {productimage.map(name => (
                           <img
                             alt="..."
                             className="rectangle-circle"
-                            src={require("assets/img/theme/u01_1.png")}
-                          />
+                              src={`http://localhost:1337${name.url}`}
+                            />
+                            ))}
                         </a>
                       </div>
                     </Col>

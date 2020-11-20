@@ -53,7 +53,7 @@ class Landing extends React.Component {
     force: [],
     forceimage: {},
     awesomefeatures:[],
-    awesomefeaturesimage:{},
+    awesomefeaturesimage: {},
     error: null,
   };
 
@@ -131,7 +131,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ awesomefeatures,awesomefeaturesimage:awesomefeatures.image});
+      this.setState({ awesomefeatures,awesomefeaturesimage:awesomefeatures.image });
     } catch (error) {
       this.setState({ error });
     }
@@ -140,6 +140,7 @@ class Landing extends React.Component {
   
   render() {
     const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
+
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
