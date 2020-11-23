@@ -65,7 +65,6 @@ class Profile extends React.Component {
   };
   render() {
     const { error,bannerimage,productimage} = this.state;
-    console.log("image",productimage);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
