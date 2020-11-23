@@ -19,18 +19,56 @@ import React from "react";
 
 // reactstrap components
 import { Card, CardBody, Container, Row, Col } from "reactstrap";
+import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class ForcePilotFinalReport extends React.Component {
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+  state = {
+    finalreportcontent: [],
+    images: {},
+    error: null,
   }
-  render() {
+  componentDidMount = async () => {
+     // Parses the JSON returned by a network request
+     const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+     // Checks if a network request came back fine, and throws an error if not
+     const checkStatus = resp => {
+       if (resp.status >= 200 && resp.status < 300) {
+         return resp;
+       }
+       return parseJSON(resp).then(resp => {
+         throw resp;
+       });
+     };
+     const headers = {
+       'Content-Type': 'application/json',
+     };
+ 
+     try {
+       const finalreportcontent = await fetch(`${appConfig.apiURL}/forcepilotfinalreport`, {
+         method: 'GET',
+         headers: headers,
+       })
+         .then(checkStatus)
+         .then(parseJSON);
+       this.setState({ finalreportcontent, images: finalreportcontent.images });
+     } catch (error) {
+       this.setState({ error });
+     }
+   };
+ 
+   render() {
+     const { error, finalreportcontent, images} = this.state;
+ 
+     // Print errors if any
+     if (error) {
+       return <div>An error occured: {error.message}</div>;
+     }
+     console.log(images);
     return (
       <>
         <DemoNavbar />
@@ -50,8 +88,8 @@ class ForcePilotFinalReport extends React.Component {
               <div className="col px-0">
                 <Row className="align-items-center justify-content-center">
                   <Col className="text-center" lg="6">
-                    <h1 className="display-3 text-white">PROJECT PORTFOLIO </h1>
-                    <h1 className="display-3 text-white">McDonald’s</h1>
+                    <h1 className="display-3 text-white">{finalreportcontent.Title}</h1>
+                    <h1 className="display-3 text-white">{finalreportcontent.subtitle}</h1>
                   </Col>
                 </Row>
               </div>
@@ -77,15 +115,23 @@ class ForcePilotFinalReport extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                  <Row className="justify-content-center">
-                    <Col>
-                          <img 
+                    {Object.values(images).map((item, index) => (
+                      <Row className="justify-content-center" key={index}>
+                      <Col>
+                          <img
+                            alt="..."
+                            src={`http://localhost:1337${item.url}`}
+                            />
+                      
+                      {/*    <img 
                               alt="..."                        
                               src={require("assets/img/theme/A18040103_10004_0.jpg")}
-                          />
-                    </Col>
-                  </Row>
-                  <Row className="justify-content-center">
+                      />*/}
+                      </Col>
+                      </Row>
+                    ))}
+                  
+                  {/*<Row className="justify-content-center">
                   <Col>
                       <img 
                           alt="..."
@@ -132,7 +178,7 @@ class ForcePilotFinalReport extends React.Component {
                           src={require("assets/img/theme/A18040103_10004_6.jpg")}
                       />
                     </Col>
-                  </Row>
+    </Row>*/}
                 </CardBody>
               </Card>
             </Container>
