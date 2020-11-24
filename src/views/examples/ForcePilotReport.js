@@ -31,6 +31,7 @@ class ForcePilotReport extends React.Component {
     reportcontent: [],
     images: {},
     error: null,
+    data: [],
   }
   componentDidMount = async () => {
      // Parses the JSON returned by a network request
@@ -56,14 +57,14 @@ class ForcePilotReport extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ reportcontent, images: reportcontent.images });
+       this.setState({ reportcontent, images: reportcontent.images, data: []});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, reportcontent, images} = this.state;
+     const { error, reportcontent, images, data} = this.state;
  
      // Print errors if any
      if (error) {

@@ -25,12 +25,12 @@ import { appConfig } from "services/config.js";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-var data = [];
 class ForcePilotFinalReport extends React.Component {
   state = {
     finalreportcontent: [],
     images: {},
     error: null,
+    data: [],
   }
   componentDidMount = async () => {
      // Parses the JSON returned by a network request
@@ -56,14 +56,14 @@ class ForcePilotFinalReport extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ finalreportcontent, images: finalreportcontent.images });
+       this.setState({ finalreportcontent, images: finalreportcontent.images, data: []});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, finalreportcontent, images} = this.state;
+     const { error, finalreportcontent, images, data} = this.state;
  
      // Print errors if any
      if (error) {

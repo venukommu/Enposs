@@ -25,12 +25,12 @@ import { appConfig } from "services/config.js";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-var data = [];
 class ForceEnergySavingSystem extends React.Component {
   state = {
     energysystemcontent: [],
     images: {},
     error: null,
+    data: [],
   }
   componentDidMount = async () => {
      // Parses the JSON returned by a network request
@@ -56,14 +56,14 @@ class ForceEnergySavingSystem extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ energysystemcontent, images: energysystemcontent.images });
+       this.setState({ energysystemcontent, images: energysystemcontent.images, data: []});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, energysystemcontent, images} = this.state;
+     const { error, energysystemcontent, images, data} = this.state;
  
      // Print errors if any
      if (error) {

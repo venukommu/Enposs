@@ -26,12 +26,12 @@ import { Card, CardBody,Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-var data = [];
 class Portfolio extends React.Component {
   state = {
     portfoliocontent: [],
     portfolioimage: {},
     error: null,
+    data : [],
   }
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
@@ -57,20 +57,20 @@ class Portfolio extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ portfoliocontent, portfolioimage: portfoliocontent.images });
+      this.setState({ portfoliocontent, portfolioimage: portfoliocontent.images, data: []});
     } catch (error) {
       this.setState({ error });
     }
   };
 
   render() {
-    const { error, portfoliocontent,portfolioimage} = this.state;
+    const { error, portfoliocontent,portfolioimage, data} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-
+    
     for (var val in portfoliocontent.names) {
       for (var [key, value] of Object.entries(portfoliocontent.names[val])) {
         for (var name of Object.values(portfolioimage)) {
