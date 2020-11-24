@@ -17,55 +17,12 @@
 */
 /*eslint-disable*/
 import React from "react";
-import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 
 class Download extends React.Component {
-  state = {
-    downloadcontents: [],
-    error: null,
- }
-
-// Fetch your restaurants immediately after the component is mounted
-componentDidMount = async () => {
-  // Parses the JSON returned by a network request
-  const parseJSON = resp => (resp.json ? resp.json() : resp);
-
-  // Checks if a network request came back fine, and throws an error if not
-  const checkStatus = resp => {
-    if (resp.status >= 200 && resp.status < 300) {
-      return resp;
-    }
-    return parseJSON(resp).then(resp => {
-      throw resp;
-    });
-  };
-  const headers = {
-    'Content-Type': 'application/json',
-  };
-
-  try {
-    const downloadcontents = await fetch(`${appConfig.apiURL}/download-content`, {
-      method: 'GET',
-      headers: headers,
-    })
-      .then(checkStatus)
-      .then(parseJSON);
-    this.setState({ downloadcontents });
-  } catch (error) {
-    this.setState({ error });
-  }
-};
   render() {
-    console.log(this.state);
-    const { error} = this.state;
-
-    // Print errors if any
-    if (error) {
-      return <div>An error occured: {error.message}</div>;
-    }
     return (
       <>
          <section className="section section-lg">
@@ -73,13 +30,14 @@ componentDidMount = async () => {
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
                 <h2 className="display-3">
-              {this.state.downloadcontents.Title}{" "}
+                Demand for power-saving of enterprises and private are becoming increasingly urgent.{" "}
                   {/*<span className="text-success">
                     Design System for Bootstrap 4?
     </span>*/}
                 </h2>
                 <p className="lead">
-                {this.state.downloadcontents.description}
+                Nowadays, the power-saving market is growing fast. Force power-saving device is very convenient and easy to install.
+With core technology products independently researched and developed, protecting the environment and customer interests are our company's goals, realizing global layout and fulfilling the world's environmental protection obligations.
                 </p>
                 {/*<div className="btn-wrapper">
                   <Button

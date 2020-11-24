@@ -37,85 +37,18 @@ import Login from "../IndexSections/Login.js";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import { appConfig } from "services/config.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
 
 class Landing extends React.Component {
-  
-  state = {
-    homepagebanner: [],
-    homepagewidgets: [],
-    ourcustomers: [],
-    productimage: {},
-    homepageimage: [],
-    error: null,
-  };
-
-  componentDidMount = async () => {
+  state = {};
+  componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
-
-    // Checks if a network request came back fine, and throws an error if not
-    const checkStatus = resp => {
-      if (resp.status >= 200 && resp.status < 300) {
-        return resp;
-      }
-      return parseJSON(resp).then(resp => {
-        throw resp;
-      });
-    };
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-
-    try {
-      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage-banner`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-    } catch (error) {
-      this.setState({ error });
-    }
-
-    try {
-      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepage-widgets`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ homepagewidgets });
-    } catch (error) {
-      this.setState({ error });
-    }
-    try {
-      const ourcustomers = await fetch(`${appConfig.apiURL}/our-customers`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ ourcustomers, productimage:ourcustomers.image });
-    } catch (error) {
-      this.setState({ error });
-    }
-
-  };
-  
+  }
   render() {
-    const { error,homepagebanner,productimage,homepageimage} = this.state;
-    // Print errors if any
-    if (error) {
-      return <div>An error occured: {error.message}</div>;
-    }
     return (
       <>
         <DemoNavbar />
@@ -126,7 +59,8 @@ class Landing extends React.Component {
               <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                backgroundImage:
+              "url(" + require("assets/img/theme/main1.jpg") + ")",
                }}>
                 <span />
                 <span />
@@ -140,25 +74,19 @@ class Landing extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                <Row>
+                  <Row>
                     <Col lg="6">
-                    {/*< ProductList />*/}
-                    
-                      <div>
-                        <h1 className="display-3 text-white">
-                        {homepagebanner.Title}
-                        {/*ENPOSS Inc {" "}*/}
-                          {/*<span>completed with examples</span>*/}
-                        </h1>
-                        <p className="lead text-white"
-                        style={{ textAlign : "justify" }}>
-                        {homepagebanner.description}
-                        {/*ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
-                        Support to our customers in North America, Central America, and South America. 
-                        ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                        sales, partners, representatives, dealers, and distributors.*/}
-                        </p>
-                      </div>
+                      <h1 className="display-3 text-white">
+                      ENPOSS Inc {" "}
+                        {/*<span>completed with examples</span>*/}
+                      </h1>
+                      <p className="lead text-white"
+                      style={{ textAlign : "justify" }}>
+                      ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
+                      Support to our customers in North America, Central America, and South America. 
+                      ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
+                      sales, partners, representatives, dealers, and distributors.
+                      </p>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
@@ -168,7 +96,7 @@ class Landing extends React.Component {
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">{/*Force System*/}{homepagebanner.forcesystembutton}</span>
+                          <span className="btn-inner--text">Force System</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -179,7 +107,7 @@ class Landing extends React.Component {
                             <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            {/*Energy Saving*/}{homepagebanner.energysavingbutton}
+                            Energy Saving
                           </span>
                         </Button>
                       </div>
@@ -211,49 +139,20 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.homepagewidgets.map(widgets => (
-                      <Col lg="4" key={widgets.id}>
-                        <Card className="card-lift--hover shadow border-0">
-                          <CardBody className="py-5">
-                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-4'}>
-                              <i className={widgets.iconname} />
-                            </div>
-                              <h6 className={"text-" + widgets.classname + " text-uppercase"}>
-                                {/*About Company*/}
-                                {widgets.Title}
-                              </h6>
-                              <p className="description mt-3"
-                              style={{ textAlign : "justify" }}>
-                              {widgets.description}
-                              </p>
-                            <Button to="/about" tag={Link}
-                              className="mt-4"
-                              color={widgets.classname}
-                              //href="#pablo"
-                              //onClick={e => e.preventDefault()}
-                            >
-                              Read More
-                            </Button>
-                          </CardBody>
-                        </Card>
-                      </Col>
-                    ))}
-                    {/*<Col lg="4">
+                    <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-check-bold" />
                           </div>
-                          <div>
-                            <h6 className="text-primary text-uppercase">
-                              About Company
-                            </h6>
-                            <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
-                            ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
-                      energy saving technology into our ENPOSS system.
-                            </p>
-                          </div>
+                          <h6 className="text-primary text-uppercase">
+                            About Company
+                          </h6>
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
+                          ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                     energy saving technology into our ENPOSS system.
+                          </p>
                           {/*<div>
                             <Badge color="primary" pill className="mr-1">
                               design
@@ -264,7 +163,7 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>
+                          </div>*/}
                           
                           <Button to="/about" tag={Link}
                             className="mt-4"
@@ -283,17 +182,14 @@ class Landing extends React.Component {
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
                             <i className="fa fa-product-hunt" />
                           </div>
-                          <div>
-                            <h6 className="text-success text-uppercase">
-                            PRODUCTS & SERVICES
-                            </h6>
-                            <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
-                            Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                            increase their population.
-                            
-                            </p>
-                          </div>
+                          <h6 className="text-success text-uppercase">
+                          PRODUCTS & SERVICES 
+                          </h6>
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
+                          Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
+                          increase their population. 
+                          </p>
                           {/*<div>
                             <Badge color="success" pill className="mr-1">
                               business
@@ -304,7 +200,7 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>
+                          </div>*/}
                           <Button
                             className="mt-4"
                             color="success"
@@ -323,7 +219,6 @@ class Landing extends React.Component {
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
                             <i className="fa fa-plug" />
                           </div>
-                          <div>
                           <h6 className="text-warning text-uppercase">
                             Force System
                           </h6>
@@ -332,7 +227,6 @@ class Landing extends React.Component {
                           Single-phase power simultaneously changes the supply voltage of an AC power by a system  
                           and it is also known as “residential voltage”.
                           </p>
-                          </div>
                           {/*<div>
                             <Badge color="warning" pill className="mr-1">
                               marketing
@@ -343,7 +237,7 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>
+                          </div>*/}
                           <Button to="/forceSystem" tag={Link}
                             className="mt-4"
                             color="warning"
@@ -354,7 +248,7 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                      </Col>*/}
+                        </Col>
                   </Row>
                 </Col>
               </Row>
@@ -433,8 +327,7 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      //src={require("assets/img/theme/img-1-1200x1000.jpg")}
-                      src={`http://localhost:1337${productimage.url}`}
+                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -455,10 +348,11 @@ class Landing extends React.Component {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                      {this.state.ourcustomers.imagetitle}
+                        FORCE System
                       </h4>
                       <p className="lead text-italic text-white">
-                      {this.state.ourcustomers.imagedescription}</p>
+                      Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, and reduces leakage.
+                      </p>
                     </blockquote>
                   </Card>
                 </Col>
@@ -467,9 +361,15 @@ class Landing extends React.Component {
                     {/*<div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>*/}
-                    <h3>{this.state.ourcustomers.title}</h3>
-                    <p className="lead"  style={{ textAlign : "justify" }}>
-                    {this.state.ourcustomers.description}
+                    <h3>Our customers</h3>
+                    <p className="lead">
+                    Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.
+                    </p>
+                    <p>
+                    Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.
+                    </p>
+                    <p>
+                    We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.
                     </p>
                     <a
                       className="font-weight-bold text-warning mt-5"

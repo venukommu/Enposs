@@ -19,7 +19,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classnames from "classnames";
-import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {
@@ -40,49 +39,8 @@ import {
 } from "reactstrap";
 
 class Login extends React.Component {
-  state = {
-    awesomefeatures: [],
-    error: null,
- }
-
-// Fetch your restaurants immediately after the component is mounted
-componentDidMount = async () => {
-  // Parses the JSON returned by a network request
-  const parseJSON = resp => (resp.json ? resp.json() : resp);
-
-  // Checks if a network request came back fine, and throws an error if not
-  const checkStatus = resp => {
-    if (resp.status >= 200 && resp.status < 300) {
-      return resp;
-    }
-    return parseJSON(resp).then(resp => {
-      throw resp;
-    });
-  };
-  const headers = {
-    'Content-Type': 'application/json',
-  };
-
-  try {
-    const awesomefeatures = await fetch(`${appConfig.apiURL}/awesome-features`, {
-      method: 'GET',
-      headers: headers,
-    })
-      .then(checkStatus)
-      .then(parseJSON);
-    this.setState({ awesomefeatures });
-  } catch (error) {
-    this.setState({ error });
-  }
-};
-  //state = {};
+  state = {};
   render() {
-    const { error} = this.state;
-
-    // Print errors if any
-    if (error) {
-      return <div>An error occured: {error.message}</div>;
-    }
     return (
       <>
         <section className="section section-lg section-shaped">
@@ -100,12 +58,14 @@ componentDidMount = async () => {
             <Row className="row-grid justify-content-between align-items-center">
               <Col lg="6">
                 <h3 className="display-3 text-white">
-                    {this.state.awesomefeatures.Title}
+                Awesome Features{" "}
                   {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
-                    {this.state.awesomefeatures.description}
-                </p>,
+                Energy Optimizer helps enterprises save energy and reduce emissions.
+              5 tons of carbon dioxide emmited per 10,000 KGH of power generation.
+                1 million KWH / month.Reduce emissions of 420 tons of carbon dioxide per month.
+                </p>
                 <ul className="list-unstyled mt-5">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
@@ -119,7 +79,7 @@ componentDidMount = async () => {
                           </div>
                           <div>
                             <h6 className="mb-0 text-white">
-                            {this.state.awesomefeatures.item1}</h6>
+                            Enposs</h6>
                           </div>
                         </div>
                       </li>
@@ -134,7 +94,7 @@ componentDidMount = async () => {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0 text-white">{this.state.awesomefeatures.item2}</h6>
+                            <h6 className="mb-0 text-white">Force System</h6>
                           </div>
                         </div>
                       </li>
@@ -150,7 +110,7 @@ componentDidMount = async () => {
                           </div>
                           <div>
                             <h6 className="mb-0 text-white">
-                            {this.state.awesomefeatures.item3}
+                              Super friendly support team
                             </h6>
                           </div>
                         </div>
@@ -158,7 +118,7 @@ componentDidMount = async () => {
                     </ul>
                 <div className="btn-wrapper">
                   <Button color="success" to="/login" tag={Link}>
-                    {this.state.awesomefeatures.LoginButton}
+                    Login
                   </Button>
                   <Button
                     className="btn-white"
@@ -166,7 +126,7 @@ componentDidMount = async () => {
                     to="/register"
                     tag={Link}
                   >
-                    {this.state.awesomefeatures.RegisterButton}
+                    Register
                   </Button>
                 </div>
               </Col>
