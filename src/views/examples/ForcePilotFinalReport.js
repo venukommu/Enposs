@@ -25,6 +25,7 @@ import { appConfig } from "services/config.js";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
+var data = [];
 class ForcePilotFinalReport extends React.Component {
   state = {
     finalreportcontent: [],
@@ -67,8 +68,18 @@ class ForcePilotFinalReport extends React.Component {
      // Print errors if any
      if (error) {
        return <div>An error occured: {error.message}</div>;
-     }
-     console.log(images);
+     }    
+    for (var val in finalreportcontent.names) {
+      for (var [key, value] of Object.entries(finalreportcontent.names[val])) {
+        for (var name of Object.values(images)) {
+          var x = name.name;
+          var imagename = x.substr(0, x.lastIndexOf('.'));
+          if (imagename === value) {
+            data.push({url: name.url, imagename : key}) 
+          }
+        }
+      }
+    }
     return (
       <>
         <DemoNavbar />
@@ -115,18 +126,13 @@ class ForcePilotFinalReport extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                    {Object.values(images).map((item, index) => (
+                    {data.map((item, index) => (
                       <Row className="justify-content-center" key={index}>
                       <Col>
                           <img
                             alt="..."
-                            src={`http://localhost:1337${item.url}`}
+                            src={`${appConfig.apiURL}${item.url}`}
                             />
-                      
-                      {/*    <img 
-                              alt="..."                        
-                              src={require("assets/img/theme/A18040103_10004_0.jpg")}
-                      />*/}
                       </Col>
                       </Row>
                     ))}
@@ -178,7 +184,7 @@ class ForcePilotFinalReport extends React.Component {
                           src={require("assets/img/theme/A18040103_10004_6.jpg")}
                       />
                     </Col>
-    </Row>*/}
+                  </Row>*/}
                 </CardBody>
               </Card>
             </Container>

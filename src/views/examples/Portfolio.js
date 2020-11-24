@@ -26,7 +26,7 @@ import { Card, CardBody,Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-
+var data = [];
 class Portfolio extends React.Component {
   state = {
     portfoliocontent: [],
@@ -70,10 +70,18 @@ class Portfolio extends React.Component {
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    console.log(portfoliocontent.names);
-    Object.values(portfolioimage).map((name, index) => (
-      console.log(name.url, index)
-    ))
+
+    for (var val in portfoliocontent.names) {
+      for (var [key, value] of Object.entries(portfoliocontent.names[val])) {
+        for (var name of Object.values(portfolioimage)) {
+          var x = name.name;
+          var imagename = x.substr(0, x.lastIndexOf('.'));
+          if (imagename === value) {
+            data.push({url: name.url, imagename : key}) 
+          }
+        }
+      }
+    }
     return (
       <>
         <DemoNavbar />
@@ -122,14 +130,14 @@ class Portfolio extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {Object.values(portfolioimage).map((name, index) => (
+                    {data.map((name, index) => (
                     <Col lg="4" key={index}>
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" to={`/${portfoliocontent.linknames.item1}`} tag={Link}>
+                        <CardBody className="py-5" to={`/${name.imagename}`} tag={Link}>
                         <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={`http://localhost:1337${name.url}`}
+                            src={`${appConfig.apiURL}${name.url}`}
                           />
                         </CardBody>
                       </Card>
