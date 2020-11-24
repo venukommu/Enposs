@@ -66,11 +66,11 @@ class Contact extends React.Component {
                         <img
                       alt="..."
                       //className="img-center img-fluid"
-                      src={require("assets/img/theme/1586924757_spok.jpg")}
+                      src={require("assets/img/theme/commitments.png")}
                     />
-                        <h5 className="text-white mt-3">COMMITMENTS OF ORIGIN OF PRODUCTS</h5>
+                        <h5 className="text-white mt-3">COMMITMENTS</h5>
                         <p className="text-white mt-3">
-                        SProducts Imported Directly From Enposs Korea.
+                        Products Imported Directly From Enposs Korea.
                         </p>
                     </Col>
                     <Col lg="4">

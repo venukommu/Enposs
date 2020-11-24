@@ -79,7 +79,7 @@ class Profile extends React.Component {
                           <img
                             alt="..."
                             className="rectangle-circle"
-                            src={require("assets/img/theme/u01_1.png")}
+                            src={require("assets/img/brand/logo.png")}
                           />
                         </a>
                       </div>
