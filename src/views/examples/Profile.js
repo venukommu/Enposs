@@ -41,7 +41,7 @@ class Profile extends React.Component {
             style= {{
                 backgroundPosition: "center",
                 backgroundImage:
-              "url(" + require("assets/img/theme/sky.jpg") + ")",
+              "url(" + require("assets/img/theme/skyimage.jpg") + ")",
                }}>
               <span />
               <span />
