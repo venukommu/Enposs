@@ -21,7 +21,7 @@ import { appConfig } from "services/config.js";
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 
-const items = [
+/*const items = [
   {
     src: require("assets/img/theme/bulb.png"),
     altText: "",
@@ -34,11 +34,12 @@ const items = [
     caption: "",
     header: ""
   }
-];
+];*/
 
 class Carousel extends React.Component {
     state = {
       carouselcontent: [],
+      carouselimage: [],
       error: null,
    }
   
@@ -67,19 +68,21 @@ class Carousel extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent });
+      this.setState({ carouselcontent, carouselimage: carouselcontent.carouselimage });
     } catch (error) {
       this.setState({ error });
     }
   };
 
   render() {
-    const { error} = this.state;
+    const { error, carouselimage} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
+    const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`}))
+
     return (
       <>
         <section className="section section-shaped">
