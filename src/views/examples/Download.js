@@ -18,6 +18,7 @@
 import React from "react";
 // reactstrap components
 import { Card, CardBody,Container, Row, Col } from "reactstrap";
+import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -25,12 +26,50 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 
 class Download extends React.Component {
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+  state = {
+    downloadcontent: [],
+    downloadimages: [],
+    imagenames: [],
+    error: null,
   }
-  render() {
+  componentDidMount = async () => {
+     // Parses the JSON returned by a network request
+     const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+     // Checks if a network request came back fine, and throws an error if not
+     const checkStatus = resp => {
+       if (resp.status >= 200 && resp.status < 300) {
+         return resp;
+       }
+       return parseJSON(resp).then(resp => {
+         throw resp;
+       });
+     };
+     const headers = {
+       'Content-Type': 'application/json',
+     };
+ 
+     try {
+       const downloadcontent = await fetch(`${appConfig.apiURL}/downloads`, {
+         method: 'GET',
+         headers: headers,
+       })
+         .then(checkStatus)
+         .then(parseJSON);
+       this.setState({ downloadcontent });
+     } catch (error) {
+       this.setState({ error });
+     }
+   };
+ 
+   render() {
+     const { error, downloadcontent} = this.state;
+ 
+     // Print errors if any
+     if (error) {
+       return <div>An error occured: {error.message}</div>;
+     }
+     console.log(downloadcontent);
     return (
       <>
         <DemoNavbar />
@@ -193,23 +232,35 @@ class Download extends React.Component {
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
-                <Row className="row-grid"><h4 className="text-white">1.Certificate</h4></Row>
+                {/*<Row className="row-grid"><h4 className="text-white">1.Certificate</h4></Row>*/}
+                {downloadcontent.map((download, index) => ( 
+                <div key={index}>   
+                <Row className="row-grid"><h4>{download.Title}</h4></Row>
                   <Row className="row-grid">
-                    <Col lg="4">
+                    {download.images.map((imageurl,i) =>  (
+                    <Col lg="4" key={i}>
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                         <a href ={require('assets/img/pdf-reports/u03_1-1.pdf')} type="application/pdf" rel="noopener noreferrer" target="_blank" >
-                        <img
+                        <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={require("assets/img/theme/u03_1-1.jpg")}
+                            src={`${appConfig.apiURL}${imageurl.url}`}
                           />
                         </a>
                         </CardBody>
                       </Card>
-                      <label>UL Approval Letter</label>
+                      {download.names.map((imagename,k) =>  (
+                        (i === k) ?
+                        <label key={k}>{imagename.imagelabel}</label>
+                        : <label key={k}>{null}</label>
+                      ))}
                     </Col>
-                    <Col lg="4">
+                    ))}
+                  </Row>
+                </div>                  
+                ))}
+                  {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                         <a href ={require('assets/img/pdf-reports/u03_1-2.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
@@ -363,7 +414,7 @@ class Download extends React.Component {
                       </Card>
                       <label>Power Saving Device Mechanism</label>
                     </Col>
-                  </Row>
+                  </Row>*/}
                 </Col>
               </Row>
             </Container>

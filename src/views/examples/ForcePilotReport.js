@@ -25,13 +25,11 @@ import { appConfig } from "services/config.js";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-var data = [];
 class ForcePilotReport extends React.Component {
   state = {
     reportcontent: [],
-    images: {},
+    images: [],
     error: null,
-    data: [],
   }
   componentDidMount = async () => {
      // Parses the JSON returned by a network request
@@ -57,30 +55,20 @@ class ForcePilotReport extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ reportcontent, images: reportcontent.images, data: []});
+       this.setState({ reportcontent, images: reportcontent.images});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, reportcontent, images, data} = this.state;
+     const { error, reportcontent, images} = this.state;
  
      // Print errors if any
      if (error) {
        return <div>An error occured: {error.message}</div>;
      }    
-    for (var val in reportcontent.names) {
-      for (var [key, value] of Object.entries(reportcontent.names[val])) {
-        for (var name of Object.values(images)) {
-          var x = name.name;
-          var imagename = x.substr(0, x.lastIndexOf('.'));
-          if (imagename === value) {
-            data.push({url: name.url, imagename : key}) 
-          }
-        }
-      }
-    }
+    
     return (
       <>
         <DemoNavbar />
@@ -127,7 +115,7 @@ class ForcePilotReport extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                {data.map((item, index) => (
+                {images.map((item, index) => (
                     <Row className="justify-content-center" key={index}>
                       <Col>              
                             <img 

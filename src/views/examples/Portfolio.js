@@ -29,9 +29,9 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class Portfolio extends React.Component {
   state = {
     portfoliocontent: [],
-    portfolioimage: {},
+    portfolioimage: [],
+    imagenames: [],
     error: null,
-    data : [],
   }
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
@@ -57,31 +57,25 @@ class Portfolio extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ portfoliocontent, portfolioimage: portfoliocontent.images, data: []});
+      this.setState({ portfoliocontent, portfolioimage: portfoliocontent.images, imagenames: portfoliocontent.names});
     } catch (error) {
       this.setState({ error });
     }
   };
 
   render() {
-    const { error, portfoliocontent,portfolioimage, data} = this.state;
+    const { error, portfoliocontent,portfolioimage,imagenames} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    
-    for (var val in portfoliocontent.names) {
-      for (var [key, value] of Object.entries(portfoliocontent.names[val])) {
-        for (var name of Object.values(portfolioimage)) {
-          var x = name.name;
-          var imagename = x.substr(0, x.lastIndexOf('.'));
-          if (imagename === value) {
-            data.push({url: name.url, imagename : key}) 
-          }
-        }
-      }
-    }
+
+    const data = portfolioimage.map((val) => {
+      var name = val.name.substr(0, val.name.lastIndexOf('.'));
+      const imageval = imagenames.filter(v => v.image === name).map(v => v.imagename);
+      return {url: `${appConfig.apiURL}${val.url}`, imagename: imageval}
+    });
     return (
       <>
         <DemoNavbar />
@@ -137,7 +131,8 @@ class Portfolio extends React.Component {
                         <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={`${appConfig.apiURL}${name.url}`}
+                            /*src={`${appConfig.apiURL}${name.url}`}*/
+                            src={name.url}
                           />
                         </CardBody>
                       </Card>

@@ -28,9 +28,8 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class ForcePilotFinalReport extends React.Component {
   state = {
     finalreportcontent: [],
-    images: {},
+    images: [],
     error: null,
-    data: [],
   }
   componentDidMount = async () => {
      // Parses the JSON returned by a network request
@@ -56,30 +55,20 @@ class ForcePilotFinalReport extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ finalreportcontent, images: finalreportcontent.images, data: []});
+       this.setState({ finalreportcontent, images: finalreportcontent.images});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, finalreportcontent, images, data} = this.state;
+     const { error, finalreportcontent, images} = this.state;
  
      // Print errors if any
      if (error) {
        return <div>An error occured: {error.message}</div>;
-     }    
-    for (var val in finalreportcontent.names) {
-      for (var [key, value] of Object.entries(finalreportcontent.names[val])) {
-        for (var name of Object.values(images)) {
-          var x = name.name;
-          var imagename = x.substr(0, x.lastIndexOf('.'));
-          if (imagename === value) {
-            data.push({url: name.url, imagename : key}) 
-          }
-        }
-      }
-    }
+     }
+     const image = images.sort();  
     return (
       <>
         <DemoNavbar />
@@ -126,7 +115,7 @@ class ForcePilotFinalReport extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                    {data.map((item, index) => (
+                    {image.map((item, index) => (
                       <Row className="justify-content-center" key={index}>
                       <Col>
                           <img

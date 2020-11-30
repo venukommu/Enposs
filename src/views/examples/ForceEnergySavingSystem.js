@@ -28,9 +28,8 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class ForceEnergySavingSystem extends React.Component {
   state = {
     energysystemcontent: [],
-    images: {},
+    images: [],
     error: null,
-    data: [],
   }
   componentDidMount = async () => {
      // Parses the JSON returned by a network request
@@ -56,32 +55,20 @@ class ForceEnergySavingSystem extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ energysystemcontent, images: energysystemcontent.images, data: []});
+       this.setState({ energysystemcontent, images: energysystemcontent.images});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, energysystemcontent, images, data} = this.state;
+     const { error, energysystemcontent, images} = this.state;
  
      // Print errors if any
      if (error) {
        return <div>An error occured: {error.message}</div>;
      }
     
-    for (var val in energysystemcontent.names) {
-      for (var [key, value] of Object.entries(energysystemcontent.names[val])) {
-        //console.log(key, value);
-        for (var name of Object.values(images)) {
-          var x = name.name;
-          var imagename = x.substr(0, x.lastIndexOf('.'));
-          if (imagename === value) {
-            data.push({url: name.url, imagename : key}) 
-          }
-        }
-      }
-    }
     return (
       <>
         <DemoNavbar />
@@ -128,7 +115,7 @@ class ForceEnergySavingSystem extends React.Component {
             <Container>
               <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                  {data.map((item, index) => (
+                  {images.map((item, index) => (
                     <Row className="justify-content-center" key={index}>
                       <Col>              
                             <img 
