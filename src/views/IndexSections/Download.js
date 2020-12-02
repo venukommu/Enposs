@@ -59,7 +59,6 @@ componentDidMount = async () => {
   }
 };
   render() {
-    console.log(this.state);
     const { error} = this.state;
 
     // Print errors if any

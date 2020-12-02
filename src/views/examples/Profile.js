@@ -114,11 +114,11 @@ class Profile extends React.Component {
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">
                         <a href="#pablo" onClick={e => e.preventDefault()}>
-                        {productimage.map(name => (
-                          <img
+                        {productimage.map((val,index) => (
+                          <img key={index}
                             alt="..."
                             className="rectangle-circle"
-                              src={`http://localhost:1337${name.url}`}
+                              src={`${appConfig.apiURL}${val.url}`}
                             />
                             ))}
                         </a>

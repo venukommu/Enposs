@@ -81,7 +81,8 @@ class Carousel extends React.Component {
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`}))
+    const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
+    caption: ""}))
 
     return (
       <>

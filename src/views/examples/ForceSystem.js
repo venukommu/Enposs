@@ -67,7 +67,7 @@ class ForceSystem extends React.Component {
   }
   render() {
     const { error,forcesystemimage,forceprodimages} = this.state;
-    console.log(forceprodimages);
+
   // Print errors if any
   if (error) {
     return <div>An error occured: {error.message}</div>;
@@ -135,7 +135,7 @@ class ForceSystem extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid">
                   {forceprodimages.map((name, index) => (
-                    <Col lg="4">
+                    <Col lg="4" key={index}>
                       <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5" key={index}>                  
                             <img 
