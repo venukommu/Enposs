@@ -83,8 +83,8 @@ componentDidMount = async () => {
                     </Col>
                     </Row>
                     <Row className="row-grid mt-5">
-                    {this.state.contacts.map(contact => (
-                    <Col lg="4">
+                    {this.state.contacts.map((contact,index) => (
+                    <Col lg="4" key={index}>
                         {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="CardsFooterni ni-settings text-primary" />
                         </div>*/}
