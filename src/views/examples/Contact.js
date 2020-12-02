@@ -15,18 +15,56 @@ import {
   Row,
   Col
 } from "reactstrap";
+import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class Contact extends React.Component {
-  componentDidMount() {
+    state = {
+        contacts: [],
+        contactimages: [],
+        error: null
+     }
+componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-  }
+    
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+  
+    try {
+      const contacts = await fetch(`${appConfig.apiURL}/contacts`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ contacts });
+    } catch (error) {
+      this.setState({ error });
+    }
+  };
   render() {
+    const { error} = this.state;
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <DemoNavbar />
@@ -45,6 +83,7 @@ class Contact extends React.Component {
                     </Col>
                     </Row>
                     <Row className="row-grid mt-5">
+                    {this.state.contacts.map(contact => (
                     <Col lg="4">
                         {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="CardsFooterni ni-settings text-primary" />
@@ -52,18 +91,20 @@ class Contact extends React.Component {
                         <img
                       alt="..."
                       //className="img-center img-fluid"
-                      src={require("assets/img/theme/1578730282_1551667336.png")}
+                      //src={require("assets/img/theme/1578730282_1551667336.png")}
+                      src={`http://localhost:1337${contact.images.url}`}
                     />
-                        <h5 className="text-white mt-3">WARRANTY</h5>
+                        <h5 className="text-white mt-3">{contact.Title}</h5>
                         <p className="text-white mt-3">
-                        8-year equipment warranty (according to the warranty policy).
+                        {contact.description}
                         </p>
                     </Col>
-                    <Col lg="4">
+                ))}
+                    {/*<Col lg="4">*/}
                         {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="ni ni-ruler-pencil text-primary" />
                     </div>*/}
-                        <img
+                        {/* <img
                       alt="..."
                       //className="img-center img-fluid"
                       src={require("assets/img/theme/1586924757_spok.jpg")}
@@ -72,12 +113,12 @@ class Contact extends React.Component {
                         <p className="text-white mt-3">
                         SProducts Imported Directly From Enposs Korea.
                         </p>
-                    </Col>
-                    <Col lg="4">
+                    </Col>*/}
+                    {/*<Col lg="4">*/}
                         {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                         <i className="ni ni-atom text-primary" />
                         </div>*/}
-                        <img
+                      {/*  <img
                       alt="..."
                       //className="img-center img-fluid"
                       src={require("assets/img/theme/1578730282_1551674767.png")}
@@ -86,7 +127,7 @@ class Contact extends React.Component {
                         <p className="text-white mt-3">
                         Replace new equipment ( according to the warranty policy)
                         </p>
-                    </Col>
+                    </Col>*/}
                     </Row>
                 </Container>
                 {/* SVG separator */} 
