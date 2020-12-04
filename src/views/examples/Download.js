@@ -69,7 +69,13 @@ class Download extends React.Component {
      if (error) {
        return <div>An error occured: {error.message}</div>;
      }
-     console.log(downloadcontent);
+     const data = downloadcontent.map(val => {
+      const imagedata = val.images.map((img,k) =>  {
+          return {image: img.url, label: val.names[k].imagelabel, file: val.pdffiles[k].url};
+        });
+      return {title: val.Title, imagedata: imagedata};
+    });
+    
     return (
       <>
         <DemoNavbar />
@@ -233,28 +239,24 @@ class Download extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                 {/*<Row className="row-grid"><h4 className="text-white">1.Certificate</h4></Row>*/}
-                {downloadcontent.map((download, index) => ( 
+                {data.map((download, index) => ( 
                 <div key={index}>   
                 <Row className="row-grid"><h4>{download.Title}</h4></Row>
                   <Row className="row-grid">
-                    {download.images.map((imageurl,i) =>  (
+                  {download.imagedata.map((images, i) =>(
                     <Col lg="4" key={i}>
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={require('assets/img/pdf-reports/u03_1-1.pdf')} type="application/pdf" rel="noopener noreferrer" target="_blank" >
-                        <img 
+                        <a href ={`${appConfig.apiURL}${images.file}`} type="application/pdf" rel="noopener noreferrer" target="_blank" >
+                          <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={`${appConfig.apiURL}${imageurl.url}`}
+                            src={`${appConfig.apiURL}${images.image}`}
                           />
                         </a>
                         </CardBody>
                       </Card>
-                      {download.names.map((imagename,k) =>  (
-                        (i === k) ?
-                        <label key={k}>{imagename.imagelabel}</label>
-                        : <label key={k}>{null}</label>
-                      ))}
+                        <label>{images.label}</label>
                     </Col>
                     ))}
                   </Row>
