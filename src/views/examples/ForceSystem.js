@@ -59,7 +59,7 @@ class ForceSystem extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcesystem, forcesystemimage : forcesystem.image,forceprodimages : forcesystem.images });
+      this.setState({ forcesystem, forcesystemimage : forcesystem.image,forceprodimages : forcesystem.names });
     } catch (error) {
       this.setState({ error });
     }
@@ -141,7 +141,7 @@ class ForceSystem extends React.Component {
                             <img 
                               alt="..."
                               style={{objectFit: "cover", width: "100%"}}
-                              src={`http://localhost:1337${name.url}`}
+                              src={`${appConfig.apiURL}${name.url}`}
                               />
                         </CardBody>
                         </Card>

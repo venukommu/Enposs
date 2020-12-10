@@ -28,7 +28,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class ForceEnergySavingSystem extends React.Component {
   state = {
     energysystemcontent: [],
-    images: [],
+    imagenames: [],
     error: null,
   }
   componentDidMount = async () => {
@@ -55,14 +55,14 @@ class ForceEnergySavingSystem extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ energysystemcontent, images: energysystemcontent.images});
+       this.setState({ energysystemcontent, imagenames: energysystemcontent.names});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, energysystemcontent, images} = this.state;
+     const { error, energysystemcontent, imagenames} = this.state;
  
      // Print errors if any
      if (error) {
@@ -115,7 +115,7 @@ class ForceEnergySavingSystem extends React.Component {
             <Container>
               <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                  {images.map((item, index) => (
+                  {imagenames.map((item, index) => (
                     <Row className="justify-content-center" key={index}>
                       <Col>              
                             <img 

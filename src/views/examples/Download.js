@@ -28,8 +28,6 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class Download extends React.Component {
   state = {
     downloadcontent: [],
-    downloadimages: [],
-    imagenames: [],
     error: null,
   }
   componentDidMount = async () => {
@@ -69,12 +67,6 @@ class Download extends React.Component {
      if (error) {
        return <div>An error occured: {error.message}</div>;
      }
-     const data = downloadcontent.map(val => {
-      const imagedata = val.images.map((img,k) =>  {
-          return {image: img.url, label: val.names[k].imagelabel, file: val.pdffiles[k].url};
-        });
-      return {title: val.Title, imagedata: imagedata};
-    });
     
     return (
       <>
@@ -239,24 +231,24 @@ class Download extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                 {/*<Row className="row-grid"><h4 className="text-white">1.Certificate</h4></Row>*/}
-                {data.map((download, index) => ( 
+                {downloadcontent.map((download, index) => ( 
                 <div key={index}>   
                 <Row className="row-grid"><h4>{download.Title}</h4></Row>
                   <Row className="row-grid">
-                  {download.imagedata.map((images, i) =>(
+                  {download.names.map((imgdata, i) =>(
                     <Col lg="4" key={i}>
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                        <a href ={`${appConfig.apiURL}${images.file}`} type="application/pdf" rel="noopener noreferrer" target="_blank" >
+                        <a href ={`${appConfig.apiURL}${imgdata.pdfurl}`} type="application/pdf" rel="noopener noreferrer" target="_blank" >
                           <img
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={`${appConfig.apiURL}${images.image}`}
+                            src={`${appConfig.apiURL}${imgdata.imgurl}`}
                           />
                         </a>
                         </CardBody>
                       </Card>
-                        <label>{images.label}</label>
+                        <label>{imgdata.imagelabel}</label>
                     </Col>
                     ))}
                   </Row>
