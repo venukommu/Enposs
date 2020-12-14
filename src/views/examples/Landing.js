@@ -19,6 +19,7 @@ import React from "react";
 // nodejs library that concatenates classes
 //import classnames from "classnames";
 import { Link } from "react-router-dom";
+import BuyButton from './BuyButton';
 
 // reactstrap components
 import {
@@ -983,7 +984,7 @@ class Landing extends React.Component {
         <Container className="container-lg">
             <Row>
             {this.state.enpossproducts.map(products => (
-              <Col className="mb-5 mb-md-0" md="6">
+              <Col className="mb-5 mb-md-0" md="6" key={products.id}>
                 <Card className="card-lift--hover shadow border-0">
                   <Link to="#">
                     <CardImg
@@ -993,7 +994,7 @@ class Landing extends React.Component {
                     />
                   </Link>
                 </Card>
-                <Button
+                <BuyButton products={products}
                           block
                           className="btn-round"
                           color="default"
@@ -1001,7 +1002,7 @@ class Landing extends React.Component {
                           type="button"
                         >
                           {products.label} (${products.price})
-                        </Button>
+                        </BuyButton>
               </Col>
               ))}
               {/*<Col className="mb-5 mb-lg-0" md="6">
