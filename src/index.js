@@ -25,6 +25,7 @@ import "assets/scss/argon-design-system-react.scss?v1.1.0";
 
 //import Index from "views/Index.js";
 import Landing from "views/examples/Landing.js";
+import Product from "views/examples/Product.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
@@ -92,6 +93,7 @@ ReactDOM.render(
         exact
         render={props => <Contact {...props} />}
       />
+      <Route path="/product/:id" component={Product} />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>,

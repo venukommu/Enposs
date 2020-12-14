@@ -994,15 +994,7 @@ class Landing extends React.Component {
                     />
                   </Link>
                 </Card>
-                <BuyButton products={products}
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
-                        >
-                          {products.label} (${products.price})
-                        </BuyButton>
+                <BuyButton products={products} />
               </Col>
               ))}
               {/*<Col className="mb-5 mb-lg-0" md="6">
