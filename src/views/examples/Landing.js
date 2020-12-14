@@ -1000,7 +1000,7 @@ class Landing extends React.Component {
                           size="lg"
                           type="button"
                         >
-                          {products.label}
+                          {products.label} (${products.price})
                         </Button>
               </Col>
               ))}
