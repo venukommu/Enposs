@@ -54,6 +54,8 @@ class Landing extends React.Component {
     forceimage: {},
     awesomefeatures:[],
     awesomefeaturesimage: {},
+    enpossproducts: [],
+    enpossproductsimages: {},
     error: null,
   };
 
@@ -132,6 +134,18 @@ class Landing extends React.Component {
         .then(checkStatus)
         .then(parseJSON);
       this.setState({ awesomefeatures,awesomefeaturesimage:awesomefeatures.image });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const enpossproducts = await fetch(`${appConfig.apiURL}/enpossproducts`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ enpossproducts,enpossproductsimages:enpossproducts.images });
     } catch (error) {
       this.setState({ error });
     }
@@ -968,12 +982,14 @@ class Landing extends React.Component {
         <section>
         <Container className="container-lg">
             <Row>
+            {this.state.enpossproducts.map(products => (
               <Col className="mb-5 mb-md-0" md="6">
                 <Card className="card-lift--hover shadow border-0">
                   <Link to="#">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/single phase.jpg")}
+                      //src={require("assets/img/theme/single phase.jpg")}
+                      src={`http://localhost:1337${products.images.url}`}
                     />
                   </Link>
                 </Card>
@@ -984,10 +1000,11 @@ class Landing extends React.Component {
                           size="lg"
                           type="button"
                         >
-                          Buy Now
+                          {products.label}
                         </Button>
               </Col>
-              <Col className="mb-5 mb-lg-0" md="6">
+              ))}
+              {/*<Col className="mb-5 mb-lg-0" md="6">
                 <Card className="card-lift--hover shadow border-0">
                   <Link to="#">
                     <CardImg
@@ -1005,7 +1022,7 @@ class Landing extends React.Component {
                         >
                           Buy Now
                         </Button>
-              </Col>
+            </Col>*/}
             </Row>
     </Container>
     </section>
