@@ -28,7 +28,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class ForcePilotFinalReport extends React.Component {
   state = {
     finalreportcontent: [],
-    images: [],
+    imagenames: [],
     error: null,
   }
   componentDidMount = async () => {
@@ -55,20 +55,20 @@ class ForcePilotFinalReport extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ finalreportcontent, images: finalreportcontent.images});
+       this.setState({ finalreportcontent, imagenames: finalreportcontent.names});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, finalreportcontent, images} = this.state;
+     const { error, finalreportcontent, imagenames} = this.state;
  
      // Print errors if any
      if (error) {
        return <div>An error occured: {error.message}</div>;
      }
-     const image = images.sort();  
+
     return (
       <>
         <DemoNavbar />
@@ -115,17 +115,16 @@ class ForcePilotFinalReport extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                    {image.map((item, index) => (
-                      <Row className="justify-content-center" key={index}>
-                      <Col>
-                          <img
-                            alt="..."
-                            src={`${appConfig.apiURL}${item.url}`}
-                            />
-                      </Col>
-                      </Row>
-                    ))}
-                  
+                  {imagenames.map((item, index) => (
+                    <Row className="justify-content-center" key={index}>
+                    <Col>
+                        <img
+                          alt="..."
+                          src={`${appConfig.apiURL}${item.url}`}
+                          />
+                    </Col>
+                    </Row>
+                  ))}
                   {/*<Row className="justify-content-center">
                   <Col>
                       <img 

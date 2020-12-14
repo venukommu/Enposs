@@ -68,7 +68,7 @@ class Carousel extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent, carouselimage: carouselcontent.carouselimage });
+      this.setState({ carouselcontent, carouselimage: carouselcontent.names });
     } catch (error) {
       this.setState({ error });
     }

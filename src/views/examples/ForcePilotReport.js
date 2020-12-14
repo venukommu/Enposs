@@ -28,7 +28,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class ForcePilotReport extends React.Component {
   state = {
     reportcontent: [],
-    images: [],
+    imagenames: [],
     error: null,
   }
   componentDidMount = async () => {
@@ -55,14 +55,14 @@ class ForcePilotReport extends React.Component {
        })
          .then(checkStatus)
          .then(parseJSON);
-       this.setState({ reportcontent, images: reportcontent.images});
+       this.setState({ reportcontent, imagenames: reportcontent.names});
      } catch (error) {
        this.setState({ error });
      }
    };
  
    render() {
-     const { error, reportcontent, images} = this.state;
+     const { error, reportcontent, imagenames} = this.state;
  
      // Print errors if any
      if (error) {
@@ -115,7 +115,7 @@ class ForcePilotReport extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--300">
                 <CardBody className="py-5">
-                {images.map((item, index) => (
+                {imagenames.map((item, index) => (
                     <Row className="justify-content-center" key={index}>
                       <Col>              
                             <img 
