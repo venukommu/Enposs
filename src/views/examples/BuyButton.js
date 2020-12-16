@@ -4,15 +4,16 @@ import { Button } from "reactstrap";
 class BuyButton extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
-
         this.state = {
             id: props.products.id,
-            name: props.products.label,
+            name: props.products.title,
             price: props.products.price,
             //weight: props.product.weight,
             //description: props.product.description,
-            url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
+            //url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
+            //url: "http://localhost:1337/enpossproducts"
+            //url: "/"
+            url: `http://9b57ca68a5dc.ngrok.io/enpossproducts/${props.products.id}`
         }
     }
 

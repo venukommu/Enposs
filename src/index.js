@@ -93,7 +93,7 @@ ReactDOM.render(
         exact
         render={props => <Contact {...props} />}
       />
-      <Route path="/product/:id" component={Product} />
+      <Route path="/enpossproducts/:id" component={Product} />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>,

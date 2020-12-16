@@ -986,11 +986,11 @@ class Landing extends React.Component {
             {this.state.enpossproducts.map(products => (
               <Col className="mb-5 mb-md-0" md="6" key={products.id}>
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to="#">
+                  <Link to={`http://localhost:1337/enpossproducts/${products.id}`}>
                     <CardImg
                       alt="..."
                       //src={require("assets/img/theme/single phase.jpg")}
-                      src={`http://localhost:1337${products.images.url}`}
+                      src={`${appConfig.apiURL}${products.images.url}`}
                     />
                   </Link>
                 </Card>
