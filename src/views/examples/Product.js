@@ -24,7 +24,7 @@ class Product extends Component {
         <div className="product">
           <div className="product__information">
             <h2 className="Product-title">{this.state.product.title}</h2>
-            <img src={`${appConfig.apiURL}${this.state.product.images.url}`} />
+            <img alt="" src={`${appConfig.apiURL}${this.state.product.images.url}`} />
             <BuyButton {...this.state} />
           </div>
           {/*<div className="product__description">
