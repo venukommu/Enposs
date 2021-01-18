@@ -19,6 +19,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
+import {CartContext} from "context/CartContext";
 // reactstrap components
 import {
   UncontrolledCollapse,
@@ -29,10 +30,13 @@ import {
   Nav,
   Container,
   Row,
-  Col
+  Col,
+  NavItem,
+  NavLink
 } from "reactstrap";
 
 class DemoNavbar extends React.Component {
+  static contextType = CartContext
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
@@ -56,6 +60,7 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
+    const {qty} = this.context;
     return (
       <>
         <header className="header-global">
@@ -232,7 +237,22 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">CONTACT</span>
                     </DropdownToggle>
-                  </UncontrolledDropdown>                                                                        
+                  </UncontrolledDropdown> 
+                  <NavItem>
+                    <NavLink to="/cart" tag={Link}
+                      className="nav-link-icon"
+                      //href="https://www.facebook.com/creativetim"
+                      //id="tooltip333589074"
+                      //target="_blank"
+                    >
+                      <i className="ni ni-cart" />
+                      <span >{qty}
+                      </span>
+                    </NavLink>
+                    {/*<UncontrolledTooltip delay={0} target="tooltip333589074">
+                      Like us on Facebook
+                      </UncontrolledTooltip>*/}
+                  </NavItem>                                                                       
                   {/* <NavItem>
                     <NavLink
                       className="nav-link-icon"
