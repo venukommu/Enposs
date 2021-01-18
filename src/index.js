@@ -36,12 +36,9 @@ import ForcePilotFinalReport from "views/examples/ForcePilotFinalReport.js";
 import ForceEnergySavingSystem from "views/examples/ForceEnergySavingSystem.js";
 import ForcePilotReport from "views/examples/ForcePilotReport.js";
 import Contact from "views/examples/Contact.js";
-import Cart from "views/examples/Cart.js";
-import CartContextProvider from "context/CartContext";
 
 ReactDOM.render(
  <BrowserRouter>
- <CartContextProvider>
  <Switch>
  <Route path="/" exact render={props => <Landing {...props} />} />
  <Route
@@ -95,17 +92,11 @@ ReactDOM.render(
  exact
  render={props => <Contact {...props} />}
  />
- <Route
- path="/cart"
- exact
- render={props => <Cart {...props} />}
- />
 {/*<Route path="/" exact component={ProductList} />
 <Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
 <Route path="/product/:id" component={Product} />
  {/*<Redirect to="/" />*/}
  </Switch>
- </CartContextProvider>
  </BrowserRouter>,
  document.getElementById("root")
  );
