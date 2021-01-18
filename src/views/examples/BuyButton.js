@@ -15,7 +15,7 @@ class BuyButton extends React.Component {
             //url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
             //url: "http://localhost:1337/enpossproducts"
             //url: "/"
-            url: `https://290133515797.ngrok.io/enpossproducts/${props.products.id}`
+            url: `http://a273472aac16.ngrok.io/enpossproducts/snipcartparser`
         }
     }
 

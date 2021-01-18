@@ -17,7 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/font-awesome/css/font-awesome.min.css";
@@ -36,66 +36,76 @@ import ForcePilotFinalReport from "views/examples/ForcePilotFinalReport.js";
 import ForceEnergySavingSystem from "views/examples/ForceEnergySavingSystem.js";
 import ForcePilotReport from "views/examples/ForcePilotReport.js";
 import Contact from "views/examples/Contact.js";
-
+import Cart from "views/examples/Cart.js";
+import CartContextProvider from "context/CartContext";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact render={props => <Landing {...props} />} />
-      <Route
-        path="/"
-        exact
-        render={props => <Landing {...props} />}
-      />
-      <Route path="/login" exact render={props => <Login {...props} />} />
-      <Route
-        path="/about"
-        exact
-        render={props => <Profile {...props} />}
-      />
-      <Route
-        path="/forceSystem"
-        exact
-        render={props => <ForceSystem {...props} />}
-      />
-      <Route
-        path="/portfolio"
-        exact
-        render={props => <Portfolio {...props} />}
-      />
-      <Route
-        path="/forcepilotfinalreport"
-        exact
-        render={props => <ForcePilotFinalReport {...props} />}
-      />
-       <Route
-        path="/forceenergysavingsystem"
-        exact
-        render={props => <ForceEnergySavingSystem {...props} />}
-      />
-       <Route
-        path="/forcepilotreport"
-        exact
-        render={props => <ForcePilotReport {...props} />}
-      />
-       <Route
-        path="/download"
-        exact
-        render={props => <Download {...props} />}
-      />
-      <Route
-        path="/register"
-        exact
-        render={props => <Register {...props} />}
-      />
-      <Route
-        path="/contact"
-        exact
-        render={props => <Contact {...props} />}
-      />
-      <Route path="/enpossproducts/:id" component={Product} />
-      <Redirect to="/" />
-    </Switch>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+ <BrowserRouter>
+ <CartContextProvider>
+ <Switch>
+ <Route path="/" exact render={props => <Landing {...props} />} />
+ <Route
+ path="/"
+ exact
+ render={props => <Landing {...props} />}
+ />
+ <Route path="/login" exact render={props => <Login {...props} />} />
+ <Route
+ path="/about"
+ exact
+ render={props => <Profile {...props} />}
+ />
+ <Route
+ path="/forceSystem"
+ exact
+ render={props => <ForceSystem {...props} />}
+ />
+ <Route
+ path="/portfolio"
+ exact
+ render={props => <Portfolio {...props} />}
+ />
+ <Route
+ path="/forcepilotfinalreport"
+ exact
+ render={props => <ForcePilotFinalReport {...props} />}
+ />
+ <Route
+ path="/forceenergysavingsystem"
+ exact
+ render={props => <ForceEnergySavingSystem {...props} />}
+ />
+ <Route
+ path="/forcepilotreport"
+ exact
+ render={props => <ForcePilotReport {...props} />}
+ />
+ <Route
+ path="/download"
+ exact
+ render={props => <Download {...props} />}
+ />
+ <Route
+ path="/register"
+ exact
+ render={props => <Register {...props} />}
+ />
+ <Route
+ path="/contact"
+ exact
+ render={props => <Contact {...props} />}
+ />
+ <Route
+ path="/cart"
+ exact
+ render={props => <Cart {...props} />}
+ />
+{/*<Route path="/" exact component={ProductList} />
+<Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
+<Route path="/product/:id" component={Product} />
+ {/*<Redirect to="/" />*/}
+ </Switch>
+ </CartContextProvider>
+ </BrowserRouter>,
+ document.getElementById("root")
+ );

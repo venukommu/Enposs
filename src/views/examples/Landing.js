@@ -15,11 +15,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+
 import React from "react";
 // nodejs library that concatenates classes
 //import classnames from "classnames";
 import { Link } from "react-router-dom";
 import BuyButton from './BuyButton';
+
 
 // reactstrap components
 import {
@@ -42,6 +44,7 @@ import { appConfig } from "services/config.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
+//import Products from "./Products";
 
 class Landing extends React.Component {
   
@@ -982,11 +985,19 @@ class Landing extends React.Component {
         </main>
         <section>
         <Container className="container-lg">
-            <Row>
+                      {/* shopping cart with Stripe integration Code*/}
+
+            {/*  <div>
+             <Products />
+            <br></br>             <br></br>
+              </div>*/}
+              {/* Snipcart Code*/}
+              <h3 className="text-danger"> Snipcart demo</h3>
+              <Row> 
             {this.state.enpossproducts.map(products => (
               <Col className="mb-5 mb-md-0" md="6" key={products.id}>
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to={`http://localhost:1337/enpossproducts/${products.id}`}>
+                  <Link to={`/product/${products.id}`}>
                     <CardImg
                       alt="..."
                       //src={require("assets/img/theme/single phase.jpg")}
@@ -994,9 +1005,14 @@ class Landing extends React.Component {
                     />
                   </Link>
                 </Card>
-                <BuyButton products={products} />
+              <BuyButton products={products} />
               </Col>
               ))}
+            </Row>
+            {/* End Snipcart Code*/}
+             {/*} <AppProvider>
+<Cart products={this.state.enpossproducts}/>
+            </AppProvider>*/}
               {/*<Col className="mb-5 mb-lg-0" md="6">
                 <Card className="card-lift--hover shadow border-0">
                   <Link to="#">
@@ -1016,7 +1032,6 @@ class Landing extends React.Component {
                           Buy Now
                         </Button>
             </Col>*/}
-            </Row>
     </Container>
     </section>
         <CardsFooter />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { appConfig } from "services/config.js";
 import BuyButton from './BuyButton';
-
 class Product extends Component {
   constructor(props) {
     super(props);
@@ -10,11 +9,12 @@ class Product extends Component {
   }
 
   async componentDidMount() {
-    let response = await fetch(`${appConfig.apiURL}${this.props.match.params.id}`)
+    
+    let response = await fetch(`${appConfig.apiURL}/enpossproducts/${this.props.match.params.id}`)
     let data = await response.json()
     this.setState({
       loading: false,
-      product: data
+      products: data
     })
   }
 
@@ -23,9 +23,10 @@ class Product extends Component {
       return (
         <div className="product">
           <div className="product__information">
-            <h2 className="Product-title">{this.state.product.title}</h2>
-            <img alt="" src={`${appConfig.apiURL}${this.state.product.images.url}`} />
+            <h2 className="Product-title">{this.state.products.title}</h2>
+            <img alt="" src={`${appConfig.apiURL}${this.state.products.images.url}`} />
             <BuyButton {...this.state} />
+           {/* <Checkout {...this.state} />*/}
           </div>
           {/*<div className="product__description">
             {this.state.product.description}
