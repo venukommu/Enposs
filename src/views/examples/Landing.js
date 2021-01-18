@@ -20,7 +20,7 @@ import React from "react";
 // nodejs library that concatenates classes
 //import classnames from "classnames";
 import { Link } from "react-router-dom";
-import BuyButton from './BuyButton';
+//import BuyButton from './BuyButton';
 
 
 // reactstrap components
@@ -44,7 +44,7 @@ import { appConfig } from "services/config.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
-//import Products from "./Products";
+import Products from "./Products";
 
 class Landing extends React.Component {
   
@@ -985,13 +985,11 @@ class Landing extends React.Component {
         </main>
         <section>
         <Container className="container-lg">
-                      {/* shopping cart with Stripe integration Code*/}
-
-            {/*  <div>
+          {/* shopping cart with Stripe integration Code*/}
+            <div>
              <Products />
-            <br></br>             <br></br>
-              </div>*/}
-              {/* Snipcart Code*/}
+            </div>
+              {/* Snipcart Code
               <h3 className="text-danger"> Snipcart demo</h3>
               <Row> 
             {this.state.enpossproducts.map(products => (
@@ -1008,7 +1006,7 @@ class Landing extends React.Component {
               <BuyButton products={products} />
               </Col>
               ))}
-            </Row>
+            </Row>*/}
             {/* End Snipcart Code*/}
              {/*} <AppProvider>
 <Cart products={this.state.enpossproducts}/>
