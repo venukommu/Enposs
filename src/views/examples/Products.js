@@ -3,6 +3,7 @@ import React from 'react';
 import { Button,Card,CardImg,Row,Col } from "reactstrap";
 import { appConfig } from "services/config.js";
 import {CartContext} from "context/CartContext";
+import { Link } from "react-router-dom";
 
 class Products extends React.Component {
     static contextType = CartContext
@@ -64,7 +65,7 @@ class Products extends React.Component {
                     />
                     {/*</Link>*/}
                 </Card>
-                <Button
+                <Button to="/cart" tag={Link}
                     block
                     className="btn-round"
                     color="default"
