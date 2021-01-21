@@ -4,7 +4,9 @@ import { appConfig } from "services/config.js";
 import { Button,Card,Container,Row,Col } from "reactstrap";
 import StripeCheckout from "react-stripe-checkout";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure();
 
 class Cart extends React.Component  {
 
@@ -19,63 +21,34 @@ class Cart extends React.Component  {
       },
       error: ""
     };
-  //this.handleSubmit = this.handleSubmit.bind(this);
   }
   static contextType = CartContext;
-  //const {shoppingCart,totalPrice, qty, dispatch} = useContext(CartContext);
   
   render() {
-    //const apiUrl = process.env.API_URL || "http://localhost:1337";
-   // const strapi = new Strapi(apiUrl);
     const {shoppingCart,totalPrice, qty, dispatch} = this.context;
-    //const Router = require("react-router").Router;
     const handleToken = async (token) => {
-      //const { context } = this.props;
-      //const { data } = this.state;
-      console.log(token);
-      //console.log(this.context.stripe.createToken())
-    /*  this.props.stripe.createToken({name : 'Name'}).then(({token, error}) => {
-        if (error) {
-          // handle error
-        } else {
-          // handle token
-        }
-      });*/
-      //let response = await this.props.stripe.createToken({name: "Name"});
-     
+      const product = {name: "All Products", price:totalPrice}  
 
-
-    fetch(`${appConfig.apiURL}/orders`, {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json',
-},
-body: JSON.stringify({
-address: token.card.address_line1,
-amount: totalPrice,
-city: token.card.address_city,
-state: token.card.address_state,
-token: token.id
-}),
-})
-.then(response => response.json())
-.then(data => console.log(data));
-
-      /*this.props.stripe.createToken({name : 'Name'}).then(({token, error}) => {
-        strapi
-          .createEntry("orders", {
-            amount: 324,
-            address: 'sdf',
-            city:'sdfs',
-            state: 'sdf',
-            token: token
-          })
-          .then(Router.push("http://localhost:1337/orders"));
+      fetch(`${appConfig.apiURL}/orders`, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      product,
+      token,
+      body: JSON.stringify({
+      address: token.card.address_line1,
+      amount: totalPrice,
+      city: token.card.address_city,
+      state: token.card.address_state,
+      token: token.id
+      }),
       })
-      .catch(err => this.setState({ error: err}))*/
+      .then(response => response.json())
+      .then(data => data.status === "succeeded" ? 
+      toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT}) : '')
     }
     
-  //const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
   return (
     <>
     <DemoNavbar />
