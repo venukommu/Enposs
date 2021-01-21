@@ -4,8 +4,8 @@ import { appConfig } from "services/config.js";
 import { injectStripe } from "react-stripe-elements";
 import Strapi from "strapi-sdk-javascript/build/main";
 //import Router from "next/router";
-const apiUrl = "http://localhost:1337";
-const strapi = new Strapi(apiUrl);
+//const apiUrl = "http://localhost:1337";
+const strapi = new Strapi(`${appConfig.apiURL}`);
 
 // sample function defined to compute total quantity of cart
 function computeQuantity(cart) {
@@ -26,13 +26,13 @@ class CheckoutWithStripe extends React.Component {
             //url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
             //url: "http://localhost:1337/enpossproducts"
             //url: "/"
-            url: `http://localhost:1337/enpossproducts/${props.products.id}`
+            url: `${appConfig.apiURL}/enpossproducts/${props.products.id}`
         }
         this.submitOrder = this.submitOrder.bind(this);
     }
     onToken = (res) => {
         console.log("res",res);
-        fetch('http://localhost:1337/orders', {
+        fetch(`${appConfig.apiURL}/orders`, {
             method: 'POST',
             body: JSON.stringify(res),
         }).then(res => {

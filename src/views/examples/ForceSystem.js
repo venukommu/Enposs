@@ -122,7 +122,7 @@ class ForceSystem extends React.Component {
                         <img
                             alt="..."                          
                             //src={require("assets/img/theme/u02_00.jpg")}
-                            src={`http://localhost:1337${forcesystemimage.url}`}
+                            src={`${appConfig.apiURL}${forcesystemimage.url}`}
                           />
                     </Col>
                   </Row>

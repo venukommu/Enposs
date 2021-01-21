@@ -45,7 +45,7 @@ class Cart extends React.Component  {
      
 
 
-    fetch('http://localhost:1337/orders', {
+    fetch(`${appConfig.apiURL}/orders`, {
 method: 'POST',
 headers: {
 'Content-Type': 'application/json',

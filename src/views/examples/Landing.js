@@ -416,7 +416,7 @@ class Landing extends React.Component {
                     alt="..."
                     className="img-fluid floating"
                     //src={require("assets/img/theme/en bulb.jpg")}
-                    src={`http://localhost:1337${awesomefeaturesimage.url}`}
+                    src={`${appConfig.apiURL}${awesomefeaturesimage.url}`}
                     />
                 </Col>
               <Col className="order-md-1" md="6">
@@ -480,7 +480,7 @@ class Landing extends React.Component {
                     <CardImg
                       alt="..."
                       //src={require("assets/img/theme/img-1-1200x1000.jpg")}
-                      src={`http://localhost:1337${productimage.url}`}
+                      src={`${appConfig.apiURL}${productimage.url}`}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -538,7 +538,7 @@ class Landing extends React.Component {
                       alt="..."
                       className="img-center img-fluid"
                       //src={require("assets/img/theme/u02_0.png")}
-                      src={`http://localhost:1337${forceimage.url}`}
+                      src={`${appConfig.apiURL}${forceimage.url}`}
                     />
                   </div>
                 </Col>

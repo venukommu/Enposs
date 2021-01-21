@@ -92,7 +92,7 @@ componentDidMount = async () => {
                       alt="..."
                       //className="img-center img-fluid"
                       //src={require("assets/img/theme/1578730282_1551667336.png")}
-                      src={`http://localhost:1337${contact.images.url}`}
+                      src={`${appConfig.apiURL}${contact.images.url}`}
                     />
                         <h5 className="text-white mt-3">{contact.Title}</h5>
                         <p className="text-white mt-3">
