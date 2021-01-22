@@ -27,6 +27,7 @@ class Cart extends React.Component  {
   render() {
     const {shoppingCart,totalPrice, qty, dispatch} = this.context;
     const handleToken = async (token) => {
+      console.log(token);
       const product = {name: "All Products", price:totalPrice}  
 
       fetch(`${appConfig.apiURL}/orders`, {
@@ -34,14 +35,21 @@ class Cart extends React.Component  {
       headers: {
       'Content-Type': 'application/json',
       },
+      
       body: JSON.stringify({
-      product,
-      token
+        product,
+        token,
       }),
       })
       .then(response => response.json())
-      .then(data => data.status === "succeeded" ? 
-      toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT}) : '' )
+      .then(data => {console.log('data: ', data)
+    
+      if (data.status === "succeeded") {
+        //this.clearCart();
+        //this.$router.push('/thanks');
+      toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT});
+      }
+    });
     }
     
   return (
