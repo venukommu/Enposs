@@ -26,6 +26,7 @@ class Cart extends React.Component  {
   
   render() {
     const {shoppingCart,totalPrice, qty, dispatch} = this.context;
+    const { history } = this.props;
     const handleToken = async (token) => {
       console.log(token);
       const product = {name: "All Products", price:totalPrice}  
@@ -48,7 +49,9 @@ class Cart extends React.Component  {
       if (data.status === "succeeded") {
         //this.clearCart();
         //this.$router.push('/thanks');
-      toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT});
+        dispatch({type: 'EMPTY'});
+        history.push('/');
+        toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT});
       }
       else {
         toast.success(data.raw.message,{position:toast.POSITION.TOP_RIGHT});
