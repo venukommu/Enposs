@@ -34,19 +34,14 @@ class Cart extends React.Component  {
       headers: {
       'Content-Type': 'application/json',
       },
-      product,
-      token,
       body: JSON.stringify({
-      address: token.card.address_line1,
-      amount: totalPrice,
-      city: token.card.address_city,
-      state: token.card.address_state,
-      token: token.id
+      product,
+      token
       }),
       })
       .then(response => response.json())
       .then(data => data.status === "succeeded" ? 
-      toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT}) : '')
+      toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT}) : '' )
     }
     
   return (
@@ -89,6 +84,7 @@ class Cart extends React.Component  {
           </svg>
         </div>
       </section>        
+      {shoppingCart.length > 0 ?        
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
         <Card className="card-profile shadow mt--200">
@@ -96,51 +92,55 @@ class Cart extends React.Component  {
             <Col lg="12">
               <Row className="row-grid">
                 <Col lg="12">
-                    {shoppingCart.length > 0 ?
-                      shoppingCart.map(cart =>(
-                        <Row key={cart.id} className="justify-content-between align-items-center text-warning">
-                          <Col lg="3"><img
-                            alt="..."
-                            className="img-fluid rounded shadow"
-                            src={`${appConfig.apiURL}${cart.images.url}`}
-                          /> </Col>                       
-                          <Col>{cart.title}</Col>
-                          <Col>${cart.price}.00</Col>
-                          <Col><Button
-                            className="btn-icon btn-2 ml-1"
-                            color="primary"
-                            type="button"
-                            outline
-                            onClick={() => dispatch({type: 'INC',id:cart.id,cart})}>
-                            <span className="btn-inner--icon">
-                              <i className="ni ni-fat-add" />
-                            </span>
-                          </Button></Col>
-                          <Col>{cart.qty}</Col>
-                          <Col><Button
-                            className="btn-icon btn-2 ml-1"
-                            color="primary"
-                            type="button"
-                            outline
-                            onClick={() => dispatch({type: 'DEC',id:cart.id,cart})}>
-                            <span className="btn-inner--icon">
-                              <i className="ni ni-fat-delete" />
-                            </span>
-                          </Button></Col>
-                          <Col>${cart.price * cart.qty}.00</Col>
-                          <Col><Button
-                            className="btn-icon btn-2 ml-1"
-                            color="primary"
-                            type="button"
-                            outline
-                            onClick={() => dispatch({type: 'DELETE',id:cart.id,cart})}>
-                            <span className="btn-inner--icon">
-                              <i className="ni ni-fat-remove" />
-                            </span>
-                          </Button></Col>
-                          
-                          </Row>
-                      )) : ''}                 
+                  <Row> 
+                  <Col lg="4" className="text-center">Image</Col>
+                  <Col>Title</Col>
+                  <Col>Price</Col>
+                  <Col className="text-center">qty</Col>
+                  <Col>Total</Col>
+                  <Col>Delete</Col>
+                  </Row>
+                  {shoppingCart.map(cart =>(
+                    <Row key={cart.id} className="justify-content-between align-items-center text-warning">
+                      <Col lg="4"><img
+                        alt="..."
+                        className="img-fluid rounded shadow"
+                        src={`${appConfig.apiURL}${cart.images.url}`}
+                      /> </Col>                       
+                      <Col>{cart.title}</Col>
+                      <Col>${cart.price}.00</Col>
+                      <Col><Button
+                        className="btn btn-primary btn-icon-only rounded-circle"
+                        color="primary"
+                        type="button"
+                        onClick={() => dispatch({type: 'INC',id:cart.id,cart})}>
+                        <span className="btn-inner--icon">
+                          <i className="ni ni-fat-add" />
+                        </span>
+                      </Button>
+                      {cart.qty}
+                      <Button
+                        className="btn btn-primary btn-icon-only rounded-circle"
+                        color="primary"
+                        type="button"
+                        onClick={() => dispatch({type: 'DEC',id:cart.id,cart})}>
+                        <span className="btn-inner--icon">
+                          <i className="ni ni-fat-delete" />
+                        </span>
+                      </Button></Col>
+                      <Col>${cart.price * cart.qty}.00</Col>
+                      <Col><Button
+                        className="btn btn-primary btn-icon-only rounded-circle"
+                        color="primary"
+                        type="button"
+                        onClick={() => dispatch({type: 'DELETE',id:cart.id,cart})}>
+                        <span className="btn-inner--icon">
+                          <i className="ni ni-fat-remove" />
+                        </span>
+                      </Button></Col>
+                      
+                      </Row>
+                  ))}               
                 </Col>
               </Row>
             </Col>
@@ -161,9 +161,10 @@ class Cart extends React.Component  {
                       amount={totalPrice * 100}
                       name="All Products"></StripeCheckout></div> </div> : ''}
               </Col>
-              </Row>
+            </Row>
         </Container>
-          </section>
+        </section>
+       : ''} 
      </main> 
     </>  
   )
