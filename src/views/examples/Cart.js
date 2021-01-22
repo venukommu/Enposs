@@ -51,11 +51,11 @@ class Cart extends React.Component  {
         //this.$router.push('/thanks');
         dispatch({type: 'EMPTY'});
         history.push('/');
-        toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT});
+        toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       }
       else {
-        toast.success(data.raw.message,{position:toast.POSITION.TOP_RIGHT});
-      }
+        toast.error(data.raw.message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});     
+       }
     })
     }
     
