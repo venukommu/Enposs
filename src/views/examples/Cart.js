@@ -42,14 +42,18 @@ class Cart extends React.Component  {
       }),
       })
       .then(response => response.json())
-      .then(data => {console.log('data: ', data)
+      .then(data => {
+        console.log('data: ', data)
     
       if (data.status === "succeeded") {
         //this.clearCart();
         //this.$router.push('/thanks');
       toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT});
       }
-    });
+      else {
+        toast.success(data.raw.message,{position:toast.POSITION.TOP_RIGHT});
+      }
+    })
     }
     
   return (
