@@ -6,9 +6,13 @@ import StripeCheckout from "react-stripe-checkout";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserContext } from 'context/user';
+import { Link } from 'react-router-dom';
+
 toast.configure();
 
 class Cart extends React.Component  {
+  static user  = UserContext;
 
   constructor(props) {
     super(props);
@@ -25,8 +29,9 @@ class Cart extends React.Component  {
   static contextType = CartContext;
   
   render() {
-    const {shoppingCart,totalPrice, qty, dispatch} = this.context;
+    const {shoppingCart,totalPrice, qty, dispatch,user} = this.context;
     const { history } = this.props;
+    
     const handleToken = async (token) => {
       console.log(token);
       const product = {name: "All Products", price:totalPrice}  
@@ -177,6 +182,15 @@ class Cart extends React.Component  {
                       name="All Products"></StripeCheckout></div> </div> : ''}
               </Col>
             </Row>
+            {/*{user.token ? (
+        <Link to="/checkout" className="btn btn-primary btn-block">
+          checkout
+        </Link>
+      ) : (
+        <Link to="/login" className="btn btn-primary btn-block">
+          login
+        </Link>
+      )}*/}
         </Container>
         </section>
        : ''} 
