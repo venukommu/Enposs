@@ -38,9 +38,12 @@ import ForcePilotReport from "views/examples/ForcePilotReport.js";
 import Contact from "views/examples/Contact.js";
 import Cart from "views/examples/Cart.js";
 import CartContextProvider from "context/CartContext";
-
+import { UserProvider } from 'context/user';
+import PrivateRoute from './components/PrivateRoute';
+import LoginTest from 'views/examples/LoginTest.js';
 ReactDOM.render(
  <BrowserRouter>
+ <UserProvider>
  <CartContextProvider>
  <Switch>
  <Route path="/" exact render={props => <Landing {...props} />} />
@@ -103,9 +106,12 @@ ReactDOM.render(
 {/*<Route path="/" exact component={ProductList} />
 <Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
 <Route path="/product/:id" component={Product} />
+<Route path="/logintest" exact render={props => <LoginTest {...props} />} />
+
  {/*<Redirect to="/" />*/}
  </Switch>
  </CartContextProvider>
+ </UserProvider>
  </BrowserRouter>,
  document.getElementById("root")
  );
