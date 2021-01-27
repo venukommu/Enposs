@@ -47,14 +47,15 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       email: '',
       setEmail: '',
       password: '',
       setPassword: '',
       username: 'default',
       setUsername: 'default',
-      isMember: true,
-      setIsMember: true
+      isMember: false,
+      setIsMember: false
       };
   }
   static contextType  = UserContext;
@@ -79,7 +80,7 @@ class Register extends React.Component {
     const { userLogin, alert, showAlert } = this.context;
     const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember,name} = this.state;
     const { history } = this.props;
-
+console.log(email);
     const handleSubmit = async (e) => {
       showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
