@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 toast.configure();
 
 class Cart extends React.Component  {
-  static contextType  = UserContext;
+  //static contextType  = UserContext;
 
   constructor(props) {
     super(props);
@@ -29,9 +29,9 @@ class Cart extends React.Component  {
   static contextType = CartContext;
   
   render() {
-    const {shoppingCart,totalPrice, qty, dispatch,user} = this.context;
+    const {shoppingCart,totalPrice, qty, dispatch} = this.context;
     const { history } = this.props;
-    console.log("user",user);
+    //console.log("user",user);
     const handleToken = async (token) => {
       console.log(token);
       const product = {name: "All Products", price:totalPrice}  
@@ -174,27 +174,31 @@ class Cart extends React.Component  {
                       <div><h2 className="display-3">Cart Summary</h2></div>
                       <div>Total Items <span className="text-warning">{qty}</span> </div>
                       <div>Total Price <span className="text-warning"> ${totalPrice}.00</span></div>
-                      <div><StripeCheckout stripeKey="pk_test_yGm3aklBsFBQqf4mprmEtuss"
-                      token={handleToken} 
-                      billingAddress
-                      shippingAddress
-                      amount={totalPrice * 100}
-                      name="All Products"></StripeCheckout></div> </div> : ''}
-              </Col>
-            </Row>
-            {/*{user.token ? (*/}
-        <Link to="/checkout" className="btn btn-primary btn-block">
-          checkout
-        </Link>
-      {/*  ) : (*/}
+                      <UserContext.Consumer> 
+          {({user,userLogout}) => ( 
+            user.token ? (
+              <div><StripeCheckout stripeKey="pk_test_yGm3aklBsFBQqf4mprmEtuss"
+              token={handleToken} 
+              billingAddress
+              shippingAddress
+              amount={totalPrice * 100}
+              name="All Products"></StripeCheckout>
+              <button className="login-btn" onClick={() => { userLogout(); }} > logout </button></div>
+            ) : (
         <Link to="/login" className="btn btn-primary btn-block">
           login
         </Link>
-          or
-        <Link to="/register" className="btn btn-primary btn-block">
-        register
-        </Link>
-      {/* )} */}
+        // or
+        //<Link to="/register" className="btn btn-primary btn-block">
+        //register
+        //</Link>
+       )
+       )}
+      </UserContext.Consumer> 
+                       </div> : ''}
+              </Col>
+            </Row>
+        
         </Container>
         </section>
        : ''} 

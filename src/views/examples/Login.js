@@ -39,7 +39,6 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import loginUser from 'strapi/loginUser';
 import registerUser from 'strapi/registerUser';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from 'context/user';
 
 class Login extends React.Component {
@@ -111,7 +110,7 @@ class Login extends React.Component {
         userLogin(newUser);
         showAlert({ msg: `you are logged in ${username}. shop away my friend` });
   
-        history.push('/');
+        history.push('/cart');
       } else {
         showAlert({
           msg: 'there was an error. please try again...',
