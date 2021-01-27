@@ -95,9 +95,9 @@ class Login extends React.Component {
       let response;
   
       if (isMember) {
-        response = await loginUser( email, password );
+        response = await loginUser( {email, password} );
       } else {
-        response = await registerUser( email, password, username);
+        response = await registerUser( {email, password, username});
       }
   
       if (response) {
