@@ -52,7 +52,7 @@ class Register extends React.Component {
       setEmail: '',
       password: '',
       setPassword: '',
-      username: 'default',
+      username: '',
       setUsername: 'default',
       isMember: false,
       setIsMember: false
@@ -68,7 +68,7 @@ class Register extends React.Component {
     this.setState({password: event.target.value});
   }
   nameHandler = (event) => {
-    this.setState({name: event.target.value});
+    this.setState({username: event.target.value});
   }
   
   componentDidMount() {
@@ -80,7 +80,7 @@ class Register extends React.Component {
     const { userLogin, alert, showAlert } = this.context;
     const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember,name} = this.state;
     const { history } = this.props;
-console.log(email);
+console.log(username);
     const handleSubmit = async (e) => {
       showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
@@ -191,7 +191,7 @@ console.log(email);
                                 <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" id= "name" value ={name} 
+                            <Input placeholder="Name" type="text" id= "username" value ={username} 
                             onChange={this.nameHandler}/>
                           </InputGroup>
                         </FormGroup>
