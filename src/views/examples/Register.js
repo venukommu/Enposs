@@ -33,18 +33,97 @@ import {
   Row,
   Col
 } from "reactstrap";
+import loginUser from 'strapi/loginUser';
+import registerUser from 'strapi/registerUser';
 
+// handle user
+import { useHistory } from 'react-router-dom';
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { UserContext } from 'context/user';
 
 class Register extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      setEmail: '',
+      password: '',
+      setPassword: '',
+      username: 'default',
+      setUsername: 'default',
+      isMember: true,
+      setIsMember: true
+      };
+  }
+  static contextType  = UserContext;
+
+  emailHandler = (event) => {
+    this.setState({email: event.target.value});
+  }
+
+  passwordHandler = (event) => {
+    this.setState({password: event.target.value});
+  }
+  nameHandler = (event) => {
+    this.setState({name: event.target.value});
+  }
+  
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
   render() {
+    const { userLogin, alert, showAlert } = this.context;
+    const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember,name} = this.state;
+    const { history } = this.props;
+
+    const handleSubmit = async (e) => {
+      showAlert({ msg: 'accessing user data. please wait...' });
+      e.preventDefault();
+  
+      let response;
+  console.log(response);
+      if (isMember) {
+        response = await loginUser({ email, password });
+      } else {
+        response = await registerUser({ email, password, username });
+        console.log(response);
+      }
+  
+      if (response) {
+        const {
+          jwt: token,
+          user: { username },
+        } = response.data;
+  
+        const newUser = { token, username };
+  
+        userLogin(newUser);
+        showAlert({ msg: `you are logged in ${username}. shop away my friend` });
+  
+        history.push('/products');
+      } else {
+        showAlert({
+          msg: 'there was an error. please try again...',
+          type: 'danger',
+        });
+        // show alert
+      }
+    };
+  
+    const  toggleMember = () => {
+      setIsMember((prevMember) => {
+        // console.log(prevMember);
+        let isMember = !prevMember;
+        isMember ? setUsername('default') : setUsername('');
+  
+        return isMember;
+      });
+    };
+    
     return (
       <>
         <DemoNavbar />
@@ -111,7 +190,8 @@ class Register extends React.Component {
                                 <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" />
+                            <Input placeholder="Name" type="text" id= "name" value ={name} 
+                            onChange={this.nameHandler}/>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -121,7 +201,9 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                             <Input placeholder="Email" type="email" id="email" value={email}
+                            onChange={this.emailHandler}
+                            /> 
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -134,7 +216,9 @@ class Register extends React.Component {
                             <Input
                               placeholder="Password"
                               type="password"
-                              autoComplete="off"
+                              id="password"
+                              value={password}
+                              onChange={this.passwordHandler}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -176,7 +260,7 @@ class Register extends React.Component {
                             className="mt-4"
                             color="primary"
                             type="button"
-                          >
+                            onClick={handleSubmit}>
                             Create account
                           </Button>
                         </div>
