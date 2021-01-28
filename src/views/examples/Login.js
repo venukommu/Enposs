@@ -39,19 +39,18 @@ import { Link } from 'react-router-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import loginUser from 'strapi/loginUser';
-import registerUser from 'strapi/registerUser';
+//import registerUser from 'strapi/registerUser';
 import { UserContext } from 'context/user';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      setEmail: '',
       password: '',
-      setPassword: '',
       username: 'default',
-      setUsername: 'default',
       isMember: true,
       setIsMember: true
     };
@@ -81,13 +80,13 @@ class Login extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    const {userLogin, alert, showAlert} = this.context;
+    const {userLogin, alert} = this.context;
     const { history } = this.props;
-    const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember} = this.state;
+    const { email, password,  username,  isMember, setIsMember} = this.state;
     console.log(setIsMember);
     let isEmpty = !email || !password || !username || alert.show;
 
-    const toggleMember = () => {
+    /*const toggleMember = () => {
       this.setIsMember((prevMember) => {
         // console.log(prevMember);
         let isMember = !prevMember;
@@ -98,20 +97,19 @@ class Login extends React.Component {
         </Link>
         )
       });
-    };
-
-
-
+    };*/
     const handleSubmit = async (e) => {
-      showAlert({ msg: 'accessing user data. please wait...' });
+      //showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
+
+      if (isEmpty) {
+        toast.error('please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      } else {
   
       let response;
   
       if (isMember) {
         response = await loginUser( {email, password} );
-      } else {
-        response = await registerUser( {email, password, username});
       }
   
       if (response) {
@@ -123,16 +121,19 @@ class Login extends React.Component {
         const newUser = { token, username };
   
         userLogin(newUser);
-        showAlert({ msg: `you are logged in ${username}. shop away my friend` });
+        toast.success(`you are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
   
         history.push('/cart');
       } else {
-        showAlert({
-          msg: 'there was an error. please try again...',
-          type: 'danger',
-        });
+        toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        //showAlert({
+        //  msg: 'there was an error. please try again...',
+        //  type: 'danger',
+        //});
         // show alert
       }
+    }
     };
     return (
       <>
@@ -243,15 +244,16 @@ class Login extends React.Component {
                           >
                             Sign in
                           </Button>
-                        </div>
-                        <p className="register-link">
-                        {isMember ? 'Need to register' : 'Already a member'}
+                        {/*isMember ? 'Need to register' : 'Already a member'*/}
                         <Link to="/register">
-                        <button type="button" >
-                          click here
-                        </button>
+                        <Button className="my-4"
+                            color="primary"
+                            type="button" >
+                          register
+                        </Button>
                         </Link>
-                      </p>
+                        </div>
+                        
                       </Form>
                     </CardBody>
                   </Card>
@@ -271,7 +273,9 @@ class Login extends React.Component {
                         href="#pablo"
                         onClick={e => e.preventDefault()}
                       >
+                        <Link to="/register">
                         <small>Create new account</small>
+                        </Link>
                       </a>
                     </Col>
                   </Row>
