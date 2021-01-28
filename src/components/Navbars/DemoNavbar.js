@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 import {CartContext} from "context/CartContext";
+import { UserContext } from 'context/user';
 // reactstrap components
 import {
   UncontrolledCollapse,
@@ -252,7 +253,18 @@ class DemoNavbar extends React.Component {
                     {/*<UncontrolledTooltip delay={0} target="tooltip333589074">
                       Like us on Facebook
                       </UncontrolledTooltip>*/}
-                  </NavItem>                                                                       
+                  </NavItem>
+                  <UserContext.Consumer> 
+                  {({user,userLogout}) => ( 
+                    user.token ? (
+                    <UncontrolledDropdown nav>
+                      <DropdownToggle to="/" tag={Link} nav>
+                        <i className="ni ni-collection d-lg-none mr-1" />
+                        <span className="nav-link-inner--text" onClick={() => { userLogout(); }}>LOGOUT</span>
+                      </DropdownToggle>
+                    </UncontrolledDropdown>
+                    ) : '' )}
+                  </UserContext.Consumer>                                                                       
                   {/* <NavItem>
                     <NavLink
                       className="nav-link-icon"

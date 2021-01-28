@@ -175,15 +175,14 @@ class Cart extends React.Component  {
                       <div>Total Items <span className="text-warning">{qty}</span> </div>
                       <div>Total Price <span className="text-warning"> ${totalPrice}.00</span></div>
                       <UserContext.Consumer> 
-          {({user,userLogout}) => ( 
+          {({user}) => ( 
             user.token ? (
               <div><StripeCheckout stripeKey="pk_test_yGm3aklBsFBQqf4mprmEtuss"
               token={handleToken} 
               billingAddress
               shippingAddress
               amount={totalPrice * 100}
-              name="All Products"></StripeCheckout>
-              <button className="login-btn" onClick={() => { userLogout(); }} > logout </button></div>
+              name="All Products"></StripeCheckout></div>
             ) : (
         <Link to="/login" className="btn btn-primary btn-block">
           login
