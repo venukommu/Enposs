@@ -245,7 +245,7 @@ class Login extends React.Component {
                           </Button>
                         </div>
                         <p className="register-link">
-                        {true ? 'need to register' : 'already a member'}
+                        {isMember ? 'Need to register' : 'Already a member'}
                         <Link to="/register">
                         <button type="button" >
                           click here
