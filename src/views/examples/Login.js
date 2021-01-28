@@ -103,7 +103,7 @@ class Login extends React.Component {
       e.preventDefault();
 
       if (isEmpty) {
-        toast.error('please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       } else {
   
       let response;

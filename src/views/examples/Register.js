@@ -42,6 +42,8 @@ import { useHistory } from 'react-router-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { UserContext } from 'context/user';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Register extends React.Component {
   constructor(props) {
@@ -80,18 +82,21 @@ class Register extends React.Component {
     const { userLogin, alert, showAlert } = this.context;
     const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember,name} = this.state;
     const { history } = this.props;
-console.log(username);
+    let isEmpty = !email || !password || !username || alert.show;
+
     const handleSubmit = async (e) => {
-      showAlert({ msg: 'accessing user data. please wait...' });
+      //toast.success(`accessing user data. please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+
       e.preventDefault();
-  
+
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      } else {
       let response;
-  console.log(response);
       if (isMember) {
         response = await loginUser({ email, password });
       } else {
         response = await registerUser({ email, password, username });
-        console.log(response);
       }
   
       if (response) {
@@ -103,16 +108,13 @@ console.log(username);
         const newUser = { token, username };
   
         userLogin(newUser);
-        showAlert({ msg: `you are logged in ${username}. shop away my friend` });
-  
-        history.push('/products');
+        toast.success(`you are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        history.push('/cart');
       } else {
-        showAlert({
-          msg: 'there was an error. please try again...',
-          type: 'danger',
-        });
+        toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
         // show alert
       }
+    }
     };
   
     const  toggleMember = () => {
