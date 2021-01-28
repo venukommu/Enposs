@@ -33,6 +33,7 @@ import {
   Row,
   Col
 } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -64,6 +65,15 @@ class Login extends React.Component {
     this.setState({password: event.target.value});
   }
 
+
+  setIsMember = (isMember) => {
+    this.setState({setIsMember: isMember});
+  }
+
+  nameHandler = (setUsername) => {
+    this.setState({username: setUsername});
+  }
+
   static contextType  = UserContext;
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -74,18 +84,23 @@ class Login extends React.Component {
     const {userLogin, alert, showAlert} = this.context;
     const { history } = this.props;
     const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember} = this.state;
-
+    console.log(setIsMember);
     let isEmpty = !email || !password || !username || alert.show;
 
     const toggleMember = () => {
-      setIsMember((prevMember) => {
+      this.setIsMember((prevMember) => {
         // console.log(prevMember);
         let isMember = !prevMember;
-        isMember ? setUsername('default') : setUsername('');
-
-        return isMember;
+        isMember ? this.nameHandler('default') : this.nameHandler('');
+        return (
+        <Link to="/register" className="btn btn-primary btn-block">
+        register
+        </Link>
+        )
       });
     };
+
+
 
     const handleSubmit = async (e) => {
       showAlert({ msg: 'accessing user data. please wait...' });
