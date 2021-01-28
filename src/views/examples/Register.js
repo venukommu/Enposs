@@ -122,7 +122,6 @@ class Register extends React.Component {
         // console.log(prevMember);
         let isMember = !prevMember;
         isMember ? setUsername('default') : setUsername('');
-  
         return isMember;
       });
     };
