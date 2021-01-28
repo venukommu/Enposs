@@ -71,7 +71,7 @@ class Login extends React.Component {
   }
 
   nameHandler = (setUsername) => {
-    this.setState({username: setUsername});
+    this.setState({setUsername: setUsername});
   }
 
   static contextType  = UserContext;
@@ -245,10 +245,12 @@ class Login extends React.Component {
                           </Button>
                         </div>
                         <p className="register-link">
-                        {isMember ? 'need to register' : 'already a member'}
-                        <button type="button" onClick={toggleMember}>
+                        {true ? 'need to register' : 'already a member'}
+                        <Link to="/register">
+                        <button type="button" >
                           click here
                         </button>
+                        </Link>
                       </p>
                       </Form>
                     </CardBody>
