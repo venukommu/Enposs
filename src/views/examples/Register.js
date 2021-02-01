@@ -36,8 +36,6 @@ import {
 import loginUser from 'strapi/loginUser';
 import registerUser from 'strapi/registerUser';
 
-// handle user
-import { useHistory } from 'react-router-dom';
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
@@ -49,7 +47,6 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
       email: '',
       setEmail: '',
       password: '',
@@ -79,8 +76,8 @@ class Register extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    const { userLogin, alert, showAlert } = this.context;
-    const { email, setEmail, password, setPassword, username, setUsername, isMember, setIsMember,name} = this.state;
+    const { userLogin, alert } = this.context;
+    const { email, password, username, isMember} = this.state;
     const { history } = this.props;
     let isEmpty = !email || !password || !username || alert.show;
 
@@ -98,33 +95,35 @@ class Register extends React.Component {
       } else {
         response = await registerUser({ email, password, username });
       }
-  
-      if (response) {
+
+      if (response.status !== 400 && response.status === 200 ) {
         const {
           jwt: token,
           user: { username },
         } = response.data;
-  
-        const newUser = { token, username };
-  
+
+  const newUser = { token, username };
         userLogin(newUser);
-        toast.success(`you are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        toast.success(`You are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
         history.push('/cart');
-      } else {
+      }
+      else if (response.status === 400) {
+        toast.error(response.data.message[0].messages[0].message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      }
+       else {
         toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
-        // show alert
       }
     }
     };
   
-    const  toggleMember = () => {
+   /* const  toggleMember = () => {
       setIsMember((prevMember) => {
         // console.log(prevMember);
         let isMember = !prevMember;
         isMember ? setUsername('default') : setUsername('');
         return isMember;
       });
-    };
+    };*/
     
     return (
       <>
