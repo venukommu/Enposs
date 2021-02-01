@@ -43,6 +43,7 @@ import loginUser from 'strapi/loginUser';
 import { UserContext } from 'context/user';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { appConfig } from "services/config.js";
 
 class Login extends React.Component {
   constructor(props) {
@@ -83,7 +84,6 @@ class Login extends React.Component {
     const {userLogin, alert} = this.context;
     const { history } = this.props;
     const { email, password,  username,  isMember, setIsMember} = this.state;
-    console.log(setIsMember);
     let isEmpty = !email || !password || !username || alert.show;
 
     /*const toggleMember = () => {
@@ -112,7 +112,7 @@ class Login extends React.Component {
         response = await loginUser( {email, password} );
       }
   
-      if (response) {
+      if (response.status !== 400 && response.status === 200 ) {
         const {
           jwt: token,
           user: { username },
@@ -125,6 +125,9 @@ class Login extends React.Component {
         //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
   
         history.push('/cart');
+      }
+      else if (response.status === 400) {
+        toast.error(response.data.message[0].messages[0].message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       } else {
         toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
         //showAlert({
@@ -177,7 +180,10 @@ class Login extends React.Component {
                           className="btn-neutral btn-icon ml-1"
                           color="default"
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          onClick={() =>
+                            (window.location = `${appConfig.apiURL}/connect/google`)
+                          }
+                          //onClick={e => e.preventDefault()}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
