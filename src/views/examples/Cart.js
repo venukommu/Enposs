@@ -4,7 +4,7 @@ import { appConfig } from "services/config.js";
 import { Button,Card,Container,Row,Col } from "reactstrap";
 import StripeCheckout from "react-stripe-checkout";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { UserContext } from 'context/user';
 import { Link } from 'react-router-dom';
@@ -32,8 +32,10 @@ class Cart extends React.Component  {
     const {shoppingCart,totalPrice, qty, dispatch} = this.context;
     const { history } = this.props;
     //console.log("user",user);
-    const handleToken = async (token) => {
+    const handleToken = async (token, usertoken) => {
       console.log(token);
+      console.log("usertoken",usertoken);
+
       const product = {name: "All Products", price:totalPrice}  
 
       fetch(`${appConfig.apiURL}/orders`, {
@@ -57,10 +59,9 @@ class Cart extends React.Component  {
         dispatch({type: 'EMPTY'});
         history.push('/');
         toast.success("you have paid successfully now,now you can continue shopping",{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
-      }
-      else {
+      } else {
         toast.error(data.raw.message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});     
-       }
+      }
     })
     }
     
@@ -178,7 +179,9 @@ class Cart extends React.Component  {
           {({user}) => ( 
             user.token ? (
               <div><StripeCheckout stripeKey="pk_test_yGm3aklBsFBQqf4mprmEtuss"
-              token={handleToken} 
+              token={(token) => {     
+                handleToken(token, user.token);
+              }}
               billingAddress
               shippingAddress
               amount={totalPrice * 100}
