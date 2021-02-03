@@ -41,6 +41,8 @@ import CartContextProvider from "context/CartContext";
 import { UserProvider } from 'context/user';
 import PrivateRoute from './components/PrivateRoute';
 import LoginTest from 'views/examples/LoginTest.js';
+import ForgotPassword from 'views/examples/ForgotPassword.js';
+
 ReactDOM.render(
  <BrowserRouter>
  <UserProvider>
@@ -92,6 +94,11 @@ ReactDOM.render(
  path="/register"
  exact
  render={props => <Register {...props} />}
+ />
+ <Route
+ path="/forgot-password"
+ exact
+ render={props => <ForgotPassword {...props} />}
  />
  <Route
  path="/contact"

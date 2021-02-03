@@ -33,24 +33,24 @@ import {
   Row,
   Col
 } from "reactstrap";
-import { Link } from 'react-router-dom';
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import loginUser from 'strapi/loginUser';
+import resetPassword from 'strapi/resetPassword';
 //import registerUser from 'strapi/registerUser';
 import { UserContext } from 'context/user';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { appConfig } from "services/config.js";
 
-class Login extends React.Component {
+class ForgotPassword extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
+      passwordConfirmation: '',
       username: 'default',
       isMember: true,
       setIsMember: true
@@ -65,6 +65,9 @@ class Login extends React.Component {
     this.setState({password: event.target.value});
   }
 
+  passwordConfirmationHandler = (event) => {
+    this.setState({passwordConfirmation: event.target.value});
+  }
 
   setIsMember = (isMember) => {
     this.setState({setIsMember: isMember});
@@ -81,9 +84,9 @@ class Login extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    const {userLogin, alert} = this.context;
+    //const {resetPassword, alert} = this.context;
     const { history } = this.props;
-    const { email, password,  username,  isMember, setIsMember} = this.state;
+    const { email, password, passwordConfirmation, username,  isMember, setIsMember} = this.state;
     let isEmpty = !email || !password || !username || alert.show;
 
     /*const toggleMember = () => {
@@ -102,15 +105,16 @@ class Login extends React.Component {
       //showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
 
-      if (isEmpty) {
-        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
-      } else {
+      //if (isEmpty) {
+      //  toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      //} else {
   
       let response;
   
-      if (isMember) {
-        response = await loginUser( {email, password} );
-      }
+      //if (isMember) {
+        response = await resetPassword( {email} );
+        console.log("response",response);
+      //}
   
       if (response.status !== 400 && response.status === 200 ) {
         const {
@@ -120,7 +124,7 @@ class Login extends React.Component {
   
         const newUser = { token, username };
   
-        userLogin(newUser);
+        //userLogin(newUser);
         toast.success(`you are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
         //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
   
@@ -136,7 +140,7 @@ class Login extends React.Component {
         //});
         // show alert
       }
-    }
+    //}
     };
     return (
       <>
@@ -158,47 +162,9 @@ class Login extends React.Component {
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
-                      <div className="text-muted text-center mb-3">
-                        <small>Sign in with</small>
-                      </div>
-                      <div className="btn-wrapper text-center">
-                        <Button
-                          className="btn-neutral btn-icon"
-                          color="default"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <img
-                              alt="..."
-                              src={require("assets/img/icons/common/github.svg")}
-                            />
-                          </span>
-                          <span className="btn-inner--text">Github</span>
-                        </Button>
-                        <Button
-                          className="btn-neutral btn-icon ml-1"
-                          color="default"
-                          href="#pablo"
-                          onClick={() =>
-                            (window.location = `${appConfig.apiURL}/connect/google`)
-                          }
-                          //onClick={e => e.preventDefault()}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <img
-                              alt="..."
-                              src={require("assets/img/icons/common/google.svg")}
-                            />
-                          </span>
-                          <span className="btn-inner--text">Google</span>
-                        </Button>
-                      </div>
+                      
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
-                      <div className="text-center text-muted mb-4">
-                        <small>Or sign in with credentials</small>
-                      </div>
                       <Form role="form">
                         <FormGroup className="mb-3">
                           <InputGroup className="input-group-alternative">
@@ -212,35 +178,6 @@ class Login extends React.Component {
                             /> 
                           </InputGroup>
                         </FormGroup>
-                        <FormGroup>
-                          <InputGroup className="input-group-alternative">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-lock-circle-open" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input
-                              placeholder="Password"
-                              type="password"
-                              id="password"
-                              value={password}
-                              onChange={this.passwordHandler}
-                            />
-                          </InputGroup>
-                        </FormGroup>
-                        <div className="custom-control custom-control-alternative custom-checkbox">
-                          <input
-                            className="custom-control-input"
-                            id=" customCheckLogin"
-                            type="checkbox"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor=" customCheckLogin"
-                          >
-                            <span>Remember me</span>
-                          </label>
-                        </div>
                         <div className="text-center">
                           <Button
                             className="my-4"
@@ -248,33 +185,13 @@ class Login extends React.Component {
                             type="button"
                             onClick={handleSubmit}
                           >
-                            Sign in
+                            Reset Password
                           </Button>
-                        {/*isMember ? 'Need to register' : 'Already a member'*/}
-                        <Link to="/register">
-                        <Button className="my-4"
-                            color="primary"
-                            type="button" >
-                          register
-                        </Button>
-                        </Link>
                         </div>
                         
                       </Form>
                     </CardBody>
                   </Card>
-                  <Row className="mt-3">
-                    <Col xs="6">
-                      <Link to="/forgot-password">
-                        <small className="text-light">Forgot password?</small>
-                      </Link>
-                    </Col>
-                    <Col className="text-right" xs="6">
-                        <Link to="/register">
-                        <small className="text-light">Create new account</small>
-                        </Link>
-                    </Col>
-                  </Row>
                 </Col>
               </Row>
             </Container>
@@ -286,4 +203,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default ForgotPassword;
