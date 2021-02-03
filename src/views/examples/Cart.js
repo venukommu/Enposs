@@ -42,11 +42,11 @@ class Cart extends React.Component  {
       method: 'POST',
       headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${usertoken}`,
       },
-      
       body: JSON.stringify({
         product,
-        token,
+        token
       }),
       })
       .then(response => response.json())
