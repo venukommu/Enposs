@@ -37,7 +37,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import resetPassword from 'strapi/resetPassword';
+import forgotPassword from 'strapi/forgotPassword';
 //import registerUser from 'strapi/registerUser';
 import { UserContext } from 'context/user';
 import { toast } from 'react-toastify';
@@ -110,11 +110,9 @@ class ForgotPassword extends React.Component {
       //} else {
   
       let response;
-  
-      //if (isMember) {
-        response = await resetPassword( {email} );
+        response = await forgotPassword( {email} );
         console.log("response",response);
-      //}
+      
   
       if (response.status !== 400 && response.status === 200 ) {
         const {
