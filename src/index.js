@@ -42,6 +42,7 @@ import { UserProvider } from 'context/user';
 import PrivateRoute from './components/PrivateRoute';
 import LoginTest from 'views/examples/LoginTest.js';
 import ForgotPassword from 'views/examples/ForgotPassword.js';
+import ResetPassword from 'views/examples/ResetPassword.js';
 
 ReactDOM.render(
  <BrowserRouter>
@@ -99,6 +100,11 @@ ReactDOM.render(
  path="/forgot-password"
  exact
  render={props => <ForgotPassword {...props} />}
+ />
+ <Route
+ path="/reset-password"
+ exact
+ render={props => <ResetPassword {...props} />}
  />
  <Route
  path="/contact"

@@ -37,25 +37,31 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import forgotPassword from 'strapi/forgotPassword';
+import resetPassword from 'strapi/resetPassword';
 import { UserContext } from 'context/user';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import { appConfig } from "services/config.js";
 
-class ForgotPassword extends React.Component {
+class ResetPassword extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
+      password: '',
+      passwordConfirmation: '',
       username: 'default',
-      isMember: true,
+      isMember: false,
       setIsMember: true
     };
   }
 
-  emailHandler = (event) => {
-    this.setState({email: event.target.value});
+  passwordHandler = (event) => {
+    this.setState({password: event.target.value});
+  }
+
+  passwordConfirmationHandler = (event) => {
+    this.setState({passwordConfirmation: event.target.value});
   }
 
   //setIsMember = (isMember) => {
@@ -75,28 +81,33 @@ class ForgotPassword extends React.Component {
   render() {
     //const {resetPassword, alert} = this.context;
     const { history } = this.props;
-    const { email} = this.state;
+    const { password, passwordConfirmation} = this.state;
     //let isEmpty = !email || !password || !username || alert.show;
 
     const handleSubmit = async (e) => {
       //showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
-  
+
       let response;
-        response = await forgotPassword( {email} );
-        console.log("response",response);
-      
-      if (response.status !== 400 && response.status === 200) {
-        const {
-          jwt: token
-        } = response.data;
   
-        console.log("token", token)
+      //if (isMember) {
+        response = await resetPassword( {password, passwordConfirmation} );
+        console.log("response",response);
+      //}
+  
+      if (response.status !== 400 && response.status === 200 ) {
+        const {
+          jwt: token,
+          //user: { username },
+        } = response.data;
+        console.log(token);
         //const newUser = { token, username };
   
         //userLogin(newUser);
-        toast.success('Your user received an email and click the reset password link',{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
-        history.push('/reset-password');
+        toast.success(`Your user's password has been reset successfully.`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
+  
+        history.push('/login');
       } else {
         toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       }
@@ -125,16 +136,36 @@ class ForgotPassword extends React.Component {
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
                       <Form role="form">
-                        <FormGroup className="mb-3">
+                      <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-email-83" />
+                                <i className="ni ni-lock-circle-open" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" id="email" value={email}
-                            onChange={this.emailHandler}
-                            /> 
+                            <Input
+                              placeholder="Password"
+                              type="password"
+                              id="password"
+                              value={password}
+                              onChange={this.passwordHandler}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-lock-circle-open" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="PasswordConfirmation"
+                              type="passwordConfirmation"
+                              id="passwordConfirmation"
+                              value={passwordConfirmation}
+                              onChange={this.passwordConfirmationHandler}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <div className="text-center">
@@ -144,7 +175,7 @@ class ForgotPassword extends React.Component {
                             type="button"
                             onClick={handleSubmit}
                           >
-                            SEND EMAIL
+                            Reset Password
                           </Button>
                         </div>
                         
@@ -162,4 +193,4 @@ class ForgotPassword extends React.Component {
   }
 }
 
-export default ForgotPassword;
+export default ResetPassword;
