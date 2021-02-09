@@ -41,6 +41,7 @@ import resetPassword from 'strapi/resetPassword';
 import { UserContext } from 'context/user';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import queryString from 'query-string'
 //import { appConfig } from "services/config.js";
 
 class ResetPassword extends React.Component {
@@ -77,8 +78,17 @@ class ResetPassword extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    // "top"
+    //console.log(values.origin)
   }
   render() {
+    //const windowUrl = window.location.search;
+    //const params = new URLSearchParams(windowUrl);
+    //console.log(this.props.location.search);
+    const urlCode = queryString.parse(this.props.location.search)
+    //console.log(urlCode.code);
+    const urlLink = urlCode.code
+    
     //const {resetPassword, alert} = this.context;
     const { history } = this.props;
     const { password, passwordConfirmation} = this.state;
@@ -90,26 +100,30 @@ class ResetPassword extends React.Component {
 
       let response;
   
-      //if (isMember) {
-        response = await resetPassword( {password, passwordConfirmation} );
+      if (urlLink !== '') {
+        console.log(urlLink);
+        response = await resetPassword( {urlLink, password, passwordConfirmation} );
         console.log("response",response);
       //}
   
-      if (response.status !== 400 && response.status === 200 ) {
-        const {
-          jwt: token,
-          //user: { username },
-        } = response.data;
-        console.log(token);
-        //const newUser = { token, username };
-  
-        //userLogin(newUser);
-        toast.success(`Your user's password has been reset successfully.`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
-        //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
-  
-        history.push('/login');
+        if (response.status !== 400 && response.status === 200 ) {
+          const {
+            jwt: token,
+            //user: { username },
+          } = response.data;
+          console.log(token);
+          //const newUser = { token, username };
+    
+          //userLogin(newUser);
+          toast.success(`Your user's password has been reset successfully.`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+          //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
+    
+          history.push('/login');
+        } else {
+          toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        }
       } else {
-        toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        toast.error('Code not found and click the reset password link in email...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       }
     };
     return (
@@ -161,7 +175,7 @@ class ResetPassword extends React.Component {
                             </InputGroupAddon>
                             <Input
                               placeholder="PasswordConfirmation"
-                              type="passwordConfirmation"
+                              type="password"
                               id="passwordConfirmation"
                               value={passwordConfirmation}
                               onChange={this.passwordConfirmationHandler}

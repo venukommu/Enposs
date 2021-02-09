@@ -2,10 +2,12 @@ import axios from 'axios';
 
 //import url from 'utils/URL';
 
-const resetPassword = async ( {password, passwordconfirmation} ) => {
-  //console.log(email);
+const resetPassword = async ( {urlLink, password, passwordconfirmation} ) => {
+  //const code = JSON.stringify(urlCode);
+  console.log("urlCode",urlLink);
+  
   const response = await axios  
-  .post('http://localhost:1337/auth/reset-password', {
+  .post(`http://localhost:3000/auth/reset-password?code=${urlLink}`, {
     password: password,
     passwordconfirmation: passwordconfirmation
     //url: 'http:/localhost:1337/admin/plugins/users-permissions/auth/reset-password',
