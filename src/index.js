@@ -39,7 +39,6 @@ import Contact from "views/examples/Contact.js";
 import Cart from "views/examples/Cart.js";
 import CartContextProvider from "context/CartContext";
 import { UserProvider } from 'context/user';
-import PrivateRoute from './components/PrivateRoute';
 import LoginTest from 'views/examples/LoginTest.js';
 import ForgotPassword from 'views/examples/ForgotPassword.js';
 import ResetPassword from 'views/examples/ResetPassword.js';

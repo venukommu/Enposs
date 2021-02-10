@@ -83,7 +83,7 @@ class Login extends React.Component {
   render() {
     const {userLogin, alert} = this.context;
     const { history } = this.props;
-    const { email, password,  username,  isMember, setIsMember} = this.state;
+    const { email, password,  username,  isMember} = this.state;
     let isEmpty = !email || !password || !username || alert.show;
 
     /*const toggleMember = () => {

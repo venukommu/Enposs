@@ -41,7 +41,7 @@ import resetPassword from 'strapi/resetPassword';
 import { UserContext } from 'context/user';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import queryString from 'query-string'
+import queryString from 'query-string';
 //import { appConfig } from "services/config.js";
 
 class ResetPassword extends React.Component {
@@ -78,33 +78,26 @@ class ResetPassword extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-    // "top"
-    //console.log(values.origin)
   }
   render() {
-    //const windowUrl = window.location.search;
-    //const params = new URLSearchParams(windowUrl);
-    //console.log(this.props.location.search);
     const urlCode = queryString.parse(this.props.location.search)
-    //console.log(urlCode.code);
     const urlLink = urlCode.code
     
-    //const {resetPassword, alert} = this.context;
     const { history } = this.props;
     const { password, passwordConfirmation} = this.state;
-    //let isEmpty = !email || !password || !username || alert.show;
 
     const handleSubmit = async (e) => {
       //showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
 
       let response;
-  
-      if (urlLink !== '') {
+      if (password !== passwordConfirmation) {
+        toast.error('Passwords do not match.',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        } 
+       else if (urlLink !== '') {
         console.log(urlLink);
         response = await resetPassword( {urlLink, password, passwordConfirmation} );
         console.log("response",response);
-      //}
   
         if (response.status !== 400 && response.status === 200 ) {
           const {
@@ -112,12 +105,7 @@ class ResetPassword extends React.Component {
             //user: { username },
           } = response.data;
           console.log(token);
-          //const newUser = { token, username };
-    
-          //userLogin(newUser);
-          toast.success(`Your user's password has been reset successfully.`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
-          //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
-    
+          toast.success(`Your user's password has been reset successfully.`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});    
           history.push('/login');
         } else {
           toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});

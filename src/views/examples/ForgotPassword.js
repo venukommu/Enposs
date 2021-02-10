@@ -73,8 +73,6 @@ class ForgotPassword extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    //const {resetPassword, alert} = this.context;
-    const { history } = this.props;
     const { email} = this.state;
     //let isEmpty = !email || !password || !username || alert.show;
 
@@ -92,11 +90,9 @@ class ForgotPassword extends React.Component {
         } = response.data;
   
         console.log("token", token)
-        //const newUser = { token, username };
   
-        //userLogin(newUser);
-        toast.success('Your user received an email and click the reset password link',{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
-        history.push('/reset-password');
+        toast.success('We received a request to reset the password, so kindly check youre mail and click the reset password link',{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        //history.push('/reset-password');
       } else {
         toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       }
