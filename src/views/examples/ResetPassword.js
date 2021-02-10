@@ -85,13 +85,17 @@ class ResetPassword extends React.Component {
     
     const { history } = this.props;
     const { password, passwordConfirmation} = this.state;
+    let isEmpty = !password || !passwordConfirmation;
 
     const handleSubmit = async (e) => {
       //showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
 
       let response;
-      if (password !== passwordConfirmation) {
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      }
+      else if (password !== passwordConfirmation) {
         toast.error('Passwords do not match.',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
         } 
        else if (urlLink !== '') {

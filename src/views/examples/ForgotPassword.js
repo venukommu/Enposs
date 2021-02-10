@@ -74,28 +74,29 @@ class ForgotPassword extends React.Component {
   }
   render() {
     const { email} = this.state;
-    //let isEmpty = !email || !password || !username || alert.show;
+    let isEmpty = !email;
 
     const handleSubmit = async (e) => {
       //showAlert({ msg: 'accessing user data. please wait...' });
       e.preventDefault();
-  
-      let response;
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      }else {
+        let response;
         response = await forgotPassword( {email} );
         console.log("response",response);
-      
       if (response.status !== 400 && response.status === 200) {
         const {
           jwt: token
         } = response.data;
   
         console.log("token", token)
-  
         toast.success('We received a request to reset the password, so kindly check youre mail and click the reset password link',{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
         //history.push('/reset-password');
       } else {
         toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
       }
+    }  
     };
     return (
       <>
