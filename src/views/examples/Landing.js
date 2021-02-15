@@ -45,7 +45,7 @@ import { appConfig } from "services/config.js";
 // index page sections
 import Download from "../IndexSections/Download.js";
 import Products from "./Products";
-
+import Store from "./Store";
 class Landing extends React.Component {
   
   state = {
@@ -987,7 +987,8 @@ class Landing extends React.Component {
         <Container className="container-lg">
           {/* shopping cart with Stripe integration Code*/}
             <div>
-             <Products />
+             {/*<Products />*/}
+             <Store />
             </div>
               {/* Snipcart Code
               <h3 className="text-danger"> Snipcart demo</h3>
