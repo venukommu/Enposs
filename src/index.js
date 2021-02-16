@@ -42,6 +42,7 @@ import { UserProvider } from 'context/user';
 import LoginTest from 'views/examples/LoginTest.js';
 import ForgotPassword from 'views/examples/ForgotPassword.js';
 import ResetPassword from 'views/examples/ResetPassword.js';
+import Store from "views/examples/Store.js";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -109,6 +110,11 @@ ReactDOM.render(
  path="/contact"
  exact
  render={props => <Contact {...props} />}
+ />
+ <Route
+ path="/store"
+ exact
+ render={props => <Store {...props} />}
  />
  <Route
  path="/cart"
