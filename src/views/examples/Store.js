@@ -1,11 +1,12 @@
 import React from 'react';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useState } from "react";
 import { withRouter } from "react-router";
 
-function Store(props) {
-        const storeDiv = useRef(null);
-    const scriptRef = useRef(null);
+const Store=(props) => {
   
+    const storeDiv = useRef(null);
+    const scriptRef = useRef(null);
+
     window.localStorage.setItem("show_ecwid_logs","true")
     window.ecwid_script_defer = true;
     window.ecwid_dynamic_widgets = true;
@@ -28,21 +29,24 @@ function Store(props) {
         arg: ["id=searchWidget"]
       }
     ];
-  
-    var script = document.createElement('script');
+   // document.getElementById('my-store-1003').appendChild(script);
+
+    const script = document.createElement('script');
     script.charset = 'utf-8';
     script.type = 'text/javascript';
     script.src = 'https://app.ecwid.com/script.js?48163008';
     script.defer = true;
     script.ref=scriptRef;
-  
-  
+    script.async = true;
+
   useEffect(() => {
+    console.log(!scriptRef.current)
       if(!scriptRef.current){
         storeDiv.current.appendChild(script);
       }
   });
-  
+
+
     return (
       <>
         <div id="my-search-48163008"></div>
@@ -50,9 +54,11 @@ function Store(props) {
         <div id="my-store-48163008" ref={storeDiv}></div>
         <div className="ec-cart-widget"></div>
       </>
-  
       );
+
     }
 
-
     export default withRouter(Store);
+
+
+    
