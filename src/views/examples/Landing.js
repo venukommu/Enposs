@@ -986,10 +986,10 @@ class Landing extends React.Component {
         <section>
         <Container className="container-lg">
           {/* shopping cart with Stripe integration Code*/}
-            <div>
-             {/*<Products />*/}
+            {/*<div>
+             {/*<Products />
              <Store />
-            </div>
+            </div>*/}
               {/* Snipcart Code
               <h3 className="text-danger"> Snipcart demo</h3>
               <Row> 
