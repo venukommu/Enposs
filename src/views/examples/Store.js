@@ -1,11 +1,13 @@
 import React from 'react';
-import { useEffect, useRef,useState } from "react";
-import { withRouter } from "react-router";
+import { useEffect, useRef} from "react";
+//import { withRouter } from "react-router";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import { Button,Card,Container,Row,Col } from "reactstrap";
+import {Card,Container,Row,Col } from "reactstrap";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const Store= (props) => {
+    toast.success(`Accessing Enposs Products. please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
 
-const Store=(props) => {
-  
     const storeDiv = useRef(null);
     const scriptRef = useRef(null);
 

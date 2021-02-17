@@ -44,8 +44,6 @@ import { appConfig } from "services/config.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
-import Products from "./Products";
-import Store from "./Store";
 class Landing extends React.Component {
   
   state = {
