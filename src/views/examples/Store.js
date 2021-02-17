@@ -6,7 +6,7 @@ import {Card,Container,Row,Col } from "reactstrap";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Store= (props) => {
-    toast.success(`Accessing Enposs Products. please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+    toast.success(`Page is Loading... Please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
 
     const storeDiv = useRef(null);
     const scriptRef = useRef(null);
