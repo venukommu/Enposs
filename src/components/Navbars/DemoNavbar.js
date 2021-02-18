@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 import {CartContext} from "context/CartContext";
-import { UserContext } from 'context/user';
+//import { UserContext } from 'context/user';
 // reactstrap components
 import {
   UncontrolledCollapse,
@@ -32,8 +32,10 @@ import {
   Container,
   Row,
   Col,
-  NavItem,
-  NavLink
+  //NavItem,
+  //NavLink,
+  DropdownMenu,
+  DropdownItem
 } from "reactstrap";
 
 class DemoNavbar extends React.Component {
@@ -61,7 +63,7 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
-    const {qty} = this.context;
+    //const {qty} = this.context;
     return (
       <>
         <header className="header-global">
@@ -202,44 +204,109 @@ class DemoNavbar extends React.Component {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav> */}
-                <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/" tag={Link} nav>
+                    <DropdownToggle to="/ceomessage" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">HOME</span>
+                      <span className="nav-link-inner--text">About</span>
                     </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem to="/ceomessage" tag={Link}>
+                        Ceo Message
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Company History
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Timeline
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Directions 
+                      </DropdownItem>
+                    </DropdownMenu>
                   </UncontrolledDropdown>                  
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/about" tag={Link} nav>
+                    <DropdownToggle to="force" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">ABOUT</span>
+                      <span className="nav-link-inner--text">Products</span>
                     </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem to="force" tag={Link}>
+                        What is Force?
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Principles of Force
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        How to Install Force
+                      </DropdownItem>
+                    </DropdownMenu>
                   </UncontrolledDropdown>                                    
                   <UncontrolledDropdown nav>
-                    <DropdownToggle  to="/forceSystem" tag={Link} nav>
+                    <DropdownToggle  to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">FORCE SYSTEM</span>
+                      <span className="nav-link-inner--text">News</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/portfolio" tag={Link} nav>
+                    <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">PORTFOLIO</span>
+                      <span className="nav-link-inner--text">Cases</span>
                     </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem to="#" tag={Link}>
+                        Domestics
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Overseas
+                      </DropdownItem>
+                    </DropdownMenu>
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/download" tag={Link} nav>
+                    <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">DOWNLOAD</span>
+                      <span className="nav-link-inner--text">Patents</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle to="#" tag={Link} nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Certifications</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>  
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle to="#" tag={Link} nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Support</span>
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem to="#" tag={Link}>
+                        Announcement
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        FAQ
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Q&A
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Inquiry
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle to="/store" tag={Link}  onClick={() => {window.location.href="/store"}} nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Shop</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>                                    
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/contact" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">CONTACT</span>
+                      <span className="nav-link-inner--text">Contact</span>
                     </DropdownToggle>
                   </UncontrolledDropdown> 
-                  <UncontrolledDropdown nav>
+                  {/*<UncontrolledDropdown nav>
                     <DropdownToggle to="/store" tag={Link}  onClick={() => {window.location.href="/store"}} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Shop Enposs Products</span>
@@ -258,7 +325,7 @@ class DemoNavbar extends React.Component {
                     </NavLink>
                     {/*<UncontrolledTooltip delay={0} target="tooltip333589074">
                       Like us on Facebook
-                      </UncontrolledTooltip>*/}
+                      </UncontrolledTooltip>
                   </NavItem>
                   <UserContext.Consumer> 
                   {({user,userLogout}) => ( 
@@ -270,7 +337,7 @@ class DemoNavbar extends React.Component {
                       </DropdownToggle>
                     </UncontrolledDropdown>
                     ) : '' )}
-                  </UserContext.Consumer>                                                                       
+                  </UserContext.Consumer>   */}                                                                    
                   {/* <NavItem>
                     <NavLink
                       className="nav-link-icon"

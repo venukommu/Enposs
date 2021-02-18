@@ -43,6 +43,8 @@ import LoginTest from 'views/examples/LoginTest.js';
 import ForgotPassword from 'views/examples/ForgotPassword.js';
 import ResetPassword from 'views/examples/ResetPassword.js';
 import Store from "views/examples/Store.js";
+import CeoMessage from "views/examples/CeoMessage";
+import Force from "views/examples/Force";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -60,6 +62,16 @@ ReactDOM.render(
  path="/about"
  exact
  render={props => <Profile {...props} />}
+ />
+ <Route
+ path="/ceomessage"
+ exact
+ render={props => <CeoMessage {...props} />}
+ />
+ <Route
+ path="/force"
+ exact
+ render={props => <Force {...props} />}
  />
  <Route
  path="/forceSystem"
