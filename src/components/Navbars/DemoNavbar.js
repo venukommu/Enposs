@@ -309,7 +309,7 @@ class DemoNavbar extends React.Component {
                   {/*<UncontrolledDropdown nav>
                     <DropdownToggle to="/store" tag={Link}  onClick={() => {window.location.href="/store"}} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Shop Enposs Products</span>
+                      <span className="nav-link-inner--text">SHOP ENPOSS PRODUCTS</span>
                     </DropdownToggle>
                   </UncontrolledDropdown> 
                   <NavItem>
