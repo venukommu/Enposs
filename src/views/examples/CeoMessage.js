@@ -112,7 +112,7 @@ class CeoMessage extends React.Component {
                 <div className="px-4">
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="3">
-                      <div className="card-profile-image">
+                     {/*} <div className="card-profile-image">
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                         {productimage.map((val,index) => (
                           <img key={index}
@@ -122,7 +122,7 @@ class CeoMessage extends React.Component {
                             />
                             ))}
                         </a>
-                      </div>
+                        </div>*/}
                     </Col>
                     <Col
                       className="order-lg-3 text-lg-right align-self-lg-center"
