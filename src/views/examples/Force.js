@@ -16,13 +16,14 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
 
 class Force extends React.Component {
   
   state = {
-    force: [],
+    forcewidgets: [],
     error: null,
   };
 
@@ -31,10 +32,35 @@ class Force extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ forcewidgets });
+    } catch (error) {
+      this.setState({ error });
+    }
+
   };
   
   render() {
-    const { error} = this.state;
+    const { error,forcewidgets} = this.state;
 
     // Print errors if any
     if (error) {
@@ -95,78 +121,27 @@ class Force extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className=" rounded-circle mb-4">
-                            <img alt="..."
-                              className="img-center img-fluid"
-                                src={require("assets/img/theme/force_1_ceb4e9e6.png")}/>
-                          </div>
-                          <div>
+                  {forcewidgets.map(widgets => (
+                      <Col lg="4" key={widgets.id}>
+                        <Card className="card-lift--hover shadow border-0">
+                          <CardBody className="py-5">
+                            <div className=" rounded-circle mb-4">
+                              <img alt="..."
+                                className="img-center img-fluid"
+                                src={`${appConfig.apiURL}${widgets.images.url}`}/>
+                            </div>
                             <h6 className="text-primary text-uppercase">
-                            Environment Friendly
+                              {/*About Company*/}
+                              {widgets.Title}
                             </h6>
                             <p className="description mt-3"
                             style={{ textAlign : "justify" }}>
-                            Force is a product made out of tourmaline 
-                            as the main material that generates anion 
-                            semi-permanently, applied the best 
-                            environmental technology, and saves 
-                            electric energy by improving 
-                            the efficiency of the electric system.
+                            {widgets.description}
                             </p>
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                        <div className=" rounded-circle mb-4">
-                            <img alt="..."
-                              className="img-center img-fluid"
-                                src={require("assets/img/theme/force_2.128f9e8d.png")}/>
-                          </div>
-                          <div>
-                            <h6 className="text-primary text-uppercase">
-                            Very high in safety
-                            </h6>
-                            <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
-                            The force is a non-current device 
-                            that does not require a separate power supply, 
-                            which is very high in safety and easy to install.
-
-                            </p>
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                        <div className=" rounded-circle mb-4">
-                            <img alt="..."
-                              className="img-center img-fluid"
-                                src={require("assets/img/theme/force_3.f7979078.png")}/>
-                          </div>
-                          <div>
-                            <h6 className="text-primary text-uppercase">
-                            Apply multi load
-                            </h6>
-                            <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
-                            Force can be applied anywhere power is used, 
-                            from manufacturing plant to ship, office building 
-                            to the apartment, single phase, three phase, 
-                            and high voltage(6,000V or less) and low voltage.
-
-                            </p>
-                          </div>
-                        </CardBody>
-                      </Card>
+                          </CardBody>
+                        </Card>
                       </Col>
+                    ))}
                   </Row>
                 </Col>
               </Row>
