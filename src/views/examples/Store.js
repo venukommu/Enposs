@@ -19,7 +19,6 @@ function Store({props}) {
     window.ec.config = window.ec.config || Object();
     window.ec.storefront = window.ec.storefront || Object();
     window.ec.enable_catalog_on_one_page = true;
-    //window.ec.config.store_main_page_url = "http://localhost:3000/store";
 
     window._xnext_initialization_scripts = [{
       widgetType: 'ProductBrowser',
