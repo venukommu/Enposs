@@ -1,22 +1,26 @@
 import React from 'react';
-import { useEffect, useRef} from "react";
-//import { withRouter } from "react-router";
+import { useEffect, useRef,useState} from "react";
+import { withRouter } from "react-router";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const Store= (props) => {
-    toast.success(`Page is Loading... Please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+import ReactDOM from 'react-dom';
 
+function Store({props}) {
     const storeDiv = useRef(null);
-    const scriptRef = useRef(null);
-
+    const scriptRef = useRef(null); 
+    const isEcwidPage = document.getElementById('productBrowser') != null;
+       
     window.localStorage.setItem("show_ecwid_logs","true")
     window.ecwid_script_defer = true;
     window.ecwid_dynamic_widgets = true;
     window.ec = window.ec || Object();
+    window.ec.config = window.ec.config || Object();
     window.ec.storefront = window.ec.storefront || Object();
     window.ec.enable_catalog_on_one_page = true;
+    //window.ec.config.store_main_page_url = "http://localhost:3000/store";
+
     window._xnext_initialization_scripts = [{
       widgetType: 'ProductBrowser',
       id: 'my-store-48163008',
@@ -33,7 +37,6 @@ const Store= (props) => {
         arg: ["id=searchWidget"]
       }
     ];
-   // document.getElementById('my-store-1003').appendChild(script);
 
     const script = document.createElement('script');
     script.charset = 'utf-8';
@@ -42,19 +45,18 @@ const Store= (props) => {
     script.defer = true;
     script.ref=scriptRef;
     script.async = true;
-
   useEffect(() => {
-    console.log(!scriptRef.current)
+    if (window.ecwidLoaded && isEcwidPage) return;
+    toast.success(`Page is Loading... Please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
       if(!scriptRef.current){
         storeDiv.current.appendChild(script);
-      }
+      } 
   });
-
+  
 
     return (
       <>
         <DemoNavbar />
-        
         <section className="section-profile-cover section-shaped my-0">
         <div className="shape shape-style-1 shape-default bg-gradient-warning alpha-4">
           <span />
@@ -93,10 +95,10 @@ const Store= (props) => {
       </section>
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
-        <Card className="card-profile shadow mt--200">
+        <Card className="card-profile shadow mt--200" >
         <div id="my-search-48163008"></div>
         <div id="my-categories-48163008"></div>
-        <div id="my-store-48163008" ref={storeDiv}></div>
+        <div id="my-store-48163008" ref={storeDiv} ></div>
         <div className="ec-cart-widget"></div>
         </Card>
         </Container>
@@ -105,8 +107,5 @@ const Store= (props) => {
       );
 
     }
-
-    export default Store;
-
-
-    
+   
+    export default withRouter(Store);    
