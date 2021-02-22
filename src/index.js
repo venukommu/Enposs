@@ -45,6 +45,7 @@ import ResetPassword from 'views/examples/ResetPassword.js';
 import Store from "views/examples/Store.js";
 import CeoMessage from "views/examples/CeoMessage";
 import Force from "views/examples/Force";
+import Patents from "views/examples/Patents";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -132,6 +133,11 @@ ReactDOM.render(
  path="/cart"
  exact
  render={props => <Cart {...props} />}
+ />
+ <Route
+ path="/patents"
+ exact
+ render={props => <Patents {...props} />}
  />
 {/*<Route path="/" exact component={ProductList} />
 <Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
