@@ -35,7 +35,7 @@ import ForcePilotFinalReport from "views/examples/ForcePilotFinalReport.js";
 import ForceEnergySavingSystem from "views/examples/ForceEnergySavingSystem.js";
 import ForcePilotReport from "views/examples/ForcePilotReport.js";
 import Contact from "views/examples/Contact.js";
-
+import Store from "views/examples/Store.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -86,6 +86,11 @@ ReactDOM.render(
         path="/register"
         exact
         render={props => <Register {...props} />}
+      />
+      <Route
+      path="/store"
+      exact
+      render={props => <Store {...props} />}
       />
       <Route
         path="/contact"
