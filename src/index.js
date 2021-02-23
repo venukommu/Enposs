@@ -46,6 +46,7 @@ import Store from "views/examples/Store.js";
 import CeoMessage from "views/examples/CeoMessage";
 import Force from "views/examples/Force";
 import Patents from "views/examples/Patents";
+import OurStory from "views/examples/OurStory";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -68,6 +69,11 @@ ReactDOM.render(
  path="/ceomessage"
  exact
  render={props => <CeoMessage {...props} />}
+ />
+ <Route
+ path="/ourstory"
+ exact
+ render={props => <OurStory {...props} />}
  />
  <Route
  path="/force"

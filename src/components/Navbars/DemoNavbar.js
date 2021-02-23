@@ -214,8 +214,8 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/ceomessage" tag={Link}>
                         Ceo Message
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
-                        Company History
+                      <DropdownItem to="/ourstory" tag={Link}>
+                        Our Story
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
                         Timeline
