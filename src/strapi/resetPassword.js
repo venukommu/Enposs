@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 //import url from 'utils/URL';
+import { appConfig } from "services/config.js";
 
 const resetPassword = async ( {urlLink, password, passwordConfirmation} ) => {
   const response = await axios  
-  .post('http://localhost:1337/auth/reset-password', {
+  .post(`${appConfig.apiURL}/auth/reset-password`, {
     code: urlLink,
     password: password,
     passwordConfirmation: passwordConfirmation

@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-import url from 'utils/URL';
+//import url from 'utils/URL';
+import { appConfig } from "services/config.js";
 
 const loginUser = async ( {email, password} ) => {
   const response = await axios
-    .post(`${url}/auth/local`, {
+    .post(`${appConfig.apiURL}/auth/local`, {
       identifier: email,
       password,
     })

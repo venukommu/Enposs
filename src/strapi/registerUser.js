@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-import url from 'utils/URL';
+import { appConfig } from "services/config.js";
 
 const registerUser = async ({ email, password, username },ctx) => {
   const response = await axios
-    .post(`${url}/auth/local/register`, {
+    .post(`${appConfig.apiURL}/auth/local/register`, {
       username,
       email,
       password,

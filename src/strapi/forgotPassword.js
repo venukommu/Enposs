@@ -1,13 +1,14 @@
 import axios from 'axios';
 
 //import url from 'utils/URL';
+import { appConfig } from "services/config.js";
 
 const forgotPassword = async ( {email} ) => {
   const response = await axios
-  .post('http://localhost:1337/auth/forgot-password', {
+  .post(`${appConfig.apiURL}/auth/forgot-password`, {
     email: email,
     url:
-    'http:/localhost:1337/admin/plugins/users-permissions/auth/reset-password',
+    `${appConfig.apiURL}/admin/plugins/users-permissions/auth/reset-password`,
   })
   .catch(error => {
     // Handle error.
