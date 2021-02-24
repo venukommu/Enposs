@@ -156,7 +156,7 @@ class OurStory extends React.Component {
                         />
                       </svg>
                      <h4 className="display-3 font-weight-bold text-white">
-                      {companystory.Title}
+                  {/*}    {companystory.Title}*/}
                       </h4>
                       <p className="lead text-italic text-white" style={{ textAlign : "justify"}}>
                       <ShowMoreText
