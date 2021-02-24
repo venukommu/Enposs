@@ -145,15 +145,17 @@ class OurStory extends React.Component {
           
       <section className="section section-lg pt-lg-0 mt--200">
             <Container>
+            <Card className="card-profile shadow mt--200">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="8">
-                  <Card className="bg-default shadow border-0">
+                  <Card className="bg-default shadow border-0">_113530377_bears_kt-miller.jpg
                     <CardImg
                       alt="..."
-                     src={require("assets/img/theme/global-warming-climate-change-day-slogans-quotes_28.webp")}
+                    // src={require("assets/img/theme/global-warming-climate-change-day-slogans-quotes_28.webp")}
+                     src={require("assets/img/theme/_113530377_bears_kt-miller.jpg")}
+
                       //src={require("assets/img/theme/save-polar-bears-concept-global-warming-vector.jpg")}
                       //src={require("assets/img/theme/save-the-polar-bears-stop-global-warming-poster.jpg")}
-
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
                     />
@@ -178,13 +180,16 @@ class OurStory extends React.Component {
                       {companystory.Title}
                       </h4>
                       <p className="lead text-italic text-white">
-    {companystory.description}</p>
+                        {companystory.description}</p>
                     </blockquote>
                   </Card>
                 </Col>
                
               </Row>
+              </Card>
+
             </Container>
+
           </section>
         
          
