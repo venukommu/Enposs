@@ -158,7 +158,7 @@ class OurStory extends React.Component {
                      <h4 className="display-3 font-weight-bold text-white">
                       {companystory.Title}
                       </h4>
-                      <p className="lead text-italic text-white">
+                      <p className="lead text-italic text-white" style={{ textAlign : "justify"}}>
                       <ShowMoreText
                     /* Default options */
                     lines={5}

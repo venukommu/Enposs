@@ -24,8 +24,12 @@ import { Card, Container, Row, Col } from "reactstrap";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import ShowMoreText from 'react-show-more-text';
 
 class CeoMessage extends React.Component {
+  executeOnClick(isExpanded) {
+    console.log(isExpanded);
+}
   state = {
     aboutcompany: [],
     ceomessage: [],
@@ -203,8 +207,19 @@ class CeoMessage extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p style={{ textAlign : "justify"}}>
-                        {ceomessage.description}
-
+                        <ShowMoreText
+                        /* Default options */
+                        lines={5}
+                        more='Show more'
+                        less='Show less'
+                        className='content-css'
+                        anchorClass='my-anchor-css-class'
+                        onClick={this.executeOnClick}
+                        expanded={false}
+                        //width={280}
+                    >
+                  {ceomessage.description}
+                </ShowMoreText>
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}
