@@ -19,23 +19,23 @@
 import React from "react";
 // nodejs library that concatenates classes
 //import classnames from "classnames";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 //import BuyButton from './BuyButton';
 
 
 // reactstrap components
 import {
-  Badge,
-  Button,
+ // Badge,
+ // Button,
   Card,
-  CardBody,
+ // CardBody,
   CardImg,
   Container,
   Row,
   Col
 } from "reactstrap";
-import Carousel from "../IndexSections/Carousel.js";
-import Login from "../IndexSections/Login.js";
+//import Carousel from "../IndexSections/Carousel.js";
+//import Login from "../IndexSections/Login.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -43,21 +43,10 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 
 // index page sections
-import Download from "../IndexSections/Download.js";
+//import Download from "../IndexSections/Download.js";
 class OurStory extends React.Component {
   
   state = {
-    homepagebanner: [],
-    homepagewidgets: [],
-    ourcustomers: [],
-    productimage: {},
-    homepageimage: [],
-    force: [],
-    forceimage: {},
-    awesomefeatures:[],
-    awesomefeaturesimage: {},
-    enpossproducts: [],
-    enpossproductsimages: {},
     error: null,
     companystory: [],
   };
@@ -97,7 +86,7 @@ class OurStory extends React.Component {
   };
   
   render() {
-    const { error,companystory,productimage} = this.state;
+    const { error,companystory} = this.state;
 
     // Print errors if any
     if (error) {
@@ -153,7 +142,6 @@ class OurStory extends React.Component {
                       alt="..."
                     // src={require("assets/img/theme/global-warming-climate-change-day-slogans-quotes_28.webp")}
                      src={require("assets/img/theme/_113530377_bears_kt-miller.jpg")}
-
                       //src={require("assets/img/theme/save-polar-bears-concept-global-warming-vector.jpg")}
                       //src={require("assets/img/theme/save-the-polar-bears-stop-global-warming-poster.jpg")}
                       //src={`${appConfig.apiURL}${productimage.url}`}

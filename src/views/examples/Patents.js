@@ -19,7 +19,7 @@ import React from "react";
 import { appConfig } from "services/config.js";
 
 // reactstrap components
-import {Container, Row, Card, Col, UncontrolledCarousel} from "reactstrap";
+import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 
 const items = [
@@ -94,7 +94,7 @@ class Patents extends React.Component {
   };
 
   render() {
-    const { error, carouselimage} = this.state;
+    const { error} = this.state;
 
     // Print errors if any
     if (error) {

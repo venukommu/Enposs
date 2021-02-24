@@ -1,11 +1,11 @@
 import React from 'react';
-import { useEffect, useRef,useState} from "react";
+import { useEffect, useRef} from "react";
 import { withRouter } from "react-router";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 function Store({props}) {
     const storeDiv = useRef(null);

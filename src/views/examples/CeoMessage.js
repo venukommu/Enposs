@@ -77,7 +77,7 @@ class CeoMessage extends React.Component {
     this.refs.main.scrollTop = 0;
   };
   render() {
-    const { error,bannerimage,productimage,ceomessage} = this.state;
+    const { error,bannerimage,ceomessage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;

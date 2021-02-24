@@ -7,7 +7,6 @@ import React from "react";
 import {
   Card,
   CardBody,
-  CardImg,
   Container,
   Row,
   Col
