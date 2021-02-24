@@ -136,8 +136,7 @@ class OurStory extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--200">
               <Row className="row-grid align-items-center justify-content-center">
-                <Col lg="8">
-                  <Card className="bg-default shadow border-0">
+                <Col lg="12">
                     <CardImg
                       alt="..."
                     // src={require("assets/img/theme/global-warming-climate-change-day-slogans-quotes_28.webp")}
@@ -170,7 +169,6 @@ class OurStory extends React.Component {
                       <p className="lead text-italic text-white">
                         {companystory.description}</p>
                     </blockquote>
-                  </Card>
                 </Col>
                
               </Row>
