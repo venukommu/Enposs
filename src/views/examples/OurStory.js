@@ -17,11 +17,6 @@
 */
 
 import React from "react";
-// nodejs library that concatenates classes
-//import classnames from "classnames";
-//import { Link } from "react-router-dom";
-//import BuyButton from './BuyButton';
-
 
 // reactstrap components
 import {
@@ -34,18 +29,18 @@ import {
   Row,
   Col
 } from "reactstrap";
-//import Carousel from "../IndexSections/Carousel.js";
-//import Login from "../IndexSections/Login.js";
+
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
+import ShowMoreText from 'react-show-more-text';
 
-// index page sections
-//import Download from "../IndexSections/Download.js";
 class OurStory extends React.Component {
-  
+  executeOnClick(isExpanded) {
+    console.log(isExpanded);
+}
   state = {
     error: null,
     companystory: [],
@@ -139,10 +134,7 @@ class OurStory extends React.Component {
                 <Col lg="12">
                     <CardImg
                       alt="..."
-                    // src={require("assets/img/theme/global-warming-climate-change-day-slogans-quotes_28.webp")}
                      src={require("assets/img/theme/_113530377_bears_kt-miller.jpg")}
-                      //src={require("assets/img/theme/save-polar-bears-concept-global-warming-vector.jpg")}
-                      //src={require("assets/img/theme/save-the-polar-bears-stop-global-warming-poster.jpg")}
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
                     />
@@ -167,19 +159,26 @@ class OurStory extends React.Component {
                       {companystory.Title}
                       </h4>
                       <p className="lead text-italic text-white">
-                        {companystory.description}</p>
+                      <ShowMoreText
+                    /* Default options */
+                    lines={5}
+                    more='Show more'
+                    less='Show less'
+                    className='content-css'
+                    anchorClass='my-anchor-css-class'
+                    onClick={this.executeOnClick}
+                    expanded={false}
+                    //width={280}
+                >
+               {companystory.description}
+              </ShowMoreText>
+                        {/*{companystory.description}*/}</p>
                     </blockquote>
                 </Col>
-               
               </Row>
               </Card>
-
             </Container>
-
           </section>
-        
-         
-         
         <CardsFooter />
       </>
     );
