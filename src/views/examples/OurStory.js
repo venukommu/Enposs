@@ -148,7 +148,7 @@ class OurStory extends React.Component {
             <Card className="card-profile shadow mt--200">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="8">
-                  <Card className="bg-default shadow border-0">_113530377_bears_kt-miller.jpg
+                  <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
                     // src={require("assets/img/theme/global-warming-climate-change-day-slogans-quotes_28.webp")}
@@ -159,7 +159,7 @@ class OurStory extends React.Component {
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
                     />
-                    <blockquote className="card-blockquote">
+                    <blockquote className="card-blockquote bg-default shadow border-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="svg-bg"
