@@ -7,9 +7,11 @@ import React from "react";
 import {
   Card,
   CardBody,
+  CardImg,
   Container,
   Row,
-  Col
+  Col,
+  Button
 } from "reactstrap";
 
 // core components
@@ -123,11 +125,12 @@ class Force extends React.Component {
                   {forcewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
-                          <CardBody className="py-5">
+                          <CardBody className="py-4">
                             <div className=" rounded-circle mb-4">
                               <img alt="..."
-                                className="img-center img-fluid"
-                                src={`${appConfig.apiURL}${widgets.images.url}`}/>
+                                className="rounded-circle img-center img-fluid"
+                                src={`${appConfig.apiURL}${widgets.images.url}`}
+                                style={{ width: "100px" }}/>
                             </div>
                             <h6 className="text-primary text-uppercase">
                               {/*About Company*/}
@@ -146,6 +149,78 @@ class Force extends React.Component {
               </Row>
             </Container>
           </section>
+          <section className="section section-shaped">
+           <Container>
+           <Row className="row-grid">
+              <Col lg="12">
+                <h1 className="display-3 text-dark justify-content-center">Features of force</h1>
+              </Col>
+            </Row>
+            <Row className="row-grid">
+              <Col lg="2">
+                <Card className="card-lift--hover bg-gradient-danger shadow border-0">
+                  <CardBody className="py-3"> 
+                    <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-white">
+                      1
+                    </div>
+                      <p className="description mt-3 text-white">
+                      Usage of electricity saved by 5 per cent
+                      </p>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col lg="2">
+                <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                  <CardBody className="py-4"> 
+                    <div className="icon icon-shape icon-shape-info rounded-circle mb-4 text-white">
+                      2
+                    </div>
+                      <p className="description mt-3 text-white">
+                      Reduces Impedance
+                      </p>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col lg="2">
+                <Card className="card-lift--hover bg-gradient-warning shadow border-0">
+                  <CardBody className="py-4"> 
+                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-white">
+                      3
+                    </div>
+                      <p className="description mt-3 text-white">
+                      Reduces harmonic distortion
+                      </p>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col lg="2">
+                <Card className="card-lift--hover bg-gradient-primary shadow border-0">
+                  <CardBody className="py-4"> 
+                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-white">
+                      4
+                    </div>
+                      <p className="description mt-3 text-white">
+                      Increases conductivity
+                      </p>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col lg="2">
+                <Card className="card-lift--hover bg-gradient-success shadow border-0">
+                  <CardBody className="py-4"> 
+                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-white">
+                      5
+                    </div>
+                      <p className="description mt-3 text-white">
+                      Extends life cycle
+                      </p>
+                  </CardBody>
+                </Card>
+              </Col>
+              </Row>
+            
+          </Container>
+        </section>
         </main>
         <CardsFooter />
       </>
