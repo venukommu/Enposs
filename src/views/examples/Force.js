@@ -7,11 +7,11 @@ import React from "react";
 import {
   Card,
   CardBody,
-  CardImg,
+  //CardImg,
   Container,
   Row,
   Col,
-  Button
+  //Button
 } from "reactstrap";
 
 // core components

@@ -188,7 +188,6 @@ class Landing extends React.Component {
                 <Row>
                     <Col lg="6">
                     {/*< ProductList />*/}
-                    
                       <div>
                         <h1 className="display-3 text-white">
                         {homepagebanner.Title}
