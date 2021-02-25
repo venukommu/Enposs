@@ -238,7 +238,10 @@ class DemoNavbar extends React.Component {
                         Principles of Force
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
-                        How to Install Force
+                        Patents
+                      </DropdownItem>
+                      <DropdownItem to="#" tag={Link}>
+                        Certificates
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                                    
@@ -255,14 +258,14 @@ class DemoNavbar extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="#" tag={Link}>
-                        Domestics
+                        Domestic
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
                         Overseas
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                                                      
-                  <UncontrolledDropdown nav>
+                {/*  <UncontrolledDropdown nav>
                     <DropdownToggle to="/patents" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Patents</span>
@@ -273,13 +276,16 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Certifications</span>
                     </DropdownToggle>
-                  </UncontrolledDropdown>  
+                </UncontrolledDropdown>  */}
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
+                    <DropdownItem to="#" tag={Link}>
+                        How to install Force
+                      </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
                         Announcement
                       </DropdownItem>
@@ -295,7 +301,7 @@ class DemoNavbar extends React.Component {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/store" tag={Link}  onClick={() => {window.location.href="/store"}} nav>
+                    <DropdownToggle to="/store" tag={Link}  nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Shop</span>
                     </DropdownToggle>

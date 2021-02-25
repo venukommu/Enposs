@@ -132,14 +132,14 @@ class OurStory extends React.Component {
             <Card className="card-profile shadow mt--200">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
-                    <CardImg
+                   {/*} <CardImg
                       alt="..."
                      src={require("assets/img/theme/_113530377_bears_kt-miller.jpg")}
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
-                    />
+    />*/}
                     <blockquote className="card-blockquote bg-default shadow border-0">
-                      <svg
+                     {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="svg-bg"
                         preserveAspectRatio="none"
@@ -154,7 +154,7 @@ class OurStory extends React.Component {
                           opacity=".2"
                           points="0,42 583,95 683,0 0,95"
                         />
-                      </svg>
+                     </svg>*/}
                      <h4 className="display-3 font-weight-bold text-white">
                   {/*}    {companystory.Title}*/}
                       </h4>
