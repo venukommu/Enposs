@@ -30,12 +30,12 @@ import {
   Col
 } from "reactstrap";
 
-
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 import ShowMoreText from 'react-show-more-text';
+import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -44,6 +44,8 @@ class OurStory extends React.Component {
   state = {
     error: null,
     companystory: [],
+    homepageimage: [],
+
   };
 
   componentDidMount = async () => {
@@ -78,10 +80,22 @@ class OurStory extends React.Component {
         this.setState({ error });
       }
 
+      try {
+        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
+          method: 'GET',
+          headers: headers,
+        })
+          .then(checkStatus)
+          .then(parseJSON);
+        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
+      } catch (error) {
+        this.setState({ error });
+      }
+
   };
   
   render() {
-    const { error,companystory} = this.state;
+    const { error} = this.state;
 
     // Print errors if any
     if (error) {
@@ -90,43 +104,65 @@ class OurStory extends React.Component {
     return (
       <>
         <DemoNavbar />
-        <section className="section-profile-cover section-shaped my-0">
-        <div className="shape shape-style-1 shape-default bg-gradient-success alpha-4">
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <Container className="shape-container d-flex align-items-center py-lg">
-          <div className="col px-0">
-            <Row className="align-items-center justify-content-center">
-              <Col className="text-center" lg="6">
-                <h1 className="display-3 text-white">Our Story</h1>
-              </Col>
-            </Row>
+        <div className="position-relative">
+            {/* shape Hero */}
+            <section className="section section-lg section-shaped pb-250">
+            <div className="shape shape-style-1 shape-default"
+              style= {{
+                backgroundPosition: "center",
+                backgroundImage: `url("${Background}")`,
+               }}>
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+             
+              <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                <Row>
+                    <Col lg="6">
+                    {/*< ProductList />*/}
+                      <div>
+                        <h6 className="display-3 text-white">
+                        Saving Strategy
+                        {/*ENPOSS Inc {" "}*/}
+                          <span>for Power and Planet</span>
+                        </h6>
+                       <p className="lead text-white"
+                        style={{ textAlign : "justify" }}>
+                        ENPOSS was born in 2005 to save energy and save the planet. 
+              Carbon Dioxide emissions cause greenhouse effect.</p>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </Container>
+              {/* SVG separator */}
+              <div className="separator separator-bottom separator-skew">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  version="1.1"
+                  viewBox="0 0 2560 100"
+                  x="0"
+                  y="0"
+                >
+                  <polygon
+                    className="fill-white"
+                    points="2560 0 2560 100 0 100"
+                  />
+                </svg>
+              </div>
+            </section>
+            {/* 1st Hero Variation */}
           </div>
-        </Container>
-        {/* SVG separator */}
-        <div className="separator separator-bottom separator-skew">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="fill-white"
-              points="2560 0 2560 100 0 100"
-            />
-          </svg>
-        </div>
-      </section>
-          
+           
       <section className="section section-lg pt-lg-0 mt--200">
             <Container>
             <Card className="card-profile shadow mt--200">
@@ -170,8 +206,8 @@ class OurStory extends React.Component {
                     expanded={false}
                     //width={280}
                 >
-               {companystory.description}
-              </ShowMoreText>
+ENPOSS was born in 2005 to save energy and save the planet. Carbon Dioxide emissions cause greenhouse effect.This greenhouse gas traps the heat like a blanket and causes global warming. Enposs reduces consumption of electricity and thereby contributes to reduction in carbon dioxide emission.This in turn reduces global warming. (The way to slow global warming is to reduce emissions of carbon dioxide, a green gas. ENPOSS has also worked on ways to reduce carbon dioxide emissions by reducing electric energy consumption.).ENPOSS took the initiative of developing FORCE, an electric energy saving device contributing towards environmental protection. FORCE is efficient and effective in saving electric energy. By reducing electric energy consumption we are pleased to be a part of the drive which reduces carbon dioxide emissions via our device FORCE. Today, ENPOSS has an international presence.It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc.With gadget called Force, 
+ENPOSS is the force that is protecting the health and wealth of the earth.</ShowMoreText>
                         {/*{companystory.description}*/}</p>
                     </blockquote>
                 </Col>

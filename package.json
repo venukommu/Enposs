@@ -71,6 +71,7 @@
 		"react-stripe-checkout": "^2.6.3",
 		"react-stripe-elements": "^6.1.2",
 		"react-toastify": "^6.2.0",
+		"react-vertical-timeline-component": "^3.3.3",
 		"reactstrap": "8.4.1",
 		"recompose": "^0.30.0",
 		"reg-keygen-git-hash-plugin": "^0.7.16",

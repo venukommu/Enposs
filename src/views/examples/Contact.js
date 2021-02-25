@@ -72,62 +72,7 @@ componentDidMount = async () => {
             <section className="section section-lg bg-gradient-primary">
                 <Container className="pt-lg pb-300">
                     <Row className="text-center justify-content-center">
-                    <Col lg="10">
-                        <h2 className="display-3 text-white">AFTER SALES SERVICE</h2>
-                        {/*<p className="lead text-white">
-                        According to the National Oceanic and Atmospheric
-                        Administration, Ted, Scambos, NSIDClead scentist, puts the
-                        potentially record low maximum sea ice extent tihs year down
-                        to low ice.
-    </p>*/}
-                    </Col>
-                    </Row>
-                    <Row className="row-grid mt-5">
-                    {this.state.contacts.map((contact,index) => (
-                    <Col lg="4" key={index}>
-                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="CardsFooterni ni-settings text-primary" />
-                        </div>*/}
-                        <img
-                      alt="..."
-                      //className="img-center img-fluid"
-                      //src={require("assets/img/theme/1578730282_1551667336.png")}
-                      src={`${appConfig.apiURL}${contact.images.url}`}
-                    />
-                        <h5 className="text-white mt-3">{contact.Title}</h5>
-                        <p className="text-white mt-3">
-                        {contact.description}
-                        </p>
-                    </Col>
-                ))}
-                    {/*<Col lg="4">*/}
-                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-ruler-pencil text-primary" />
-                    </div>*/}
-                        {/* <img
-                      alt="..."
-                      //className="img-center img-fluid"
-                      src={require("assets/img/theme/1586924757_spok.jpg")}
-                    />
-                        <h5 className="text-white mt-3">COMMITMENTS OF ORIGIN OF PRODUCTS</h5>
-                        <p className="text-white mt-3">
-                        SProducts Imported Directly From Enposs Korea.
-                        </p>
-                    </Col>*/}
-                    {/*<Col lg="4">*/}
-                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-atom text-primary" />
-                        </div>*/}
-                      {/*  <img
-                      alt="..."
-                      //className="img-center img-fluid"
-                      src={require("assets/img/theme/1578730282_1551674767.png")}
-                    />
-                        <h5 className="text-white mt-3">REPLACE</h5>
-                        <p className="text-white mt-3">
-                        Replace new equipment ( according to the warranty policy)
-                        </p>
-                    </Col>*/}
+                   
                     </Row>
                 </Container>
                 {/* SVG separator */} 

@@ -47,6 +47,7 @@ import CeoMessage from "views/examples/CeoMessage";
 import Force from "views/examples/Force";
 import Patents from "views/examples/Patents";
 import OurStory from "views/examples/OurStory";
+import Timeline from "views/examples/Timeline";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -145,6 +146,12 @@ ReactDOM.render(
  exact
  render={props => <Patents {...props} />}
  />
+ <Route
+ path="/timeline"
+ exact
+ render={props => <Timeline {...props} />}
+ />
+ 
 {/*<Route path="/" exact component={ProductList} />
 <Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
 <Route path="/product/:id" component={Product} />
