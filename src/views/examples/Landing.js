@@ -25,17 +25,17 @@ import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
-  Badge,
+  //Badge,
   Button,
   Card,
   CardBody,
-  CardImg,
+  //CardImg,
   Container,
   Row,
   Col
 } from "reactstrap";
-import Carousel from "../IndexSections/Carousel.js";
-import Login from "../IndexSections/Login.js";
+//import Carousel from "../IndexSections/Carousel.js";
+//import Login from "../IndexSections/Login.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -43,7 +43,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 
 // index page sections
-import Download from "../IndexSections/Download.js";
+//import Download from "../IndexSections/Download.js";
 class Landing extends React.Component {
   
   state = {
@@ -155,8 +155,8 @@ class Landing extends React.Component {
   };
   
   render() {
-    const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-
+    //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
+    const { error } = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -171,7 +171,8 @@ class Landing extends React.Component {
               <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
+                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />
                 <span />
@@ -190,29 +191,30 @@ class Landing extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h1 className="display-3 text-white">
-                        {homepagebanner.Title}
+                        ENPOSS Inc
+                        {/*homepagebanner.Title*/}
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
                         </h1>
                         <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                        {homepagebanner.description}
-                        {/*ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
+                        {/*homepagebanner.description*/}
+                        ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
                         Support to our customers in North America, Central America, and South America. 
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                        sales, partners, representatives, dealers, and distributors.*/}
+                        sales, partners, representatives, dealers, and distributors.
                         </p>
                       </div>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="info"
-                         // href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                         // hre*/}f="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">{/*Force System*/}{homepagebanner.forcesystembutton}</span>
+                          <span className="btn-inner--text">Force System{/*homepagebanner.forcesystembutton*/}</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -223,7 +225,7 @@ class Landing extends React.Component {
                             <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            {/*Energy Saving*/}{homepagebanner.energysavingbutton}
+                            Energy Saving{/*homepagebanner.energysavingbutton*/}
                           </span>
                         </Button>
                       </div>
@@ -255,7 +257,7 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.homepagewidgets.map(widgets => (
+                    {/*this.state.homepagewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
                           <CardBody className="py-5">
@@ -263,7 +265,7 @@ class Landing extends React.Component {
                               <i className={widgets.iconname} />
                             </div>
                               <h6 className={"text-" + widgets.classname + " text-uppercase"}>
-                                {/*About Company*/}
+                                {/*About Company
                                 {widgets.Title}
                               </h6>
                               <p className="description mt-3"
@@ -281,8 +283,8 @@ class Landing extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))}
-                    {/*<Col lg="4">
+                    ))}*/}
+                    <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
@@ -308,7 +310,7 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>
+                          </div>*/}
                           
                           <Button to="/about" tag={Link}
                             className="mt-4"
@@ -348,7 +350,7 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>
+                          </div>*/}
                           <Button
                             className="mt-4"
                             color="success"
@@ -387,7 +389,7 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>
+                          </div>*/}
                           <Button to="/forceSystem" tag={Link}
                             className="mt-4"
                             color="warning"
@@ -398,13 +400,13 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                      </Col>*/}
+                      </Col>
                   </Row>
                 </Col>
               </Row>
             </Container>
           </section>
-          <Carousel />
+          {/*<Carousel />
             <section className="section">
              <Container>
               <Row className="row-grid align-items-center">
@@ -420,7 +422,7 @@ class Landing extends React.Component {
                   <div className="pr-md-5">
                     {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
-                    </div> */}
+                    </div> 
                     <h3>{this.state.awesomefeatures.Title}</h3>
                     <p>
                     {this.state.awesomefeatures.description}</p>
@@ -509,7 +511,7 @@ class Landing extends React.Component {
                   <div className="pl-md-5">
                     {/*<div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
-                    </div>*/}
+                    </div>
                     <h3>{this.state.ourcustomers.Title}</h3>
                     <p className="lead"  style={{ textAlign : "justify" }}>
                     {this.state.ourcustomers.description}
@@ -519,7 +521,7 @@ class Landing extends React.Component {
                       href="#pablo"
                       onClick={e => e.preventDefault()}
                     >
-                      {/*A beautiful UI Kit for impactful websites*/}
+                      {/*A beautiful UI Kit for impactful websites
                     </a>
                   </div>
                 </Col>
@@ -552,7 +554,7 @@ class Landing extends React.Component {
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
                         continue whatever.
-                  </p>*/}
+                  </p>
                     </div>
                   </div>
                   <Card className="shadow shadow-lg--hover mt-5">
@@ -575,7 +577,7 @@ class Landing extends React.Component {
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            {/*Learn more*/}
+                            {/*Learn more
                           </a>
                         </div>
                       </div>
@@ -599,7 +601,7 @@ class Landing extends React.Component {
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            {/*Learn more*/}
+                            {/*Learn more
                           </a>
                         </div>
                       </div>
@@ -608,7 +610,7 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-            {/* SVG separator */}
+            {/* SVG separator 
             <div className="separator separator-bottom separator-skew zindex-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -832,7 +834,7 @@ class Landing extends React.Component {
                         size="lg"
                       >
                         Download React
-                      </Button>*/}
+                      </Button>
                     </Col>
                   </Row>
                 </div>
@@ -976,17 +978,17 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-          </section>*/}
+          </section>
           <Login />
-          <Download />
+          <Download />*/}
         </main>
-        <section>
+        {/*<section>
         <Container className="container-lg">
-          {/* shopping cart with Stripe integration Code*/}
+          {/* shopping cart with Stripe integration Code
             {/*<div>
              {/*<Products />
              <Store />
-            </div>*/}
+            </div>
               {/* Snipcart Code
               <h3 className="text-danger"> Snipcart demo</h3>
               <Row> 
@@ -1004,11 +1006,11 @@ class Landing extends React.Component {
               <BuyButton products={products} />
               </Col>
               ))}
-            </Row>*/}
-            {/* End Snipcart Code*/}
+            </Row>
+            {/* End Snipcart Code
              {/*} <AppProvider>
 <Cart products={this.state.enpossproducts}/>
-            </AppProvider>*/}
+            </AppProvider>
               {/*<Col className="mb-5 mb-lg-0" md="6">
                 <Card className="card-lift--hover shadow border-0">
                   <Link to="#">
@@ -1027,11 +1029,11 @@ class Landing extends React.Component {
                         >
                           Buy Now
                         </Button>
-            </Col>*/}
+            </Col>
     </Container>
-    </section>
-        <CardsFooter />
-      </>
+    </section>*/}
+    <CardsFooter />
+    </>
     );
   }
 }
