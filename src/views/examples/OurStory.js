@@ -136,14 +136,14 @@ class OurStory extends React.Component {
                         </h6>
                        <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                        The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born ENergy and Power Saving Systems -ENPOSS. 
+                        The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS. 
                         Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."</p>
                       </div>
                     </Col>
                   </Row>
                 </div>
               </Container>
-              
+
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
                 <svg
