@@ -21,6 +21,7 @@ import React from "react";
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 const items = [
   {
@@ -154,6 +155,7 @@ class Patents extends React.Component {
         {/*</Card>*/}
         </Container>
         </section>
+        <CardsFooter />
       </>
     );
   }
