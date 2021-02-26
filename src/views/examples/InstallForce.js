@@ -89,8 +89,30 @@ class InstallForce extends React.Component {
                 <span />
               </div>
               <Container className="py-lg-md d-flex">
+              
                 <div className="col px-0">
-                <iframe title="Enposs video"  width="983" height="553" src="https://www.youtube.com/embed/PCL1Y_3wUPM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div
+      className="video"
+      style={{
+        position: "relative",
+        paddingBottom: "56.25%" /* 16:9 */,
+        paddingTop: 25,
+        height: 0
+      }}
+    >
+      <iframe title="Enposs video"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%"
+        }}
+        src="https://www.youtube.com/embed/PCL1Y_3wUPM"
+        frameBorder="0"
+      />
+    </div>
+               
                   <Row>
                     <Col lg="6">
                       <div><h1 className="display-3 text-white">How To Install</h1>
