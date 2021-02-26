@@ -15,7 +15,7 @@ import {
   Row,
   Col
 } from "reactstrap";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -32,7 +32,7 @@ componentDidMount = async () => {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
     
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -57,7 +57,7 @@ componentDidMount = async () => {
       this.setState({ contacts });
     } catch (error) {
       this.setState({ error });
-    }
+    }*/
   };
   render() {
     const { error} = this.state;

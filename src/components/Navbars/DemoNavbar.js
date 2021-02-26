@@ -283,7 +283,7 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text">Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                    <DropdownItem to="#" tag={Link}>
+                    <DropdownItem to="/installforce" tag={Link}>
                         How to install Force
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>

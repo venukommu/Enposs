@@ -48,6 +48,7 @@ import Force from "views/examples/Force";
 import Patents from "views/examples/Patents";
 import OurStory from "views/examples/OurStory";
 import Timeline from "views/examples/Timeline";
+import InstallForce from "views/examples/InstallForce";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -80,6 +81,11 @@ ReactDOM.render(
  path="/force"
  exact
  render={props => <Force {...props} />}
+ />
+ <Route
+ path="/installforce"
+ exact
+ render={props => <InstallForce {...props} />}
  />
  <Route
  path="/forceSystem"
