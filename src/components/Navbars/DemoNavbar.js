@@ -235,13 +235,13 @@ class DemoNavbar extends React.Component {
                         What is Force?
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
-                        Principles of Force
+                       Working Principle
                       </DropdownItem>
                       <DropdownItem to="/patents" tag={Link}>
                         Patents
                       </DropdownItem>
                       <DropdownItem to="/certifications" tag={Link}>
-                        Certificates
+                        Certifications
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                                    

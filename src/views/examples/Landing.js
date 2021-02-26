@@ -326,7 +326,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>*/}
                           
-                          <Button to="/about" tag={Link}
+                          <Button to="/ourstory" tag={Link}
                             className="mt-4"
                             color="primary"
                             //href="#pablo"
@@ -349,9 +349,9 @@ class Landing extends React.Component {
                             </h6>
                             <p className="description mt-3"
                             style={{ textAlign : "justify" }}>
-                            Two Products are available to choose from Enposs and Force.
-                            These are Energy saving products can be used in offices,factories,homes and anywhere Electricity is used.
-                            They are user-friendly.
+                           We have two Force products available as Single-Phase and Three-Phase.
+                           These are Energy saving products that can be used in offices,factories,homes and anywhere electricity is used.
+                           They are user-friendly.
                             </p>
                           </div>
                           {/*<div>
@@ -404,7 +404,7 @@ class Landing extends React.Component {
                               launch
                             </Badge>
                           </div>*/}
-                          <Button to="/forceSystem" tag={Link}
+                          <Button to="/force" tag={Link}
                             className="mt-4"
                             color="warning"
                             //href="#pablo"

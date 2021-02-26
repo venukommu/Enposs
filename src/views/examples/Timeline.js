@@ -217,20 +217,6 @@ class Timeline extends React.Component {
                       <Col lg="9">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
     <VerticalTimeline>
-    <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2011 - present"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-   // icon={<WorkIcon />}
-  >
-    <h3 className="vertical-timeline-element-title">Timeline</h3>
-    {/*<h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-    <p>
-      Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-                </p>*/}
-  </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
@@ -240,7 +226,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
-    <p>Start power saving business in South Korea    </p>  
+    <p>Start power saving business in South Korea</p>  
     </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
@@ -251,11 +237,12 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Art Director</h3>
     <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
+    <div  style={{ textAlign : "justify" }}>
     <p>Patent application for power improvement device "FORCE"</p>
     <p>Patent PCT application</p>
     <p>[FORCE] Established production factory</p>
     <p>[FORCE] Started sales in Korea</p>
-    <p>[FORCE] Started selling in China and Mexico</p>
+    <p>[FORCE] Started selling in China and Mexico</p></div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
@@ -266,11 +253,12 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
     <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>*/}
+      <div  style={{ textAlign : "justify" }}>
     <p> Established Enposs</p>
     <p>[FORCE] CE safety certification acquired</p>
     <p>Obtained ISO 9001: 2000</p>
     <p>[FORCE] TUV performance test conducted</p>
-    <p>[FORCE] Launched in Hong Kong</p>
+    <p>[FORCE] Launched in Hong Kong</p></div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
@@ -281,6 +269,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
     <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
+    <div  style={{ textAlign : "justify" }}>
     <p>[FORCE] Obtained IACS certification</p>
     <p>[FORCE] Mexico NOM safety certification acquired</p>
 
@@ -288,7 +277,7 @@ class Timeline extends React.Component {
 
     <p>[FORCE] Korean government supply registration</p>
 
-    <p>[FORCE] Passed KTL EMI TEST    </p>
+    <p>[FORCE] Passed KTL EMI TEST</p></div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -299,12 +288,13 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
     <h4 className="vertical-timeline-element-subtitle">Online Course</h4>*/}
+    <div  style={{ textAlign : "justify" }}>
     <p>CE certification (CoC)</p>
     <p>[FORCE] Launched in the US and India</p>
     <p>[FORCE] SGS Laboratory Performance Test-7.12% Certification</p>
     <p>Patent registration</p>
     <p>PCT patent registration</p>
-    <p>University of Suwon Industry-Academia Research Institute established    </p>
+    <p>University of Suwon Industry-Academia Research Institute established</p></div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -315,10 +305,10 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
     <h4 className="vertical-timeline-element-subtitle">Certification</h4>*/}
-    <p>
+    <div  style={{ textAlign : "justify" }}>
     <p>[FORCE] MET certification with NLTC</p>
     <p>Concluded an agreement with the Korea Air Force Academy Industry-Academia Research Institute</p>
-    </p>
+   </div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -354,7 +344,8 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
-    <p>Opened a branch office in Los Angeles, USA</p>
+    <div  style={{ textAlign : "justify" }}>
+    <p>Opened a branch office in Los Angeles, USA</p></div>
     <p>(Empos Japan Co., Ltd.)</p>
   </VerticalTimelineElement>
   <VerticalTimelineElement

@@ -90,6 +90,7 @@ class InstallForce extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
+                <iframe title="Enposs video"  width="983" height="553" src="https://www.youtube.com/embed/PCL1Y_3wUPM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   <Row>
                     <Col lg="6">
                       <div><h1 className="display-3 text-white">How To Install</h1>
@@ -129,12 +130,12 @@ class InstallForce extends React.Component {
                       <Col lg="6">
                         <Card className="bg-gradient-info text-white">
                           <CardBody>
-                          <h4>Notice before installation</h4>
+                          <h4>Safety measures</h4>
                           <ul>
                             <li>Should confirm the main circuit breaker is open.</li>
                             <li>Conform the rate voltage and capacity of FORCE.</li>
                           </ul><br />
-                          <h4>Order of installation</h4>
+                          <h4>Steps of installation</h4>
                           <ul>
                             <li>Open the door of distribution panel</li>
                             <li>Check the main circuit breaker.</li>
