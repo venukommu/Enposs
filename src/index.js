@@ -49,6 +49,7 @@ import Patents from "views/examples/Patents";
 import OurStory from "views/examples/OurStory";
 import Timeline from "views/examples/Timeline";
 import InstallForce from "views/examples/InstallForce";
+import Certifications from "views/examples/Certifications";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -151,6 +152,11 @@ ReactDOM.render(
  path="/patents"
  exact
  render={props => <Patents {...props} />}
+ />
+ <Route
+ path="/certifications"
+ exact
+ render={props => <Certifications {...props} />}
  />
  <Route
  path="/timeline"

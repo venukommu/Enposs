@@ -77,7 +77,15 @@ class Force extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
+              <div className="shape shape-style-1 shape-default"
+              style= {{
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundImage: `url(${require('assets/img/theme/golden-flowing-wave-with-sequins-glitter-dust-black_87521-2737.jpg')})`
+                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+               }}>
+              
                 <span />
                 <span />
                 <span />
@@ -92,8 +100,8 @@ class Force extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <div><h1 className="display-3 text-white">Empowered to save Power</h1>
-                      <p className="lead text-white"
+                      <div><h1 className="display-4 text-white">Empowered to save Power</h1>
+                      <p className="text-white"
                         style={{ textAlign : "justify" }}>
                            Force - is manufactured by  Enposs.It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</p>
                       </div>
@@ -120,7 +128,7 @@ class Force extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
-          <section className="section section-lg pt-lg-0 mt--200">
+          <section className="section section-lg pt-lg-0 mt--100">
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
@@ -213,56 +221,72 @@ class Force extends React.Component {
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-              <h5>Awesome Features</h5>                 
+                <h1 className="display-4 text-warning justify-content-center">Awesome Features</h1>
               </Col>
             </Row>
             <Row className="row-grid">
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-danger justify-content-center rounded-circle shadow border-0">
+                <Card className="card-lift--hover bg-gradient-danger shadow border-0">
                   <CardBody className="py-3"> 
-                      <p className="description mt-3 text-white">
+                    <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-white">
+                      1
+                    </div>
+                      <p className="lead text-white">
                       Usage of electricity saved by 5 per cent
                       </p>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-info justify-content-center rounded-circle shadow border-0">
+                <Card className="card-lift--hover bg-gradient-info shadow border-0">
                   <CardBody className="py-4"> 
-                      <p className="description mt-3 text-white">
+                    <div className="icon icon-shape icon-shape-info rounded-circle mb-4 text-white">
+                      2
+                    </div>
+                      <p className="lead text-white">
                       Reduces Impedance
                       </p>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-warning justify-content-center rounded-circle shadow border-0">
+                <Card className="card-lift--hover bg-gradient-warning shadow border-0">
                   <CardBody className="py-4"> 
-                      <p className="description mt-3 text-white">
+                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-white">
+                      3
+                    </div>
+                      <p className="lead text-white">
                       Reduces harmonic distortion
                       </p>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-primary rounded-circle shadow border-0">
+                <Card className="card-lift--hover bg-gradient-primary shadow border-0">
                   <CardBody className="py-4"> 
-                      <p className="description mt-3 text-white">
+                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-white">
+                      4
+                    </div>
+                      <p className="lead text-white">
                       Increases conductivity
                       </p>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-success rounded-circle shadow border-0">
+                <Card className="card-lift--hover bg-gradient-success shadow border-0">
                   <CardBody className="py-4"> 
-                      <p className="description mt-3 text-white">
+                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-white">
+                      5
+                    </div>
+                      <p className="lead text-white">
                       Extends life cycle
-                      </p>
+                      </p><br />
                   </CardBody>
                 </Card>
               </Col>
               </Row>
+
           </Container>
         </section>
         </main>

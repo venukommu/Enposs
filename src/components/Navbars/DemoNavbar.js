@@ -240,7 +240,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/patents" tag={Link}>
                         Patents
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
+                      <DropdownItem to="/certifications" tag={Link}>
                         Certificates
                       </DropdownItem>
                     </DropdownMenu>
