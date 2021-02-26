@@ -136,8 +136,8 @@ class OurStory extends React.Component {
                         </h6>
                        <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                        ENPOSS was born in 2005 to save energy and save the planet. 
-              Carbon Dioxide emissions cause greenhouse effect.</p>
+                        The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born ENergy and Power Saving Systems -ENPOSS. 
+                        Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."</p>
                       </div>
                     </Col>
                   </Row>

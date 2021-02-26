@@ -216,9 +216,24 @@ class Timeline extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
-                        <VerticalTimeline>
-                        <VerticalTimelineElement
+    <VerticalTimeline>
+    <VerticalTimelineElement
+    className="vertical-timeline-element--work"
+    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    date="2011 - present"
+    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+   // icon={<WorkIcon />}
+  >
+    <h3 className="vertical-timeline-element-title">Timeline</h3>
+    {/*<h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+    <p>
+      Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                </p>*/}
+  </VerticalTimelineElement>
+  <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2006"
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -229,6 +244,7 @@ class Timeline extends React.Component {
     </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2007"
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
     //icon={<WorkIcon />}
@@ -243,24 +259,22 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2008"
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
    // icon={<WorkIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
     <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>*/}
-    <p> Established Empos</p>
-
-<p>[FORCE] CE safety certification acquired</p>
-
-<p>Obtained ISO 9001: 2000</p>
-
-<p>[FORCE] TUV performance test conducted</p>
-
-<p>[FORCE] Launched in Hong Kong</p>
+    <p> Established Enposs</p>
+    <p>[FORCE] CE safety certification acquired</p>
+    <p>Obtained ISO 9001: 2000</p>
+    <p>[FORCE] TUV performance test conducted</p>
+    <p>[FORCE] Launched in Hong Kong</p>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2009"
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
    // icon={<WorkIcon />}
@@ -278,6 +292,7 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2010"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -285,19 +300,15 @@ class Timeline extends React.Component {
     {/*<h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
     <h4 className="vertical-timeline-element-subtitle">Online Course</h4>*/}
     <p>CE certification (CoC)</p>
-
     <p>[FORCE] Launched in the US and India</p>
-
     <p>[FORCE] SGS Laboratory Performance Test-7.12% Certification</p>
-
     <p>Patent registration</p>
-
     <p>PCT patent registration</p>
-
     <p>University of Suwon Industry-Academia Research Institute established    </p>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2011"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -306,12 +317,12 @@ class Timeline extends React.Component {
     <h4 className="vertical-timeline-element-subtitle">Certification</h4>*/}
     <p>
     <p>[FORCE] MET certification with NLTC</p>
-
     <p>Concluded an agreement with the Korea Air Force Academy Industry-Academia Research Institute</p>
     </p>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2012"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -324,6 +335,7 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2013"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -335,6 +347,7 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2018"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -346,6 +359,7 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2018"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
@@ -356,6 +370,7 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
+    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2019"
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
     //icon={<SchoolIcon />}
