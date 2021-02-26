@@ -44,6 +44,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
+import Background from 'assets/img/theme/fire-water-splash.jpg';
 class Landing extends React.Component {
   
   state = {
@@ -173,7 +174,8 @@ class Landing extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
+                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />
@@ -192,31 +194,32 @@ class Landing extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h1 className="display-3 text-white">
+                        <h5 className="display-20 text-white">
                         ENPOSS Inc
                         {/*homepagebanner.Title*/}
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
-                        </h1>
-                        <p className="lead text-white"
+                        </h5>
+                        <h4 className="display-7 text-white"
                         style={{ textAlign : "justify" }}>
-                        {/*homepagebanner.description*/}
-                        ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
-                        Support to our customers in North America, Central America, and South America. 
+                        {/*homepagebanner.description
+                  
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                        sales, partners, representatives, dealers, and distributors.
-                        </p>
+                        sales, partners, representatives, dealers, and distributors.*/}
+                        Save Energy,Save Earth.
+                        </h4>
                       </div>
+                      <br></br>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
-                          color="info"
+                          color="warning"
                          // hre*/}f="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">Force System{/*homepagebanner.forcesystembutton*/}</span>
+                          <span className="btn-inner--text">FORCE{/*homepagebanner.forcesystembutton*/}</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -230,6 +233,13 @@ class Landing extends React.Component {
                             Energy Saving{/*homepagebanner.energysavingbutton*/}
                           </span>
                         </Button>
+                        <div>
+                          <br></br> <br></br> <br></br>
+                        <h4 className="display-7 text-white"
+                        style={{ textAlign : "justify" }}>
+                      A <span className="text-info">Solution to</span> <span className="text-warning">Quench Pollution</span>
+                        </h4>
+                      </div>
                       </div>
                     </Col>
                   </Row>
@@ -254,7 +264,7 @@ class Landing extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
-          <section className="section section-lg pt-lg-0 mt--200">
+          <section className="section section-lg pt-lg-0 mt--100">
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
@@ -285,7 +295,9 @@ class Landing extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))}*/}
+                    ))
+                    ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                      energy saving technology into our ENPOSS system.}*/}
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
@@ -298,8 +310,8 @@ class Landing extends React.Component {
                             </h6>
                             <p className="description mt-3"
                             style={{ textAlign : "justify" }}>
-                            ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
-                      energy saving technology into our ENPOSS system.
+                      The initiative taken by Enposs was to reduce carbon footprint by cutting electricity usage.
+                      Our philosophy is best expressed as 'Curbbing electricity and cleaning the air."
                             </p>
                           </div>
                           {/*<div>
@@ -333,13 +345,13 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="text-success text-uppercase">
-                            PRODUCTS & SERVICES
+                            PRODUCTS
                             </h6>
                             <p className="description mt-3"
                             style={{ textAlign : "justify" }}>
-                            Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                            increase their population.
-                            
+                            Two Products are available to choose from Enposs and Force.
+                            These are Energy saving products can be used in offices,factories,homes and anywhere Electricity is used.
+                            They are user-friendly.
                             </p>
                           </div>
                           {/*<div>
@@ -377,8 +389,8 @@ class Landing extends React.Component {
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system  
-                          and it is also known as “residential voltage”.
+                         Force - is manufactured by Enposs.
+                         It is an excellent power saving device, certified by green technology Korea and globally well accepted product.It optimizes Energy and helps deplete CO2 Emissions.
                           </p>
                           </div>
                           {/*<div>
