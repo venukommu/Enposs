@@ -50,6 +50,7 @@ import OurStory from "views/examples/OurStory";
 import Timeline from "views/examples/Timeline";
 import InstallForce from "views/examples/InstallForce";
 import Certifications from "views/examples/Certifications";
+import Forceprinciples from "views/examples/Forceprinciples";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -157,6 +158,11 @@ ReactDOM.render(
  path="/certifications"
  exact
  render={props => <Certifications {...props} />}
+ />
+  <Route
+ path="/forceprinciples"
+ exact
+ render={props => <Forceprinciples {...props} />}
  />
  <Route
  path="/timeline"

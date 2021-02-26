@@ -234,7 +234,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="force" tag={Link}>
                         What is Force?
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
+                      <DropdownItem to="/forceprinciples" tag={Link}>
                        Working Principle
                       </DropdownItem>
                       <DropdownItem to="/patents" tag={Link}>

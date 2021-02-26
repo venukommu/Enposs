@@ -5,6 +5,7 @@ import React from "react";
 
 // reactstrap components
 import {
+  Badge,
   Card,
   CardBody,
   //CardImg,
@@ -231,9 +232,9 @@ class Force extends React.Component {
                     <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-white">
                       1
                     </div>
-                      <p className="lead text-white">
+                      <h6 className="text-white">
                       Usage of electricity saved by 5 per cent
-                      </p>
+                      </h6>
                   </CardBody>
                 </Card>
               </Col>
@@ -243,9 +244,9 @@ class Force extends React.Component {
                     <div className="icon icon-shape icon-shape-info rounded-circle mb-4 text-white">
                       2
                     </div>
-                      <p className="lead text-white">
+                      <h6 className="text-white">
                       Reduces Impedance
-                      </p>
+                      </h6><br />
                   </CardBody>
                 </Card>
               </Col>
@@ -255,9 +256,9 @@ class Force extends React.Component {
                     <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-white">
                       3
                     </div>
-                      <p className="lead text-white">
+                      <h6 className="text-white">
                       Reduces harmonic distortion
-                      </p>
+                      </h6>
                   </CardBody>
                 </Card>
               </Col>
@@ -267,9 +268,9 @@ class Force extends React.Component {
                     <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-white">
                       4
                     </div>
-                      <p className="lead text-white">
+                      <h6 className="text-white">
                       Increases conductivity
-                      </p>
+                      </h6><br />
                   </CardBody>
                 </Card>
               </Col>
@@ -279,9 +280,9 @@ class Force extends React.Component {
                     <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-white">
                       5
                     </div>
-                      <p className="lead text-white">
+                      <h6 className="text-white">
                       Extends life cycle
-                      </p><br />
+                      </h6><br />
                   </CardBody>
                 </Card>
               </Col>
@@ -289,6 +290,142 @@ class Force extends React.Component {
 
           </Container>
         </section>
+        <section className="section pb-0 bg-gradient-default">
+          <Container >
+             <h3 className="text-white">Brilliant Benefits</h3>
+              <Row className="row-grid align-items-center">
+              <Col className="order-md-1" lg="6">
+                  <div className="pr-md-5">
+                    <ul className="list-unstyled mt-5">
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="primary">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Eco Friendly</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="danger">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">Highly Safe</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="info">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            easy to install</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="success">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Versatile</h6>
+                          </div>
+                        </div>
+                      </li>
+                      </ul></div></Col>
+                  <Col className="order-md-1" lg="6">
+                  <div className="pr-md-5">
+                  <ul className="list-unstyled mt-5"> 
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="danger">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Energy saver</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="success">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Excellent technology</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="warning">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            Economically viable solution</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="info">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0 text-white">
+                            High Reliability</h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </Col>
+              </Row><br />
+             </Container>
+             {/* SVG separator */}
+            <div className="separator separator-bottom separator-skew zindex-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                version="1.1"
+                viewBox="0 0 2560 100"
+                x="0"
+                y="0"
+              >
+                <polygon
+                  className="fill-white"
+                  points="2560 0 2560 100 0 100"
+                />
+              </svg>
+            </div>
+          </section>
         </main>
         <CardsFooter />
       </>
