@@ -16,11 +16,12 @@
 
 */
 import React from "react";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 const items = [
   {
@@ -65,7 +66,7 @@ class Patents extends React.Component {
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -90,7 +91,7 @@ class Patents extends React.Component {
       this.setState({ carouselcontent, carouselimage: carouselcontent.names });
     } catch (error) {
       this.setState({ error });
-    }
+    }*/
   };
 
   render() {
@@ -154,6 +155,7 @@ class Patents extends React.Component {
         {/*</Card>*/}
         </Container>
         </section>
+        <CardsFooter />
       </>
     );
   }

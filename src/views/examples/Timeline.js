@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -36,7 +36,10 @@ class Timeline extends React.Component {
     productimage: []
  }
  componentDidMount = async () => {
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    // this.refs.main.scrollTop = 0;
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -73,10 +76,8 @@ class Timeline extends React.Component {
       this.setState({ ceomessage });
     } catch (error) {
       this.setState({ error });
-    }
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+    }*/
+
   };
   render() {
     const { error} = this.state;

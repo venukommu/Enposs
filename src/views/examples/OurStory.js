@@ -33,7 +33,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
 
@@ -53,7 +53,7 @@ class OurStory extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -90,7 +90,7 @@ class OurStory extends React.Component {
         this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
       } catch (error) {
         this.setState({ error });
-      }
+      }*/
 
   };
   

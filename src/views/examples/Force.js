@@ -17,7 +17,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 
 // index page sections
 
@@ -33,7 +33,7 @@ class Force extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -56,12 +56,15 @@ class Force extends React.Component {
       this.setState({ forcewidgets });
     } catch (error) {
       this.setState({ error });
-    }
+    }*/
 
   };
   
+  handleEndReached = () => {
+    console.log("load more");
+  };
   render() {
-    const { error,forcewidgets} = this.state;
+    const { error} = this.state;
 
     // Print errors if any
     if (error) {
@@ -75,10 +78,6 @@ class Force extends React.Component {
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
               <div className="shape shape-style-1 shape-default">
-              {/*style= {{
-                backgroundPosition: "center",
-                backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
-               }}>*/}
                 <span />
                 <span />
                 <span />
@@ -89,11 +88,15 @@ class Force extends React.Component {
                 <span />
                 <span />
               </div>
-              <Container className="shape-container d-flex align-items-center py-lg">
+              <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                  <Row className="align-items-center justify-content-center">
-                    <Col className="text-center" lg="6">
-                      <h1 className="display-3 text-white">What is FORCE ?</h1>
+                  <Row>
+                    <Col lg="6">
+                      <div><h1 className="display-3 text-white">Empowered to save Power</h1>
+                      <p className="lead text-white"
+                        style={{ textAlign : "justify" }}>
+                           Force - is manufactured by  Enposs.It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</p>
+                      </div>
                     </Col>
                   </Row>
                 </div>
@@ -122,7 +125,7 @@ class Force extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                  {forcewidgets.map(widgets => (
+                  {/*forcewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
                           <CardBody className="py-4">
@@ -133,7 +136,7 @@ class Force extends React.Component {
                                 style={{ width: "100px" }}/>
                             </div>
                             <h6 className="text-primary text-uppercase">
-                              {/*About Company*/}
+                              {/*About Company
                               {widgets.Title}
                             </h6>
                             <p className="description mt-3"
@@ -143,7 +146,64 @@ class Force extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))}
+                    ))*/}
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-4">
+                          <div className=" rounded-circle mb-4">
+                            <img alt="..."
+                              className="rounded-circle img-center img-fluid"
+                              src={`${require("assets/img/theme/force_1_ceb4e9e6.png")}`}
+                              style={{ width: "100px" }}/>
+                          </div>
+                          <h6 className="text-primary text-uppercase">
+                          Environment Friendly
+                          </h6>
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
+                          Force is a product made out of tourmaline as the main material that generates anion semi-permanently, applied the best environmental technology, and saves electric energy by improving the efficiency of the electric system.
+                          </p>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-4">
+                          <div className=" rounded-circle mb-4">
+                            <img alt="..."
+                              className="rounded-circle img-center img-fluid"
+                              src={`${require("assets/img/theme/force_2.128f9e8d.png")}`}
+                              style={{ width: "100px" }}/>
+                          </div>
+                          <h6 className="text-success text-uppercase">
+                          Very high in safety
+                          </h6>
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
+                          The force is a non-current device that does not require a separate power supply, which is very high in safety and easy to install.
+                          </p>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-4">
+                          <div className=" rounded-circle mb-4">
+                            <img alt="..."
+                              className="rounded-circle img-center img-fluid"
+                              src={`${require("assets/img/theme/force_3.f7979078.png")}`}
+                              style={{ width: "100px" }}/>
+                          </div>
+                          <h6 className="text-warning text-uppercase">
+                          Apply multi load
+                          </h6>
+                          <p className="description mt-3"
+                          style={{ textAlign : "justify" }}>
+                          Force can be applied anywhere power is used, from manufacturing plant to ship, office building to the apartment, single-phase, three-phase, and high voltage(6,000V or less) and low voltage.
+                          </p>
+                        </CardBody>
+                      </Card>
+                    </Col>
                   </Row>
                 </Col>
               </Row>
@@ -153,16 +213,13 @@ class Force extends React.Component {
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-3 text-dark justify-content-center">Features of force</h1>
+              <h5>Awesome Features</h5>                 
               </Col>
             </Row>
             <Row className="row-grid">
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-danger shadow border-0">
+                <Card className="card-lift--hover bg-gradient-danger justify-content-center rounded-circle shadow border-0">
                   <CardBody className="py-3"> 
-                    <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-white">
-                      1
-                    </div>
                       <p className="description mt-3 text-white">
                       Usage of electricity saved by 5 per cent
                       </p>
@@ -170,11 +227,8 @@ class Force extends React.Component {
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                <Card className="card-lift--hover bg-gradient-info justify-content-center rounded-circle shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-info rounded-circle mb-4 text-white">
-                      2
-                    </div>
                       <p className="description mt-3 text-white">
                       Reduces Impedance
                       </p>
@@ -182,11 +236,8 @@ class Force extends React.Component {
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-warning shadow border-0">
+                <Card className="card-lift--hover bg-gradient-warning justify-content-center rounded-circle shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-white">
-                      3
-                    </div>
                       <p className="description mt-3 text-white">
                       Reduces harmonic distortion
                       </p>
@@ -194,11 +245,8 @@ class Force extends React.Component {
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-primary shadow border-0">
+                <Card className="card-lift--hover bg-gradient-primary rounded-circle shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-white">
-                      4
-                    </div>
                       <p className="description mt-3 text-white">
                       Increases conductivity
                       </p>
@@ -206,11 +254,8 @@ class Force extends React.Component {
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-success shadow border-0">
+                <Card className="card-lift--hover bg-gradient-success rounded-circle shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-white">
-                      5
-                    </div>
                       <p className="description mt-3 text-white">
                       Extends life cycle
                       </p>
@@ -218,7 +263,6 @@ class Force extends React.Component {
                 </Card>
               </Col>
               </Row>
-            
           </Container>
         </section>
         </main>

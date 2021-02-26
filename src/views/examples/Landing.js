@@ -40,7 +40,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
@@ -66,7 +66,7 @@ class Landing extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -150,7 +150,7 @@ class Landing extends React.Component {
       this.setState({ enpossproducts,enpossproductsimages:enpossproducts.images });
     } catch (error) {
       this.setState({ error });
-    }
+    }*/
 
   };
   
@@ -171,6 +171,8 @@ class Landing extends React.Component {
               <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
                 backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
