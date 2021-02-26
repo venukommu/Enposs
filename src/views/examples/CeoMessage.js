@@ -125,8 +125,7 @@ class CeoMessage extends React.Component {
                        Be the <span>FORCE</span> that protects the planet.</h1>
                        <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                       Electricity is indispensable. Majority of it  is derived from fossil fuels. Combustion leads to carbon footprint. Our innovative technology at Enposs has introduced a gadget called Force. Force reduces the consumption of electricity , so less fuel is used and carbon footprint is reduced.This helps reduce global warming and melting of glaciers.
-                       Hence it becomes a dynamic FORCE which balances our ecology and human survival.</p>
+                       Electricity is indispensable. Majority of it  is derived from fossil fuels. Combustion leads to carbon footprint. Our innovative technology at Enposs has introduced a gadget called Force.</p>
                       </div>
                     </Col>
                   </Row>
