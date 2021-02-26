@@ -110,7 +110,6 @@ class CeoMessage extends React.Component {
                 <span />
                 <span />
               </div>
-             
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>

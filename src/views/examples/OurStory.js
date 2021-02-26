@@ -143,6 +143,7 @@ class OurStory extends React.Component {
                   </Row>
                 </div>
               </Container>
+              
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
                 <svg

@@ -104,7 +104,6 @@ class Timeline extends React.Component {
                 <span />
                 <span />
               </div>
-             
               <Container className="shape-container d-flex align-items-center py-lg">
                 <div className="col px-0">
                   <Row className="align-items-center justify-content-center">
