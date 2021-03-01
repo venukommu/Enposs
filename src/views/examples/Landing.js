@@ -44,7 +44,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/fire-water-splash.jpg';
+import Background from 'assets/img/theme/fire-water-multicolour-splash.jpg';
 import CountUp from 'react-countup';
 
 class Landing extends React.Component {
@@ -245,13 +245,31 @@ class Landing extends React.Component {
                         style={{ textAlign : "justify" }}>
                       <span className="text-white">Our mission - Reduce carbon Emission </span>
                         </h4>
-                        <h4 className="display-7 text-white"
-                        style={{ textAlign : "justify center" }}>
-                      <span  className="text-white  text-right">Total reduced CO2 by APSIC- <CountUp end={12345} /></span>
-                        </h4>
                       </div>
                       </div>
                     </Col>
+                  </Row>
+                  <Row>
+                  <Col md="12" xs="6">
+                    <h4 className="display-7 text-white text-lead"
+                          style={{ textAlign : "center" }}>
+                        <span  className="text-white"><br></br>Total reduced CO<sub>2</sub> by APSIC <br></br>
+                        <Button
+                          className="btn-icon mb-3 mb-sm-0"
+                          color="warning"
+                        >             
+                          <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                        </Button>
+                       </span>
+                    </h4>
+                  </Col>
+                  {/*<Col md="4" xs="6"></Col>  
+                  <Col md="2" xs="6">
+                      <h4 className="display-7 text-white text-lead"
+                          style={{ textAlign : "center" }}>
+                        <span  className="text-white"><br></br>Total reduced CO2 by APSIC- <CountUp end={12345} /> tons</span>
+                          </h4>
+                        </Col>*/}
                   </Row>
                 </div>
               </Container>
