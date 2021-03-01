@@ -45,6 +45,8 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 // index page sections
 //import Download from "../IndexSections/Download.js";
 import Background from 'assets/img/theme/fire-water-splash.jpg';
+import CountUp from 'react-countup';
+
 class Landing extends React.Component {
   
   state = {
@@ -206,7 +208,7 @@ class Landing extends React.Component {
                   
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
-                        Save Energy,Save Earth.
+                        Save Energy, Save Earth.
                         </h4>
                       </div>
                       <br></br>
@@ -240,8 +242,12 @@ class Landing extends React.Component {
                       A <span className="text-info">Solution to</span> <span className="text-warning">Quench Pollution</span>
                         </h4>
                         <h4 className="display-7 text-white"
-                        style={{ textAlign : "justify right" }}>
+                        style={{ textAlign : "justify" }}>
                       <span className="text-white">Our mission - Reduce carbon Emission </span>
+                        </h4>
+                        <h4 className="display-7 text-white"
+                        style={{ textAlign : "justify center" }}>
+                      <span  className="text-white  text-right">Total reduced CO2 by APSIC- <CountUp end={12345} /></span>
                         </h4>
                       </div>
                       </div>
