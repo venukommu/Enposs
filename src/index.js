@@ -42,7 +42,7 @@ import { UserProvider } from 'context/user';
 import LoginTest from 'views/examples/LoginTest.js';
 import ForgotPassword from 'views/examples/ForgotPassword.js';
 import ResetPassword from 'views/examples/ResetPassword.js';
-import Store from "views/examples/Store.js";
+//import Store from "views/examples/Store.js";
 import CeoMessage from "views/examples/CeoMessage";
 import Force from "views/examples/Force";
 import Patents from "views/examples/Patents";
@@ -51,6 +51,7 @@ import Timeline from "views/examples/Timeline";
 import InstallForce from "views/examples/InstallForce";
 import Certifications from "views/examples/Certifications";
 import Forceprinciples from "views/examples/Forceprinciples";
+import EcwidComponent from "views/examples/EcwidComponent";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -142,7 +143,7 @@ ReactDOM.render(
  <Route
  path="/store"
  exact
- render={props => <Store {...props} />}
+ render={props => <EcwidComponent {...props} />}
  />
  <Route
  path="/cart"
