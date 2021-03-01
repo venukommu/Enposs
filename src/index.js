@@ -52,6 +52,10 @@ import InstallForce from "views/examples/InstallForce";
 import Certifications from "views/examples/Certifications";
 import Forceprinciples from "views/examples/Forceprinciples";
 import EcwidComponent from "views/examples/EcwidComponent";
+import Clients from "views/examples/Clients";
+import Mcdonalds from "views/examples/Mcdonalds";
+import Seymour from "views/examples/Seymour";
+import Blueashrecreationcenter from "views/examples/Blueashrecreationcenter";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -109,6 +113,26 @@ ReactDOM.render(
  path="/forceenergysavingsystem"
  exact
  render={props => <ForceEnergySavingSystem {...props} />}
+ />
+ <Route
+ path="/clients"
+ exact
+ render={props => <Clients {...props} />}
+ />
+ <Route
+ path="/mcdonalds"
+ exact
+ render={props => <Mcdonalds {...props} />}
+ />
+ <Route
+ path="/seymour"
+ exact
+ render={props => <Seymour {...props} />}
+ />
+ <Route
+ path="/blueashrecreationcenter"
+ exact
+ render={props => <Blueashrecreationcenter {...props} />}
  />
  <Route
  path="/forcepilotreport"

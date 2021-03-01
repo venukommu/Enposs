@@ -239,6 +239,10 @@ class Landing extends React.Component {
                         style={{ textAlign : "justify" }}>
                       A <span className="text-info">Solution to</span> <span className="text-warning">Quench Pollution</span>
                         </h4>
+                        <h4 className="display-7 text-white"
+                        style={{ textAlign : "justify right" }}>
+                      <span className="text-white">Our mission - Reduce carbon Emission </span>
+                        </h4>
                       </div>
                       </div>
                     </Col>

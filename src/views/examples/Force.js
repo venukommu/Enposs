@@ -83,7 +83,7 @@ class Force extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/golden-flowing-wave-with-sequins-glitter-dust-black_87521-2737.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
               
@@ -209,7 +209,9 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
-                          Force can be applied anywhere power is used, from manufacturing plant to ship, office building to the apartment, single-phase, three-phase, and high voltage(6,000V or less) and low voltage.
+                          Force can be applied anywhere power is used, from manufacturing plant to ship,
+                           office building to the apartment, Automobile to the industry, single-phase, three-phase, and high voltage (6,000V or less) 
+                           and low voltage.
                           </p>
                         </CardBody>
                       </Card>
@@ -332,7 +334,7 @@ class Force extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0 text-white">
-                            easy to install</h6>
+                            Easy to install</h6>
                           </div>
                         </div>
                       </li>
@@ -401,7 +403,7 @@ class Force extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0 text-white">
-                            High Reliability</h6>
+                            High reliability</h6>
                           </div>
                         </div>
                       </li>

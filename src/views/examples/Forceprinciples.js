@@ -83,7 +83,7 @@ class Forceprinciples extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/realistic-lightning-isolated-black-background-natural-light-effect-bright-glowing_1441-2158.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
               
@@ -104,7 +104,10 @@ class Forceprinciples extends React.Component {
                       <div><h1 className="display-4 text-white">Saves Electric Energy</h1>
                       <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                           Improves Impedance, heat ,vibration,  noise and harmonic distortion</p>
+                        Force uses natural material tourmaline It is mixed with substances like magnesium 
+                        to produce surplus free electrons called EMF-7.
+                        These free electrons reduce electrical losses caused by various factors like heat, 
+                        vibration, Impedance,  harmonic distortion etc.</p>
                       </div>
                     </Col>
                   </Row>
