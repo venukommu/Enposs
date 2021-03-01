@@ -83,7 +83,7 @@ class Force extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/golden-flowing-wave-with-sequins-glitter-dust-black_87521-2737.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
               
@@ -102,9 +102,10 @@ class Force extends React.Component {
                   <Row>
                     <Col lg="6">
                       <div><h1 className="display-4 text-white">Empowered to save Power</h1>
-                      <p className="text-white"
+                      <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
                            Force - is manufactured by  Enposs.It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</p>
+                           <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>
                   </Row>
