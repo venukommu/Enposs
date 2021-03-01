@@ -56,6 +56,8 @@ import Clients from "views/examples/Clients";
 import Mcdonalds from "views/examples/Mcdonalds";
 import Seymour from "views/examples/Seymour";
 import Blueashrecreationcenter from "views/examples/Blueashrecreationcenter";
+import Newsroom from "views/examples/Newsroom";
+import NewsArticle from "views/examples/NewsArticle";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -194,7 +196,16 @@ ReactDOM.render(
  exact
  render={props => <Timeline {...props} />}
  />
- 
+ <Route
+ path="/news"
+ exact
+ render={props => <Newsroom {...props} />}
+ />
+ <Route
+ path="/newsarticle"
+ exact
+ render={props => <NewsArticle {...props} />}
+ />
 {/*<Route path="/" exact component={ProductList} />
 <Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
 <Route path="/product/:id" component={Product} />

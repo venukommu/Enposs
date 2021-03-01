@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
+import Background from 'assets/img/theme/shop.jpg';
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 class EcwidScript extends React.Component {
     componentDidMount() {
@@ -49,42 +51,61 @@ class EcwidScript extends React.Component {
   export default function EcwidComponent() {
     return (
       <>
-        <DemoNavbar /><section className="section-profile-cover section-shaped my-0">
-        <div className="shape shape-style-1 shape-default bg-gradient-warning alpha-4">
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <Container className="shape-container d-flex align-items-center py-lg">
-          <div className="col px-0">
-            <Row className="align-items-center justify-content-center">
-              <Col className="text-center" lg="6">
-                <h1 className="display-3 text-white">Enposs Products</h1>
-              </Col>
-            </Row>
+        <DemoNavbar />
+        <div className="position-relative">
+            <section className="section section-lg section-shaped pb-250">
+            <div className="shape shape-style-1 shape-default"
+              style= {{
+                backgroundPosition: "center",
+                backgroundImage: `url("${Background}")`,
+               }}>
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+              <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                <Row>
+                    <Col lg="6">
+                    {/*< ProductList />*/}
+                      <div>
+                        <h6 className="display-3 text-white">
+                        Stay Home <br/> 
+                        Shop Online
+                        </h6>
+                        <p className="lead text-white"
+                        style={{ textAlign : "justify" }}>
+                        Enposs products</p>
+                      
+                       </div>
+                    </Col>
+                  </Row>
+                </div>
+              </Container>
+              {/* SVG separator */}
+              <div className="separator separator-bottom separator-skew">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  version="1.1"
+                  viewBox="0 0 2560 100"
+                  x="0"
+                  y="0"
+                >
+                  <polygon
+                    className="fill-white"
+                    points="2560 0 2560 100 0 100"
+                  />
+                </svg>
+              </div>
+            </section>
           </div>
-        </Container>
-        {/* SVG separator */}
-        <div className="separator separator-bottom separator-skew">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="fill-white"
-              points="2560 0 2560 100 0 100"
-            />
-          </svg>
-        </div>
-      </section>
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
         <Card className="card-profile shadow mt--200" >
@@ -92,6 +113,7 @@ class EcwidScript extends React.Component {
         </Card>
         </Container>
       </section>
+      <CardsFooter />
       </>
     );
   }
