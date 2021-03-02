@@ -100,7 +100,7 @@ componentDidMount = async () => {
                         <CardBody className="p-lg-5">
                             <h4 className="mb-1">How Can We Help?</h4>
                             <p className="mt-0">
-                            Let's schedule a call to assess yout requirement..
+                            Let's schedule a call to assess your requirement..
                             </p>
                             <FormGroup
                             className={classnames("mt-5", {
