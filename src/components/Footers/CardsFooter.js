@@ -163,27 +163,27 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/about" tag={Link}
+                      to="/ourstory" tag={Link}
                     >
-                      About Us
+                      About
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       //href="https://www.creative-tim.com/presentation?ref=adsr-footer"
                       //target="_blank"
-                      to="/forceSystem" tag={Link}
+                      to="/force" tag={Link}
                     >
-                      Force System
+                      Products
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       //href="http://blog.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/portfolio" tag={Link}
+                      to="/clients" tag={Link}
                     >
-                      Project Reference
+                      Clients
                     </NavLink>
                   </NavItem>
                   <NavItem>

@@ -237,29 +237,27 @@ class Landing extends React.Component {
                         </Button>
                         <div>
                           <br></br> <br></br> <br></br>
-                        <h4 className="display-7 text-white"
-                        style={{ textAlign : "justify" }}>
-                      A <span className="text-info">Solution to</span> <span className="text-warning">Quench Pollution</span>
+                        <h4 className="display-7 text-white" style={{ textAlign : "justify" }}>
+                          A <span className="text-info">Solution to</span> <span className="text-warning">Quench Pollution</span>
                         </h4>
-                        <h4 className="display-7 text-white"
-                        style={{ textAlign : "justify" }}>
-                      <span className="text-white">Our mission - Reduce carbon Emission </span>
-                        </h4>
+                        {/*} <h4 className="display-7 text-white"
+                          style={{ textAlign : "justify" }}>
+                        <span className="text-white">Our mission - Reduce carbon Emission </span>
+                          </h4>*/}
                       </div>
                       </div>
                     </Col>
                   </Row>
                   <Row>
                   <Col md="12" xs="6">
-                    <h4 className="display-7 text-white text-lead"
-                          style={{ textAlign : "center" }}>
+                    <h4 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
                         <span  className="text-white"><br></br>Total reduced CO<sub>2</sub> by APSIC <br></br>
-                        <Button
-                          className="btn-icon mb-3 mb-sm-0"
-                          color="warning"
-                        >             
-                          <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
-                        </Button>
+                          <Button
+                            className="btn-icon mb-3 mb-sm-0"
+                            color="warning"
+                          >             
+                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                          </Button>
                        </span>
                     </h4>
                   </Col>
@@ -337,9 +335,9 @@ class Landing extends React.Component {
                               About Company
                             </h6>
                             <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
-                      The initiative taken by Enposs was to reduce carbon footprint by cutting electricity usage.
-                      Our philosophy is best expressed as 'Curbbing electricity and cleaning the air."
+                              style={{ textAlign : "justify" }}>
+                              The initiative taken by Enposs was to reduce carbon footprint by cutting electricity usage.
+                              Our philosophy is best expressed as 'Curbbing electricity and cleaning the air."
                             </p>
                           </div>
                           {/*<div>
@@ -377,9 +375,9 @@ class Landing extends React.Component {
                             </h6>
                             <p className="description mt-3"
                             style={{ textAlign : "justify" }}>
-                           We have two Force products available as Single-Phase and Three-Phase.
-                           These are Energy saving products that can be used in offices,factories,homes and anywhere electricity is used.
-                           They are user-friendly.
+                              We have two Force products available as Single-Phase and Three-Phase.
+                              These are Energy saving products that can be used in offices,factories,homes and anywhere electricity is used.
+                              They are user-friendly.
                             </p>
                           </div>
                           {/*<div>
@@ -396,7 +394,7 @@ class Landing extends React.Component {
                           <Button
                             className="mt-4"
                             color="success"
-                            href="#products"
+                            href="/force"
                             //href="#pablo"
                             //onClick={e => e.preventDefault()}
                           >
@@ -415,10 +413,9 @@ class Landing extends React.Component {
                           <h6 className="text-warning text-uppercase">
                             Force System
                           </h6>
-                          <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                         Force - is manufactured by Enposs.
-                         It is an excellent power saving device, certified by green technology Korea and globally well accepted product.It optimizes Energy and helps deplete CO2 Emissions.
+                          <p className="description mt-3" style={{ textAlign : "justify" }}>
+                            Force - is manufactured by Enposs.
+                            It is an excellent power saving device, certified by green technology Korea and globally well accepted product.It optimizes Energy and helps deplete CO2 Emissions.
                           </p>
                           </div>
                           {/*<div>
@@ -432,7 +429,7 @@ class Landing extends React.Component {
                               launch
                             </Badge>
                           </div>*/}
-                          <Button to="/force" tag={Link}
+                          <Button to="/forceprinciples" tag={Link}
                             className="mt-4"
                             color="warning"
                             //href="#pablo"
