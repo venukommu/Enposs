@@ -69,12 +69,19 @@ componentDidMount = async () => {
       <>
         <DemoNavbar />
         <main ref="main">
-            <section className="section section-lg bg-gradient-primary">
-                <Container className="pt-lg pb-300">
-                    <Row className="text-center justify-content-center">
-                   
-                    </Row>
-                </Container>
+        <section className="section-profile-cover section-shaped my-0">
+            {/* Circles background */}
+            <div className="shape shape-style-1 shape-default">
+              
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            
                 {/* SVG separator */} 
                 <div className="separator separator-bottom separator-skew zindex-100">
                     <svg

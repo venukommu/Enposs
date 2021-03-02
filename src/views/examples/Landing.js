@@ -197,7 +197,7 @@ class Landing extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h5 className="display-20 text-white">
-                        ENPOSS Inc
+                         {/*ENPOSS Inc*/}
                         {/*homepagebanner.Title*/}
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
@@ -205,10 +205,10 @@ class Landing extends React.Component {
                         <h4 className="display-7 text-white"
                         style={{ textAlign : "justify" }}>
                         {/*homepagebanner.description
-                  
+          
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
-                        Save Energy, Save Earth.
+                        Save Energy - Save Earth
                         </h4>
                       </div>
                       <br></br>
@@ -248,10 +248,11 @@ class Landing extends React.Component {
                       </div>
                     </Col>
                   </Row>
+                  <br></br>
                   <Row>
-                  <Col md="12" xs="6">
+                  <Col md="4" xs="4">
                     <h4 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
-                        <span  className="text-white"><br></br>Total reduced CO<sub>2</sub> by APSIC <br></br>
+                        <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br></br>
                           <Button
                             className="btn-icon mb-3 mb-sm-0"
                             color="warning"
