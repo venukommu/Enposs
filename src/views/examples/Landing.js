@@ -333,7 +333,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="text-primary text-uppercase">
-                              About Company
+                              Enposs
                             </h6>
                             <p className="description mt-3"
                               style={{ textAlign : "justify" }}>

@@ -250,6 +250,11 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">News</span>
                     </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem to="#" tag={Link}>
+                          Announcement
+                      </DropdownItem>
+                    </DropdownMenu>
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/clients" tag={Link} nav>
@@ -277,6 +282,12 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text">Certifications</span>
                     </DropdownToggle>
                 </UncontrolledDropdown>  */}
+                   <UncontrolledDropdown nav>
+                    <DropdownToggle to="/store" tag={Link}  nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Shop</span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>  
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
@@ -285,9 +296,6 @@ class DemoNavbar extends React.Component {
                     <DropdownMenu>
                     <DropdownItem to="/installforce" tag={Link}>
                         How to install Force
-                      </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
-                        Announcement
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
                         FAQ
@@ -299,19 +307,13 @@ class DemoNavbar extends React.Component {
                         Inquiry
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>
-                  <UncontrolledDropdown nav>
-                    <DropdownToggle to="/store" tag={Link}  nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Shop</span>
-                    </DropdownToggle>
-                  </UncontrolledDropdown>                                    
-                  <UncontrolledDropdown nav>
+                  </UncontrolledDropdown>       
+                 {/*} <UncontrolledDropdown nav>
                     <DropdownToggle to="/contact" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Contact</span>
                     </DropdownToggle>
-                  </UncontrolledDropdown> 
+              </UncontrolledDropdown> */}
                   {/*<UncontrolledDropdown nav>
                     <DropdownToggle to="/store" tag={Link}  onClick={() => {window.location.href="/store"}} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
