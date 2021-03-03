@@ -125,10 +125,10 @@ class Benefits extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-yellow">
+                        <h6 className="display-3 text-white">
                         Brilliant Benefits
                         {/*ENPOSS Inc {" "}*/}
-                          <span>Save Electricity & money</span>
+                          <h2 className="text-yellow">Save Electricity & money</h2>
                         </h6>
                       </div>
                     </Col>
