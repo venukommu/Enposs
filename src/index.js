@@ -58,6 +58,7 @@ import Seymour from "views/examples/Seymour";
 import Blueashrecreationcenter from "views/examples/Blueashrecreationcenter";
 import Newsroom from "views/examples/Newsroom";
 import NewsArticle from "views/examples/NewsArticle";
+import Benefits from "views/examples/Benefits";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -205,6 +206,11 @@ ReactDOM.render(
  path="/newsarticle"
  exact
  render={props => <NewsArticle {...props} />}
+ />
+ <Route
+ path="/benefits"
+ exact
+ render={props => <Benefits {...props} />}
  />
 {/*<Route path="/" exact component={ProductList} />
 <Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}

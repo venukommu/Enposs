@@ -231,11 +231,14 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text">Products</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="force" tag={Link}>
+                      <DropdownItem to="/force" tag={Link}>
                         What is Force?
                       </DropdownItem>
                       <DropdownItem to="/forceprinciples" tag={Link}>
                        Working Principle
+                      </DropdownItem>
+                      <DropdownItem to="/benefits" tag={Link}>
+                        Benefits of Force
                       </DropdownItem>
                       <DropdownItem to="/patents" tag={Link}>
                         Patents

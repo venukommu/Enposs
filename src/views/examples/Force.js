@@ -5,7 +5,7 @@ import React from "react";
 
 // reactstrap components
 import {
-  Badge,
+  //Badge,
   Card,
   CardBody,
   //CardImg,
@@ -293,7 +293,7 @@ class Force extends React.Component {
 
           </Container>
         </section>
-        <section className="section pb-0 bg-gradient-default">
+       {/*} <section className="section pb-0 bg-gradient-default">
           <Container >
              <h3 className="text-white">Brilliant Benefits</h3>
               <Row className="row-grid align-items-center">
@@ -411,9 +411,9 @@ class Force extends React.Component {
                   </div>
                 </Col>
               </Row><br />
-             </Container>
+             </Container>*/}
              {/* SVG separator */}
-            <div className="separator separator-bottom separator-skew zindex-100">
+              {/* <div className="separator separator-bottom separator-skew zindex-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"
@@ -428,7 +428,7 @@ class Force extends React.Component {
                 />
               </svg>
             </div>
-          </section>
+                  </section>*/}
         </main>
         <CardsFooter />
       </>
