@@ -186,7 +186,7 @@ class Force extends React.Component {
                               style={{ width: "100px" }}/>
                           </div>
                           <h6 className="text-success text-uppercase">
-                          Very high in safety
+                          Super Save
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
@@ -205,7 +205,7 @@ class Force extends React.Component {
                               style={{ width: "100px" }}/>
                           </div>
                           <h6 className="text-warning text-uppercase">
-                          Apply multi load
+                          Versatile
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "justify" }}>

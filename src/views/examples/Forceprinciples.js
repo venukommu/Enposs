@@ -8,7 +8,7 @@ import {
   //Badge,
   Card,
   CardBody,
-  //CardImg,
+  CardImg,
   Container,
   Row,
   Col,
@@ -139,7 +139,7 @@ class Forceprinciples extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
                           <h6 className="text-warning text-center text-uppercase">
-                          Principle of operation
+                            Working Principle
                           </h6>
                           <h6 className="description mt-3 text-center"
                           style={{ textAlign : "justify" }}>
@@ -187,6 +187,12 @@ class Forceprinciples extends React.Component {
                         </Row>
                         </CardBody>
                       </Card>
+                      <CardImg
+                      alt="..."
+                      src={require("assets/img/theme/workingprinciple.jpg")}
+                      //src={`${appConfig.apiURL}${productimage.url}`}
+                      top
+                    />
                     </Col>
                   </Row>
                 </Col>

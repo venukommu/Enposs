@@ -104,7 +104,7 @@ class Benefits extends React.Component {
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
             <div className="shape shape-style-1 shape-default"
-              style= {{
+             style= {{
                 backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,
                }}>
@@ -125,8 +125,8 @@ class Benefits extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-white">
-                        Brilliant Benefits
+                        <h6 className="display-2 text-white">
+                        Brilliant Benefits<br></br>
                         {/*ENPOSS Inc {" "}*/}
                           <h2 className="text-yellow">Save Electricity & money</h2>
                         </h6>
@@ -201,8 +201,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    Eco friendly</h6>
+                                    <h3 className="mb-0 text-white">
+                                    Eco friendly</h3>
                                 </div>
                                 </div>
                             </li>
@@ -214,7 +214,7 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">Highly safe</h6>
+                                    <h3 className="mb-0 text-white">Highly safe</h3>
                                 </div>
                                 </div>
                             </li>
@@ -226,8 +226,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    Easy to install</h6>
+                                    <h3 className="mb-0 text-white">
+                                    Easy to install</h3>
                                 </div>
                                 </div>
                             </li>
@@ -239,8 +239,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    Versatile</h6>
+                                    <h3 className="mb-0 text-white">
+                                    Versatile</h3>
                                 </div>
                                 </div>
                             </li>
@@ -256,8 +256,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    Energy saver</h6>
+                                    <h3 className="mb-0 text-white">
+                                    Energy saver</h3>
                                 </div>
                                 </div>
                             </li>
@@ -269,8 +269,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    Excellent technology</h6>
+                                    <h3 className="mb-0 text-white">
+                                    Excellent technology</h3>
                                 </div>
                                 </div>
                             </li>
@@ -282,8 +282,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    Economical</h6>
+                                    <h3 className="mb-0 text-white">
+                                    Economical</h3>
                                 </div>
                                 </div>
                             </li>
@@ -295,8 +295,8 @@ class Benefits extends React.Component {
                                     </Badge>
                                 </div>
                                 <div>
-                                    <h6 className="mb-0 text-white">
-                                    High reliability</h6>
+                                    <h3 className="mb-0 text-white">
+                                    High reliability</h3>
                                 </div>
                                 </div>
                             </li>
