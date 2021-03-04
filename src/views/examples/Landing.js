@@ -335,7 +335,7 @@ class Landing extends React.Component {
                             <h6 className="text-primary text-uppercase">
                               Enposs
                             </h6>
-                            <p className="description mt-3"
+                            <p className="description mt-3 text-dark"
                               style={{ textAlign : "justify" }}>
                               The initiative taken by Enposs was to reduce carbon footprint by cutting electricity usage.
                               Our philosophy is best expressed as 'Curbbing electricity and cleaning the air."
@@ -374,7 +374,7 @@ class Landing extends React.Component {
                             <h6 className="text-success text-uppercase">
                             PRODUCTS
                             </h6>
-                            <p className="description mt-3"
+                            <p className="description mt-3 text-dark"
                             style={{ textAlign : "justify" }}>
                               We have two Force products available as Single-Phase and Three-Phase.
                               These are Energy saving products that can be used in offices,factories,homes and anywhere electricity is used.
@@ -414,7 +414,7 @@ class Landing extends React.Component {
                           <h6 className="text-warning text-uppercase">
                             Force System
                           </h6>
-                          <p className="description mt-3" style={{ textAlign : "justify" }}>
+                          <p className="description mt-3 text-dark" style={{ textAlign : "justify" }}>
                             Force - is manufactured by Enposs.
                             It is an excellent power saving device, certified by green technology Korea and globally well accepted product.It optimizes Energy and helps deplete CO2 Emissions.
                           </p>

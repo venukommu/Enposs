@@ -168,7 +168,7 @@ class Force extends React.Component {
                           <h6 className="text-primary text-uppercase">
                           Environment Friendly
                           </h6>
-                          <p className="description mt-3"
+                          <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
                           Force is a product made out of tourmaline as the main material that generates anion semi-permanently, applied the best environmental technology, and saves electric energy by improving the efficiency of the electric system.
                           </p>
@@ -187,7 +187,7 @@ class Force extends React.Component {
                           <h6 className="text-success text-uppercase">
                           Super Save
                           </h6>
-                          <p className="description mt-3"
+                          <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
                           The force is a non-current device that does not require a separate power supply, which is very high in safety and easy to install.
                           </p>
@@ -207,7 +207,7 @@ class Force extends React.Component {
                           <h6 className="text-warning text-uppercase">
                           Versatile
                           </h6>
-                          <p className="description mt-3"
+                          <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
                           Force can be applied anywhere power is used, from manufacturing plant to ship,
                            office building to the apartment, Automobile to the industry, single-phase, three-phase, and high voltage (6,000V or less) 
