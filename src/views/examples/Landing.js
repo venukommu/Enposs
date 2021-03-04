@@ -44,7 +44,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/fire-water-multicolour-splash.jpg';
+import Background from 'assets/img/theme/abstract-dark-layer.jpg';
 import CountUp from 'react-countup';
 
 class Landing extends React.Component {
@@ -171,15 +171,15 @@ class Landing extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
-              {/*style= {{
+              <div className="shape shape-style-1 shape-default"
+              style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
-               }}*/}
+               }}>
                 <span />
                 <span />
                 <span />
@@ -213,15 +213,15 @@ class Landing extends React.Component {
                       </div>
                       <br></br>
                       <div className="btn-wrapper">
-                        <Button
+                        {/*<Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="warning"
-                         // hre*/}f="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                         href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">FORCE{/*homepagebanner.forcesystembutton*/}</span>
+                          <span className="btn-inner--text">FORCE</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -232,12 +232,11 @@ class Landing extends React.Component {
                             <i className="fa fa-lightbulb-o" />
                           </span>
                           <span className="btn-inner--text">
-                            Energy Saving{/*homepagebanner.energysavingbutton*/}
+                            Energy Saving
                           </span>
-                        </Button>
+                        </Button>*/}
                         <div>
-                          <br></br> <br></br> <br></br>
-                        <h3 className="display-7 text-white" style={{ textAlign : "justify" }}>
+                        <h3 className="display-4 text-white" style={{ textAlign : "justify" }}>
                           A Solution to Quench Pollution
                         </h3>
                         {/*} <h4 className="display-7 text-white"
@@ -251,9 +250,9 @@ class Landing extends React.Component {
                   <br></br>
                   <Row>
                   <Col md="4" xs="6"></Col>
-                  <Col md="4" xs="8">
-                    <h4 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
-                        <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br></br>
+                  <Col md="6" xs="8">
+                    <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
+                        <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br/><br/>
                           <Button
                             className="btn-icon mb-3 mb-sm-0"
                             color="warning"
@@ -261,7 +260,7 @@ class Landing extends React.Component {
                             <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
                           </Button>
                        </span>
-                    </h4>
+                    </h3>
                   </Col>
                   {/*<Col md="4" xs="6"></Col>  
                   <Col md="2" xs="6">

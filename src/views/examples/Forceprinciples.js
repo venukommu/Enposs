@@ -78,7 +78,7 @@ class Forceprinciples extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 bg-gradient-info shape-default">
+              <div className="shape shape-style-1 bg-gradient-purple shape-default">
               {/*style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -100,7 +100,7 @@ class Forceprinciples extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
-                    <Col lg="6">
+                    <Col lg="8">
                       <div></div><h1 className="display-2 text-white">Saves Electric Energy</h1><br></br>
                       <h4 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
@@ -135,18 +135,18 @@ class Forceprinciples extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid" >
                     <Col lg="12">
-                      <Card className="card-lift--hover shadow border-0">
+                      <Card className="shadow border-0">
                         <CardBody className="py-4">
-                          <h6 className="text-warning text-center text-uppercase">
+                          <h6 className="text-dark display-4 text-center text-uppercase">
                             Working Principle
                           </h6>
-                          <h6 className="description mt-3 text-center"
+                          <h6 className="description mt-3 text-center text-dark display-4"
                           style={{ textAlign : "justify" }}>
                           It uses minerals with dielectric mine to increase the electrical conductivity of the power system, finally reducing the effective power. (APSIC : Active Power Saving by Increasing Conductivity의 원리)
                           </h6>
                         <Row className="row-grid">
                         <Col lg="4">
-                            <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                            <Card className="bg-gradient-purple shadow border-0">
                             <CardBody> 
                                 <h6 className="text-white">
                                 <ul>
@@ -158,7 +158,7 @@ class Forceprinciples extends React.Component {
                             </Card>
                         </Col>
                         <Col lg="4">
-                            <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                            <Card className="bg-gradient-purple shadow border-0">
                             <CardBody className="py-3"> 
                                 <h6 className="text-white">
                                 <ul>
@@ -171,7 +171,7 @@ class Forceprinciples extends React.Component {
                             </Card>
                         </Col>
                         <Col lg="4">
-                            <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                            <Card className="bg-gradient-purple shadow border-0">
                             <CardBody className="py-3"> 
                                 <h6 className="text-white">
                                 <ul>

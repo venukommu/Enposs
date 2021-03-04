@@ -34,7 +34,7 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import { appConfig } from "services/config.js";
-import Background from 'assets/img/theme/12818.jpg';
+//import Background from 'assets/img/theme/12818.jpg';
 
 class Benefits extends React.Component {
   state = {
@@ -103,11 +103,11 @@ class Benefits extends React.Component {
         <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 shape-default"
-             style= {{
+            <div className="shape shape-style-1 bg-gradient-gray-dark">
+            {/*} style= {{
                 backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,
-               }}>
+               }}*/}
                 <span />
                 <span />
                 <span />
@@ -158,7 +158,7 @@ class Benefits extends React.Component {
            
       <section className="section section-lg pt-lg-0 mt--200">
             <Container>
-            <Card className="card-profile shadow mt--200 bg-warning" >
+            <Card className="card-profile shadow mt--200 bg-gray-dark" >
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
                    {/*} <CardImg

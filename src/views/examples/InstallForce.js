@@ -165,7 +165,7 @@ class InstallForce extends React.Component {
                             <li>Check the location of each phase bus or secondary of the main circuit breaker.</li>
                             <li>Connect the FORCE on each phase.</li>
                             <li>Turn on the main circuit breaker.</li>
-                          </ul><br /><br />
+                          </ul><br/><br/>
                           </CardBody>
                         </Card>
                     </Col>

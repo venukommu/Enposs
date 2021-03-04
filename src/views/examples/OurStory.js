@@ -126,18 +126,18 @@ class OurStory extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="6">
+                    <Col lg="8">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-white">
+                        <h1 className="display-2 text-white">
                         Saving Strategy
                         {/*ENPOSS Inc {" "}*/}
                           <span>for Power and Planet</span>
-                        </h6>
+                        </h1>
                        <h4 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
                         The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS. 
-                        Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."</h4>
+                        </h4>
                       </div>
                     </Col>
                   </Row>
@@ -166,7 +166,7 @@ class OurStory extends React.Component {
            
       <section className="section section-lg pt-lg-0 mt--200">
             <Container>
-            <Card className="card-profile shadow mt--200">
+            <Card className="card-profile shadow mt--200 bg-lighter">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
                    {/*} <CardImg
@@ -175,7 +175,7 @@ class OurStory extends React.Component {
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
     />*/}
-                    <blockquote className="card-blockquote bg-default shadow border-0">
+                  <blockquote className="card-blockquote bg-gradient-lighter  shadow border-0">
                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="svg-bg"
@@ -195,7 +195,7 @@ class OurStory extends React.Component {
                      <h4 className="display-3 font-weight-bold text-white">
                   {/*}    {companystory.Title}*/}
                       </h4>
-                      <p className="lead text-italic text-white" style={{ textAlign : "justify"}}>
+                      <p className="lead text-italic text-dark" style={{ textAlign : "justify"}}>
                       <ShowMoreText
                     /* Default options */
                     lines={5}
@@ -210,7 +210,7 @@ class OurStory extends React.Component {
                       ENPOSS was born in 2005 to save energy and save the planet. Carbon Dioxide emissions cause greenhouse effect.This greenhouse gas traps the heat like a blanket and causes global warming. Enposs reduces consumption of electricity and thereby contributes to reduction in carbon dioxide emission.This in turn reduces global warming. (The way to slow global warming is to reduce emissions of carbon dioxide, a green gas. ENPOSS has also worked on ways to reduce carbon dioxide emissions by reducing electric energy consumption.).ENPOSS took the initiative of developing FORCE, an electric energy saving device contributing towards environmental protection. FORCE is efficient and effective in saving electric energy. By reducing electric energy consumption we are pleased to be a part of the drive which reduces carbon dioxide emissions via our device FORCE. Today, ENPOSS has an international presence.It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc.With gadget called Force, 
                       ENPOSS is the force that is protecting the health and wealth of the earth.</ShowMoreText>
                         {/*{companystory.description}*/}</p>
-                    </blockquote>
+                     </blockquote>
                 </Col>
               </Row>
               </Card>

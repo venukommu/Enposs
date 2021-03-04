@@ -83,10 +83,9 @@ class Force extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/golden-flowing-wave-with-sequins-glitter-dust-black_87521-2737.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/headphones-mouse-orange-layer.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
-              
                 <span />
                 <span />
                 <span />
@@ -100,12 +99,12 @@ class Force extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
-                    <Col lg="6">
-                      <div><h1 className="display-4 text-white">Empowered to save Power</h1>
-                      <h4 className="display-7 text-white"
+                    <Col lg="8">
+                      <div><h1 className="display-2 text-white">Empowered to save Power</h1>
+                      <h4 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
-                           Force - is manufactured by  Enposs.It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4>
-                           <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1>
+                           Force - is manufactured by  Enposs. It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4>
+                           <h1 className="display-3 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>
                   </Row>
@@ -192,6 +191,7 @@ class Force extends React.Component {
                           style={{ textAlign : "justify" }}>
                           The force is a non-current device that does not require a separate power supply, which is very high in safety and easy to install.
                           </p>
+                          <br /><br />
                         </CardBody>
                       </Card>
                     </Col>
