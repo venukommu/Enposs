@@ -249,8 +249,8 @@ class Landing extends React.Component {
                   </Row>
                   <br></br>
                   <Row>
-                  <Col md="4" xs="6"></Col>
-                  <Col md="6" xs="8">
+                  {/*<Col md="4" xs="6"></Col>*/}
+                  <Col md="12" >
                     <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
                         <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br/><br/>
                           <Button
