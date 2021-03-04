@@ -171,15 +171,15 @@ class Landing extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default"
-              style= {{
+              <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
+              {/*style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
-               }}>
+               }}*/}
                 <span />
                 <span />
                 <span />
@@ -202,14 +202,14 @@ class Landing extends React.Component {
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
                         </h5>
-                        <h4 className="display-7 text-white"
-                        style={{ textAlign : "justify" }}>
+                        <h1 className="display-1 text-white text-lead"
+                        style={{ textAlign : "justify" , fontSize: "40px", fontWeight: "800px"}}>
                         {/*homepagebanner.description
           
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
                         Save Energy - Save Earth
-                        </h4>
+                        </h1>
                       </div>
                       <br></br>
                       <div className="btn-wrapper">
@@ -237,9 +237,9 @@ class Landing extends React.Component {
                         </Button>
                         <div>
                           <br></br> <br></br> <br></br>
-                        <h4 className="display-7 text-white" style={{ textAlign : "justify" }}>
-                          A <span className="text-info">Solution to</span> <span className="text-warning">Quench Pollution</span>
-                        </h4>
+                        <h3 className="display-7 text-white" style={{ textAlign : "justify" }}>
+                          A Solution to Quench Pollution
+                        </h3>
                         {/*} <h4 className="display-7 text-white"
                           style={{ textAlign : "justify" }}>
                         <span className="text-white">Our mission - Reduce carbon Emission </span>
@@ -250,7 +250,8 @@ class Landing extends React.Component {
                   </Row>
                   <br></br>
                   <Row>
-                  <Col md="4" xs="4">
+                  <Col md="4" xs="6"></Col>
+                  <Col md="4" xs="8">
                     <h4 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
                         <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br></br>
                           <Button

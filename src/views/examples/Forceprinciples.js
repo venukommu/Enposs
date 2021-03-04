@@ -78,14 +78,14 @@ class Forceprinciples extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default"
-              style= {{
+              <div className="shape shape-style-1 bg-gradient-info shape-default">
+              {/*style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
-               }}>
+               }}*/}
               
                 <span />
                 <span />
@@ -101,14 +101,13 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <div><h1 className="display-4 text-white">Saves Electric Energy</h1>
-                      <p className="lead text-white"
+                      <div></div><h1 className="display-2 text-white">Saves Electric Energy</h1><br></br>
+                      <h4 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
-                        Force uses natural material tourmaline It is mixed with substances like magnesium 
+                        Force uses natural material tourmaline.It is mixed with substances like magnesium 
                         to produce surplus free electrons called EMF-7.
                         These free electrons reduce electrical losses caused by various factors like heat, 
-                        vibration, Impedance,  harmonic distortion etc.</p>
-                      </div>
+                        vibration, Impedance,  harmonic distortion etc.</h4>
                     </Col>
                   </Row>
                 </div>

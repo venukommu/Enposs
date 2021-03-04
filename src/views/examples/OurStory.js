@@ -134,10 +134,10 @@ class OurStory extends React.Component {
                         {/*ENPOSS Inc {" "}*/}
                           <span>for Power and Planet</span>
                         </h6>
-                       <p className="lead text-white"
+                       <h4 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
                         The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS. 
-                        Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."</p>
+                        Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."</h4>
                       </div>
                     </Col>
                   </Row>

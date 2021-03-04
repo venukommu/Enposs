@@ -102,9 +102,9 @@ class Force extends React.Component {
                   <Row>
                     <Col lg="6">
                       <div><h1 className="display-4 text-white">Empowered to save Power</h1>
-                      <p className="lead text-white"
+                      <h4 className="display-7 text-white"
                         style={{ textAlign : "justify" }}>
-                           Force - is manufactured by  Enposs.It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</p>
+                           Force - is manufactured by  Enposs.It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4>
                            <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>

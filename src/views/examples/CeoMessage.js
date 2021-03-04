@@ -120,14 +120,13 @@ class CeoMessage extends React.Component {
                         {/*ENPOSS Inc {" "}*/}
                          <span></span>
                         </h1>
-                        <br></br><br></br>
-                        <h1 className="display-4 text-white">
-                       Be the <span>FORCE</span> that protects the planet.</h1>
-                       <p className="lead text-white"
-                        style={{ textAlign : "justify" }}>
-Force reduces the use of electricity. so less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
-</p>
-</div>
+                        <h1 className="display-1 text-white">
+                       Be the FORCE that protects the planet.</h1>
+                        <h2 className="display-5  text-white"
+                          style={{ textAlign : "justify" }}>
+                          Force reduces the use of electricity. so less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
+                        </h2>
+                      </div>
                     </Col>
                   </Row>
                 </div>
