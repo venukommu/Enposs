@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -29,17 +29,14 @@ import 'react-vertical-timeline-component/style.min.css';
 class Timeline extends React.Component {
   
   state = {
-    aboutcompany: [],
-    ceomessage: [],
-    error: null,
-    bannerimage: [],
-    productimage: []
+    timelines: [],
+    error: null
  }
  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     // this.refs.main.scrollTop = 0;
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -55,32 +52,20 @@ class Timeline extends React.Component {
     };
   
     try {
-      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
+      const timelines = await fetch(`${appConfig.apiURL}/timelines`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
+      this.setState({ timelines });
     } catch (error) {
       this.setState({ error });
     }
 
-    try {
-      const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ ceomessage });
-    } catch (error) {
-      this.setState({ error });
-    }*/
-
   };
   render() {
-    const { error} = this.state;
+    const { error, timelines} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -216,7 +201,7 @@ class Timeline extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
-    <VerticalTimeline>
+  <VerticalTimeline>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}

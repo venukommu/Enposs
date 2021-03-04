@@ -18,23 +18,25 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
 
 class Forceprinciples extends React.Component {
   
   state = {
-    forcewidgets: [],
+    forceprinciple: [],
+    forceprincipleimage: [],
+    forceprinciplepoints: [],
     error: null,
   };
 
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+    //this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -48,16 +50,16 @@ class Forceprinciples extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forceprinciple = await fetch(`${appConfig.apiURL}/forceprinciples`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forceprinciple, forceprincipleimage: forceprinciple.image, forceprinciplepoints: forceprinciple.principlesdata});
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -65,8 +67,8 @@ class Forceprinciples extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
-
+    const { error, forceprinciple, forceprincipleimage, forceprinciplepoints} = this.state;
+console.log(forceprinciple);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -83,8 +85,8 @@ class Forceprinciples extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                //backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
+                backgroundImage:`url(${appConfig.apiURL}${forceprincipleimage.url})`,
                }}>
               
                 <span />
@@ -101,13 +103,14 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <div><h1 className="display-4 text-white">Saves Electric Energy</h1>
+                      <div><h1 className="display-4 text-white">{/*Saves Electric Energy*/}{forceprinciple.title}</h1>
                       <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                        Force uses natural material tourmaline It is mixed with substances like magnesium 
+                        {/*Force uses natural material tourmaline It is mixed with substances like magnesium 
                         to produce surplus free electrons called EMF-7.
                         These free electrons reduce electrical losses caused by various factors like heat, 
-                        vibration, Impedance,  harmonic distortion etc.</p>
+                        vibration, Impedance,  harmonic distortion etc.*/}
+                        {forceprinciple.description}</p>
                       </div>
                     </Col>
                   </Row>
@@ -139,14 +142,30 @@ class Forceprinciples extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
                           <h6 className="text-warning text-center text-uppercase">
-                          Principle of operation
+                          {/*Principle of operation*/}{forceprinciple.priciplestitle}
                           </h6>
                           <h6 className="description mt-3 text-center"
                           style={{ textAlign : "justify" }}>
-                          It uses minerals with dielectric mine to increase the electrical conductivity of the power system, finally reducing the effective power. (APSIC : Active Power Saving by Increasing Conductivity의 원리)
+                          {/*It uses minerals with dielectric mine to increase the electrical conductivity of the power system, finally reducing the effective power. (APSIC : Active Power Saving by Increasing Conductivity의 원리)*/}
+                          {forceprinciple.principlesdescription}
                           </h6>
                         <Row className="row-grid">
-                        <Col lg="4">
+                        {forceprinciplepoints.map(points => 
+                          <Col lg="4" key={points.id}>
+                          <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                          <CardBody> 
+                              <h6 className="text-white">
+                              <ul>
+                                {points.id%3 === 1 ? 
+                                  <li>{points}</li>
+                                : ""}
+                              </ul> 
+                              </h6>
+                          </CardBody>
+                          </Card>
+                          </Col>
+                          )}  
+                        {/*<Col lg="4">
                             <Card className="card-lift--hover bg-gradient-info shadow border-0">
                             <CardBody> 
                                 <h6 className="text-white">
@@ -183,7 +202,7 @@ class Forceprinciples extends React.Component {
                                 </h6>
                             </CardBody>
                             </Card>
-                        </Col>
+                        </Col>*/}
                         </Row>
                         </CardBody>
                       </Card>

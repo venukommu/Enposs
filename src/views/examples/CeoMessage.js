@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -25,24 +25,22 @@ import { Card, Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/two-polar-bears-background.jpg';
+//import Background from 'assets/img/theme/two-polar-bears-background.jpg';
 
 class CeoMessage extends React.Component {
   executeOnClick(isExpanded) {
     console.log(isExpanded);
 }
   state = {
-    aboutcompany: [],
     ceomessage: [],
     error: null,
-    bannerimage: [],
-    productimage: []
+    ceoimage: []
  }
  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     //this.refs.main.scrollTop = 0;
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -58,32 +56,20 @@ class CeoMessage extends React.Component {
     };
   
     try {
-      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
-    } catch (error) {
-      this.setState({ error });
-    }
-
-    try {
       const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ ceomessage });
+      this.setState({ ceomessage, ceoimage: ceomessage.image});
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
     
   };
   render() {
-    const { error} = this.state;
+    const { error, ceomessage, ceoimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -98,7 +84,8 @@ class CeoMessage extends React.Component {
             <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage:`url(${appConfig.apiURL}${ceoimage.url})`,
                }}>
                 <span />
                 <span />
@@ -114,20 +101,19 @@ class CeoMessage extends React.Component {
                 <div className="col px-0">
                 <Row>
                     <Col lg="6">
-                    {/*< ProductList />*/}
                       <div>
                         <h1 className="display-4 text-white">
-                        {/*ENPOSS Inc {" "}*/}
                          <span></span>
                         </h1>
                         <br></br><br></br>
                         <h1 className="display-4 text-white">
-                       Be the <span>FORCE</span> that protects the planet.</h1>
+                       {/*Be the <span>FORCE</span> that protects the planet.*/}
+                       {ceomessage.Title} <span>{ceomessage.subtitle}</span> {ceomessage.subtitle1}</h1>
                        <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-Force reduces the use of electricity. so less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
-</p>
-</div>
+{/*Force reduces the use of electricity. so less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.*/}
+                      {ceomessage.description}</p>
+                      </div>
                     </Col>
                   </Row>
                 </div>
@@ -215,7 +201,8 @@ Force reduces the use of electricity. so less fuel is used in producing it. This
                     <br></br>
                     <br></br>
                     <h3>
-                    CEO Greetings {" "}
+                    {/*CEO Greetings {" "}*/}
+                    {ceomessage.ceotitle} {" "}
                       <span className="font-weight-light"></span>
                     </h3>
                     {/*<div className="h6 font-weight-300">
@@ -246,8 +233,9 @@ Force reduces the use of electricity. so less fuel is used in producing it. This
                         expanded={false}
                         //width={280}
                     >
-In a rapidly changing world, the importance of energy is growing day by day. Out of those the electric energy is the most important element of human’s life on the earth, we can’t imagine without electric energy for human’s life, but fossil fuels are depleting. The high cost of depletion of fossil fuels is an important issue of national competitiveness as well as an economic burden. Also, electric energy generated by fossil fuels generates a lot of carbon dioxide. Carbon dioxide is constantly increasing, causing air pollution, environmental pollution, and global warming. With global warming constantly being raised due to atmospheric and environmental pollution, the U.S. Fish and Wildlife Service has announced that polar bear populations will decline by about 30% by 2050. Can't we live with polar bears anymore? It's difficult, but someone has to do it. ENPOSS is going to take a one step ahead to protect the environment of the earth with its technology because there is a beautiful day to be followed by tomorrow. For more than a decade, ENPOSS’s energy-saving device FORCE has entered the world and is recognized for its outstanding technology. Starting with the reduction of electrical energy, ENPOSS wants to improve the planet's environment and reduce the economic
-burden of using electric energy for all customers around the world. CEO/ENPOSS Sung gwun Choi</ShowMoreText>
+{/*In a rapidly changing world, the importance of energy is growing day by day. Out of those the electric energy is the most important element of human’s life on the earth, we can’t imagine without electric energy for human’s life, but fossil fuels are depleting. The high cost of depletion of fossil fuels is an important issue of national competitiveness as well as an economic burden. Also, electric energy generated by fossil fuels generates a lot of carbon dioxide. Carbon dioxide is constantly increasing, causing air pollution, environmental pollution, and global warming. With global warming constantly being raised due to atmospheric and environmental pollution, the U.S. Fish and Wildlife Service has announced that polar bear populations will decline by about 30% by 2050. Can't we live with polar bears anymore? It's difficult, but someone has to do it. ENPOSS is going to take a one step ahead to protect the environment of the earth with its technology because there is a beautiful day to be followed by tomorrow. For more than a decade, ENPOSS’s energy-saving device FORCE has entered the world and is recognized for its outstanding technology. Starting with the reduction of electrical energy, ENPOSS wants to improve the planet's environment and reduce the economic
+burden of using electric energy for all customers around the world. CEO/ENPOSS Sung gwun Choi*/}
+                        {ceomessage.ceodescription}</ShowMoreText>
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}

@@ -33,9 +33,9 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
+//import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -44,7 +44,7 @@ class OurStory extends React.Component {
   state = {
     error: null,
     companystory: [],
-    homepageimage: [],
+    companystoryimage: [],
 
   };
 
@@ -53,7 +53,7 @@ class OurStory extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -69,34 +69,20 @@ class OurStory extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const companystory = await fetch(`${appConfig.apiURL}/ourstory`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ companystory, companystoryimage: companystory.image  });
       } catch (error) {
         this.setState({ error });
       }
-
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
-
+    const { error, companystory, companystoryimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -110,7 +96,8 @@ class OurStory extends React.Component {
             <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage:`url(${appConfig.apiURL}${companystoryimage.url})`,
                }}>
                 <span />
                 <span />
@@ -127,17 +114,17 @@ class OurStory extends React.Component {
                 <div className="col px-0">
                 <Row>
                     <Col lg="6">
-                    {/*< ProductList />*/}
                       <div>
                         <h6 className="display-3 text-white">
-                        Saving Strategy
-                        {/*ENPOSS Inc {" "}*/}
-                          <span>for Power and Planet</span>
+                        {/*Saving Strategy*/}
+                        {companystory.title}
+                        <span>{companystory.subtitle}{/*for Power and Planet*/}</span>
                         </h6>
                        <p className="lead text-white"
                         style={{ textAlign : "justify" }}>
-                        The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS. 
-                        Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."</p>
+                        {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS. 
+                        Force is our product which reduces use of electricity. Our philosophy is best expressed as 'Save Energy and Save Earth."*/}
+                        {companystory.description}</p>
                       </div>
                     </Col>
                   </Row>
@@ -207,8 +194,9 @@ class OurStory extends React.Component {
                     expanded={false}
                     //width={280}
                 >
-ENPOSS was born in 2005 to save energy and save the planet. Carbon Dioxide emissions cause greenhouse effect.This greenhouse gas traps the heat like a blanket and causes global warming. Enposs reduces consumption of electricity and thereby contributes to reduction in carbon dioxide emission.This in turn reduces global warming. (The way to slow global warming is to reduce emissions of carbon dioxide, a green gas. ENPOSS has also worked on ways to reduce carbon dioxide emissions by reducing electric energy consumption.).ENPOSS took the initiative of developing FORCE, an electric energy saving device contributing towards environmental protection. FORCE is efficient and effective in saving electric energy. By reducing electric energy consumption we are pleased to be a part of the drive which reduces carbon dioxide emissions via our device FORCE. Today, ENPOSS has an international presence.It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc.With gadget called Force, 
-ENPOSS is the force that is protecting the health and wealth of the earth.</ShowMoreText>
+{/*ENPOSS was born in 2005 to save energy and save the planet. Carbon Dioxide emissions cause greenhouse effect.This greenhouse gas traps the heat like a blanket and causes global warming. Enposs reduces consumption of electricity and thereby contributes to reduction in carbon dioxide emission.This in turn reduces global warming. (The way to slow global warming is to reduce emissions of carbon dioxide, a green gas. ENPOSS has also worked on ways to reduce carbon dioxide emissions by reducing electric energy consumption.).ENPOSS took the initiative of developing FORCE, an electric energy saving device contributing towards environmental protection. FORCE is efficient and effective in saving electric energy. By reducing electric energy consumption we are pleased to be a part of the drive which reduces carbon dioxide emissions via our device FORCE. Today, ENPOSS has an international presence.It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc.With gadget called Force, 
+ENPOSS is the force that is protecting the health and wealth of the earth.*/}
+                    {companystory.storydescription}</ShowMoreText>
                         {/*{companystory.description}*/}</p>
                     </blockquote>
                 </Col>
