@@ -100,10 +100,10 @@ class Force extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div><h1 className="display-2 text-white">Empowered to save Power</h1>
+                      <div><h1 className="display-2 text-white">Empowered to save Power</h1><br />
                       <h4 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
-                           Force - is manufactured by  Enposs. It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4>
+                           Force - is manufactured by  Enposs. It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4><br />
                            <h1 className="display-3 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>
@@ -191,7 +191,7 @@ class Force extends React.Component {
                           style={{ textAlign : "justify" }}>
                           Force does not require separate power supply making it super safe.
                           It's also easy to install and use.</p>
-                          <br /><br />
+                          <br />
                         </CardBody>
                       </Card>
                     </Col>
@@ -210,7 +210,7 @@ class Force extends React.Component {
                           <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
                           Force can be used virtually in every place using electricity. 
-                          So it includes offices,homes,industries,shops, automobile industry to lost a few.
+                          So it includes offices, homes, industries, shops, automobile industry to lost a few.
                           </p>
                         </CardBody>
                       </Card>
@@ -220,77 +220,92 @@ class Force extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-shaped">
+          <section className="section pb-0 bg-gradient-default">
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-4 text-warning justify-content-center">Awesome Features</h1>
+                <h1 className="display-3 text-white justify-content-center">Awesome Features</h1>
               </Col>
             </Row>
             <Row className="row-grid">
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-danger shadow border-0">
+                <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-3"> 
-                    <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-white">
+                    <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-dark">
                       1
                     </div>
-                      <h6 className="text-white">
+                      <h6 className="text-dark">
                       Usage of electricity saved by 5 per cent
                       </h6>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-info shadow border-0">
+                <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-info rounded-circle mb-4 text-white">
+                    <div className="icon icon-shape icon-shape-darker rounded-circle mb-4 text-dark">
                       2
                     </div>
-                      <h6 className="text-white">
+                      <h6 className="text-dark">
                       Reduces Impedance
                       </h6><br />
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-warning shadow border-0">
+                <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-white">
+                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-dark">
                       3
                     </div>
-                      <h6 className="text-white">
+                      <h6 className="text-dark">
                       Reduces harmonic distortion
                       </h6>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-primary shadow border-0">
+                <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-white">
+                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-dark">
                       4
                     </div>
-                      <h6 className="text-white">
+                      <h6 className="text-dark">
                       Increases conductivity
                       </h6><br />
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
-                <Card className="card-lift--hover bg-gradient-success shadow border-0">
+                <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-white">
+                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-dark">
                       5
                     </div>
-                      <h6 className="text-white">
-                      Extends life cycle
+                      <h6 className="text-dark">
+                      Increases machine life
                       </h6><br />
                   </CardBody>
                 </Card>
               </Col>
-              </Row>
+              </Row><br /><br />
 
           </Container>
+          <div className="separator separator-bottom separator-skew zindex-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                version="1.1"
+                viewBox="0 0 2560 100"
+                x="0"
+                y="0"
+              >
+                <polygon
+                  className="fill-white"
+                  points="2560 0 2560 100 0 100"
+                />
+              </svg>
+            </div>
         </section>
        {/*} <section className="section pb-0 bg-gradient-default">
           <Container >
