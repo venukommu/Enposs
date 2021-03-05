@@ -119,7 +119,7 @@ class CeoMessage extends React.Component {
                         <h1 className="display-3 text-white">
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h2 className="display-3 text-white">
+                        <h2 className="display-3 text-white" style={{ textAlign : "left" }}>
                         Be the FORCE that protects the planet</h2>
                         <h3 className="display-4  text-white"
                           style={{ textAlign : "left" }}>

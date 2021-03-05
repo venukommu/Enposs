@@ -101,7 +101,7 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div></div><h1 className="display-2 text-white">Saves Electric Energy</h1><br></br>
+                      <div></div><h1 className="display-2 text-white" style={{ textAlign : "left" }}>Saves Electric Energy</h1><br></br>
                       <h4 className="display-4 text-white"
                         style={{ textAlign : "left" }}>
                         Force uses natural material tourmaline.It is mixed with substances like magnesium 

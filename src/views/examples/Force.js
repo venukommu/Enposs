@@ -100,7 +100,7 @@ class Force extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div><h1 className="display-2 text-white">Empowered to save Power</h1><br />
+                      <div><h1 className="display-2 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
                       <h4 className="display-4 text-white"
                         style={{ textAlign : "left" }}>
                            Force - is manufactured by  Enposs. It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4><br />

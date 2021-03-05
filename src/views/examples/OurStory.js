@@ -129,7 +129,7 @@ class OurStory extends React.Component {
                     <Col lg="8">
                     {/*< ProductList />*/}
                     <div>
-                        <h1 className="display-3 text-white">
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" }}>
                         Saving Strategy for Power and Planet
                         {/*ENPOSS Inc {" "}*/}
                           <span></span>
