@@ -128,17 +128,19 @@ class OurStory extends React.Component {
                 <Row>
                     <Col lg="8">
                     {/*< ProductList />*/}
-                      <div>
-                        <h1 className="display-2 text-white">
-                        Saving Strategy
+                    <div>
+                        <h1 className="display-3 text-white">
+                        Saving Strategy for Power and Planet
                         {/*ENPOSS Inc {" "}*/}
-                          <span>for Power and Planet</span>
+                          <span></span>
                         </h1>
-                       <h4 className="display-4 text-white"
+                      <h3 className="display-4 text-white"
                         style={{ textAlign : "justify" }}>
-                        The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS. 
-                        </h4>
-                      </div>
+                        {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
+                        Our mission as a company was to reduce carbon emission by reducing the consumption of electricity.
+                        Hence was born Energy and Power Saving System -ENPOSS 
+                      </h3>
+                    </div>
                     </Col>
                   </Row>
                 </div>
@@ -193,21 +195,26 @@ class OurStory extends React.Component {
                         />
                      </svg>*/}
                      <h4 className="display-3 font-weight-bold text-white">
-                  {/*}    {companystory.Title}*/}
+                          {/*}    {companystory.Title}*/}
                       </h4>
                       <p className="lead text-italic text-dark" style={{ textAlign : "justify"}}>
                       <ShowMoreText
-                    /* Default options */
-                    lines={5}
-                    more='Read more'
-                    less='Read less'
-                    className='content-css'
-                    anchorClass='my-anchor-css-class'
-                    onClick={this.executeOnClick}
-                    expanded={false}
-                    //width={280}
-                >
-                      ENPOSS was born in 2005 to save energy and save the planet. Carbon Dioxide emissions cause greenhouse effect.This greenhouse gas traps the heat like a blanket and causes global warming. Enposs reduces consumption of electricity and thereby contributes to reduction in carbon dioxide emission.This in turn reduces global warming. (The way to slow global warming is to reduce emissions of carbon dioxide, a green gas. ENPOSS has also worked on ways to reduce carbon dioxide emissions by reducing electric energy consumption.).ENPOSS took the initiative of developing FORCE, an electric energy saving device contributing towards environmental protection. FORCE is efficient and effective in saving electric energy. By reducing electric energy consumption we are pleased to be a part of the drive which reduces carbon dioxide emissions via our device FORCE. Today, ENPOSS has an international presence.It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc.With gadget called Force, 
+                        /* Default options */
+                        lines={5}
+                        more='Read more'
+                        less='Read less'
+                        className='content-css'
+                        anchorClass='my-anchor-css-class'
+                        onClick={this.executeOnClick}
+                        expanded={false}
+                        //width={280}
+                      >
+                      ENPOSS was born in 2005 to save energy and save the planet. Carbon Dioxide emissions cause greenhouse effect.
+                      This greenhouse gas traps the heat like a blanket and causes global warming. 
+                      Enposs reduces consumption of electricity and thereby contributes to reduction in carbon dioxide emission.
+                      This in turn reduces global warming. By reducing carbon dioxide emissions we can slow global warming. Enposs has developed technology to reduce electricity consumption and has worked its way to reducing carbon footprint.
+                      ENPOSS took the initiative of developing FORCE, an electricity saving device contributing towards environmental protection. FORCE is efficient and effective in saving electric energy. By reducing electric energy consumption we are pleased to be a part of the drive which reduces carbon dioxide emissions via our device FORCE. Today, ENPOSS has an international presence. 
+                      It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. With gadget called Force, 
                       ENPOSS is the force that is protecting the health and wealth of the earth.</ShowMoreText>
                         {/*{companystory.description}*/}</p>
                      </blockquote>

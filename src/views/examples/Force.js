@@ -170,8 +170,8 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
-                          Force is a product made out of tourmaline as the main material that generates anion semi-permanently, applied the best environmental technology, and saves electric energy by improving the efficiency of the electric system.
-                          </p>
+                          Force uses naturally occurring material tourmaline which helps generate anions.
+                          It uses eco- friendly technology to save electricity.</p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -185,12 +185,12 @@ class Force extends React.Component {
                               style={{ width: "100px" }}/>
                           </div>
                           <h6 className="text-success text-uppercase">
-                          Super Save
+                          Super Safe
                           </h6>
                           <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
-                          The force is a non-current device that does not require a separate power supply, which is very high in safety and easy to install.
-                          </p>
+                          Force does not require separate power supply making it super safe.
+                          It's also easy to install and use.</p>
                           <br /><br />
                         </CardBody>
                       </Card>
@@ -209,9 +209,8 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3 text-dark"
                           style={{ textAlign : "justify" }}>
-                          Force can be applied anywhere power is used, from manufacturing plant to ship,
-                           office building to the apartment, Automobile to the industry, single-phase, three-phase, and high voltage (6,000V or less) 
-                           and low voltage.
+                          Force can be used virtually in every place using electricity. 
+                          So it includes offices,homes,industries,shops, automobile industry to lost a few.
                           </p>
                         </CardBody>
                       </Card>
