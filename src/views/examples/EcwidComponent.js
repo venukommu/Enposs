@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
-import Background from 'assets/img/theme/abstract-design-shop.jpg';
+import Background from 'assets/img/theme/pexels-photo-6985118.jpeg';
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class EcwidScript extends React.Component {
@@ -57,6 +57,8 @@ class EcwidScript extends React.Component {
             <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
                 <span />
@@ -72,11 +74,11 @@ class EcwidScript extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="6">
+                    <Col lg="12">
                     {/*< ProductList />*/}
                       <div>
-                        <h1 className="display-2 text-white text-uppercase" style={{ textAlign : "center" }}>
-                        Make it <br/>your <br/><u>preference</u> <br/>to make <br/>a <u>difference</u> <br/> 
+                        <h1 className="display-2 text-white" style={{ textAlign : "center" }}>
+                        Make FORCE <br/>your <br/>Preference <br/>to make <br/>a Difference <br/> 
                         </h1>                      
                        </div>
                     </Col>

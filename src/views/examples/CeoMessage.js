@@ -230,7 +230,7 @@ class CeoMessage extends React.Component {
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center text-dark">
                       <Col lg="9">
-                        <p style={{ textAlign : "justify"}}>
+                        <p style={{ textAlign : "left"}}>
                           <ShowMoreText
                           /* Default options */
                           lines={5}
@@ -245,19 +245,13 @@ class CeoMessage extends React.Component {
                           Energy is important for daily activities.
                           Electricity is an important form of energy.
                           Without electricity we would be unplugged into total darkness. Life would come to a grinding halt. 
-
                           Fossil fuels are extensively used to generate electricity. They are expensive and have become scarce. This burdens the economy. Fossil fuels used to generate electricity emit harmful greenhouse gases like carbon dioxide. Depletion in fossil fuels is an international issue
-
                           Environmental pollution by carbon dioxide results in  global warming. US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
-
                           Polar bears are endangered and we will lose the privilege of having them on the earth. If suitable measures are not taken, we all would push them to the brink of extinction. 
-
                           Enposs has taken a step forward to protect our environment.
                           By using Enposs technology we can have beautiful,brighter and better tomorrows. 
-
                           Enposs is more than a decade old and is recognized for its outstanding technology. 
                           Customers all over the world can now save energy, environment and economy. 
-
                           Empower yourself with Enposs. 
                           <br></br>
                           Save Energy , Save Earth. 
