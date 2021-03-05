@@ -72,7 +72,6 @@ class EcwidScript extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="6"></Col>
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
