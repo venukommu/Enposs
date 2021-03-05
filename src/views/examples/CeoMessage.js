@@ -25,7 +25,7 @@ import { Card, Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/two-polar-bears-layer.jpg';
+import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
 
 class CeoMessage extends React.Component {
   executeOnClick(isExpanded) {
@@ -113,19 +113,18 @@ class CeoMessage extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="6">
+                    <Col lg="8">
                     {/*< ProductList />*/}
                       <div>
-                        <h1 className="display-4 text-white">
+                        <h1 className="display-3 text-white">
                         {/*ENPOSS Inc {" "}*/}
-                         <span></span>
                         </h1>
-                        <h2 className="display-2 text-white">
+                        <h2 className="display-3 text-white">
                         Be the FORCE that protects the planet</h2>
-                        <h4 className="display-5  text-white"
-                          style={{ textAlign : "justify" }}>
+                        <h3 className="display-4  text-white"
+                          style={{ textAlign : "left" }}>
                           Force reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
-                        </h4>
+                        </h3>
                       </div>
                     </Col>
                   </Row>

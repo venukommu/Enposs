@@ -103,7 +103,7 @@ class Forceprinciples extends React.Component {
                     <Col lg="8">
                       <div></div><h1 className="display-2 text-white">Saves Electric Energy</h1><br></br>
                       <h4 className="display-4 text-white"
-                        style={{ textAlign : "justify" }}>
+                        style={{ textAlign : "left" }}>
                         Force uses natural material tourmaline.It is mixed with substances like magnesium 
                         to produce surplus free electrons called EMF-7.
                         These free electrons reduce electrical losses caused by various factors like heat, 

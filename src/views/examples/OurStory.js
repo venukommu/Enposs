@@ -135,7 +135,7 @@ class OurStory extends React.Component {
                           <span></span>
                         </h1>
                       <h3 className="display-4 text-white"
-                        style={{ textAlign : "justify" }}>
+                        style={{ textAlign : "left" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
                         Our mission as a company was to reduce carbon emission by reducing the consumption of electricity.
                         Hence was born Energy and Power Saving System -ENPOSS 
