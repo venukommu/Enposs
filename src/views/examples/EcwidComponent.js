@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
-import Background from 'assets/img/theme/abstract-design-background-with-blue-purple-gradient.jpg';
+import Background from 'assets/img/theme/abstract-design-shop.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class EcwidScript extends React.Component {
