@@ -103,7 +103,9 @@ class Force extends React.Component {
                       <div><h1 className="display-2 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
                       <h4 className="display-4 text-white"
                         style={{ textAlign : "left" }}>
-                           Force - is manufactured by  Enposs. It is an excellent power saving device, certified by green technology Korea and globally well accepted product.</h4><br />
+                           Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
+                           It has an international presence and is certified by green technology Korea.
+                          </h4><br />
                            <h1 className="display-3 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>
