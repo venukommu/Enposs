@@ -1,6 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
-//import classnames from "classnames";
+import classnames from "classnames";
 //import { Link } from "react-router-dom";
 
 // reactstrap components
@@ -11,6 +11,11 @@ import {
   Container,
   Row,
   Col,
+  Nav,
+  NavItem,
+  NavLink,
+  TabContent,
+  TabPane
   //Button
 } from "reactstrap";
 
@@ -26,8 +31,15 @@ class InstallForce extends React.Component {
   state = {
     forcewidgets: [],
     error: null,
+    plainTabs: 1
   };
 
+  toggleNavs = (e, state, index) => {
+    e.preventDefault();
+    this.setState({
+      [state]: index
+    });
+  };
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -143,28 +155,89 @@ class InstallForce extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                      <Col lg="12">
-                        <CardImg alt="..."
-                        src={`${require("assets/img/theme/install.jpg")}`}/>
-                        <Card className="bg-gradient-info text-white">
-                          <CardBody>
-                          <h4>Safety measures</h4>
-                          <ul>
-                            <li>Should confirm the main circuit breaker is open.</li>
-                            <li>Conform the rate voltage and capacity of FORCE.</li>
-                          </ul><br />
-                          <h4>Steps of installation</h4>
-                          <ul>
-                            <li>Open the door of distribution panel</li>
-                            <li>Check the main circuit breaker.</li>
-                            <li>Turn off the main circuit breaker.</li>
-                            <li>Check the location of each phase bus or secondary of the main circuit breaker.</li>
-                            <li>Connect the FORCE on each phase.</li>
-                            <li>Turn on the main circuit breaker.</li>
-                          </ul><br/><br/>
-                          </CardBody>
-                        </Card>
-                       </Col>
+                <Col lg="12">
+                  <Card className="bg-gradient-white">
+                  <CardBody>
+                    <CardImg alt="..."
+                      src={`${require("assets/img/theme/install.jpg")}`}/>
+                  </CardBody>
+                  </Card>
+                  {/*<Card className="bg-gradient-info text-white">
+                    <CardBody>
+                    <h4>Safety measures</h4>
+                    <ul>
+                      <li>Should confirm the main circuit breaker is open.</li>
+                      <li>Conform the rate voltage and capacity of FORCE.</li>
+                    </ul><br />
+                    <h4>Steps of installation</h4>
+                    <ul>
+                      <li>Open the door of distribution panel</li>
+                      <li>Check the main circuit breaker.</li>
+                      <li>Turn off the main circuit breaker.</li>
+                      <li>Check the location of each phase bus or secondary of the main circuit breaker.</li>
+                      <li>Connect the FORCE on each phase.</li>
+                      <li>Turn on the main circuit breaker.</li>
+                    </ul><br/><br/>
+                    </CardBody>
+      </Card>*/}
+            <div className="nav-wrapper">
+              <Nav
+                className="nav-fill flex-column flex-md-row"
+                id="tabs-icons-text"
+                pills
+                role="tablist"
+              >
+                <NavItem>
+                  <NavLink
+                    aria-selected={this.state.plainTabs === 1}
+                    className={classnames("mb-sm-3 mb-md-0", {
+                      active: this.state.plainTabs === 1
+                    })}
+                    onClick={e => this.toggleNavs(e, "plainTabs", 1)}
+                    href="#pablo"
+                    role="tab"
+                  >
+                    Safety measures
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    aria-selected={this.state.plainTabs === 2}
+                    className={classnames("mb-sm-3 mb-md-0", {
+                      active: this.state.plainTabs === 2
+                    })}
+                    onClick={e => this.toggleNavs(e, "plainTabs", 2)}
+                    href="#pablo"
+                    role="tab"
+                  >
+                    Steps of installation
+                  </NavLink>
+                </NavItem>
+              </Nav>
+            </div>
+            <Card className="shadow">
+              <CardBody>
+                <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
+                  <TabPane tabId="plainTabs1">
+                    <ul>
+                      <li>Should confirm the main circuit breaker is open.</li>
+                      <li>Conform the rate voltage and capacity of FORCE.</li>
+                    </ul>
+                  </TabPane>
+                  <TabPane tabId="plainTabs2">
+                    <ul>
+                      <li>Open the door of distribution panel</li>
+                      <li>Check the main circuit breaker.</li>
+                      <li>Turn off the main circuit breaker.</li>
+                      <li>Check the location of each phase bus or secondary of the main circuit breaker.</li>
+                      <li>Connect the FORCE on each phase.</li>
+                      <li>Turn on the main circuit breaker.</li>
+                    </ul>
+                  </TabPane>
+                </TabContent>
+              </CardBody>
+            </Card>
+                  </Col>
               </Row>
             </Container>
           </section>
