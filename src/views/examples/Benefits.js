@@ -20,11 +20,11 @@ import React from "react";
 
 // reactstrap components
 import {
- Badge,
+ //Badge,
  // Button,
   Card,
  // CardBody,
-  //CardImg,
+  CardImg,
   Container,
   Row,
   Col
@@ -158,16 +158,16 @@ class Benefits extends React.Component {
            
       <section className="section section-lg pt-lg-0 mt--200">
             <Container>
-            <Card className="card-profile shadow mt--200 bg-gray-dark" >
+            <Card className="card-profile shadow mt--200" >
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
-                   {/*} <CardImg
+                    <CardImg
                       alt="..."
-                     src={require("assets/img/theme/_113530377_bears_kt-miller.jpg")}
+                     src={require("assets/img/theme/asdf.PNG")}
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
-    />*/}
-            <blockquote className="card-blockquote bg-default shadow border-0">
+    />
+              {/* <blockquote className="card-blockquote bg-default shadow border-0">*/}
                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="svg-bg"
@@ -187,9 +187,9 @@ class Benefits extends React.Component {
                      <h4 className="display-3 font-weight-bold text-white">
                       {companystory.Title}
                       </h4>*/}
-                <Container >
+                 {/*<Container >*/}
                    {/*} <h3 className="text-white">Brilliant Benefits</h3>*/}
-                    <Row className="row-grid align-items-center">
+                     {/*<Row className="row-grid align-items-center">
                     <Col className="order-md-1" lg="6">
                         <div className="pr-md-5">
                             <ul className="list-unstyled mt-5">
@@ -305,7 +305,7 @@ class Benefits extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-        </blockquote>
+        </blockquote>*/}
             </Col>
             </Row>
             </Card>
