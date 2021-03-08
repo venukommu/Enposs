@@ -46,6 +46,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 //import Download from "../IndexSections/Download.js";
 import Background from 'assets/img/theme/abstract-dark-layer.jpg';
 import CountUp from 'react-countup';
+import { isBlock } from "typescript";
 
 class Landing extends React.Component {
   
@@ -170,8 +171,8 @@ class Landing extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default"
+            <section className="section section-lg section-shaped pb-180">
+              <div className="shape  shape-default"
               style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -192,8 +193,8 @@ class Landing extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                <Row>
-                    <Col lg="6">
+                <Row style={{ marginBottom: "120px" }}>
+                    <Col md="8" lg="6">
                     {/*< ProductList />*/}
                       <div>
                         <h5 className="display-20 text-white">
@@ -203,12 +204,12 @@ class Landing extends React.Component {
                           {/*<span>completed with examples</span>*/}
                         </h5>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "40px", fontWeight: "800px"}}>
+                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "120px" }}>
                         {/*homepagebanner.description
           
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
-                        Save Energy - Save Earth
+                        Save Money, AND Help Save the Planet.
                         </h1>
                       </div>
                       <br></br>
@@ -236,9 +237,28 @@ class Landing extends React.Component {
                           </span>
                         </Button>*/}
                         <div>
-                        <h3 className="display-4 text-white" style={{ textAlign : "left" }}>
-                          A Solution to Quench Pollution
+                        <h3 className="display-4 text-info mt-n4" style={{ textAlign : "left" }}>
+                          A solution proven to reduce your energy consumption.
                         </h3>
+                        <Row>
+                          {/*<Col md="4" xs="6"></Col>*/}
+                          <Col xs="6" md="6">
+                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "right" }}>                    
+                            <Button
+                              className="btn-icon mt-2 mb-3 mb-sm-0"
+                              color="danger"
+                            >             
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                            </Button>                      
+                            </h3>
+                          </Col>
+                          <Col xs="6" md="6"> 
+                            <h5 className="display-7 text-white text-lead"
+                              style={{ textAlign : "left" }}>
+                              <span  className="text-primary"><br />Total reduced CO<sub>2</sub></span>
+                            </h5>
+                          </Col>
+                        </Row>
                         {/*} <h4 className="display-7 text-white"
                           style={{ textAlign : "justify" }}>
                         <span className="text-white">Our mission - Reduce carbon Emission </span>
@@ -246,29 +266,6 @@ class Landing extends React.Component {
                       </div>
                       </div>
                     </Col>
-                  </Row>
-                  <br></br>
-                  <Row>
-                  {/*<Col md="4" xs="6"></Col>*/}
-                  <Col md="12" >
-                    <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
-                        <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br/><br/>
-                          <Button
-                            className="btn-icon mb-3 mb-sm-0"
-                            color="warning"
-                          >             
-                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
-                          </Button>
-                       </span>
-                    </h3>
-                  </Col>
-                  {/*<Col md="4" xs="6"></Col>  
-                  <Col md="2" xs="6">
-                      <h4 className="display-7 text-white text-lead"
-                          style={{ textAlign : "center" }}>
-                        <span  className="text-white"><br></br>Total reduced CO2 by APSIC- <CountUp end={12345} /> tons</span>
-                          </h4>
-                        </Col>*/}
                   </Row>
                 </div>
               </Container>
@@ -327,19 +324,22 @@ class Landing extends React.Component {
                       energy saving technology into our ENPOSS system.}*/}
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                            <i className="ni ni-check-bold" />
+                        <CardBody className="text-center mt-2">
+                        <div className="icon icon-shape icon-shape-success rounded-circle mb-2">
+                            <i className="fa fa-check" /> 
                           </div>
                           <div>
-                            <h6 className="text-primary text-uppercase">
-                              Enposs
-                            </h6>
+                          <h6 className="text-success text-uppercase" style={{ textAlign : "center" }}>
+                            Enposs
+                          </h6>  
                             <p className="description mt-3 text-dark"
-                              style={{ textAlign : "justify" }}>
-                              The initiative taken by Enposs was to reduce carbon footprint by cutting electricity usage.
-                              Our philosophy is best expressed as 'Curbbing electricity and cleaning the air."
+                              style={{ textAlign : "left" }}>
+                              Enposs helps you to take the initiative to reduce your own carbon footprint by cutting your electricity usage.
                             </p>
+                            <p className="description mt-3 text-dark"
+                              style={{ textAlign : "left" }}>
+                              This has the added benefit of helping clean the air we breath &mdash; by reducing the amount of energy we waste, and by reducing our need for fossil fuels used to produce electricity in the first place.
+                            </p>                            
                           </div>
                           {/*<div>
                             <Badge color="primary" pill className="mr-1">
@@ -354,8 +354,8 @@ class Landing extends React.Component {
                           </div>*/}
                           
                           <Button to="/ourstory" tag={Link}
-                            className="mt-4"
-                            color="primary"
+                            className="mt-2"
+                            color="success"
                             //href="#pablo"
                             //onClick={e => e.preventDefault()}
                           >
@@ -366,19 +366,55 @@ class Landing extends React.Component {
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                            <i className="fa fa-product-hunt" />
+                        <CardBody className="text-center mt-2">
+                          <div className="icon icon-shape icon-shape-info rounded-circle mb-2">
+                            <i className="fa fa-bolt" /> 
                           </div>
                           <div>
-                            <h6 className="text-success text-uppercase">
-                            PRODUCTS
+                          <h6 className="text-info text-uppercase" style={{ textAlign : "center" }}>
+                            The Force System
+                          </h6>
+                          <p className="description mt-3 text-dark" style={{ textAlign : "left" }}>
+                            The 'Force' System, is the technology behind our products. Enposs designed Force to optimize energy use, and help reduce CO<sub>2</sub> emissions.</p>
+                          <p className="description mt-3 text-dark" style={{ textAlign : "left" }}>
+                            Force is certified by Green Technology Korea, and it is well accepted globally.<br /><br /><br /> 
+                          </p>
+                          </div>
+                          {/*<div>
+                            <Badge color="warning" pill className="mr-1">
+                              marketing
+                            </Badge>
+                            <Badge color="warning" pill className="mr-1">
+                              product
+                            </Badge>
+                            <Badge color="warning" pill className="mr-1">
+                              launch
+                            </Badge>
+                          </div>*/}
+                          <Button to="/forceprinciples" tag={Link}
+                            className="mt-2"
+                            color="info"
+                            //href="#pablo"
+                            //onClick={e => e.preventDefault()}
+                          >
+                            Read more
+                          </Button>
+                        </CardBody>
+                      </Card>
+                      </Col>                    
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="text-center mt-2">
+                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                            <i className="fa fa-plug" />
+                          </div>
+                          <div>
+                            <h6 className="text-primary text-uppercase mt-n3">
+                            Energy-Saving Products
                             </h6>
                             <p className="description mt-3 text-dark"
-                            style={{ textAlign : "justify" }}>
-                              We have two Force products available as Single-Phase and Three-Phase.
-                              These are Energy saving products that can be used in offices,factories,homes and anywhere electricity is used.
-                              They are user-friendly.
+                            style={{ textAlign : "left" }}>
+                              The Force energy-saving product is a small, user-friendly device that can be used in offices, factories, homes, and anywhere electricity is used.<br /><br /><br /><br /><br />
                             </p>
                           </div>
                           {/*<div>
@@ -394,7 +430,7 @@ class Landing extends React.Component {
                           </div>*/}
                           <Button
                             className="mt-4"
-                            color="success"
+                            color="primary"
                             href="/force"
                             //href="#pablo"
                             //onClick={e => e.preventDefault()}
@@ -404,43 +440,6 @@ class Landing extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                            <i className="fa fa-plug" />
-                          </div>
-                          <div>
-                          <h6 className="text-warning text-uppercase">
-                            Force System
-                          </h6>
-                          <p className="description mt-3 text-dark" style={{ textAlign : "justify" }}>
-                            Force - is manufactured by Enposs.
-                            It is an excellent power saving device, certified by green technology Korea and globally well accepted product.It optimizes Energy and helps deplete CO2 Emissions.
-                          </p>
-                          </div>
-                          {/*<div>
-                            <Badge color="warning" pill className="mr-1">
-                              marketing
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              product
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              launch
-                            </Badge>
-                          </div>*/}
-                          <Button to="/forceprinciples" tag={Link}
-                            className="mt-4"
-                            color="warning"
-                            //href="#pablo"
-                            //onClick={e => e.preventDefault()}
-                          >
-                            Read more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                      </Col>
                   </Row>
                 </Col>
               </Row>
