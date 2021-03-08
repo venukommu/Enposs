@@ -237,7 +237,7 @@ class Landing extends React.Component {
                         </Button>*/}
                         <div>
                         <h3 className="display-4 text-white" style={{ textAlign : "left" }}>
-                          A Solution to Quench Pollution
+                          Conserve and Preserve
                         </h3>
                         {/*} <h4 className="display-7 text-white"
                           style={{ textAlign : "justify" }}>
