@@ -78,7 +78,7 @@ class EcwidScript extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h1 className="display-2 text-white" style={{ textAlign : "center" }}>
-                        Stop Waiting<br/>Start Saving 
+                        Stop waiting<br/>Start saving
                         </h1>                      
                        </div>
                     </Col>
