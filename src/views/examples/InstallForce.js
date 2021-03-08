@@ -7,7 +7,7 @@ import React from "react";
 import {
   Card,
   CardBody,
-  //CardImg,
+  CardImg,
   Container,
   Row,
   Col,
@@ -143,13 +143,9 @@ class InstallForce extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                <Col lg="12">
-                  <Row className="row-grid">
-                      <Col lg="6">
-                        <img alt="..."
-                        src={`${require("assets/img/theme/installforce.jpg")}`}/>
-                      </Col>
-                      <Col lg="6">
+                      <Col lg="12">
+                        <CardImg alt="..."
+                        src={`${require("assets/img/theme/install.jpg")}`}/>
                         <Card className="bg-gradient-info text-white">
                           <CardBody>
                           <h4>Safety measures</h4>
@@ -168,9 +164,7 @@ class InstallForce extends React.Component {
                           </ul><br/><br/>
                           </CardBody>
                         </Card>
-                    </Col>
-                    </Row>
-                </Col>
+                       </Col>
               </Row>
             </Container>
           </section>
