@@ -78,7 +78,7 @@ class EcwidScript extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h1 className="display-2 text-white" style={{ textAlign : "center" }}>
-                        Make FORCE <br/>your <br/>Preference <br/>to make <br/>a Difference <br/> 
+                        Stop Waiting<br/>Start Saving 
                         </h1>                      
                        </div>
                     </Col>

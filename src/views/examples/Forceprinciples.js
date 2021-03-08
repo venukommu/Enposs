@@ -147,12 +147,15 @@ class Forceprinciples extends React.Component {
                           Tourmaline mixed with magnesium and the likes , produces Electromagnetic Flux , EMF 7 which emits subtle current . EMF 6 is produced ionization and electrification of copper plates.<br/>
                           The double benefit is it absorbs all the losses by offsetting impedance,  harmonic high low frequency,  reactance etc.
                           </h6>
+                          <a href ={require('assets/img/pdf-reports/Presentation Material.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">
                           <CardImg
                             alt="..."
                             src={require("assets/img/theme/workingprinciple.jpg")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
                           />
+                          </a>
+        
                         </CardBody>
                       </Card>
                     </Col>
