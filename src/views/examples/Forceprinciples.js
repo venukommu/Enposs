@@ -12,6 +12,7 @@ import {
   Container,
   Row,
   Col,
+  Button,
   //Button
 } from "reactstrap";
 
@@ -101,8 +102,8 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div></div><h1 className="display-2 text-white" style={{ textAlign : "left" }}>Saves Electric Energy</h1><br></br>
-                      <h4 className="display-4 text-white"
+                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Saves Electric Energy</h1><br />
+                      <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                         Force uses natural material tourmaline.It is mixed with substances like magnesium 
                         to produce surplus free electrons called EMF-7.
@@ -137,26 +138,25 @@ class Forceprinciples extends React.Component {
                     <Col lg="12">
                       <Card className="shadow border-0">
                         <CardBody className="py-4">
-                          <h6 className="text-dark display-4 text-center text-uppercase">
+                          <h6 className="display-4 text-center text-uppercase">
                             Working Principle
                           </h6>
-                          <h6 className="description mt-3 text-center text-dark display-4"
-                          style={{ textAlign : "justify" }}>
-                          Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.<br/>
-                          APSIC - Active Power saving by increasing conductivity.<br/> 
-                          Tourmaline mixed with magnesium and the likes , produces Electromagnetic Flux , EMF 7 which emits subtle current . EMF 6 is produced ionization and electrification of copper plates.<br/>
-                          The double benefit is it absorbs all the losses by offsetting impedance,  harmonic high low frequency,  reactance etc.
-                          </h6>
+                          <p 
+                          style={{ textAlign : "left" }}>
+                          Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
+                          APSIC - Active Power saving by increasing conductivity.
+                          Tourmaline mixed with magnesium and the likes, produces Electromagnetic Flux,EMF 7 which emits subtle current. EMF 6 is produced ionization and electrification of copper plates.
+                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.
+                          </p>
                           <a href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">
                           <CardImg
                             alt="..."
                             src={require("assets/img/theme/workingprinciple.jpg")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
-                          />
-                          </a>
-        
+                          /></a>
                         </CardBody>
+                        <Button className="text-center" href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">Read More</Button>
                       </Card>
                     </Col>
                   </Row>
