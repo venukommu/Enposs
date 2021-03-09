@@ -15,40 +15,155 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+
 import React from "react";
 // nodejs library that concatenates classes
 //import classnames from "classnames";
 import { Link } from "react-router-dom";
+//import BuyButton from './BuyButton';
+
 
 // reactstrap components
 import {
-  Badge,
+  //Badge,
   Button,
   Card,
   CardBody,
-  CardImg,
+  //CardImg,
   Container,
   Row,
   Col
 } from "reactstrap";
-import Carousel from "../IndexSections/Carousel.js";
-import Login from "../IndexSections/Login.js";
+//import Carousel from "../IndexSections/Carousel.js";
+//import Login from "../IndexSections/Login.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
-import Download from "../IndexSections/Download.js";
+//import Download from "../IndexSections/Download.js";
+import Background from 'assets/img/theme/abstract-dark-layer.jpg';
+import CountUp from 'react-countup';
 
 class Landing extends React.Component {
-  state = {};
-  componentDidMount() {
+  
+  state = {
+    homepagebanner: [],
+    homepagewidgets: [],
+    ourcustomers: [],
+    productimage: {},
+    homepageimage: [],
+    force: [],
+    forceimage: {},
+    awesomefeatures:[],
+    awesomefeaturesimage: {},
+    enpossproducts: [],
+    enpossproductsimages: {},
+    error: null,
+  };
+
+  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-  }
+
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ homepagebanner });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    /*try {
+      const homepagewidgets = await fetch(`${appConfig.apiURL}/homepagewidgets`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ homepagewidgets });
+    } catch (error) {
+      this.setState({ error });
+    }
+    try {
+      const ourcustomers = await fetch(`${appConfig.apiURL}/ourcustomers`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ ourcustomers, productimage:ourcustomers.image });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const force = await fetch(`${appConfig.apiURL}/force`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ force, forceimage:force.image });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const awesomefeatures = await fetch(`${appConfig.apiURL}/awesomefeatures`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ awesomefeatures,awesomefeaturesimage:awesomefeatures.image });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const enpossproducts = await fetch(`${appConfig.apiURL}/enpossproducts`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ enpossproducts,enpossproductsimages:enpossproducts.images });
+    } catch (error) {
+      this.setState({ error });
+    }*/
+
+  };
+  
   render() {
+    //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
+    const { error,homepagebanner } = this.state;
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <DemoNavbar />
@@ -59,8 +174,11 @@ class Landing extends React.Component {
               <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage:
-              "url(" + require("assets/img/theme/main1.jpg") + ")",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
+                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />
                 <span />
@@ -74,29 +192,37 @@ class Landing extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                  <Row>
+                <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">
-                      ENPOSS Inc {" "}
-                        {/*<span>completed with examples</span>*/}
-                      </h1>
-                      <p className="lead text-white"
-                      style={{ textAlign : "justify" }}>
-                      ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and 
-                      Support to our customers in North America, Central America, and South America. 
-                      ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
-                      sales, partners, representatives, dealers, and distributors.
-                      </p>
+                    {/*< ProductList />*/}
+                      <div>
+                        <h5 className="display-20 text-white">
+                         {/*ENPOSS Inc*/}
+                        {/*homepagebanner.Title*/}
+                        {/*ENPOSS Inc {" "}*/}
+                          {/*<span>completed with examples</span>*/}
+                        </h5>
+                        <h1 className="display-1 text-white text-lead"
+                        style={{ textAlign : "left" , fontSize: "40px", fontWeight: "800px"}}>
+                        {/*homepagebanner.description
+          
+                        ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
+                        sales, partners, representatives, dealers, and distributors.*/}
+                        {/*Save Energy - Save Earth*/}
+                        {homepagebanner.Title}
+                        </h1>
+                      </div>
+                      <br></br>
                       <div className="btn-wrapper">
-                        <Button
+                        {/*<Button
                           className="btn-icon mb-3 mb-sm-0"
-                          color="info"
-                         // href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                          color="warning"
+                         href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                         >
                           <span className="btn-inner--icon mr-1">
                             <i className="fa fa-plug" />
                           </span>
-                          <span className="btn-inner--text">Force System</span>
+                          <span className="btn-inner--text">FORCE</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -109,9 +235,42 @@ class Landing extends React.Component {
                           <span className="btn-inner--text">
                             Energy Saving
                           </span>
-                        </Button>
+                        </Button>*/}
+                        <div>
+                        <h3 className="display-4 text-white" style={{ textAlign : "left" }}>
+                        {homepagebanner.subtitle}
+                          {/*Conserve and Preserve*/}
+                        </h3>
+                        {/*} <h4 className="display-7 text-white"
+                          style={{ textAlign : "justify" }}>
+                        <span className="text-white">Our mission - Reduce carbon Emission </span>
+                          </h4>*/}
+                      </div>
                       </div>
                     </Col>
+                  </Row>
+                  <br></br>
+                  <Row>
+                  {/*<Col md="4" xs="6"></Col>*/}
+                  <Col md="12" >
+                    <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>
+                        <span  className="text-white">Total reduced CO<sub>2</sub> by APSIC <br/><br/>
+                          <Button
+                            className="btn-icon mb-3 mb-sm-0"
+                            color="warning"
+                          >             
+                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                          </Button>
+                       </span>
+                    </h3>
+                  </Col>
+                  {/*<Col md="4" xs="6"></Col>  
+                  <Col md="2" xs="6">
+                      <h4 className="display-7 text-white text-lead"
+                          style={{ textAlign : "center" }}>
+                        <span  className="text-white"><br></br>Total reduced CO2 by APSIC- <CountUp end={12345} /> tons</span>
+                          </h4>
+                        </Col>*/}
                   </Row>
                 </div>
               </Container>
@@ -134,25 +293,56 @@ class Landing extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
-          <section className="section section-lg pt-lg-0 mt--200">
+          <section className="section section-lg pt-lg-0 mt--100">
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
+                    {/*this.state.homepagewidgets.map(widgets => (
+                      <Col lg="4" key={widgets.id}>
+                        <Card className="card-lift--hover shadow border-0">
+                          <CardBody className="py-5">
+                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-4'}>
+                              <i className={widgets.iconname} />
+                            </div>
+                              <h6 className={"text-" + widgets.classname + " text-uppercase"}>
+                                {/*About Company
+                                {widgets.Title}
+                              </h6>
+                              <p className="description mt-3"
+                              style={{ textAlign : "justify" }}>
+                              {widgets.description}
+                              </p>
+                            <Button to="/about" tag={Link}
+                              className="mt-4"
+                              color={widgets.classname}
+                              //href="#pablo"
+                              //onClick={e => e.preventDefault()}
+                            >
+                              Read More
+                            </Button>
+                          </CardBody>
+                        </Card>
+                      </Col>
+                    ))
+                    ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                      energy saving technology into our ENPOSS system.}*/}
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-check-bold" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
-                            About Company
-                          </h6>
-                          <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
-                     energy saving technology into our ENPOSS system.
-                          </p>
+                          <div>
+                            <h6 className="text-primary text-uppercase">
+                              Enposs
+                            </h6>
+                            <p className="description mt-3 text-dark"
+                              style={{ textAlign : "justify" }}>
+                              The initiative taken by Enposs was to reduce carbon footprint by cutting electricity usage.
+                              Our philosophy is best expressed as 'Curbbing electricity and cleaning the air."
+                            </p>
+                          </div>
                           {/*<div>
                             <Badge color="primary" pill className="mr-1">
                               design
@@ -165,7 +355,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>*/}
                           
-                          <Button to="/about" tag={Link}
+                          <Button to="/ourstory" tag={Link}
                             className="mt-4"
                             color="primary"
                             //href="#pablo"
@@ -182,14 +372,17 @@ class Landing extends React.Component {
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
                             <i className="fa fa-product-hunt" />
                           </div>
-                          <h6 className="text-success text-uppercase">
-                          PRODUCTS & SERVICES 
-                          </h6>
-                          <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance,
-                          increase their population. 
-                          </p>
+                          <div>
+                            <h6 className="text-success text-uppercase">
+                            PRODUCTS
+                            </h6>
+                            <p className="description mt-3 text-dark"
+                            style={{ textAlign : "justify" }}>
+                              We have two Force products available as Single-Phase and Three-Phase.
+                              These are Energy saving products that can be used in offices,factories,homes and anywhere electricity is used.
+                              They are user-friendly.
+                            </p>
+                          </div>
                           {/*<div>
                             <Badge color="success" pill className="mr-1">
                               business
@@ -204,7 +397,7 @@ class Landing extends React.Component {
                           <Button
                             className="mt-4"
                             color="success"
-                            href="#products"
+                            href="/force"
                             //href="#pablo"
                             //onClick={e => e.preventDefault()}
                           >
@@ -219,14 +412,15 @@ class Landing extends React.Component {
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
                             <i className="fa fa-plug" />
                           </div>
+                          <div>
                           <h6 className="text-warning text-uppercase">
                             Force System
                           </h6>
-                          <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system  
-                          and it is also known as “residential voltage”.
+                          <p className="description mt-3 text-dark" style={{ textAlign : "justify" }}>
+                            Force - is manufactured by Enposs.
+                            It is an excellent power saving device, certified by green technology Korea and globally well accepted product.It optimizes Energy and helps deplete CO2 Emissions.
                           </p>
+                          </div>
                           {/*<div>
                             <Badge color="warning" pill className="mr-1">
                               marketing
@@ -238,7 +432,7 @@ class Landing extends React.Component {
                               launch
                             </Badge>
                           </div>*/}
-                          <Button to="/forceSystem" tag={Link}
+                          <Button to="/forceprinciples" tag={Link}
                             className="mt-4"
                             color="warning"
                             //href="#pablo"
@@ -248,13 +442,13 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                        </Col>
+                      </Col>
                   </Row>
                 </Col>
               </Row>
             </Container>
           </section>
-          <Carousel />
+          {/*<Carousel />
             <section className="section">
              <Container>
               <Row className="row-grid align-items-center">
@@ -262,18 +456,18 @@ class Landing extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/en bulb.jpg")}
-                  />
+                    //src={require("assets/img/theme/en bulb.jpg")}
+                    src={`${appConfig.apiURL}${awesomefeaturesimage.url}`}
+                    />
                 </Col>
               <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
-                    </div> */}
-                    <h3>Awesome features</h3>
+                    </div> 
+                    <h3>{this.state.awesomefeatures.Title}</h3>
                     <p>
-                    ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.
-                    </p>
+                    {this.state.awesomefeatures.description}</p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
@@ -284,7 +478,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                            Enposs</h6>
+                            {this.state.awesomefeatures.item1}</h6>
                           </div>
                         </div>
                       </li>
@@ -296,7 +490,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">Force System</h6>
+                            <h6 className="mb-0">{this.state.awesomefeatures.item2}</h6>
                           </div>
                         </div>
                       </li>
@@ -309,8 +503,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Super friendly support team
-                            </h6>
+                            {this.state.awesomefeatures.item3}</h6>
                           </div>
                         </div>
                       </li>
@@ -327,7 +520,8 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                      //src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                      src={`${appConfig.apiURL}${productimage.url}`}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -348,11 +542,10 @@ class Landing extends React.Component {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                        FORCE System
+                      {this.state.ourcustomers.imagetitle}
                       </h4>
                       <p className="lead text-italic text-white">
-                      Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, and reduces leakage.
-                      </p>
+                      {this.state.ourcustomers.imagedescription}</p>
                     </blockquote>
                   </Card>
                 </Col>
@@ -360,23 +553,17 @@ class Landing extends React.Component {
                   <div className="pl-md-5">
                     {/*<div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
-                    </div>*/}
-                    <h3>Our customers</h3>
-                    <p className="lead">
-                    Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.
-                    </p>
-                    <p>
-                    Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.
-                    </p>
-                    <p>
-                    We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.
+                    </div>
+                    <h3>{this.state.ourcustomers.Title}</h3>
+                    <p className="lead"  style={{ textAlign : "justify" }}>
+                    {this.state.ourcustomers.description}
                     </p>
                     <a
                       className="font-weight-bold text-warning mt-5"
                       href="#pablo"
                       onClick={e => e.preventDefault()}
                     >
-                      {/*A beautiful UI Kit for impactful websites*/}
+                      {/*A beautiful UI Kit for impactful websites
                     </a>
                   </div>
                 </Col>
@@ -391,7 +578,8 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/theme/u02_0.png")}
+                      //src={require("assets/img/theme/u02_0.png")}
+                      src={`${appConfig.apiURL}${forceimage.url}`}
                     />
                   </div>
                 </Col>
@@ -403,12 +591,12 @@ class Landing extends React.Component {
                       </div>
                     </div>
                     <div className="pl-4">
-                      <h4 className="display-3 text-white">Force System</h4>
+                      <h4 className="display-3 text-white"> {this.state.force.title}</h4>
                      {/* <p className="text-white">
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
                         continue whatever.
-                  </p>*/}
+                  </p>
                     </div>
                   </div>
                   <Card className="shadow shadow-lg--hover mt-5">
@@ -421,17 +609,17 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-success">
-                            A Single Phase
+                          {this.state.force.singlephasetitle}
                           </h5>
                           <p style={{textAlign : "justify"}}>
-                          Single-phase power simultaneously changes the supply voltage of an AC power by a system. 
+                          {this.state.force.singlephasedesc}
                           </p>
                           <a
                             className="text-success"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            {/*Learn more*/}
+                            {/*Learn more
                           </a>
                         </div>
                       </div>
@@ -447,16 +635,15 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-warning">
-                            Three Phases
+                          {this.state.force.threephasetitle}
                           </h5>
-                          <p style={{textAlign : "justify"}}>Three-phase power can be defined as the common method of alternating current power generation, 
-                          transmission, and distribution.</p>
+                          <p style={{textAlign : "justify"}}>{this.state.force.threephasedesc}</p>
                           <a
                             className="text-warning"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                           >
-                            {/*Learn more*/}
+                            {/*Learn more
                           </a>
                         </div>
                       </div>
@@ -465,7 +652,7 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-            {/* SVG separator */}
+            {/* SVG separator 
             <div className="separator separator-bottom separator-skew zindex-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -689,7 +876,7 @@ class Landing extends React.Component {
                         size="lg"
                       >
                         Download React
-                      </Button>*/}
+                      </Button>
                     </Col>
                   </Row>
                 </div>
@@ -833,33 +1020,40 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-          </section>*/}
+          </section>
           <Login />
-          <Download />
+          <Download />*/}
         </main>
-        <section>
+        {/*<section>
         <Container className="container-lg">
-            <Row>
-              <Col className="mb-5 mb-md-0" md="6">
+          {/* shopping cart with Stripe integration Code
+            {/*<div>
+             {/*<Products />
+             <Store />
+            </div>
+              {/* Snipcart Code
+              <h3 className="text-danger"> Snipcart demo</h3>
+              <Row> 
+            {this.state.enpossproducts.map(products => (
+              <Col className="mb-5 mb-md-0" md="6" key={products.id}>
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to="#">
+                  <Link to={`/product/${products.id}`}>
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/single phase.jpg")}
+                      //src={require("assets/img/theme/single phase.jpg")}
+                      src={`${appConfig.apiURL}${products.images.url}`}
                     />
                   </Link>
                 </Card>
-                <Button
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
-                        >
-                          Buy Now
-                        </Button>
+              <BuyButton products={products} />
               </Col>
-              <Col className="mb-5 mb-lg-0" md="6">
+              ))}
+            </Row>
+            {/* End Snipcart Code
+             {/*} <AppProvider>
+<Cart products={this.state.enpossproducts}/>
+            </AppProvider>
+              {/*<Col className="mb-5 mb-lg-0" md="6">
                 <Card className="card-lift--hover shadow border-0">
                   <Link to="#">
                     <CardImg
@@ -877,12 +1071,11 @@ class Landing extends React.Component {
                         >
                           Buy Now
                         </Button>
-              </Col>
-            </Row>
+            </Col>
     </Container>
-    </section>
-        <CardsFooter />
-      </>
+    </section>*/}
+    <CardsFooter />
+    </>
     );
   }
 }

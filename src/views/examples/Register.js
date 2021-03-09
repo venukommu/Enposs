@@ -33,18 +33,98 @@ import {
   Row,
   Col
 } from "reactstrap";
+import loginUser from 'strapi/loginUser';
+import registerUser from 'strapi/registerUser';
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { UserContext } from 'context/user';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Register extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      setEmail: '',
+      password: '',
+      setPassword: '',
+      username: '',
+      setUsername: 'default',
+      isMember: false,
+      setIsMember: false
+      };
+  }
+  static contextType  = UserContext;
+
+  emailHandler = (event) => {
+    this.setState({email: event.target.value});
+  }
+
+  passwordHandler = (event) => {
+    this.setState({password: event.target.value});
+  }
+  nameHandler = (event) => {
+    this.setState({username: event.target.value});
+  }
+  
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
   render() {
+    const { userLogin, alert } = this.context;
+    const { email, password, username, isMember} = this.state;
+    const { history } = this.props;
+    let isEmpty = !email || !password || !username || alert.show;
+
+    const handleSubmit = async (e) => {
+      //toast.success(`accessing user data. please wait...`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+
+      e.preventDefault();
+
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      } else {
+      let response;
+      if (isMember) {
+        response = await loginUser({ email, password });
+      } else {
+        response = await registerUser({ email, password, username });
+      }
+
+      if (response.status !== 400 && response.status === 200 ) {
+        const {
+          jwt: token,
+          user: { username },
+        } = response.data;
+
+  const newUser = { token, username };
+        userLogin(newUser);
+        toast.success(`You are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        history.push('/cart');
+      }
+      else if (response.status === 400) {
+        toast.error(response.data.message[0].messages[0].message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      }
+       else {
+        toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      }
+    }
+    };
+  
+   /* const  toggleMember = () => {
+      setIsMember((prevMember) => {
+        // console.log(prevMember);
+        let isMember = !prevMember;
+        isMember ? setUsername('default') : setUsername('');
+        return isMember;
+      });
+    };*/
+    
     return (
       <>
         <DemoNavbar />
@@ -111,7 +191,8 @@ class Register extends React.Component {
                                 <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" />
+                            <Input placeholder="Name" type="text" id= "username" value ={username} 
+                            onChange={this.nameHandler}/>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -121,7 +202,9 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                             <Input placeholder="Email" type="email" id="email" value={email}
+                            onChange={this.emailHandler}
+                            /> 
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -134,7 +217,9 @@ class Register extends React.Component {
                             <Input
                               placeholder="Password"
                               type="password"
-                              autoComplete="off"
+                              id="password"
+                              value={password}
+                              onChange={this.passwordHandler}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -176,7 +261,7 @@ class Register extends React.Component {
                             className="mt-4"
                             color="primary"
                             type="button"
-                          >
+                            onClick={handleSubmit}>
                             Create account
                           </Button>
                         </div>

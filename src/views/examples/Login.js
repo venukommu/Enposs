@@ -33,18 +33,111 @@ import {
   Row,
   Col
 } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import loginUser from 'strapi/loginUser';
+//import registerUser from 'strapi/registerUser';
+import { UserContext } from 'context/user';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { appConfig } from "services/config.js";
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      username: 'default',
+      isMember: true,
+      setIsMember: true
+    };
+  }
+
+  emailHandler = (event) => {
+    this.setState({email: event.target.value});
+  }
+
+  passwordHandler = (event) => {
+    this.setState({password: event.target.value});
+  }
+
+
+  setIsMember = (isMember) => {
+    this.setState({setIsMember: isMember});
+  }
+
+  nameHandler = (setUsername) => {
+    this.setState({setUsername: setUsername});
+  }
+
+  static contextType  = UserContext;
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
   render() {
+    const {userLogin, alert} = this.context;
+    const { history } = this.props;
+    const { email, password,  username,  isMember} = this.state;
+    let isEmpty = !email || !password || !username || alert.show;
+
+    /*const toggleMember = () => {
+      this.setIsMember((prevMember) => {
+        // console.log(prevMember);
+        let isMember = !prevMember;
+        isMember ? this.nameHandler('default') : this.nameHandler('');
+        return (
+        <Link to="/register" className="btn btn-primary btn-block">
+        register
+        </Link>
+        )
+      });
+    };*/
+    const handleSubmit = async (e) => {
+      //showAlert({ msg: 'accessing user data. please wait...' });
+      e.preventDefault();
+
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      } else {
+  
+      let response;
+  
+      if (isMember) {
+        response = await loginUser( {email, password} );
+      }
+  
+      if (response.status !== 400 && response.status === 200 ) {
+        const {
+          jwt: token,
+          user: { username },
+        } = response.data;
+  
+        const newUser = { token, username };
+  
+        userLogin(newUser);
+        toast.success(`you are logged in ${username}. shop away my friend`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        //showAlert({ msg: `you are logged in ${username}. shop away my friend` });
+  
+        history.push('/cart');
+      }
+      else if (response.status === 400) {
+        toast.error(response.data.message[0].messages[0].message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+      } else {
+        toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        //showAlert({
+        //  msg: 'there was an error. please try again...',
+        //  type: 'danger',
+        //});
+        // show alert
+      }
+    }
+    };
     return (
       <>
         <DemoNavbar />
@@ -87,7 +180,10 @@ class Login extends React.Component {
                           className="btn-neutral btn-icon ml-1"
                           color="default"
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          onClick={() =>
+                            (window.location = `${appConfig.apiURL}/connect/google`)
+                          }
+                          //onClick={e => e.preventDefault()}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
@@ -111,7 +207,9 @@ class Login extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                            <Input placeholder="Email" type="email" id="email" value={email}
+                            onChange={this.emailHandler}
+                            /> 
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -124,7 +222,9 @@ class Login extends React.Component {
                             <Input
                               placeholder="Password"
                               type="password"
-                              autoComplete="off"
+                              id="password"
+                              value={password}
+                              onChange={this.passwordHandler}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -146,31 +246,33 @@ class Login extends React.Component {
                             className="my-4"
                             color="primary"
                             type="button"
+                            onClick={handleSubmit}
                           >
                             Sign in
                           </Button>
+                        {/*isMember ? 'Need to register' : 'Already a member'*/}
+                        <Link to="/register">
+                        <Button className="my-4"
+                            color="primary"
+                            type="button" >
+                          register
+                        </Button>
+                        </Link>
                         </div>
+                        
                       </Form>
                     </CardBody>
                   </Card>
                   <Row className="mt-3">
                     <Col xs="6">
-                      <a
-                        className="text-light"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
-                      >
-                        <small>Forgot password?</small>
-                      </a>
+                      <Link to="/forgot-password">
+                        <small className="text-light">Forgot password?</small>
+                      </Link>
                     </Col>
                     <Col className="text-right" xs="6">
-                      <a
-                        className="text-light"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
-                      >
-                        <small>Create new account</small>
-                      </a>
+                        <Link to="/register">
+                        <small className="text-light">Create new account</small>
+                        </Link>
                     </Col>
                   </Row>
                 </Col>

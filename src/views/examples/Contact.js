@@ -15,80 +15,73 @@ import {
   Row,
   Col
 } from "reactstrap";
+//import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class Contact extends React.Component {
-  componentDidMount() {
+    state = {
+        contacts: [],
+        contactimages: [],
+        error: null
+     }
+componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-  }
+    
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+  
+    try {
+      const contacts = await fetch(`${appConfig.apiURL}/contacts`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ contacts });
+    } catch (error) {
+      this.setState({ error });
+    }*/
+  };
   render() {
+    const { error} = this.state;
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <DemoNavbar />
         <main ref="main">
-            <section className="section section-lg bg-gradient-primary">
-                <Container className="pt-lg pb-300">
-                    <Row className="text-center justify-content-center">
-                    <Col lg="10">
-                        <h2 className="display-3 text-white">AFTER SALES SERVICE</h2>
-                        {/*<p className="lead text-white">
-                        According to the National Oceanic and Atmospheric
-                        Administration, Ted, Scambos, NSIDClead scentist, puts the
-                        potentially record low maximum sea ice extent tihs year down
-                        to low ice.
-    </p>*/}
-                    </Col>
-                    </Row>
-                    <Row className="row-grid mt-5">
-                    <Col lg="4">
-                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="CardsFooterni ni-settings text-primary" />
-                        </div>*/}
-                        <img
-                      alt="..."
-                      //className="img-center img-fluid"
-                      src={require("assets/img/theme/1578730282_1551667336.png")}
-                    />
-                        <h5 className="text-white mt-3">WARRANTY</h5>
-                        <p className="text-white mt-3">
-                        8-year equipment warranty (according to the warranty policy).
-                        </p>
-                    </Col>
-                    <Col lg="4">
-                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-ruler-pencil text-primary" />
-                    </div>*/}
-                        <img
-                      alt="..."
-                      //className="img-center img-fluid"
-                      src={require("assets/img/theme/commitments.png")}
-                    />
-                        <h5 className="text-white mt-3">COMMITMENTS</h5>
-                        <p className="text-white mt-3">
-                        Products Imported Directly From Enposs Korea.
-                        </p>
-                    </Col>
-                    <Col lg="4">
-                        {/*<div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-atom text-primary" />
-                        </div>*/}
-                        <img
-                      alt="..."
-                      //className="img-center img-fluid"
-                      src={require("assets/img/theme/1578730282_1551674767.png")}
-                    />
-                        <h5 className="text-white mt-3">REPLACE</h5>
-                        <p className="text-white mt-3">
-                        Replace new equipment ( according to the warranty policy)
-                        </p>
-                    </Col>
-                    </Row>
-                </Container>
+        <section className="section-profile-cover section-shaped my-0">
+            {/* Circles background */}
+            <div className="shape shape-style-1 shape-default">
+              
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            
                 {/* SVG separator */} 
                 <div className="separator separator-bottom separator-skew zindex-100">
                     <svg
@@ -112,9 +105,9 @@ class Contact extends React.Component {
                     <Col lg="8">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
-                            <h4 className="mb-1">Want to join with us?</h4>
+                            <h4 className="mb-1">How Can We Help?</h4>
                             <p className="mt-0">
-                            Your project is very important to us.
+                            Let's schedule a call to assess your requirement..
                             </p>
                             <FormGroup
                             className={classnames("mt-5", {

@@ -19,6 +19,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {
@@ -39,8 +40,49 @@ import {
 } from "reactstrap";
 
 class Login extends React.Component {
-  state = {};
+  state = {
+    awesomefeatures: [],
+    error: null,
+ }
+
+// Fetch your restaurants immediately after the component is mounted
+componentDidMount = async () => {
+  // Parses the JSON returned by a network request
+  const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+  // Checks if a network request came back fine, and throws an error if not
+  const checkStatus = resp => {
+    if (resp.status >= 200 && resp.status < 300) {
+      return resp;
+    }
+    return parseJSON(resp).then(resp => {
+      throw resp;
+    });
+  };
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+
+  try {
+    const awesomefeatures = await fetch(`${appConfig.apiURL}/features`, {
+      method: 'GET',
+      headers: headers,
+    })
+      .then(checkStatus)
+      .then(parseJSON);
+    this.setState({ awesomefeatures });
+  } catch (error) {
+    this.setState({ error });
+  }
+};
+  //state = {};
   render() {
+    const { error} = this.state;
+
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <section className="section section-lg section-shaped">
@@ -58,14 +100,12 @@ class Login extends React.Component {
             <Row className="row-grid justify-content-between align-items-center">
               <Col lg="6">
                 <h3 className="display-3 text-white">
-                Awesome Features{" "}
+                    {this.state.awesomefeatures.Title}
                   {/*<span className="text-white">completed with examples</span>*/}
                 </h3>
                 <p className="lead text-white">
-                Energy Optimizer helps enterprises save energy and reduce emissions.
-              5 tons of carbon dioxide emmited per 10,000 KGH of power generation.
-                1 million KWH / month.Reduce emissions of 420 tons of carbon dioxide per month.
-                </p>
+                    {this.state.awesomefeatures.description}
+                </p>,
                 <ul className="list-unstyled mt-5">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
@@ -79,7 +119,7 @@ class Login extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0 text-white">
-                            Enposs</h6>
+                            {this.state.awesomefeatures.item1}</h6>
                           </div>
                         </div>
                       </li>
@@ -94,7 +134,7 @@ class Login extends React.Component {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0 text-white">Force System</h6>
+                            <h6 className="mb-0 text-white">{this.state.awesomefeatures.item2}</h6>
                           </div>
                         </div>
                       </li>
@@ -110,7 +150,7 @@ class Login extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0 text-white">
-                              Super friendly support team
+                            {this.state.awesomefeatures.item3}
                             </h6>
                           </div>
                         </div>
@@ -118,7 +158,7 @@ class Login extends React.Component {
                     </ul>
                 <div className="btn-wrapper">
                   <Button color="success" to="/login" tag={Link}>
-                    Login
+                    {this.state.awesomefeatures.LoginButton}
                   </Button>
                   <Button
                     className="btn-white"
@@ -126,7 +166,7 @@ class Login extends React.Component {
                     to="/register"
                     tag={Link}
                   >
-                    Register
+                    {this.state.awesomefeatures.RegisterButton}
                   </Button>
                 </div>
               </Col>

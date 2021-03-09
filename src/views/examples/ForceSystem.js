@@ -19,6 +19,7 @@ import React from "react";
 
 // reactstrap components
 import { Card, CardBody,Container, Row, Col } from "reactstrap";
+import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -26,12 +27,51 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 
 class ForceSystem extends React.Component {
-  componentDidMount() {
+  state = {
+    forcesystem: [],
+    forcesystemimage: {},
+    forceprodimages: [],
+  };
+  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const forcesystem = await fetch(`${appConfig.apiURL}/forcesystem`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ forcesystem, forcesystemimage : forcesystem.image,forceprodimages : forcesystem.names });
+    } catch (error) {
+      this.setState({ error });
+    }
+
   }
   render() {
+    const { error,forcesystemimage,forceprodimages} = this.state;
+
+  // Print errors if any
+  if (error) {
+    return <div>An error occured: {error.message}</div>;
+  }
     return (
       <>
         <DemoNavbar />
@@ -81,7 +121,8 @@ class ForceSystem extends React.Component {
                     <Col lg="4">
                         <img
                             alt="..."                          
-                            src={require("assets/img/theme/u02_00.jpg")}
+                            //src={require("assets/img/theme/u02_00.jpg")}
+                            src={`${appConfig.apiURL}${forcesystemimage.url}`}
                           />
                     </Col>
                   </Row>
@@ -93,18 +134,20 @@ class ForceSystem extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
-                    <Card className="card-lift--hover shadow border-0">
-                    <CardBody className="py-5">
-                        <img
-                            alt="..."
-                            style={{objectFit: "cover", width: "100%"}}
-                            src={require("assets/img/theme/u02_1.jpg")}
-                          />
-                      </CardBody>
-                      </Card>
+                  {forceprodimages.map((name, index) => (
+                    <Col lg="4" key={index}>
+                      <Card className="card-lift--hover shadow border-0">
+                      <CardBody className="py-5" key={index}>                  
+                            <img 
+                              alt="..."
+                              style={{objectFit: "cover", width: "100%"}}
+                              src={`${appConfig.apiURL}${name.url}`}
+                              />
+                        </CardBody>
+                        </Card>
                     </Col>
-                    <Col lg="4">
+                     ))}
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                         <img
@@ -125,7 +168,7 @@ class ForceSystem extends React.Component {
                           />
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col>*/}
                   </Row>
                 </Col>
               </Row>

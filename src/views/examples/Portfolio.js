@@ -17,6 +17,7 @@
 */
 import React from "react";
 import { Link } from "react-router-dom";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, CardBody,Container, Row, Col } from "reactstrap";
@@ -25,14 +26,49 @@ import { Card, CardBody,Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-
 class Portfolio extends React.Component {
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+  state = {
+    portfoliocontent: [],
+    imagenames: [],
+    error: null,
   }
+  componentDidMount = async () => {
+    // Parses the JSON returned by a network request
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const portfoliocontent = await fetch(`${appConfig.apiURL}/portfolio`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ portfoliocontent, imagenames: portfoliocontent.names});
+    } catch (error) {
+      this.setState({ error });
+    }
+  };
+
   render() {
+    const { error, portfoliocontent,imagenames} = this.state;
+
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <DemoNavbar />
@@ -54,7 +90,7 @@ class Portfolio extends React.Component {
               <div className="col px-0">
                 <Row className="align-items-center justify-content-center">
                   <Col className="text-center" lg="6">
-                    <h1 className="display-3 text-white">PROJECT PORTFOLIO </h1>
+                    <h1 className="display-3 text-white">{portfoliocontent.Title}</h1>
                   </Col>
                 </Row>
               </div>
@@ -81,18 +117,21 @@ class Portfolio extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
+                    {imagenames.map((name, index) => (
+                    <Col lg="4" key={index}>
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" to="/forcepilotfinalreport" tag={Link}>
+                        <CardBody className="py-5" to={`/${name.imagename}`} tag={Link}>
                         <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={require("assets/img/theme/A18040103_10004_0.jpg")}
+                            /*src={`${appConfig.apiURL}${name.url}`}*/
+                            src={`${appConfig.apiURL}${name.url}`}
                           />
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="4">
+                    ))}
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5" to="/forceenergysavingsystem" tag={Link}>
                         <img
@@ -113,7 +152,7 @@ class Portfolio extends React.Component {
                           />
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col>*/}
                   </Row>
                 </Col>
               </Row>
