@@ -414,8 +414,9 @@ class Landing extends React.Component {
                             </h6>
                             <p className="description mt-3 text-dark"
                             style={{ textAlign : "left" }}>
-                              The Force energy-saving product is a small, user-friendly device that can be used in offices, factories, homes, and anywhere electricity is used.<br /><br /><br /><br /><br />
+                              Force energy-saving products are small, user-friendly devices that can be used in offices, factories, homes, and anywhere electricity is used.
                             </p>
+                            <p className="description mt-3 text-dark" style={{ textAlign : "left" }}>Here we offer our domestic product, for residential properties up to 4,000 ft<sup>2</sup> or 1,500 kw/h usage.<br /></p>
                           </div>
                           {/*<div>
                             <Badge color="success" pill className="mr-1">
