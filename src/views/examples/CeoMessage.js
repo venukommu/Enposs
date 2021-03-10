@@ -88,7 +88,6 @@ class CeoMessage extends React.Component {
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    
     return (
       <>
         <DemoNavbar />
