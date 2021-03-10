@@ -211,8 +211,7 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
-                          Force can be used virtually in every place using electricity. 
-                          So it includes offices, homes, industries, shops, automobile industry to lost a few.
+                          Force can be used virtually in every place using electricity. So it includes offices, homes, industries, shops, automobile industry to list a few.
                           </p>
                         </CardBody>
                       </Card>
@@ -237,7 +236,8 @@ class Force extends React.Component {
                       1
                     </div>
                       <h6 className="text-dark">
-                      Usage of electricity saved by 5 per cent
+                      Electricity saved by 
+                      5-15%
                       </h6>
                   </CardBody>
                 </Card>

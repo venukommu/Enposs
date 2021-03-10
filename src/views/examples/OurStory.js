@@ -135,7 +135,7 @@ class OurStory extends React.Component {
                       <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
-                        Our mission as a company was to reduce carbon emission by reducing the consumption of electricity.
+                        Our mission as a company is to reduce carbon emission by reducing the consumption of electricity. 
                         Hence was born Energy and Power Saving System -ENPOSS 
                       </h4>
                     </Col>
