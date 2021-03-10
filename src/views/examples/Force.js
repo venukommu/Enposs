@@ -101,12 +101,12 @@ class Force extends React.Component {
                   <Row>
                     <Col lg="8">
                       <div><h1 className="display-3 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
-                      {/*<h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1><br />*/}
                       <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                            Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
                            It has an international presence and is certified by green technology Korea.
-                          </h4>
+                          </h4><br />
+                          <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>
                   </Row>
