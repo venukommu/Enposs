@@ -102,13 +102,11 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Saves Electric Energy</h1><br />
+                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Save Electricity </h1><br />
                       <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
-                        Force uses natural material tourmaline.It is mixed with substances like magnesium 
-                        to produce surplus free electrons called EMF-7.
-                        These free electrons reduce electrical losses caused by various factors like heat, 
-                        vibration, Impedance,  harmonic distortion etc.</h4>
+                        FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
+                        It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.</h4>
                     </Col>
                   </Row>
                 </div>

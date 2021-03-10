@@ -236,8 +236,7 @@ class Force extends React.Component {
                       1
                     </div>
                       <h6 className="text-dark">
-                      Electricity saved by 
-                      5-15%
+                      Electricity saved by 5-15%
                       </h6>
                   </CardBody>
                 </Card>
