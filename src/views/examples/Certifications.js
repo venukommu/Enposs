@@ -172,7 +172,7 @@ class Certifications extends React.Component {
         <Container>
         {/*<Card className="card-profile shadow mt--200">*/}
         <Row className="justify-content-center">
-            <Col lg="6">
+            <Col lg="10">
             <UncontrolledCarousel items={items} />
             </Col>
         </Row>

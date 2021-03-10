@@ -40,7 +40,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
@@ -70,7 +70,7 @@ class Landing extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -86,18 +86,18 @@ class Landing extends React.Component {
     };
 
     try {
-      const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
+      this.setState({ homepagebanner });
     } catch (error) {
       this.setState({ error });
     }
 
-    try {
+    /*try {
       const homepagewidgets = await fetch(`${appConfig.apiURL}/homepagewidgets`, {
         method: 'GET',
         headers: headers,
@@ -160,7 +160,7 @@ class Landing extends React.Component {
   
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error } = this.state;
+    const { error,homepagebanner } = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -209,7 +209,8 @@ class Landing extends React.Component {
           
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
-                        Save Money, AND Help Save the Planet.
+                        {/*Save Energy - Save Earth*/}
+                        {homepagebanner.Title}
                         </h1>
                       </div>
                       <br></br>
@@ -238,7 +239,8 @@ class Landing extends React.Component {
                         </Button>*/}
                         <div>
                         <h3 className="display-4 text-info mt-n4" style={{ textAlign : "left" }}>
-                          A solution proven to reduce your energy consumption.
+                        {homepagebanner.subtitle}
+                          {/*Conserve and Preserve*/}
                         </h3>
                         <Row>
                           {/*<Col md="4" xs="6"></Col>*/}

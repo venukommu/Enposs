@@ -142,59 +142,69 @@ class Forceprinciples extends React.Component {
                           </h6>
                           <h6 className="description mt-3 text-center text-dark display-4"
                           style={{ textAlign : "justify" }}>
-                          It uses minerals with dielectric mine to increase the electrical conductivity of the power system, finally reducing the effective power. (APSIC : Active Power Saving by Increasing Conductivity의 원리)
+                          Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.<br/>
+                          APSIC - Active Power saving by increasing conductivity.<br/> 
+                          Tourmaline mixed with magnesium and the likes , produces Electromagnetic Flux , EMF 7 which emits subtle current . EMF 6 is produced ionization and electrification of copper plates.<br/>
+                          The double benefit is it absorbs all the losses by offsetting impedance,  harmonic high low frequency,  reactance etc.
                           </h6>
-                        <Row className="row-grid">
-                        <Col lg="4">
-                            <Card className="bg-gradient-purple shadow border-0">
-                            <CardBody> 
-                                <h6 className="text-white">
-                                <ul>
-                                    <li>Usage of electricity saved by 5 per cent</li>
-                                    <li>Increase surplus electrons by accelerating anion</li>
-                                </ul> 
-                                </h6>
-                            </CardBody>
-                            </Card>
-                        </Col>
-                        <Col lg="4">
-                            <Card className="bg-gradient-purple shadow border-0">
-                            <CardBody className="py-3"> 
-                                <h6 className="text-white">
-                                <ul>
-                                    <li>Increased surplus electrons in turn emmit the microcurrent.</li>
-                                    <li>Improves conductivity by increasing density free electron on connected electric circuit.</li>
-                                    <li>Moves surplus electron saturation at the rate of 0.1 to 1mm/second.</li>
-                                </ul> 
-                                </h6>
-                            </CardBody>
-                            </Card>
-                        </Col>
-                        <Col lg="4">
-                            <Card className="bg-gradient-purple shadow border-0">
-                            <CardBody className="py-3"> 
-                                <h6 className="text-white">
-                                <ul>
-                                    <li>Increased free electrons improves the transfer of electricity</li>
-                                    <li>Reduces electric losses</li>
-                                    <li>Improves current flow</li>
-                                </ul> 
-                                </h6>
-                            </CardBody>
-                            </Card>
-                        </Col>
-                        </Row>
+                          <a href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">
+                          <CardImg
+                            alt="..."
+                            src={require("assets/img/theme/workingprinciple.jpg")}
+                            //src={`${appConfig.apiURL}${productimage.url}`}
+                            top
+                          />
+                          </a>
+        
                         </CardBody>
                       </Card>
-                      <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/workingprinciple.jpg")}
-                      //src={`${appConfig.apiURL}${productimage.url}`}
-                      top
-                    />
                     </Col>
                   </Row>
                 </Col>
+              </Row>
+            </Container>
+          </section>
+          <section>
+            <Container>
+              <Row className="row-grid">
+              <Col lg="4">
+                  <Card className="bg-gradient-purple shadow border-0">
+                  <CardBody> 
+                      <h6 className="text-white">
+                      <ul>
+                          <li>Usage of electricity saved by 5 per cent</li>
+                          <li>Increase surplus electrons by accelerating anion</li>
+                      </ul> 
+                      </h6>
+                  </CardBody>
+                  </Card>
+              </Col>
+              <Col lg="4">
+                  <Card className="bg-gradient-purple shadow border-0">
+                  <CardBody className="py-3"> 
+                      <h6 className="text-white">
+                      <ul>
+                          <li>Increased surplus electrons in turn emmit the microcurrent.</li>
+                          <li>Improves conductivity by increasing density free electron on connected electric circuit.</li>
+                          <li>Moves surplus electron saturation at the rate of 0.1 to 1mm/second.</li>
+                      </ul> 
+                      </h6>
+                  </CardBody>
+                  </Card>
+              </Col>
+              <Col lg="4">
+                  <Card className="bg-gradient-purple shadow border-0">
+                  <CardBody className="py-3"> 
+                      <h6 className="text-white">
+                      <ul>
+                          <li>Increased free electrons improves the transfer of electricity</li>
+                          <li>Reduces electric losses</li>
+                          <li>Improves current flow</li>
+                      </ul> 
+                      </h6>
+                  </CardBody>
+                  </Card>
+              </Col>
               </Row>
             </Container>
           </section>
