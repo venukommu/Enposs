@@ -100,13 +100,13 @@ class Force extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div><h1 className="display-2 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
-                      <h4 className="display-4 text-white"
+                      <div><h1 className="display-3 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
+                      <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                            Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
                            It has an international presence and is certified by green technology Korea.
                           </h4><br />
-                           <h1 className="display-3 text-white">Our mission - Reduce carbon emission</h1>
+                          <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1>
                       </div>
                     </Col>
                   </Row>
@@ -170,7 +170,7 @@ class Force extends React.Component {
                           <h6 className="text-primary text-uppercase">
                           Environment Friendly
                           </h6>
-                          <p className="description mt-3 text-dark"
+                          <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
                           Force uses naturally occurring material tourmaline which helps generate anions.
                           It uses eco- friendly technology to save electricity.</p>
@@ -189,7 +189,7 @@ class Force extends React.Component {
                           <h6 className="text-success text-uppercase">
                           Super Safe
                           </h6>
-                          <p className="description mt-3 text-dark"
+                          <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
                           Force does not require separate power supply making it super safe.
                           It's also easy to install and use.</p>
@@ -209,10 +209,9 @@ class Force extends React.Component {
                           <h6 className="text-warning text-uppercase">
                           Versatile
                           </h6>
-                          <p className="description mt-3 text-dark"
+                          <p className="description mt-3"
                           style={{ textAlign : "justify" }}>
-                          Force can be used virtually in every place using electricity. 
-                          So it includes offices, homes, industries, shops, automobile industry to lost a few.
+                          Force can be used virtually in every place using electricity. So it includes offices, homes, industries, shops, automobile industry to list a few.
                           </p>
                         </CardBody>
                       </Card>
@@ -237,7 +236,7 @@ class Force extends React.Component {
                       1
                     </div>
                       <h6 className="text-dark">
-                      Usage of electricity saved by 5 per cent
+                      Electricity saved by 5-15%
                       </h6>
                   </CardBody>
                 </Card>

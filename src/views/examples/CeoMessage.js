@@ -120,12 +120,12 @@ class CeoMessage extends React.Component {
                         <h1 className="display-3 text-white">
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h2 className="display-3 text-white" style={{ textAlign : "left" }}>
-                        Be the FORCE that protects the planet</h2>
-                        <h3 className="display-4  text-white"
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" }}>
+                        Be the FORCE that protects the planet</h1><br />
+                        <h4 className="display-5  text-white"
                           style={{ textAlign : "left" }}>
                           Force reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
-                        </h3>
+                        </h4>
                       </div>
                     </Col>
                   </Row>
@@ -229,14 +229,14 @@ class CeoMessage extends React.Component {
             </div>*/}
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
-                    <Row className="justify-content-center text-dark">
+                    <Row className="justify-content-center">
                       <Col lg="9">
                         <p style={{ textAlign : "left"}}>
                           <ShowMoreText
                           /* Default options */
                           lines={5}
-                          more='Read more'
-                          less='Read less'
+                          more='Show more'
+                          less='Show less'
                           className='content-css'
                           anchorClass='my-anchor-css-class'
                           onClick={this.executeOnClick}
@@ -254,11 +254,11 @@ class CeoMessage extends React.Component {
                           Enposs is more than a decade old and is recognized for its outstanding technology. 
                           Customers all over the world can now save energy, environment and economy. 
                           Empower yourself with Enposs. 
-                          <br></br>
+                          {" "}
                           Save Energy , Save Earth. 
-                          <br></br>
+                          {" "}<br />
                           CEO
-                          Sung gwun Choi</ShowMoreText>
+                          Sung gwun Choi <br /></ShowMoreText>
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}

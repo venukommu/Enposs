@@ -21,7 +21,7 @@ import React from "react";
 // reactstrap components
 import {
  // Badge,
- // Button,
+ //Button,
   Card,
  // CardBody,
   //CardImg,
@@ -197,7 +197,7 @@ class OurStory extends React.Component {
                           {/*}    {companystory.Title}*/}
                           Our Story 
                       </h4>
-                      <p className="lead text-italic text-dark" style={{ textAlign : "left"}}>
+                      <p style={{ textAlign : "left"}}>
                       <ShowMoreText
                         /* Default options */
                         lines={7}

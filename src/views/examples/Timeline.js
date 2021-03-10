@@ -237,7 +237,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Art Director</h3>
     <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
-    <div  style={{ textAlign : "justify" }}>
+    <div  style={{ textAlign : "left" }}>
     <p>Patent application for power improvement device "FORCE"</p>
     <p>Patent PCT application</p>
     <p>[FORCE] Established production factory</p>
@@ -253,7 +253,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
     <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>*/}
-      <div  style={{ textAlign : "justify" }}>
+      <div  style={{ textAlign : "left" }}>
     <p> Established Enposs</p>
     <p>[FORCE] CE safety certification acquired</p>
     <p>Obtained ISO 9001: 2000</p>
@@ -269,7 +269,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
     <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
-    <div  style={{ textAlign : "justify" }}>
+    <div  style={{ textAlign : "left" }}>
     <p>[FORCE] Obtained IACS certification</p>
     <p>[FORCE] Mexico NOM safety certification acquired</p>
 
@@ -288,7 +288,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
     <h4 className="vertical-timeline-element-subtitle">Online Course</h4>*/}
-    <div  style={{ textAlign : "justify" }}>
+    <div  style={{ textAlign : "left" }}>
     <p>CE certification (CoC)</p>
     <p>[FORCE] Launched in the US and India</p>
     <p>[FORCE] SGS Laboratory Performance Test-7.12% Certification</p>
@@ -305,7 +305,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
     <h4 className="vertical-timeline-element-subtitle">Certification</h4>*/}
-    <div  style={{ textAlign : "justify" }}>
+    <div  style={{ textAlign : "left" }}>
     <p>[FORCE] MET certification with NLTC</p>
     <p>Concluded an agreement with the Korea Air Force Academy Industry-Academia Research Institute</p>
    </div>
@@ -344,7 +344,7 @@ class Timeline extends React.Component {
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
-    <div  style={{ textAlign : "justify" }}>
+    <div  style={{ textAlign : "left" }}>
     <p>Opened a branch office in Los Angeles, USA</p></div>
     <p>(Empos Japan Co., Ltd.)</p>
   </VerticalTimelineElement>
