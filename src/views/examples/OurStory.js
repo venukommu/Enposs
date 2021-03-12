@@ -21,7 +21,7 @@ import React from "react";
 // reactstrap components
 import {
  // Badge,
- // Button,
+ //Button,
   Card,
  // CardBody,
   //CardImg,
@@ -128,19 +128,16 @@ class OurStory extends React.Component {
                 <Row>
                     <Col lg="8">
                     {/*< ProductList />*/}
-                    <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" }}>
-                        Saving Strategy for Power and Planet
+                        Saving Strategy for Power and Planet <br />
                         {/*ENPOSS Inc {" "}*/}
-                          <span></span>
-                        </h1>
-                      <h3 className="display-4 text-white"
+                        </h1><br />
+                      <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
-                        Our mission as a company was to reduce carbon emission by reducing the consumption of electricity.
+                        Our mission as a company is to reduce carbon emission by reducing the consumption of electricity. 
                         Hence was born Energy and Power Saving System -ENPOSS 
-                      </h3>
-                    </div>
+                      </h4>
                     </Col>
                   </Row>
                 </div>
@@ -197,12 +194,12 @@ class OurStory extends React.Component {
                      <h4 className="display-3 font-weight-bold text-white">
                           {/*}    {companystory.Title}*/}
                       </h4>
-                      <p className="lead text-italic text-dark" style={{ textAlign : "left"}}>
+                      <p style={{ textAlign : "left"}}>
                       <ShowMoreText
                         /* Default options */
                         lines={5}
-                        more='Read more'
-                        less='Read less'
+                        more='Show more'
+                        less='Show less'
                         className='content-css'
                         anchorClass='my-anchor-css-class'
                         onClick={this.executeOnClick}

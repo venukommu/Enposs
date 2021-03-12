@@ -73,15 +73,15 @@ class EcwidScript extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                <Row>
-                    <Col lg="12">
-                    {/*< ProductList />*/}
-                      <div>
-                        <h1 className="display-2 text-white" style={{ textAlign : "center" }}>
-                        Stop waiting<br/>Start saving
-                        </h1>                      
-                       </div>
-                    </Col>
+                  <Row>
+                      <Col lg="12">
+                      {/*< ProductList />*/}
+                        <div>
+                          <h1 className="display-3 text-white">
+                          Stop waiting - Start saving
+                          </h1>                      
+                        </div>
+                      </Col>
                   </Row>
                 </div>
               </Container>
