@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -25,24 +25,22 @@ import { Card, Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
+//import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
 
 class CeoMessage extends React.Component {
   executeOnClick(isExpanded) {
     console.log(isExpanded);
 }
   state = {
-    aboutcompany: [],
     ceomessage: [],
     error: null,
     bannerimage: [],
-    productimage: []
  }
  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     //this.refs.main.scrollTop = 0;
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -56,18 +54,6 @@ class CeoMessage extends React.Component {
     const headers = {
       'Content-Type': 'application/json',
     };
-  
-    try {
-      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
-    } catch (error) {
-      this.setState({ error });
-    }
 
     try {
       const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
@@ -76,14 +62,14 @@ class CeoMessage extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ ceomessage });
+      this.setState({ ceomessage, bannerimage: ceomessage.image });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
     
   };
   render() {
-    const { error} = this.state;
+    const { error, ceomessage, bannerimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -98,7 +84,8 @@ class CeoMessage extends React.Component {
             <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage:`url(${appConfig.apiURL}${bannerimage.url})`,
                }}>
                 <span />
                 <span />
@@ -120,10 +107,11 @@ class CeoMessage extends React.Component {
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" }}>
-                        Be the FORCE that protects the planet</h1><br />
+                        {/*Be the FORCE that protects the planet*/}{ceomessage.Title}</h1><br />
                         <h4 className="display-5  text-white"
                           style={{ textAlign : "left" }}>
-                          Force reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
+                          {/*Force reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.*/}
+                          {ceomessage.subtitle}
                         </h4>
                       </div>
                     </Col>
@@ -211,7 +199,7 @@ class CeoMessage extends React.Component {
                   </Row>
                   <div className="text-center mt-5">
                     <h3>
-                    CEO Greetings {" "}
+                    {/*CEO Greetings*/} {ceomessage.ceotitle} {" "}
                       <span className="font-weight-light"></span>
                     </h3>
                     {/*<div className="h6 font-weight-300">
@@ -242,7 +230,7 @@ class CeoMessage extends React.Component {
                           expanded={false}
                           //width={280}
                       >
-                          Energy is important for daily activities.
+                          {/*Energy is important for daily activities.
                           Electricity is an important form of energy.
                           Without electricity we would be unplugged into total darkness. Life would come to a grinding halt. 
                           Fossil fuels are extensively used to generate electricity. They are expensive and have become scarce. This burdens the economy. Fossil fuels used to generate electricity emit harmful greenhouse gases like carbon dioxide. Depletion in fossil fuels is an international issue
@@ -257,7 +245,7 @@ class CeoMessage extends React.Component {
                           Save Energy , Save Earth. 
                           {" "}<br />
                           CEO
-                          Sung gwun Choi <br /></ShowMoreText>
+                          Sung gwun Choi <br />*/}{ceomessage.description}</ShowMoreText>
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}

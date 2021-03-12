@@ -44,17 +44,18 @@ import { appConfig } from "services/config.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/abstract-dark-layer.jpg';
+//import Background from 'assets/img/theme/abstract-dark-layer.jpg';
 import CountUp from 'react-countup';
+import Markdown from 'react-markdown';
 
 class Landing extends React.Component {
   
   state = {
     homepagebanner: [],
-    homepagewidgets: [],
+    homewidgets: [],
     ourcustomers: [],
     productimage: {},
-    homepageimage: [],
+    homeimage: [],
     force: [],
     forceimage: {},
     awesomefeatures:[],
@@ -91,7 +92,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner });
+      this.setState({ homepagebanner, homewidgets: homepagebanner.homewidgets, homeimage: homepagebanner.image  });
     } catch (error) {
       this.setState({ error });
     }
@@ -159,7 +160,8 @@ class Landing extends React.Component {
   
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner } = this.state;
+    const { error,homepagebanner, homewidgets, homeimage } = this.state;
+    console.log(homeimage);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -176,9 +178,9 @@ class Landing extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                backgroundImage:`url(${appConfig.apiURL}${homeimage.url})`,
                }}>
                 <span />
                 <span />
@@ -256,7 +258,7 @@ class Landing extends React.Component {
                           <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
                               style={{ textAlign : "left" }}>
-                              <span  className="text-primary"><br />Total reduced CO<sub>2</sub></span>
+                              <span  className="text-primary"><br />{homepagebanner.description}</span>
                             </h5>
                           </Col>
                         </Row>
@@ -294,22 +296,22 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {/*this.state.homepagewidgets.map(widgets => (
+                  {homewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
-                          <CardBody className="py-5">
-                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-4'}>
+                          <CardBody className="text-center mt-2">
+                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-2'}>
                               <i className={widgets.iconname} />
                             </div>
-                              <h6 className={"text-" + widgets.classname + " text-uppercase"}>
-                                {/*About Company
+                              <h6 className={"text-" + widgets.classname + " text-uppercase"} style={{ textAlign : "center" }}>
+                                {/*About Company*/}
                                 {widgets.Title}
                               </h6>
-                              <p className="description mt-3"
-                              style={{ textAlign : "justify" }}>
-                              {widgets.description}
+                              <p className="description mt-3 text-dark"
+                              style={{ textAlign : "left" }}>
+                              <Markdown source={widgets.description} />
                               </p>
-                            <Button to="/about" tag={Link}
+                            <Button to={widgets.routername} tag={Link}
                               className="mt-4"
                               color={widgets.classname}
                               //href="#pablo"
@@ -320,9 +322,9 @@ class Landing extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))
-                    ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
-                      energy saving technology into our ENPOSS system.}*/}
+                    ))}
+                    {/*ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                      energy saving technology into our ENPOSS system.}
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
@@ -352,7 +354,7 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>*/}
+                          </div>
                           
                           <Button to="/ourstory" tag={Link}
                             className="mt-2"
@@ -391,7 +393,7 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button to="/forceprinciples" tag={Link}
                             className="mt-2"
                             color="info"
@@ -429,7 +431,7 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button
                             className="mt-4"
                             color="primary"
@@ -441,7 +443,7 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col>*/}
                   </Row>
                 </Col>
               </Row>

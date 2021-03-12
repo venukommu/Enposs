@@ -33,9 +33,10 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
+//import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
+import Markdown from 'react-markdown';
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -44,7 +45,7 @@ class OurStory extends React.Component {
   state = {
     error: null,
     companystory: [],
-    homepageimage: [],
+    image: [],
 
   };
 
@@ -53,7 +54,7 @@ class OurStory extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -69,33 +70,21 @@ class OurStory extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const companystory = await fetch(`${appConfig.apiURL}/ourstory`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ companystory, image: companystory.image });
       } catch (error) {
         this.setState({ error });
       }
 
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
+    const { error, companystory, image} = this.state;
 
     // Print errors if any
     if (error) {
@@ -110,7 +99,8 @@ class OurStory extends React.Component {
             <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage:`url(${appConfig.apiURL}${image.url})`,
                }}>
                 <span />
                 <span />
@@ -130,14 +120,16 @@ class OurStory extends React.Component {
                     {/*< ProductList />*/}
                     <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "120px" }}>
-                        Building on a Strategy for Saving Power and the Planet
+                        {/*Building on a Strategy for Saving Power and the Planet*/}
+                        {companystory.Title}
                         {/*ENPOSS Inc {" "}*/}
                           <span></span>
                         </h1>
                       <h3 className="display-4 text-white"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
-                        Our goal as a company was to reduce carbon emission by reducing the unnecessary consumption of electricity. 
+                        {/*Our goal as a company was to reduce carbon emission by reducing the unnecessary consumption of electricity.*/}
+                        {companystory.subtitle} 
                       </h3>
                     </div>
                     </Col>
@@ -209,13 +201,14 @@ class OurStory extends React.Component {
                         expanded={false}
                         //width={280}
                       >
-                      Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
+                      {/*Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
                       <br /><br />
                       "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity, and thereby contribute to reductions in carbon dioxide emission. This in turn reduces global warming.
                       <br /><br />
                       ENPOSS developed its FORCE system to help users contribute towards the protection of the environment, by efficiently and effectively saving electric energy. By reducing electric energy consumption via our FORCE devices, we are pleased to be a part of the drive which reduces carbon dioxide emissions.
                       <br /><br />
-                      Today, ENPOSS has an international presence. It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. We are proud to be part of the widespread effort to protect the health and wealth of our planet.</ShowMoreText>
+                    Today, ENPOSS has an international presence. It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. We are proud to be part of the widespread effort to protect the health and wealth of our planet.*/}
+                    <Markdown source={companystory.description} /></ShowMoreText>
                         {/*{companystory.description}*/}</p>
                      </blockquote>
                 </Col>
