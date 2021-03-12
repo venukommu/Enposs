@@ -201,8 +201,8 @@ class OurStory extends React.Component {
                       <ShowMoreText
                         /* Default options */
                         lines={7}
-                        more='Read more'
-                        less='Read less'
+                        more='Show more'
+                        less='Show less'
                         className='content-css'
                         anchorClass='my-anchor-css-class'
                         onClick={this.executeOnClick}
