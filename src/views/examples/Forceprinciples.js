@@ -13,6 +13,7 @@ import {
   Row,
   Col,
   Button,
+  //UncontrolledCarousel,
   //Button
 } from "reactstrap";
 
@@ -22,7 +23,6 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 //import { appConfig } from "services/config.js";
 
 // index page sections
-
 class Forceprinciples extends React.Component {
   
   state = {
@@ -79,15 +79,8 @@ class Forceprinciples extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 bg-gradient-purple shape-default">
-              {/*style= {{
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/smooth-golden-wave-background_23-2148811073.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
-               }}*/}
-              
+              <div className="shape shape-style-1 shape-default bg-gradient-indigo"
+             >
                 <span />
                 <span />
                 <span />
@@ -129,7 +122,7 @@ class Forceprinciples extends React.Component {
                 </svg>
               </div>
             </section>
-            <section className="section section-lg pt-lg-0 mt--100">
+            <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
                 <Col lg="12">
@@ -142,18 +135,22 @@ class Forceprinciples extends React.Component {
                           </h6>
                           <p 
                           style={{ textAlign : "left" }}>
-                          Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
+                          {/*Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
                           APSIC - Active Power saving by increasing conductivity.
                           Tourmaline mixed with magnesium and the likes, produces Electromagnetic Flux,EMF 7 which emits subtle current. EMF 6 is produced ionization and electrification of copper plates.
-                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.
+                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.*/}
+                          Force utilizes Electromagnetic Flux called  EMF7.
+                          which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. 
                           </p>
-                          <a href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">
                           <CardImg
                             alt="..."
-                            src={require("assets/img/theme/workingprinciple.jpg")}
+                            src={require("assets/img/theme/1.PNG")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
-                          /></a>
+                          />
+                          {/*<Row className="justify-content-center">
+                          <Col lg="12">
+                        <UncontrolledCarousel items={items} /></Col></Row>*/}
                         </CardBody>
                         <Button className="text-center" href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">Read More</Button>
                       </Card>
@@ -167,7 +164,7 @@ class Forceprinciples extends React.Component {
             <Container>
               <Row className="row-grid">
               <Col lg="4">
-                  <Card className="bg-gradient-purple shadow border-0">
+                  <Card className="bg-gradient-indigo shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
                       <ul>
@@ -179,7 +176,7 @@ class Forceprinciples extends React.Component {
                   </Card>
               </Col>
               <Col lg="4">
-                  <Card className="bg-gradient-purple shadow border-0">
+                  <Card className="bg-gradient-indigo shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>
@@ -192,7 +189,7 @@ class Forceprinciples extends React.Component {
                   </Card>
               </Col>
               <Col lg="4">
-                  <Card className="bg-gradient-purple shadow border-0">
+                  <Card className="bg-gradient-indigo shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>

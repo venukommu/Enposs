@@ -339,7 +339,7 @@ class Landing extends React.Component {
                             </p>
                             <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
-                              This has the added benefit of helping clean the air we breath &mdash; by reducing the amount of energy we waste, and by reducing our need for fossil fuels used to produce electricity in the first place.
+                              This has the added benefit of helping clean the air we breathe &mdash; by reducing the amount of energy we waste, and by reducing our need for fossil fuels used to produce electricity in the first place.
                             </p>                            
                           </div>
                           {/*<div>

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
-import Background from 'assets/img/theme/pexels-photo-6985118.jpeg';
+import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 class EcwidScript extends React.Component {
@@ -105,7 +105,7 @@ class EcwidScript extends React.Component {
           </div>
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
-        <Card className="card-profile shadow mt--200" >
+        <Card className="card-profile shadow mt--200 bg-secondary">
         <EcwidScript/>
         </Card>
         </Container>

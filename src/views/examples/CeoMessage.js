@@ -244,16 +244,16 @@ class CeoMessage extends React.Component {
                       >
                           Energy is important for daily activities.
                           Electricity is an important form of energy.
-                          Without electricity we would be unplugged into total darkness. Life would come to a grinding halt. 
+                          Without electricity we would be unplugged into total darkness. Life would come to a grinding halt. <br />  <br /> 
                           Fossil fuels are extensively used to generate electricity. They are expensive and have become scarce. This burdens the economy. Fossil fuels used to generate electricity emit harmful greenhouse gases like carbon dioxide. Depletion in fossil fuels is an international issue
-                          Environmental pollution by carbon dioxide results in  global warming. US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
+                          Environmental pollution by carbon dioxide results in  global warming. <br />  <br /> US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
                           Polar bears are endangered and we will lose the privilege of having them on the earth. If suitable measures are not taken, we all would push them to the brink of extinction. 
-                          Enposs has taken a step forward to protect our environment.
+                          Enposs has taken a step forward to protect our environment.<br />  <br />
                           By using Enposs technology we can have beautiful,brighter and better tomorrows. 
                           Enposs is more than a decade old and is recognized for its outstanding technology. 
                           Customers all over the world can now save energy, environment and economy. 
                           Empower yourself with Enposs. 
-                          {" "}
+                          {" "}  <br />  <br />
                           Save Energy , Save Earth. 
                           {" "}<br />
                           CEO
