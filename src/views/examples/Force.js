@@ -83,7 +83,7 @@ class Force extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/headphones-mouse-orange-layer.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />
@@ -101,12 +101,12 @@ class Force extends React.Component {
                   <Row>
                     <Col lg="8">
                       <div><h1 className="display-3 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
-                      <h4 className="display-5 text-white"
+                          <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1> <br />
+                          <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                            Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
                            It has an international presence and is certified by green technology Korea.
-                          </h4><br />
-                          <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1>
+                          </h4>
                       </div>
                     </Col>
                   </Row>
