@@ -32,7 +32,7 @@ const items = [
     header: ""
   },
   {
-    src: require("assets/img/theme/unlabled.png"),
+    src: require("assets/img/theme/label.png"),
     altText: "",
     caption: "",
     header: ""
