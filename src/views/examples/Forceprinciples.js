@@ -142,12 +142,14 @@ class Forceprinciples extends React.Component {
                           Force utilizes Electromagnetic Flux called  EMF7.
                           which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. 
                           </p>
+                          <Row className="justify-content-center">
+                          <Col lg="8">
                           <CardImg
                             alt="..."
                             src={require("assets/img/theme/1.PNG")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
-                          />
+                          /></Col></Row>
                           {/*<Row className="justify-content-center">
                           <Col lg="12">
                         <UncontrolledCarousel items={items} /></Col></Row>*/}
