@@ -102,11 +102,12 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Save Electricity </h1><br />
+                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1><br />
                       <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
-                        FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
-                        It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.</h4>
+                        {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
+                        It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
+                       Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.</h4>
                     </Col>
                   </Row>
                 </div>
