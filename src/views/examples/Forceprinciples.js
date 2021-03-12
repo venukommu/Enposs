@@ -8,12 +8,12 @@ import {
   //Badge,
   Card,
   CardBody,
-  //CardImg,
+  CardImg,
   Container,
   Row,
   Col,
   Button,
-  UncontrolledCarousel,
+  //UncontrolledCarousel,
   //Button
 } from "reactstrap";
 
@@ -23,33 +23,6 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 //import { appConfig } from "services/config.js";
 
 // index page sections
-const items = [
-  
-  {
-    src: require("assets/img/theme/afterbefore.jpg"),
-    altText: "",
-    caption: "",
-    header: ""
-  },
-  {
-    src: require("assets/img/theme/label.png"),
-    altText: "",
-    caption: "",
-    header: ""
-  },
-  {
-    src: require("assets/img/theme/physical.png"),
-    altText: "",
-    caption: "",
-    header: ""
-  },
-  {
-    src: require("assets/img/theme/tournamalin.png"),
-    altText: "",
-    caption: "",
-    header: ""
-  }
-];
 class Forceprinciples extends React.Component {
   
   state = {
@@ -169,15 +142,15 @@ class Forceprinciples extends React.Component {
                           Force utilizes Electromagnetic Flux called  EMF7.
                           which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. 
                           </p>
-                          {/*<CardImg
+                          <CardImg
                             alt="..."
-                            //src={require("assets/img/theme/principel.jpg")}
+                            src={require("assets/img/theme/Principalofoperation.png")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
-                          />*/}
-                          <Row className="justify-content-center">
-                          <Col lg="8">
-                         <UncontrolledCarousel items={items} /></Col></Row>
+                          />
+                          {/*<Row className="justify-content-center">
+                          <Col lg="12">
+                        <UncontrolledCarousel items={items} /></Col></Row>*/}
                         </CardBody>
                         <Button className="text-center" href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">Read More</Button>
                       </Card>
