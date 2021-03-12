@@ -174,7 +174,7 @@ class CardsFooter extends React.Component {
                       //target="_blank"
                       to="/force" tag={Link}
                     >
-                      Products
+                      Product
                     </NavLink>
                   </NavItem>
                   <NavItem>
@@ -184,6 +184,14 @@ class CardsFooter extends React.Component {
                       to="/clients" tag={Link}
                     >
                       Clients
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      //href="http://blog.creative-tim.com?ref=adsr-footer"
+                      //target="_blank"
+                      href ={require('assets/img/pdf-reports/thesis.pdf')} type="application/pdf" target="_blank" rel="noopener noreferrer">
+                      Thesis
                     </NavLink>
                   </NavItem>
                   <NavItem>
