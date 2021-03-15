@@ -285,7 +285,7 @@ class Force extends React.Component {
                     </div>
                       <h6 className="text-dark">
                       Prolongs life span of appliances.
-                      </h6><br />
+                      </h6>
                   </CardBody>
                 </Card>
               </Col>
