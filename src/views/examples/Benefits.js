@@ -33,14 +33,14 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 //import Background from 'assets/img/theme/12818.jpg';
 
 class Benefits extends React.Component {
   state = {
     error: null,
-    companystory: [],
-    homepageimage: [],
+    benefits: [],
+    benefitsimage: [],
 
   };
 
@@ -49,7 +49,7 @@ class Benefits extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -65,33 +65,21 @@ class Benefits extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const benefits = await fetch(`${appConfig.apiURL}/benefits`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ benefits, benefitsimage: benefits.image });
       } catch (error) {
         this.setState({ error });
       }
 
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
+    const { error, benefits, benefitsimage} = this.state;
 
     // Print errors if any
     if (error) {
@@ -126,10 +114,10 @@ class Benefits extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h1 className="display-3 text-white">
-                        Brilliant Benefits<br></br>
+                        {/*Brilliant Benefits*/}{benefits.Title}<br></br>
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h4 className="display-5 text-white">Save Electricity & money</h4>
+                        <h4 className="display-5 text-white">{/*Save Electricity & money*/}{benefits.subtitle}</h4>
                       </div>
                     </Col>
                   </Row>
@@ -163,8 +151,8 @@ class Benefits extends React.Component {
                 <Col lg="12">
                     <CardImg
                       alt="..."
-                     src={require("assets/img/theme/asdf.PNG")}
-                      //src={`${appConfig.apiURL}${productimage.url}`}
+                     //src={require("assets/img/theme/asdf.PNG")}
+                     src={`${appConfig.apiURL}${benefitsimage.url}`}
                       top
     />
               {/* <blockquote className="card-blockquote bg-default shadow border-0">*/}

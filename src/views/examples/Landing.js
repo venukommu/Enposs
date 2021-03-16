@@ -161,7 +161,6 @@ class Landing extends React.Component {
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
     const { error,homepagebanner, homewidgets, homeimage } = this.state;
-    console.log(homeimage);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;

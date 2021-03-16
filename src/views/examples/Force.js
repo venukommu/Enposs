@@ -18,14 +18,18 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
+import Markdown from 'react-markdown';
 
 // index page sections
 
 class Force extends React.Component {
   
   state = {
+    forcepage: [],
     forcewidgets: [],
+    forcefeatures: [],
+    forceimage: [],
     error: null,
   };
 
@@ -34,7 +38,7 @@ class Force extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -48,16 +52,16 @@ class Force extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forcepage = await fetch(`${appConfig.apiURL}/force`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forcepage, forceimage: forcepage.image, forcewidgets: forcepage.forcewidgets, forcefeatures: forcepage.featuresarray.features });
     } catch (error) {
       this.setState({ error });
-    }*/
+    } 
 
   };
   
@@ -65,7 +69,7 @@ class Force extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
+    const { error, forcepage, forceimage, forcewidgets, forcefeatures} = this.state;
 
     // Print errors if any
     if (error) {
@@ -83,8 +87,8 @@ class Force extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                //backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer.jpg')})`
+                backgroundImage:`url(${appConfig.apiURL}${forceimage.url})`,
                }}>
                 <span />
                 <span />
@@ -100,12 +104,13 @@ class Force extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div><h1 className="display-3 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
-                          <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1> <br />
+                      <div><h1 className="display-3 text-white" style={{ textAlign : "left" }}>{/*Empowered to save Power*/}{forcepage.Title}</h1><br />
+                          <h1 className="display-4 text-white">{/*Our mission - Reduce carbon emission*/}{forcepage.subtitle}</h1> <br />
                           <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
-                           Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
-                           It has an international presence and is certified by green technology Korea.
+                           {/*Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
+                           It has an international presence and is certified by green technology Korea.*/}
+                           {forcepage.subtitle1}
                           </h4>
                       </div>
                     </Col>
@@ -136,29 +141,29 @@ class Force extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                  {/*forcewidgets.map(widgets => (
+                  {forcewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
                           <CardBody className="py-4">
                             <div className=" rounded-circle mb-4">
                               <img alt="..."
                                 className="rounded-circle img-center img-fluid"
-                                src={`${appConfig.apiURL}${widgets.images.url}`}
+                                src={`${appConfig.apiURL}${widgets.image.url}`}
                                 style={{ width: "100px" }}/>
                             </div>
-                            <h6 className="text-primary text-uppercase">
-                              {/*About Company
+                            <h6 className={"text-"+widgets.classname+" text-uppercase"}>
+                              {/*About Company */}
                               {widgets.Title}
                             </h6>
                             <p className="description mt-3"
                             style={{ textAlign : "justify" }}>
-                            {widgets.description}
+                            <Markdown source={widgets.description} />
                             </p>
                           </CardBody>
                         </Card>
                       </Col>
-                    ))*/}
-                    <Col lg="4">
+                    ))}
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
                           <div className=" rounded-circle mb-4">
@@ -215,7 +220,7 @@ class Force extends React.Component {
                           </p>
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col>*/}
                   </Row>
                 </Col>
               </Row>
@@ -225,10 +230,26 @@ class Force extends React.Component {
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-3 text-white justify-content-center">Awesome Features</h1>
+                <h1 className="display-3 text-white justify-content-center">{/*Awesome Features*/}{forcepage.featuresheading}</h1>
               </Col>
             </Row>
             <Row className="row-grid">
+              {forcefeatures.map(feature => (
+              <Col lg="2">
+                <Card className="card-lift--hover shadow border-0">
+                  <CardBody className="py-3"> 
+                    <div className={"icon icon-shape icon-shape-"+feature.classname+" rounded-circle mb-4 text-dark"}>
+                    {feature.id}
+                    </div>
+                      <h6 className="text-dark">
+                      {feature.feature}
+                      </h6>
+                  </CardBody>
+                </Card>
+              </Col>
+            ))}
+            </Row>
+            {/*<Row className="row-grid">
               <Col lg="2">
                 <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-3"> 
@@ -289,7 +310,7 @@ class Force extends React.Component {
                   </CardBody>
                 </Card>
               </Col>
-              </Row><br /><br />
+              </Row>*/}<br /><br />
 
           </Container>
           <div className="separator separator-bottom separator-skew zindex-100">

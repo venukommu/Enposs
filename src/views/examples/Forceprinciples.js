@@ -19,14 +19,15 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
 
 class Forceprinciples extends React.Component {
   
   state = {
-    forcewidgets: [],
+    forceprinciple: [],
+    forceprincipleimage: [],
     error: null,
   };
 
@@ -35,7 +36,7 @@ class Forceprinciples extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -49,16 +50,16 @@ class Forceprinciples extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forceprinciple = await fetch(`${appConfig.apiURL}/forceprinciples`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forceprinciple, forceprincipleimage: forceprinciple.image });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -66,8 +67,7 @@ class Forceprinciples extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
-
+    const { error, forceprinciple,forceprincipleimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -102,12 +102,13 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1><br />
+                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>{/*Active Power Saving by Increasing Conductivity (APSIC)*/}{forceprinciple.Title}</h1><br />
                       <h4 className="display-5 text-white"
                         style={{ textAlign : "left" }}>
                         {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
                         It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
-                       Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.</h4>
+                       {/*Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.*/}
+                       {forceprinciple.subtitle}</h4>
                     </Col>
                   </Row>
                 </div>
@@ -138,20 +139,22 @@ class Forceprinciples extends React.Component {
                       <Card className="shadow border-0">
                         <CardBody className="py-4">
                           <h6 className="display-4 text-center text-uppercase">
-                            Working Principle
+                            {/*Working Principle*/}
+                            {forceprinciple.heading}
                           </h6>
                           <p 
                           style={{ textAlign : "left" }}>
-                          Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
+                          {/*Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
                           APSIC - Active Power saving by increasing conductivity.
                           Tourmaline mixed with magnesium and the likes, produces Electromagnetic Flux,EMF 7 which emits subtle current. EMF 6 is produced ionization and electrification of copper plates.
-                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.
+                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.*/}
+                          {forceprinciple.description}
                           </p>
                           <a href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">
                           <CardImg
                             alt="..."
-                            src={require("assets/img/theme/workingprinciple.jpg")}
-                            //src={`${appConfig.apiURL}${productimage.url}`}
+                            //src={require("assets/img/theme/workingprinciple.jpg")}
+                            src={`${appConfig.apiURL}${forceprincipleimage.url}`}
                             top
                           /></a>
                         </CardBody>

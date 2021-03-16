@@ -25,6 +25,7 @@ import { Card, Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ShowMoreText from 'react-show-more-text';
+import Markdown from 'react-markdown';
 //import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
 
 class CeoMessage extends React.Component {
@@ -245,7 +246,7 @@ class CeoMessage extends React.Component {
                           Save Energy , Save Earth. 
                           {" "}<br />
                           CEO
-                          Sung gwun Choi <br />*/}{ceomessage.description}</ShowMoreText>
+                          Sung gwun Choi <br />*/}<Markdown source={ceomessage.description} /></ShowMoreText>
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}
