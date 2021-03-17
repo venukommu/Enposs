@@ -237,7 +237,7 @@ class Force extends React.Component {
                     </div>
                       <h6 className="text-dark">
                       Electricity saved by 5-15%
-                      </h6>
+                      </h6><br />
                   </CardBody>
                 </Card>
               </Col>
@@ -284,11 +284,23 @@ class Force extends React.Component {
                       5
                     </div>
                       <h6 className="text-dark">
-                      Increases machine life
-                      </h6><br />
+                      Prolongs life span of appliances.
+                      </h6>
                   </CardBody>
                 </Card>
               </Col>
+             {/*} <Col lg="2">
+                <Card className="card-lift--hover shadow border-0">
+                  <CardBody className="py-4"> 
+                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-dark">
+                      6
+                    </div>
+                      <h6 className="text-dark">
+                      Force don't consume any power by itself.
+                      </h6>
+                  </CardBody>
+                </Card>
+                  </Col>*/}
               </Row><br /><br />
 
           </Container>

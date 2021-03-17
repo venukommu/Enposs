@@ -85,7 +85,7 @@ class Landing extends React.Component {
     };
 
     try {
-      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage`, {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/home`, {
         method: 'GET',
         headers: headers,
       })

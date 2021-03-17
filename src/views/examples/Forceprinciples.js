@@ -100,7 +100,10 @@ class Forceprinciples extends React.Component {
                         style={{ textAlign : "left" }}>
                         {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
                         It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
-                       Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.</h4>
+                       {/*Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.*/}
+                        Force combines minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used by employing APSIC.<br /> <br />
+                        A device which allows you to gain and absorbs your losses.Giving you the best of both worlds.
+                       </h4>
                     </Col>
                   </Row>
                 </div>
@@ -138,10 +141,20 @@ class Forceprinciples extends React.Component {
                           {/*Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
                           APSIC - Active Power saving by increasing conductivity.
                           Tourmaline mixed with magnesium and the likes, produces Electromagnetic Flux,EMF 7 which emits subtle current. EMF 6 is produced ionization and electrification of copper plates.
-                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.*/}
+                          The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.
                           Force utilizes Electromagnetic Flux called  EMF7.
-                          which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. 
-                          </p>
+                          which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. */}
+                          Force is a smart dual action device which uses tourmaline and operates on the principle of APSIC. It adds free electrons to the circuit and absorbs anything that causes loss of electricity (like harmonic distortion, heat etc.)<br /> <br />
+
+                          Nanoparticles of Tourmaline when mixed with other minerals like magnesium produce Electromagnetic Flux, EMF 7 which emits subtle current. Key activity is by EMF-7
+
+                          EMF 6 is produced by ionization and electrification of copper plates. <br /> <br />
+
+                          The subtle current released by Force, flows into the power line and increases the density of electrons. Thus improving current flow.
+
+                          It also has the capacity to absorb the losses by offsetting impedance, harmonic high low frequency, reactance, heat etc.
+
+                          These dual actions increase current flow and reduce power consumption. </p><br /><br />
                           <Row className="justify-content-center">
                           <Col lg="8">
                           <CardImg
