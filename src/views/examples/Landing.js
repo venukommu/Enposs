@@ -237,7 +237,7 @@ class Landing extends React.Component {
                         </Button>*/}
                         <div>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" }}>
-                        {homepagebanner.subtitle}
+                        FORCE is an energy-saving device proven to reduce your energy consumption
                           {/*Conserve and Preserve*/}
                         </h3>
                         <Row>
