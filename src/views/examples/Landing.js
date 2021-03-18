@@ -326,7 +326,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                         <div className="icon icon-shape icon-shape-info rounded-circle mb-2">
-                            <i className="fas fa-money-bill-wave" /> 
+                            <i className="fa fa-money" /> 
                           </div>
                           <div>
                           <h6 className="text-info text-uppercase" style={{ textAlign : "center" }}>
@@ -368,7 +368,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-2">
-                            <i className="fas fa-globe-americas" /> 
+                            <i className="fa fa-globe" /> 
                           </div>
                           <div>
                           <h6 className="text-success text-uppercase" style={{ textAlign : "center" }}>

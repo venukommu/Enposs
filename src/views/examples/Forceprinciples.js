@@ -79,7 +79,7 @@ class Forceprinciples extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default bg-gradient-indigo"
+              <div className="shape shape-style-1 shape-default bg-gradient-gray-dark"
              >
                 <span />
                 <span />
@@ -95,15 +95,20 @@ class Forceprinciples extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                     <h1 className="display-3 text-white" style={{ textAlign : "left" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1><br />
+                    <div>
+                    <h1 className="display-3 text-white">
+                        {/*ENPOSS Inc {" "}*/}
+                    </h1>
+                     <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1><br />
                       <h4 className="display-5 text-white"
-                        style={{ textAlign : "left" }}>
+                        style={{ textAlign : "left" , marginBottom : "20px" }}>
                         {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
                         It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
                        {/*Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.*/}
                         Force combines minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used by employing APSIC.<br /> <br />
                         A device which allows you to gain and absorbs your losses.Giving you the best of both worlds.
                        </h4>
+                    </div>
                     </Col>
                   </Row>
                 </div>
@@ -179,7 +184,7 @@ class Forceprinciples extends React.Component {
             <Container>
               <Row className="row-grid">
               <Col lg="4">
-                  <Card className="bg-gradient-indigo shadow border-0">
+                  <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
                       <ul>
@@ -191,7 +196,7 @@ class Forceprinciples extends React.Component {
                   </Card>
               </Col>
               <Col lg="4">
-                  <Card className="bg-gradient-indigo shadow border-0">
+                  <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>
@@ -204,7 +209,7 @@ class Forceprinciples extends React.Component {
                   </Card>
               </Col>
               <Col lg="4">
-                  <Card className="bg-gradient-indigo shadow border-0">
+                  <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>

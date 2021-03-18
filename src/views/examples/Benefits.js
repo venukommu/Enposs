@@ -125,11 +125,11 @@ class Benefits extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h1 className="display-3 text-white">
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         Brilliant Benefits<br></br>
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h4 className="display-5 text-white">Save Electricity & money</h4>
+                        <h4  style={{ textAlign : "left" , marginBottom: "80px" }} className="display-5 text-white">Save Electricity & money</h4>
                       </div>
                     </Col>
                   </Row>

@@ -65,7 +65,7 @@ class Newsroom extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-white">
+                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         Newsroom
                         </h6>
                        </div>
