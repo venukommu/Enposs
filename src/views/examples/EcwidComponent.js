@@ -77,8 +77,9 @@ class EcwidScript extends React.Component {
                       <Col lg="12">
                       {/*< ProductList />*/}
                         <div>
-                          <h1 className="display-3 text-white">
-                          Stop waiting - Start saving
+                          <h1 className="display-1 text-white text-lead"
+                          style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" , marginBottom: "60px" }}>
+                            Save Money, AND Help Save the Planet.
                           </h1>                      
                         </div>
                       </Col>
