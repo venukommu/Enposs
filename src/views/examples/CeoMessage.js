@@ -119,12 +119,12 @@ class CeoMessage extends React.Component {
                         <h1 className="display-3 text-white">
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                          Play a dynamic role in balancing our ecology and human survival.</h1>
-                        <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "20px" }}>
-                          FORCE reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emissions, global warming, and the melting of glaciers.
-                        </h3>
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" }}>
+                        Be the FORCE that protects the planet</h1><br />
+                        <h4 className="display-5  text-white"
+                          style={{ textAlign : "left" }}>
+                          Force reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
+                        </h4>
                       </div>
                     </Col>
                   </Row>
@@ -209,11 +209,11 @@ class CeoMessage extends React.Component {
               </div>*/}
                     </Col>
                   </Row>
-                  <div className="text-left mt-4 py-2">
-                  <h4 className="display-3 font-weight-bold text-primary">
-                    A Message from Our CEO {" "}
+                  <div className="text-center mt-5">
+                    <h3>
+                    CEO Greetings {" "}
                       <span className="font-weight-light"></span>
-                    </h4>
+                    </h3>
                     {/*<div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
                       Bucharest, Romania
@@ -227,13 +227,13 @@ class CeoMessage extends React.Component {
                       University of Computer Science
             </div>*/}
                   </div>
-                  <div className="mt-3 py-5 border-top text-center">
+                  <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p style={{ textAlign : "left"}}>
                           <ShowMoreText
                           /* Default options */
-                          lines={3}
+                          lines={5}
                           more='Show more'
                           less='Show less'
                           className='content-css'
@@ -242,9 +242,11 @@ class CeoMessage extends React.Component {
                           expanded={false}
                           //width={280}
                       >
-                          Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br />  <br /> 
-                          Fossil fuels are used extensively to generate electricity. They are expensive and difficult to extract from the earth. Their depletion and distribution are international issues. In addition, the fossil fuels used to generate electricity emit harmful greenhouse gases, like carbon dioxide. Thus, the use of fossil fuels burdens the economy in several different ways.<br />  <br />
-                          US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
+                          Energy is important for daily activities.
+                          Electricity is an important form of energy.
+                          Without electricity we would be unplugged into total darkness. Life would come to a grinding halt. <br />  <br /> 
+                          Fossil fuels are extensively used to generate electricity. They are expensive and have become scarce. This burdens the economy. Fossil fuels used to generate electricity emit harmful greenhouse gases like carbon dioxide. Depletion in fossil fuels is an international issue
+                          Environmental pollution by carbon dioxide results in  global warming. <br />  <br /> US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
                           Polar bears are endangered and we will lose the privilege of having them on the earth. If suitable measures are not taken, we all would push them to the brink of extinction. 
                           Enposs has taken a step forward to protect our environment.<br />  <br />
                           By using Enposs technology we can have beautiful,brighter and better tomorrows. 
