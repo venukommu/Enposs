@@ -129,12 +129,11 @@ class OurStory extends React.Component {
                     <Col lg="8">
                     {/*< ProductList />*/}
                     <div>
-                        <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "120px" }}>
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         Building on a Strategy for Saving Power and the Planet
                         {/*ENPOSS Inc {" "}*/}
-                          <span></span>
                         </h1>
-                      <h3 className="display-4 text-white"
+                      <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
                         Our goal as a company was to reduce carbon emission by reducing the unnecessary consumption of electricity. 
