@@ -32,8 +32,8 @@ import {
   Container,
   Row,
   Col,
-  NavItem,
-  Button,
+  //NavItem,
+  //Button,
   //NavLink,
   DropdownMenu,
   DropdownItem
@@ -285,13 +285,13 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Certifications</span>
                     </DropdownToggle>
-                </UncontrolledDropdown>  
+                </UncontrolledDropdown>  */}
                    <UncontrolledDropdown nav>
                     <DropdownToggle to="/store" tag={Link}  nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Shop</span>
+                      <span className="nav-link-inner--text text-uppercase">Shop</span>
                     </DropdownToggle>
-                  </UncontrolledDropdown>  */}
+                  </UncontrolledDropdown>  
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
@@ -415,7 +415,7 @@ class DemoNavbar extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem>*/}
                 </Nav>
-                <Nav className="ml-auto" navbar>
+                {/*<Nav className="ml-auto" navbar>
                 <NavItem className="d-none d-lg-block ml-lg-4" >
                     <Button
                       className="btn-neutral btn-icon"
@@ -435,7 +435,7 @@ class DemoNavbar extends React.Component {
                       </span>
                     </Button>
                   </NavItem> 
-                  </Nav>
+                </Nav>*/}
               </UncontrolledCollapse>
             </Container>
           </Navbar>
