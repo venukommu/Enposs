@@ -25,6 +25,7 @@ import { Card, CardBody,Container, Row, Col } from "reactstrap";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import CustomFooter from "components/Footers/CustomFooter";
 
 class Clients extends React.Component {
   state = {
@@ -174,6 +175,7 @@ class Clients extends React.Component {
           </section>
           </div>
         </main>
+        <CustomFooter />
         <CardsFooter />
       </>
     );

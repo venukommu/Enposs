@@ -36,6 +36,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 //import { appConfig } from "services/config.js";
 import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
+import CustomFooter from "components/Footers/CustomFooter";
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -222,6 +223,7 @@ class OurStory extends React.Component {
               </Card>
             </Container>
           </section>
+          <CustomFooter />
         <CardsFooter />
       </>
     );

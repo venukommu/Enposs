@@ -26,6 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import CustomFooter from "components/Footers/CustomFooter";
 class Timeline extends React.Component {
   
   state = {
@@ -440,6 +441,7 @@ class Timeline extends React.Component {
             </Container>
           </section>
         </main>
+        <CustomFooter />
         <CardsFooter />
       </>
     );

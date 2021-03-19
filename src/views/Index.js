@@ -45,6 +45,7 @@ import Carousel from "./IndexSections/Carousel.js";
 import Icons from "./IndexSections/Icons.js";
 import Login from "./IndexSections/Login.js";
 import Download from "./IndexSections/Download.js";
+import CustomFooter from "components/Footers/CustomFooter.js";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -90,6 +91,7 @@ class Index extends React.Component {
           <Login />
           <Download />
         </main>
+        <CustomFooter />
         <CardsFooter />
       </>
     );

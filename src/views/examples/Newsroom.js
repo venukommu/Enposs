@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 import {Container, Row, Col, Card, CardBody} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import CustomFooter from "components/Footers/CustomFooter";
 
 class Newsroom extends React.Component {
     state = {
@@ -48,7 +49,7 @@ class Newsroom extends React.Component {
        <DemoNavbar />
         <div className="position-relative">
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 bg-gradient-info shape-default" >
+            <div className="shape shape-style-1 bg-gradient-blue shape-default" >
                 <span />
                 <span />
                 <span />
@@ -127,6 +128,7 @@ class Newsroom extends React.Component {
           </Row>      
         </Container>
         </section>
+        <CustomFooter />
         <CardsFooter />
       </>
     );

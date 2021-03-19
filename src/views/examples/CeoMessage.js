@@ -26,6 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
+import CustomFooter from "components/Footers/CustomFooter";
 
 class CeoMessage extends React.Component {
   executeOnClick(isExpanded) {
@@ -268,6 +269,7 @@ class CeoMessage extends React.Component {
             </Container>
           </section>
         </main>
+        <CustomFooter />
         <CardsFooter />
       </>
     );

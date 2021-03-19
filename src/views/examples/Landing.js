@@ -46,6 +46,7 @@ import { appConfig } from "services/config.js";
 //import Download from "../IndexSections/Download.js";
 import Background from 'assets/img/theme/abstract-dark-layer.jpg';
 import CountUp from 'react-countup';
+import CustomFooter from "components/Footers/CustomFooter";
 
 class Landing extends React.Component {
   
@@ -1115,6 +1116,7 @@ class Landing extends React.Component {
             </Col>
     </Container>
     </section>*/}
+    <CustomFooter />
     <CardsFooter />
     </>
     );

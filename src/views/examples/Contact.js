@@ -20,6 +20,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import CustomFooter from "components/Footers/CustomFooter";
 
 class Contact extends React.Component {
     state = {
@@ -175,6 +176,7 @@ componentDidMount = async () => {
                 </Container>
             </section>
         </main>
+        <CustomFooter />
         <CardsFooter />
       </>
     );
