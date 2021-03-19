@@ -74,8 +74,8 @@ class CustomFooter extends React.Component {
                   </p>
 </Col>
               </Row>*/}
-              <Row className="row-grid mt-5 text-center justify-content-center  ">
-                <Col lg="2">
+              <Row className="row-grid mt-5 text-center justify-content-left">
+                <Col lg="3">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="ni ni-settings text-primary" />
                   </div>
@@ -93,7 +93,7 @@ class CustomFooter extends React.Component {
                     Benefits of Force
                   </p></a>
                 </Col>
-                <Col lg="2">
+                <Col lg="3">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="ni ni-ruler-pencil text-primary" />
                   </div>
@@ -110,7 +110,7 @@ class CustomFooter extends React.Component {
                     Certifications
                   </p></a>
                 </Col>
-                <Col lg="2">
+                <Col lg="3">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="fa fa-industry text-primary" />
                   </div>
@@ -131,7 +131,7 @@ class CustomFooter extends React.Component {
                     News
                   </p></a>
                 </Col>
-                <Col lg="2">
+                <Col lg="3">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="fa fa-support text-primary" />
                   </div>
