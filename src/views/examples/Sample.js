@@ -17,7 +17,7 @@
 */
 import React from "react";
 // nodejs library that concatenates classes
-import classnames from "classnames";
+//import classnames from "classnames";
 
 // reactstrap components
 import {
@@ -36,14 +36,15 @@ import {
   Col
 } from "reactstrap";
 import ShowMoreText from 'react-show-more-text';
-import CountUp from 'react-countup';
+//import CountUp from 'react-countup';
+import { Link } from "react-router-dom";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
-import Download from "../IndexSections/Download.js";
+//import Download from "../IndexSections/Download.js";
 
 class Sample extends React.Component {
   executeOnClick(isExpanded) {
@@ -596,7 +597,7 @@ class Sample extends React.Component {
                   <p className="lead text-muted">
                   Over 1234 customers, companies and industries use Force globally.
                   </p>
-                  <a>See customer stories</a>
+                  <Link>See customer stories</Link>
                 </Col>
               </Row>
               <Row>
