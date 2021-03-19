@@ -228,7 +228,7 @@ class Timeline extends React.Component {
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
-    <li>Power Saver Business</li>
+    <li>Power Saving Business</li>
     <li>New Renewable Energy Business</li>
     <li>Solar Cell and Solar Heat Business</li>
     <li>Opened ENPOSS Company</li></ul>
@@ -243,7 +243,7 @@ class Timeline extends React.Component {
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
-    <li>Power Saver Business for Apartment complex and industries</li>
+    <li>Power Saving Business for Apartment complex and industries</li>
     <li>Start power saving business in South Korea</li>  
     <li>R&D on Power Saving and Completed Safety test</li></ul>
     </VerticalTimelineElement>
