@@ -1036,7 +1036,7 @@ class Landing extends React.Component {
                   <Link>See customer stories</Link>
                 </Col>
               </Row>
-              <Row>
+              <Row className="justify-content-center text-center">
                 <Col className="mb-5 mb-lg-0" lg="3" md="6">
                   <div className="px-4">
                     <img
@@ -1051,9 +1051,8 @@ class Landing extends React.Component {
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
                       <p> FORCE saves consumption and safe to use.
-                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>
-                     {/*} <div className="mt-3">
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>
+                     {/*<div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="warning"
@@ -1078,11 +1077,11 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-    </div>*/}
+        </div>*/}
                     </div>
                   </div>
                 </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                 {/*} <Col className="mb-5 mb-lg-0" lg="3" md="6">
                   <div className="px-4">
                     <img
                       alt="..."
@@ -1099,7 +1098,7 @@ class Landing extends React.Component {
                       </h5>
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>                     {/*} <div className="mt-3">
+</p>                    <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="primary"
@@ -1124,7 +1123,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-  </div>*/}
+  </div>
                     </div>
                   </div>
                 </Col>
@@ -1168,7 +1167,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-</div>*/}
+</div>
                     </div>
                   </div>
                 </Col>
@@ -1186,8 +1185,7 @@ class Landing extends React.Component {
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
                       <p> FORCE saves consumption and safe to use.
-                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>                     {/*} <div className="mt-3">
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="success"
@@ -1212,10 +1210,10 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-</div>*/}
+</div>
                     </div>
                   </div>
-                </Col>
+        </Col> */}
               </Row>
             </Container>
           </section>
