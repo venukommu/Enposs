@@ -154,7 +154,7 @@ class CustomFooter extends React.Component {
                 </Col>
               </Row>
             </Container>
-            {/*SVG separator 
+            {/*SVG separator */}
             <div className="separator separator-bottom separator-skew zindex-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +169,7 @@ class CustomFooter extends React.Component {
                   points="2560 0 2560 100 0 100"
                 />
               </svg>
-            </div>*/}
+            </div>
           </section>
          
         </footer>

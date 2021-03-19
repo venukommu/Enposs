@@ -221,7 +221,7 @@ class Force extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section pb-0 bg-gradient-default">
+          <section className="section pb-0 bg-gradient-red">
            <Container>
            <Row className="row-grid">
               <Col lg="12">
