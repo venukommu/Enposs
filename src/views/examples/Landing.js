@@ -1050,7 +1050,9 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">Ryan Tompson</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p> Over 1234 customers, companies and industries use Force globally.</p>
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>
                      {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
@@ -1095,8 +1097,9 @@ class Landing extends React.Component {
                           Customer Review
                         </small>
                       </h5>
-                      <p> Over 1234 customers, companies and industries use Force globally.</p>
-                     {/*} <div className="mt-3">
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>                     {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="primary"
@@ -1138,8 +1141,9 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">Alexander Smith</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p> Over 1234 customers, companies and industries use Force globally. </p>
-                     {/*} <div className="mt-3">
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>                     {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="info"
@@ -1181,8 +1185,9 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">John Doe</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p> Over 1234 customers, companies and industries use Force globally. </p>
-                     {/*} <div className="mt-3">
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>                     {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="success"
