@@ -415,7 +415,7 @@ class DemoNavbar extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem>*/}
                 </Nav>
-                <Nav className="ml-auto">
+                <Nav className="ml-auto" navbar>
                 <NavItem className="d-none d-lg-block ml-lg-4" >
                     <Button
                       className="btn-neutral btn-icon"
