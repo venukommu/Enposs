@@ -16,12 +16,13 @@
 
 */
 import React from "react";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
+import { Link } from "react-router-dom";
 
-/*const items = [
+const items = [
   {
     src: require("assets/img/theme/bulb.png"),
     altText: "",
@@ -34,22 +35,22 @@ import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
     caption: "",
     header: ""
   }
-];*/
+];
 
 class Carousel extends React.Component {
     state = {
-      carouselcontent: [],
-      carouselimage: [],
+      //carouselcontent: [],
+      //carouselimage: [],
       error: null,
    }
   
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    //const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
-    const checkStatus = resp => {
+      /*const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
       }
@@ -61,7 +62,7 @@ class Carousel extends React.Component {
       'Content-Type': 'application/json',
     };
 
-    try {
+  try {
       const carouselcontent = await fetch(`${appConfig.apiURL}/carouselcontent`, {
         method: 'GET',
         headers: headers,
@@ -71,18 +72,18 @@ class Carousel extends React.Component {
       this.setState({ carouselcontent, carouselimage: carouselcontent.names });
     } catch (error) {
       this.setState({ error });
-    }
+    }*/
   };
 
   render() {
-    const { error, carouselimage} = this.state;
+    //const { error, carouselimage} = this.state;
 
     // Print errors if any
-    if (error) {
-      return <div>An error occured: {error.message}</div>;
-    }
-    const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
-    caption: ""}))
+   // if (error) {
+     // return <div>An error occured: {error.message}</div>;
+    //}
+    //const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
+    //caption: ""}))
 
     return (
       <>
@@ -98,11 +99,13 @@ class Carousel extends React.Component {
           <Container className="py-md">
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
-                  <h4 className="text-white font-weight-light">
-                    {this.state.carouselcontent.Title}</h4>,
+                  <h3 className="text-white"   style={{ fontSize: "48px", fontWeight: "800px"}}>
+                  Choose a better way to live and save.</h3>
                         <p className="lead text-white mt-4">
-                        {this.state.carouselcontent.description}
+                        {/*{this.state.carouselcontent.description}*/}
                         </p>
+                        <Link class="btn-white mt-4 btn btn-default"  to="/store">Shop</Link>
+                        <Link class="btn-white mt-4 btn btn-default">Talk to Sales</Link>
               </Col>
               <Col className="mb-lg-auto" lg="6">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-right">

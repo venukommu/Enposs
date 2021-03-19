@@ -34,7 +34,7 @@ import {
   Row,
   Col
 } from "reactstrap";
-//import Carousel from "../IndexSections/Carousel.js";
+import Carousel from "../IndexSections/Carousel.js";
 //import Login from "../IndexSections/Login.js";
 
 // core components
@@ -450,8 +450,8 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          {/*<Carousel />
-            <section className="section">
+         <Carousel />
+             {/*<section className="section">
              <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
@@ -1218,7 +1218,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-             <section className="section section-lg pt-0">
+             {/*<section className="section section-lg pt-0">
             <Container>
               <Card className="bg-gradient-warning shadow-lg border-0">
                 <div className="p-5">
@@ -1227,11 +1227,11 @@ class Landing extends React.Component {
                       <h3 className="text-white">
                       Choose a better way to live and save.
                       </h3>
-                   {/*<p className="lead text-white mt-3">
+                   <p className="lead text-white mt-3">
                         I will be the leader of a company that ends up being
                         worth billions of dollars, because I got the answers. I
                         understand culture.
-        </p>*/}
+        </p>
                     </Col>
                     <Col className="ml-lg-auto" lg="3">
                       <Button
@@ -1257,7 +1257,7 @@ class Landing extends React.Component {
                 </div>
               </Card>
             </Container>
-          </section>
+          </section>*/}
         </main>
         {/*<section>
         <Container className="container-lg">
