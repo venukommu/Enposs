@@ -256,7 +256,7 @@ class Landing extends React.Component {
                           <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
                               style={{ textAlign : "left" }}>
-                              <span  className="text-white"><br />Total reduced CO<sub>2</sub></span>
+                              <span  className="text-white text-lead">Total reduced CO<sub>2</sub></span>
                             </h5>
                           </Col>
                         </Row>
