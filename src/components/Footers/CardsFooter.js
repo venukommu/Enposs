@@ -64,15 +64,15 @@ class CardsFooter extends React.Component {
    
           <Container>
             <Row className="row-grid align-items-center my-md">
-              <Col lg="6">
-                <h3 className="text-primary font-weight-light mb-2">
-                  Forge ahead with <span className="font-italic text-warning" >FORCE</span>
+              <Col lg="8">
+                <h3 className="text-danger text-lead mb-2 text-uppercase" style={{fontSize: "48px", fontWeight: "800px"}}>
+                  Forge ahead with <span className="font-italic text-warning text-lead">FORCE</span>
                 </h3>
                 <h4 className="mb-0 font-weight-light">
                   Let's get in touch on any of these platforms.
                 </h4>
               </Col>
-              <Col className="text-lg-center btn-wrapper" lg="6">
+              <Col className="text-lg-center btn-wrapper" lg="4">
                 <Button
                   className="btn-icon-only rounded-circle"
                   color="twitter"
@@ -112,7 +112,7 @@ class CardsFooter extends React.Component {
                   //target="_blank"
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-dribbble" />
+                    <i className="fa fa-instagram" />
                   </span>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip829810202">
@@ -127,11 +127,11 @@ class CardsFooter extends React.Component {
                   //target="_blank"
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-github" />
+                    <i className="fa fa-linkedin" />
                   </span>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip495507257">
-                  Star on Github
+                  Follow us
                 </UncontrolledTooltip>
               </Col>
             </Row>

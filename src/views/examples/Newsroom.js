@@ -22,7 +22,6 @@ import { Link } from "react-router-dom";
 import {Container, Row, Col, Card, CardBody} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import CustomFooter from "components/Footers/CustomFooter";
 
 class Newsroom extends React.Component {
     state = {
@@ -128,7 +127,6 @@ class Newsroom extends React.Component {
           </Row>      
         </Container>
         </section>
-        <CustomFooter />
         <CardsFooter />
       </>
     );

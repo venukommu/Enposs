@@ -22,7 +22,6 @@ import React from "react";
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import CustomFooter from "components/Footers/CustomFooter";
 
 const items = [
   {
@@ -180,7 +179,6 @@ class Certifications extends React.Component {
         {/*</Card>*/}
         </Container>
         </section>
-        <CustomFooter />
         <CardsFooter />
       </>
     );

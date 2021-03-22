@@ -22,7 +22,6 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import CustomFooter from "components/Footers/CustomFooter";
 //import { appConfig } from "services/config.js";
 
 // index page sections
@@ -243,7 +242,6 @@ class InstallForce extends React.Component {
             </Container>
           </section>
         </main>
-        <CustomFooter />
         <CardsFooter />
       </>
     );

@@ -18,7 +18,6 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import CustomFooter from "components/Footers/CustomFooter";
 //import { appConfig } from "services/config.js";
 
 // index page sections
@@ -225,7 +224,7 @@ class Force extends React.Component {
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-3 text-white justify-content-center">Features</h1>
+                <h1 className="display-3 text-white justify-content-center"   style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px"}}>Features</h1>
               </Col>
             </Row>
             <Row className="row-grid">
@@ -459,7 +458,6 @@ class Force extends React.Component {
             </div>
                   </section>*/}
         </main>
-        <CustomFooter />
         <CardsFooter />
       </>
     );

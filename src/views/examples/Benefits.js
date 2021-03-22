@@ -33,7 +33,6 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import CustomFooter from "components/Footers/CustomFooter";
 //import { appConfig } from "services/config.js";
 //import Background from 'assets/img/theme/12818.jpg';
 
@@ -312,7 +311,6 @@ class Benefits extends React.Component {
             </Card>
             </Container>
           </section>
-          <CustomFooter />
         <CardsFooter />
       </>
     );
