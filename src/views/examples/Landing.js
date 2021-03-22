@@ -44,7 +44,7 @@ import { appConfig } from "services/config.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/abstract-dark-layer.jpg';
+import Background from 'assets/img/theme/pexels-quang-nguyen-vinh-2131935.jpg';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
@@ -256,7 +256,7 @@ class Landing extends React.Component {
                           <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
                               style={{ textAlign : "left" }}>
-                              <span  className="text-primary"><br />Total reduced CO<sub>2</sub></span>
+                              <span  className="text-white"><br />Total reduced CO<sub>2</sub></span>
                             </h5>
                           </Col>
                         </Row>
