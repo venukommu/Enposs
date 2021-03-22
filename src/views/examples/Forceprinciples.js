@@ -188,7 +188,7 @@ class Forceprinciples extends React.Component {
                   <CardBody> 
                       <h6 className="text-white">
                       <ul>
-                          <li>Usage of electricity saved by 5 per cent</li>
+                          <li>Electricity is saved between 5% to 15%</li>
                           <li>Increase surplus electrons by accelerating anion</li>
                       </ul> 
                       </h6>
