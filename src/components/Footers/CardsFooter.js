@@ -65,7 +65,7 @@ class CardsFooter extends React.Component {
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="8">
-                <h3 className="text-danger text-lead mb-2 text-uppercase" style={{fontSize: "48px", fontWeight: "800px"}}>
+                <h3 className="text-dark text-lead mb-2 font-italic" style={{fontSize: "48px", fontWeight: "800px"}}>
                   Forge ahead with <span className="font-italic text-warning text-lead">FORCE</span>
                 </h3>
                 <h4 className="mb-0 font-weight-light">
