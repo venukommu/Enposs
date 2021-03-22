@@ -17,7 +17,7 @@
 */
 import React from "react";
 import { Link } from "react-router-dom";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, CardBody,Container, Row, Col } from "reactstrap";
@@ -28,16 +28,16 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 class Clients extends React.Component {
   state = {
-    //portfoliocontent: [],
-    //imagenames: [],
+    clientscontent: [],
+    clientimages: [],
     error: null,
   }
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
-    //const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
-      /*const checkStatus = resp => {
+    const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
       }
@@ -50,20 +50,20 @@ class Clients extends React.Component {
     };
 
    try {
-      const portfoliocontent = await fetch(`${appConfig.apiURL}/portfolio`, {
+      const clientscontent = await fetch(`${appConfig.apiURL}/clients`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ portfoliocontent, imagenames: portfoliocontent.names});
+      this.setState({ clientscontent, clientimages: clientscontent.images});
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
 
   render() {
-  const { error} = this.state;
+  const { error, clientscontent, clientimages} = this.state;
  // const { error, portfoliocontent,imagenames} = this.state;
 
 
@@ -93,7 +93,7 @@ class Clients extends React.Component {
                 <Row className="align-items-center justify-content-center">
                   <Col className="text-center" lg="6">
                    {/* <h1 className="display-3 text-white">{portfoliocontent.Title}</h1>*/}
-                   <h1 className="display-3 text-white">Clients</h1>
+                   <h1 className="display-3 text-white">{/*Clients*/}{clientscontent.Title}</h1>
                   </Col>
                 </Row>
               </div>
@@ -120,21 +120,22 @@ class Clients extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                   {/*} {imagenames.map((name, index) => (
+                   { 
+                   clientimages.map((name, index) => (
                     <Col lg="4" key={index}>
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" to={`/${name.imagename}`} tag={Link}>*/}
-                        {/* <img 
+                        <CardBody className="py-5" to={`/${name.caption}`} tag={Link}>
+                         <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
                             src={`${appConfig.apiURL}${name.url}`}
-                            src={`${appConfig.apiURL}${name.url}`}
+                            //src={`${appConfig.apiURL}${name.url}`}
                           />
                         </CardBody>
                       </Card>
                     </Col>
-                    ))}*/}
-                     <Col lg="4">
+                    ))}
+                     {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5" to="/mcdonalds" tag={Link}>
                         <img
@@ -166,7 +167,7 @@ class Clients extends React.Component {
                           />
                         </CardBody>
                       </Card>
-                    </Col>
+                   </Col>*/}
                   </Row>
                 </Col>
               </Row>

@@ -1,5 +1,5 @@
 import React from "react";
-import classnames from "classnames";
+//import classnames from "classnames";
 
 // reactstrap components
 import {
@@ -15,24 +15,48 @@ import {
   Row,
   Col
 } from "reactstrap";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import contactpage from 'strapi/contactpage';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Contact extends React.Component {
     state = {
         contacts: [],
-        contactimages: [],
+        //contactimages: [],
+        name: '',
+        email: '',
+        contactnum: '',
+        message: '',
         error: null
      }
-componentDidMount = async () => {
+
+    nameHandler = (event) => {
+      this.setState({name: event.target.value});
+    }
+
+    emailHandler = (event) => {
+      this.setState({email: event.target.value});
+    }
+  
+    contactnumberHandler = (event) => {
+      this.setState({contactnum: event.target.value});
+    }
+
+    messageHandler = (event) => {
+      this.setState({message: event.target.value});
+    }
+
+  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
     
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -48,7 +72,7 @@ componentDidMount = async () => {
     };
   
     try {
-      const contacts = await fetch(`${appConfig.apiURL}/contacts`, {
+      const contacts = await fetch(`${appConfig.apiURL}/contact`, {
         method: 'GET',
         headers: headers,
       })
@@ -57,10 +81,29 @@ componentDidMount = async () => {
       this.setState({ contacts });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
   render() {
-    const { error} = this.state;
+    const { error, contacts, name, email, contactnum, message} = this.state;
+
+    let isEmpty = !name || !email || !contactnum || !message;
+
+    const handleSubmit = async (e) => {
+      //showAlert({ msg: 'accessing user data. please wait...' });
+      e.preventDefault();
+
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+      } else {
+        let response = await contactpage( {name, email, contactnum, message} );
+        if (response.status === 200) {
+          toast.success(response.data.message,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+          this.setState({name: '',email: '',contactnum: '',message: ''});
+        } else {
+          toast.error(response.data.error,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        }
+      }
+    }
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -105,15 +148,12 @@ componentDidMount = async () => {
                     <Col lg="8">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
-                            <h4 className="mb-1">How Can We Help?</h4>
+                            <h4 className="mb-1">{/*How Can We Help?*/}{contacts.Title}</h4>
                             <p className="mt-0">
-                            Let's schedule a call to assess your requirement..
+                            {/*Let's schedule a call to assess your requirement..*/}
+                            {contacts.subtitle}
                             </p>
-                            <FormGroup
-                            className={classnames("mt-5", {
-                                //focused: this.state.nameFocused
-                            })}
-                            >
+                            <FormGroup role="form"                            >
                             <InputGroup className="input-group-alternative">
                                 <InputGroupAddon addonType="prepend">
                                 <InputGroupText>
@@ -122,17 +162,15 @@ componentDidMount = async () => {
                                 </InputGroupAddon>
                                 <Input
                                 placeholder="Your name"
-                                type="text"
-                                onFocus={e => this.setState({ nameFocused: true })}
-                                onBlur={e => this.setState({ nameFocused: false })}
+                                type="text" id="name"
+                                value={name}
+                                onChange={this.nameHandler} 
+                                //onFocus={e => this.setState({ nameFocused: true })}
+                                //onBlur={e => this.setState({ nameFocused: false })}
                                 />
                             </InputGroup>
                             </FormGroup>
-                            <FormGroup
-                            className={classnames({
-                                //focused: this.state.emailFocused
-                            })}
-                            >
+                            <FormGroup>
                             <InputGroup className="input-group-alternative">
                                 <InputGroupAddon addonType="prepend">
                                 <InputGroupText>
@@ -141,9 +179,26 @@ componentDidMount = async () => {
                                 </InputGroupAddon>
                                 <Input
                                 placeholder="Email address"
-                                type="email"
-                                onFocus={e => this.setState({ emailFocused: true })}
-                                onBlur={e => this.setState({ emailFocused: false })}
+                                type="email" id="email" value={email}
+                                onChange={this.emailHandler}
+                                //onFocus={e => this.setState({ emailFocused: true })}
+                                //onBlur={e => this.setState({ emailFocused: false })}
+                                />
+                            </InputGroup>
+                            </FormGroup>
+                            <FormGroup>
+                            <InputGroup className="input-group-alternative">
+                                <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                    <i className="ni ni-mobile-button" />
+                                </InputGroupText>
+                                </InputGroupAddon>
+                                <Input
+                                placeholder="Contact number"
+                                type="text" id="number" value={contactnum}
+                                onChange={this.contactnumberHandler}
+                                //onFocus={e => this.setState({ emailFocused: true })}
+                                //onBlur={e => this.setState({ emailFocused: false })}
                                 />
                             </InputGroup>
                             </FormGroup>
@@ -154,7 +209,8 @@ componentDidMount = async () => {
                                 name="name"
                                 placeholder="Type a message..."
                                 rows="4"
-                                type="textarea"
+                                type="textarea" id="message" value={message}
+                                onChange={this.messageHandler}
                             />
                             </FormGroup>
                             <div>
@@ -164,6 +220,7 @@ componentDidMount = async () => {
                                 color="default"
                                 size="lg"
                                 type="button"
+                                onClick={handleSubmit}
                             >
                                 Send Message
                             </Button>

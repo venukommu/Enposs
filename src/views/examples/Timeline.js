@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -26,20 +26,19 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import Markdown from 'react-markdown';
 class Timeline extends React.Component {
   
   state = {
-    aboutcompany: [],
-    ceomessage: [],
-    error: null,
-    bannerimage: [],
-    productimage: []
+    timeline: [],
+    timelinearray: [],
+    error: null
  }
  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     // this.refs.main.scrollTop = 0;
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -55,32 +54,20 @@ class Timeline extends React.Component {
     };
   
     try {
-      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
+      const timeline = await fetch(`${appConfig.apiURL}/timeline`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
+      this.setState({ timeline, timelinearray: timeline.timelinearray.timeline });
     } catch (error) {
       this.setState({ error });
     }
 
-    try {
-      const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ ceomessage });
-    } catch (error) {
-      this.setState({ error });
-    }*/
-
   };
   render() {
-    const { error} = this.state;
+    const { error, timeline, timelinearray} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -108,7 +95,7 @@ class Timeline extends React.Component {
                 <div className="col px-0">
                   <Row className="align-items-center justify-content-center">
                     <Col className="text-center" lg="6">
-                      <h1 className="display-3 text-white">Timeline</h1>
+                      <h1 className="display-3 text-white">{/*Timeline*/}{timeline.Title}</h1>
                     </Col>
                   </Row>
                 </div>
@@ -217,7 +204,15 @@ class Timeline extends React.Component {
                       <Col lg="9">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
     <VerticalTimeline>
-    <VerticalTimelineElement
+    {timelinearray.map(tline => (
+      <VerticalTimelineElement key={tline.id}
+      className={'vertical-timeline-element--' + tline.classname}
+      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+      date={tline.year}
+      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+      ><Markdown source={tline.description} /></VerticalTimelineElement>
+    ))}  
+    {/*<VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
     date="2005"
@@ -225,7 +220,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <ul>
     <li>Power Saver Business</li>
     <li>New Renewable Energy Business</li>
@@ -240,7 +235,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <ul>
     <li>Power Saver Business for Apartment complex and industries</li>
     <li>Start power saving business in South Korea</li>  
@@ -254,7 +249,7 @@ class Timeline extends React.Component {
     //icon={<WorkIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Art Director</h3>
-    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
     <div  style={{ textAlign : "left" }}><ul>
     <li>Patent application for power improvement device "FORCE"</li>
     <li>Applied for Patent for Domestic Power Saver</li>
@@ -277,7 +272,7 @@ class Timeline extends React.Component {
    // icon={<WorkIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
-    <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
       <div  style={{ textAlign : "left" }}>
     <ul>
     <li> Established Enposs</li>
@@ -294,7 +289,7 @@ class Timeline extends React.Component {
    // icon={<WorkIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
-    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>FORCE: Obtained IACS certification</li>
@@ -312,7 +307,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>SGS TEST showed 6% reduction of power consumption</li>
@@ -333,7 +328,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-    <h4 className="vertical-timeline-element-subtitle">Certification</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Certification</h4>
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>FORCE: MET certification with NLTC</li>
@@ -348,7 +343,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <ul>
     <li>
     U.S. patent registration
@@ -362,7 +357,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <ul>
     <li>Vietnam patent registration</li>
     <li>Russian National Railroad MOU signed</li></ul>
@@ -375,7 +370,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <ul>
       <li>Establish JV in Vietnam</li>
       <li>Award classify from KR</li>
@@ -390,7 +385,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>Opened a branch office in Los Angeles, USA</li>
@@ -404,7 +399,7 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
     <ul>
     <li>Establish Branch office in LA, USA</li>
     <li>Alloted as the Preffered supply company for</li>
@@ -420,13 +415,13 @@ class Timeline extends React.Component {
     //icon={<SchoolIcon />}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
    <ul><li>Acquired a business office in Otama Village, Adachi District, Fukushima Prefecture (planned to have a factory)</li></ul>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
     //icon={<StarIcon />}
-  />
+  />*/}
 </VerticalTimeline>
                        {/*} </p>*/}
                         <a href="#pablo" onClick={e => e.preventDefault()}>

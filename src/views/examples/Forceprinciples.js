@@ -20,6 +20,7 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
+import Markdown from 'react-markdown';
 
 // index page sections
 
@@ -28,6 +29,7 @@ class Forceprinciples extends React.Component {
   state = {
     forceprinciple: [],
     forceprincipleimage: [],
+    mainpoints: [],
     error: null,
   };
 
@@ -56,7 +58,7 @@ class Forceprinciples extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forceprinciple, forceprincipleimage: forceprinciple.image });
+      this.setState({ forceprinciple, forceprincipleimage: forceprinciple.image, mainpoints: forceprinciple.mainpointsarray.mainpoints});
     } catch (error) {
       this.setState({ error });
     }
@@ -67,7 +69,7 @@ class Forceprinciples extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error, forceprinciple,forceprincipleimage} = this.state;
+    const { error, forceprinciple,forceprincipleimage, mainpoints} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -148,7 +150,7 @@ class Forceprinciples extends React.Component {
                           APSIC - Active Power saving by increasing conductivity.
                           Tourmaline mixed with magnesium and the likes, produces Electromagnetic Flux,EMF 7 which emits subtle current. EMF 6 is produced ionization and electrification of copper plates.
                           The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.*/}
-                          {forceprinciple.description}
+                          <Markdown source={forceprinciple.description} />
                           </p>
                           <a href ={require('assets/img/pdf-reports/PresentationMaterial.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">
                           <CardImg
@@ -169,19 +171,22 @@ class Forceprinciples extends React.Component {
           <section>
             <Container>
               <Row className="row-grid">
-              <Col lg="4">
+              {mainpoints.map(mainpoint => (
+              <Col lg="4" key={mainpoint.id}>
                   <Card className="bg-gradient-purple shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
-                      <ul>
+                        <Markdown source={mainpoint.description} />
+                      {/*<ul>
                           <li>Usage of electricity saved by 5 per cent</li>
                           <li>Increase surplus electrons by accelerating anion</li>
-                      </ul> 
+                      </ul>*/} 
                       </h6>
                   </CardBody>
                   </Card>
               </Col>
-              <Col lg="4">
+              ))}
+              {/*<Col lg="4">
                   <Card className="bg-gradient-purple shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
@@ -206,7 +211,7 @@ class Forceprinciples extends React.Component {
                       </h6>
                   </CardBody>
                   </Card>
-              </Col>
+                </Col>*/}
               </Row>
             </Container>
           </section>

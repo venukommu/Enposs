@@ -62,6 +62,7 @@ class Landing extends React.Component {
     awesomefeaturesimage: {},
     enpossproducts: [],
     enpossproductsimages: {},
+    countnum: 0,
     error: null,
   };
 
@@ -86,13 +87,13 @@ class Landing extends React.Component {
     };
 
     try {
-      const homepagebanner = await fetch(`${appConfig.apiURL}/homepage`, {
+      const homepagebanner = await fetch(`${appConfig.apiURL}/home`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner, homewidgets: homepagebanner.homewidgets, homeimage: homepagebanner.image  });
+      this.setState({ homepagebanner, homewidgets: homepagebanner.homewidgets, homeimage: homepagebanner.image, countnum: homepagebanner.countup});
     } catch (error) {
       this.setState({ error });
     }
@@ -160,8 +161,9 @@ class Landing extends React.Component {
   
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner, homewidgets, homeimage } = this.state;
+    const { error,homepagebanner, homewidgets, homeimage, countnum} = this.state;
     // Print errors if any
+    
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
@@ -250,7 +252,7 @@ class Landing extends React.Component {
                               className="btn-icon mt-2 mb-3 mb-sm-0"
                               color="danger"
                             >             
-                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={countnum} /> </span> tons
                             </Button>                      
                             </h3>
                           </Col>

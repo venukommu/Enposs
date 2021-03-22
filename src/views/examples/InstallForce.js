@@ -22,14 +22,17 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
+import Markdown from 'react-markdown';
 
 // index page sections
 
 class InstallForce extends React.Component {
   
   state = {
-    forcewidgets: [],
+    forcecontent: [],
+    forceinstallimage: [],
+    forceinstallsteps: [],
     error: null,
     plainTabs: 1
   };
@@ -45,7 +48,7 @@ class InstallForce extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -59,16 +62,16 @@ class InstallForce extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forcecontent = await fetch(`${appConfig.apiURL}/forceinstall`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forcecontent, forceinstallimage: forcecontent.image, forceinstallsteps: forcecontent.forceinstallsteps });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -76,7 +79,7 @@ class InstallForce extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
+    const { error, forcecontent,forceinstallimage, forceinstallsteps} = this.state;
 
     // Print errors if any
     if (error) {
@@ -127,7 +130,7 @@ class InstallForce extends React.Component {
                
                   <Row>
                     <Col lg="6">
-                      <div><h1 className="display-3 text-white">How To Install</h1>
+                      <div><h1 className="display-3 text-white">{/*How To Install*/}{forcecontent.Title}</h1>
                       </div>
                     </Col>
                   </Row>
@@ -159,7 +162,8 @@ class InstallForce extends React.Component {
                   <Card className="bg-gradient-white">
                   <CardBody>
                     <CardImg alt="..."
-                      src={`${require("assets/img/theme/install.jpg")}`}/>
+                      src={`${appConfig.apiURL}${forceinstallimage.url}`} />
+                      {/*src={`${require("assets/img/theme/install.jpg")}`*/}
                   </CardBody>
                   </Card>
                   {/*<Card className="bg-gradient-info text-white">
@@ -187,7 +191,7 @@ class InstallForce extends React.Component {
                 pills
                 role="tablist"
               >
-                <NavItem>
+                {/*<NavItem>
                   <NavLink
                     aria-selected={this.state.plainTabs === 1}
                     className={classnames("mb-sm-3 mb-md-0", {
@@ -212,12 +216,27 @@ class InstallForce extends React.Component {
                   >
                     Steps of installation
                   </NavLink>
+                  </NavItem>*/}
+                {forceinstallsteps.map(steps => (
+                <NavItem key={steps.id}>
+                  <NavLink
+                    aria-selected={this.state.plainTabs === steps.id}
+                    className={classnames("mb-sm-3 mb-md-0", {
+                      active: this.state.plainTabs === steps.id
+                    })}
+                    onClick={e => this.toggleNavs(e, "plainTabs", steps.id)}
+                    href="#pablo"
+                    role="tab"
+                  >
+                    {/*Safety measures*/}{steps.Title}
+                  </NavLink>
                 </NavItem>
+                ))}
               </Nav>
             </div>
             <Card className="shadow">
               <CardBody>
-                <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
+                {/*<TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
                     <ul>
                       <li>Should confirm the main circuit breaker is open.</li>
@@ -234,10 +253,17 @@ class InstallForce extends React.Component {
                       <li>Turn on the main circuit breaker.</li>
                     </ul>
                   </TabPane>
-                </TabContent>
+                  </TabContent>*/}
+              {forceinstallsteps.map(steps => (
+              <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
+                <TabPane tabId={"plainTabs" + steps.id}>
+                  <Markdown source={steps.description} />
+                </TabPane>
+              </TabContent>
+              ))}
               </CardBody>
             </Card>
-                  </Col>
+              </Col>
               </Row>
             </Container>
           </section>

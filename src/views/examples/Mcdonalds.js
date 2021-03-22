@@ -16,14 +16,14 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-const items = [
+/*const items = [
   {
     src: require("assets/img/theme/A18040103_10004_0.jpg"),
     altText: "",
@@ -66,7 +66,7 @@ const items = [
     caption: "",
     header: ""
   }
-];
+];*/
 
 class Mcdonalds extends React.Component {
     state = {
@@ -78,7 +78,7 @@ class Mcdonalds extends React.Component {
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -94,27 +94,27 @@ class Mcdonalds extends React.Component {
     };
 
     try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/carouselcontent`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/mcdonalds`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent, carouselimage: carouselcontent.names });
+      this.setState({ carouselcontent, carouselimage: carouselcontent.images });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
 
   render() {
-    const { error} = this.state;
+    const { error, carouselcontent, carouselimage} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    //const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
-    //caption: ""}))
+    const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
+    caption: ""}))
 
     return (
       <>
@@ -134,7 +134,7 @@ class Mcdonalds extends React.Component {
           <div className="col px-0">
             <Row className="align-items-center justify-content-center">
               <Col className="text-center" lg="6">
-                <h1 className="display-3 text-white">McDonald's</h1>
+                <h1 className="display-3 text-white">{/*McDonald's*/}{carouselcontent.Title}</h1>
               </Col>
             </Row>
           </div>

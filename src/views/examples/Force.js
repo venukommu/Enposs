@@ -235,14 +235,14 @@ class Force extends React.Component {
             </Row>
             <Row className="row-grid">
               {forcefeatures.map(feature => (
-              <Col lg="2">
+              <Col lg="2" key={feature.id}>
                 <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-3"> 
                     <div className={"icon icon-shape icon-shape-"+feature.classname+" rounded-circle mb-4 text-dark"}>
                     {feature.id}
                     </div>
                       <h6 className="text-dark">
-                      {feature.feature}
+                      <Markdown source={feature.feature} />
                       </h6>
                   </CardBody>
                 </Card>
