@@ -122,14 +122,16 @@ class Benefits extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="6">
+                    <Col lg="8">
                     {/*< ProductList />*/}
                       <div>
-                        <h1 className="display-3 text-white">
-                        Brilliant Benefits<br></br>
+                      <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        Enjoy benefits that stack up
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h4 className="display-5 text-white">Save Electricity & money</h4>
+                        <h3 className="display-4 text-info"
+                        style={{ textAlign : "left" , marginBottom: "80px" }}>
+                          the knock-on effects are significant as time goes on</h3>
                       </div>
                     </Col>
                   </Row>
@@ -160,7 +162,11 @@ class Benefits extends React.Component {
             <Container>
             <Card className="card-profile shadow mt--200" >
               <Row className="row-grid align-items-center justify-content-center">
-                <Col lg="12">
+                <Col lg="12"> 
+                      <h4 className="pt-4 pl-4 display-3 font-weight-bold text-primary">
+                            Expect several direct benefits
+                      </h4>
+                      <p className="px-4">(Besides helping to save the planet)</p>
                     <CardImg
                       alt="..."
                      src={require("assets/img/theme/asdf.PNG")}
