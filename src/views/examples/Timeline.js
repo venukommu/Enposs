@@ -26,6 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import { Chrono } from "react-chrono";
+import Background from 'assets/img/theme/pexels-aleksandar-pasaric-with-mask-layer.jpg';
 //import 'react-vertical-timeline-component/style.min.css';
 
 const items = [
@@ -153,16 +154,14 @@ class Timeline extends React.Component {
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
             <div className="shape shape-style-1 shape-default"
-             >
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
+             style= {{
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              backgroundImage: `url("${Background}")`,
+              //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+             }}>
+              
               </div>
               <Container className="shape-container d-flex align-items-center py-lg">
                 <div className="col px-0">
@@ -173,7 +172,7 @@ class Timeline extends React.Component {
                   </Row>
                 </div>
               </Container>
-              {/* SVG separator */}
+              {/* SVG separator 
               <div className="separator separator-bottom separator-skew">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +187,7 @@ class Timeline extends React.Component {
                     points="2560 0 2560 100 0 100"
                   />
                 </svg>
-              </div>
+              </div>*/}
             </section>
             {/* 1st Hero Variation */}
           </div>
@@ -278,7 +277,7 @@ class Timeline extends React.Component {
                       <Col lg="12">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
                       <div style={{whiteSpace: 'pre-line'}}>
-                        <Chrono items={items} theme={{primary: "blue", secondary: "yellow", cardBgColor: "red", cardForeColor: "white" }} mode="VERTICAL_ALTERNATING" />
+                        <Chrono items={items} mode="VERTICAL_ALTERNATING" />
                       </div>
     {/*<VerticalTimeline>
     <VerticalTimelineElement
