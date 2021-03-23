@@ -30,7 +30,8 @@ class Newsroom extends React.Component {
   
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
-    
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
   };
 
   render() {

@@ -35,7 +35,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import { appConfig } from "services/config.js";
 //import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/pexels-aleksandar-pasaric-1119723.jpg';
+import Background from 'assets/img/theme/pexels-griffin-wooldridge-5432865.jpg';
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -131,7 +131,7 @@ class OurStory extends React.Component {
                     <Col lg="8">
                     {/*< ProductList />*/}
                     <div>
-                        <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "40px" }}>
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         Strategically Built for saving Power and the Planet
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
@@ -166,9 +166,9 @@ class OurStory extends React.Component {
             {/* 1st Hero Variation */}
           </div>
            
-      <section className="section section-lg pt-lg-0 mt--200">
+      <section className="section section-lg pt-lg-0 mt--100">
             <Container>
-            <Card className="card-profile shadow mt--200 bg-lighter">
+            <Card className="card-profile shadow mt--100 bg-lighter">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
                    {/*} <CardImg
