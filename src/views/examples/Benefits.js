@@ -103,7 +103,7 @@ class Benefits extends React.Component {
         <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 bg-gradient-gray-dark">
+            <div className="shape shape-style-1 bg-gradient-info">
             {/*} style= {{
                 backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,

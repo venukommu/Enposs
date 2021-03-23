@@ -30,7 +30,8 @@ class Newsroom extends React.Component {
   
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
-    
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
   };
 
   render() {
@@ -48,7 +49,7 @@ class Newsroom extends React.Component {
        <DemoNavbar />
         <div className="position-relative">
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 bg-gradient-info shape-default" >
+            <div className="shape shape-style-1 bg-gradient-blue shape-default" >
                 <span />
                 <span />
                 <span />
@@ -65,7 +66,7 @@ class Newsroom extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-white">
+                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         Newsroom
                         </h6>
                        </div>

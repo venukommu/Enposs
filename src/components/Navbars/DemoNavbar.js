@@ -33,6 +33,7 @@ import {
   Row,
   Col,
   //NavItem,
+  //Button,
   //NavLink,
   DropdownMenu,
   DropdownItem
@@ -76,7 +77,7 @@ class DemoNavbar extends React.Component {
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
-                  src={require("assets/img/brand/logo.png")}
+                  src={require("assets/img/brand/EnpossLogo.png")}
                 />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
@@ -95,7 +96,7 @@ class DemoNavbar extends React.Component {
                       <Link to="/">
                         <img
                           alt="..."
-                          src={require("assets/img/brand/logo.png")}
+                          src={require("assets/img/brand/EnpossLogo.png")}
                         />
                       </Link>
                     </Col>
@@ -208,7 +209,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/ourstory" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">About</span>
+                      <span className="nav-link-inner--text text-uppercase">About</span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="/ourstory" tag={Link}>
@@ -228,7 +229,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="force" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Product</span>
+                      <span className="nav-link-inner--text text-uppercase">Product</span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="/force" tag={Link}>
@@ -251,7 +252,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle  to="/news" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">News</span>
+                      <span className="nav-link-inner--text text-uppercase">News</span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="#" tag={Link}>
@@ -262,7 +263,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/clients" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Clients</span>
+                      <span className="nav-link-inner--text text-uppercase">Clients</span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="/clients" tag={Link}>
@@ -288,13 +289,13 @@ class DemoNavbar extends React.Component {
                    <UncontrolledDropdown nav>
                     <DropdownToggle to="/store" tag={Link}  nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Shop</span>
+                      <span className="nav-link-inner--text text-uppercase">Shop</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>  
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Support</span>
+                      <span className="nav-link-inner--text text-uppercase">Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
                     <DropdownItem to="/installforce" tag={Link}>
@@ -412,23 +413,29 @@ class DemoNavbar extends React.Component {
                     <UncontrolledTooltip delay={0} target="tooltip112445449">
                       Star us on Github
                     </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem className="d-none d-lg-block ml-lg-4">
+                  </NavItem>*/}
+                </Nav>
+                {/*<Nav className="ml-auto" navbar>
+                <NavItem className="d-none d-lg-block ml-lg-4" >
                     <Button
                       className="btn-neutral btn-icon"
                       color="default"
-                      href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar"
-                      target="_blank"
+                      //href="/store"
+                      target="_self"
+                      float= "right"
+                      to="/store" tag={Link}
+                      forceRefresh={true}
                     >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-cloud-download mr-2" />
-                      </span>
+                <span className="btn-inner--icon">
+                        <i className=" fa fa-shopping-cart mr-2" />
+                     
+                </span>
                       <span className="nav-link-inner--text ml-1">
-                        Download
+                        Shop
                       </span>
                     </Button>
-                  </NavItem> */}
-                </Nav>
+                  </NavItem> 
+                </Nav>*/}
               </UncontrolledCollapse>
             </Container>
           </Navbar>

@@ -24,7 +24,7 @@ import { Card, Container, Row, Col } from "reactstrap";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import ShowMoreText from 'react-show-more-text';
+//import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
 
 class CeoMessage extends React.Component {
@@ -98,6 +98,8 @@ class CeoMessage extends React.Component {
             <div className="shape shape-style-1 shape-default"
               style= {{
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
                 <span />
@@ -231,8 +233,8 @@ class CeoMessage extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p style={{ textAlign : "left"}}>
-                          <ShowMoreText
-                          /* Default options */
+                          {/*<ShowMoreText
+                          
                           lines={3}
                           more='Show more'
                           less='Show less'
@@ -241,7 +243,7 @@ class CeoMessage extends React.Component {
                           onClick={this.executeOnClick}
                           expanded={false}
                           //width={280}
-                      >
+                          >*/}
                           Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br />  <br /> 
                           Fossil fuels are used extensively to generate electricity. They are expensive and difficult to extract from the earth. Their depletion and distribution are international issues. In addition, the fossil fuels used to generate electricity emit harmful greenhouse gases, like carbon dioxide. Thus, the use of fossil fuels burdens the economy in several different ways.<br />  <br />
                           US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
@@ -255,7 +257,7 @@ class CeoMessage extends React.Component {
                           Save Energy , Save Earth. 
                           {" "}<br />
                           CEO
-                          Sung gwun Choi <br /></ShowMoreText>
+                          Sung gwun Choi <br />   {/*</ShowMoreText>*/}
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}

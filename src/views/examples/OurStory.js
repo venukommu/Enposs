@@ -34,8 +34,8 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import { appConfig } from "services/config.js";
-import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
+//import ShowMoreText from 'react-show-more-text';
+import Background from 'assets/img/theme/pexels-griffin-wooldridge-with-mask-layer.jpg';
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -110,6 +110,8 @@ class OurStory extends React.Component {
             <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
                 <span />
@@ -130,7 +132,7 @@ class OurStory extends React.Component {
                     {/*< ProductList />*/}
                     <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                        Building on a Strategy for Saving Power and the Planet
+                        Strategically Built for saving Power and the Planet
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
                       <h3 className="display-4 text-info"
@@ -164,9 +166,9 @@ class OurStory extends React.Component {
             {/* 1st Hero Variation */}
           </div>
            
-      <section className="section section-lg pt-lg-0 mt--200">
+      <section className="section section-lg pt-lg-0 mt--100">
             <Container>
-            <Card className="card-profile shadow mt--200 bg-lighter">
+            <Card className="card-profile shadow mt--100 bg-lighter">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
                    {/*} <CardImg
@@ -197,8 +199,8 @@ class OurStory extends React.Component {
                           Our Story 
                       </h4>
                       <p style={{ textAlign : "left"}}>
-                      <ShowMoreText
-                        /* Default options */
+                     {/*} <ShowMoreText
+                        Default options 
                         lines={7}
                         more='Show more'
                         less='Show less'
@@ -207,14 +209,14 @@ class OurStory extends React.Component {
                         onClick={this.executeOnClick}
                         expanded={false}
                         //width={280}
-                      >
+                    >*/}
                       Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
                       <br /><br />
                       "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity, and thereby contribute to reductions in carbon dioxide emission. This in turn reduces global warming.
                       <br /><br />
                       ENPOSS developed its FORCE system to help users contribute towards the protection of the environment, by efficiently and effectively saving electric energy. By reducing electric energy consumption via our FORCE devices, we are pleased to be a part of the drive which reduces carbon dioxide emissions.
                       <br /><br />
-                      Today, ENPOSS has an international presence. It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. We are proud to be part of the widespread effort to protect the health and wealth of our planet.</ShowMoreText>
+                      Today, ENPOSS has an international presence. It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. We are proud to be part of the widespread effort to protect the health and wealth of our planet. {/*}</ShowMoreText>*/}
                         {/*{companystory.description}*/}</p>
                      </blockquote>
                 </Col>

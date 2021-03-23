@@ -34,7 +34,7 @@ import {
   Row,
   Col
 } from "reactstrap";
-//import Carousel from "../IndexSections/Carousel.js";
+import Carousel from "../IndexSections/Carousel.js";
 //import Login from "../IndexSections/Login.js";
 
 // core components
@@ -44,8 +44,9 @@ import { appConfig } from "services/config.js";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/abstract-dark-layer.jpg';
+import Background from 'assets/img/theme/pexels-quang-nguyen-vinh-2131935.jpg';
 import CountUp from 'react-countup';
+import CustomFooter from "components/Footers/CustomFooter";
 
 class Landing extends React.Component {
   
@@ -237,7 +238,7 @@ class Landing extends React.Component {
                         </Button>*/}
                         <div>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" }}>
-                        {homepagebanner.subtitle}
+                        FORCE is an energy-saving device proven to reduce your energy consumption
                           {/*Conserve and Preserve*/}
                         </h3>
                         <Row>
@@ -255,7 +256,7 @@ class Landing extends React.Component {
                           <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
                               style={{ textAlign : "left" }}>
-                              <span  className="text-primary"><br />Total reduced CO<sub>2</sub></span>
+                              <span  className="text-white text-lead">Total reduced CO<sub>2</sub></span>
                             </h5>
                           </Col>
                         </Row>
@@ -326,7 +327,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                         <div className="icon icon-shape icon-shape-info rounded-circle mb-2">
-                            <i className="fas fa-money-bill-wave" /> 
+                            <i className="fa fa-money" /> 
                           </div>
                           <div>
                           <h6 className="text-info text-uppercase" style={{ textAlign : "center" }}>
@@ -368,7 +369,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-2">
-                            <i className="fas fa-globe-americas" /> 
+                            <i className="fa fa-globe" /> 
                           </div>
                           <div>
                           <h6 className="text-success text-uppercase" style={{ textAlign : "center" }}>
@@ -449,8 +450,8 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          {/*<Carousel />
-            <section className="section">
+         <Carousel />
+             {/*<section className="section">
              <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
@@ -1024,6 +1025,239 @@ class Landing extends React.Component {
           </section>
           <Login />
           <Download />*/}
+           <section className="section section-lg">
+            <Container>
+              <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <h2 className="display-3">We&#39;re going places</h2>
+                  <p className="lead text-muted">
+                  Over 1234 customers, companies and industries use Force globally.
+                  </p>
+                  <Link>See customer stories</Link>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/team-1-800x800.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">Ryan Tompson</span>
+                        <small className="h6 text-muted">Customer Review</small>
+                      </h5>
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>
+                     {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="warning"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="warning"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="warning"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+    </div>*/}
+                    </div>
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/team-4-800x800.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">Romina Hadid</span>
+                        <small className="h6 text-muted">
+                          Customer Review
+                        </small>
+                      </h5>
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>                    {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+  </div>*/}
+                    </div>
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/team-3-800x800.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">Alexander Smith</span>
+                        <small className="h6 text-muted">Customer Review</small>
+                      </h5>
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
+</p>                     {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="info"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="info"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="info"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+</div>*/}
+                    </div>
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/team-4-800x800.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">John Doe</span>
+                        <small className="h6 text-muted">Customer Review</small>
+                      </h5>
+                      <p> FORCE saves consumption and safe to use.
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="success"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="success"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="success"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+</div>*/}
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+             {/*<section className="section section-lg pt-0">
+            <Container>
+              <Card className="bg-gradient-warning shadow-lg border-0">
+                <div className="p-5">
+                  <Row className="align-items-center">
+                    <Col lg="8">
+                      <h3 className="text-white">
+                      Choose a better way to live and save.
+                      </h3>
+                   <p className="lead text-white mt-3">
+                        I will be the leader of a company that ends up being
+                        worth billions of dollars, because I got the answers. I
+                        understand culture.
+        </p>
+                    </Col>
+                    <Col className="ml-lg-auto" lg="3">
+                      <Button
+                        block
+                        className="btn-white"
+                        color="default"
+                        to="/store"  tag={Link}
+                        size="lg"
+                      >
+                        Shop
+                      </Button>
+                      <Button
+                        block
+                        className="btn-white"
+                        color="default"
+                        //href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                        size="lg"
+                      >
+                        Talk to sales
+                      </Button>
+                    </Col>
+                  </Row>
+                </div>
+              </Card>
+            </Container>
+          </section>*/}
         </main>
         {/*<section>
         <Container className="container-lg">
@@ -1075,6 +1309,7 @@ class Landing extends React.Component {
             </Col>
     </Container>
     </section>*/}
+    <CustomFooter />
     <CardsFooter />
     </>
     );

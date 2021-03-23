@@ -219,11 +219,11 @@ class Force extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section pb-0 bg-gradient-default">
+          <section className="section pb-0 bg-gradient-red">
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-3 text-white justify-content-center">Features</h1>
+                <h1 className="display-3 text-white justify-content-center"   style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px"}}>Features</h1>
               </Col>
             </Row>
             <Row className="row-grid">

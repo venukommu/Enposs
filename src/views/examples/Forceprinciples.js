@@ -79,7 +79,7 @@ class Forceprinciples extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default bg-gradient-indigo"
+              <div className="shape shape-style-1 shape-default bg-gradient-gray-dark"
              >
                 <span />
                 <span />
@@ -159,7 +159,7 @@ class Forceprinciples extends React.Component {
                           <Col lg="8">
                           <CardImg
                             alt="..."
-                            src={require("assets/img/theme/1.PNG")}
+                            src={require("assets/img/theme/force.PNG")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
                           /></Col></Row>
@@ -179,11 +179,11 @@ class Forceprinciples extends React.Component {
             <Container>
               <Row className="row-grid">
               <Col lg="4">
-                  <Card className="bg-gradient-indigo shadow border-0">
+                  <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
                       <ul>
-                          <li>Usage of electricity saved by 5 per cent</li>
+                          <li>Electricity is saved between 5% to 15%</li>
                           <li>Increase surplus electrons by accelerating anion</li>
                       </ul> 
                       </h6>
@@ -191,7 +191,7 @@ class Forceprinciples extends React.Component {
                   </Card>
               </Col>
               <Col lg="4">
-                  <Card className="bg-gradient-indigo shadow border-0">
+                  <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>
@@ -204,7 +204,7 @@ class Forceprinciples extends React.Component {
                   </Card>
               </Col>
               <Col lg="4">
-                  <Card className="bg-gradient-indigo shadow border-0">
+                  <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>
@@ -220,7 +220,6 @@ class Forceprinciples extends React.Component {
             </Container>
           </section>
           </div>
-          
         </main>
         <CardsFooter />
       </>

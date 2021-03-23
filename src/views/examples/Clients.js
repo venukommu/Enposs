@@ -33,6 +33,8 @@ class Clients extends React.Component {
     error: null,
   }
   componentDidMount = async () => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
     // Parses the JSON returned by a network request
     //const parseJSON = resp => (resp.json ? resp.json() : resp);
 
