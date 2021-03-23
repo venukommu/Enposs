@@ -71,11 +71,11 @@ const items = [
    },
    {
     title: "2018",
-    cardTitle: '* Opened a branch office in Los Angeles, USA\n* (Empos Japan Co., Ltd.)'
+    cardTitle: '* Opened a branch office in Los Angeles, USA\n* (Enpos Japan Co., Ltd.)'
    },
    {
     title: "2018",
-    cardTitle: '* Establish Branch office in LA, USA\n* Alloted as the Preffered supply company for Korean government office\n* Contract to supply for a shipping company\n* Established Empos Japan Co., Ltd.'
+    cardTitle: '* Establish Branch office in LA, USA\n* Alloted as the Preffered supply company for Korean government office\n* Contract to supply for a shipping company\n* Established Enpos Japan Co., Ltd.'
    },
    {
     title: "2019",
@@ -277,9 +277,9 @@ class Timeline extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="12">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
-    <div style={{ width: "950px", height: "950px", whiteSpace: 'pre-line'}}>
-      <Chrono items={items} mode="VERTICAL_ALTERNATING" />
-    </div>
+                      <div style={{whiteSpace: 'pre-line'}}>
+                        <Chrono items={items} theme={{primary: "blue", secondary: "yellow", cardBgColor: "red", cardForeColor: "white" }} mode="VERTICAL_ALTERNATING" />
+                      </div>
     {/*<VerticalTimeline>
     <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -458,7 +458,7 @@ class Timeline extends React.Component {
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>Opened a branch office in Los Angeles, USA</li>
-    <li>(Empos Japan Co., Ltd.)</li></ul></div>
+    <li>(Enpos Japan Co., Ltd.)</li></ul></div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -474,7 +474,7 @@ class Timeline extends React.Component {
     <li>Alloted as the Preffered supply company for</li>
     Korean government office
     <li>Contract to supply for a shipping company</li>
-    <li>Established Empos Japan Co., Ltd.</li></ul>
+    <li>Established Enpos Japan Co., Ltd.</li></ul>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
