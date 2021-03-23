@@ -77,6 +77,8 @@ class Mcdonalds extends React.Component {
   
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
     // Parses the JSON returned by a network request
     /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
