@@ -24,13 +24,13 @@ import { Link } from "react-router-dom";
 
 const items = [
   {
-    src: require("assets/img/theme/bulb.png"),
+    src: require("assets/img/theme/1.png"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/speedo.png"),
+    src: require("assets/img/theme/photo30.png"),
     altText: "",
     caption: "",
     header: ""
