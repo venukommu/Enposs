@@ -26,7 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import { Chrono } from "react-chrono";
-import Background from 'assets/img/theme/pexels-aleksandar-pasaric-with-mask-layer.jpg';
+import Background from 'assets/img/theme/pexels-aleksandar-pasaric-1119723.jpg';
 //import 'react-vertical-timeline-component/style.min.css';
 
 const items = [
