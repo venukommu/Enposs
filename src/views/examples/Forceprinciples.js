@@ -164,7 +164,7 @@ class Forceprinciples extends React.Component {
                           <Col lg="8">
                           <CardImg
                             alt="..."
-                            src={require("assets/img/theme/1.PNG")}
+                            src={require("assets/img/theme/force.PNG")}
                             //src={`${appConfig.apiURL}${productimage.url}`}
                             top
                           /></Col></Row>
