@@ -104,8 +104,8 @@ class Force extends React.Component {
                         <h1 className="display-1 text-white text-lead"
                         style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                           Empowered to save Power</h1>
-                        <h3 className="display-4 text-white mt-2" style={{ textAlign : "left" , marginBottom : "90px" }}>
-                           Force is a smart, dual-action device which helps both increase the flow of electricity, and absorb any electrical losses.
+                        <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "90px" }}>
+                           Force is a smart, dual-action device which helps both increase the flow of electricity, and absorb any electrical losses. It's installed next to your electricity meter.
                         </h3>
                       </div>
                     </Col>
@@ -172,8 +172,8 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "left" }}>
-                          Force uses naturally occurring material tourmaline which helps generate anions.
-                          It uses eco- friendly technology to save electricity.</p>
+                          FORCE uses eco-friendly technology to save electricity. It uses the naturally occurring material tourmaline, which helps generate anions.
+                          </p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -191,8 +191,7 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "left" }}>
-                          Force does not require a separate power supply, making it safe to install when the power is off.
-                          It's both easy to install and use.</p>
+                          FORCE does not require a separate power supply, making it safe to install when the power is off. It's both easy to install and use.</p>
                         </CardBody>
                       </Card>
                     </Col>
@@ -210,7 +209,7 @@ class Force extends React.Component {
                           </h6>
                           <p className="description mt-3"
                           style={{ textAlign : "left" }}>
-                          Force can make a diference for virtually any use of electricity throughout your property.
+                          FORCE can make a difference for virtually any use of electricity throughout your property.
                           <br /><br /></p>
                         </CardBody>
                       </Card>
