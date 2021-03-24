@@ -138,7 +138,7 @@ class OurStory extends React.Component {
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
-                        Our goal as a company was to reduce carbon emission by reducing the unnecessary consumption of electricity. 
+                        Our goal as a company is to reduce carbon emission by reducing the unnecessary consumption of electricity. 
                       </h3>
                     </div>
                     </Col>
@@ -212,11 +212,11 @@ class OurStory extends React.Component {
                     >*/}
                       Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
                       <br /><br />
-                      "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity, and thereby contribute to reductions in carbon dioxide emission. This in turn reduces global warming.
+                      "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity (and in turn its production), and thereby contribute to reductions in carbon dioxide emission. This helps slow global warming.
                       <br /><br />
                       ENPOSS developed its FORCE system to help users contribute towards the protection of the environment, by efficiently and effectively saving electric energy. By reducing electric energy consumption via our FORCE devices, we are pleased to be a part of the drive which reduces carbon dioxide emissions.
                       <br /><br />
-                      Today, ENPOSS has an international presence. It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. We are proud to be part of the widespread effort to protect the health and wealth of our planet. {/*}</ShowMoreText>*/}
+                      Today, ENPOSS has an international presence. Our global market includes the United States, Japan, Korea, China, Russia, Vietnam, Malaysia, and Brazil. We are proud to be part of the widespread effort to protect the health and wealth of our planet. {/*}</ShowMoreText>*/}
                         {/*{companystory.description}*/}</p>
                      </blockquote>
                 </Col>

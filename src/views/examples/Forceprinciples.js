@@ -102,7 +102,7 @@ class Forceprinciples extends React.Component {
                         {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
                         It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
                        {/*Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.*/}
-                        The dual-action of FORCE both improves the flow of your electrical current and absorbs your energy loss, giving you two reasons it's good for your home.
+                        The dual-action of FORCE both improves the flow of your electrical current and absorbs energy losses, giving you two reasons it's good for your home.
                        </h3>
                     </Col>
                   </Row>
@@ -146,15 +146,11 @@ class Forceprinciples extends React.Component {
                           which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. */}
                           FORCE is a smart, dual-action device which actively saves power by increasing conductivity. First, it uses tourmaline and adds free electrons to the circuit. Second, it absorbs anything that causes loss of electricity (like heat and harmonic distortion, etc.)<br /> <br />
 
-                          When nanoparticles of Tourmaline are mixed with other minerals, like magnesium, they produce Electromagnetic Flux (EMF 7), which emits (?)subtle current. Key activity is by EMF-7
+                          When nanoparticles of Tourmaline are mixed with other minerals, like magnesium, they produce an Electromagnetic Flux (EMF-7), which emits a subtle current. The key activity of the device is performed by EMF-7, as it emits electro magnetic electrons. The subtle current released by FORCE flows into the power line and increases the density of electrons, thereby improving current flow.<br /><br />
+                          
+                          At the same time, EMF 6 is produced by ionisation and electrification of copper plates –– which helps generate micro-electrons in the device. This means that the device also has the capacity to absorb energy losses by offsetting the negative effects of impedance, high or low harmonic frequencies, reactance, heat, etc.<br /><br />
 
-                          (?)EMF 6 is produced by ionization and electrification of copper plates. <br /> <br />
-
-                          (?)The subtle current released by Force, flows into the power line and increases the density of electrons, thereby improving current flow.
-
-                          (?)It also has the capacity to absorb the losses by offsetting impedance, harmonic high low frequency, reactance, heat etc.
-
-                          (?)These dual actions increase current flow and reduce power consumption. </p><br /><br />
+                          This dual action, due to the two kinds of EMF produced by the FORCE device, helps increase the electron density –– and thereby improves current flow and reduces power consumption.<br /><br /></p>
                           <Row className="justify-content-center">
                           <Col lg="8">
                           <CardImg
@@ -178,39 +174,27 @@ class Forceprinciples extends React.Component {
           <section>
             <Container>
               <Row className="row-grid">
-              <Col lg="4">
+              <Col lg="6">
                   <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
                       <ul>
-                          <li>Electricity is saved between 5% to 15%</li>
-                          <li>Increase surplus electrons by accelerating anion</li>
+                          <li>Increases surplus electrons by accelerating anions.</li>
+                          <li>Surplus electrons in turn emit the micro-current.</li>
+                          <li>Moves surplus electrons at the rate of 0.1 to 1mm/second.</li>
                       </ul> 
                       </h6>
                   </CardBody>
                   </Card>
               </Col>
-              <Col lg="4">
+              <Col lg="6">
                   <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
                       <h6 className="text-white">
                       <ul>
-                          <li>Increased surplus electrons in turn emmit the microcurrent.</li>
-                          <li>Improves conductivity by increasing density free electron on connected electric circuit.</li>
-                          <li>Moves surplus electron saturation at the rate of 0.1 to 1mm/second.</li>
-                      </ul> 
-                      </h6>
-                  </CardBody>
-                  </Card>
-              </Col>
-              <Col lg="4">
-                  <Card className="bg-gradient-gray-dark shadow border-0">
-                  <CardBody className="py-3"> 
-                      <h6 className="text-white">
-                      <ul>
-                          <li>Increased free electrons improves the transfer of electricity</li>
-                          <li>Reduces electric losses</li>
-                          <li>Improves current flow</li>
+                          <li>Improves conductivity by increasing the density of free electrons on the connected electrical circuit.</li>
+                          <li>More free electrons improve the transfer of electricity and reduce energy loss.</li>
+                          <li>Results in better current flow throughout the electrical circuit.</li>
                       </ul> 
                       </h6>
                   </CardBody>

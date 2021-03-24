@@ -80,9 +80,12 @@ class EcwidScript extends React.Component {
                       {/*< ProductList />*/}
                         <div>
                           <h1 className="display-1 text-white text-lead"
-                          style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" , marginBottom: "60px" }}>
+                          style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                            Order FORCE for your home.
+                          </h1> 
+                          <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "60px" }}>
                             Save Money, AND Help Save the Planet.
-                          </h1>                      
+                        </h3>                     
                         </div>
                       </Col>
                   </Row>
@@ -108,7 +111,12 @@ class EcwidScript extends React.Component {
           </div>
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
-        <Card className="card-profile shadow mt--200 bg-secondary">
+        <Card className="card-profile shadow mt--200 bg-secondary p-4">
+        <h4 className="display-3 font-weight-bold text-primary">
+                          {/*}    {companystory.Title}*/}
+                          FORCE energy-saving device for residential use 
+                      </h4>
+                      <p>(Contact us for other use-cases.)</p>
         <EcwidScript/>
         </Card>
         </Container>
