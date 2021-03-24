@@ -105,8 +105,8 @@ class Carousel extends React.Component {
                         <p className="lead text-white mt-4">
                         {/*{this.state.carouselcontent.description}*/}
                         </p>
-                        <Link class="btn-white mt-4 btn btn-default"  to="/store">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
-                        <Link class="btn-white mt-4 btn btn-default">Talk to Sales</Link>
+                        <Link class="btn-warning mt-4 btn "  to="/store">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
+                        <Link class="btn-secondary mt-4 btn ">Talk to Sales</Link>
               </Col>
               <Col className="mb-lg-auto" lg="6">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
