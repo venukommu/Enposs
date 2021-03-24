@@ -456,10 +456,11 @@ class Landing extends React.Component {
                   <Row className="row-grid mt-5 align-items-center text-center">
                     <Col lg="12">
                       <h3 className="text-white font-weight-bold">
-                      15 years Electricity reduced per year 38,86,516 Kwh
+                      Reduced Power Consumption with FORCE is 38,886,516 Kwh/year
                       </h3>
                       <h3 className="text-white font-weight-bold">
-                      CO<sub>2</sub> Reduced /year 18,121,12 tons</h3>
+                      Reduced Carbon Dioxide with FORCE is 18,121.12 tons/year
+                      </h3>
                     </Col>
                   </Row>
                 </div>

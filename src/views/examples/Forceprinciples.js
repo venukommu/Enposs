@@ -146,15 +146,13 @@ class Forceprinciples extends React.Component {
                           which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. */}
                           FORCE is a smart, dual-action device which actively saves power by increasing conductivity. First, it uses tourmaline and adds free electrons to the circuit. Second, it absorbs anything that causes loss of electricity (like heat and harmonic distortion, etc.)<br /> <br />
 
-                          When nanoparticles of Tourmaline are mixed with other minerals, like magnesium, they produce Electromagnetic Flux (EMF 7), which emits (?)subtle current. Key activity is by EMF-7
+                          When nanoparticles of Tourmaline are mixed with other minerals, like magnesium, they produce Electromagnetic Flux (EMF 7), which emits subtle current. Key activity is by EMF-7 which emit electro magnetic electrons. EMF 6 is produced by ionisation and electrification of copper plates in the device that help generate micro-electrons. <br /> <br />
 
-                          (?)EMF 6 is produced by ionization and electrification of copper plates. <br /> <br />
+                          The subtle current released by Force, flows into the power line and increases the density of electrons, thereby improving current flow.
 
-                          (?)The subtle current released by Force, flows into the power line and increases the density of electrons, thereby improving current flow.
+                          It also has the capacity to absorb the losses by offsetting impedance, harmonic high low frequency, reactance, heat etc.
 
-                          (?)It also has the capacity to absorb the losses by offsetting impedance, harmonic high low frequency, reactance, heat etc.
-
-                          (?)These dual actions increase current flow and reduce power consumption. </p><br /><br />
+                          These dual actions increase current flow and reduce power consumption. </p><br /><br />
                           <Row className="justify-content-center">
                           <Col lg="8">
                           <CardImg

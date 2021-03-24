@@ -22,8 +22,8 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import CardTitle from "reactstrap/lib/CardTitle";
-import CardText from "reactstrap/lib/CardText";
+//import CardTitle from "reactstrap/lib/CardTitle";
+//import CardText from "reactstrap/lib/CardText";
 //import { appConfig } from "services/config.js";
 
 // index page sections
