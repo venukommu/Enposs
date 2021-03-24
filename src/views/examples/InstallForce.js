@@ -222,70 +222,76 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                    2.Installation of FORCE
+                    2. Installation of FORCE
                   </NavLink>
                 </NavItem>
               </Nav>
             </div>
             <Card className="shadow">
               <CardBody>
-              <Row >
-                <Col lg="6">
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
-                
-                  <ul>
-                      <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
-                      <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing Force, or performing work in an Electrical panel.</p>
-                      <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
-                    <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers.
-                        <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the
-                        panel cover**)</span></li>
-                    <li>After double-checked the electricity is OFF, then carefully remove the panel cover.  </li>
-                    <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Socket is
-                    connected to the Force Device fully, and seal properly with Cap. </li>
-                    <li> Put Black robber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
-                    <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
-                    <li> Put Black robber (the narrow side facing Y-terminal) through Socket, then connect Socket to the
-                    Force Device until you hear "click".</li>
-                    <li> Mount the FORCE device anywhere within 12 inches from the panel.</li>
-                    <li> Unscrew the bolt & nut that is attached to the bus bar, then connect one Y-terminal (white color) on the left side of the bus bar and screw the bolt & nut tight. </li>
-                    <li> Then follow procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
-                    <li>Safely install the panel cover back.   </li>
-                    <li> Turn on the main breaker. DONE!   </li>
-                    </ul>
-               
-                    <Col lg="6"><CardBody>
-                    <CardImg alt="..."
-                      src={`${require("assets/img/theme/Installation 1 Image 1.png")}`}/>
-                  </CardBody></Col>
-                  </TabPane>
-                
-                  <TabPane tabId="plainTabs2">
-                    <ul>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing Force, or performing work in an Electrical panel.</p>
                     <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
-                    <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers.
-                    <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
-                    <li>  After double-checked the electricity is OFF, then carefully remove the panel cover. </li>
-                    <li> Put Black robber(the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
-                    <li>Put Cap through Y-terminal and bring it towards to device to close(twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap.</li>
-                    <li> Mount the FORCE device anywhere within 12 inches from the panel. </li>
-                    <li> Cut off Y-terminal from the wire, and peel about ½ inches from the tip of the wire cover (COVER ONLY).</li>
-                    <li>Connect wires to the switches. </li>
-                    <li>Remove the very first two switches from 1 or 2 side of the panel. </li>
-                    <li> Connect both of the FORCE attached switches on the top first two breakers of the panel that you have selected. </li>
-                    <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY! <span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
-                    <li> Safely install the panel cover back. </li>
-                    <li> Turn ON the MAIN BREAKER. DONE! </li>
-                    </ul>
+                      <Row>
+                        <Col lg="7">
+                          <ul>
+                            <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
+                            <li>After double-checked the electricity is OFF, then carefully remove the panel cover.  </li>
+                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
+                            <li> Put Black robber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
+                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
+                            <li> Put Black robber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click".</li>
+                            <li> Mount the FORCE device anywhere within 12 inches from the panel.</li>
+                            <li> Unscrew the bolt & nut that is attached to the bus bar, then connect one Y-terminal (white color) on the left side of the bus bar and screw the bolt & nut tight. </li>
+                            <li> Then follow procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
+                            <li>Safely install the panel cover back.   </li>
+                            <li> Turn on the main breaker. DONE!   </li>
+                          </ul>
+                        </Col>
+                        <Col lg="5">
+                          <CardBody>
+                            <CardImg alt="Installation of FORCE" src={`${require("assets/img/theme/1-Installation-Of-FORCE.png")}`}/>
+                          </CardBody>
+                        </Col>
+                      </Row>
+                  </TabPane>
+                
+                  <TabPane tabId="plainTabs2">
+                    <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
+                    <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing Force, or performing work in an Electrical panel.</p>
+                    <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
+                    <Row>
+                      <Col lg="7">
+                        <ul>
+                          <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
+                          <li>  After double-checked the electricity is OFF, then carefully remove the panel cover. </li>
+                          <li> Put Black robber(the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
+                          <li>Put Cap through Y-terminal and bring it towards to device to close(twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap.</li>
+                          <li> Mount the FORCE device anywhere within 12 inches from the panel. </li>
+                          <li> Cut off Y-terminal from the wire, and peel about ½ inches from the tip of the wire cover (COVER ONLY).</li>
+                          <li>Connect wires to the switches. </li>
+                          <li>Remove the very first two switches from 1 or 2 side of the panel. </li>
+                          <li> Connect both of the FORCE attached switches on the top first two breakers of the panel that you have selected. </li>
+                          <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY! <span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
+                          <li> Safely install the panel cover back. </li>
+                          <li> Turn ON the MAIN BREAKER. DONE! </li>
+                        </ul>
+                      </Col>
+
+                      <Col lg="5">
+                        <CardBody>
+                          <CardImg alt="FORCE Installation" src={`${require("assets/img/theme/2-Installation-Of-FORCE.png")}`}/>
+                        </CardBody>
+                      </Col>
+                    </Row>
                   </TabPane>
                 </TabContent>
-                </Col>
-                 </Row>
               </CardBody>
             </Card>
+
+
                   </Col>
               </Row>
             </Container>
