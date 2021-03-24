@@ -257,7 +257,7 @@ class InstallForce extends React.Component {
                
                     <Col lg="6"><CardBody>
                     <CardImg alt="..."
-                      src={`${require("assets/img/theme/Installation 1 Image 1.png")}`}/>
+                      src={`${require("assets/img/theme/Installation1Image1.png")}`}/>
                   </CardBody></Col>
                   </TabPane>
                 
