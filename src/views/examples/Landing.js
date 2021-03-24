@@ -450,11 +450,10 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-shaped">
-            <Container className="container-lg">
+
               <Card className="bg-gradient-info shadow-lg border-0">
                 <div className="p-5">
-                  <Row className="row-grid mt-5 align-items-center">
+                  <Row className="row-grid mt-5 align-items-center text-center">
                     <Col lg="12">
                       <h3 className="text-white font-weight-bold">
                       15 years Electricity reduced per year 38,86,516 Kwh
@@ -465,8 +464,6 @@ class Landing extends React.Component {
                   </Row>
                 </div>
               </Card>
-            </Container>
-          </section>
          <Carousel />
              {/*<section className="section">
              <Container>

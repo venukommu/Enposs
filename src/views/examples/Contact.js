@@ -20,14 +20,15 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class Contact extends React.Component {
     state = {
         contacts: [],
-        contactimages: [],
         error: null
      }
-componentDidMount = async () => {
+
+  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
@@ -102,7 +103,7 @@ componentDidMount = async () => {
                 <section className="section section-lg pt-lg-0 section-contact-us">
                 <Container>
                     <Row className="justify-content-center mt--300">
-                    <Col lg="8">
+                    <Col lg="6">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
                             <h4 className="mb-1">How Can We Help?</h4>
@@ -147,6 +148,25 @@ componentDidMount = async () => {
                                 />
                             </InputGroup>
                             </FormGroup>
+                            <FormGroup
+                            className={classnames({
+                                //focused: this.state.numberFocused
+                            })}
+                            >
+                            <InputGroup className="input-group-alternative">
+                                <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                    <i className="ni ni-mobile-button" />
+                                </InputGroupText>
+                                </InputGroupAddon>
+                                <Input
+                                placeholder="Contact number"
+                                type="text"
+                                onFocus={e => this.setState({ numberFocused: true })}
+                                onBlur={e => this.setState({ numberFocused: false })}
+                                />
+                            </InputGroup>
+                            </FormGroup>
                             <FormGroup className="mb-4">
                             <Input
                                 className="form-control-alternative"
@@ -171,6 +191,17 @@ componentDidMount = async () => {
                         </CardBody>
                         </Card>
                     </Col>
+                    <Col lg="6">
+                    <Map
+                      google={this.props.google}
+                      zoom={14}
+                      initialCenter={
+                        {
+                          lat: -1.2884,
+                          lng: 36.8233
+                        }
+                      } />
+                    </Col>
                     </Row>
                 </Container>
             </section>
@@ -181,4 +212,6 @@ componentDidMount = async () => {
   }
 }
 
-export default Contact;
+export default  GoogleApiWrapper({
+  apiKey: 'AIzaSyCqHFLlCW6oz0MSQxnuNlvbBb5ypJWECvQ'
+})(Contact);
