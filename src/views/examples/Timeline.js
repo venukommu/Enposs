@@ -24,66 +24,8 @@ import { Card, Container, Row, Col } from "reactstrap";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import { Chrono } from "react-chrono";
-import Background from 'assets/img/theme/pexels-aleksandar-pasaric-1119723.jpg';
-//import 'react-vertical-timeline-component/style.min.css';
-
-const items = [
-  {
-   title: "2005",
-   cardTitle:'* Power Saving Business\n* New Renewable Energy Business\n* Solar Cell and Solar Heat Business\n* Opened ENPOSS Company'
-  },
-  {
-   title: "2006",
-   cardTitle: '* Power Saving Business for Apartment complex and industries\n* Start power saving business in South Korea\n* R&D on Power Saving and Completed Safety test'
-  },
-  {
-   title: "2007",
-   cardTitle: '* Patent application for power improvement device "FORCE"\n* Applied for Patent for Domestic Power Saver\n* Patent PCT applied for Power Saver\n* Electrical Safety test by KTL\n* FORCE: Established production factory\n* Launched Power Saver called "FORCE"\n* Established Domestic Distribution Network\n* Global Sales in China and Mexico\n* Registered Rental space for Domestic Sales\n* Registered at the Office of Procurement FORCE: Started sales in Korea\n* FORCE: Started selling in China and Mexico'
-  },
-  {
-    title: "2008",
-    cardTitle: '* Established Enposs\n* FORCE: Certificate of Electrical Safety by CE\n* Obtained ISO 9001: 2000\n* FORCE: TUV performance test conducted\n* FORCE: Launched in Hong Kong'
-   },
-   {
-    title: "2009",
-    cardTitle: '* FORCE: Obtained IACS certification\n* FORCE: Mexico NOM safety certification acquired\n* FORCE: Performance certification carried out at NOM, Mexico\n* Enrolled to be certified as capable of reducing Co2\n* FORCE: Korean government supply registration\n* FORCE: Passed KTL EMI TEST'
-   },
-   {
-    title: "2010",
-    cardTitle: '* SGS TEST showed 6% reduction of power consumption\n* CE certification (CoC)\n* FORCE: Launched in the US and India\n* FORCE: SGS Laboratory Performance Test-7.12% Certification\n* Patent registration\n* SUWON UNIVERSITY-ENPOSS LAB establish\n* PCT patent registration\n* University of Suwon Industry-Academia Research Institute established'
-   },
-   {
-    title: "2011",
-    cardTitle: '* FORCE: MET certification with NLTC\n* Concluded an agreement with the Korea Air Force Academy Industry-Academia Research Institute'
-   },
-   {
-    title: "2012",
-    cardTitle: '* U.S. patent registration'
-   },
-  {
-    title: "2013",
-    cardTitle:'* Vietnam patent registration\n* Russian National Railroad MOU signed'
-   },
-   {
-    title: "2017",
-    cardTitle: '* Establish JV in Vietnam\n* Award classify from KR\n* Functional test certificate from Korean SGS'
-   },
-   {
-    title: "2018",
-    cardTitle: '* Opened a branch office in Los Angeles, USA\n* (Enpos Japan Co., Ltd.)'
-   },
-   {
-    title: "2018",
-    cardTitle: '* Establish Branch office in LA, USA\n* Alloted as the Preffered supply company for Korean government office\n* Contract to supply for a shipping company\n* Established Enpos Japan Co., Ltd.'
-   },
-   {
-    title: "2019",
-    cardTitle: '* Acquired a business office in Otama Village, Adachi District, Fukushima Prefecture (planned to have a factory)'
-   },
- 
- ];
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 class Timeline extends React.Component {
   
@@ -154,14 +96,16 @@ class Timeline extends React.Component {
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
             <div className="shape shape-style-1 shape-default"
-             style= {{
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              backgroundImage: `url("${Background}")`,
-              //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
-             }}>
-              
+             >
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
               </div>
               <Container className="shape-container d-flex align-items-center py-lg">
                 <div className="col px-0">
@@ -172,7 +116,7 @@ class Timeline extends React.Component {
                   </Row>
                 </div>
               </Container>
-              {/* SVG separator 
+              {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -187,13 +131,13 @@ class Timeline extends React.Component {
                     points="2560 0 2560 100 0 100"
                   />
                 </svg>
-              </div>*/}
+              </div>
             </section>
             {/* 1st Hero Variation */}
           </div>
           <section className="section">
             <Container>
-              <Card className="card-profile shadow mt--200">
+              <Card className="card-profile bg-gradient-lighter shadow mt--200">
                 <div className="px-4">
                   <Row className="justify-content-center">
                   
@@ -272,38 +216,42 @@ class Timeline extends React.Component {
                       University of Computer Science
             </div>
                   </div>*/}
-                  <div className="mt-5 py-5 border-top text-center">
+                  <div className="mt-5 py-5 border-top">
                     <Row className="justify-content-center">
                       <Col lg="12">
                       {/*}  <p style={{ textAlign : "justify"}}>*/}
-                      <div style={{whiteSpace: 'pre-line'}}>
-                        <Chrono items={items} mode="VERTICAL_ALTERNATING" />
-                      </div>
-    {/*<VerticalTimeline>
+                      
+    <VerticalTimeline>
     <VerticalTimelineElement
-    className="vertical-timeline-element--education"
+    className="vertical-timeline-element"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2005"
+    textClassName="bg-gradient-white"
+    //date="2006"
+    visible={ true }
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2005"}
+    
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
     <li>Power Saving Business</li>
     <li>New Renewable Energy Business</li>
     <li>Solar Cell and Solar Heat Business</li>
     <li>Opened ENPOSS Company</li></ul>
-    </VerticalTimelineElement>
+  </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2006"
+    //date="2006"
+    visible={ true }
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2006"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
     <li>Power Saving Business for Apartment complex and industries</li>
     <li>Start power saving business in South Korea</li>  
@@ -312,12 +260,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2007"
+    //date="2007"
+    visible={ true }
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    //icon={<WorkIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2007"}
   >
     {/*<h3 className="vertical-timeline-element-title">Art Director</h3>
-    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
     <div  style={{ textAlign : "left" }}><ul>
     <li>Patent application for power improvement device "FORCE"</li>
     <li>Applied for Patent for Domestic Power Saver</li>
@@ -335,12 +285,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2008"
+    //date="2008"
+    visible={ true }
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-   // icon={<WorkIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2008"}
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
-    <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+    <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>*/}
       <div  style={{ textAlign : "left" }}>
     <ul>
     <li> Established Enposs</li>
@@ -352,12 +304,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2009"
+    //date="2009"
+    visible={ true }
     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-   // icon={<WorkIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2009"}
   >
     {/*<h3 className="vertical-timeline-element-title">Web Designer</h3>
-    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>*/}
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>FORCE: Obtained IACS certification</li>
@@ -370,12 +324,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2010"
+    //date="2010"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2010"}
   >
     {/*<h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>*/}
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>SGS TEST showed 6% reduction of power consumption</li>
@@ -391,12 +347,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2011"
+    //date="2011"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2011"}
   >
     {/*<h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-    <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+    <h4 className="vertical-timeline-element-subtitle">Certification</h4>*/}
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>FORCE: MET certification with NLTC</li>
@@ -406,12 +364,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2012"
+    //date="2012"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2012"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
     <li>
     U.S. patent registration
@@ -420,12 +380,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2013"
+    //date="2013"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2013"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
     <li>Vietnam patent registration</li>
     <li>Russian National Railroad MOU signed</li></ul>
@@ -433,12 +395,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2017"
+    //date="2017"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2017"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
       <li>Establish JV in Vietnam</li>
       <li>Award classify from KR</li>
@@ -448,12 +412,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2018"
+    //date="2018"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2018"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>Opened a branch office in Los Angeles, USA</li>
@@ -462,12 +428,14 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2018"
+    //date="2018"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2018"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
     <li>Establish Branch office in LA, USA</li>
     <li>Alloted as the Preffered supply company for</li>
@@ -478,18 +446,20 @@ class Timeline extends React.Component {
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2019"
+    //date="2019"
+    visible={ true }
     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-    //icon={<SchoolIcon />}
+    iconClassName="icon icon-shape"
+    icon={"2019"}
   >
     {/*<h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
    <ul><li>Acquired a business office in Otama Village, Adachi District, Fukushima Prefecture (planned to have a factory)</li></ul>
   </VerticalTimelineElement>
-  <VerticalTimelineElement
+  {/*<VerticalTimelineElement
     iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
     //icon={<StarIcon />}
-  />
+  />*/}
 </VerticalTimeline>
                        {/*} </p>*/}
                         <a href="#pablo" onClick={e => e.preventDefault()}>
