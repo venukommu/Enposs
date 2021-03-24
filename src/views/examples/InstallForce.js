@@ -125,12 +125,12 @@ class InstallForce extends React.Component {
       />
     </div>
                
-                  <Row>
+                {/*}  <Row>
                     <Col lg="6">
                       <div><h1 className="display-3 text-white">How To Install</h1>
                       </div>
                     </Col>
-                  </Row>
+      </Row>*/}
                 </div>
               </Container>
               {/* SVG separator */}
@@ -157,10 +157,19 @@ class InstallForce extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Card className="bg-gradient-white">
+                  <h4 className="display-3 font-weight-bold text-primary">
+                          {/*}    {companystory.Title}*/}
+                          How To Install
+                      </h4>
                   <CardBody>
                     <CardImg alt="..."
-                      src={`${require("assets/img/theme/install.jpg")}`}/>
+                      src={`${require("assets/img/theme/Installation1.PNG")}`}/>
                   </CardBody>
+                  <CardBody>
+                    <CardImg alt="..."
+                      src={`${require("assets/img/theme/installation2.PNG")}`}/>
+                  </CardBody>
+                  
                   </Card>
                   {/*<Card className="bg-gradient-info text-white">
                     <CardBody>
