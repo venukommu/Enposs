@@ -188,6 +188,7 @@ class Forceprinciples extends React.Component {
                   </CardBody>
                   </Card>
               </Col>
+              
               <Col lg="4">
                   <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
