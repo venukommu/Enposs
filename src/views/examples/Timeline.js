@@ -117,10 +117,10 @@ class Timeline extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
-                    <Col lg="8">
+                    <Col lg="6">
                     <div>
-                    <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                      There couldn't have been a better time for Force on the world scene</h1>
+                    <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "40px", fontWeight: "800px", marginTop: "90px" }}>
+                      There couldn't have been a better time for FORCE on the world scene</h1>
                     <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         A time when the world is gasping for fresh air and frantic about going green.
@@ -376,7 +376,7 @@ class Timeline extends React.Component {
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>FORCE: MET certification with NLTC</li>
-    <li>Concluded an agreement with the Korea Air Force Academy Industry-Academia Research Institute</li></ul>
+    <li>Concluded an agreement with the Korea Air FORCE Academy Industry-Academia Research Institute</li></ul>
    </div>
   </VerticalTimelineElement>
   <VerticalTimelineElement

@@ -377,7 +377,7 @@ class Landing extends React.Component {
                           </h6>
                           <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
-                              Enposs helps you to take the initiative to reduce your own carbon footprint by cutting your electricity usage.
+                              ENPOSS helps you to take the initiative to reduce your own carbon footprint by cutting your electricity usage.
                             </p>
                             <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
@@ -418,7 +418,7 @@ class Landing extends React.Component {
                             </h6>
                             <p className="description mt-3 text-dark"
                             style={{ textAlign : "left" }}>
-                              Force energy-saving products are small, user-friendly devices that can be used in offices, factories, homes, and anywhere electricity is used.
+                              FORCE energy-saving products are small, user-friendly devices that can be used in offices, factories, homes, and anywhere electricity is used.
                             </p>
                             <p className="description mt-3 text-dark" style={{ textAlign : "left" }}>Here we offer our domestic product, for residential properties up to 4,000 ft<sup>2</sup> or 1,500 kw/h usage.<br /></p>
                           </div>
