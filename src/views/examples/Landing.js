@@ -1055,7 +1055,7 @@ class Landing extends React.Component {
                   </p>
                   <h4 className="display-5">Our Clients</h4><br />
                   <Row>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
                   <div className="px-4">
                     <img
                       alt="..."
@@ -1097,7 +1097,7 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
                   <div className="px-4">
                     <img
                       alt="..."
@@ -1141,7 +1141,7 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
                   <div className="px-4">
                     <img
                       alt="..."
