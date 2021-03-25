@@ -20,14 +20,34 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 class Contact extends React.Component {
     state = {
         contacts: [],
-        contactimages: [],
+        showingInfoWindow: false,  // Hides or shows the InfoWindow
+        activeMarker: {},          // Shows the active marker upon click
+        selectedPlace: {},          // Shows the InfoWindow to the selected place upon a marker
         error: null
      }
-componentDidMount = async () => {
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+       selectedPlace: props,
+       activeMarker: marker,
+       showingInfoWindow: true
+    });
+ 
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
+  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
@@ -102,7 +122,7 @@ componentDidMount = async () => {
                 <section className="section section-lg pt-lg-0 section-contact-us">
                 <Container>
                     <Row className="justify-content-center mt--300">
-                    <Col lg="8">
+                    <Col lg="6">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
                             <h4 className="mb-1">How Can We Help?</h4>
@@ -147,6 +167,25 @@ componentDidMount = async () => {
                                 />
                             </InputGroup>
                             </FormGroup>
+                            <FormGroup
+                            className={classnames({
+                                //focused: this.state.numberFocused
+                            })}
+                            >
+                            <InputGroup className="input-group-alternative">
+                                <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                    <i className="ni ni-mobile-button" />
+                                </InputGroupText>
+                                </InputGroupAddon>
+                                <Input
+                                placeholder="Contact number"
+                                type="text"
+                                onFocus={e => this.setState({ numberFocused: true })}
+                                onBlur={e => this.setState({ numberFocused: false })}
+                                />
+                            </InputGroup>
+                            </FormGroup>
                             <FormGroup className="mb-4">
                             <Input
                                 className="form-control-alternative"
@@ -171,6 +210,30 @@ componentDidMount = async () => {
                         </CardBody>
                         </Card>
                     </Col>
+                    <Col lg="6">
+                    <Map
+                      google={this.props.google}
+                      zoom={14}
+                      initialCenter={
+                        {
+                          lat: 33.859834068446666,
+                          lng: -117.99783060414177
+                        }
+                      } >
+                      <Marker
+                        onClick={this.onMarkerClick}
+                        name={'6940 Beach Blvd D609, Buena Park, CA 90621, USA'}
+                      />
+                      <InfoWindow
+                        marker={this.state.activeMarker}
+                        visible={this.state.showingInfoWindow}
+                        onClose={this.onClose}>
+                        <div>
+                          <h4>{this.state.selectedPlace.name}</h4>
+                        </div>
+                      </InfoWindow>
+                    </Map>  
+                    </Col>
                     </Row>
                 </Container>
             </section>
@@ -181,4 +244,6 @@ componentDidMount = async () => {
   }
 }
 
-export default Contact;
+export default  GoogleApiWrapper({
+  apiKey: 'AIzaSyCqHFLlCW6oz0MSQxnuNlvbBb5ypJWECvQ'
+})(Contact);

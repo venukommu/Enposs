@@ -82,7 +82,7 @@ class CustomFooter extends React.Component {
                   <h5 className="text-white mt-3">Product</h5>
                   <a href="/force">
                   <p className="text-white mt-3">
-                    What is Force?
+                    What is FORCE?
                   </p></a>
                   <a href="/forceprinciples">
                   <p className="text-white mt-3">
@@ -90,7 +90,7 @@ class CustomFooter extends React.Component {
                   </p></a>
                   <a href="/benefits">
                   <p className="text-white mt-3">
-                    Benefits of Force
+                    Benefits of FORCE
                   </p></a>
                 </Col>
                 <Col lg="3">
@@ -137,7 +137,7 @@ class CustomFooter extends React.Component {
                   </div>
                   <h5 className="text-white mt-3">Support</h5>
                   <a href="/installforce"><p className="text-white mt-3">
-                    How to install Force
+                    How to install FORCE
                   </p></a>
                   <a href="#">
                   <p className="text-white mt-3">

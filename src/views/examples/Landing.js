@@ -377,7 +377,7 @@ class Landing extends React.Component {
                           </h6>
                           <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
-                              Enposs helps you to take the initiative to reduce your own carbon footprint by cutting your electricity usage.
+                              ENPOSS helps you to take the initiative to reduce your own carbon footprint by cutting your electricity usage.
                             </p>
                             <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
@@ -418,7 +418,7 @@ class Landing extends React.Component {
                             </h6>
                             <p className="description mt-3 text-dark"
                             style={{ textAlign : "left" }}>
-                              Force energy-saving products are small, user-friendly devices that can be used in offices, factories, homes, and anywhere electricity is used.
+                              FORCE energy-saving products are small, user-friendly devices that can be used in offices, factories, homes, and anywhere electricity is used.
                             </p>
                             <p className="description mt-3 text-dark" style={{ textAlign : "left" }}>Here we offer our domestic product, for residential properties up to 4,000 ft<sup>2</sup> or 1,500 kw/h usage.<br /></p>
                           </div>
@@ -449,7 +449,26 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-          </section>
+          </section>  
+              <Row className="justify-content-center text-center">
+                    <Col lg="12">
+                      <h3 className="display-3"><span className="text-warning font-weight-bold display-2">15</span> Years of Service</h3>
+                    </Col>
+              </Row>
+              <Card className="bg-gradient-info shadow-lg border-0">
+                <div className="p-5">
+                  <Row className="row-grid align-items-center text-center">
+                    <Col lg="12">
+                      <h3 className="text-white font-weight-bold">
+                      Reduced Power Consumption with FORCE is 38,886,516 Kwh/year
+                      </h3>
+                      <h3 className="text-white font-weight-bold">
+                      Reduced Carbon Dioxide with FORCE is 18,121.12 tons/year
+                      </h3>
+                    </Col>
+                  </Row>
+                </div>
+              </Card>
          <Carousel />
              {/*<section className="section">
              <Container>
@@ -1028,12 +1047,186 @@ class Landing extends React.Component {
            <section className="section section-lg">
             <Container>
               <Row className="justify-content-center text-center mb-lg">
-                <Col lg="8">
+                <Col lg="12">
                   <h2 className="display-3">We&#39;re going places</h2>
                   <p className="lead text-muted">
-                  Over 1234 customers, companies and industries use Force globally.
+                  More than 7 countries and still counting <br />
+                  Over 1234 customers, companies and industries use FORCE globally.
                   </p>
-                  <Link>See customer stories</Link>
+                  <h4 className="display-5">Our Clients</h4><br />
+                  <Row>
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/A18040103_10004_0.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">Mc donald's</span>
+                        {/*<small className="h6 text-muted">Mc donald's</small>*/}
+                      </h5>
+                     {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="warning"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="warning"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="warning"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+    </div>*/}
+                    </div>
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/A18040103_10003_0.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">City of Seymour</span>
+                        {/*<small className="h6 text-muted">
+                          Customer Review
+                        </small>*/}
+                      </h5>
+                     {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+  </div>*/}
+                    </div>
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/A18040103_10002_0.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">Blue Ash Recreation Center</span>
+                      </h5>
+                     {/*} <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="info"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="info"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="info"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+</div>*/}
+                    </div>
+                  </div>
+                </Col>
+                {/*}  <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/team-4-800x800.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">John Doe</span>
+                        <small className="h6 text-muted">Customer Review</small>
+                      </h5>
+                      <p> Over 1234 customers, companies and industries use Force globally. </p>
+                    <div className="mt-3">
+                        <Button
+                          className="btn-icon-only rounded-circle"
+                          color="success"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-twitter" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="success"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-facebook" />
+                        </Button>
+                        <Button
+                          className="btn-icon-only rounded-circle ml-1"
+                          color="success"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                        >
+                          <i className="fa fa-dribbble" />
+                        </Button>
+</div>
+                    </div>
+                  </div>
+                </Col>*/}
+              </Row> <br />
+                  <Link className="display-4">See customer stories</Link>
                 </Col>
               </Row>
               <Row>

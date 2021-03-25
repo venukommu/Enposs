@@ -233,13 +233,13 @@ class DemoNavbar extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="/force" tag={Link}>
-                        What is Force?
+                        What is FORCE?
                       </DropdownItem>
                       <DropdownItem to="/forceprinciples" tag={Link}>
                        Working Principle
                       </DropdownItem>
                       <DropdownItem to="/benefits" tag={Link}>
-                        Benefits of Force
+                        Benefits of FORCE
                       </DropdownItem>
                       <DropdownItem to="/patents" tag={Link}>
                         Patents
@@ -299,7 +299,7 @@ class DemoNavbar extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu>
                     <DropdownItem to="/installforce" tag={Link}>
-                        How to install Force
+                        How to install FORCE
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
                         FAQ

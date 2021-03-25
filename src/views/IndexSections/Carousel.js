@@ -88,7 +88,7 @@ class Carousel extends React.Component {
     return (
       <>
         <section className="section section-shaped">
-          <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
+          <div className="shape bg-gradient-secondary">
             <span />
             <span />
             <span />
@@ -100,13 +100,13 @@ class Carousel extends React.Component {
           <Container className="py-md">
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
-                  <h3 className="text-white"   style={{ fontSize: "48px", fontWeight: "800px"}}>
+                  <h3 className="text-dark"   style={{ fontSize: "48px", fontWeight: "800px"}}>
                   Choose a better way to live and save.</h3>
                         <p className="lead text-white mt-4">
                         {/*{this.state.carouselcontent.description}*/}
                         </p>
-                        <Link class="btn-white mt-4 btn btn-default"  to="/store">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
-                        <Link class="btn-white mt-4 btn btn-default">Talk to Sales</Link>
+                        <Link class="btn-warning mt-4 btn "  to="/store">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
+                        <Link class="btn-secondary mt-4 btn ">Talk to Sales</Link>
               </Col>
               <Col className="mb-lg-auto" lg="6">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
