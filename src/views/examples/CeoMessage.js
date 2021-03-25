@@ -244,17 +244,15 @@ class CeoMessage extends React.Component {
                           expanded={false}
                           //width={280}
                           >*/}
-                          Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br />  <br /> 
-                          Fossil fuels are used extensively to generate electricity. They are expensive and difficult to extract from the earth. Their depletion and distribution are international issues. In addition, the fossil fuels used to generate electricity emit harmful greenhouse gases, like carbon dioxide. Thus, the use of fossil fuels burdens the economy in several different ways.<br />  <br />
-                          US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
-                          Polar bears are endangered and we will lose the privilege of having them on the earth. If suitable measures are not taken, we all would push them to the brink of extinction. 
-                          Enposs has taken a step forward to protect our environment.<br />  <br />
-                          By using Enposs technology we can have beautiful,brighter and better tomorrows. 
-                          Enposs is more than a decade old and is recognized for its outstanding technology. 
-                          Customers all over the world can now save energy, environment and economy. 
-                          Empower yourself with Enposs. 
+                          Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br /><br />
+
+                          Fossil fuels are used extensively to generate electricity. They are expensive and difficult to extract from the earth. Their depletion and distribution are international issues. In addition, the fossil fuels used to generate electricity emit harmful greenhouse gases, like carbon dioxide. Thus, the use of fossil fuels burdens the economy, as well the environment, in several different ways.<br /><br />
+
+                          Polar bears are endangered, and we will lose the privilege of having them on the earth if suitable measures are not taken. The US Fish & Wildlife Service has announced that the polar bear population will fall 30 percent by 2050, pushing them to the edge of extinction. Enposs has taken a step to protect our environment. We encourage you to join us.<br /><br />
+
+                          Enposs is more than a decade old and is recognized for its outstanding technology. Customers all over the world now save energy, and help save the environment and the economy at the same time. Join us in our hope for beautiful, brighter, and better tomorrows, by using Enposs technology.
                           {" "}  <br />  <br />
-                          Save Energy , Save Earth. 
+                          Empower yourself to save energy and help save the Earth. 
                           {" "}<br />
                           CEO
                           Sung gwun Choi <br />   {/*</ShowMoreText>*/}
