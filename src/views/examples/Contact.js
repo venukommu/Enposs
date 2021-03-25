@@ -20,13 +20,32 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 class Contact extends React.Component {
     state = {
         contacts: [],
+        showingInfoWindow: false,  // Hides or shows the InfoWindow
+        activeMarker: {},          // Shows the active marker upon click
+        selectedPlace: {},          // Shows the InfoWindow to the selected place upon a marker
         error: null
      }
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+       selectedPlace: props,
+       activeMarker: marker,
+       showingInfoWindow: true
+    });
+ 
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
 
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
@@ -197,10 +216,23 @@ class Contact extends React.Component {
                       zoom={14}
                       initialCenter={
                         {
-                          lat: -1.2884,
-                          lng: 36.8233
+                          lat: 33.859834068446666,
+                          lng: -117.99783060414177
                         }
-                      } />
+                      } >
+                      <Marker
+                        onClick={this.onMarkerClick}
+                        name={'6940 Beach Blvd D609, Buena Park, CA 90621, USA'}
+                      />
+                      <InfoWindow
+                        marker={this.state.activeMarker}
+                        visible={this.state.showingInfoWindow}
+                        onClose={this.onClose}>
+                        <div>
+                          <h4>{this.state.selectedPlace.name}</h4>
+                        </div>
+                      </InfoWindow>
+                    </Map>  
                     </Col>
                     </Row>
                 </Container>

@@ -26,6 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import Background from 'assets/img/theme/photo-1506784693919-ef06d93c28d2.jpeg';
 
 class Timeline extends React.Component {
   
@@ -96,7 +97,13 @@ class Timeline extends React.Component {
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
             <div className="shape shape-style-1 shape-default"
-             >
+              style= {{
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundImage: `url("${Background}")`,
+                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+               }}>
                 <span />
                 <span />
                 <span />
@@ -107,11 +114,18 @@ class Timeline extends React.Component {
                 <span />
                 <span />
               </div>
-              <Container className="shape-container d-flex align-items-center py-lg">
+              <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                  <Row className="align-items-center justify-content-center">
-                    <Col className="text-center" lg="6">
-                      <h1 className="display-3 text-white">Timeline</h1>
+                  <Row>
+                    <Col lg="8">
+                    <div>
+                    <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                      There couldn't have been a better time for Force on the world scene</h1>
+                    <h3 className="display-4 text-info"
+                        style={{ textAlign : "left" , marginBottom: "80px" }}>
+                        A time when the world is gasping for fresh air and frantic about going green.
+                    </h3>
+                    </div>
                     </Col>
                   </Row>
                 </div>
@@ -139,6 +153,10 @@ class Timeline extends React.Component {
             <Container>
               <Card className="card-profile bg-gradient-lighter shadow mt--200">
                 <div className="px-4">
+                <h4 className="display-3 font-weight-bold text-primary">
+                          {/*}    {companystory.Title}*/}
+                          Timeline
+                      </h4>
                   <Row className="justify-content-center">
                   
                     {/*<Col className="order-lg-2" lg="3">
@@ -254,7 +272,7 @@ class Timeline extends React.Component {
     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>*/}
     <ul>
     <li>Power Saving Business for Apartment complex and industries</li>
-    <li>Start power saving business in South Korea</li>  
+    <li>Started power saving business in South Korea</li>  
     <li>R&D on Power Saving and Completed Safety test</li></ul>
     </VerticalTimelineElement>
   <VerticalTimelineElement
@@ -295,7 +313,7 @@ class Timeline extends React.Component {
     <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>*/}
       <div  style={{ textAlign : "left" }}>
     <ul>
-    <li> Established Enposs</li>
+    <li> Established ENPOSS</li>
     <li>FORCE: Certificate of Electrical Safety by CE</li>
     <li>Obtained ISO 9001: 2000</li>
     <li>FORCE: TUV performance test conducted</li>
@@ -423,7 +441,7 @@ class Timeline extends React.Component {
     <div  style={{ textAlign : "left" }}>
     <ul>
     <li>Opened a branch office in Los Angeles, USA</li>
-    <li>(Enpos Japan Co., Ltd.)</li></ul></div>
+    <li>(ENPOSS Japan Co., Ltd.)</li></ul></div>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -441,7 +459,7 @@ class Timeline extends React.Component {
     <li>Alloted as the Preffered supply company for</li>
     Korean government office
     <li>Contract to supply for a shipping company</li>
-    <li>Established Enpos Japan Co., Ltd.</li></ul>
+    <li>Established ENPOSS Japan Co., Ltd.</li></ul>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
