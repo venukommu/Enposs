@@ -165,7 +165,7 @@ class Forceprinciples extends React.Component {
                           <Col lg="12">
                         <UncontrolledCarousel items={items} /></Col></Row>*/}
                         </CardBody>
-                        <Button className="text-center" href ={require('assets/img/pdf-reports/LeaseproposalresidentialforSalespptx.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">Read More</Button>
+                        <Button className="text-center" href ={require('assets/img/pdf-reports/ENPOSSCompanyprofile.pdf')} type="application/pdf" target="_blank" title="Click to Read More" rel="noopener noreferrer">Read More</Button>
                       </Card>
                     </Col>
                   </Row>
@@ -188,7 +188,7 @@ class Forceprinciples extends React.Component {
                   </CardBody>
                   </Card>
               </Col>
-              
+
               <Col lg="4">
                   <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody className="py-3"> 
