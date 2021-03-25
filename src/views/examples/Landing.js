@@ -1225,7 +1225,7 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </Col>*/}
-              </Row>
+              </Row> <br />
                   <Link className="display-4">See customer stories</Link>
                 </Col>
               </Row>
