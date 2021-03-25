@@ -91,7 +91,7 @@ class InstallForce extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
+              <div className="shape shape-style-1 bg-gradient-pink">
                 <span />
                 <span />
                 <span />
@@ -209,7 +209,7 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                   1.Installation of FORCE
+                   I.Installation of FORCE
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -222,7 +222,7 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                    2. Installation of FORCE
+                    II. Installation of FORCE
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -231,8 +231,9 @@ class InstallForce extends React.Component {
               <CardBody>
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
+                    <p className="text-dark font-weight-bold">I.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
-                    <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing Force, or performing work in an Electrical panel.</p>
+                    <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
                     <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
                       <Row>
                         <Col lg="7">
@@ -259,8 +260,9 @@ class InstallForce extends React.Component {
                   </TabPane>
                 
                   <TabPane tabId="plainTabs2">
+                    <p className="text-dark font-weight-bold">II.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
-                    <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing Force, or performing work in an Electrical panel.</p>
+                    <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
                     <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
                     <Row>
                       <Col lg="7">
@@ -282,7 +284,7 @@ class InstallForce extends React.Component {
 
                       <Col lg="5">
                         <CardBody>
-                          <CardImg alt="FORCE Installation" src={`${require("assets/img/theme/2-Installation-Of-FORCE.png")}`}/>
+                          <CardImg alt="FORCE Installation" src={`${require("assets/img/theme/Installation2.PNG")}`}/>
                         </CardBody>
                       </Col>
                     </Row>
