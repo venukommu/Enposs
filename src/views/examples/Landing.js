@@ -453,7 +453,7 @@ class Landing extends React.Component {
 
               <Card className="bg-gradient-info shadow-lg border-0">
                 <div className="p-5">
-                  <Row className="row-grid mt-5 align-items-center text-center">
+                  <Row className="row-grid align-items-center text-center">
                     <Col lg="12">
                       <h3 className="text-white font-weight-bold">
                       Reduced Power Consumption with FORCE is 38,886,516 Kwh/year

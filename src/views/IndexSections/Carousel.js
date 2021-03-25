@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 
 const items = [
   {
-    src: require("assets/img/theme/1.PNG"),
+    src: require("assets/img/theme/1.png"),
     altText: "",
     caption: "",
     header: ""
