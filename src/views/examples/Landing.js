@@ -253,10 +253,29 @@ class Landing extends React.Component {
                             </Button>                      
                             </h3>
                           </Col>
+                          <Col xs="6" md="6" > 
+                            <h5 className="display-7 text-white text-lead align-items-center"
+                              style={{ textAlign : "left" }}>
+                              <span  className="text-white  font-weight-bold">Total CO<sub>2</sub> Reduced</span>
+                            </h5>
+                          </Col>
+                        </Row>
+                        <Row>
+                          {/*<Col md="4" xs="6"></Col>*/}
+                          <Col xs="6" md="6">
+                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "right" }}>                    
+                            <Button
+                              className="btn-icon mt-2 mb-3 mb-sm-0"
+                              color="danger"
+                            >             
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                            </Button>                      
+                            </h3>
+                          </Col>
                           <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
                               style={{ textAlign : "left" }}>
-                              <span  className="text-white text-lead">Total reduced CO<sub>2</sub></span>
+                              <span  className="text-white text-lead font-weight-bold">Total Power Reduced</span>
                             </h5>
                           </Col>
                         </Row>
@@ -1049,7 +1068,7 @@ class Landing extends React.Component {
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="12">
                   <h2 className="display-3">We&#39;re going places</h2>
-                  <p className="lead text-muted">
+                  <p className="lead text-dark">
                   More than 7 countries and still counting <br />
                   Over 1234 customers, companies and industries use FORCE globally.
                   </p>
