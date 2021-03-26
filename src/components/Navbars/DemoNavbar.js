@@ -221,9 +221,6 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/timeline" tag={Link}>
                         Timeline
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
-                        Directions 
-                      </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                  
                   <UncontrolledDropdown nav>
@@ -308,7 +305,7 @@ class DemoNavbar extends React.Component {
                         Q&A
                       </DropdownItem>
                       <DropdownItem to="/contact" tag={Link}>
-                        Inquiry
+                       Contact Us
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>       

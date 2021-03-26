@@ -242,11 +242,11 @@ class Timeline extends React.Component {
     <VerticalTimeline>
     <VerticalTimelineElement
     className="vertical-timeline-element"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     textClassName="bg-gradient-white"
     //date="2006"
     visible={ true }
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2005"}
     
@@ -261,10 +261,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2006"
     visible={ true }
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2006"}
   >
@@ -277,10 +277,10 @@ class Timeline extends React.Component {
     </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2007"
     visible={ true }
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2007"}
   >
@@ -302,10 +302,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2008"
     visible={ true }
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2008"}
   >
@@ -321,10 +321,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2009"
     visible={ true }
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2009"}
   >
@@ -341,10 +341,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2010"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2010"}
   >
@@ -364,10 +364,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2011"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2011"}
   >
@@ -381,10 +381,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2012"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2012"}
   >
@@ -397,10 +397,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2013"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2013"}
   >
@@ -412,10 +412,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2017"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2017"}
   >
@@ -429,10 +429,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2018"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2018"}
   >
@@ -445,10 +445,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2018"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2018"}
   >
@@ -463,10 +463,10 @@ class Timeline extends React.Component {
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+    contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2019"
     visible={ true }
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+    iconStyle={{ background: 'rgb(241,90,34)', color: '#fff' }}
     iconClassName="icon icon-shape"
     icon={"2019"}
   >

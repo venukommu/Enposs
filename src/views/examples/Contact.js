@@ -13,39 +13,21 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
+  Badge
 } from "reactstrap";
 //import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import MapContainer from "../examples/MapContainer.js";
 
 class Contact extends React.Component {
     state = {
         contacts: [],
-        showingInfoWindow: false,  // Hides or shows the InfoWindow
-        activeMarker: {},          // Shows the active marker upon click
-        selectedPlace: {},          // Shows the InfoWindow to the selected place upon a marker
         error: null
      }
-
-  onMarkerClick = (props, marker, e) =>
-    this.setState({
-       selectedPlace: props,
-       activeMarker: marker,
-       showingInfoWindow: true
-    });
- 
-  onClose = props => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
-  };
 
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
@@ -89,7 +71,7 @@ class Contact extends React.Component {
       <>
         <DemoNavbar />
         <main ref="main">
-        <section className="section-profile-cover section-shaped my-0">
+        <section className="section-profile-cover section-shaped pb-250">
             {/* Circles background */}
             <div className="shape shape-style-1 shape-default">
               
@@ -101,6 +83,52 @@ class Contact extends React.Component {
               <span />
               <span />
             </div>
+              <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                  <Row>
+                    <Col lg="8">
+                    {/*<h3 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "30px", fontWeight: "800px", marginTop: "90px" }}>
+                     ENPOSS AMERICA INC. <br/>
+                      <div className="icon icon-shape bg-white rounded-circle text-primary">
+                      <i className="ni ni-square-pin" /> </div>
+                       6940 Beach Blvd D609, Buena Park, CA 90621, USA 
+                       <br/>info@enposs.com</h3>
+                    */}
+                    <div>
+                      <h4 className="text-white" style={{ marginTop: "120px" }}>Contact Information</h4>
+                        <div className="d-flex py-2 align-items-center">
+                            <Badge className="badge-circle mr-3 text-primary" >
+                              <i className="ni ni-square-pin" />
+                            </Badge>
+                            <h5 className="mb-0 text-white">
+                            6940 Beach Blvd D609, Buena Park, CA 90621, USA</h5>
+                        </div>
+                        <div className="d-flex py-2 align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3 text-primary">
+                              <i className="ni ni-mobile-button" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5 className="mb-0 text-white">(909) 973-0001</h5>
+                          </div>
+                        </div>
+                        <div className="d-flex py-2 align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3 text-primary">
+                              <i className="ni ni-email-83" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5 className="mb-0 text-white">
+                            info@enposs.com</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </Container>
             
                 {/* SVG separator */} 
                 <div className="separator separator-bottom separator-skew zindex-100">
@@ -119,9 +147,9 @@ class Contact extends React.Component {
                     </svg>
                 </div>
                 </section>
-                <section className="section section-lg pt-lg-0 section-contact-us">
+                <section className="section section-lg pt-lg-0 mt--200">
                 <Container>
-                    <Row className="justify-content-center mt--300">
+                    <Row className="justify-content-center">
                     <Col lg="6">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
@@ -211,28 +239,7 @@ class Contact extends React.Component {
                         </Card>
                     </Col>
                     <Col lg="6">
-                    <Map
-                      google={this.props.google}
-                      zoom={14}
-                      initialCenter={
-                        {
-                          lat: 33.859834068446666,
-                          lng: -117.99783060414177
-                        }
-                      } >
-                      <Marker
-                        onClick={this.onMarkerClick}
-                        name={'6940 Beach Blvd D609, Buena Park, CA 90621, USA'}
-                      />
-                      <InfoWindow
-                        marker={this.state.activeMarker}
-                        visible={this.state.showingInfoWindow}
-                        onClose={this.onClose}>
-                        <div>
-                          <h4>{this.state.selectedPlace.name}</h4>
-                        </div>
-                      </InfoWindow>
-                    </Map>  
+                      <MapContainer />
                     </Col>
                     </Row>
                 </Container>
@@ -244,6 +251,4 @@ class Contact extends React.Component {
   }
 }
 
-export default  GoogleApiWrapper({
-  apiKey: 'AIzaSyCqHFLlCW6oz0MSQxnuNlvbBb5ypJWECvQ'
-})(Contact);
+export default Contact;
