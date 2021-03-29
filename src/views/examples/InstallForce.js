@@ -238,15 +238,15 @@ class InstallForce extends React.Component {
                       <Row>
                         <Col lg="7">
                           <ul>
-                            <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
-                            <li>After double-checked the electricity is OFF, then carefully remove the panel cover.  </li>
-                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
-                            <li> Put Black robber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
-                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
-                            <li> Put Black robber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click".</li>
+                            <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breaker. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
+                            <li>After double-checking the electricity is OFF, then carefully remove the panel cover.  </li>
+                            <li> Put Cap through Y-terminal and bring it towards the device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
+                            <li> Put Black rubber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
+                            <li> Put Cap through Y-terminal and bring it towards the device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
+                            <li> Put Black rubber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click".</li>
                             <li> Mount the FORCE device anywhere within 12 inches from the panel.</li>
                             <li> Unscrew the bolt & nut that is attached to the bus bar, then connect one Y-terminal (white color) on the left side of the bus bar and screw the bolt & nut tight. </li>
-                            <li> Then follow procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
+                            <li> Then follow the procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
                             <li>Safely install the panel cover back.   </li>
                             <li> Turn on the main breaker. DONE!   </li>
                           </ul>
@@ -267,15 +267,15 @@ class InstallForce extends React.Component {
                     <Row>
                       <Col lg="7">
                         <ul>
-                          <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
-                          <li>  After double-checked the electricity is OFF, then carefully remove the panel cover. </li>
-                          <li> Put Black robber(the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
-                          <li>Put Cap through Y-terminal and bring it towards to device to close(twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap.</li>
+                          <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breaker. <span className="text-danger">(**Please double-check with an electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
+                          <li>  After double-checking the electricity is OFF, then carefully remove the panel cover. </li>
+                          <li> Put Black rubber(the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
+                          <li>Put Cap through Y-terminal and bring it towards the device to close(twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap.</li>
                           <li> Mount the FORCE device anywhere within 12 inches from the panel. </li>
                           <li> Cut off Y-terminal from the wire, and peel about ½ inches from the tip of the wire cover (COVER ONLY).</li>
                           <li>Connect wires to the switches. </li>
-                          <li>Remove the very first two switches from 1 or 2 side of the panel. </li>
-                          <li> Connect both of the FORCE attached switches on the top first two breakers of the panel that you have selected. </li>
+                          <li>Remove the very first two switches from 1 or 2 sides of the panel. </li>
+                          <li> Connect both of the FORCE to attached switches on the top first two breakers of the panel that you have selected. </li>
                           <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY! <span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
                           <li> Safely install the panel cover back. </li>
                           <li> Turn ON the MAIN BREAKER. DONE! </li>
