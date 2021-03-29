@@ -245,7 +245,7 @@ class Landing extends React.Component {
                         <Row>
                           {/*<Col md="4" xs="6"></Col>*/}
                           <Col xs="6" md="6">
-                          <span  className="text-white text-lead">Total Reduced CO<sub>2</sub>/day</span> <br />
+                          <span  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total Reduced CO<sub>2</sub>/day</span> 
                             <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>                    
                             <Button 
                               className="btn btn-primary btn-block btn-lg"
@@ -267,7 +267,7 @@ class Landing extends React.Component {
                         <Row>*/}
                           {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
                           <Col xs="6" md="6">
-                           <span  className="text-white text-lead">Total Reduced power/day</span>
+                           <span  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total Reduced power/day</span> 
                             <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>   
                             <Button 
                               className="btn btn-primary btn-block btn-lg"
