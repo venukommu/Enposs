@@ -127,12 +127,12 @@ class InstallForce extends React.Component {
       />
     </div>
                
-                {/*}  <Row>
+                  <Row>
                     <Col lg="6">
-                      <div><h1 className="display-3 text-white">How To Install</h1>
+                      <div><h1 className="display-3 text-dark">How To Install</h1>
                       </div>
                     </Col>
-      </Row>*/}
+      </Row>
                 </div>
               </Container>
               {/* SVG separator */}

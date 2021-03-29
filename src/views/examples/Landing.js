@@ -160,7 +160,7 @@ class Landing extends React.Component {
   
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner } = this.state;
+    const { error } = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -204,13 +204,14 @@ class Landing extends React.Component {
                           {/*<span>completed with examples</span>*/}
                         </h5>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontFamily: "Noto Sans", fontSize:"42px", fontWeight: "800px",marginTop: "90px" }}>
+                        style={{ textAlign : "left" ,fontFamily: "Nato Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         {/*homepagebanner.description
-          
+        
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
-                        {/*Save Energy - Save Earth*/}
-                        {homepagebanner.Title}
+                        {/*Save Energy - Save Earth
+                        {homepagebanner.Title}*/}
+                        "FORCE" - The Driving force to Save Energy, Earth and 'Money'
                         </h1>
                       </div>
                       <div className="btn-wrapper">
@@ -237,47 +238,52 @@ class Landing extends React.Component {
                           </span>
                         </Button>*/}
                         <div>
-                        <h3 className="display-3 text-white mt-2" style={{ textAlign : "left",fontFamily: "Noto Sans" }}>
-                           FORCE is an energy-saving device proven to reduce your energy consumption
+                        <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" }}>
+                        FORCE is an energy-saving device proven to reduce your energy consumption
                           {/*Conserve and Preserve*/}
-                        </h3>
+                        </h3> <br />
                         <Row>
                           {/*<Col md="4" xs="6"></Col>*/}
-                          <Col xs="6" md="6" style={{ paddingLeft:"10px",paddingRight:"10px"}}>
+                          <Col xs="6" md="6">
+                          <span  className="text-white text-lead">Total Reduced CO<sub>2</sub>/day</span> <br />
                             <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>                    
-                              <Button
-                                className="btn-icon mt-2 mb-3 mb-sm-0"
-                                color="danger"
-                              > 
-                                <span  className="text-white ">Total CO<sub>2</sub> Reduced</span>  <br />              
-                                <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
-                              </Button>                      
+                            <Button 
+                              className="btn btn-primary btn-block btn-lg"
+                              color="danger"
+                            >
+                              {/*<span  className="text-white text-lead">CO<sub>2</sub>/day</span> <br />
+                               <span  className="text-white text-lead">Total Reduced CO<sub>2 &nbsp;&nbsp;&nbsp;</sub></span> <br />*/}
+                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={49.65} /> </span> tons
+                            </Button>                      
                             </h3>
                           </Col>
-                          {/*}  <Col xs="6" md="6"> 
+                         {/*} <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
-                              style={{ textAlign : "left",paddingTop: "20px",fontFamily: "Noto Sans" }}>
-                              <span  className="text-white ">Total CO<sub>2</sub> Reduced</span>
+                              style={{ textAlign : "left",paddingTop: "20px" }}>
+                              <span  className="text-white text-lead">Total Reduced CO<sub>2</sub></span>
                             </h5>
-                          </Col>*/}
-                          {/*<Col md="4" xs="6"></Col>*/}
-                          <Col xs="6" md="6" style={{ paddingLeft:"10px",paddingRight:"10px"}}>
-                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>                    
-                              <Button
-                                className="btn-icon mt-2 mb-3 mb-sm-0"
-                                color="danger"
-                              >         
-                                <span  className="text-white">Total Power Reduced</span> <br />
-                                <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> KWH
-                              </Button>                      
+                      </Col>*/}
+                       {/*} </Row>
+                        <Row>*/}
+                          {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
+                          <Col xs="6" md="6">
+                           <span  className="text-white text-lead">Total Reduced power/day</span>
+                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>   
+                            <Button 
+                              className="btn btn-primary btn-block btn-lg"
+                              color="danger"
+                            >
+                              {/*<span  className="text-white text-lead">power/day</span> <br />*/}
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={106538.4} /> </span> KWH&nbsp;
+                            </Button>                      
                             </h3>
                           </Col>
-                          {/*<Col xs="6" md="6"> 
+                         {/*} <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
-                              style={{ textAlign : "left",paddingTop: "20px",fontFamily: "Noto Sans"  }}>
-                              <span  className="text-white">Total Power Reduced</span>
+                              style={{ textAlign : "left",paddingTop: "20px"}}>
+                              <span  className="text-white text-lead">Total Reduced power</span>
                             </h5>
-                          </Col>*/}
+                    </Col>*/}
                         </Row>
                         {/*} <h4 className="display-7 text-white"
                           style={{ textAlign : "justify" }}>
@@ -1068,9 +1074,9 @@ class Landing extends React.Component {
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="12">
                   <h2 className="display-3">We&#39;re going places</h2>
-                  <p className="lead text-dark">
+                  <p className="lead text-muted">
                   More than 7 countries and still counting <br />
-                  Over 1234 customers, companies and industries use FORCE globally.
+                  Over 1234 customers, companies and industries use FORCE globally.
                   </p>
                   <h4 className="display-5">Our Clients</h4><br />
                   <Row>
@@ -1214,7 +1220,7 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">John Doe</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p> Over 1234 customers, companies and industries use Force globally. </p>
+                      <p> Over 1234 customers, companies and industries use Force globally. </p>
                     <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
@@ -1262,7 +1268,7 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">Ryan Tompson</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p className="text-dark"> FORCE saves consumption and safe to use.
+                      <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
 </p>
                      {/*} <div className="mt-3">
@@ -1309,7 +1315,7 @@ class Landing extends React.Component {
                           Customer Review
                         </small>
                       </h5>
-                      <p className="text-dark"> FORCE saves consumption and safe to use.
+                      <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
 </p>                    {/*} <div className="mt-3">
                         <Button
@@ -1353,7 +1359,7 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">Alexander Smith</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p className="text-dark"> FORCE saves consumption and safe to use.
+                      <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
 </p>                     {/*} <div className="mt-3">
                         <Button
@@ -1397,7 +1403,7 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">John Doe</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p className="text-dark"> FORCE saves consumption and safe to use.
+                      <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
