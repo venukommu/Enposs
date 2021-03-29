@@ -251,11 +251,11 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">News</span>
                     </DropdownToggle>
-                    <DropdownMenu>
+                   {/*} <DropdownMenu>
                       <DropdownItem to="#" tag={Link}>
                           Announcement
                       </DropdownItem>
-                    </DropdownMenu>
+                  </DropdownMenu>*/}
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/clients" tag={Link} nav>
