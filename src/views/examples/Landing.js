@@ -253,7 +253,7 @@ class Landing extends React.Component {
                             >
                               {/*<span  className="text-white text-lead">CO<sub>2</sub>/day</span> <br />
                                <span  className="text-white text-lead">Total Reduced CO<sub>2 &nbsp;&nbsp;&nbsp;</sub></span> <br />*/}
-                            <span  style={{ fontSize : "21px" }} className="text-white"> <CountUp end={49.65} /> </span> tons
+                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={49.65} decimals={2} /> </span> tons
                             </Button>                      
                             </h3>
                           </Col>
@@ -274,7 +274,7 @@ class Landing extends React.Component {
                               color="danger"
                             >
                               {/*<span  className="text-white text-lead">power/day</span> <br />*/}
-                              <span  style={{ fontSize : "21px" }} className="text-white"> <CountUp end={106538.4} /> </span> KWH&nbsp;
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={106538.4}  decimals={2} /> </span> KWH&nbsp;
                             </Button>                      
                             </h3>
                           </Col>
