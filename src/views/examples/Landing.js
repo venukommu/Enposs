@@ -274,7 +274,7 @@ class Landing extends React.Component {
                               color="danger"
                             >
                               {/*<span  className="text-white text-lead">power/day</span> <br />*/}
-                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={106538.4}  decimals={2} /> </span> KWH&nbsp;
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={106538.4}  decimals={1} /> </span> KWH&nbsp;
                             </Button>                      
                             </h3>
                           </Col>
