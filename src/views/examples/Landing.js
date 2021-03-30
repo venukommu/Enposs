@@ -495,6 +495,7 @@ class Landing extends React.Component {
                 </div>
               </Card>
          <Carousel />
+         
              {/*<section className="section">
              <Container>
               <Row className="row-grid align-items-center">
