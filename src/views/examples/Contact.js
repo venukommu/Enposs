@@ -16,25 +16,48 @@ import {
   Col,
   Badge
 } from "reactstrap";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import MapContainer from "../examples/MapContainer.js";
+import contactpage from 'strapi/contactpage';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Contact extends React.Component {
     state = {
         contacts: [],
+        name: '',
+        email: '',
+        contactnum: '',
+        message: '',
         error: null
      }
+
+  nameHandler = (event) => {
+    this.setState({name: event.target.value});
+  }
+
+  emailHandler = (event) => {
+    this.setState({email: event.target.value});
+  }
+
+  contactnumberHandler = (event) => {
+    this.setState({contactnum: event.target.value});
+  }
+
+  messageHandler = (event) => {
+    this.setState({message: event.target.value});
+  }
 
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
     
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -50,7 +73,7 @@ class Contact extends React.Component {
     };
   
     try {
-      const contacts = await fetch(`${appConfig.apiURL}/contacts`, {
+      const contacts = await fetch(`${appConfig.apiURL}/contact`, {
         method: 'GET',
         headers: headers,
       })
@@ -59,10 +82,29 @@ class Contact extends React.Component {
       this.setState({ contacts });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
   render() {
-    const { error} = this.state;
+    const { error, contacts, name, email, contactnum, message} = this.state;
+
+    let isEmpty = !name || !email || !contactnum || !message;
+
+    const handleSubmit = async (e) => {
+      //showAlert({ msg: 'accessing user data. please wait...' });
+      e.preventDefault();
+
+      if (isEmpty) {
+        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+      } else {
+        let response = await contactpage( {name, email, contactnum, message} );
+        if (response.status === 200) {
+          toast.success(response.data.message,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+          this.setState({name: '',email: '',contactnum: '',message: ''});
+        } else {
+          toast.error(response.data.error,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});
+        }
+      }
+    }
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -95,23 +137,13 @@ class Contact extends React.Component {
                        <br/>info@enposs.com</h3>
                     */}
                     <div>
-                      <h4 className="text-white" style={{ marginTop: "120px" }}>Contact Information</h4>
+                      <h4 className="text-white" style={{ marginTop: "120px" }}>{/*Contact Information*/}{contacts.Title}</h4>
                         <div className="d-flex py-2 align-items-center">
                             <Badge className="badge-circle mr-3 text-primary" >
                               <i className="ni ni-square-pin" />
                             </Badge>
                             <h5 className="mb-0 text-white">
-                            6940 Beach Blvd D609, Buena Park, CA 90621, USA</h5>
-                        </div>
-                        <div className="d-flex py-2 align-items-center">
-                          <div>
-                            <Badge className="badge-circle mr-3 text-primary">
-                              <i className="ni ni-mobile-button" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h5 className="mb-0 text-white">(909) 973-0001</h5>
-                          </div>
+                            {/*6940 Beach Blvd D609, Buena Park, CA 90621, USA*/}{contacts.address}</h5>
                         </div>
                         <div className="d-flex py-2 align-items-center">
                           <div>
@@ -121,7 +153,7 @@ class Contact extends React.Component {
                           </div>
                           <div>
                             <h5 className="mb-0 text-white">
-                            info@enposs.com</h5>
+                            {/*info@enposs.com*/}{contacts.email}</h5>
                           </div>
                         </div>
                       </div>
@@ -153,9 +185,10 @@ class Contact extends React.Component {
                     <Col lg="6">
                         <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">
-                            <h4 className="mb-1">How Can We Help?</h4>
+                            <h4 className="mb-1">{/*How Can We Help?*/}{contacts.heading}</h4>
                             <p className="mt-0">
-                            Let's schedule a call to assess your requirement..
+                            {/*Let's schedule a call to assess your requirement..*/}
+                            {contacts.subheading}
                             </p>
                             <FormGroup
                             className={classnames("mt-5", {
@@ -170,9 +203,11 @@ class Contact extends React.Component {
                                 </InputGroupAddon>
                                 <Input
                                 placeholder="Your name"
-                                type="text"
-                                onFocus={e => this.setState({ nameFocused: true })}
-                                onBlur={e => this.setState({ nameFocused: false })}
+                                type="text" id="name"
+                                value={name}
+                                onChange={this.nameHandler} 
+                                //onFocus={e => this.setState({ nameFocused: true })}
+                                //onBlur={e => this.setState({ nameFocused: false })}
                                 />
                             </InputGroup>
                             </FormGroup>
@@ -189,9 +224,10 @@ class Contact extends React.Component {
                                 </InputGroupAddon>
                                 <Input
                                 placeholder="Email address"
-                                type="email"
-                                onFocus={e => this.setState({ emailFocused: true })}
-                                onBlur={e => this.setState({ emailFocused: false })}
+                                type="email" id="email" value={email}
+                                onChange={this.emailHandler}
+                                //onFocus={e => this.setState({ emailFocused: true })}
+                                //onBlur={e => this.setState({ emailFocused: false })}
                                 />
                             </InputGroup>
                             </FormGroup>
@@ -208,9 +244,10 @@ class Contact extends React.Component {
                                 </InputGroupAddon>
                                 <Input
                                 placeholder="Contact number"
-                                type="text"
-                                onFocus={e => this.setState({ numberFocused: true })}
-                                onBlur={e => this.setState({ numberFocused: false })}
+                                type="text" id="number" value={contactnum}
+                                onChange={this.contactnumberHandler}
+                                //onFocus={e => this.setState({ numberFocused: true })}
+                                //onBlur={e => this.setState({ numberFocused: false })}
                                 />
                             </InputGroup>
                             </FormGroup>
@@ -221,7 +258,8 @@ class Contact extends React.Component {
                                 name="name"
                                 placeholder="Type a message..."
                                 rows="4"
-                                type="textarea"
+                                type="textarea" id="message" value={message}
+                                onChange={this.messageHandler}
                             />
                             </FormGroup>
                             <div>
@@ -231,6 +269,7 @@ class Contact extends React.Component {
                                 color="default"
                                 size="lg"
                                 type="button"
+                                onClick={handleSubmit}
                             >
                                 Send Message
                             </Button>

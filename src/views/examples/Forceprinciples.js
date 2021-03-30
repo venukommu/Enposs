@@ -20,13 +20,15 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 // index page sections
 class Forceprinciples extends React.Component {
   
   state = {
-    forcewidgets: [],
+    forceprinciple: [],
+    mainpoints: [],
     error: null,
   };
 
@@ -35,7 +37,7 @@ class Forceprinciples extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -49,16 +51,16 @@ class Forceprinciples extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forceprinciple = await fetch(`${appConfig.apiURL}/forceprinciples`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forceprinciple,mainpoints: forceprinciple.mainpointsarray.mainpoints });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -66,7 +68,7 @@ class Forceprinciples extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
+    const { error,forceprinciple, mainpoints} = this.state;
 
     // Print errors if any
     if (error) {
@@ -96,12 +98,13 @@ class Forceprinciples extends React.Component {
                   <Row>
                     <Col lg="8">
                     <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Nato Sans", marginTop: "90px" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1>
+                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Nato Sans", marginTop: "90px" }}>{/*Active Power Saving by Increasing Conductivity (APSIC)*/}{forceprinciple.Title}</h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "60px" }}>
                         {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
                         It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
-                        Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.
+                        {/*Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.*/}
+                        {forceprinciple.subtitle}
                           {/*The dual-action of FORCE both improves the flow of your electrical current and absorbs energy losses, giving you two reasons it's good for your home.*/}
                        </h3>
                     </Col>
@@ -134,7 +137,7 @@ class Forceprinciples extends React.Component {
                       <Card className="shadow border-0">
                         <CardBody className="py-4">
                         <h4 className="display-3 font-weight-bold text-primary">
-                            Working Principle
+                            {/*Working Principle*/}{forceprinciple.heading}
                           </h4>
                           <p 
                           style={{ textAlign : "left" }}>
@@ -144,13 +147,14 @@ class Forceprinciples extends React.Component {
                           The double benefit is it absorbs all the losses by offsetting impedance, harmonic high low frequency, reactance etc.
                           Force utilizes Electromagnetic Flux called  EMF7.
                           which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. */}
-                          FORCE is a smart, dual-action device which actively saves power by increasing conductivity. First, it uses tourmaline and adds free electrons to the circuit. Second, it absorbs anything that causes loss of electricity (like heat and harmonic distortion, etc.)<br /> <br />
+                          {/*FORCE is a smart, dual-action device which actively saves power by increasing conductivity. First, it uses tourmaline and adds free electrons to the circuit. Second, it absorbs anything that causes loss of electricity (like heat and harmonic distortion, etc.)<br /> <br />
 
                           When nanoparticles of Tourmaline are mixed with other minerals, like magnesium, they produce an Electromagnetic Flux (EMF-7), which emits a subtle current. The key activity of the device is performed by EMF-7, as it emits electro magnetic electrons. The subtle current released by FORCE flows into the power line and increases the density of electrons, thereby improving current flow.<br /><br />
                           
                           At the same time, EMF 6 is produced by ionisation and electrification of copper plates –– which helps generate micro-electrons in the device. This means that the device also has the capacity to absorb energy losses by offsetting the negative effects of impedance, high or low harmonic frequencies, reactance, heat, etc.<br /><br />
 
-                          This dual action, due to the two kinds of EMF produced by the FORCE device, helps increase the electron density –– and thereby improves current flow and reduces power consumption.<br /><br /></p>
+                          This dual action, due to the two kinds of EMF produced by the FORCE device, helps increase the electron density –– and thereby improves current flow and reduces power consumption.*/}
+                          <ReactMarkdown source={forceprinciple.description} /><br /><br /></p>
                           <Row className="justify-content-center">
                           <Col lg="8">
                           <CardImg
@@ -174,7 +178,22 @@ class Forceprinciples extends React.Component {
           <section>
             <Container>
               <Row className="row-grid">
-              <Col lg="6">
+              {mainpoints.map(mainpoint => (
+              <Col lg="6" key={mainpoint.id}>
+                  <Card className="bg-gradient-gray-dark shadow border-0">
+                  <CardBody> 
+                      <h6 className="text-white">
+                        <ReactMarkdown source={mainpoint.description} />
+                      {/*<ul>
+                          <li>Usage of electricity saved by 5 per cent</li>
+                          <li>Increase surplus electrons by accelerating anion</li>
+                      </ul>*/} 
+                      </h6>
+                  </CardBody>
+                  </Card>
+              </Col>
+              ))}  
+              {/*<Col lg="6">
                   <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
@@ -199,7 +218,7 @@ class Forceprinciples extends React.Component {
                       </h6>
                   </CardBody>
                   </Card>
-              </Col>
+                </Col>*/}
               </Row>
             </Container>
           </section>

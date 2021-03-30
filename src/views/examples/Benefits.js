@@ -33,13 +33,13 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 //import Background from 'assets/img/theme/12818.jpg';
 
 class Benefits extends React.Component {
   state = {
     error: null,
-    companystory: [],
+    forcebenefits: [],
     homepageimage: [],
 
   };
@@ -49,7 +49,7 @@ class Benefits extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -65,33 +65,21 @@ class Benefits extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const forcebenefits = await fetch(`${appConfig.apiURL}/benefits`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ forcebenefits });
       } catch (error) {
         this.setState({ error });
       }
 
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
+    const { error, forcebenefits} = this.state;
 
     // Print errors if any
     if (error) {
@@ -126,12 +114,12 @@ class Benefits extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                       <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Nato Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                        Enjoy benefits that stack up
+                        {/*Enjoy benefits that stack up*/}{forcebenefits.Title}
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
                         <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
-                          the knock-on effects are significant as time goes on</h3>
+                          {/*the knock-on effects are significant as time goes on*/}{forcebenefits.subtitle}</h3>
                       </div>
                     </Col>
                   </Row>
