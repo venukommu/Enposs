@@ -122,7 +122,7 @@ class CeoMessage extends React.Component {
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px",fontFamily: "Nato Sans", fontWeight: "800px", marginTop: "90px" }}>
+                        style={{ textAlign : "left" , fontSize: "48px",fontFamily: "Noto Sans", fontWeight: "800px", marginTop: "90px" }}>
                           Play a dynamic role in balancing our ecology and human survival.</h1>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "20px" }}>
                           FORCE reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emissions, global warming, and the melting of glaciers.

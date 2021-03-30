@@ -96,7 +96,7 @@ class Forceprinciples extends React.Component {
                   <Row>
                     <Col lg="8">
                     <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Nato Sans", marginTop: "90px" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1>
+                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Noto Sans", marginTop: "90px" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "60px" }}>
                         {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.

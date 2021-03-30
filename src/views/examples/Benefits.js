@@ -125,7 +125,7 @@ class Benefits extends React.Component {
                     <Col lg="8">
                     {/*< ProductList />*/}
                       <div>
-                      <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Nato Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                      <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         Enjoy benefits that stack up
                         {/*ENPOSS Inc {" "}*/}
                         </h1>

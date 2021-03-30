@@ -22,7 +22,7 @@ import React from "react";
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-
+import "./style.css";
 const items = [
   {
     src: require("assets/img/theme/patent_us.8849f87c.jpg"),
@@ -133,7 +133,7 @@ class Patents extends React.Component {
                     </Col>
                   </Row>
                 </div>
-              </Container>
+        </Container>
         {/* SVG separator */}
         <div className="separator separator-bottom separator-skew">
           <svg

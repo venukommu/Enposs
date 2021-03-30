@@ -22,6 +22,7 @@ import React from "react";
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import "./style.css";
 
 const items = [
   {
