@@ -284,7 +284,7 @@ class InstallForce extends React.Component {
 
                       <Col lg="5">
                         <CardBody>
-                          <CardImg alt="FORCE Installation" src={`${require("assets/img/theme/Installation2.PNG")}`}/>
+                          <CardImg alt="FORCE Installation" src={`${require("assets/img/theme/forceInstallation2.PNG")}`}/>
                         </CardBody>
                       </Col>
                     </Row>
