@@ -301,9 +301,9 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="#" tag={Link}>
                         FAQ
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
+                      {/*<DropdownItem to="#" tag={Link}>
                         Q&A
-                      </DropdownItem>
+                      </DropdownItem>*/}
                       <DropdownItem to="/contact" tag={Link}>
                        Contact Us
                       </DropdownItem>
