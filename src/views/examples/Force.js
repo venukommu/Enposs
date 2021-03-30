@@ -105,7 +105,7 @@ class Force extends React.Component {
                     <Col lg="8">
                       <div>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Nato Sans", marginTop: "90px" }}>
+                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Noto Sans", marginTop: "90px" }}>
                           {/*Empowered to save Power*/}{force.Title}</h1>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "90px" }}>
                            {/*Force is a smart, dual-action device which helps both increase the flow of electricity, and absorb any electrical losses. It's installed next to your electricity meter.*/}

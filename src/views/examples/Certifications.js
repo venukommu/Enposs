@@ -22,6 +22,7 @@ import { appConfig } from "services/config.js";
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import "./style.css";
 
 const items = [
   {
@@ -133,8 +134,8 @@ class Certifications extends React.Component {
     return (
       <>
         <DemoNavbar />
-        
-        <section className="section-profile-cover section-shaped my-0">
+        <div className="position-relative">
+        <section className="section section-lg section-shaped pb-250">
         <div className="shape shape-style-1 shape-default bg-gradient-info alpha-4">
           <span />
           <span />
@@ -144,14 +145,19 @@ class Certifications extends React.Component {
           <span />
           <span />
         </div>
-        <Container className="shape-container d-flex align-items-center py-lg">
-          <div className="col px-0">
-            <Row className="align-items-center justify-content-center">
-              <Col className="text-center" lg="6">
-                <h1 className="display-3 text-white">{/*Certifications*/}{carouselcontent.Title}</h1>
-              </Col>
-            </Row>
-          </div>
+        <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                <Row>
+                    <Col lg="6">
+                    {/*< ProductList />*/}
+                      <div>
+                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        {carouselcontent.Title}
+                        </h6>
+                       </div>
+                    </Col>
+                  </Row>
+                </div>
         </Container>
         {/* SVG separator */}
         <div className="separator separator-bottom separator-skew">
@@ -170,6 +176,7 @@ class Certifications extends React.Component {
           </svg>
         </div>
       </section>
+      </div>
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
         {/*<Card className="card-profile shadow mt--200">*/}

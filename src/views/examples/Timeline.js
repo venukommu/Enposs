@@ -105,7 +105,7 @@ class Timeline extends React.Component {
                   <Row>
                     <Col lg="6">
                     <div>
-                    <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Nato Sans", fontSize: "40px", fontWeight: "800px", marginTop: "90px" }}>
+                    <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "40px", fontWeight: "800px", marginTop: "90px" }}>
                       {/*There couldn't have been a better time for FORCE on the world scene*/}{timeline.Title}</h1>
                     <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>

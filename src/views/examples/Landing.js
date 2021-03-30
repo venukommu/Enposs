@@ -205,7 +205,7 @@ class Landing extends React.Component {
                           {/*<span>completed with examples</span>*/}
                         </h5>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" ,fontFamily: "Nato Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         {/*homepagebanner.description
         
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
@@ -246,19 +246,20 @@ class Landing extends React.Component {
                         </h3> <br />
                         <Row>
                           {/*<Col md="4" xs="6"></Col>*/}
-                          <Col xs="6" md="6">
-                          <span  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total Reduced CO<sub>2</sub>/day</span> 
+                          <Col xs="7" md="6">
+                          <span  className="text-white text-lead font-weight-bold" style={{ fontSize : "20px"}}>Total Reduced CO<sub>2</sub>/year</span> 
                             <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>                    
                             <Button 
-                              className="btn btn-primary btn-block btn-lg"
+                              className="btn btn-block btn-sm"
                               color="danger"
                             >
                               {/*<span  className="text-white text-lead">CO<sub>2</sub>/day</span> <br />
                                <span  className="text-white text-lead">Total Reduced CO<sub>2 &nbsp;&nbsp;&nbsp;</sub></span> <br />*/}
-                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={49.65} decimals={2} /> </span> tons
+                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={18121.12} separator=","
+                              decimals={2} decimal="." /></span> tons
                             </Button>                      
                             </h3>
-                          </Col>
+                          </Col>                                                                     
                          {/*} <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
                               style={{ textAlign : "left",paddingTop: "20px" }}>
@@ -268,15 +269,15 @@ class Landing extends React.Component {
                        {/*} </Row>
                         <Row>*/}
                           {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
-                          <Col xs="6" md="6">
-                           <span  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total Reduced power/day</span> 
+                          <Col xs="7" md="6">
+                           <span  className="text-white text-lead font-weight-bold" style={{ fontSize : "20px"}}>Total Reduced power/year</span> 
                             <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>   
                             <Button 
-                              className="btn btn-primary btn-block btn-lg"
+                              className="btn  btn-block btn-sm"
                               color="danger"
-                            >
+                            >                                                                          
                               {/*<span  className="text-white text-lead">power/day</span> <br />*/}
-                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={106538.4}  decimals={1} /> </span> KWH&nbsp;
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={38886516} separator=","  /> </span> KWH
                             </Button>                      
                             </h3>
                           </Col>
@@ -493,10 +494,10 @@ class Landing extends React.Component {
                   <Row className="row-grid align-items-center text-center">
                     <Col lg="12">
                       <h3 className="text-white font-weight-bold">
-                      Reduced Power Consumption with FORCE is 38,886,516 Kwh/year
+                      Reduced Power Consumption with FORCE is <span className="text-warning" style={{fontSize:"44px",fontWeight:"900px"}}>106538.4</span> Kwh/day
                       </h3>
                       <h3 className="text-white font-weight-bold">
-                      Reduced Carbon Dioxide with FORCE is 18,121.12 tons/year
+                      Reduced Carbon Dioxide with FORCE is <span className="text-warning" style={{fontSize:"44px",fontWeight:"900px"}}>49.65</span> tons/day
                       </h3>
                     </Col>
                   </Row>
@@ -1088,14 +1089,14 @@ class Landing extends React.Component {
                   </p>
                   <h4 className="display-5">Our Clients</h4><br />
                   <Row>
-                <Col className="mb-5 mb-lg-0" lg="4" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/A18040103_10004_0.jpg")}
-                      style={{ width: "200px" }}
-                    />
+                    <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                    <div className="px-4">
+                      <img
+                        alt="..."
+                        className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                        src={require("assets/img/theme/A18040103_10004_0.jpg")}
+                        style={{ width: "200px" }}
+                      />
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Mc donald's</span>
@@ -1258,11 +1259,11 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </Col>*/}
-              </Row> <br />
-                  <Link className="display-4">See customer stories</Link>
-                </Col>
-              </Row>
-              <Row>
+              </Row> 
+                  {/*<Link className="display-4">See customer stories</Link>*/}
+            </Col>
+         </Row>
+             {/*} <Row>
                 <Col className="mb-5 mb-lg-0" lg="3" md="6">
                   <div className="px-4">
                     <img
@@ -1279,7 +1280,7 @@ class Landing extends React.Component {
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
 </p>
-                     {/*} <div className="mt-3">
+                     <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="warning"
@@ -1304,7 +1305,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-    </div>*/}
+    </div>
                     </div>
                   </div>
                 </Col>
@@ -1325,7 +1326,7 @@ class Landing extends React.Component {
                       </h5>
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>                    {/*} <div className="mt-3">
+</p>                    <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="primary"
@@ -1350,7 +1351,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-  </div>*/}
+  </div>
                     </div>
                   </div>
                 </Col>
@@ -1369,7 +1370,7 @@ class Landing extends React.Component {
                       </h5>
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>                     {/*} <div className="mt-3">
+</p>                     <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="info"
@@ -1394,7 +1395,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-</div>*/}
+</div>
                     </div>
                   </div>
                 </Col>
@@ -1412,7 +1413,8 @@ class Landing extends React.Component {
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
                       <p> FORCE saves consumption and safe to use.
-                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     {/*} <div className="mt-3">
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     
+                      <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="success"
@@ -1437,11 +1439,11 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-</div>*/}
+</div>
                     </div>
                   </div>
                 </Col>
-              </Row>
+              </Row>*/}
             </Container>
           </section>
              {/*<section className="section section-lg pt-0">

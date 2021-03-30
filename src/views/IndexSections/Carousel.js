@@ -100,8 +100,8 @@ class Carousel extends React.Component {
           <Container className="py-md">
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
-                  <h3 className="text-dark"   style={{ fontSize: "48px", fontWeight: "800px"}}>
-                  Choose a better way to live and save.</h3>
+                  <h3 className="text-dark"   style={{ fontSize: "42px", fontWeight: "800px"}}>
+                  Empower yourself by choosing a better way to live and save.</h3>
                         <p className="lead text-white mt-4">
                         {/*{this.state.carouselcontent.description}*/}
                         </p>

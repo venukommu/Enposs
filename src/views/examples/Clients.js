@@ -78,10 +78,9 @@ class Clients extends React.Component {
         <DemoNavbar />
         <main className="profile-page" ref="main">
         <div className="position-relative">
-          <section className="section-profile-cover section-shaped my-0">
+        <section className="section section-lg section-shaped pb-250">
             {/* Circles background */}
             <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
-              
               <span />
               <span />
               <span />
@@ -90,16 +89,20 @@ class Clients extends React.Component {
               <span />
               <span />
             </div>
-            <Container className="shape-container d-flex align-items-center py-lg">
-              <div className="col px-0">
-                <Row className="align-items-center justify-content-center">
-                  <Col className="text-center" lg="6">
-                   {/* <h1 className="display-3 text-white">{portfoliocontent.Title}</h1>*/}
-                   <h1 className="display-3 text-white">{/*Clients*/}{clientscontent.Title}</h1>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
+          <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                <Row>
+                    <Col lg="6">
+                    {/*< ProductList />*/}
+                      <div>
+                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        {clientscontent.Title}
+                        </h6>
+                       </div>
+                    </Col>
+                  </Row>
+                </div>
+        </Container>
             {/* SVG separator */}
             <div className="separator separator-bottom separator-skew">
               <svg
