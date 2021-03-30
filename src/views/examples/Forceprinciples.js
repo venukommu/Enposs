@@ -99,10 +99,10 @@ class Forceprinciples extends React.Component {
                         style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Noto Sans", marginTop: "90px" }}>Active Power Saving by Increasing Conductivity (APSIC)</h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "60px" }}>
-                        {/*FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
-                        It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.*/}
-                        Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.
-                          {/*The dual-action of FORCE both improves the flow of your electrical current and absorbs energy losses, giving you two reasons it's good for your home.*/}
+                        {/*Force operates on the principle of APSIC.FORCE effectively reduces power consumption by using the principle of APSIC acronym for Active Power Saving by Increasing Conductivity.
+                        It employs nanotechnology to achieve dual benefit of adding electricity  and absorbing electrical losses.
+                        Force operates on the principle of APSIC. Using natural tourmaline, a nanotechnology material to add free electrons to the circuit enhancing conductivity and absorbing various electrical losses, giving you the best of both worlds.*/}
+                        Force operates on the principle of APSIC.The dual-action of FORCE both improves the flow of your electrical current and absorbs energy losses, giving you two reasons it's good for your home.
                        </h3>
                     </Col>
                   </Row>
