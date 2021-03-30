@@ -24,14 +24,15 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import CardTitle from "reactstrap/lib/CardTitle";
 //import CardText from "reactstrap/lib/CardText";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // index page sections
 
 class InstallForce extends React.Component {
   
   state = {
-    forcewidgets: [],
+    forcecontent: [],
+    forceinstallsteps: [],
     error: null,
     plainTabs: 1
   };
@@ -47,7 +48,7 @@ class InstallForce extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -61,16 +62,16 @@ class InstallForce extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forceinstallsteps = await fetch(`${appConfig.apiURL}/forceinstallsteps`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forceinstallsteps });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   

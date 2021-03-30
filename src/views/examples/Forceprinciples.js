@@ -20,13 +20,15 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 // index page sections
 class Forceprinciples extends React.Component {
   
   state = {
-    forcewidgets: [],
+    forceprinciple: [],
+    mainpoints: [],
     error: null,
   };
 
@@ -35,7 +37,7 @@ class Forceprinciples extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -49,16 +51,16 @@ class Forceprinciples extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forceprinciple = await fetch(`${appConfig.apiURL}/forceprinciples`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ forceprinciple,mainpoints: forceprinciple.mainpointsarray.mainpoints });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -66,7 +68,7 @@ class Forceprinciples extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
+    const { error,forceprinciple, mainpoints} = this.state;
 
     // Print errors if any
     if (error) {
@@ -133,7 +135,7 @@ class Forceprinciples extends React.Component {
                       <Card className="shadow border-0">
                         <CardBody className="py-4">
                         <h4 className="display-3 font-weight-bold text-primary">
-                            Working Principle
+                            {/*Working Principle*/}{forceprinciple.heading}
                           </h4>
                           <p 
                           style={{ textAlign : "left" }}>
@@ -144,6 +146,7 @@ class Forceprinciples extends React.Component {
                           Force utilizes Electromagnetic Flux called  EMF7.
                           which  is obtained by mixing nanoparticles of naturally occurring mineral ,tourmaline and other minerals. It acts by increasing electrical conductivity and reduces heat, noise, vibration and anything that negatively impacts the flow of electricity Thereby maximizing the power saving capacity by the system. 
                           FORCE is a smart, dual-action device which actively saves power by increasing conductivity. First, it uses tourmaline and adds free electrons to the circuit. Second, it absorbs anything that causes loss of electricity (like heat and harmonic distortion, etc.)<br /> <br />
+
 
                           When nanoparticles of Tourmaline are mixed with other minerals, like magnesium, they produce an Electromagnetic Flux (EMF-7), which emits a subtle current. The key activity of the device is performed by EMF-7, as it emits electro magnetic electrons. The subtle current released by FORCE flows into the power line and increases the density of electrons, thereby improving current flow.<br /><br />
                           
@@ -179,7 +182,22 @@ class Forceprinciples extends React.Component {
           <section>
             <Container>
               <Row className="row-grid">
-              <Col lg="6">
+              {mainpoints.map(mainpoint => (
+              <Col lg="6" key={mainpoint.id}>
+                  <Card className="bg-gradient-gray-dark shadow border-0">
+                  <CardBody> 
+                      <h6 className="text-white">
+                        <ReactMarkdown source={mainpoint.description} />
+                      {/*<ul>
+                          <li>Usage of electricity saved by 5 per cent</li>
+                          <li>Increase surplus electrons by accelerating anion</li>
+                      </ul>*/} 
+                      </h6>
+                  </CardBody>
+                  </Card>
+              </Col>
+              ))}  
+              {/*<Col lg="6">
                   <Card className="bg-gradient-gray-dark shadow border-0">
                   <CardBody> 
                       <h6 className="text-white">
@@ -204,7 +222,7 @@ class Forceprinciples extends React.Component {
                       </h6>
                   </CardBody>
                   </Card>
-              </Col>
+                </Col>*/}
               </Row>
             </Container>
           </section>

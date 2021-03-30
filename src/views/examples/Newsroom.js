@@ -16,26 +16,60 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
-import { Link } from "react-router-dom";
+import { appConfig } from "services/config.js";
+//import { Link } from "react-router-dom";
 // reactstrap components
-import {Container, Row, Col, Card, CardBody} from "reactstrap";
+import {Container, Row, Col, Card, CardBody, Button, Modal} from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import ReactMarkdown from "react-markdown";
 
 class Newsroom extends React.Component {
     state = {
+      newscontent: [],
       error: null,
    }
   
+   toggleModal = state => {
+    this.setState({
+      [state]: !this.state[state]
+    });
+  };
+
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const newscontent = await fetch(`${appConfig.apiURL}/newsrooms`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ newscontent });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
 
   render() {
-    const { error} = this.state;
+    const { error, newscontent} = this.state;
 
     // Print errors if any
     if (error) {
@@ -94,7 +128,67 @@ class Newsroom extends React.Component {
           </div>
         <section className="section section-lg pt-lg-0 mt--0">
         <Container>
-          <Row>
+           {newscontent.map((newsdata, index) => (
+            <Row key={index}>
+            <Col lg="10">
+              <Row  onClick={() => this.toggleModal(newsdata.mname)}>
+              <Col lg="4">
+                <Card className={'bg-gradient-' + newsdata.classname + ' shadow border-0'}>
+                <CardBody className="py-3"> 
+                    <h6 className="lead text-white text-uppercase">
+                    {newsdata.Title}
+                    {/*Nuqul Group and Vardot Announce Collaboration*/}
+                    </h6>
+                    
+                </CardBody>
+                </Card>
+              </Col>
+              <Col><p className="text-uppercase">{/*News*/}{newsdata.subheading}<br />
+              {/*November 15, 2020*/}{newsdata.newsdate}</p>
+              <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}{newsdata.Title}</h5>
+              <p>{newsdata.description}</p>
+              </Col>
+            </Row>
+            <hr />
+            <Modal
+              className="modal-xl"
+              isOpen={this.state[newsdata.mname]}
+              toggle={() => this.toggleModal(newsdata.mname)}
+              key={index}
+            >
+              <div className={'modal-header bg-gradient-' + newsdata.classname} >
+                <h2 className="modal-title text-white">
+                  {newsdata.articletitle}
+                </h2>
+                <button
+                  aria-label="Close"
+                  className="close"
+                  data-dismiss="modal"
+                  type="button"
+                  onClick={() => this.toggleModal(newsdata.mname)}
+                >
+                <span aria-hidden={true} className="text-white">×</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <ReactMarkdown source={newsdata.articledescription} />
+              </div>
+              <div className="modal-footer">
+                <Button
+                  className="ml-auto"
+                  color="link"
+                  data-dismiss="modal"
+                  type="button"
+                  onClick={() => this.toggleModal(newsdata.mname)}
+                >
+                  Close
+                </Button>
+              </div>
+            </Modal>
+            </Col>
+            </Row>
+          ))}
+          {/*<Row>
             <Col lg="10">
               <Row to="/newsarticle" tag={Link}> 
               <Col lg="4">
@@ -125,7 +219,7 @@ class Newsroom extends React.Component {
               <h5 className="lead text-dark mt-4">Vardot Ranked In Top 20 Worldwide Contributors To Drupal</h5></Col>
             </Row>
           </Col>
-          </Row>      
+          </Row>*/}      
         </Container>
         </section>
         <CardsFooter />

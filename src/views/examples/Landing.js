@@ -52,7 +52,7 @@ class Landing extends React.Component {
   
   state = {
     homepagebanner: [],
-    homepagewidgets: [],
+    homewidgets: [],
     ourcustomers: [],
     productimage: {},
     homepageimage: [],
@@ -92,7 +92,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner });
+      this.setState({ homepagebanner, homewidgets: homepagebanner.homewidgets });
     } catch (error) {
       this.setState({ error });
     }
@@ -160,7 +160,8 @@ class Landing extends React.Component {
   
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error } = this.state;
+    const { error,homepagebanner, homewidgets } = this.state;
+    console.log(homewidgets);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -209,9 +210,9 @@ class Landing extends React.Component {
         
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
-                        {/*Save Energy - Save Earth
-                        {homepagebanner.Title}*/}
-                        "FORCE" - The Driving force to Save Energy, Earth and 'Money'
+                        {/*Save Energy - Save Earth*/}
+                        {homepagebanner.Title}
+                        {/*"FORCE" - The Driving force to Save Energy, Earth and 'Money'*/}
                         </h1>
                       </div>
                       <div className="btn-wrapper">
@@ -239,7 +240,8 @@ class Landing extends React.Component {
                         </Button>*/}
                         <div>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" }}>
-                        FORCE is an energy-saving device proven to reduce your energy consumption
+                        {/*FORCE is an energy-saving device proven to reduce your energy consumption*/}
+                        {homepagebanner.subtitle}
                           {/*Conserve and Preserve*/}
                         </h3> <br />
                         <Row>
@@ -320,23 +322,29 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {/*this.state.homepagewidgets.map(widgets => (
+                  {homewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
-                          <CardBody className="py-5">
-                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-4'}>
+                          <CardBody className="text-center mt-2">
+                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-2'}>
                               <i className={widgets.iconname} />
                             </div>
-                              <h6 className={"text-" + widgets.classname + " text-uppercase"}>
-                                {/*About Company
+                            <div>
+                              <h6 className={"text-" + widgets.classname + " text-uppercase"} style={{ textAlign : "center" }}>
+                                {/*About Company*/}
                                 {widgets.Title}
                               </h6>
-                              <p className="description mt-3"
-                              style={{ textAlign : "justify" }}>
-                              {widgets.description}
+                              <p className="description mt-3 text-dark"
+                              style={{ textAlign : "left" }}>
+                              {widgets.paragraph1}
                               </p>
-                            <Button to="/about" tag={Link}
-                              className="mt-4"
+                              <p className="description mt-3 text-dark"
+                                style={{ textAlign : "left" }}>
+                                {widgets.paragraph2}
+                              </p>   
+                            </div>
+                            <Button to={widgets.routername} tag={Link}
+                              className="mt-2"
                               color={widgets.classname}
                               //href="#pablo"
                               //onClick={e => e.preventDefault()}
@@ -346,10 +354,10 @@ class Landing extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))
-                    ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                    ))}
+                    {/*ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
                       energy saving technology into our ENPOSS system.}*/}
-                    <Col lg="4">
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                         <div className="icon icon-shape icon-shape-info rounded-circle mb-2">
@@ -378,7 +386,7 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>*/}
+                          </div>
                           
                           <Button to="/ourstory" tag={Link}
                             className="mt-2"
@@ -420,7 +428,7 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button to="/forceprinciples" tag={Link}
                             className="mt-2"
                             color="success"
@@ -458,7 +466,7 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button
                             className="mt-4"
                             color="primary"
@@ -470,7 +478,7 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col>*/}
                   </Row>
                 </Col>
               </Row>

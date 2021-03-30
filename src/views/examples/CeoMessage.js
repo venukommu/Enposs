@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -26,6 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
+import ReactMarkdown from "react-markdown";
 
 class CeoMessage extends React.Component {
   executeOnClick(isExpanded) {
@@ -42,7 +43,7 @@ class CeoMessage extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     //this.refs.main.scrollTop = 0;
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -58,18 +59,6 @@ class CeoMessage extends React.Component {
     };
   
     try {
-      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
-    } catch (error) {
-      this.setState({ error });
-    }
-
-    try {
       const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
         method: 'GET',
         headers: headers,
@@ -79,11 +68,11 @@ class CeoMessage extends React.Component {
       this.setState({ ceomessage });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
     
   };
   render() {
-    const { error} = this.state;
+    const { error, ceomessage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -123,9 +112,10 @@ class CeoMessage extends React.Component {
                         </h1>
                         <h1 className="display-1 text-white text-lead"
                         style={{ textAlign : "left" , fontSize: "48px",fontFamily: "Noto Sans", fontWeight: "800px", marginTop: "90px" }}>
-                          Play a dynamic role in balancing our ecology and human survival.</h1>
+                          {/*Play a dynamic role in balancing our ecology and human survival.*/}{ceomessage.Title}</h1>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "20px" }}>
-                          FORCE reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emissions, global warming, and the melting of glaciers.
+                          {/*FORCE reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emissions, global warming, and the melting of glaciers.*/}
+                          {ceomessage.subtitle}
                         </h3>
                       </div>
                     </Col>
@@ -213,7 +203,7 @@ class CeoMessage extends React.Component {
                   </Row>
                   <div className="text-left mt-4 py-2">
                   <h4 className="display-3 font-weight-bold text-primary">
-                    A Message from Our CEO {" "}
+                    {/*A Message from Our CEO*/}{ceomessage.ceotitle} {" "}
                       <span className="font-weight-light"></span>
                     </h4>
                     {/*<div className="h6 font-weight-300">
@@ -244,7 +234,7 @@ class CeoMessage extends React.Component {
                           expanded={false}
                           //width={280}
                           >*/}
-                          Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br /><br />
+                          {/*Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br /><br />
 
                           Fossil fuels are used extensively to generate electricity. They are expensive and difficult to extract from the earth. Their depletion and distribution are international issues. In addition, the fossil fuels used to generate electricity emit harmful greenhouse gases, like carbon dioxide. Thus, the use of fossil fuels burdens the economy, as well the environment, in several different ways.<br /><br />
 
@@ -256,6 +246,7 @@ class CeoMessage extends React.Component {
                           {" "}<br />
                           CEO
                           Sung gwun Choi <br />   {/*</ShowMoreText>*/}
+                          <ReactMarkdown source={ceomessage.description} />
                         </p>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}

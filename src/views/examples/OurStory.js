@@ -33,9 +33,10 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 //import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/pexels-griffin-wooldridge-with-mask-layer.jpg';
+import ReactMarkdown from "react-markdown";
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -53,7 +54,7 @@ class OurStory extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -69,7 +70,7 @@ class OurStory extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const companystory = await fetch(`${appConfig.apiURL}/ourstory`, {
           method: 'GET',
           headers: headers,
         })
@@ -80,22 +81,10 @@ class OurStory extends React.Component {
         this.setState({ error });
       }
 
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
+    const { error, companystory} = this.state;
 
     // Print errors if any
     if (error) {
@@ -132,13 +121,15 @@ class OurStory extends React.Component {
                     {/*< ProductList />*/}
                     <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                        Strategically Built for saving Power and the Planet
+                        {/*Strategically Built for saving Power and the Planet*/}
+                        {companystory.Title}
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
-                        Our goal as a company is to reduce carbon emission by reducing the unnecessary consumption of electricity. 
+                        {/*Our goal as a company is to reduce carbon emission by reducing the unnecessary consumption of electricity.*/}
+                        {companystory.subtitle} 
                       </h3>
                     </div>
                     </Col>
@@ -210,14 +201,14 @@ class OurStory extends React.Component {
                         expanded={false}
                         //width={280}
                     >*/}
-                      Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
+                      {/*Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
                       <br /><br />
                       "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity (and in turn its production), and thereby contribute to reductions in carbon dioxide emission. This helps slow global warming.
                       <br /><br />
                       ENPOSS developed its FORCE system to help users contribute towards the protection of the environment, by efficiently and effectively saving electric energy. By reducing electric energy consumption via our FORCE devices, we are pleased to be a part of the drive which reduces carbon dioxide emissions.
                       <br /><br />
                       Today, ENPOSS has an international presence. Our global market includes the United States, Japan, Korea, China, Russia, Vietnam, Malaysia, and Brazil. We are proud to be part of the widespread effort to protect the health and wealth of our planet. {/*}</ShowMoreText>*/}
-                        {/*{companystory.description}*/}</p>
+                      <ReactMarkdown source={companystory.description} /></p>
                      </blockquote>
                 </Col>
               </Row>

@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
@@ -68,7 +68,7 @@ class Patents extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     // Parses the JSON returned by a network request
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -84,20 +84,20 @@ class Patents extends React.Component {
     };
 
     try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/carouselcontent`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/patents`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent, carouselimage: carouselcontent.names });
+      this.setState({ carouselcontent });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
 
   render() {
-    const { error} = this.state;
+    const { error, carouselcontent} = this.state;
 
     // Print errors if any
     if (error) {
@@ -127,7 +127,7 @@ class Patents extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                        Patents
+                        {carouselcontent.Title}
                         </h6>
                        </div>
                     </Col>

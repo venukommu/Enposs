@@ -18,14 +18,17 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 // index page sections
 
 class Force extends React.Component {
   
   state = {
+    force: [],
     forcewidgets: [],
+    forcefeatures: [],
     error: null,
   };
 
@@ -34,7 +37,7 @@ class Force extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -48,16 +51,16 @@ class Force extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const force = await fetch(`${appConfig.apiURL}/force`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ force, forcewidgets: force.forcewidgets, forcefeatures: force.featuresarray.features });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -65,8 +68,8 @@ class Force extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
-
+    const { error, force, forcefeatures} = this.state;
+    console.log(force);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -103,9 +106,10 @@ class Force extends React.Component {
                       <div>
                         <h1 className="display-1 text-white text-lead"
                         style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Noto Sans", marginTop: "90px" }}>
-                          Empowered to save Power</h1>
+                          {/*Empowered to save Power*/}{force.Title}</h1>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "90px" }}>
-                           Force is a smart, dual-action device which helps both increase the flow of electricity, and absorb any electrical losses. It's installed next to your electricity meter.
+                           {/*Force is a smart, dual-action device which helps both increase the flow of electricity, and absorb any electrical losses. It's installed next to your electricity meter.*/}
+                           {force.subtitle}
                         </h3>
                       </div>
                     </Col>
@@ -143,15 +147,15 @@ class Force extends React.Component {
                             <div className=" rounded-circle mb-4">
                               <img alt="..."
                                 className="rounded-circle img-center img-fluid"
-                                src={`${appConfig.apiURL}${widgets.images.url}`}
+                                src={`${appConfig.apiURL}${widgets.image.url}`}
                                 style={{ width: "100px" }}/>
                             </div>
-                            <h6 className="text-primary text-uppercase">
+                            <h6 className="text-primary text-uppercase text-center">
                               {/*About Company
                               {widgets.Title}
                             </h6>
                             <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
+                            style={{ textAlign : "left" }}>
                             {widgets.description}
                             </p>
                           </CardBody>
@@ -213,7 +217,7 @@ class Force extends React.Component {
                           <br /><br /></p>
                         </CardBody>
                       </Card>
-                    </Col>
+                  </Col>
                   </Row>
                 </Col>
               </Row>
@@ -223,10 +227,29 @@ class Force extends React.Component {
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-3 text-white justify-content-center"   style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px"}}>Features</h1>
+                <h1 className="display-3 text-white justify-content-center"   style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px"}}>
+                  {/*Features*/}{force.featuresheading}</h1>
               </Col>
             </Row>
             <Row className="row-grid">
+              <Col lg="1">
+              </Col> 
+              {forcefeatures.map(feature => (
+              <Col lg="2" key={feature.id}>
+                <Card className="card-lift--hover shadow border-0">
+                  <CardBody className="py-3"> 
+                    <div className={"icon icon-shape icon-shape-"+feature.classname+" rounded-circle mb-4 text-dark"}>
+                    {feature.id}
+                    </div>
+                      <h6 className="text-dark">
+                      <ReactMarkdown source={feature.feature} />
+                      </h6>
+                  </CardBody>
+                </Card>
+              </Col>
+            ))}
+            </Row>
+            {/*<Row className="row-grid">
               <Col lg="1">
               </Col>  
               <Col lg="2">
@@ -300,8 +323,8 @@ class Force extends React.Component {
                       </h6>
                   </CardBody>
                 </Card>
-                  </Col>*/}
-              </Row><br /><br />
+                  </Col>
+              </Row>*/}<br /><br />
 
           </Container>
           <div className="separator separator-bottom separator-skew zindex-100">
