@@ -204,7 +204,7 @@ class Landing extends React.Component {
                           {/*<span>completed with examples</span>*/}
                         </h5>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" ,fontFamily: "Nato Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         {/*homepagebanner.description
         
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
