@@ -103,7 +103,7 @@ class Contact extends React.Component {
                             <h5 className="mb-0 text-white">
                             6940 Beach Blvd D609, Buena Park, CA 90621, USA</h5>
                         </div>
-                        <div className="d-flex py-2 align-items-center">
+                       {/*} <div className="d-flex py-2 align-items-center">
                           <div>
                             <Badge className="badge-circle mr-3 text-primary">
                               <i className="ni ni-mobile-button" />
@@ -112,7 +112,7 @@ class Contact extends React.Component {
                           <div>
                             <h5 className="mb-0 text-white">(909) 973-0001</h5>
                           </div>
-                        </div>
+                  </div>*/}
                         <div className="d-flex py-2 align-items-center">
                           <div>
                             <Badge className="badge-circle mr-3 text-primary">

@@ -80,7 +80,7 @@ class EcwidScript extends React.Component {
                       {/*< ProductList />*/}
                         <div>
                           <h1 className="display-1 text-white text-lead"
-                          style={{ textAlign : "left" , fontSize: "48px", fontFamily: "Nato Sans",fontWeight: "800px", marginTop: "90px" }}>
+                          style={{ textAlign : "left" , fontSize: "48px", fontFamily: "Noto Sans",fontWeight: "800px", marginTop: "90px" }}>
                             Order FORCE for your home.
                           </h1> 
                           <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "60px" }}>
@@ -136,5 +136,5 @@ class EcwidScript extends React.Component {
   //})
  
   if (content) {
-    ReactDOM.render(<EcwidComponent/>, content)
+        ReactDOM.render(<EcwidComponent/>, content)
   }
