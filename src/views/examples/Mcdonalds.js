@@ -121,8 +121,7 @@ class Mcdonalds extends React.Component {
     return (
       <>
         <DemoNavbar />
-        
-        <section className="section-profile-cover section-shaped my-0">
+        <section className="section section-lg section-shaped pb-250">
         <div className="shape shape-style-1 shape-default bg-gradient-success alpha-4">
           <span />
           <span />
@@ -132,11 +131,13 @@ class Mcdonalds extends React.Component {
           <span />
           <span />
         </div>
-        <Container className="shape-container d-flex align-items-center py-lg">
+        <Container className="py-lg-md d-flex">
           <div className="col px-0">
-            <Row className="align-items-center justify-content-center">
-              <Col className="text-center" lg="6">
-                <h1 className="display-3 text-white">{/*McDonald's*/}{carouselcontent.Title}</h1>
+            <Row>
+              <Col lg="6">
+              <div>
+                <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>{/*McDonald's*/}{carouselcontent.Title}</h6>
+              </div>
               </Col>
             </Row>
           </div>
@@ -163,7 +164,7 @@ class Mcdonalds extends React.Component {
         {/*<Card className="card-profile shadow mt--200">*/}
         <Row className="justify-content-center">
             <Col lg="10">
-            <UncontrolledCarousel items={items} />
+            <UncontrolledCarousel items={items} interval={1500} />
             </Col>
         </Row>
         {/*</Card>*/}
