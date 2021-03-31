@@ -152,9 +152,9 @@ class Benefits extends React.Component {
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12"> 
                       <h4 className="pt-4 pl-4 display-3 font-weight-bold text-primary">
-                            Expect several direct benefits
+                            {/*Expect several direct benefits*/}{forcebenefits.heading}
                       </h4>
-                      <p className="px-4">(Besides helping to save the planet)</p>
+                      <p className="px-4">{/*(Besides helping to save the planet)*/}{forcebenefits.subheading}</p>
                     <CardImg
                       alt="..."
                      src={require("assets/img/theme/asdf.PNG")}

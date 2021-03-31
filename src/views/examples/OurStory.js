@@ -186,8 +186,8 @@ class OurStory extends React.Component {
                         />
                      </svg>*/}
                      <h4 className="display-3 font-weight-bold text-primary">
-                          {/*}    {companystory.Title}*/}
-                          Our Story 
+                          {companystory.storytitle}
+                          {/*Our Story*/} 
                       </h4>
                       <p style={{ textAlign : "left"}}>
                      {/*} <ShowMoreText
