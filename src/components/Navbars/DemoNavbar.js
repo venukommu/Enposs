@@ -74,7 +74,7 @@ class DemoNavbar extends React.Component {
             id="navbar-main"
           >
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
+              <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => {window.location.href="/"}}>
                 <img
                   alt="..."
                   src={require("assets/img/brand/EnpossLogo.png")}
@@ -93,7 +93,7 @@ class DemoNavbar extends React.Component {
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
-                      <Link to="/">
+                      <Link to="/" onClick={() => {window.location.href="/"}}>
                         <img
                           alt="..."
                           src={require("assets/img/brand/EnpossLogo.png")}
@@ -207,47 +207,47 @@ class DemoNavbar extends React.Component {
                 </Nav> */}
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/ourstory" tag={Link} nav>
+                    <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">About</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/ourstory" tag={Link}>
+                      <DropdownItem to="/ourstory" onClick={() => {window.location.href="/ourstory"}} tag={Link}>
                         Our Story
                       </DropdownItem>
-                      <DropdownItem to="/ceomessage" tag={Link}>
+                      <DropdownItem to="/ceomessage" onClick={() => {window.location.href="/ceomessage"}} tag={Link}>
                         CEO Message
                       </DropdownItem>
-                      <DropdownItem to="/timeline" tag={Link}>
+                      <DropdownItem to="/timeline"  onClick={() => {window.location.href="/timeline"}}  tag={Link}>
                         Timeline
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                  
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="force" tag={Link} nav>
+                    <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">Product</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/force" tag={Link}>
+                      <DropdownItem to="/force" tag={Link} onClick={() => {window.location.href="/force"}}>
                         What is FORCE?
                       </DropdownItem>
-                      <DropdownItem to="/forceprinciples" tag={Link}>
+                      <DropdownItem to="/forceprinciples" tag={Link}  onClick={() => {window.location.href="/forceprinciples"}}>
                        Working Principle
                       </DropdownItem>
-                      <DropdownItem to="/benefits" tag={Link}>
+                      <DropdownItem to="/benefits" tag={Link} onClick={() => {window.location.href="/benefits"}}>
                         Benefits of FORCE
                       </DropdownItem>
-                      <DropdownItem to="/patents" tag={Link}>
+                      <DropdownItem to="/patents" tag={Link} onClick={() => {window.location.href="/patents"}}>
                         Patents
                       </DropdownItem>
-                      <DropdownItem to="/certifications" tag={Link}>
+                      <DropdownItem to="/certifications" tag={Link} onClick={() => {window.location.href="/certifications"}}>
                         Certifications
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                                    
                   <UncontrolledDropdown nav>
-                    <DropdownToggle  to="/news" tag={Link} nav>
+                    <DropdownToggle  to="/news" tag={Link} nav onClick={() => {window.location.href="/news"}}>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">News</span>
                     </DropdownToggle>
@@ -258,18 +258,18 @@ class DemoNavbar extends React.Component {
                   </DropdownMenu>*/}
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/clients" tag={Link} nav>
+                    <DropdownToggle to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">Clients</span>
                     </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem to="/clients" tag={Link}>
+                       {/*}<DropdownMenu>
+                      <DropdownItem to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}}>
                         Domestic
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
+                   <DropdownItem to="#" tag={Link}>
                         Overseas
-                      </DropdownItem>
-                    </DropdownMenu>
+                </DropdownItem>
+                    </DropdownMenu>*/}
                   </UncontrolledDropdown>                                                      
                 {/*  <UncontrolledDropdown nav>
                     <DropdownToggle to="/patents" tag={Link} nav>
@@ -284,7 +284,7 @@ class DemoNavbar extends React.Component {
                     </DropdownToggle>
                 </UncontrolledDropdown>  */}
                    <UncontrolledDropdown nav>
-                    <DropdownToggle to="/store" tag={Link}  nav>
+                    <DropdownToggle to="/store" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">Shop</span>
                     </DropdownToggle>
@@ -295,7 +295,7 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text text-uppercase">Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                    <DropdownItem to="/installforce" tag={Link}>
+                    <DropdownItem to="/installforce" tag={Link} onClick={() => {window.location.href="/installforce"}}>
                         How to install FORCE
                       </DropdownItem>
                       <DropdownItem to="#" tag={Link}>
@@ -304,7 +304,7 @@ class DemoNavbar extends React.Component {
                       {/*<DropdownItem to="#" tag={Link}>
                         Q&A
                       </DropdownItem>*/}
-                      <DropdownItem to="/contact" tag={Link}>
+                      <DropdownItem to="/contact" tag={Link} onClick={() => {window.location.href="/contact"}}>
                        Contact Us
                       </DropdownItem>
                     </DropdownMenu>
