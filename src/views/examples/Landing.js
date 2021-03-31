@@ -503,11 +503,11 @@ class Landing extends React.Component {
                   </Row>
                 </div>
               </Card>
-              <Row className="justify-content-center text-center">
+             {/*} <Row className="justify-content-center text-center">
                 <Col lg="12">
                         <h4 className="display-3"><span className="text-info font-weight-bold">For smart energy efficient homes to combat climate change.</span></h4>
                 </Col>
-              </Row>
+                  </Row>*/}
          <Carousel />
              {/*<section className="section">
              <Container>
