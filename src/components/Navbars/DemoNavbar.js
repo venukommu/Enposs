@@ -221,9 +221,6 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/timeline" tag={Link}>
                         Timeline
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
-                        Directions 
-                      </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>                  
                   <UncontrolledDropdown nav>
@@ -254,11 +251,11 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">News</span>
                     </DropdownToggle>
-                    <DropdownMenu>
+                   {/*} <DropdownMenu>
                       <DropdownItem to="#" tag={Link}>
                           Announcement
                       </DropdownItem>
-                    </DropdownMenu>
+                  </DropdownMenu>*/}
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/clients" tag={Link} nav>
@@ -304,11 +301,11 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="#" tag={Link}>
                         FAQ
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
+                      {/*<DropdownItem to="#" tag={Link}>
                         Q&A
-                      </DropdownItem>
+                      </DropdownItem>*/}
                       <DropdownItem to="/contact" tag={Link}>
-                        Inquiry
+                       Contact Us
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>       

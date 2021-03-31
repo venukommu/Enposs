@@ -5,6 +5,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
 import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { appConfig } from "services/config.js";
 
 class EcwidScript extends React.Component {
     componentDidMount() {
@@ -50,7 +51,50 @@ class EcwidScript extends React.Component {
     }
   }
   
-  export default function EcwidComponent() {
+  export default class EcwidComponent extends React.Component {
+    state = {
+      error: null,
+      storecontent: []
+    };
+  
+    componentDidMount = async () => {
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+  
+      const parseJSON = resp => (resp.json ? resp.json() : resp);
+  
+      // Checks if a network request came back fine, and throws an error if not
+      const checkStatus = resp => {
+        if (resp.status >= 200 && resp.status < 300) {
+          return resp;
+        }
+        return parseJSON(resp).then(resp => {
+          throw resp;
+        });
+      };
+      const headers = {
+        'Content-Type': 'application/json',
+      };
+  
+      try {
+          const storecontent = await fetch(`${appConfig.apiURL}/shop`, {
+            method: 'GET',
+            headers: headers,
+          })
+            .then(checkStatus)
+            .then(parseJSON);
+          this.setState({ storecontent });
+        } catch (error) {
+          this.setState({ error });
+        }
+      }
+      render() {
+        const { error, storecontent} = this.state;
+  
+          // Print errors if any
+        if (error) {
+          return <div>An error occured: {error.message}</div>;
+        }
     return (
       <>
         <DemoNavbar />
@@ -80,11 +124,11 @@ class EcwidScript extends React.Component {
                       {/*< ProductList />*/}
                         <div>
                           <h1 className="display-1 text-white text-lead"
-                          style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                            Order FORCE for your home.
+                          style={{ textAlign : "left" , fontSize: "48px", fontFamily: "Noto Sans",fontWeight: "800px", marginTop: "90px" }}>
+                            {/*Order FORCE for your home.*/}{storecontent.Title}
                           </h1> 
                           <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "60px" }}>
-                            Save Money, AND Help Save the Planet.
+                            {/*Save Money, AND Help Save the Planet.*/}{storecontent.subtitle}
                         </h3>                     
                         </div>
                       </Col>
@@ -114,9 +158,9 @@ class EcwidScript extends React.Component {
         <Card className="card-profile shadow mt--200 bg-secondary p-4">
         <h4 className="display-3 font-weight-bold text-primary">
                           {/*}    {companystory.Title}*/}
-                          FORCE energy-saving device for residential use 
-                      </h4>
-                      <p>(Contact us for other use-cases.)</p>
+        {/*FORCE energy-saving device for residential use*/}{storecontent.heading} 
+        </h4>
+        <p>{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</p>
         <EcwidScript/>
         </Card>
         </Container>
@@ -125,6 +169,7 @@ class EcwidScript extends React.Component {
       </>
     );
   }
+}
   
   const content = document.getElementById('content')
 
@@ -136,5 +181,5 @@ class EcwidScript extends React.Component {
   //})
  
   if (content) {
-    ReactDOM.render(<EcwidComponent/>, content)
+        ReactDOM.render(<EcwidComponent/>, content)
   }

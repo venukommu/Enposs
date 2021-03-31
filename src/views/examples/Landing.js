@@ -52,7 +52,7 @@ class Landing extends React.Component {
   
   state = {
     homepagebanner: [],
-    homepagewidgets: [],
+    homewidgets: [],
     ourcustomers: [],
     productimage: {},
     homepageimage: [],
@@ -92,7 +92,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner });
+      this.setState({ homepagebanner, homewidgets: homepagebanner.homewidgets });
     } catch (error) {
       this.setState({ error });
     }
@@ -160,7 +160,8 @@ class Landing extends React.Component {
   
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner } = this.state;
+    const { error,homepagebanner, homewidgets } = this.state;
+    console.log(homewidgets);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -194,7 +195,7 @@ class Landing extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row style={{ marginBottom: "120px" }}>
-                    <Col md="8" lg="6">
+                    <Col md="8" lg="7">
                     {/*< ProductList />*/}
                       <div>
                         <h5 className="display-20 text-white">
@@ -204,13 +205,14 @@ class Landing extends React.Component {
                           {/*<span>completed with examples</span>*/}
                         </h5>
                         <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
                         {/*homepagebanner.description
-          
+        
                         ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
                         sales, partners, representatives, dealers, and distributors.*/}
                         {/*Save Energy - Save Earth*/}
                         {homepagebanner.Title}
+                        {/*"FORCE" - The Driving force to Save Energy, Earth and 'Money'*/}
                         </h1>
                       </div>
                       <div className="btn-wrapper">
@@ -238,27 +240,53 @@ class Landing extends React.Component {
                         </Button>*/}
                         <div>
                         <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" }}>
-                        FORCE is an energy-saving device proven to reduce your energy consumption
+                        {/*FORCE is an energy-saving device proven to reduce your energy consumption*/}
+                        {homepagebanner.subtitle}
                           {/*Conserve and Preserve*/}
-                        </h3>
+                        </h3> <br />
                         <Row>
                           {/*<Col md="4" xs="6"></Col>*/}
-                          <Col xs="6" md="6">
-                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "right" }}>                    
-                            <Button
-                              className="btn-icon mt-2 mb-3 mb-sm-0"
+                          <Col xs="7" md="6">
+                          <span  className="text-white text-lead font-weight-bold" style={{ fontSize : "20px"}}>Total Reduced CO<sub>2</sub>/year</span> 
+                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>                    
+                            <Button 
+                              className="btn btn-block btn-sm"
                               color="danger"
-                            >             
-                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={12345} /> </span> tons
+                            >
+                              {/*<span  className="text-white text-lead">CO<sub>2</sub>/day</span> <br />
+                               <span  className="text-white text-lead">Total Reduced CO<sub>2 &nbsp;&nbsp;&nbsp;</sub></span> <br />*/}
+                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={18121.12} separator=","
+                              decimals={2} decimal="." /></span> tons
+                            </Button>                      
+                            </h3>
+                          </Col>                                                                     
+                         {/*} <Col xs="6" md="6"> 
+                            <h5 className="display-7 text-white text-lead"
+                              style={{ textAlign : "left",paddingTop: "20px" }}>
+                              <span  className="text-white text-lead">Total Reduced CO<sub>2</sub></span>
+                            </h5>
+                      </Col>*/}
+                       {/*} </Row>
+                        <Row>*/}
+                          {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
+                          <Col xs="7" md="6">
+                           <span  className="text-white text-lead font-weight-bold" style={{ fontSize : "20px"}}>Total Reduced power/year</span> 
+                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "left" }}>   
+                            <Button 
+                              className="btn  btn-block btn-sm"
+                              color="danger"
+                            >                                                                          
+                              {/*<span  className="text-white text-lead">power/day</span> <br />*/}
+                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={38886516} separator=","  /> </span> KWH
                             </Button>                      
                             </h3>
                           </Col>
-                          <Col xs="6" md="6"> 
+                         {/*} <Col xs="6" md="6"> 
                             <h5 className="display-7 text-white text-lead"
-                              style={{ textAlign : "left" }}>
-                              <span  className="text-white text-lead">Total reduced CO<sub>2</sub></span>
+                              style={{ textAlign : "left",paddingTop: "20px"}}>
+                              <span  className="text-white text-lead">Total Reduced power</span>
                             </h5>
-                          </Col>
+                    </Col>*/}
                         </Row>
                         {/*} <h4 className="display-7 text-white"
                           style={{ textAlign : "justify" }}>
@@ -294,23 +322,29 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    {/*this.state.homepagewidgets.map(widgets => (
+                  {homewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
-                          <CardBody className="py-5">
-                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-4'}>
+                          <CardBody className="text-center mt-2">
+                            <div className={'icon icon-shape icon-shape-' + widgets.classname + ' rounded-circle mb-2'}>
                               <i className={widgets.iconname} />
                             </div>
-                              <h6 className={"text-" + widgets.classname + " text-uppercase"}>
-                                {/*About Company
+                            <div>
+                              <h6 className={"text-" + widgets.classname + " text-uppercase"} style={{ textAlign : "center" }}>
+                                {/*About Company*/}
                                 {widgets.Title}
                               </h6>
-                              <p className="description mt-3"
-                              style={{ textAlign : "justify" }}>
-                              {widgets.description}
+                              <p className="description mt-3 text-dark"
+                              style={{ textAlign : "left" }}>
+                              {widgets.paragraph1}
                               </p>
-                            <Button to="/about" tag={Link}
-                              className="mt-4"
+                              <p className="description mt-3 text-dark"
+                                style={{ textAlign : "left" }}>
+                                {widgets.paragraph2}
+                              </p>   
+                            </div>
+                            <Button to={widgets.routername} tag={Link}
+                              className="mt-2"
                               color={widgets.classname}
                               //href="#pablo"
                               //onClick={e => e.preventDefault()}
@@ -320,10 +354,10 @@ class Landing extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))
-                    ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
+                    ))}
+                    {/*ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective
                       energy saving technology into our ENPOSS system.}*/}
-                    <Col lg="4">
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                         <div className="icon icon-shape icon-shape-info rounded-circle mb-2">
@@ -352,7 +386,7 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>*/}
+                          </div>
                           
                           <Button to="/ourstory" tag={Link}
                             className="mt-2"
@@ -394,7 +428,7 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button to="/forceprinciples" tag={Link}
                             className="mt-2"
                             color="success"
@@ -432,7 +466,7 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>*/}
+                          </div>
                           <Button
                             className="mt-4"
                             color="primary"
@@ -444,7 +478,7 @@ class Landing extends React.Component {
                           </Button>
                         </CardBody>
                       </Card>
-                    </Col>
+                    </Col>*/}
                   </Row>
                 </Col>
               </Row>
@@ -460,15 +494,20 @@ class Landing extends React.Component {
                   <Row className="row-grid align-items-center text-center">
                     <Col lg="12">
                       <h3 className="text-white font-weight-bold">
-                      Reduced Power Consumption with FORCE is 38,886,516 Kwh/year
+                      Reduced Power Consumption with FORCE is <span className="text-warning" style={{fontSize:"44px",fontWeight:"900px"}}>106538.4</span> Kwh/day
                       </h3>
                       <h3 className="text-white font-weight-bold">
-                      Reduced Carbon Dioxide with FORCE is 18,121.12 tons/year
+                      Reduced Carbon Dioxide with FORCE is <span className="text-warning" style={{fontSize:"44px",fontWeight:"900px"}}>49.65</span> tons/day
                       </h3>
                     </Col>
                   </Row>
                 </div>
               </Card>
+             {/*} <Row className="justify-content-center text-center">
+                <Col lg="12">
+                        <h4 className="display-3"><span className="text-info font-weight-bold">For smart energy efficient homes to combat climate change.</span></h4>
+                </Col>
+                  </Row>*/}
          <Carousel />
              {/*<section className="section">
              <Container>
@@ -1051,18 +1090,18 @@ class Landing extends React.Component {
                   <h2 className="display-3">We&#39;re going places</h2>
                   <p className="lead text-muted">
                   More than 7 countries and still counting <br />
-                  Over 1234 customers, companies and industries use FORCE globally.
+                  Over 1234 customers, companies and industries use FORCE globally.
                   </p>
-                  <h4 className="display-5">Our Clients</h4><br />
+                  <h4 className="display-3 font-weight-bold">Our Clients</h4><br />
                   <Row>
-                <Col className="mb-5 mb-lg-0" lg="4" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/A18040103_10004_0.jpg")}
-                      style={{ width: "200px" }}
-                    />
+                    <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                    <div className="px-4">
+                      <img
+                        alt="..."
+                        className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                        src={require("assets/img/theme/A18040103_10004_0.jpg")}
+                        //style={{ width: "200px" }}
+                      />
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Mc donald's</span>
@@ -1103,7 +1142,7 @@ class Landing extends React.Component {
                       alt="..."
                       className="rectangle img-center img-fluid shadow shadow-lg--hover"
                       src={require("assets/img/theme/A18040103_10003_0.jpg")}
-                      style={{ width: "200px" }}
+                      //style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
@@ -1147,7 +1186,7 @@ class Landing extends React.Component {
                       alt="..."
                       className="rectangle img-center img-fluid shadow shadow-lg--hover"
                       src={require("assets/img/theme/A18040103_10002_0.jpg")}
-                      style={{ width: "200px" }}
+                      //style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
@@ -1195,7 +1234,7 @@ class Landing extends React.Component {
                         <span className="d-block mb-1">John Doe</span>
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
-                      <p> Over 1234 customers, companies and industries use Force globally. </p>
+                      <p> Over 1234 customers, companies and industries use Force globally. </p>
                     <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
@@ -1225,11 +1264,11 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </Col>*/}
-              </Row> <br />
-                  <Link className="display-4">See customer stories</Link>
-                </Col>
-              </Row>
-              <Row>
+              </Row> 
+                  {/*<Link className="display-4">See customer stories</Link>*/}
+            </Col>
+         </Row>
+             {/*} <Row>
                 <Col className="mb-5 mb-lg-0" lg="3" md="6">
                   <div className="px-4">
                     <img
@@ -1246,7 +1285,7 @@ class Landing extends React.Component {
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
 </p>
-                     {/*} <div className="mt-3">
+                     <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="warning"
@@ -1271,7 +1310,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-    </div>*/}
+    </div>
                     </div>
                   </div>
                 </Col>
@@ -1292,7 +1331,7 @@ class Landing extends React.Component {
                       </h5>
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>                    {/*} <div className="mt-3">
+</p>                    <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="primary"
@@ -1317,7 +1356,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-  </div>*/}
+  </div>
                     </div>
                   </div>
                 </Col>
@@ -1336,7 +1375,7 @@ class Landing extends React.Component {
                       </h5>
                       <p> FORCE saves consumption and safe to use.
                       FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.
-</p>                     {/*} <div className="mt-3">
+</p>                     <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="info"
@@ -1361,7 +1400,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-</div>*/}
+</div>
                     </div>
                   </div>
                 </Col>
@@ -1379,7 +1418,8 @@ class Landing extends React.Component {
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
                       <p> FORCE saves consumption and safe to use.
-                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     {/*} <div className="mt-3">
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     
+                      <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
                           color="success"
@@ -1404,11 +1444,11 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-</div>*/}
+</div>
                     </div>
                   </div>
                 </Col>
-              </Row>
+              </Row>*/}
             </Container>
           </section>
              {/*<section className="section section-lg pt-0">

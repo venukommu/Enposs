@@ -17,7 +17,7 @@
 */
 import React from "react";
 import { Link } from "react-router-dom";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, CardBody,Container, Row, Col } from "reactstrap";
@@ -28,7 +28,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 class Clients extends React.Component {
   state = {
-    //portfoliocontent: [],
+    clientscontent: [],
     //imagenames: [],
     error: null,
   }
@@ -36,10 +36,10 @@ class Clients extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     // Parses the JSON returned by a network request
-    //const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
-      /*const checkStatus = resp => {
+    const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
       }
@@ -52,20 +52,20 @@ class Clients extends React.Component {
     };
 
    try {
-      const portfoliocontent = await fetch(`${appConfig.apiURL}/portfolio`, {
+      const clientscontent = await fetch(`${appConfig.apiURL}/clients`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ portfoliocontent, imagenames: portfoliocontent.names});
+      this.setState({ clientscontent});
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
 
   render() {
-  const { error} = this.state;
+  const { error, clientscontent} = this.state;
  // const { error, portfoliocontent,imagenames} = this.state;
 
 
@@ -78,10 +78,9 @@ class Clients extends React.Component {
         <DemoNavbar />
         <main className="profile-page" ref="main">
         <div className="position-relative">
-          <section className="section-profile-cover section-shaped my-0">
+        <section className="section section-lg section-shaped pb-250">
             {/* Circles background */}
             <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
-              
               <span />
               <span />
               <span />
@@ -90,16 +89,20 @@ class Clients extends React.Component {
               <span />
               <span />
             </div>
-            <Container className="shape-container d-flex align-items-center py-lg">
-              <div className="col px-0">
-                <Row className="align-items-center justify-content-center">
-                  <Col className="text-center" lg="6">
-                   {/* <h1 className="display-3 text-white">{portfoliocontent.Title}</h1>*/}
-                   <h1 className="display-3 text-white">Clients</h1>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
+          <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                <Row>
+                    <Col lg="6">
+                    {/*< ProductList />*/}
+                      <div>
+                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        {clientscontent.Title}
+                        </h6>
+                       </div>
+                    </Col>
+                  </Row>
+                </div>
+        </Container>
             {/* SVG separator */}
             <div className="separator separator-bottom separator-skew">
               <svg
