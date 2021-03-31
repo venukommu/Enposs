@@ -157,7 +157,7 @@ class OurStory extends React.Component {
             {/* 1st Hero Variation */}
           </div>
            
-      <section className="section section-lg pt-lg-0 mt--100">
+      <section className="section section-lg pt-lg-0 mt--150">
             <Container>
             <Card className="card-profile shadow mt--100 bg-lighter">
               <Row className="row-grid align-items-center justify-content-center">

@@ -503,6 +503,11 @@ class Landing extends React.Component {
                   </Row>
                 </div>
               </Card>
+              <Row className="justify-content-center text-center">
+                <Col lg="12">
+                        <h4 className="display-3"><span className="text-info font-weight-bold">For smart energy efficient homes to combat climate change.</span></h4>
+                </Col>
+              </Row>
          <Carousel />
              {/*<section className="section">
              <Container>
@@ -1087,7 +1092,7 @@ class Landing extends React.Component {
                   More than 7 countries and still counting <br />
                   Over 1234 customers, companies and industries use FORCE globally.
                   </p>
-                  <h4 className="display-5">Our Clients</h4><br />
+                  <h4 className="display-3 font-weight-bold">Our Clients</h4><br />
                   <Row>
                     <Col className="mb-5 mb-lg-0" lg="4" md="6">
                     <div className="px-4">
@@ -1095,7 +1100,7 @@ class Landing extends React.Component {
                         alt="..."
                         className="rectangle img-center img-fluid shadow shadow-lg--hover"
                         src={require("assets/img/theme/A18040103_10004_0.jpg")}
-                        style={{ width: "200px" }}
+                        //style={{ width: "200px" }}
                       />
                     <div className="pt-4 text-center">
                       <h5 className="title">
@@ -1137,7 +1142,7 @@ class Landing extends React.Component {
                       alt="..."
                       className="rectangle img-center img-fluid shadow shadow-lg--hover"
                       src={require("assets/img/theme/A18040103_10003_0.jpg")}
-                      style={{ width: "200px" }}
+                      //style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
@@ -1181,7 +1186,7 @@ class Landing extends React.Component {
                       alt="..."
                       className="rectangle img-center img-fluid shadow shadow-lg--hover"
                       src={require("assets/img/theme/A18040103_10002_0.jpg")}
-                      style={{ width: "200px" }}
+                      //style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
