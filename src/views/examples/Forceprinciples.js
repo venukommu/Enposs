@@ -98,7 +98,7 @@ class Forceprinciples extends React.Component {
                   <Row>
                     <Col lg="8">
                     <h1 className="display-1 text-white text-lead"
-                        style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px",fontFamily: "Noto Sans", marginTop: "90px" }}>
+                        style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                           {/*Active Power Saving by Increasing Conductivity (APSIC)*/}{forceprinciple.Title}</h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "60px" }}>

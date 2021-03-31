@@ -100,9 +100,12 @@ class Newsroom extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
-                        Newsroom
-                        </h6>
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
+                        The Newsroom
+                        </h1>
+                        <h3 className="display-4 text-info" style={{ textAlign : "left" }}>
+                          Browse our news items, as well as links to various industry-related or environmental news from a variety of sources.
+                        </h3>
                        </div>
                     </Col>
                   </Row>

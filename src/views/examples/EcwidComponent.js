@@ -124,7 +124,7 @@ class EcwidScript extends React.Component {
                       {/*< ProductList />*/}
                         <div>
                           <h1 className="display-1 text-white text-lead"
-                          style={{ textAlign : "left" , fontSize: "48px", fontFamily: "Noto Sans",fontWeight: "800px", marginTop: "90px" }}>
+                          style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                             {/*Order FORCE for your home.*/}{storecontent.Title}
                           </h1> 
                           <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "60px" }}>
