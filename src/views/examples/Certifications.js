@@ -151,9 +151,12 @@ class Certifications extends React.Component {
                     <Col lg="6">
                     {/*< ProductList />*/}
                       <div>
-                        <h6 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "90px" }}>
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {carouselcontent.Title}
-                        </h6>
+                        </h1>
+                        <h3 className="display-4 text-white" style={{ textAlign : "left" }}>
+                          Here are some Certifications achieved by our FORCE devices.
+                        </h3>
                        </div>
                     </Col>
                   </Row>

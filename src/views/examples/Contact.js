@@ -137,9 +137,9 @@ class Contact extends React.Component {
                        <br/>info@enposs.com</h3>
                     */}
                     <div>
-                      <h4 className="text-white" style={{ marginTop: "120px" }}>{/*Contact Information*/}{contacts.Title}</h4>
+                      <h1 className="text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "120px" , lineHeight: "125%" }}>{/*Contact Information*/}{contacts.Title}</h1>
                         <div className="d-flex py-2 align-items-center">
-                            <Badge className="badge-circle mr-3 text-primary" >
+                            <Badge className="badge-circle mr-3 text-warning" >
                               <i className="ni ni-square-pin" />
                             </Badge>
                             <h5 className="mb-0 text-white">
@@ -147,7 +147,7 @@ class Contact extends React.Component {
                         </div>
                         <div className="d-flex py-2 align-items-center">
                           <div>
-                            <Badge className="badge-circle mr-3 text-primary">
+                            <Badge className="badge-circle mr-3 text-warning">
                               <i className="ni ni-email-83" />
                             </Badge>
                           </div>

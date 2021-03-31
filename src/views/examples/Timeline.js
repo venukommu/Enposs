@@ -105,11 +105,11 @@ class Timeline extends React.Component {
                   <Row>
                     <Col lg="6">
                     <div>
-                    <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans", fontSize: "40px", fontWeight: "800px", marginTop: "90px" }}>
+                    <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                       {/*There couldn't have been a better time for FORCE on the world scene*/}{timeline.Title}</h1>
                     <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
-                        {/*A time when the world is gasping for fresh air and frantic about going green.*/}{timeline.subtitle}
+                        {/*A time when the world is gasping for fresh air and feeling the need to go green.*/}{timeline.subtitle}
                     </h3>
                     </div>
                     </Col>
@@ -138,7 +138,7 @@ class Timeline extends React.Component {
           <section className="section">
             <Container>
               <Card className="card-profile bg-gradient-lighter shadow mt--200">
-                <div className="px-4">
+                <div className="p-4">
                 <h4 className="display-3 font-weight-bold text-primary">
                           {/*}    {companystory.Title}*/}
                           {/*Timeline*/}{timeline.timelinetitle}
