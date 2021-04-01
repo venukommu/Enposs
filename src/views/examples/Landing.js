@@ -173,7 +173,7 @@ class Landing extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-180">
-              <div className="shape  shape-default"
+              <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -243,63 +243,59 @@ class Landing extends React.Component {
                         {/*FORCE is an energy-saving device proven to reduce your energy consumption*/}
                         {homepagebanner.subtitle}
                           {/*Conserve and Preserve*/}
-                        </h3> <br />
-                        <Row>
-                          {/*<Col md="4" xs="6"></Col>*/}
-                          <Col xs="7" md="6">
-                          <p  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total CO<sub>2</sub> reduction</p> 
-                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>                    
-                            <Button 
-                              className="btn btn-block btn-sm mt-n3"
-                              color="danger"
-                            >
-                              {/*<span  className="text-white text-lead">CO<sub>2</sub>/day</span> <br />
-                               <span  className="text-white text-lead">Total Reduced CO<sub>2 &nbsp;&nbsp;&nbsp;</sub></span> <br />*/}
-                            <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={18121.12} separator=","
-                              decimals={2} decimal="." /></span> tons
-                            </Button>                      
-                            </h3>
-                            <p  className="text-white text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>per year</p>
-                          </Col>                                                                     
-                         {/*} <Col xs="6" md="6"> 
-                            <h5 className="display-7 text-white text-lead"
-                              style={{ textAlign : "left",paddingTop: "20px" }}>
-                              <span  className="text-white text-lead">Total Reduced CO<sub>2</sub></span>
-                            </h5>
-                      </Col>*/}
-                       {/*} </Row>
-                        <Row>*/}
-                          {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
-                          <Col xs="7" md="6">
-                           <p  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total power reduction</p> 
-                            <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>   
-                            <Button 
-                              className="btn  btn-block btn-sm mt-n3"
-                              color="danger"
-                            >                                                                          
-                              {/*<span  className="text-white text-lead">power/day</span> <br />*/}
-                              <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={38886516} separator=","  /> </span> KWH
-                            </Button>                      
-                            </h3>
-                            <p  className="text-white text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>per year</p> 
-                          </Col>
-                         {/*} <Col xs="6" md="6"> 
-                            <h5 className="display-7 text-white text-lead"
-                              style={{ textAlign : "left",paddingTop: "20px"}}>
-                              <span  className="text-white text-lead">Total Reduced power</span>
-                            </h5>
+                        </h3>
+                      </div>
+                      </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col lg="4" xs="6"></Col>
+                  <Col lg="4" xs="7">
+                    <p  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total CO<sub>2</sub> reduction</p> 
+                      <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>                    
+                      <Button 
+                        className="btn btn-block btn-sm mt-n3"
+                        color="danger"
+                      >
+                      {/*<span  className="text-white text-lead">CO<sub>2</sub>/day</span> <br />
+                        <span  className="text-white text-lead">Total Reduced CO<sub>2 &nbsp;&nbsp;&nbsp;</sub></span> <br />*/}
+                    <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={18121.12} separator=","
+                      decimals={2} decimal="." /></span> tons
+                    </Button>                      
+                    </h3>
+                    <p  className="text-white text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>per year</p>
+                  </Col>                                                                     
+                      {/*} <Col xs="6" md="6"> 
+                          <h5 className="display-7 text-white text-lead"
+                            style={{ textAlign : "left",paddingTop: "20px" }}>
+                            <span  className="text-white text-lead">Total Reduced CO<sub>2</sub></span>
+                          </h5>
+                        </Col>*/}
+                    {/*} </Row>
+                      <Row>*/}
+                  {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
+                  <Col lg="4" xs="7">
+                    <p  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>Total power reduction</p> 
+                    <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>   
+                    <Button 
+                      className="btn btn-block btn-sm mt-n3"
+                      color="danger"
+                    >                                                                          
+                      {/*<span  className="text-white text-lead">power/day</span> <br />*/}
+                      <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={38886516} separator=","  /> </span> KWH
+                    </Button>                      
+                    </h3>
+                    <p  className="text-white text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>per year</p> 
+                  </Col>
+                  {/*} <Col xs="6" md="6"> 
+                    <h5 className="display-7 text-white text-lead"
+                      style={{ textAlign : "left",paddingTop: "20px"}}>
+                      <span  className="text-white text-lead">Total Reduced power</span>
+                    </h5>
                     </Col>*/}
-                        </Row>
-                        {/*} <h4 className="display-7 text-white"
-                          style={{ textAlign : "justify" }}>
-                        <span className="text-white">Our mission - Reduce carbon Emission </span>
-                          </h4>*/}
-                      </div>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-              </Container>
+                </Row>
+              </div>
+            </Container>
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
                 <svg
