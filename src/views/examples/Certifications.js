@@ -155,7 +155,8 @@ class Certifications extends React.Component {
                         {carouselcontent.Title}
                         </h1>
                         <h3 className="display-4 text-info" style={{ textAlign : "left" }}>
-                          Here are some Certifications achieved by our FORCE devices.
+                          {/*Here are some Certifications achieved by our FORCE devices.*/}
+                          {carouselcontent.subtitle}
                         </h3>
                        </div>
                     </Col>

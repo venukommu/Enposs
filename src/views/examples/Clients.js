@@ -99,7 +99,8 @@ class Clients extends React.Component {
                         {clientscontent.Title}
                         </h1>
                         <h3 className="display-4 text-info" style={{ textAlign : "left" , marginBottom: "80px" }}>
-                          Where permissible, we have shared reports looking into the reduction in energy comsumption experienced by our clients.
+                          {/*Where permissible, we have shared reports looking into the reduction in energy comsumption experienced by our clients.*/}
+                          {clientscontent.subtitle}
                         </h3>
                        </div>
                     </Col>

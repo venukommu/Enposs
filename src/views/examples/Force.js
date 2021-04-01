@@ -242,7 +242,7 @@ class Force extends React.Component {
                     {feature.id}
                     </div>
                       <h6 className="text-dark">
-                      <ReactMarkdown source={feature.feature} />
+                      <ReactMarkdown source={feature.feature} allowDangerousHtml={true} />
                       </h6>
                   </CardBody>
                 </Card>

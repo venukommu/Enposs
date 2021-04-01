@@ -25,13 +25,14 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 //import CardTitle from "reactstrap/lib/CardTitle";
 //import CardText from "reactstrap/lib/CardText";
 import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 // index page sections
 
 class InstallForce extends React.Component {
   
   state = {
-    forcecontent: [],
+    forceinstall: [],
     forceinstallsteps: [],
     error: null,
     plainTabs: 1
@@ -62,13 +63,13 @@ class InstallForce extends React.Component {
     };
 
     try {
-      const forceinstallsteps = await fetch(`${appConfig.apiURL}/forceinstallsteps`, {
+      const forceinstall = await fetch(`${appConfig.apiURL}/forceinstall`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forceinstallsteps });
+      this.setState({ forceinstall });
     } catch (error) {
       this.setState({ error });
     }
@@ -79,7 +80,7 @@ class InstallForce extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
+    const { error, forceinstall} = this.state;
 
     // Print errors if any
     if (error) {
@@ -210,7 +211,7 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                   I.Installation of FORCE
+                   {/*I.Installation of FORCE*/}{forceinstall.tab1title}
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -223,7 +224,7 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                    II. Installation of FORCE
+                    {/*II. Installation of FORCE*/}{forceinstall.tab2title}
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -232,13 +233,15 @@ class InstallForce extends React.Component {
               <CardBody>
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
-                    <p className="text-dark font-weight-bold">I.Installation of FORCE </p>
+                  <ReactMarkdown source={forceinstall.tab1description} allowDangerousHtml={true}/>
+                    {/*<p className="text-dark font-weight-bold">I.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
-                    <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
+                    <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>*/}
                       <Row>
                         <Col lg="7">
-                          <ul>
+                        <ReactMarkdown source={forceinstall.list1}  allowDangerousHtml={true}/>
+                          {/*<ul>
                             <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breaker. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                             <li>After double-checking the electricity is OFF, then carefully remove the panel cover.  </li>
                             <li> Put Cap through Y-terminal and bring it towards the device to close (twist), make sure Socket is connected to the Force Device fully, and seal properly with Cap. </li>
@@ -250,7 +253,7 @@ class InstallForce extends React.Component {
                             <li> Then follow the procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
                             <li>Safely install the panel cover back.   </li>
                             <li> Turn on the main breaker. DONE!   </li>
-                          </ul>
+                          </ul>*/}
                         </Col>
                         <Col lg="5">
                           <CardBody>
@@ -261,13 +264,15 @@ class InstallForce extends React.Component {
                   </TabPane>
                 
                   <TabPane tabId="plainTabs2">
-                    <p className="text-dark font-weight-bold">II.Installation of FORCE </p>
+                    <ReactMarkdown source={forceinstall.tab1description} allowDangerousHtml={true}/>
+                    {/*<p className="text-dark font-weight-bold">II.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
-                    <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>
+                        <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Socket (yellow), 2- Wire, Device (FORCE), 2- Black rubber, 2- Cap, 4- 1 inch screw (Y-terminal and Socket are attached to wire)</p>*/}
                     <Row>
                       <Col lg="7">
-                        <ul>
+                      <ReactMarkdown source={forceinstall.list2}  allowDangerousHtml={true}/>
+                        {/*<ul>
                           <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breaker. <span className="text-danger">(**Please double-check with an electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                           <li>  After double-checking the electricity is OFF, then carefully remove the panel cover. </li>
                           <li> Put Black rubber(the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
@@ -280,7 +285,7 @@ class InstallForce extends React.Component {
                           <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY! <span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
                           <li> Safely install the panel cover back. </li>
                           <li> Turn ON the MAIN BREAKER. DONE! </li>
-                        </ul>
+                        </ul>*/}
                       </Col>
 
                       <Col lg="5">

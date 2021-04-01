@@ -27,6 +27,7 @@ import ReactMarkdown from "react-markdown";
 class Newsroom extends React.Component {
     state = {
       newscontent: [],
+      newsarticles: [],
       error: null,
    }
   
@@ -56,20 +57,20 @@ class Newsroom extends React.Component {
     };
 
     try {
-      const newscontent = await fetch(`${appConfig.apiURL}/newsrooms`, {
+      const newscontent = await fetch(`${appConfig.apiURL}/newsroom`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ newscontent });
+      this.setState({ newscontent, newsarticles: newscontent.newsarticles });
     } catch (error) {
       this.setState({ error });
     }
   };
 
   render() {
-    const { error, newscontent} = this.state;
+    const { error, newscontent,newsarticles} = this.state;
 
     // Print errors if any
     if (error) {
@@ -101,10 +102,11 @@ class Newsroom extends React.Component {
                     {/*< ProductList />*/}
                       <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
-                        The Newsroom
+                        {/*The Newsroom*/}{newscontent.Title}
                         </h1>
                         <h3 className="display-4 text-info" style={{ textAlign : "left" }}>
-                          Browse our news items, as well as links to various industry-related or environmental news from a variety of sources.
+                          {/*Browse our news items, as well as links to various industry-related or environmental news from a variety of sources.*/}
+                          {newscontent.subtitle}
                         </h3>
                        </div>
                     </Col>
@@ -131,7 +133,7 @@ class Newsroom extends React.Component {
           </div>
         <section className="section section-lg pt-lg-0 mt--0">
         <Container>
-           {newscontent.map((newsdata, index) => (
+           {newsarticles.map((newsdata, index) => (
             <Row key={index}>
             <Col lg="10">
               <Row  onClick={() => this.toggleModal(newsdata.mname)}>

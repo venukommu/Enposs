@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
@@ -39,7 +39,7 @@ const items = [
 
 class Carousel extends React.Component {
     state = {
-      //carouselcontent: [],
+      carouselcontent: [],
       //carouselimage: [],
       error: null,
    }
@@ -47,10 +47,10 @@ class Carousel extends React.Component {
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
     // Parses the JSON returned by a network request
-    //const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
-      /*const checkStatus = resp => {
+    const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
       }
@@ -63,25 +63,25 @@ class Carousel extends React.Component {
     };
 
   try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/carouselcontent`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/homecarousel`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent, carouselimage: carouselcontent.names });
+      this.setState({ carouselcontent });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
   };
 
   render() {
-    //const { error, carouselimage} = this.state;
+    const { error, carouselcontent} = this.state;
 
     // Print errors if any
-   // if (error) {
-     // return <div>An error occured: {error.message}</div>;
-    //}
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     //const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
     //caption: ""}))
 
@@ -100,19 +100,19 @@ class Carousel extends React.Component {
           <Container className="py-md">
            <Row className="justify-content-between align-items-center">
               <Col lg="12">
-                <h4 className="display-3 text-dark"  >For smart Energy Efficient homes to combat Climate Change.</h4>
+                <h4 className="display-3 text-dark"  >{/*For smart Energy Efficient homes to combat Climate Change.*/}{carouselcontent.Title}</h4>
               </Col>
           </Row>
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
                   <h3 className="text-dark"   style={{ fontSize: "42px", fontWeight: "800px"}}>
-                  Empower yourself by choosing a better way to live and save.</h3>
+                  {/*Empower yourself by choosing a better way to live and save.*/}{carouselcontent.subtitle}</h3>
                         {/*<p className="lead text-white mt-4">
                         {this.state.carouselcontent.description}
                         </p>*/}
                         <Link class="btn-warning mt-4 btn"  to="/store#!/Force/p/296981076/category=0">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
                         <Link class="btn-secondary mt-4 btn" to="/contact">Talk to Sales</Link>
-                        <p className="ml-8 font-weight-light"> For Commercial and Industrial</p>
+                        <p className="ml-8 font-weight-light"> {/*For Commercial and Industrial*/}{carouselcontent.text}</p>
               </Col>
               <Col className="mb-lg-auto" lg="6">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-right">

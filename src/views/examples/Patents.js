@@ -130,7 +130,8 @@ class Patents extends React.Component {
                         {carouselcontent.Title}
                         </h1>
                         <h3 className="display-4 text-info" style={{ textAlign : "left" }}>
-                          We have received patents in five countries, with others under application.
+                          {/*We have received patents in five countries, with others under application.*/}
+                          {carouselcontent.subtitle}
                         </h3>
                        </div>
                     </Col>
