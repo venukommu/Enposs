@@ -111,7 +111,7 @@ class Carousel extends React.Component {
                         {this.state.carouselcontent.description}
                         </p>*/}
                         <Link class="btn-warning mt-4 btn"  to="/store#!/Force/p/296981076/category=0">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
-                        <Link class="btn-secondary mt-4 btn ">Talk to Sales</Link>
+                        <Link class="btn-secondary mt-4 btn" to="/contact">Talk to Sales</Link>
                         <p className="ml-8 font-weight-light"> For Commercial and Industrial</p>
               </Col>
               <Col className="mb-lg-auto" lg="6">

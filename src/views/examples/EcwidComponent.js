@@ -6,6 +6,7 @@ import {Card,Container,Row,Col } from "reactstrap";
 //import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
+import { Link } from "react-router-dom";
 
 class EcwidScript extends React.Component {
     componentDidMount() {
@@ -156,7 +157,7 @@ class EcwidScript extends React.Component {
                           {/*}    {companystory.Title}*/}
         {/*FORCE energy-saving device for residential use*/}{storecontent.heading} 
         </h4>
-        <p>{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</p>
+        <Link to="/contact">{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
         <EcwidScript/>
         </Card>
         </Container>
