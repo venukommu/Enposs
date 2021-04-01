@@ -98,9 +98,6 @@ class CustomFooter extends React.Component {
                     <i className="ni ni-ruler-pencil text-primary" />
                   </div>
                   <h5 className="text-white mt-3">Resources</h5>
-                  <p className="text-white mt-3">
-                    Manuals
-                  </p>
                   <a href="/patents">
                   <p className="text-white mt-3">
                     Patents
@@ -139,17 +136,17 @@ class CustomFooter extends React.Component {
                   <a href="/installforce"><p className="text-white mt-3">
                     How to install FORCE
                   </p></a>
-                  <a href="#">
+                 {/*} <a href="#">
                   <p className="text-white mt-3">
                     FAQ
-                  </p></a>
+                  </p></a>*/}
                   <a href="/#">
                   <p className="text-white mt-3">
                     Q&A
                   </p></a>
                   <a href="/contact">
                   <p className="text-white mt-3">
-                    Inquiry
+                    Contact Us
                   </p></a>
                 </Col>
               </Row>
