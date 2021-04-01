@@ -107,11 +107,12 @@ class Carousel extends React.Component {
               <Col className="mb-5 mb-lg-0" lg="5">
                   <h3 className="text-dark"   style={{ fontSize: "42px", fontWeight: "800px"}}>
                   Empower yourself by choosing a better way to live and save.</h3>
-                        <p className="lead text-white mt-4">
-                        {/*{this.state.carouselcontent.description}*/}
-                        </p>
+                        {/*<p className="lead text-white mt-4">
+                        {this.state.carouselcontent.description}
+                        </p>*/}
                         <Link class="btn-warning mt-4 btn"  to="/store#!/Force/p/296981076/category=0">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
                         <Link class="btn-secondary mt-4 btn ">Talk to Sales</Link>
+                        <p className="ml-8 font-weight-light"> For Commercial and Industrial</p>
               </Col>
               <Col className="mb-lg-auto" lg="6">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
