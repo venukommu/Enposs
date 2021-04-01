@@ -92,7 +92,7 @@ class Benefits extends React.Component {
             {/* shape Hero*/}
             {/* For circles shape-style-1 */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape bg-gradient-gray-dark">
+            <div className="shape" style={{backgroundColor: "#2B0752"}}>
             {/*} style= {{
                 backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,
