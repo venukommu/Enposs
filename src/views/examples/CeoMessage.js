@@ -84,7 +84,7 @@ class CeoMessage extends React.Component {
         <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 shape-default"
+            <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -124,7 +124,7 @@ class CeoMessage extends React.Component {
               </Container>
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
-                <svg
+               {/*} <svg
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                   version="1.1"
@@ -136,7 +136,7 @@ class CeoMessage extends React.Component {
                     className="fill-white"
                     points="2560 0 2560 100 0 100"
                   />
-                </svg>
+              </svg>*/}
               </div>
             </section>
             {/* 1st Hero Variation */}

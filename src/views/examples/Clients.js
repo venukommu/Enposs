@@ -80,7 +80,7 @@ class Clients extends React.Component {
         <div className="position-relative">
         <section className="section section-lg section-shaped pb-250">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default bg-gradient-default alpha-4">
+            <div className="shape  shape-default bg-gradient-default alpha-4">
               <span />
               <span />
               <span />

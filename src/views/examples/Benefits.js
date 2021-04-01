@@ -89,9 +89,10 @@ class Benefits extends React.Component {
       <>
         <DemoNavbar />
         <div className="position-relative">
-            {/* shape Hero */}
+            {/* shape Hero*/}
+            {/* For circles shape-style-1 */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 bg-gradient-gray-dark">
+            <div className="shape bg-gradient-gray-dark">
             {/*} style= {{
                 backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,

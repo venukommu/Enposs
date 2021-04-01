@@ -284,7 +284,7 @@ class DemoNavbar extends React.Component {
                     </DropdownToggle>
                 </UncontrolledDropdown>  */}
                    <UncontrolledDropdown nav>
-                    <DropdownToggle to="/store" tag={Link} nav>
+                    <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text text-uppercase">Shop</span>
                     </DropdownToggle>

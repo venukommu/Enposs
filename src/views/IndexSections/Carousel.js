@@ -98,6 +98,11 @@ class Carousel extends React.Component {
           </div>
           
           <Container className="py-md">
+           <Row className="justify-content-between align-items-center">
+              <Col lg="12">
+                <h4 className="display-3"><span className="text-dark font-weight-bold">For smart Energy Efficient homes to combat Climate Change.</span></h4>
+              </Col>
+          </Row>
             <Row className="justify-content-between align-items-center">
               <Col className="mb-5 mb-lg-0" lg="5">
                   <h3 className="text-dark"   style={{ fontSize: "42px", fontWeight: "800px"}}>
@@ -105,7 +110,7 @@ class Carousel extends React.Component {
                         <p className="lead text-white mt-4">
                         {/*{this.state.carouselcontent.description}*/}
                         </p>
-                        <Link class="btn-warning mt-4 btn "  to="/store">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
+                        <Link class="btn-warning mt-4 btn"  to="/store#!/Force/p/296981076/category=0">  <i className=" fa fa-shopping-cart mr-2" />Shop</Link>
                         <Link class="btn-secondary mt-4 btn ">Talk to Sales</Link>
               </Col>
               <Col className="mb-lg-auto" lg="6">

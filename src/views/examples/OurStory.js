@@ -103,6 +103,7 @@ class OurStory extends React.Component {
                 backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
+               {/*} <span />
                 <span />
                 <span />
                 <span />
@@ -110,8 +111,7 @@ class OurStory extends React.Component {
                 <span />
                 <span />
                 <span />
-                <span />
-                <span />
+              <span />*/}
               </div>
              
               <Container className="py-lg-md d-flex">

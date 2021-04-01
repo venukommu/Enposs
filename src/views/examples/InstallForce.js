@@ -92,7 +92,7 @@ class InstallForce extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 bg-gradient-pink">
+              <div className="shape bg-gradient-pink">
                 <span />
                 <span />
                 <span />

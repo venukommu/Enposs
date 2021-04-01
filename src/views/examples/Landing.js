@@ -487,9 +487,9 @@ class Landing extends React.Component {
             </Container>
           </section>  
               <Row className="justify-content-center text-center">
-                    <Col lg="12">
-                      <h3 className="display-3"><span className="text-warning font-weight-bold display-2">15</span> Years of Service</h3>
-                    </Col>
+                <Col lg="12">
+                  <h3 className="display-3"><span className="text-warning font-weight-bold display-2">15</span> Years of Service</h3>
+                </Col>
               </Row>
               <Card className="bg-gradient-success shadow-lg border-0 mt-4">
                 <div className="p-5">

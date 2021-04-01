@@ -64,13 +64,14 @@ class CardsFooter extends React.Component {
    
           <Container>
             <Row className="row-grid align-items-center my-md">
-              <Col lg="8">
-                <h3 className="text-dark text-lead mb-2 font-italic" style={{fontSize: "48px", fontWeight: "800px"}}>
-                  Forge ahead with <span className="font-italic text-warning text-lead">FORCE</span>
+              <Col lg="6">
+                <h3 className="text-dark text-lead mb-2" style={{fontSize: "28px", fontWeight: "800px"}}>
+                  {/*Forge ahead with <span className="font-italic text-warning text-lead">FORCE</span>*/}
+                  Progress towards a better tomorrow, Follow <span className="text-warning">Enposs</span> to progress together.
                 </h3>
-                <h4 className="mb-0 font-weight-light">
+               {/*} <h4 className="mb-0 font-weight-light">
                   Let's get in touch on any of these platforms.
-                </h4>
+                </h4>*/}
               </Col>
               <Col className="text-lg-center btn-wrapper" lg="4">
                 <Button

@@ -115,7 +115,7 @@ class Contact extends React.Component {
         <main ref="main">
         <section className="section-profile-cover section-shaped pb-250">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default">
+            <div className="shape shape-default">
               
               <span />
               <span />

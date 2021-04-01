@@ -83,7 +83,7 @@ class Newsroom extends React.Component {
        <DemoNavbar />
         <div className="position-relative">
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 bg-gradient-blue shape-default" >
+            <div className="shape bg-gradient-blue shape-default" >
                 <span />
                 <span />
                 <span />
