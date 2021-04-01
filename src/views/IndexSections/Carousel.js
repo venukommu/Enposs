@@ -100,7 +100,7 @@ class Carousel extends React.Component {
           <Container className="py-md">
            <Row className="justify-content-between align-items-center">
               <Col lg="12">
-                <h4 className="display-3"><span className="text-dark font-weight-bold">For smart Energy Efficient homes to combat Climate Change.</span></h4>
+                <h4 className="display-3 text-dark"  >For smart Energy Efficient homes to combat Climate Change.</h4>
               </Col>
           </Row>
             <Row className="justify-content-between align-items-center">
