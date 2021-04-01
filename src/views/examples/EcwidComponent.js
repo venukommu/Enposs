@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
-import Background from 'assets/img/theme/purple.jpg';
+//import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 
@@ -100,13 +100,9 @@ class EcwidScript extends React.Component {
         <DemoNavbar />
         <div className="position-relative">
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-default"
-              style= {{
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
-               }}>
+            <div className="shape"
+                style={{backgroundColor: "#2B0752"}}
+            >
                 <span />
                 <span />
                 <span />

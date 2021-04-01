@@ -34,7 +34,7 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
-//import Background from 'assets/img/theme/12818.jpg';
+import Background from 'assets/img/theme/pexels-pixabay-235990.jpg';
 
 class Benefits extends React.Component {
   state = {
@@ -92,11 +92,13 @@ class Benefits extends React.Component {
             {/* shape Hero*/}
             {/* For circles shape-style-1 */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape" style={{backgroundColor: "#2B0752"}}>
-            {/*} style= {{
-                backgroundPosition: "center",
+            <div className="shape"
+             style= {{
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
-               }}*/}
+               }}>
                 <span />
                 <span />
                 <span />
@@ -118,7 +120,7 @@ class Benefits extends React.Component {
                         {/*Enjoy benefits that stack up*/}{forcebenefits.Title}
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h3 className="display-4 text-info"
+                        <h3 className="display-4 text-white"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                           {/*the knock-on effects are significant as time goes on*/}{forcebenefits.subtitle}</h3>
                       </div>
@@ -147,9 +149,9 @@ class Benefits extends React.Component {
             {/* 1st Hero Variation */}
           </div>
            
-      <section className="section section-lg pt-lg-0 mt--200">
+      <section className="section section-lg pt-lg-0 mt--100">
             <Container>
-            <Card className="card-profile shadow mt--200" >
+            <Card className="card-profile shadow mt--100" >
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12"> 
                       <h4 className="pt-4 pl-4 display-3 font-weight-bold text-primary">
@@ -161,7 +163,7 @@ class Benefits extends React.Component {
                      src={require("assets/img/theme/asdf.PNG")}
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
-    />
+                    />
               {/* <blockquote className="card-blockquote bg-default shadow border-0">*/}
                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"

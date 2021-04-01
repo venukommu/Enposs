@@ -22,6 +22,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 import ReactMarkdown from "react-markdown";
+import Background from 'assets/img/theme/265442.jpg';
 
 // index page sections
 class Forceprinciples extends React.Component {
@@ -81,7 +82,15 @@ class Forceprinciples extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default bg-gradient-gray-dark"
+              <div className="shape"
+               style= {{
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
+                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+               }}
              >
                 <span />
                 <span />
