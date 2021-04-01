@@ -105,7 +105,7 @@ class Forceprinciples extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
-                    <Col lg="8">
+                    <Col lg="7">
                     <h1 className="display-1 text-white text-lead"
                         style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                           {/*Active Power Saving by Increasing Conductivity (APSIC)*/}{forceprinciple.Title}</h1>
