@@ -136,7 +136,7 @@ class Certifications extends React.Component {
         <DemoNavbar />
         <div className="position-relative">
         <section className="section section-lg section-shaped pb-250">
-        <div className="shape" style={{backgroundColor: "#2B0752"}}>
+        <div className="shape shape-default bg-gradient-default alpha-4">
           <span />
           <span />
           <span />

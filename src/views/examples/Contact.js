@@ -115,7 +115,7 @@ class Contact extends React.Component {
         <main ref="main">
         <section className="section-profile-cover section-shaped pb-250">
             {/* Circles background */}
-            <div className="shape" style={{backgroundColor: "#2B0752"}}>
+            <div className="shape alpha-4 bg-gradient-default">
               <span />
               <span />
               <span />
