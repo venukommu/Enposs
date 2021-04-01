@@ -156,7 +156,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/" tag={Link}
+                      to="/" tag={Link} onClick={() => {window.location.href="/"}}
                     >
                       Home
                     </NavLink>
@@ -165,7 +165,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/ourstory" tag={Link}
+                      to="/ourstory" tag={Link} onClick={() => {window.location.href="/ourstory"}}
                     >
                       About
                     </NavLink>
@@ -174,7 +174,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com/presentation?ref=adsr-footer"
                       //target="_blank"
-                      to="/force" tag={Link}
+                      to="/force" tag={Link} onClick={() => {window.location.href="/force"}}
                     >
                       Product
                     </NavLink>
@@ -183,7 +183,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="http://blog.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/clients" tag={Link}
+                      to="/clients" tag={Link}  onClick={() => {window.location.href="/clients"}}
                     >
                       Clients
                     </NavLink>
@@ -200,7 +200,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
                       //target="_blank"
-                      to="/contact" tag={Link}
+                      to="/contact" tag={Link} onClick={() => {window.location.href="/contact"}}
                     >
                       Contact Us
                     </NavLink>
