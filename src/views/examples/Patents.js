@@ -129,7 +129,7 @@ class Patents extends React.Component {
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {carouselcontent.Title}
                         </h1>
-                        <h3 className="display-4 text-white" style={{ textAlign : "left" }}>
+                        <h3 className="display-4 text-info" style={{ textAlign : "left" }}>
                           We have received patents in five countries, with others under application.
                         </h3>
                        </div>
