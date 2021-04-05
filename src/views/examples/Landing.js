@@ -95,7 +95,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner, homewidgets: homepagebanner.homewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2 });
+      this.setState({ homepagebanner, homewidgets: homepagebanner.homepagewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2 });
     } catch (error) {
       this.setState({ error });
     }
@@ -164,7 +164,7 @@ class Landing extends React.Component {
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
     const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2 } = this.state;
-    console.log(homewidgets);
+    console.log(homepagebanner);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -337,7 +337,7 @@ class Landing extends React.Component {
                               </h6>
                               <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
-                              <ReactMarkdown source={widgets.paragraph} allowDangerousHtml={true}/>
+                              <ReactMarkdown source={widgets.description} allowDangerousHtml={true}/>
                               </p> 
                             </div>
                             <Button to={widgets.routername} tag={Link}
