@@ -69,7 +69,7 @@ class DemoNavbar extends React.Component {
       <>
         <header className="header-global">
           <Navbar
-            className="navbar-main navbar-transparent navbar-light headroom"
+            className="navbar-main navbar-transparent navbar-light"
             expand="lg"
             id="navbar-main"
           >
@@ -207,9 +207,9 @@ class DemoNavbar extends React.Component {
                 </Nav> */}
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="#" tag={Link} nav>
+                    <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase">About</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"20px",color:"#5892cc"}}>About</span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="/ourstory" onClick={() => {window.location.href="/ourstory"}} tag={Link}>
@@ -224,9 +224,9 @@ class DemoNavbar extends React.Component {
                     </DropdownMenu>
                   </UncontrolledDropdown>                  
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="#" tag={Link} nav>
+                    <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase">Product</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"20px",color:"#5892cc"}}>Product</span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem to="/force" tag={Link} onClick={() => {window.location.href="/force"}}>
@@ -249,7 +249,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle  to="/news" tag={Link} nav onClick={() => {window.location.href="/news"}}>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase">News</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"20px",color:"#5892cc"}}>News</span>
                     </DropdownToggle>
                    {/*} <DropdownMenu>
                       <DropdownItem to="#" tag={Link}>
@@ -260,7 +260,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase">Clients</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"20px",color:"#5892cc"}} >Clients</span>
                     </DropdownToggle>
                        {/*}<DropdownMenu>
                       <DropdownItem to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}}>
@@ -286,13 +286,13 @@ class DemoNavbar extends React.Component {
                    <UncontrolledDropdown nav>
                     <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase">Shop</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"20px",color:"#5892cc"}}>Shop</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>  
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase">Support</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"20px",color:"#5892cc"}}>Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
                     <DropdownItem to="/installforce" tag={Link} onClick={() => {window.location.href="/installforce"}}>
