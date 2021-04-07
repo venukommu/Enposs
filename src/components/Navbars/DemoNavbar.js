@@ -298,7 +298,7 @@ class DemoNavbar extends React.Component {
                     <DropdownItem to="/installforce" tag={Link} onClick={() => {window.location.href="/installforce"}}>
                         How to install FORCE
                       </DropdownItem>
-                      <DropdownItem to="#" tag={Link}>
+                      <DropdownItem to="/faq" tag={Link}>
                         FAQ
                       </DropdownItem>
                       {/*<DropdownItem to="#" tag={Link}>
