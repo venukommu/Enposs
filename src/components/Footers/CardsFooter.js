@@ -105,7 +105,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="dribbble"
-                  href="https://twitter.com/Enposs1"
+                  href="https://www.instagram.com/enposs_power.saving/"
                   id="tooltip829810202"
                   target="_blank"
                 >
