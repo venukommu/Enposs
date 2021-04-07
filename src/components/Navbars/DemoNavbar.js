@@ -454,6 +454,7 @@ class DemoNavbar extends React.Component {
             </Container>
           </Navbar>
         </header>
+       
       </>
     );
   }
