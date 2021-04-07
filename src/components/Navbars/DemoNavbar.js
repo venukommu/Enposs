@@ -32,9 +32,9 @@ import {
   Container,
   Row,
   Col,
-  //NavItem,
+  NavItem,
   //Button,
-  //NavLink,
+  NavLink,
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
@@ -412,27 +412,44 @@ class DemoNavbar extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem>*/}
                 </Nav>
-                {/*<Nav className="ml-auto" navbar>
-                <NavItem className="d-none d-lg-block ml-lg-4" >
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      //href="/store"
-                      target="_self"
-                      float= "right"
-                      to="/store" tag={Link}
-                      forceRefresh={true}
+                <Nav className="ml-auto" navbar>
+                <NavItem className="d-none d-lg-block ml-xs-4" >
+                <NavLink
+                      className="nav-link-icon"
+                      href="https://www.enposs.com/"
+                      id="tooltip112445449"
+                      target="_blank"
+                      title="Korean Site"
+                    > 
+                <img  src={require("assets/img/flags/f_kr.png")}  height="18" alt="Korean Site" /> </NavLink></NavItem> 
+                <NavItem className="d-none d-lg-block ml-xs-4" >
+                <NavLink
+                      className="nav-link-icon"
+                      href="http://www.enposs.jp/"
+                      id="tooltip112445449"
+                      target="_blank"
+                      title="Japanese Site"
+                    > 
+                <img  src={require("assets/img/flags/f_jp.png")}  height="18" alt="Japanese Site" /> </NavLink></NavItem> 
+                <NavItem className="d-none d-lg-block ml-xs-4" >
+                <NavLink
+                      className="nav-link-icon"
+                      href="http://www.enposs.com.cn/"
+                      id="tooltip112445449"
+                      target="_blank"
+                      title="Chinese Site"
                     >
-                <span className="btn-inner--icon">
-                        <i className=" fa fa-shopping-cart mr-2" />
-                     
-                </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Shop
-                      </span>
-                    </Button>
-                  </NavItem> 
-                </Nav>*/}
+                <img  src={require("assets/img/flags/f_ch.png")}  height="18" alt="Chinese Site" /> </NavLink></NavItem> 
+                <NavItem className="d-none d-lg-block ml-xs-4" >
+                <NavLink
+                      className="nav-link-icon"
+                      href="http://enposs.vn/"
+                      id="tooltip112445449"
+                      target="_blank"
+                      title="Vietnamese Site"
+                    > 
+                <img  src={require("assets/img/flags/f_vt.png")}  height="18" alt="Vietnamese Site" /> </NavLink></NavItem> 
+                </Nav>
               </UncontrolledCollapse>
             </Container>
           </Navbar>
