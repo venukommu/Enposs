@@ -157,7 +157,7 @@ class EcwidScript extends React.Component {
                           {/*}    {companystory.Title}*/}
         {/*FORCE energy-saving device for residential use*/}{storecontent.heading} 
         </h4>
-        <Link to="/contact">{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
+        <Link to="/contact" onClick={() => {window.location.href="/contact"}} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
         <EcwidScript/>
         </Card>
         </Container>
