@@ -77,10 +77,9 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle"
                   color="twitter"
-                  //href="https://twitter.com/creativetim"
-                  href="#"
+                  href="https://twitter.com/Enposs1"
                   id="tooltip475038074"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-twitter" />
@@ -92,10 +91,9 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="facebook"
-                  //href="https://www.facebook.com/creativetim"
-                  href="#"
+                  href="https://www.facebook.com/ForceGlobal/"
                   id="tooltip837440414"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-facebook-square" />
@@ -107,10 +105,9 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="dribbble"
-                  //href="https://dribbble.com/creativetim"
-                  href="#"
+                  href="https://twitter.com/Enposs1"
                   id="tooltip829810202"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-instagram" />
@@ -121,7 +118,7 @@ class CardsFooter extends React.Component {
                 </UncontrolledTooltip>
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
-                  color="github"
+                  color="linkedin"
                   //href="https://github.com/creativetimofficial"
                   href="#"
                   id="tooltip495507257"

@@ -59,6 +59,7 @@ import Blueashrecreationcenter from "views/examples/Blueashrecreationcenter";
 import Newsroom from "views/examples/Newsroom";
 import NewsArticle from "views/examples/NewsArticle";
 import Benefits from "views/examples/Benefits";
+import Faq from "views/examples/Faq";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -166,6 +167,11 @@ ReactDOM.render(
  path="/contact"
  exact
  render={props => <Contact {...props} />}
+ />
+ <Route
+ path="/faq"
+ exact
+ render={props => <Faq {...props} />}
  />
  <Route
  path="/store"
