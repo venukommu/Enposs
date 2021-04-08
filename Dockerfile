@@ -1,9 +1,10 @@
-FROM node:10
-# where our app will be located in the image
-RUN mkdir -p /app
-WORKDIR /app
-# move all source code
-COPY . .
-RUN npm install
-CMD [ "npm", "run", "eb:prod" ]
-EXPOSE 3000
+FROM node:alpine as builder
+WORKDIR '/app'
+COPY ./package.json ./
+RUN npm install 
+COPY . . 
+RUN npm run build
+
+FROM nginx 
+EXPOSE 80
+COPY --from=builder /app/build /usr/share/nginx/html
