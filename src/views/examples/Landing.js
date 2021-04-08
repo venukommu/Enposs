@@ -45,7 +45,7 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/Potter-with-Enpossn.jpg';
+import Background from 'assets/img/theme/enposs-final.png';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
