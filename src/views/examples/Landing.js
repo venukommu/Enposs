@@ -45,7 +45,7 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/pexels-quang-nguyen-vinh-2131935-min.jpg';
+import Background from 'assets/img/theme/Potter-with-Enpossn.jpg';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
@@ -207,7 +207,7 @@ class Landing extends React.Component {
                         {/*ENPOSS Inc {" "}*/}
                           {/*<span>completed with examples</span>*/}
                         </h5>
-                        <h1 className="display-1 text-white text-lead"
+                        <h1 className="display-1 text-dark text-lead"
                         style={{ textAlign : "center" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {/*homepagebanner.description
         
@@ -242,7 +242,7 @@ class Landing extends React.Component {
                           </span>
                         </Button>*/}
                         <div>
-                        <h3 className="display-4 text-info mt-2" style={{ textAlign : "center" }}>
+                        <h3 className="display-4 text-warning mt-2" style={{ textAlign : "center" }}>
                         {/*FORCE is an energy-saving device proven to reduce your energy consumption*/}
                         {homepagebanner.subtitle}
                           {/*Conserve and Preserve*/}
@@ -252,9 +252,9 @@ class Landing extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg="4" xs="6"></Col>
+                  <Col lg="2" xs="7"></Col>
                   <Col lg="4" xs="7">
-                    <p  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p> 
+                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p> 
                       <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>                    
                       <Button 
                         className="btn btn-block btn-sm mt-n3"
@@ -266,7 +266,7 @@ class Landing extends React.Component {
                       decimals={2} decimal="." /></span> {/*tons*/}{homepagebanner.unit1}
                     </Button>                      
                     </h3>
-                    <p  className="text-white text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p>
+                    <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p>
                   </Col>                                                                     
                       {/*} <Col xs="6" md="6"> 
                           <h5 className="display-7 text-white text-lead"
@@ -277,18 +277,19 @@ class Landing extends React.Component {
                     {/*} </Row>
                       <Row>*/}
                   {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
+                  <Col lg ="2"></Col>
                   <Col lg="4" xs="7">
-                    <p  className="text-white text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p> 
+                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p> 
                     <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>   
                     <Button 
-                      className="btn btn-block btn-sm mt-n3"
+                      className="btn btn-block btn-sm mt-n3  ml-auto"
                       color="danger"
                     >                                                                          
                       {/*<span  className="text-white text-lead">power/day</span> <br />*/}
                       <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={countupvalue2} separator=","  /> </span> {/*KWH*/}{homepagebanner.unit2}
                     </Button>                      
                     </h3>
-                    <p  className="text-white text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p> 
+                    <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p> 
                   </Col>
                   {/*} <Col xs="6" md="6"> 
                     <h5 className="display-7 text-white text-lead"
