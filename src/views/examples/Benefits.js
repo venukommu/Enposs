@@ -119,7 +119,7 @@ class Benefits extends React.Component {
                       <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {/*Enjoy benefits that stack up*/}{forcebenefits.Title}
                         {/*ENPOSS Inc {" "}*/}
-                        </h1>
+                        </h1><br />
                         <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                           {/*the knock-on effects are significant as time goes on*/}{forcebenefits.subtitle}</h3>

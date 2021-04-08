@@ -124,7 +124,7 @@ class OurStory extends React.Component {
                         {/*Strategically Built for saving Power and the Planet*/}
                         {companystory.Title}
                         {/*ENPOSS Inc {" "}*/}
-                        </h1>
+                        </h1><br />
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}

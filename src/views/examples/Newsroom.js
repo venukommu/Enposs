@@ -103,7 +103,7 @@ class Newsroom extends React.Component {
                       <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {/*The Newsroom*/}{newscontent.Title}
-                        </h1>
+                        </h1><br />
                         <h3 className="display-4 text-info" style={{ textAlign : "left" }}>
                           {/*Browse our news items, as well as links to various industry-related or environmental news from a variety of sources.*/}
                           {newscontent.subtitle}
