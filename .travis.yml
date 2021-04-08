@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "10.15.0"
+  - "10.22.1"
 
 notifications:
   slack:
@@ -55,6 +55,8 @@ deploy:
     bucket_path: "ReactDocker"
     on:
         branch: client-review-2-changes
-    access_key_id: AKIASKPJR6DDJ4EHZWSN
+#    access_key_id: AKIASKPJR6DDJ4EHZWSN
+    access_key_id: AKIASKPJR6DDAW6T3XC3
     secret_access_key:
-        secure: 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
+#        secure: WtvADcgsNl5OO4ueF84AWckMSCTt9MMfwIgjGb6F
+        secure: Qz3v8XXCOg2GT9OcpiznbsiU7FnPZMdzoGDa/vFB
