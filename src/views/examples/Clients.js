@@ -97,7 +97,7 @@ class Clients extends React.Component {
                       <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {clientscontent.Title}
-                        </h1>
+                        </h1><br />
                         <h3 className="display-4 text-info" style={{ textAlign : "left" , marginBottom: "80px" }}>
                           {/*Where permissible, we have shared reports looking into the reduction in energy comsumption experienced by our clients.*/}
                           {clientscontent.subtitle}

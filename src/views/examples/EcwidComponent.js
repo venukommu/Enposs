@@ -123,7 +123,7 @@ class EcwidScript extends React.Component {
                           <h1 className="display-1 text-white text-lead"
                           style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                             {/*Order FORCE for your home.*/}{storecontent.Title}
-                          </h1> 
+                          </h1> <br />
                           <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "60px" }}>
                             {/*Save Money, AND Help Save the Planet.*/}{storecontent.subtitle}
                         </h3>                     

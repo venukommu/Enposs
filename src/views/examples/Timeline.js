@@ -106,7 +106,7 @@ class Timeline extends React.Component {
                     <Col lg="6">
                     <div>
                     <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
-                      {/*There couldn't have been a better time for FORCE on the world scene*/}{timeline.Title}</h1>
+                      {/*There couldn't have been a better time for FORCE on the world scene*/}{timeline.Title}</h1><br />
                     <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*A time when the world is gasping for fresh air and feeling the need to go green.*/}{timeline.subtitle}

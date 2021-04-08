@@ -18,7 +18,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
-import Headroom from "headroom.js";
+//import Headroom from "headroom.js";
 import {CartContext} from "context/CartContext";
 //import { UserContext } from 'context/user';
 // reactstrap components
@@ -42,9 +42,9 @@ import {
 class DemoNavbar extends React.Component {
   static contextType = CartContext
   componentDidMount() {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
+    //let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
-    headroom.init();
+    //headroom.init();
   }
   state = {
     collapseClasses: "",
@@ -69,9 +69,10 @@ class DemoNavbar extends React.Component {
       <>
         <header className="header-global">
           <Navbar
-            className="navbar-main navbar-transparent navbar-light"
+            className="navbar-main navbar-transparent navbar-light bg-gradient-default"
             expand="lg"
             id="navbar-main"
+            style={{position:"fixed"}}
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => {window.location.href="/"}}>
