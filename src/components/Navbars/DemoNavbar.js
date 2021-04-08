@@ -69,7 +69,7 @@ class DemoNavbar extends React.Component {
       <>
         <header className="header-global">
           <Navbar
-            className="navbar-main navbar-transparent navbar-light bg-gradient-dark"
+            className="navbar-main navbar-transparent navbar-light bg-gradient-default"
             expand="lg"
             id="navbar-main"
             style={{position:"fixed"}}
