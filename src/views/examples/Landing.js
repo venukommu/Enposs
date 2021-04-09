@@ -45,12 +45,13 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/enpossbanner.png';
+import Background from 'assets/img/theme/bg.png';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
+
 class Landing extends React.Component {
-  
+ 
   state = {
     homepagebanner: [],
     homewidgets: [],
@@ -160,7 +161,7 @@ class Landing extends React.Component {
     }*/
 
   };
-  
+ 
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
     const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2 } = this.state;
@@ -195,10 +196,10 @@ class Landing extends React.Component {
                 <span />
                 <span />
               </div>
-              <Container className="py-lg-md d-flex">
+              <Container className="py-xl-md d-flex">
                 <div className="col px-0">
                 <Row style={{ marginBottom: "120px" }}>
-                    <Col md="8" lg="7">
+                    <Col md="8" lg="7" xs="12">
                     {/*< ProductList />*/}
                       <div>
                         <h5 className="display-20 text-white">
@@ -210,8 +211,8 @@ class Landing extends React.Component {
                         <h1 className="display-1 text-dark text-lead"
                         style={{ textAlign : "center" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         {/*homepagebanner.description
-        
-                        ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct 
+       
+                        ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct
                         sales, partners, representatives, dealers, and distributors.*/}
                         {/*Save Energy - Save Earth*/}
                         {homepagebanner.Title}
@@ -250,13 +251,18 @@ class Landing extends React.Component {
                       </div>
                       </div>
                   </Col>
+                  <Col md="8" lg="5" xs ="12" style={{ marginTop: "90px" }}>
+                  <div><img src={require("assets/img/theme/steps-c.png")} alt ="" style={{
+                    width: "100%" 
+                  }}/></div>
+                  </Col>
                 </Row>
-                <Row>
+                <Row className="mt--200">
                   {/*<Col lg="2" xs="7"></Col>*/}
                   <Col lg="4" xs="7">
-                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p> 
+                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p>
                       <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>                    
-                      <Button 
+                      <Button
                         className="btn btn-block btn-sm mt-n3"
                         color="danger"
                       >
@@ -267,8 +273,8 @@ class Landing extends React.Component {
                     </Button>                      
                     </h3>
                     <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p>
-                  </Col>                                                                     
-                      {/*} <Col xs="6" md="6"> 
+                  </Col>                                                                    
+                      {/*} <Col xs="6" md="6">
                           <h5 className="display-7 text-white text-lead"
                             style={{ textAlign : "left",paddingTop: "20px" }}>
                             <span  className="text-white text-lead">Total Reduced CO<sub>2</sub></span>
@@ -280,9 +286,9 @@ class Landing extends React.Component {
                   <Col lg="4" xs="7"> </Col>
                   {/*<Col lg ="2"></Col>*/}
                   <Col lg="4" xs="7">
-                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p> 
-                    <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>   
-                    <Button 
+                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p>
+                    <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>  
+                    <Button
                       className="btn btn-block btn-sm mt-n3  ml-auto"
                       color="danger"
                     >                                                                          
@@ -290,9 +296,9 @@ class Landing extends React.Component {
                       <span  style={{ fontSize : "30px" }} className="text-white"> <CountUp end={countupvalue2} separator=","  /> </span> {/*KWH*/}{homepagebanner.unit2}
                     </Button>                      
                     </h3>
-                    <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p> 
+                    <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p>
                   </Col>
-                  {/*} <Col xs="6" md="6"> 
+                  {/*} <Col xs="6" md="6">
                     <h5 className="display-7 text-white text-lead"
                       style={{ textAlign : "left",paddingTop: "20px"}}>
                       <span  className="text-white text-lead">Total Reduced power</span>
@@ -340,7 +346,7 @@ class Landing extends React.Component {
                               <p className="description mt-3 text-dark"
                               style={{ textAlign : "left" }}>
                               <ReactMarkdown source={widgets.description} allowDangerousHtml={true}/>
-                              </p> 
+                              </p>
                             </div>
                             <Button to={widgets.routername} tag={Link}
                               className="mt-2"
@@ -360,7 +366,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                         <div className="icon icon-shape icon-shape-info rounded-circle mb-2">
-                            <i className="fa fa-money" /> 
+                            <i className="fa fa-money" />
                           </div>
                           <div>
                           <h6 className="text-info text-uppercase" style={{ textAlign : "center" }}>
@@ -386,7 +392,7 @@ class Landing extends React.Component {
                               creative
                             </Badge>
                           </div>
-                          
+                         
                           <Button to="/ourstory" tag={Link}
                             className="mt-2"
                             color="info"
@@ -402,7 +408,7 @@ class Landing extends React.Component {
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="text-center mt-2">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-2">
-                            <i className="fa fa-globe" /> 
+                            <i className="fa fa-globe" />
                           </div>
                           <div>
                           <h6 className="text-success text-uppercase" style={{ textAlign : "center" }}>
@@ -526,7 +532,7 @@ class Landing extends React.Component {
                   <div className="pr-md-5">
                     {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
-                    </div> 
+                    </div>
                     <h3>{this.state.awesomefeatures.Title}</h3>
                     <p>
                     {this.state.awesomefeatures.description}</p>
@@ -714,7 +720,7 @@ class Landing extends React.Component {
                 </Col>
               </Row>
             </Container>
-            {/* SVG separator 
+            {/* SVG separator
             <div className="separator separator-bottom separator-skew zindex-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -737,7 +743,7 @@ class Landing extends React.Component {
                 <Col lg="8">
                   <h2 className="display-3">The amazing Team</h2>
                   <p className="lead text-muted">
-                  Teamwork is the ability to work together toward a common vision, the ability to direct individual accomplishments toward organizational objectives. 
+                  Teamwork is the ability to work together toward a common vision, the ability to direct individual accomplishments toward organizational objectives.
                   </p>
                 </Col>
               </Row>
@@ -925,8 +931,8 @@ class Landing extends React.Component {
                       Force power-saving technology
                       </h3>
                       <p className="lead text-white mt-3">
-                      Force power-saving device has won the title of National Excellent 
-                      Product and the Green Technology Certification Award issued by the Korean State. 
+                      Force power-saving device has won the title of National Excellent
+                      Product and the Green Technology Certification Award issued by the Korean State.
                       </p>
                     </Col>
                     <Col className="ml-lg-auto" lg="3">
@@ -1273,7 +1279,7 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </Col>
-              </Row> 
+              </Row>
                   {/*<Link className="display-4">See customer stories</Link>*/}
             </Col>
          </Row>
@@ -1427,7 +1433,7 @@ class Landing extends React.Component {
                         <small className="h6 text-muted">Customer Review</small>
                       </h5>
                       <p> FORCE saves consumption and safe to use.
-                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                     
+                      FORCE saves power usage and gives satisfaction that we do our part in saving Carbon footprint.</p>                    
                       <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
@@ -1510,7 +1516,7 @@ class Landing extends React.Component {
             </div>
               {/* Snipcart Code
               <h3 className="text-danger"> Snipcart demo</h3>
-              <Row> 
+              <Row>
             {this.state.enpossproducts.map(products => (
               <Col className="mb-5 mb-md-0" md="6" key={products.id}>
                 <Card className="card-lift--hover shadow border-0">
@@ -1559,3 +1565,4 @@ class Landing extends React.Component {
 }
 
 export default Landing;
+
