@@ -45,7 +45,7 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/enposs-final.png';
+import Background from 'assets/img/theme/enpossbanner.png';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
@@ -252,7 +252,7 @@ class Landing extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg="2" xs="7"></Col>
+                  {/*<Col lg="2" xs="7"></Col>*/}
                   <Col lg="4" xs="7">
                     <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p> 
                       <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>                    
@@ -277,7 +277,8 @@ class Landing extends React.Component {
                     {/*} </Row>
                       <Row>*/}
                   {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
-                  <Col lg ="2"></Col>
+                  <Col lg="4" xs="7"> </Col>
+                  {/*<Col lg ="2"></Col>*/}
                   <Col lg="4" xs="7">
                     <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p> 
                     <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>   
