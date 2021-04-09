@@ -33,8 +33,8 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
-//import ReactMarkdown from "react-markdown";
+import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 class Faq extends React.Component {
   executeOnClick(isExpanded) {
@@ -51,7 +51,7 @@ class Faq extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -76,17 +76,17 @@ class Faq extends React.Component {
         this.setState({ faqcontent });
       } catch (error) {
         this.setState({ error });
-      }*/
+      }
 
   };
   
   render() {
-    //const { error, faqcontent} = this.state;
+    const { error, faqcontent} = this.state;
 
     // Print errors if any
-    //if (error) {
-    //  return <div>An error occured: {error.message}</div>;
-    //}
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <DemoNavbar />
@@ -111,8 +111,8 @@ class Faq extends React.Component {
                     <Col lg="6">
                     <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
-                        Q & A
-                        {/*faqcontent.Title*/}
+                        {/*Q & A*/}
+                        {faqcontent.Title}
                         </h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
@@ -151,8 +151,8 @@ class Faq extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <div style={{ textAlign : "left"}}>
-                          {/*<ReactMarkdown source={faqcontent.description} allowDangerousHtml={true}/>*/}
-<p className="font-weight-bold">Q. Will there be any problems with the main panel after installing the FORCE?</p>
+                          <ReactMarkdown source={faqcontent.description} allowDangerousHtml={true}/>
+{/*<p className="font-weight-bold">Q. Will there be any problems with the main panel after installing the FORCE?</p>
 <ol type="A" className="text-danger"><li>No,</li></ol>
 There will be no problems at all with the main panel because of the Force.<br /><br />
 
@@ -228,7 +228,7 @@ But, if you still have concerns about the Force’s performance, please contact 
 <ol type="A" className="text-danger"><li> For residential customers, It depends on the shipment, normally shipping takes upto 5~7business days. Once you receive the Force you can call your local electrician for installation.<br /><br />Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. </li></ol>
 
 <p className="font-weight-bold">Q. What is the payment method? </p>
-<ol type="A" className="text-danger"><li> For residential customers, the payment method will be Credit or Debit card and Paypal.<br /><br />Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. </li></ol>
+<ol type="A" className="text-danger"><li> For residential customers, the payment method will be Credit or Debit card and Paypal.<br /><br />Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. </li></ol>*/}
                         </div>
                       </Col>
                     </Row>
