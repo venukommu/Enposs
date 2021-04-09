@@ -63,8 +63,8 @@ class Landing extends React.Component {
     awesomefeaturesimage: {},
     enpossproducts: [],
     enpossproductsimages: {},
-    countupvalue1: [],
-    countupvalue2: [],
+    countupvalue1: 0,
+    countupvalue2: 0,
     error: null,
   };
 
