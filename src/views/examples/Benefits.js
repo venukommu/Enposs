@@ -34,7 +34,7 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
-import Background from 'assets/img/theme/pexels-pixabay-235990.jpg';
+import Background from 'assets/img/theme/pexels-pixabay-235990-final.jpg';
 
 class Benefits extends React.Component {
   state = {
@@ -95,8 +95,6 @@ class Benefits extends React.Component {
             <div className="shape"
              style= {{
               backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
                 <span />

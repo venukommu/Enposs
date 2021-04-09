@@ -84,9 +84,7 @@ class Force extends React.Component {
               <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min-final.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />

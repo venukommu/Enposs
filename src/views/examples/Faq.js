@@ -42,8 +42,7 @@ class Faq extends React.Component {
 }
   state = {
     error: null,
-    companystory: [],
-    homepageimage: [],
+    faqcontent: []
 
   };
 
@@ -52,10 +51,10 @@ class Faq extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    //const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
-    /*const checkStatus = resp => {
+    const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
       }
@@ -68,13 +67,13 @@ class Faq extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/ourstory`, {
+        const faqcontent = await fetch(`${appConfig.apiURL}/faq`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ faqcontent });
       } catch (error) {
         this.setState({ error });
       }*/
@@ -82,7 +81,7 @@ class Faq extends React.Component {
   };
   
   render() {
-    //const { error} = this.state;
+    //const { error, faqcontent} = this.state;
 
     // Print errors if any
     //if (error) {
@@ -110,10 +109,10 @@ class Faq extends React.Component {
                 <div className="col px-0">
                 <Row>
                     <Col lg="6">
-                    {/*< ProductList />*/}
                     <div>
                         <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
                         Q & A
+                        {/*faqcontent.Title*/}
                         </h1>
                       <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
@@ -151,83 +150,86 @@ class Faq extends React.Component {
                   <div className="mt-3 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
-                        <p style={{ textAlign : "left"}}>
-        <div className="font-weight-bold">Q. Will there be any problems with the main panel after installing the FORCE?</div><br />
-        
-        <div className="text-danger">&emsp; A. No,</div><br />
-    
-        There will be no problems at all with the main panel because of the Force.<br /><br />
-    
-        <div className="font-weight-bold">Q. What if the FORCE gets heat during the operation?</div><br />
-    
-        <div className="text-danger">&emsp; A. There is no reason to get heat during operation.</div><br />
-    
-        The FORCE might get some heat, but it won’t get hot.<br /><br />
-    
-        <div className="font-weight-bold">Q. What should I do with the FORCE if I move to other places after install?</div><br />
-         
-        <div className="text-danger">&emsp;A. You can easily uninstall the Force out of an existing location and re-install at a new location, at this moment only think about whether the capacity of FORCE is proper or not. Also, we don’t provide installation service at this time, so customers are responsible for uninstalling and installing.</div><br />
-    
-        <div className="font-weight-bold">Q. Which location should the FORCE be installed?</div><br />
-        <div className="text-danger">&emsp;A. The best location to install FORCE is secondary of the main circuit breaker of the main distribution board. (For more detail, please visit our website you can find installation under SUPPORT.)</div><br />
-    
-        <div className="font-weight-bold">Q.Does the main panel need to be turned off during the FORCE installation?</div><br />
-        <div className="text-danger">&emsp;A. Yes,</div><br />
-        For your safety, if you don't shut the main panel you will get injured (electric shock) by electricity.<br /><br />
-    
-        <div className="font-weight-bold">Q. How much electricity bill will be saved with the FORCE?</div><br />
-        <div className="text-danger">&emsp;A. More than 5%,</div><br />
-        The saving ratio will vary depending on the circumstances, and it is hard to calculate when it comes to electricity bill cost. But average saving will be up to 5%~15%<br /><br />
-        <div className="font-weight-bold">Q. What's the principle of energy-saving? / How does FORCE reduce power consumption? </div><br />
-        <div className="text-danger">&emsp;A. The FORCE, saves active power by increasing conductivity. And it reduces electrical losses by excess free electrons. (Active Power Saving by Increasing Conductivity)</div><br />
+                        <div style={{ textAlign : "left"}}>
+                          {/*<ReactMarkdown source={faqcontent.description} allowDangerousHtml={true}/>*/}
+<p className="font-weight-bold">Q. Will there be any problems with the main panel after installing the FORCE?</p>
+<ol type="A" className="text-danger"><li>No,</li></ol>
+There will be no problems at all with the main panel because of the Force.<br /><br />
 
-        <div className="font-weight-bold">Q. Is the FORCE able to install in factories or large buildings? </div><br />
-        <div className="text-danger">&emsp;A. Yes, it is.</div><br />
-        The Force can be installed anywhere that uses electricity, the Force is not restricted by the installation environment.<br /><br />
-        <div className="font-weight-bold">Q. Is the rental(lease) service available? </div><br />
-        <div className="text-danger">&emsp;A. Yes, see below for more detail.</div><br />
-        However, we only provide rental service in the US only for industrial, commercial and vessels. (For more detail and inquiry, please visit our website, there is Contact us under SUPPORT)<br /><br />
-        <div className="font-weight-bold">Q. What's the installation cost? </div><br />
-        <div className="text-danger">&emsp;A. For residential, installation is not included with purchase of the Force. We prefer to call a local electrician for an installation. </div><br />
-        If you want to install the Force for Commercial, industrial, and vessels, please contact us by ‘info@enposs.com’.<br /><br />
-        <div className="font-weight-bold">Q. Are there any cases where the FORCE does not reduce power consumption? </div><br />
-        <div className="text-danger">&emsp;A. Absolutely not, only the saving ratio is different.</div><br />
-        Reduction failure has not occurred in the past 12 years, but the saving ratios are different depending on circumstances. Also, for sure there should be a reduction effect only if the FORCE is installed properly.<br /><br />
-        <div className="font-weight-bold">Q. Is there any harmonic wave or noise after installing the FORCE? </div><br />
-        <div className="text-danger">&emsp;A. No, it is not.</div><br />
-        The Force doesn’t operate with electricity or the motors, so there will be no Noise, Heat or Harmonics distortion.<br /><br />
-        <div className="font-weight-bold">Q. Is the FORCE supported by the government? </div><br />
-        <div className="text-danger">&emsp;A. Not at the moment.</div><br />
-        But once we have any type of support from the government we will post on the website under News, so please check our website frequently for updates. <br /><br />
-        <div className="font-weight-bold">Q. Is the after service available for the FORCE? </div><br />
-        <div className="text-danger">&emsp;A. Yes,</div><br />
-        but our product is maintenance free commodities, The Force doesn’t need maintenance. If so, please contact us.<br /><br />
-        <div className="font-weight-bold">Q. What if the FORCE has the same issues after service? </div><br />
-        <div className="text-danger">&emsp;A. Enposs cares for Customers,</div><br />
-        if there still is an issue with the product after serviced, please contact us within 30 days after serviced. <br /><br />
-        <div className="font-weight-bold">Q. The FORCE's power saving rate is good at the first test, but can it drop over time? </div><br />
-        <div className="text-danger">&emsp;A. No it is not</div><br />
-        <div className="font-weight-bold">Q. How should I know the FORCE's power-saving effect after installation? </div><br />
-        <div className="text-danger">&emsp;1. You can easily compare the electricity bill before and after installing FORCE as the same condition.<br />
-          &emsp;2. You can check the meter to see the usage reduction.<br />
-          &emsp;3. The electricity consumption is measured by the measuring instrument.
-        </div><br />
-        <div className="font-weight-bold">Q. Is there any way to know if the FORCE doesn't work or if the FORCE is bad? </div><br />
-        <div className="text-danger">&emsp;A. There are few ways to check if the Force is bad or not.
-First by visual inspection of the product to see if there is any physical damage on the outer box. or check the wires if it has cuts.
-Second, you can check your electricity bill or meter outside of your house to see if there are any reductions in your usage.
-Third, you can use measuring tools to check the electricity consumption. 
-</div><br />
+<p className="font-weight-bold">Q. What if the FORCE gets heat during the operation?</p>
+<ol type="A" className="text-danger"><li> There is no reason to get heat during operation.</li></ol>
+The FORCE might get some heat, but it won’t get hot.<br /><br />
+    
+<p className="font-weight-bold">Q. What should I do with the FORCE if I move to other places after install?</p>
+<ol type="A" className="text-danger"><li> You can easily uninstall the Force out of an existing location and re-install at a new location, at this moment only think about whether the capacity of FORCE is proper or not. Also, we don’t provide installation service at this time, so customers are responsible for uninstalling and installing.</li></ol>
+    
+<p className="font-weight-bold">Q. Which location should the FORCE be installed?</p>
+<ol type="A" className="text-danger"><li> The best location to install FORCE is secondary of the main circuit breaker of the main distribution board. (For more detail, please visit our website you can find installation under SUPPORT.)</li></ol>
+
+<p className="font-weight-bold">Q.Does the main panel need to be turned off during the FORCE installation?</p>
+<ol type="A" className="text-danger"><li> Yes,</li></ol>
+For your safety, if you don't shut the main panel you will get injured (electric shock) by electricity.<br /><br />
+    
+<p className="font-weight-bold">Q. How much electricity bill will be saved with the FORCE?</p>
+<ol type="A" className="text-danger"><li> More than 5%,</li></ol>
+The saving ratio will vary depending on the circumstances, and it is hard to calculate when it comes to electricity bill cost. But average saving will be up to 5%~15%<br /><br />
+
+<p className="font-weight-bold">Q. What's the principle of energy-saving? / How does FORCE reduce power consumption?</p>
+<ol type="A" className="text-danger"><li> The FORCE, saves active power by increasing conductivity. And it reduces electrical losses by excess free electrons. (Active Power Saving by Increasing Conductivity)</li></ol>
+
+<p className="font-weight-bold">Q. Is the FORCE able to install in factories or large buildings?</p>
+<ol type="A" className="text-danger"><li> Yes, it is.</li></ol>
+The Force can be installed anywhere that uses electricity, the Force is not restricted by the installation environment.<br /><br />
+
+<p className="font-weight-bold">Q. Is the rental(lease) service available?</p>
+<ol type="A" className="text-danger"><li> Yes, see below for more detail.</li></ol>
+However, we only provide rental service in the US only for industrial, commercial and vessels. (For more detail and inquiry, please visit our website, there is Contact us under SUPPORT)<br /><br />
+
+<p className="font-weight-bold">Q. What's the installation cost?</p>
+<ol type="A" className="text-danger"><li> For residential, installation is not included with purchase of the Force. We prefer to call a local electrician for an installation. </li></ol>
+If you want to install the Force for Commercial, industrial, and vessels, please contact us by ‘info@enposs.com’.<br /><br />
+
+<p className="font-weight-bold">Q. Are there any cases where the FORCE does not reduce power consumption?</p>
+<ol type="A" className="text-danger"><li> Absolutely not, only the saving ratio is different.</li></ol>
+Reduction failure has not occurred in the past 12 years, but the saving ratios are different depending on circumstances. Also, for sure there should be a reduction effect only if the FORCE is installed properly.<br /><br />
+
+<p className="font-weight-bold">Q. Is there any harmonic wave or noise after installing the FORCE?</p>
+<ol type="A" className="text-danger"><li> No, it is not.</li></ol>
+The Force doesn’t operate with electricity or the motors, so there will be no Noise, Heat or Harmonics distortion.<br /><br />
+
+<p className="font-weight-bold">Q. Is the FORCE supported by the government?</p>
+<ol type="A" className="text-danger"><li> Not at the moment.</li></ol>
+But once we have any type of support from the government we will post on the website under News, so please check our website frequently for updates. <br /><br />
+
+<p className="font-weight-bold">Q. Is the after service available for the FORCE?</p>
+<ol type="A" className="text-danger"><li> Yes,</li></ol>
+But our product is maintenance free commodities, The Force doesn’t need maintenance. If so, please contact us.<br /><br />
+
+<p className="font-weight-bold">Q. What if the FORCE has the same issues after service?</p>
+<ol type="A" className="text-danger"><li> Enposs cares for Customers,</li></ol>
+If there still is an issue with the product after serviced, please contact us within 30 days after serviced. <br /><br />
+
+<p className="font-weight-bold">Q. The FORCE's power saving rate is good at the first test, but can it drop over time?</p>
+<ol type="A" className="text-danger"><li> No it is not</li></ol>
+
+<p className="font-weight-bold">Q. How should I know the FORCE's power-saving effect after installation?</p>
+<ol type="1" className="text-danger"><li> You can easily compare the electricity bill before and after installing FORCE as the same condition.</li>
+<li>You can check the meter to see the usage reduction.</li>
+<li>The electricity consumption is measured by the measuring instrument.</li></ol>
+
+<p className="font-weight-bold">Q. Is there any way to know if the FORCE doesn't work or if the FORCE is bad?</p>
+<ol type="A" className="text-danger"><li> There are few ways to check if the Force is bad or not. <br /><br />
+First by visual inspection of the product to see if there is any physical damage on the outer box. or check the wires if it has cuts. <br /><br />
+Second, you can check your electricity bill or meter outside of your house to see if there are any reductions in your usage.<br /><br />
+Third, you can use measuring tools to check the electricity consumption. </li></ol>
 But, if you still have concerns about the Force’s performance, please contact us. <br /><br />
-        <div className="font-weight-bold">Q. How long does it take to install the FORCE after contracting? </div><br />
-        <div className="text-danger">&emsp;A. For residential customers, It depends on the shipment, normally shipping takes upto 5~7business days. Once you receive the Force you can call your local electrician for installation.
-Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. 
-</div><br />
-        <div className="font-weight-bold">Q. What is the payment method? </div><br />
-        <div className="text-danger text-left">&emsp;A. For residential customers, the payment method will be Credit or Debit card and Paypal.<br />
-Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. 
-</div><br />
-                        </p>
+
+<p className="font-weight-bold">Q. How long does it take to install the FORCE after contracting?</p>
+<ol type="A" className="text-danger"><li> For residential customers, It depends on the shipment, normally shipping takes upto 5~7business days. Once you receive the Force you can call your local electrician for installation.<br /><br />Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. </li></ol>
+
+<p className="font-weight-bold">Q. What is the payment method? </p>
+<ol type="A" className="text-danger"><li> For residential customers, the payment method will be Credit or Debit card and Paypal.<br /><br />Commercial, Industrial, and Vessels customers, Please visit our website and contact us, We can give more information. </li></ol>
+                        </div>
                       </Col>
                     </Row>
                   </div>

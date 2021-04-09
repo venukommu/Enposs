@@ -35,7 +35,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 //import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/pexels-flickr-149394-min.jpg';
+import Background from 'assets/img/theme/pexels-flickr-149394-min-final.jpg';
 import ReactMarkdown from "react-markdown";
 
 class OurStory extends React.Component {
@@ -99,8 +99,6 @@ class OurStory extends React.Component {
             <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
                {/*} <span />
@@ -189,7 +187,7 @@ class OurStory extends React.Component {
                           {companystory.storytitle}
                           {/*Our Story*/} 
                       </h4>
-                      <p style={{ textAlign : "left"}}>
+                      <span style={{ textAlign : "left"}}>
                      {/*} <ShowMoreText
                         Default options 
                         lines={7}
@@ -208,7 +206,7 @@ class OurStory extends React.Component {
                       ENPOSS developed its FORCE system to help users contribute towards the protection of the environment, by efficiently and effectively saving electric energy. By reducing electric energy consumption via our FORCE devices, we are pleased to be a part of the drive which reduces carbon dioxide emissions.
                       <br /><br />
                       Today, ENPOSS has an international presence. Our global market includes the United States, Japan, Korea, China, Russia, Vietnam, Malaysia, and Brazil. We are proud to be part of the widespread effort to protect the health and wealth of our planet. {/*}</ShowMoreText>*/}
-                      <ReactMarkdown source={companystory.description} /></p>
+                      <ReactMarkdown source={companystory.description} /></span>
                      </blockquote>
                 </Col>
               </Row>

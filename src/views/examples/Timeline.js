@@ -26,7 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Background from 'assets/img/theme/photo-1506784693919-ef06d93c28d2-min.jpeg';
+import Background from 'assets/img/theme/photo-1506784693919-ef06d93c28d2-min-final.jpg';
 import ReactMarkdown from "react-markdown";
 
 class Timeline extends React.Component {
@@ -85,8 +85,6 @@ class Timeline extends React.Component {
             <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
@@ -228,7 +226,7 @@ class Timeline extends React.Component {
     
     <VerticalTimeline>
     {timelinearray.map(tline => (
-    <VerticalTimelineElement
+    <VerticalTimelineElement key={tline.id}
     className="vertical-timeline-element--education"
     contentArrowStyle={{ borderRight: '7px solid  rgb(241,90,34)' }}
     //date="2006"

@@ -222,7 +222,7 @@ class CeoMessage extends React.Component {
                   <div className="mt-3 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
-                        <p style={{ textAlign : "left"}}>
+                        <span style={{ textAlign : "left"}}>
                           {/*<ShowMoreText
                           
                           lines={3}
@@ -247,7 +247,7 @@ class CeoMessage extends React.Component {
                           CEO
                           Sung gwun Choi <br />   {/*</ShowMoreText>*/}
                           <ReactMarkdown source={ceomessage.description} />
-                        </p>
+                        </span>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}
                         </a>

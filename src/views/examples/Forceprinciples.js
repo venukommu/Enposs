@@ -147,7 +147,7 @@ class Forceprinciples extends React.Component {
                         <h4 className="display-3 font-weight-bold text-primary">
                             {/*Working Principle*/}{forceprinciple.heading}
                           </h4>
-                          <p 
+                          <span 
                           style={{ textAlign : "left" }}>
                           {/*Force uses minerals with tourmaline to increase conductivity of the power system, thereby reducing the effective power used.
                           APSIC - Active Power saving by increasing conductivity.
@@ -169,7 +169,7 @@ class Forceprinciples extends React.Component {
 
                           In other words, FORCE will improve the current flow and reduces electric power consumption.*/}
                           <ReactMarkdown source={forceprinciple.description} />
-                          </p>
+                          </span>
                           <Row className="justify-content-center">
                           <Col lg="8">
                           <CardImg
