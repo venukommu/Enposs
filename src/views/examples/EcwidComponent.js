@@ -16,6 +16,9 @@ class EcwidScript extends React.Component {
         <div class="strikingly-ecwid-container-2">
           <div id="productBrowser"></div>
           <script>
+          ecwidMessages = {
+            "PriceIncludedWidget.price_included":"Price including"
+            }
             ecwidLoaded = false;
             function load_ecwid() {
               Ecwid.OnAPILoaded.add(function() {
