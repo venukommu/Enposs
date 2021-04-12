@@ -259,7 +259,7 @@ class Landing extends React.Component {
                 </Row>
                 <Row className="mt--200">
                   {/*<Col lg="2" xs="7"></Col>*/}
-                  <Col lg="4" xs="7">
+                  <Col lg="4" xs="8">
                     <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p>
                       <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>                    
                       <Button
@@ -272,7 +272,7 @@ class Landing extends React.Component {
                       decimals={2} decimal="." /></span> {/*tons*/}{homepagebanner.unit1}
                     </Button>                      
                     </h3>
-                    <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "19px"}}>{/*per year*/}{homepagebanner.text3}</p>
+                    <p  className="text-dark text-lead font-weight-bold text-center mt-n2" style={{ fontSize : "20px"}}>{/*per year*/}{homepagebanner.text3}</p>
                   </Col>                                                                    
                       {/*} <Col xs="6" md="6">
                           <h5 className="display-7 text-white text-lead"
@@ -285,8 +285,8 @@ class Landing extends React.Component {
                   {/*<Col md="4" xs="6"></Col> btn-icon mt-2 mb-3 mb-sm-0*/}
                   <Col lg="4" xs="7"> </Col>
                   {/*<Col lg ="2"></Col>*/}
-                  <Col lg="4" xs="7">
-                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "19px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p>
+                  <Col lg="4" xs="8">
+                    <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total power reduction*/}{homepagebanner.text2}</p>
                     <h3 className="display-7 text-white text-lead" style={{ textAlign : "center" }}>  
                     <Button
                       className="btn btn-block btn-sm mt-n3  ml-auto"
