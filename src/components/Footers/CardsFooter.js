@@ -31,9 +31,56 @@ import {
   Col,
   UncontrolledTooltip
 } from "reactstrap";
+import ReactMarkdown from "react-markdown";
+import { appConfig } from "services/config.js";
 
 class CardsFooter extends React.Component {
+  state = {
+    error: null,
+    footercontent: []
+  };
+
+  componentDidMount = async () => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+   // this.refs.main.scrollTop = 0;
+
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+        const footercontent = await fetch(`${appConfig.apiURL}/footer`, {
+          method: 'GET',
+          headers: headers,
+        })
+          .then(checkStatus)
+          .then(parseJSON);
+        this.setState({ footercontent });
+      } catch (error) {
+        this.setState({ error });
+      }
+
+  };
+  
   render() {
+    const { error, footercontent} = this.state;
+
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <footer className="footer has-cards">
@@ -66,7 +113,8 @@ class CardsFooter extends React.Component {
               <Col lg="6">
                 <h3 className="text-dark text-lead mb-2" style={{fontSize: "28px", fontWeight: "800px"}}>
                   {/*Forge ahead with <span className="font-italic text-warning text-lead">FORCE</span>*/}
-                  Progress towards better tomorrow, Follow <span className="text-warning">Enposs</span> to progress together.
+                  {/*Progress towards better tomorrow, Follow <span className="text-warning">Enposs</span> to progress together.*/}
+                  <ReactMarkdown source={footercontent.text} allowDangerousHtml={true} />
                 </h3>
                {/*} <h4 className="mb-0 font-weight-light">
                   Let's get in touch on any of these platforms.
