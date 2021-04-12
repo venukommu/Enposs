@@ -140,7 +140,7 @@ class CustomFooter extends React.Component {
                   <p className="text-white mt-3">
                     FAQ
                   </p></a>*/}
-                  <a href="/#">
+                  <a href="/faq">
                   <p className="text-white mt-3">
                     Q&A
                   </p></a>
