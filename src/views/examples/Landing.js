@@ -252,7 +252,7 @@ class Landing extends React.Component {
                       </div>
                   </Col>
                   <Col md="8" lg="5" xs ="12" style={{ marginTop: "90px" }}>
-                  <div><img src={require("assets/img/theme/plant.png")} alt ="" style={{
+                  <div><img src={require("assets/img/theme/plant-force.png")} alt ="" style={{
                     width: "100%" 
                   }}/></div>
                   </Col>
