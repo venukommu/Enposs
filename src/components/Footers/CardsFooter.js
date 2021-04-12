@@ -165,7 +165,7 @@ class CardsFooter extends React.Component {
                 </UncontrolledTooltip>
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
-                  color="linkedin"
+                  color="facebook"
                   //href="https://github.com/creativetimofficial"
                   href="#"
                   id="tooltip495507257"
