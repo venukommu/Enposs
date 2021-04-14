@@ -31,9 +31,56 @@ import {
   Col,
   UncontrolledTooltip
 } from "reactstrap";
+import ReactMarkdown from "react-markdown";
+import { appConfig } from "services/config.js";
 
 class CardsFooter extends React.Component {
+  state = {
+    error: null,
+    footercontent: []
+  };
+
+  componentDidMount = async () => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+   // this.refs.main.scrollTop = 0;
+
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+        const footercontent = await fetch(`${appConfig.apiURL}/footer`, {
+          method: 'GET',
+          headers: headers,
+        })
+          .then(checkStatus)
+          .then(parseJSON);
+        this.setState({ footercontent });
+      } catch (error) {
+        this.setState({ error });
+      }
+
+  };
+  
   render() {
+    const { error, footercontent} = this.state;
+
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
     return (
       <>
         <footer className="footer has-cards">
@@ -64,21 +111,22 @@ class CardsFooter extends React.Component {
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
-                <h3 className="text-primary font-weight-light mb-2">
-                  Forge ahead with <span className="font-italic text-warning" >FORCE</span>
+                <h3 className="text-dark text-lead mb-2" style={{fontSize: "28px", fontWeight: "800px"}}>
+                  {/*Forge ahead with <span className="font-italic text-warning text-lead">FORCE</span>*/}
+                  {/*Progress towards better tomorrow, Follow <span className="text-warning">Enposs</span> to progress together.*/}
+                  <ReactMarkdown source={footercontent.text} allowDangerousHtml={true} />
                 </h3>
-                <h4 className="mb-0 font-weight-light">
+               {/*} <h4 className="mb-0 font-weight-light">
                   Let's get in touch on any of these platforms.
-                </h4>
+                </h4>*/}
               </Col>
-              <Col className="text-lg-center btn-wrapper" lg="6">
+              <Col className="text-lg-center btn-wrapper" lg="4">
                 <Button
                   className="btn-icon-only rounded-circle"
                   color="twitter"
-                  //href="https://twitter.com/creativetim"
-                  href="#"
+                  href="https://twitter.com/Enposs1"
                   id="tooltip475038074"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-twitter" />
@@ -90,10 +138,9 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="facebook"
-                  //href="https://www.facebook.com/creativetim"
-                  href="#"
+                  href="https://www.facebook.com/ForceGlobal/"
                   id="tooltip837440414"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-facebook-square" />
@@ -105,13 +152,12 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="dribbble"
-                  //href="https://dribbble.com/creativetim"
-                  href="#"
+                  href="https://www.instagram.com/enposs_power.saving/"
                   id="tooltip829810202"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-dribbble" />
+                    <i className="fa fa-instagram" />
                   </span>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip829810202">
@@ -119,18 +165,18 @@ class CardsFooter extends React.Component {
                 </UncontrolledTooltip>
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
-                  color="github"
+                  color="facebook"
                   //href="https://github.com/creativetimofficial"
                   href="#"
                   id="tooltip495507257"
                   //target="_blank"
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-github" />
+                    <i className="fa fa-linkedin" />
                   </span>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip495507257">
-                  Star on Github
+                  Follow us
                 </UncontrolledTooltip>
               </Col>
             </Row>
@@ -154,7 +200,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/" tag={Link}
+                      to="/" tag={Link} onClick={() => {window.location.href="/"}}
                     >
                       Home
                     </NavLink>
@@ -163,7 +209,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/ourstory" tag={Link}
+                      to="/ourstory" tag={Link} onClick={() => {window.location.href="/ourstory"}}
                     >
                       About
                     </NavLink>
@@ -172,7 +218,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://www.creative-tim.com/presentation?ref=adsr-footer"
                       //target="_blank"
-                      to="/force" tag={Link}
+                      to="/force" tag={Link} onClick={() => {window.location.href="/force"}}
                     >
                       Product
                     </NavLink>
@@ -181,7 +227,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="http://blog.creative-tim.com?ref=adsr-footer"
                       //target="_blank"
-                      to="/clients" tag={Link}
+                      to="/clients" tag={Link}  onClick={() => {window.location.href="/clients"}}
                     >
                       Clients
                     </NavLink>
@@ -198,7 +244,7 @@ class CardsFooter extends React.Component {
                     <NavLink
                       //href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
                       //target="_blank"
-                      to="/contact" tag={Link}
+                      to="/contact" tag={Link} onClick={() => {window.location.href="/contact"}}
                     >
                       Contact Us
                     </NavLink>

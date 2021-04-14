@@ -33,9 +33,10 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
-import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/globe-with-circles-blue-background.jpg';
+import { appConfig } from "services/config.js";
+//import ShowMoreText from 'react-show-more-text';
+import Background from 'assets/img/theme/pexels-flickr-149394-min-final.jpg';
+import ReactMarkdown from "react-markdown";
 
 class OurStory extends React.Component {
   executeOnClick(isExpanded) {
@@ -53,7 +54,7 @@ class OurStory extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -69,7 +70,7 @@ class OurStory extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const companystory = await fetch(`${appConfig.apiURL}/ourstory`, {
           method: 'GET',
           headers: headers,
         })
@@ -80,22 +81,10 @@ class OurStory extends React.Component {
         this.setState({ error });
       }
 
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
+    const { error, companystory} = this.state;
 
     // Print errors if any
     if (error) {
@@ -112,6 +101,7 @@ class OurStory extends React.Component {
                 backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,
                }}>
+               {/*} <span />
                 <span />
                 <span />
                 <span />
@@ -119,25 +109,25 @@ class OurStory extends React.Component {
                 <span />
                 <span />
                 <span />
-                <span />
-                <span />
+              <span />*/}
               </div>
              
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="8">
+                    <Col lg="6">
                     {/*< ProductList />*/}
                     <div>
-                        <h1 className="display-3 text-white" style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px", marginTop: "120px" }}>
-                        Building on a Strategy for Saving Power and the Planet
+                        <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
+                        {/*Strategically Built for saving Power and the Planet*/}
+                        {companystory.Title}
                         {/*ENPOSS Inc {" "}*/}
-                          <span></span>
-                        </h1>
-                      <h3 className="display-4 text-white"
+                        </h1><br />
+                      <h3 className="display-4 text-info"
                         style={{ textAlign : "left" , marginBottom: "80px" }}>
                         {/*The initiative taken by our company was to reduce carbon footprint by reducing consumption of electricity. Hence was born Energy and Power Saving Systems -ENPOSS.*/}
-                        Our goal as a company was to reduce carbon emission by reducing the unnecessary consumption of electricity. 
+                        {/*Our goal as a company is to reduce carbon emission by reducing the unnecessary consumption of electricity.*/}
+                        {companystory.subtitle} 
                       </h3>
                     </div>
                     </Col>
@@ -165,9 +155,9 @@ class OurStory extends React.Component {
             {/* 1st Hero Variation */}
           </div>
            
-      <section className="section section-lg pt-lg-0 mt--200">
+      <section className="section section-lg pt-lg-0 mt--150">
             <Container>
-            <Card className="card-profile shadow mt--200 bg-lighter">
+            <Card className="card-profile shadow mt--100 bg-lighter">
               <Row className="row-grid align-items-center justify-content-center">
                 <Col lg="12">
                    {/*} <CardImg
@@ -194,12 +184,12 @@ class OurStory extends React.Component {
                         />
                      </svg>*/}
                      <h4 className="display-3 font-weight-bold text-primary">
-                          {/*}    {companystory.Title}*/}
-                          Our Story 
+                          {companystory.storytitle}
+                          {/*Our Story*/} 
                       </h4>
-                      <p style={{ textAlign : "left"}}>
-                      <ShowMoreText
-                        /* Default options */
+                      <span style={{ textAlign : "left"}}>
+                     {/*} <ShowMoreText
+                        Default options 
                         lines={7}
                         more='Show more'
                         less='Show less'
@@ -208,15 +198,15 @@ class OurStory extends React.Component {
                         onClick={this.executeOnClick}
                         expanded={false}
                         //width={280}
-                      >
-                      Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
+                    >*/}
+                      {/*Carbon Dioxide emissions are a leading cause of the greenhouse effect. This greenhouse gas traps heat within the earth's atmosphere like a blanket, and contributes to global warming. By reducing carbon dioxide emissions we can slow global warming.
                       <br /><br />
-                      "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity, and thereby contribute to reductions in carbon dioxide emission. This in turn reduces global warming.
+                      "Energy and Power Saving System" (ENPOSS) was born in 2005 out of a mission to save energy and save the planet. Our products are designed to reduce the consumption of electricity (and in turn its production), and thereby contribute to reductions in carbon dioxide emission. This helps slow global warming.
                       <br /><br />
                       ENPOSS developed its FORCE system to help users contribute towards the protection of the environment, by efficiently and effectively saving electric energy. By reducing electric energy consumption via our FORCE devices, we are pleased to be a part of the drive which reduces carbon dioxide emissions.
                       <br /><br />
-                      Today, ENPOSS has an international presence. It's global market includes the United States, China, Russia, Vietnam, Japan, Malaysia, and Brazil etc. We are proud to be part of the widespread effort to protect the health and wealth of our planet.</ShowMoreText>
-                        {/*{companystory.description}*/}</p>
+                      Today, ENPOSS has an international presence. Our global market includes the United States, Japan, Korea, China, Russia, Vietnam, Malaysia, and Brazil. We are proud to be part of the widespread effort to protect the health and wealth of our planet. {/*}</ShowMoreText>*/}
+                      <ReactMarkdown source={companystory.description} /></span>
                      </blockquote>
                 </Col>
               </Row>

@@ -3,15 +3,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {Card,Container,Row,Col } from "reactstrap";
-import Background from 'assets/img/theme/purple.jpg';
+//import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { appConfig } from "services/config.js";
+import { Link } from "react-router-dom";
 
 class EcwidScript extends React.Component {
     componentDidMount() {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
       $(ReactDOM.findDOMNode(this)).html(`
         <div class="strikingly-ecwid-container-2">
           <div id="productBrowser"></div>
           <script>
+          ecwidMessages = {
+            "PriceIncludedWidget.price_included":"Price including"
+            }
             ecwidLoaded = false;
             function load_ecwid() {
               Ecwid.OnAPILoaded.add(function() {
@@ -48,19 +55,58 @@ class EcwidScript extends React.Component {
     }
   }
   
-  export default function EcwidComponent() {
+  export default class EcwidComponent extends React.Component {
+    state = {
+      error: null,
+      storecontent: []
+    };
+  
+    componentDidMount = async () => {
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+  
+      const parseJSON = resp => (resp.json ? resp.json() : resp);
+  
+      // Checks if a network request came back fine, and throws an error if not
+      const checkStatus = resp => {
+        if (resp.status >= 200 && resp.status < 300) {
+          return resp;
+        }
+        return parseJSON(resp).then(resp => {
+          throw resp;
+        });
+      };
+      const headers = {
+        'Content-Type': 'application/json',
+      };
+  
+      try {
+          const storecontent = await fetch(`${appConfig.apiURL}/shop`, {
+            method: 'GET',
+            headers: headers,
+          })
+            .then(checkStatus)
+            .then(parseJSON);
+          this.setState({ storecontent });
+        } catch (error) {
+          this.setState({ error });
+        }
+      }
+      render() {
+        const { error, storecontent} = this.state;
+  
+          // Print errors if any
+        if (error) {
+          return <div>An error occured: {error.message}</div>;
+        }
     return (
       <>
         <DemoNavbar />
         <div className="position-relative">
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 shape-default"
-              style= {{
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
-               }}>
+            <div className="shape"
+                style={{backgroundColor: "#2B0752"}}
+            >
                 <span />
                 <span />
                 <span />
@@ -77,9 +123,13 @@ class EcwidScript extends React.Component {
                       <Col lg="12">
                       {/*< ProductList />*/}
                         <div>
-                          <h1 className="display-3 text-white">
-                          Stop waiting - Start saving
-                          </h1>                      
+                          <h1 className="display-1 text-white text-lead"
+                          style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
+                            {/*Order FORCE for your home.*/}{storecontent.Title}
+                          </h1> <br />
+                          <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "60px" }}>
+                            {/*Save Money, AND Help Save the Planet.*/}{storecontent.subtitle}
+                        </h3>                     
                         </div>
                       </Col>
                   </Row>
@@ -105,7 +155,12 @@ class EcwidScript extends React.Component {
           </div>
       <section className="section section-lg pt-lg-0 mt--200">
         <Container>
-        <Card className="card-profile shadow mt--200 bg-secondary">
+        <Card className="card-profile shadow mt--200 bg-secondary p-4">
+        <h4 className="display-3 font-weight-bold text-primary">
+                          {/*}    {companystory.Title}*/}
+        {/*FORCE energy-saving device for residential use*/}{storecontent.heading} 
+        </h4><br />
+        <Link to="/contact" onClick={() => {window.location.href="/contact"}} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
         <EcwidScript/>
         </Card>
         </Container>
@@ -114,6 +169,7 @@ class EcwidScript extends React.Component {
       </>
     );
   }
+}
   
   const content = document.getElementById('content')
 
@@ -125,5 +181,5 @@ class EcwidScript extends React.Component {
   //})
  
   if (content) {
-    ReactDOM.render(<EcwidComponent/>, content)
+        ReactDOM.render(<EcwidComponent/>, content)
   }

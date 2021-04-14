@@ -18,14 +18,17 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 // index page sections
 
 class Force extends React.Component {
   
   state = {
+    force: [],
     forcewidgets: [],
+    forcefeatures: [],
     error: null,
   };
 
@@ -34,7 +37,7 @@ class Force extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -48,16 +51,16 @@ class Force extends React.Component {
     };
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const force = await fetch(`${appConfig.apiURL}/force`, {
         method: 'GET',
         headers: headers,
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forcewidgets });
+      this.setState({ force, forcewidgets: force.forcewidgets, forcefeatures: force.featuresarray.features });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -65,8 +68,8 @@ class Force extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
-
+    const { error, force, forcefeatures} = this.state;
+    console.log(force);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -78,12 +81,10 @@ class Force extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default"
+              <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer.jpg')})`
+                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min-final.jpg')})`
                 //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
                }}>
                 <span />
@@ -100,13 +101,14 @@ class Force extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="8">
-                      <div><h1 className="display-3 text-white" style={{ textAlign : "left" }}>Empowered to save Power</h1><br />
-                          <h1 className="display-4 text-white">Our mission - Reduce carbon emission</h1> <br />
-                          <h4 className="display-5 text-white"
-                        style={{ textAlign : "left" }}>
-                           Force is a smart dual action device which helps increase the flow of electricity and absobs any electrical losses. 
-                           It has an international presence and is certified by green technology Korea.
-                          </h4>
+                      <div>
+                        <h1 className="display-1 text-white text-lead"
+                        style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
+                          {/*Empowered to save Power*/}{force.Title}</h1><br />
+                        <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "90px" }}>
+                           {/*Force is a smart, dual-action device which helps both increase the flow of electricity, and absorb any electrical losses. It's installed next to your electricity meter.*/}
+                           {force.subtitle}
+                        </h3>
                       </div>
                     </Col>
                   </Row>
@@ -143,15 +145,15 @@ class Force extends React.Component {
                             <div className=" rounded-circle mb-4">
                               <img alt="..."
                                 className="rounded-circle img-center img-fluid"
-                                src={`${appConfig.apiURL}${widgets.images.url}`}
+                                src={`${appConfig.apiURL}${widgets.image.url}`}
                                 style={{ width: "100px" }}/>
                             </div>
-                            <h6 className="text-primary text-uppercase">
+                            <h6 className="text-primary text-uppercase text-center">
                               {/*About Company
                               {widgets.Title}
                             </h6>
                             <p className="description mt-3"
-                            style={{ textAlign : "justify" }}>
+                            style={{ textAlign : "left" }}>
                             {widgets.description}
                             </p>
                           </CardBody>
@@ -161,61 +163,59 @@ class Force extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
-                          <div className=" rounded-circle mb-4">
+                          <div className=" rounded-circle mb-2">
                             <img alt="..."
                               className="rounded-circle img-center img-fluid"
                               src={`${require("assets/img/theme/force_1_ceb4e9e6.png")}`}
                               style={{ width: "100px" }}/>
                           </div>
-                          <h6 className="text-primary text-uppercase">
-                          Environment Friendly
+                          <h6 className="text-success text-uppercase text-center">
+                          Environmentally Friendly
                           </h6>
                           <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          Force uses naturally occurring material tourmaline which helps generate anions.
-                          It uses eco- friendly technology to save electricity.</p>
+                          style={{ textAlign : "left" }}>
+                          FORCE uses eco-friendly technology to save electricity. It uses the naturally occurring material tourmaline, which helps generate anions.
+                          </p>
                         </CardBody>
                       </Card>
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
-                          <div className=" rounded-circle mb-4">
+                          <div className=" rounded-circle mb-2">
                             <img alt="..."
                               className="rounded-circle img-center img-fluid"
                               src={`${require("assets/img/theme/force_2.128f9e8d.png")}`}
                               style={{ width: "100px" }}/>
                           </div>
-                          <h6 className="text-success text-uppercase">
-                          Super Safe
+                          <h6 className="text-info text-uppercase text-center">
+                          Safe
                           </h6>
                           <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          Force does not require separate power supply making it super safe.
-                          It's also easy to install and use.</p>
-                          <br />
+                          style={{ textAlign : "left" }}>
+                          FORCE does not require a separate power supply, making it safe to install when the power is off. It's both easy to install and use.</p>
                         </CardBody>
                       </Card>
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
-                          <div className=" rounded-circle mb-4">
+                          <div className=" rounded-circle mb-2">
                             <img alt="..."
                               className="rounded-circle img-center img-fluid"
                               src={`${require("assets/img/theme/force_3.f7979078.png")}`}
                               style={{ width: "100px" }}/>
                           </div>
-                          <h6 className="text-warning text-uppercase">
+                          <h6 className="text-primary text-uppercase text-center">
                           Versatile
                           </h6>
                           <p className="description mt-3"
-                          style={{ textAlign : "justify" }}>
-                          Force can be used virtually in every place using electricity. So it includes offices, homes, industries, shops, automobile industry to list a few.
-                          </p>
+                          style={{ textAlign : "left" }}>
+                          FORCE can make a difference for virtually any use of electricity throughout your property.
+                          <br /><br /></p>
                         </CardBody>
                       </Card>
-                    </Col>
+                  </Col>
                   </Row>
                 </Col>
               </Row>
@@ -225,66 +225,87 @@ class Force extends React.Component {
            <Container>
            <Row className="row-grid">
               <Col lg="12">
-                <h1 className="display-3 text-white justify-content-center">Awesome Features</h1>
+                <h1 className="display-3 text-white justify-content-center"   style={{ textAlign : "left" , fontSize: "48px", fontWeight: "800px"}}>
+                  {/*Features*/}{force.featuresheading}</h1>
               </Col>
             </Row>
             <Row className="row-grid">
-              <Col lg="2">
+              <Col lg="1">
+              </Col> 
+              {forcefeatures.map(feature => (
+              <Col lg="2" key={feature.id}>
                 <Card className="card-lift--hover shadow border-0">
                   <CardBody className="py-3"> 
+                    <div className={"icon icon-shape icon-shape-"+feature.classname+" rounded-circle mb-4 text-dark"}>
+                    {feature.id}
+                    </div>
+                      <h6 className="text-dark">
+                      <ReactMarkdown source={feature.feature} allowDangerousHtml={true} />
+                      </h6>
+                  </CardBody>
+                </Card>
+              </Col>
+            ))}
+            </Row>
+            {/*<Row className="row-grid">
+              <Col lg="1">
+              </Col>  
+              <Col lg="2">
+                <Card className="card-lift--hover shadow border-0">
+                  <CardBody className="py-4 text-center"> 
                     <div className="icon icon-shape icon-shape-danger rounded-circle mb-4 text-dark">
                       1
                     </div>
                       <h6 className="text-dark">
-                      Electricity saved by 5-15%
-                      </h6><br />
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col lg="2">
-                <Card className="card-lift--hover shadow border-0">
-                  <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-darker rounded-circle mb-4 text-dark">
-                      2
-                    </div>
-                      <h6 className="text-dark">
-                      Reduces Impedance
-                      </h6><br />
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col lg="2">
-                <Card className="card-lift--hover shadow border-0">
-                  <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-dark">
-                      3
-                    </div>
-                      <h6 className="text-dark">
-                      Reduces harmonic distortion
+                      Saves electricity by 5-15%<br /><br />
                       </h6>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
                 <Card className="card-lift--hover shadow border-0">
-                  <CardBody className="py-4"> 
-                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-dark">
-                      4
+                  <CardBody className="py-4 text-center"> 
+                    <div className="icon icon-shape icon-shape-darker rounded-circle mb-4 text-dark">
+                      2
                     </div>
                       <h6 className="text-dark">
-                      Increases conductivity
-                      </h6><br />
+                      Prolongs the life span of your appliances
+                      </h6>
                   </CardBody>
                 </Card>
               </Col>
               <Col lg="2">
                 <Card className="card-lift--hover shadow border-0">
-                  <CardBody className="py-4"> 
+                  <CardBody className="py-4 text-center"> 
+                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4 text-dark">
+                      3
+                    </div>
+                      <h6 className="text-dark">
+                      Reduces harmonic distortion<br /><br />
+                      </h6>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col lg="2">
+                <Card className="card-lift--hover shadow border-0">
+                  <CardBody className="py-4 text-center"> 
+                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4 text-dark">
+                      4
+                    </div>
+                      <h6 className="text-dark">
+                      Increases conductivity<br /><br /><br />
+                      </h6>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col lg="2">
+                <Card className="card-lift--hover shadow border-0">
+                  <CardBody className="py-4 text-center"> 
                     <div className="icon icon-shape icon-shape-success rounded-circle mb-4 text-dark">
                       5
                     </div>
                       <h6 className="text-dark">
-                      Prolongs life span of appliances.
+                      Reduces impedance<br /><br /><br />
                       </h6>
                   </CardBody>
                 </Card>
@@ -300,8 +321,8 @@ class Force extends React.Component {
                       </h6>
                   </CardBody>
                 </Card>
-                  </Col>*/}
-              </Row><br /><br />
+                  </Col>
+              </Row>*/}<br /><br />
 
           </Container>
           <div className="separator separator-bottom separator-skew zindex-100">

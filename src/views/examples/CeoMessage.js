@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-//import { appConfig } from "services/config.js";
+import { appConfig } from "services/config.js";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
@@ -24,8 +24,9 @@ import { Card, Container, Row, Col } from "reactstrap";
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import ShowMoreText from 'react-show-more-text';
+//import ShowMoreText from 'react-show-more-text';
 import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
+import ReactMarkdown from "react-markdown";
 
 class CeoMessage extends React.Component {
   executeOnClick(isExpanded) {
@@ -42,7 +43,7 @@ class CeoMessage extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     //this.refs.main.scrollTop = 0;
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -58,18 +59,6 @@ class CeoMessage extends React.Component {
     };
   
     try {
-      const aboutcompany = await fetch(`${appConfig.apiURL}/aboutcompany`, {
-        method: 'GET',
-        headers: headers,
-      })
-        .then(checkStatus)
-        .then(parseJSON);
-      this.setState({ aboutcompany,bannerimage:aboutcompany.bannerimage,productimage:aboutcompany.productimage });
-    } catch (error) {
-      this.setState({ error });
-    }
-
-    try {
       const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
         method: 'GET',
         headers: headers,
@@ -79,11 +68,11 @@ class CeoMessage extends React.Component {
       this.setState({ ceomessage });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
     
   };
   render() {
-    const { error} = this.state;
+    const { error, ceomessage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -95,9 +84,11 @@ class CeoMessage extends React.Component {
         <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 shape-default"
+            <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
                 backgroundImage: `url("${Background}")`,
                }}>
                 <span />
@@ -119,12 +110,13 @@ class CeoMessage extends React.Component {
                         <h1 className="display-3 text-white">
                         {/*ENPOSS Inc {" "}*/}
                         </h1>
-                        <h1 className="display-3 text-white" style={{ textAlign : "left" }}>
-                        Be the FORCE that protects the planet</h1><br />
-                        <h4 className="display-5  text-white"
-                          style={{ textAlign : "left" }}>
-                          Force reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emission, global warming and melting of glaciers. Thus FORCE has a dynamic role in balancing our ecology and human survival.
-                        </h4>
+                        <h1 className="display-1 text-white text-lead"
+                        style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
+                          {/*Play a dynamic role in balancing our ecology and human survival.*/}{ceomessage.Title}</h1><br />
+                        <h3 className="display-4 text-info mt-2" style={{ textAlign : "left" , marginBottom : "20px" }}>
+                          {/*FORCE reduces the use of electricity. So less fuel is used in producing it. This helps reduce carbon emissions, global warming, and the melting of glaciers.*/}
+                          {ceomessage.subtitle}
+                        </h3>
                       </div>
                     </Col>
                   </Row>
@@ -132,7 +124,7 @@ class CeoMessage extends React.Component {
               </Container>
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
-                <svg
+               {/*} <svg
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                   version="1.1"
@@ -144,7 +136,7 @@ class CeoMessage extends React.Component {
                     className="fill-white"
                     points="2560 0 2560 100 0 100"
                   />
-                </svg>
+              </svg>*/}
               </div>
             </section>
             {/* 1st Hero Variation */}
@@ -209,11 +201,11 @@ class CeoMessage extends React.Component {
               </div>*/}
                     </Col>
                   </Row>
-                  <div className="text-center mt-5">
-                    <h3>
-                    CEO Greetings {" "}
+                  <div className="text-left mt-4 py-2">
+                  <h4 className="display-3 font-weight-bold text-primary">
+                    {/*A Message from Our CEO*/}{ceomessage.ceotitle} {" "}
                       <span className="font-weight-light"></span>
-                    </h3>
+                    </h4>
                     {/*<div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
                       Bucharest, Romania
@@ -227,13 +219,13 @@ class CeoMessage extends React.Component {
                       University of Computer Science
             </div>*/}
                   </div>
-                  <div className="mt-5 py-5 border-top text-center">
+                  <div className="mt-3 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
-                        <p style={{ textAlign : "left"}}>
-                          <ShowMoreText
-                          /* Default options */
-                          lines={5}
+                        <span style={{ textAlign : "left"}}>
+                          {/*<ShowMoreText
+                          
+                          lines={3}
                           more='Show more'
                           less='Show less'
                           className='content-css'
@@ -241,24 +233,21 @@ class CeoMessage extends React.Component {
                           onClick={this.executeOnClick}
                           expanded={false}
                           //width={280}
-                      >
-                          Energy is important for daily activities.
-                          Electricity is an important form of energy.
-                          Without electricity we would be unplugged into total darkness. Life would come to a grinding halt. <br />  <br /> 
-                          Fossil fuels are extensively used to generate electricity. They are expensive and have become scarce. This burdens the economy. Fossil fuels used to generate electricity emit harmful greenhouse gases like carbon dioxide. Depletion in fossil fuels is an international issue
-                          Environmental pollution by carbon dioxide results in  global warming. <br />  <br /> US fish and wildlife science has announced that polar bear population will fall 30 percent by 2050. 
-                          Polar bears are endangered and we will lose the privilege of having them on the earth. If suitable measures are not taken, we all would push them to the brink of extinction. 
-                          Enposs has taken a step forward to protect our environment.<br />  <br />
-                          By using Enposs technology we can have beautiful,brighter and better tomorrows. 
-                          Enposs is more than a decade old and is recognized for its outstanding technology. 
-                          Customers all over the world can now save energy, environment and economy. 
-                          Empower yourself with Enposs. 
+                          >*/}
+                          {/*Energy is vital for daily activities, and electricity is probably the most important form of energy that we use on a daily basis. Without electricity we would be left disconnected, and in into total darkness. Life would come to a grinding halt. <br /><br />
+
+                          Fossil fuels are used extensively to generate electricity. They are expensive and difficult to extract from the earth. Their depletion and distribution are international issues. In addition, the fossil fuels used to generate electricity emit harmful greenhouse gases, like carbon dioxide. Thus, the use of fossil fuels burdens the economy, as well the environment, in several different ways.<br /><br />
+
+                          Polar bears are endangered, and we will lose the privilege of having them on the earth if suitable measures are not taken. The US Fish & Wildlife Service has announced that the polar bear population will fall 30 percent by 2050, pushing them to the edge of extinction. Enposs has taken a step to protect our environment. We encourage you to join us.<br /><br />
+
+                          Enposs is more than a decade old and is recognized for its outstanding technology. Customers all over the world now save energy, and help save the environment and the economy at the same time. Join us in our hope for beautiful, brighter, and better tomorrows, by using Enposs technology.
                           {" "}  <br />  <br />
-                          Save Energy , Save Earth. 
+                          Empower yourself to save energy and help save the Earth. 
                           {" "}<br />
                           CEO
-                          Sung gwun Choi <br /></ShowMoreText>
-                        </p>
+                          Sung gwun Choi <br />   {/*</ShowMoreText>*/}
+                          <ReactMarkdown source={ceomessage.description} />
+                        </span>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
                          {/* Show more */}
                         </a>

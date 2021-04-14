@@ -33,13 +33,13 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-//import { appConfig } from "services/config.js";
-//import Background from 'assets/img/theme/12818.jpg';
+import { appConfig } from "services/config.js";
+import Background from 'assets/img/theme/pexels-pixabay-235990-final.jpg';
 
 class Benefits extends React.Component {
   state = {
     error: null,
-    companystory: [],
+    forcebenefits: [],
     homepageimage: [],
 
   };
@@ -49,7 +49,7 @@ class Benefits extends React.Component {
     document.scrollingElement.scrollTop = 0;
    // this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
     // Checks if a network request came back fine, and throws an error if not
     const checkStatus = resp => {
@@ -65,33 +65,21 @@ class Benefits extends React.Component {
     };
 
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/companystory`, {
+        const forcebenefits = await fetch(`${appConfig.apiURL}/benefits`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ forcebenefits });
       } catch (error) {
         this.setState({ error });
       }
 
-      try {
-        const homepagebanner = await fetch(`${appConfig.apiURL}/homebanner`, {
-          method: 'GET',
-          headers: headers,
-        })
-          .then(checkStatus)
-          .then(parseJSON);
-        this.setState({ homepagebanner, homepageimage : homepagebanner.bannerimage });
-      } catch (error) {
-        this.setState({ error });
-      }*/
-
   };
   
   render() {
-    const { error} = this.state;
+    const { error, forcebenefits} = this.state;
 
     // Print errors if any
     if (error) {
@@ -101,13 +89,14 @@ class Benefits extends React.Component {
       <>
         <DemoNavbar />
         <div className="position-relative">
-            {/* shape Hero */}
+            {/* shape Hero*/}
+            {/* For circles shape-style-1 */}
             <section className="section section-lg section-shaped pb-250">
-            <div className="shape shape-style-1 bg-gradient-gray-dark">
-            {/*} style= {{
-                backgroundPosition: "center",
+            <div className="shape"
+             style= {{
+              backgroundPosition: "center",
                 backgroundImage: `url("${Background}")`,
-               }}*/}
+               }}>
                 <span />
                 <span />
                 <span />
@@ -122,14 +111,16 @@ class Benefits extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                 <Row>
-                    <Col lg="6">
+                    <Col lg="8">
                     {/*< ProductList />*/}
                       <div>
-                        <h1 className="display-3 text-white">
-                        Brilliant Benefits<br></br>
+                      <h1 className="display-3 text-white" style={{ textAlign : "left" ,fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px" , lineHeight: "125%" }}>
+                        {/*Enjoy benefits that stack up*/}{forcebenefits.Title}
                         {/*ENPOSS Inc {" "}*/}
-                        </h1>
-                        <h4 className="display-5 text-white">Save Electricity & money</h4>
+                        </h1><br />
+                        <h3 className="display-4 text-info"
+                        style={{ textAlign : "left" , marginBottom: "80px" }}>
+                          {/*the knock-on effects are significant as time goes on*/}{forcebenefits.subtitle}</h3>
                       </div>
                     </Col>
                   </Row>
@@ -156,17 +147,21 @@ class Benefits extends React.Component {
             {/* 1st Hero Variation */}
           </div>
            
-      <section className="section section-lg pt-lg-0 mt--200">
+      <section className="section section-lg pt-lg-0 mt--100">
             <Container>
-            <Card className="card-profile shadow mt--200" >
+            <Card className="card-profile shadow mt--100" >
               <Row className="row-grid align-items-center justify-content-center">
-                <Col lg="12">
+                <Col lg="12"> 
+                      <h4 className="pt-4 pl-4 display-3 font-weight-bold text-primary">
+                            {/*Expect several direct benefits*/}{forcebenefits.heading}
+                      </h4>
+                      <p className="px-4">{/*(Besides helping to save the planet)*/}{forcebenefits.subheading}</p>
                     <CardImg
                       alt="..."
                      src={require("assets/img/theme/asdf.PNG")}
                       //src={`${appConfig.apiURL}${productimage.url}`}
                       top
-    />
+                    />
               {/* <blockquote className="card-blockquote bg-default shadow border-0">*/}
                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
