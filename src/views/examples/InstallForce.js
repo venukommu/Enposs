@@ -273,9 +273,9 @@ class InstallForce extends React.Component {
               toggle={() => this.toggleModal("defaultModal")}
             >
               <div className="modal-header">
-                <h6 className="modal-title" id="modal-title-default">
+               {/*} <h6 className="modal-title" id="modal-title-default">
                   Assemble Image
-                </h6>
+                  </h6>*/}
                 <button
                   aria-label="Close"
                   className="close"
@@ -352,9 +352,9 @@ class InstallForce extends React.Component {
               toggle={() => this.toggleModal("defaultModal")}
             >
               <div className="modal-header">
-                <h6 className="modal-title" id="modal-title-default">
+                {/*<h6 className="modal-title" id="modal-title-default">
                 Assemble Image
-                </h6>
+                </h6>*/}
                 <button
                   aria-label="Close"
                   className="close"
