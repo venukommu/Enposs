@@ -258,15 +258,9 @@ class InstallForce extends React.Component {
                             <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click".</li>
                             <li> Put Black rubber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
                             <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
-                            <li><Link
-              block
-              className="mb-6"
-              color="primary"
-              type="button"
-              onClick={() => this.toggleModal("defaultModal")}
-            >
-              Click Here
-            </Link>
+                            <li><Link onClick={() => this.toggleModal("defaultModal")}>
+                                  Click Here
+                                </Link>
             <Modal
               className="modal-dialog-centered"
               isOpen={this.state.defaultModal}
@@ -337,15 +331,9 @@ class InstallForce extends React.Component {
                           <li> After double-checked the electricity is OFF, then carefully remove the panel cover.  </li>
                           <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click". </li>
                           <li>Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
-                          <li><Link
-              block
-              className="mb-6"
-              color="primary"
-              type="button"
-              onClick={() => this.toggleModal("defaultModal")}
-            >
-              Click Here
-            </Link>
+                          <li><Link onClick={() => this.toggleModal("defaultModal")}>
+                                Click Here
+                              </Link>
             <Modal
               className="modal-dialog-centered"
               isOpen={this.state.defaultModal}
