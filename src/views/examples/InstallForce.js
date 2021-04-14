@@ -17,7 +17,7 @@ import {
   TabContent,
   TabPane,
   Button,
-  Modal,
+  Modal
 } from "reactstrap";
 
 // core components
@@ -25,14 +25,12 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import CardTitle from "reactstrap/lib/CardTitle";
 //import CardText from "reactstrap/lib/CardText";
-import { appConfig } from "services/config.js";
+//import { appConfig } from "services/config.js";
 //import ReactMarkdown from "react-markdown";
 
 // index page sections
 
 class InstallForce extends React.Component {
-
-
   state = {
     defaultModal: false
   };
@@ -43,8 +41,8 @@ class InstallForce extends React.Component {
   };
   
   state = {
-    forceinstall: [],
-    forceinstallsteps: [],
+    //forceinstall: [],
+    //forceinstallsteps: [],
     error: null,
     plainTabs: 1
   };
@@ -60,7 +58,7 @@ class InstallForce extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
+    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -83,7 +81,7 @@ class InstallForce extends React.Component {
       this.setState({ forceinstall });
     } catch (error) {
       this.setState({ error });
-    }
+    }*/
 
   };
   
