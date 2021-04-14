@@ -378,7 +378,7 @@ class InstallForce extends React.Component {
                           <li>Connect cables to the switches.  </li>
                           <li>Remove the very first two switches from 1 or 2 side of the panel as shown in diagram.</li>
                           <li> Connect both of the FORCE attached switches on the first two top breakers of the panel that you have selected. </li>
-                          <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY! (NOT A MAIN BREAKER).  <span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
+                          <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY!<span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
                           <li> Safely install the panel cover back.  </li>
                           <li> Turn ON the MAIN BREAKER. DONE!  </li>
                         </ul>
