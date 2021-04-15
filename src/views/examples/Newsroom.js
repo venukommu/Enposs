@@ -67,6 +67,18 @@ class Newsroom extends React.Component {
     } catch (error) {
       this.setState({ error });
     }
+
+    try {
+      const newsarticles = await fetch(`${appConfig.apiURL}/newsarticles`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ newsarticles });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
 
   render() {
