@@ -148,7 +148,7 @@ class Newsroom extends React.Component {
            {newsarticles.map((newsdata, index) => (
             <Row key={index}>
             <Col lg="10">
-              <Row  onClick={() => this.toggleModal(newsdata.mname)}>
+              <Row  onClick={() => this.toggleModal(newsdata.modelname)}>
               <Col lg="4">
                 <Card className={'bg-gradient-' + newsdata.classname + ' shadow border-0'}>
                 <CardBody className="py-3"> 
@@ -169,8 +169,8 @@ class Newsroom extends React.Component {
             <hr />
             <Modal
               className="modal-xl"
-              isOpen={this.state[newsdata.mname]}
-              toggle={() => this.toggleModal(newsdata.mname)}
+              isOpen={this.state[newsdata.modelname]}
+              toggle={() => this.toggleModal(newsdata.modelname)}
               key={index}
             >
               <div className={'modal-header bg-gradient-' + newsdata.classname} >
@@ -182,7 +182,7 @@ class Newsroom extends React.Component {
                   className="close"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.mname)}
+                  onClick={() => this.toggleModal(newsdata.modelname)}
                 >
                 <span aria-hidden={true} className="text-white">×</span>
                 </button>
@@ -196,7 +196,7 @@ class Newsroom extends React.Component {
                   color="link"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.mname)}
+                  onClick={() => this.toggleModal(newsdata.modelname)}
                 >
                   Close
                 </Button>
