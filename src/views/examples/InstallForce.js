@@ -254,7 +254,6 @@ class InstallForce extends React.Component {
                             <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                             <li>After double-checked the electricity is OFF, then carefully remove the panel cover. </li>
                             <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click".</li>
-                            <li> Put Black rubber (the narrow side facing Y-terminal) through Socket, then connect Socket to the Force Device until you hear "click". </li>
                             <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
                             <li><Link onClick={() => this.toggleModal("defaultModal")}>
                                   Click Here
