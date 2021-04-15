@@ -148,7 +148,7 @@ class Newsroom extends React.Component {
            {newsarticles.map((newsdata, index) => (
             <Row key={index}>
             <Col lg="10">
-              <Row  onClick={() => this.toggleModal(newsdata.modelname)}>
+              <Row  onClick={() => this.toggleModal(newsdata.modalname)}>
               <Col lg="4">
                 <Card className={'bg-gradient-' + newsdata.classname + ' shadow border-0'}>
                 <CardBody className="py-3"> 
@@ -163,14 +163,14 @@ class Newsroom extends React.Component {
               <Col><p className="text-uppercase">{/*News*/}{newsdata.subheading}<br />
               {/*November 15, 2020*/}{newsdata.newsdate}</p>
               <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}{newsdata.Title}</h5>
-              <p>{newsdata.description}</p>
+              <p><ReactMarkdown source={newsdata.description} allowDangerousHtml={true}/></p>
               </Col>
             </Row>
             <hr />
             <Modal
               className="modal-xl"
-              isOpen={this.state[newsdata.modelname]}
-              toggle={() => this.toggleModal(newsdata.modelname)}
+              isOpen={this.state[newsdata.modalname]}
+              toggle={() => this.toggleModal(newsdata.modalname)}
               key={index}
             >
               <div className={'modal-header bg-gradient-' + newsdata.classname} >
@@ -182,13 +182,13 @@ class Newsroom extends React.Component {
                   className="close"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.modelname)}
+                  onClick={() => this.toggleModal(newsdata.modalname)}
                 >
                 <span aria-hidden={true} className="text-white">×</span>
                 </button>
               </div>
               <div className="modal-body">
-                <ReactMarkdown source={newsdata.articledescription} />
+                <ReactMarkdown source={newsdata.articledescription} allowDangerousHtml={true}/>
               </div>
               <div className="modal-footer">
                 <Button
@@ -196,7 +196,7 @@ class Newsroom extends React.Component {
                   color="link"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.modelname)}
+                  onClick={() => this.toggleModal(newsdata.modalname)}
                 >
                   Close
                 </Button>
