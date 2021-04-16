@@ -25,8 +25,8 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import CardTitle from "reactstrap/lib/CardTitle";
 //import CardText from "reactstrap/lib/CardText";
-//import { appConfig } from "services/config.js";
-//import ReactMarkdown from "react-markdown";
+import { appConfig } from "services/config.js";
+import ReactMarkdown from "react-markdown";
 
 // index page sections
 
@@ -41,7 +41,7 @@ class InstallForce extends React.Component {
   };
   
   state = {
-    //forceinstall: [],
+    forceinstall: [],
     //forceinstallsteps: [],
     error: null,
     plainTabs: 1
@@ -58,7 +58,7 @@ class InstallForce extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    /*const parseJSON = resp => (resp.json ? resp.json() : resp);
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
     const checkStatus = resp => {
       if (resp.status >= 200 && resp.status < 300) {
         return resp;
@@ -81,7 +81,7 @@ class InstallForce extends React.Component {
       this.setState({ forceinstall });
     } catch (error) {
       this.setState({ error });
-    }*/
+    }
 
   };
   
@@ -89,8 +89,8 @@ class InstallForce extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error} = this.state;
-
+    const { error, forceinstall} = this.state;
+  
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -220,7 +220,7 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                  I.Installation of FORCE{/*{forceinstall.tab1title}*/} 
+                  {/*I.Installation of FORCE*/} {forceinstall.tab1title}
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -233,7 +233,7 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                   II. Installation of FORCE {/*{forceinstall.tab2title}*/}
+                   {/*II. Installation of FORCE*/} {forceinstall.tab2title}
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -242,20 +242,20 @@ class InstallForce extends React.Component {
               <CardBody>
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
-                  {/*<ReactMarkdown source={forceinstall.tab1description} allowDangerousHtml={true}/>*/}
-                    <p className="text-dark font-weight-bold">I.Installation of FORCE </p>
+                  <ReactMarkdown source={forceinstall.tab1description} allowDangerousHtml={true} />
+                    {/*<p className="text-dark font-weight-bold">I.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
-                    <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable)</p>
+                  <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable)</p>*/}
                       <Row>
                         <Col lg="7">
-                        {/*<ReactMarkdown source={forceinstall.list1}  allowDangerousHtml={true}/>*/}
-                         <ul>
+                        <ReactMarkdown source={forceinstall.firstlist1}  allowDangerousHtml={true} />
+                         {/*<ul>
                             <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                             <li>After double-checked the electricity is OFF, then carefully remove the panel cover. </li>
                             <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click".</li>
-                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
-                            <li><Link onClick={() => this.toggleModal("defaultModal")}>
+                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>*/}
+                            <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
                                   Click Here
                                 </Link>
             <Modal
@@ -264,9 +264,9 @@ class InstallForce extends React.Component {
               toggle={() => this.toggleModal("defaultModal")}
             >
               <div className="modal-header">
-               {/*} <h6 className="modal-title" id="modal-title-default">
+                <h6 className="modal-title" id="modal-title-default">
                   Assemble Image
-                  </h6>*/}
+                  </h6>
                 <button
                   aria-label="Close"
                   className="close"
@@ -287,7 +287,7 @@ class InstallForce extends React.Component {
               <div className="modal-footer">
                 {/*<Button color="primary" type="button">
                   Save changes
-                  </Button>*/}
+                  </Button>
                 <Button
                   className="ml-auto"
                   color="link"
@@ -296,15 +296,16 @@ class InstallForce extends React.Component {
                   onClick={() => this.toggleModal("defaultModal")}
                 >
                   Close
-                </Button>
+                          </Button>*/}
               </div>
-            </Modal> to see the detail Image of assembling the Force. </li>
-                            <li> Mount the FORCE device anywhere within 39 inches (1 meter) from the panel.</li>
+            </Modal> to see the detail Image of assembling the Force. </p>
+                            {/*<li> Mount the FORCE device anywhere within 39 inches (1 meter) from the panel.</li>
                             <li> Unscrew the bolt & nut that is attached to the bus bar, then connect one Y-terminal (white) on the left side of the bus bar and screw the bolt & nut tight. </li>
                             <li> Then follow procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
                             <li> Safely install the panel cover back.  </li>
                             <li> Turn on the main breaker. DONE!   </li>
-                            </ul>
+                         </ul>*/}
+                <ReactMarkdown source={forceinstall.firstlist1}  allowDangerousHtml={true} />
                         </Col>
                         <Col lg="5">
                           <CardBody>
@@ -315,20 +316,20 @@ class InstallForce extends React.Component {
                   </TabPane>
                 
                   <TabPane tabId="plainTabs2">
-                    {/*<ReactMarkdown source={forceinstall.tab1description} allowDangerousHtml={true}/>*/}
-                    <p className="text-dark font-weight-bold">II.Installation of FORCE </p>
+                    <ReactMarkdown source={forceinstall.tab1description} allowDangerousHtml={true}/>
+                    {/*<p className="text-dark font-weight-bold">II.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
-                        <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable.)</p>
+                        <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable.)</p>*/}
                     <Row>
                       <Col lg="7">
-                      {/*<ReactMarkdown source={forceinstall.list2}  allowDangerousHtml={true}/>*/}
-                        <ul>
+                      <ReactMarkdown source={forceinstall.secondlist1}  allowDangerousHtml={true}/>
+                        {/*<ul>
                           <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with an electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                           <li> After double-checked the electricity is OFF, then carefully remove the panel cover.  </li>
                           <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click". </li>
-                          <li>Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
-                          <li><Link onClick={() => this.toggleModal("defaultModal")}>
+                        <li>Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>*/}
+                          <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
                                 Click Here
                               </Link>
             <Modal
@@ -371,8 +372,8 @@ class InstallForce extends React.Component {
                   Close
                 </Button>
               </div>
-            </Modal> to see the detail Image of assembling the Force. </li>
-                          <li>  Mount the FORCE device anywhere within 39 inches (1 meter) from the panel.  </li>
+            </Modal> to see the detail Image of assembling the Force. </p>
+                          {/*<li>  Mount the FORCE device anywhere within 39 inches (1 meter) from the panel.  </li>
                           <li> Cut off Y-terminal from the cable, and peel about ½ inches from the tip of the cable cover (COVER ONLY).</li>
                           <li>Connect cables to the switches.  </li>
                           <li>Remove the very first two switches from 1 or 2 side of the panel as shown in diagram.</li>
@@ -380,7 +381,8 @@ class InstallForce extends React.Component {
                           <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY!<span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
                           <li> Safely install the panel cover back.  </li>
                           <li> Turn ON the MAIN BREAKER. DONE!  </li>
-                        </ul>
+                          </ul>*/}
+                          <ReactMarkdown source={forceinstall.secondlist2}  allowDangerousHtml={true}/>
                       </Col>
                       <Col lg="5">
                         <CardBody>

@@ -83,7 +83,6 @@ class Newsroom extends React.Component {
 
   render() {
     const { error, newscontent,newsarticles} = this.state;
-
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -145,8 +144,8 @@ class Newsroom extends React.Component {
           </div>
         <section className="section section-lg pt-lg-0 mt--0">
         <Container>
-           {newsarticles.map((newsdata, index) => (
-            <Row key={index}>
+           {newsarticles.map(newsdata => (
+            <Row key={newsdata.id}>
             <Col lg="10">
               <Row  onClick={() => this.toggleModal(newsdata.modalname)}>
               <Col lg="4">
@@ -156,14 +155,19 @@ class Newsroom extends React.Component {
                     {newsdata.Title}
                     {/*Nuqul Group and Vardot Announce Collaboration*/}
                     </h6>
-                    
+                    {/*<img
+                    alt="..."
+                    className="img-fluid"
+                    src={`${appConfig.apiURL}${newsdata.image.url}`}
+                    />*/}
                 </CardBody>
                 </Card>
               </Col>
-              <Col><p className="text-uppercase">{/*News*/}{newsdata.subheading}<br />
-              {/*November 15, 2020*/}{newsdata.newsdate}</p>
+              <Col>
               <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}{newsdata.Title}</h5>
-              <p><ReactMarkdown source={newsdata.description} allowDangerousHtml={true}/></p>
+              <p><ReactMarkdown source={newsdata.summary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{maxWidth: '50%'}} /> }}/></p>
+              <p> <span className="text-uppercase">{/*News*/}{ newsdata.category }</span>&nbsp;
+              {/*November 15, 2020*/}{ newsdata.publishdate }</p>
               </Col>
             </Row>
             <hr />
@@ -171,11 +175,11 @@ class Newsroom extends React.Component {
               className="modal-xl"
               isOpen={this.state[newsdata.modalname]}
               toggle={() => this.toggleModal(newsdata.modalname)}
-              key={index}
+              key={newsdata.id}
             >
               <div className={'modal-header bg-gradient-' + newsdata.classname} >
                 <h2 className="modal-title text-white">
-                  {newsdata.articletitle}
+                  {newsdata.Title}
                 </h2>
                 <button
                   aria-label="Close"
@@ -188,7 +192,7 @@ class Newsroom extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <ReactMarkdown source={newsdata.articledescription} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a>}}/>
+                <ReactMarkdown source={newsdata.description} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a>}}/>
               </div>
               <div className="modal-footer">
                 <Button
