@@ -188,7 +188,7 @@ class Newsroom extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <ReactMarkdown source={newsdata.articledescription} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="noopener noreferrer">{props.children}</a>}}/>
+                <ReactMarkdown source={newsdata.articledescription} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a>}}/>
               </div>
               <div className="modal-footer">
                 <Button
