@@ -45,7 +45,7 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/bg.png';
+//import Background from 'assets/img/theme/bg.png';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
@@ -58,6 +58,7 @@ class Landing extends React.Component {
     ourcustomers: [],
     productimage: {},
     homepageimage: [],
+    plantforceimage: [],
     force: [],
     forceimage: {},
     awesomefeatures:[],
@@ -96,7 +97,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner, homewidgets: homepagebanner.homepagewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2 });
+      this.setState({ homepagebanner, homepageimage: homepagebanner.image, homewidgets: homepagebanner.homepagewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2, plantforceimage: homepagebanner.plantforceimage });
     } catch (error) {
       this.setState({ error });
     }
@@ -164,8 +165,8 @@ class Landing extends React.Component {
  
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2 } = this.state;
-    console.log(homepagebanner);
+    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2, homepageimage, plantforceimage } = this.state;
+
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -182,9 +183,9 @@ class Landing extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                backgroundImage:`url("${homepageimage.url}")`,
                }}>
                 <span />
                 <span />
@@ -252,9 +253,10 @@ class Landing extends React.Component {
                       </div>
                   </Col>
                   <Col md="8" lg="5" xs ="12" style={{ marginTop: "90px" }}>
-                  <div><img src={require("assets/img/theme/plant-force.png")} alt ="" style={{
-                    width: "100%" 
-                  }}/></div>
+                  <div>
+                    {/*<img src={require("assets/img/theme/plant-force.png")} alt ="" style={{ width: "100%" }}/>*/}
+                    <img src={`${plantforceimage.url}`} alt ="" style={{ width: "100%" }}/>
+                  </div>
                   </Col>
                 </Row>
                 <Row className="mt--200">

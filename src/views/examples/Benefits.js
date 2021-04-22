@@ -34,13 +34,14 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
-import Background from 'assets/img/theme/pexels-pixabay-235990-final.jpg';
+//import Background from 'assets/img/theme/pexels-pixabay-235990-final.jpg';
 
 class Benefits extends React.Component {
   state = {
     error: null,
     forcebenefits: [],
-    homepageimage: [],
+    benefitsimage: [],
+    benefitsbackgroundimage: []
 
   };
 
@@ -71,7 +72,7 @@ class Benefits extends React.Component {
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ forcebenefits });
+        this.setState({ forcebenefits, benefitsbackgroundimage: forcebenefits.image });
       } catch (error) {
         this.setState({ error });
       }
@@ -79,7 +80,7 @@ class Benefits extends React.Component {
   };
   
   render() {
-    const { error, forcebenefits} = this.state;
+    const { error, forcebenefits, benefitsbackgroundimage} = this.state;
 
     // Print errors if any
     if (error) {
@@ -95,7 +96,8 @@ class Benefits extends React.Component {
             <div className="shape"
              style= {{
               backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage: `url("${benefitsbackgroundimage.url}")`,
                }}>
                 <span />
                 <span />

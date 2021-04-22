@@ -29,6 +29,7 @@ class Force extends React.Component {
     force: [],
     forcewidgets: [],
     forcefeatures: [],
+    forcebackgroundimage: [],
     error: null,
   };
 
@@ -57,7 +58,19 @@ class Force extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ force, forcewidgets: force.forcewidgets, forcefeatures: force.featuresarray.features });
+      this.setState({ force, forcebackgroundimage: force.image, forcefeatures: force.featuresarray.features });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ forcewidgets });
     } catch (error) {
       this.setState({ error });
     }
@@ -68,7 +81,7 @@ class Force extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error, force, forcefeatures} = this.state;
+    const { error, force, forcebackgroundimage, forcewidgets, forcefeatures} = this.state;
     console.log(force);
     // Print errors if any
     if (error) {
@@ -84,8 +97,8 @@ class Force extends React.Component {
               <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min-final.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                //backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min-final.jpg')})`
+                backgroundImage:`url("${forcebackgroundimage.url}")`,
                }}>
                 <span />
                 <span />
@@ -138,18 +151,18 @@ class Force extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                  {/*forcewidgets.map(widgets => (
+                  {forcewidgets.map(widgets => (
                       <Col lg="4" key={widgets.id}>
                         <Card className="card-lift--hover shadow border-0">
                           <CardBody className="py-4">
-                            <div className=" rounded-circle mb-4">
+                            <div className=" rounded-circle mb-2">
                               <img alt="..."
                                 className="rounded-circle img-center img-fluid"
-                                src={`${appConfig.apiURL}${widgets.image.url}`}
+                                src={`${widgets.image.url}`}
                                 style={{ width: "100px" }}/>
                             </div>
-                            <h6 className="text-primary text-uppercase text-center">
-                              {/*About Company
+                            <h6 className={"text-" + widgets.classname + " text-uppercase text-center"}>
+                              {/*About Company*/}
                               {widgets.Title}
                             </h6>
                             <p className="description mt-3"
@@ -159,8 +172,8 @@ class Force extends React.Component {
                           </CardBody>
                         </Card>
                       </Col>
-                    ))*/}
-                    <Col lg="4">
+                    ))}
+                    {/*<Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-4">
                           <div className=" rounded-circle mb-2">
@@ -215,7 +228,7 @@ class Force extends React.Component {
                           <br /><br /></p>
                         </CardBody>
                       </Card>
-                  </Col>
+                  </Col>*/}
                   </Row>
                 </Col>
               </Row>
