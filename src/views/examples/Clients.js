@@ -161,7 +161,11 @@ console.log(clientsdata);
                           />
                         </CardBody>
                       </Card>
-
+                      <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">{data.Title}</span>
+                      </h5><h6 className="text-info">{data.subtitle}</h6>
+                      </div>
                     <Modal
                     className="modal-lg"
                     isOpen={this.state[data.Title]}

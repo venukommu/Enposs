@@ -72,7 +72,7 @@ class Benefits extends React.Component {
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ forcebenefits, benefitsbackgroundimage: forcebenefits.image });
+        this.setState({ forcebenefits, benefitsbackgroundimage: forcebenefits.image, benefitsimage: forcebenefits.benefitsimage });
       } catch (error) {
         this.setState({ error });
       }
@@ -80,7 +80,7 @@ class Benefits extends React.Component {
   };
   
   render() {
-    const { error, forcebenefits, benefitsbackgroundimage} = this.state;
+    const { error, forcebenefits, benefitsbackgroundimage, benefitsimage} = this.state;
 
     // Print errors if any
     if (error) {
@@ -160,8 +160,8 @@ class Benefits extends React.Component {
                       <p className="px-4">{/*(Besides helping to save the planet)*/}{forcebenefits.subheading}</p>
                     <CardImg
                       alt="..."
-                     src={require("assets/img/theme/asdf.PNG")}
-                      //src={`${appConfig.apiURL}${productimage.url}`}
+                      //src={require("assets/img/theme/asdf.PNG")}
+                      src={`${benefitsimage.url}`}
                       top
                     />
               {/* <blockquote className="card-blockquote bg-default shadow border-0">*/}

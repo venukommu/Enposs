@@ -22,7 +22,7 @@ import { appConfig } from "services/config.js";
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import { Link } from "react-router-dom";
 
-const items = [
+/*const items = [
   {
     src: require("assets/img/theme/force-latest.jpg"),
     altText: "",
@@ -35,12 +35,12 @@ const items = [
     caption: "",
     header: ""
   }
-];
+];*/
 
 class Carousel extends React.Component {
     state = {
       carouselcontent: [],
-      //carouselimage: [],
+      carouselimage: [],
       error: null,
    }
   
@@ -69,21 +69,21 @@ class Carousel extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent });
+      this.setState({ carouselcontent, carouselimage: carouselcontent.images });
     } catch (error) {
       this.setState({ error });
     }
   };
 
   render() {
-    const { error, carouselcontent} = this.state;
+    const { error, carouselcontent, carouselimage} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    //const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
-    //caption: ""}))
+    const items = carouselimage.map(val => ({ src: `${val.url}`, altText: "",
+    caption: ""}))
 
     return (
       <>
