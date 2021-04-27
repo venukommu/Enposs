@@ -86,7 +86,6 @@ class Clients extends React.Component {
   render() {
   const { error, clientscontent, clientsdata} = this.state;
  // const { error, portfoliocontent,imagenames} = this.state;
-console.log(clientsdata);
 
     // Print errors if any
     if (error) {
@@ -148,7 +147,7 @@ console.log(clientsdata);
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                   {clientsdata.map(data => (
+                   {clientsdata.sort((a, b) =>  b.id - a.id).map(data => (
                     <Col lg="4" key={data.id}>
                       <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5" onClick={() => this.toggleModal(data.Title)}>

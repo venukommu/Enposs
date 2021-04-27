@@ -144,7 +144,7 @@ class Newsroom extends React.Component {
           </div>
         <section className="section section-lg pt-lg-0 mt--0">
         <Container>
-           {newsarticles.map(newsdata => (
+           {newsarticles.sort((a, b) =>  b.id - a.id).map(newsdata => (
             <Row key={newsdata.id}>
             <Col lg="10">
               <Row  onClick={() => this.toggleModal(newsdata.Title)}>
