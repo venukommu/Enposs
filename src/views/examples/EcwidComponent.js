@@ -120,6 +120,8 @@ class EcwidScript extends React.Component {
       }
       render() {
         const currentURL = window.location.href
+        const pathname = window.location.pathname
+        console.log("pathname",pathname )
         const { error, storecontent} = this.state;
   
           // Print errors if any
@@ -190,26 +192,28 @@ class EcwidScript extends React.Component {
         <Link to="/contact" onClick={() => {window.location.href="/contact"}} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
         <EcwidScript/>
        </Card>
-       {((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0"))  ? 
+       {((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL === "http://localhost:3000/store#!/Force/p/296981076/category=0"))  ? 
         <Card className="card-profile shadow mt--50 bg-secondary p-4">
         <h3 className="text-warning">Installation Rebate</h3>
         <p style ={{fontSize:"18px"}}>upto $290 with validated installation receipt. Fill out the rebate form <strong>&#8595;</strong>
         </p> <a href="https://forms.gle/bSfvuVTyBgMJhcgB8" target="_blank" rel="noopener noreferrer">https://forms.gle/bSfvuVTyBgMJhcgB8</a> <br /><br />
       <h2> Product Details</h2>
-      <Row> <Col lg="4">
+      <Row> <Col lg="5">
             <CardBody>
               <CardImg alt="Force" src={`${require("assets/img/theme/blueforce.png")}`}/>
             </CardBody>
           </Col>
-      <Col lg="8"><ul style ={{fontSize:"18px"}}>
-        <br/>
-        <li>Weight: 3.00 kg</li>
-        <li>Phase 2 Wire, 5Kw</li>
-        <li>Wx L xH = 80mm x 130mm x 35mm</li>
-        <li>For residential up to 4,000sq or 1,500 kw/h usage</li>
+      <Col lg="7">
+       <br/><br/>
+        <ul style ={{fontSize:"18px"}}>
+        <li>Weight: 3.00 kg</li><br/>
+        <li>Phase 2 Wire, 5Kw</li><br/>
+        <li>Wx L xH = 80mm x 130mm x 35mm</li><br/>
+        <li>For residential up to 4,000sq or 1,500 kw/h usage</li><br/>
         <li>“If residential is above 4,000sq or usage over 1,500 kw/h then please contact us for a quote. </li></ul></Col></Row>     
       <Row> <Col lg="7">   
-        <h3><span className="text-warning">A</span>ctive <span className="text-warning">P</span>ower <span className="text-warning">S</span>aving By <span className="text-warning">I</span>ncreasing <span className="text-warning">C</span>onductivity</h3>
+        <h3><br /><span className="text-warning">A</span>ctive <span className="text-warning">P</span>ower <span className="text-warning">S</span>aving By <span className="text-warning">I</span>ncreasing <span className="text-warning">C</span>onductivity</h3>
+        <br />
         <p style ={{fontSize:"18px"}}>One of FORCE Key elements, EMF-7, is an application of 
           nano-working and mixing of minerals from nature.
           This application [EMF-7] increases electrical conductivity 
@@ -218,12 +222,12 @@ class EcwidScript extends React.Component {
           power saving can be realized.</p></Col>
         <Col lg="5">
               <CardBody>
-                <CardImg alt="APSIC" src={`${require("assets/img/theme/apsic.png")}`}/>
+                <CardImg style ={{height: "75%"}} alt="APSIC" src={`${require("assets/img/theme/apsic.png")}`}/>
               </CardBody>
         </Col>
       </Row><br /><br />
     <h2> Product Description</h2>
-    <Row>
+    <Row className="justify-content-center text-center">
                 <Col lg="2" md="6">
                   <div>
                     <img
@@ -274,8 +278,8 @@ class EcwidScript extends React.Component {
                     />
                   </div>
                 </Col> 
-   </Row><br/>
-    <h4>R.O.I (return of investment)</h4>
+   </Row>
+    <h4> <br /> R.O.I (return of investment)</h4>
     <ul style ={{fontSize:"18px"}}>
     <li>This is table of ROI (return of investment) in month</li>
     <li>For example, if your monthly electricity bill is about $200, your return of investment takes 30 month with 15% saving by FORCE</li>
