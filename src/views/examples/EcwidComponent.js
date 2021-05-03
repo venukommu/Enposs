@@ -33,6 +33,8 @@ const items = [
   }
 ];
 class EcwidScript extends React.Component {
+   currentURL = window.location.href
+
     componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -73,8 +75,8 @@ class EcwidScript extends React.Component {
       window.Ecwid.destroy()
       window.ecwidLoaded = false;
     }
-  
     render() {
+     
       return <div id="content"></div>
     }
   }
@@ -117,6 +119,7 @@ class EcwidScript extends React.Component {
         }
       }
       render() {
+        const currentURL = window.location.href
         const { error, storecontent} = this.state;
   
           // Print errors if any
@@ -186,7 +189,8 @@ class EcwidScript extends React.Component {
         </h4><br />
         <Link to="/contact" onClick={() => {window.location.href="/contact"}} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
         <EcwidScript/>
-        </Card>
+       </Card>
+       {((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0"))  ? 
         <Card className="card-profile shadow mt--50 bg-secondary p-4">
         <h3 className="text-warning">Installation Rebate</h3>
         <p style ={{fontSize:"18px"}}>upto $290 with validated installation receipt. Fill out the rebate form <strong>&#8595;</strong>
@@ -320,7 +324,7 @@ class EcwidScript extends React.Component {
    <Row  className="justify-content-center text-center">
    <Col lg="8">
    <UncontrolledCarousel items={items} /></Col></Row>
-        </Card>
+        </Card> : ''}
         </Container>
         </section>
       <CardsFooter />
