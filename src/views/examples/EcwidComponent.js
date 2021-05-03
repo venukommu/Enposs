@@ -2,13 +2,39 @@ import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import {Card,Container,Row,Col } from "reactstrap";
+import {Card,Container,Row,Col,CardBody,
+  CardImg } from "reactstrap";
 //import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 import { Link } from "react-router-dom";
+//import Table from "views/examples/Table";
+//import TableResponsive from "views/examples/TableResponsive";
+import { UncontrolledCarousel } from "reactstrap";
 
+const items = [
+  {
+    src: require("assets/img/theme/image1.jpg"),
+    altText: '',
+    caption: '',
+    header: ''
+  },
+  {
+    src: require("assets/img/theme/image2.jpg"),
+    altText: '',
+    caption: '',
+    header: ''
+  },
+  {
+    src: require("assets/img/theme/image3.jpg"),
+    altText: '',
+    caption: '',
+    header: ''
+  }
+];
 class EcwidScript extends React.Component {
+   currentURL = window.location.href
+
     componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -49,8 +75,8 @@ class EcwidScript extends React.Component {
       window.Ecwid.destroy()
       window.ecwidLoaded = false;
     }
-  
     render() {
+     
       return <div id="content"></div>
     }
   }
@@ -93,6 +119,7 @@ class EcwidScript extends React.Component {
         }
       }
       render() {
+        const currentURL = window.location.href
         const { error, storecontent} = this.state;
   
           // Print errors if any
@@ -162,9 +189,144 @@ class EcwidScript extends React.Component {
         </h4><br />
         <Link to="/contact" onClick={() => {window.location.href="/contact"}} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
         <EcwidScript/>
-        </Card>
+       </Card>
+       {((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0"))  ? 
+        <Card className="card-profile shadow mt--50 bg-secondary p-4">
+        <h3 className="text-warning">Installation Rebate</h3>
+        <p style ={{fontSize:"18px"}}>upto $290 with validated installation receipt. Fill out the rebate form <strong>&#8595;</strong>
+        </p> <a href="https://forms.gle/bSfvuVTyBgMJhcgB8" target="_blank" rel="noopener noreferrer">https://forms.gle/bSfvuVTyBgMJhcgB8</a> <br /><br />
+      <h2> Product Details</h2>
+      <Row> <Col lg="4">
+            <CardBody>
+              <CardImg alt="Force" src={`${require("assets/img/theme/blueforce.png")}`}/>
+            </CardBody>
+          </Col>
+      <Col lg="8"><ul style ={{fontSize:"18px"}}>
+        <br/>
+        <li>Weight: 3.00 kg</li>
+        <li>Phase 2 Wire, 5Kw</li>
+        <li>Wx L xH = 80mm x 130mm x 35mm</li>
+        <li>For residential up to 4,000sq or 1,500 kw/h usage</li>
+        <li>“If residential is above 4,000sq or usage over 1,500 kw/h then please contact us for a quote. </li></ul></Col></Row>     
+      <Row> <Col lg="7">   
+        <h3><span className="text-warning">A</span>ctive <span className="text-warning">P</span>ower <span className="text-warning">S</span>aving By <span className="text-warning">I</span>ncreasing <span className="text-warning">C</span>onductivity</h3>
+        <p style ={{fontSize:"18px"}}>One of FORCE Key elements, EMF-7, is an application of 
+          nano-working and mixing of minerals from nature.
+          This application [EMF-7] increases electrical conductivity 
+          and reduces impedance, heat, noise and vibration.
+          By improving the efficiency of the power system,
+          power saving can be realized.</p></Col>
+        <Col lg="5">
+              <CardBody>
+                <CardImg alt="APSIC" src={`${require("assets/img/theme/apsic.png")}`}/>
+              </CardBody>
+        </Col>
+      </Row><br /><br />
+    <h2> Product Description</h2>
+    <Row>
+                <Col lg="2" md="6">
+                  <div>
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/electricbillsaving.png")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col>
+                <Col lg="2" md="6">
+                  <div>
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/electricity.png")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col>
+                <Col  lg="2" md="6">
+                  <div>
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/reduceimpedence.png")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col> 
+                <Col lg="2" md="6">
+                  <div>
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/reduceharmonic.png")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col> 
+                <Col lg="2" md="6">
+                  <div>
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/reduceimpedence.png")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col> 
+   </Row><br/>
+    <h4>R.O.I (return of investment)</h4>
+    <ul style ={{fontSize:"18px"}}>
+    <li>This is table of ROI (return of investment) in month</li>
+    <li>For example, if your monthly electricity bill is about $200, your return of investment takes 30 month with 15% saving by FORCE</li>
+    <li>Four slashed cases are not recommended</li></ul> 
+   {/*} <TableResponsive style={{textAlign: "center"}}></TableResponsive><br /><br />*/}
+    <Row className="justify-content-center text-center"> <Col lg="8">
+    <CardBody>
+        <CardImg alt="Table" src={`${require("assets/img/theme/table.png")}`}/>
+    </CardBody></Col></Row>
+    {/*<Table></Table>*/}
+    {" "}
+    <h4>Image Examples Of Installed FORCE</h4>
+    <p style ={{fontSize:"18px"}}>Residential Installation(United States)</p>
+   {/*} <Row>
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/image1.jpg")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/image2.jpg")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col>
+                <Col className="mb-5 mb-lg-0" lg="4" md="6">
+                  <div className="px-4">
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/theme/image3.jpg")}
+                      //style={{ width: "200px" }}
+                    />
+                  </div>
+                </Col> 
+    </Row>*/} <br />
+   <Row  className="justify-content-center text-center">
+   <Col lg="8">
+   <UncontrolledCarousel items={items} /></Col></Row>
+        </Card> : ''}
         </Container>
-      </section>
+        </section>
       <CardsFooter />
       </>
     );
