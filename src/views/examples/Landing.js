@@ -69,6 +69,7 @@ class Landing extends React.Component {
     countupvalue1: 0,
     countupvalue2: 0,
     error: null,
+    clientsdata: [],
   };
 
   componentDidMount = async () => {
@@ -99,6 +100,18 @@ class Landing extends React.Component {
         .then(checkStatus)
         .then(parseJSON);
       this.setState({ homepagebanner, homepageimage: homepagebanner.image, homewidgets: homepagebanner.homepagewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2, plantforceimage: homepagebanner.plantforceimage, clientimages: homepagebanner.clientimages });
+    } catch (error) {
+      this.setState({ error });
+    }
+
+    try {
+      const clientsdata = await fetch(`${appConfig.apiURL}/clientsdata`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ clientsdata });
     } catch (error) {
       this.setState({ error });
     }
@@ -166,7 +179,7 @@ class Landing extends React.Component {
  
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2, homepageimage, plantforceimage,clientimages } = this.state;
+    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2, homepageimage, plantforceimage, clientsdata } = this.state;
 
     // Print errors if any
     if (error) {
@@ -1106,19 +1119,19 @@ class Landing extends React.Component {
                   <ReactMarkdown source={homepagebanner.section3paragraph} allowDangerousHtml={true}/>
                   <h4 className="display-3 font-weight-bold pt-3">{/*Some of Our Clients*/}{homepagebanner.ourclientstitle}</h4><br />
                   <Row>
-                  {clientimages.map(img => (                 
+                  {clientsdata.sort((a, b) =>  b.id - a.id).slice(0, 3).map(img => (                 
                   <Col className="mb-5 mb-lg-0" lg="4" md="6" key={img.id} to="/clients" tag={Link}>
                     <div className="px-4" >
                     <img
                       alt="..."
                       className="rectangle img-center img-fluid shadow shadow-lg--hover"
-                      src={`${img.url}`}
+                      src={`${img.image.url}`}
                       //style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
-                        <span className="d-block mb-1">{/*Blue Ash Recreation Center*/}{img.alternativeText}</span>
-                        <h6 className="text-info">{img.caption}</h6>
+                        <span className="d-block mb-1">{/*Blue Ash Recreation Center*/}{img.Title}</span>
+                        <h6 className="text-info">{img.subtitle}</h6>
                       </h5>
                     </div>
                     </div>
