@@ -25,7 +25,7 @@ import { Card, Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 //import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
+//import Background from 'assets/img/theme/two-polar-bears-background-Recovered.jpg';
 import ReactMarkdown from "react-markdown";
 
 class CeoMessage extends React.Component {
@@ -33,11 +33,9 @@ class CeoMessage extends React.Component {
     console.log(isExpanded);
 }
   state = {
-    aboutcompany: [],
     ceomessage: [],
     error: null,
-    bannerimage: [],
-    productimage: []
+    ceobackgroundimage: []
  }
  componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
@@ -65,14 +63,14 @@ class CeoMessage extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ ceomessage });
+      this.setState({ ceomessage, ceobackgroundimage: ceomessage.image });
     } catch (error) {
       this.setState({ error });
     }
     
   };
   render() {
-    const { error, ceomessage} = this.state;
+    const { error, ceomessage, ceobackgroundimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -89,7 +87,8 @@ class CeoMessage extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage: `url("${ceobackgroundimage.url}")`,
                }}>
                 <span />
                 <span />

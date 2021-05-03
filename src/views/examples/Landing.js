@@ -45,7 +45,7 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-import Background from 'assets/img/theme/bg.png';
+//import Background from 'assets/img/theme/bg.png';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
@@ -58,6 +58,8 @@ class Landing extends React.Component {
     ourcustomers: [],
     productimage: {},
     homepageimage: [],
+    plantforceimage: [],
+    clientimages: [],
     force: [],
     forceimage: {},
     awesomefeatures:[],
@@ -96,7 +98,7 @@ class Landing extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ homepagebanner, homewidgets: homepagebanner.homepagewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2 });
+      this.setState({ homepagebanner, homepageimage: homepagebanner.image, homewidgets: homepagebanner.homepagewidgets, countupvalue1: homepagebanner.countupvalue1, countupvalue2: homepagebanner.countupvalue2, plantforceimage: homepagebanner.plantforceimage, clientimages: homepagebanner.clientimages });
     } catch (error) {
       this.setState({ error });
     }
@@ -164,8 +166,8 @@ class Landing extends React.Component {
  
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2 } = this.state;
-    console.log(homepagebanner);
+    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2, homepageimage, plantforceimage,clientimages } = this.state;
+
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -182,9 +184,9 @@ class Landing extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                backgroundImage:`url("${homepageimage.url}")`,
                }}>
                 <span />
                 <span />
@@ -252,9 +254,10 @@ class Landing extends React.Component {
                       </div>
                   </Col>
                   <Col md="8" lg="5" xs ="12" style={{ marginTop: "90px" }}>
-                  <div><img src={require("assets/img/theme/plant-force.png")} alt ="" style={{
-                    width: "100%" 
-                  }}/></div>
+                  <div>
+                    {/*<img src={require("assets/img/theme/plant-force.png")} alt ="" style={{ width: "100%" }}/>*/}
+                    <img src={`${plantforceimage.url}`} alt ="" style={{ width: "100%" }}/>
+                  </div>
                   </Col>
                 </Row>
                 <Row className="mt--200">
@@ -1095,7 +1098,7 @@ class Landing extends React.Component {
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="12">
-                  <h2 className="display-3">{/*We&#39;re going places*/}{homepagebanner.section3title}</h2>
+                  {/*<h2 className="display-3">{/*We&#39;re going places{homepagebanner.section3title}</h2>
                   {/*<p className="lead text-muted mt-n2">
                   FORCE is used in more than 7 countries, and still counting.<br />
                   Over 1234 customers, companies and industries use FORCE globally.
@@ -1103,8 +1106,26 @@ class Landing extends React.Component {
                   <ReactMarkdown source={homepagebanner.section3paragraph} allowDangerousHtml={true}/>
                   <h4 className="display-3 font-weight-bold pt-3">{/*Some of Our Clients*/}{homepagebanner.ourclientstitle}</h4><br />
                   <Row>
-                  <Col className="mb-5 mb-lg-0" lg="4" md="6">
-                  <div className="px-4">
+                  {clientimages.map(img => (                 
+                  <Col className="mb-5 mb-lg-0" lg="4" md="6" key={img.id} to="/clients" tag={Link}>
+                    <div className="px-4" >
+                    <img
+                      alt="..."
+                      className="rectangle img-center img-fluid shadow shadow-lg--hover"
+                      src={`${img.url}`}
+                      //style={{ width: "200px" }}
+                    />
+                    <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">{/*Blue Ash Recreation Center*/}{img.alternativeText}</span>
+                        <h6 className="text-info">{img.caption}</h6>
+                      </h5>
+                    </div>
+                    </div>
+                  </Col>
+                  ))}
+                  </Row>
+                  {/*<div className="px-4">
                     <img
                       alt="..."
                       className="rectangle img-center img-fluid shadow shadow-lg--hover"
@@ -1114,7 +1135,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         {/*<span className="d-block mb-1">{/*Blue Ash Recreation Center{homepagebanner.ourclient1}</span>
-                        <h6 className="text-info">Ohio, USA</h6>*/}
+                        <h6 className="text-info">Ohio, USA</h6>
                         <ReactMarkdown source={homepagebanner.ourclient1} allowDangerousHtml={true}/>
                       </h5>
                      {/*} <div className="mt-3">
@@ -1142,7 +1163,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-                      </div>*/}
+                      </div>
                     </div>
                   </div>
                 {/*}  <Col className="mb-5 mb-lg-0" lg="3" md="6">
@@ -1187,7 +1208,7 @@ class Landing extends React.Component {
 </div>
                     </div>
                   </div>
-                </Col>*/}
+                </Col>
                 </Col>
                     <Col className="mb-5 mb-lg-0" lg="4" md="6">
                     <div className="px-4">
@@ -1200,10 +1221,10 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         {/*<span className="d-block mb-1">{/*Mc Donald's{homepagebanner.ourclient2}</span>
-                        {/*<small className="h6 text-muted">Mc donald's</small>*/}
+                        {/*<small className="h6 text-muted">Mc donald's</small>
                         <ReactMarkdown source={homepagebanner.ourclient2} allowDangerousHtml={true}/>
                       </h5>
-                      {/*<h6 className="text-info">Ohio, USA</h6>*/}
+                      {/*<h6 className="text-info">Ohio, USA</h6>
                      {/*} <div className="mt-3">
                         <Button
                           className="btn-icon-only rounded-circle"
@@ -1229,7 +1250,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-    </div>*/}
+    </div>
                     </div>
                   </div>
                 </Col>
@@ -1244,11 +1265,11 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         {/*<span className="d-block mb-1">{/*City of Seymour{homepagebanner.ourclient3}</span>
-                        <h6 className="text-info">Wisconsin, USA</h6>*/}
+                        <h6 className="text-info">Wisconsin, USA</h6>
                         <ReactMarkdown source={homepagebanner.ourclient3} allowDangerousHtml={true}/>
                         {/*<small className="h6 text-muted">
                           Customer Review
-                        </small>*/}
+                        </small>
                       </h5>
                      {/*} <div className="mt-3">
                         <Button
@@ -1275,7 +1296,7 @@ class Landing extends React.Component {
                         >
                           <i className="fa fa-dribbble" />
                         </Button>
-                      </div>*/}
+                      </div>
                     </div>
                   </div>
                 </Col>

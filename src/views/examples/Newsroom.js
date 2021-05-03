@@ -144,10 +144,10 @@ class Newsroom extends React.Component {
           </div>
         <section className="section section-lg pt-lg-0 mt--0">
         <Container>
-           {newsarticles.map(newsdata => (
+           {newsarticles.sort((a, b) =>  b.id - a.id).map(newsdata => (
             <Row key={newsdata.id}>
             <Col lg="10">
-              <Row  onClick={() => this.toggleModal(newsdata.modalname)}>
+              <Row  onClick={() => this.toggleModal(newsdata.Title)}>
               <Col lg="4">
                 <Card className={'bg-gradient-' + newsdata.classname + ' shadow border-0'}>
                 <CardBody className="py-3"> 
@@ -173,8 +173,8 @@ class Newsroom extends React.Component {
             <hr />
             <Modal
               className="modal-xl"
-              isOpen={this.state[newsdata.modalname]}
-              toggle={() => this.toggleModal(newsdata.modalname)}
+              isOpen={this.state[newsdata.Title]}
+              toggle={() => this.toggleModal(newsdata.Title)}
               key={newsdata.id}
             >
               <div className={'modal-header bg-gradient-' + newsdata.classname} >
@@ -186,7 +186,7 @@ class Newsroom extends React.Component {
                   className="close"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.modalname)}
+                  onClick={() => this.toggleModal(newsdata.Title)}
                 >
                 <span aria-hidden={true} className="text-white">×</span>
                 </button>
@@ -200,7 +200,7 @@ class Newsroom extends React.Component {
                   color="link"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.modalname)}
+                  onClick={() => this.toggleModal(newsdata.Title)}
                 >
                   Close
                 </Button>

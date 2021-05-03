@@ -43,6 +43,7 @@ class InstallForce extends React.Component {
   state = {
     forceinstall: [],
     //forceinstallsteps: [],
+    assembleimage: [],
     error: null,
     plainTabs: 1
   };
@@ -72,7 +73,7 @@ class InstallForce extends React.Component {
     };
 
     try {
-      const forceinstall = await fetch(`${appConfig.apiURL}/forceinstall`, {
+      const forceinstall = await fetch(`${appConfig.apiURL}/forceinstallsteps`, {
         method: 'GET',
         headers: headers,
       })
@@ -168,7 +169,6 @@ class InstallForce extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                <Col lg="12">
                  {/*} <Card className="bg-gradient-white">
                   <h4 className="display-3 font-weight-bold text-primary">
                        
@@ -203,6 +203,8 @@ class InstallForce extends React.Component {
                     </ul><br/><br/>
                     </CardBody>
       </Card>*/}
+            {forceinstall.map(forcesteps => (
+            <Col lg="6">
             <div className="nav-wrapper">
               <Nav
                 className="nav-fill flex-column flex-md-row"
@@ -212,18 +214,19 @@ class InstallForce extends React.Component {
               >
                 <NavItem>
                   <NavLink
-                    aria-selected={this.state.plainTabs === 1}
+                    key={forcesteps.id}
+                    aria-selected={this.state.plainTabs === forcesteps.id}
                     className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 1
+                      active: this.state.plainTabs === forcesteps.id
                     })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 1)}
+                    onClick={e => this.toggleNavs(e, "plainTabs", forcesteps.id)}
                     href="#pablo"
                     role="tab"
                   >
-                  {/*I.Installation of FORCE*/} {forceinstall.tab1title}
+                  {/*I.Installation of FORCE*/} {forcesteps.Title}
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                  {/*<NavItem>
                   <NavLink
                     aria-selected={this.state.plainTabs === 2}
                     className={classnames("mb-sm-3 mb-md-0", {
@@ -233,12 +236,73 @@ class InstallForce extends React.Component {
                     href="#pablo"
                     role="tab"
                   >
-                   {/*II. Installation of FORCE*/} {forceinstall.tab2title}
+                   {/*II. Installation of FORCE {forceinstall.tab2title}
                   </NavLink>
-                </NavItem>
+                  </NavItem>*/}
               </Nav>
             </div>
+            </Col>
+            ))}
+            {forceinstall.map(forcesteps => (
+            <Col lg="12">
             <Card className="shadow">
+              <CardBody>
+                <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
+                  <TabPane tabId={"plainTabs" + forcesteps.id}>
+                  <ReactMarkdown source={forcesteps.description} allowDangerousHtml={true} />
+                  <Row>
+                    <Col lg="7">
+                      <ReactMarkdown source={forcesteps.list}  allowDangerousHtml={true} />
+                      <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
+                        Click Here
+                      </Link>
+                      <Modal
+                        className="modal-dialog-centered"
+                        isOpen={this.state.defaultModal}
+                        toggle={() => this.toggleModal("defaultModal")}>
+                        <div className="modal-header">
+                          <button
+                            aria-label="Close"
+                            className="close"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal")}>
+                            <span aria-hidden={true}>×</span>
+                          </button>
+                          </div>
+                          <div className="modal-body">
+                            <p>
+                            <CardBody>
+                              <CardImg alt="Assemble-Image" src={`${forcesteps.assembleimage.url}`}/>
+                            </CardBody>
+                            </p>
+                          </div>
+                          <div className="modal-footer">
+                            <Button
+                              className="ml-auto"
+                              color="link"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}>
+                              Close
+                            </Button>
+                          </div>
+                      </Modal> to see the detail Image of assembling the Force. </p>
+                      <ReactMarkdown source={forcesteps.list1}  allowDangerousHtml={true} />
+                      </Col>
+                      <Col lg="5">
+                        <CardBody>
+                          <CardImg alt="Installation of FORCE" src={`${forcesteps.image.url}`}/>
+                        </CardBody>
+                      </Col>
+                      </Row>
+                  </TabPane>
+                </TabContent>
+              </CardBody>
+            </Card>
+            </Col>
+            ))}
+            {/*<Card className="shadow">
               <CardBody>
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
@@ -246,7 +310,7 @@ class InstallForce extends React.Component {
                     {/*<p className="text-dark font-weight-bold">I.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
-                  <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable)</p>*/}
+                  <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable)</p>
                       <Row>
                         <Col lg="7">
                         <ReactMarkdown source={forceinstall.firstlist1}  allowDangerousHtml={true} />
@@ -254,7 +318,7 @@ class InstallForce extends React.Component {
                             <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with the electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                             <li>After double-checked the electricity is OFF, then carefully remove the panel cover. </li>
                             <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click".</li>
-                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>*/}
+                            <li> Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
                             <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
                                   Click Here
                                 </Link>
@@ -264,9 +328,9 @@ class InstallForce extends React.Component {
               toggle={() => this.toggleModal("defaultModal")}
             >
               <div className="modal-header">
-                <h6 className="modal-title" id="modal-title-default">
+                {/*<h6 className="modal-title" id="modal-title-default">
                   Assemble Image
-                  </h6>
+                </h6>
                 <button
                   aria-label="Close"
                   className="close"
@@ -280,7 +344,8 @@ class InstallForce extends React.Component {
               <div className="modal-body">
                 <p>
                 <CardBody>
-                  <CardImg alt="Assemble-Image" src={`${require("assets/img/theme/Assemble-Image.jpg")}`}/>
+                  {/*<CardImg alt="Assemble-Image" src={`${require("assets/img/theme/Assemble-Image.jpg")}`}/>
+                  <CardImg alt="Assemble-Image" src={`${assembleimage.url}`}/>
                 </CardBody>
                 </p>
               </div>
@@ -296,7 +361,7 @@ class InstallForce extends React.Component {
                   onClick={() => this.toggleModal("defaultModal")}
                 >
                   Close
-                          </Button>*/}
+                          </Button>
               </div>
             </Modal> to see the detail Image of assembling the Force. </p>
                             {/*<li> Mount the FORCE device anywhere within 39 inches (1 meter) from the panel.</li>
@@ -304,7 +369,7 @@ class InstallForce extends React.Component {
                             <li> Then follow procedure # 2-4 to connect another Y-terminal to the right side of the bus bar.  </li>
                             <li> Safely install the panel cover back.  </li>
                             <li> Turn on the main breaker. DONE!   </li>
-                         </ul>*/}
+                         </ul>
                 <ReactMarkdown source={forceinstall.firstlist1}  allowDangerousHtml={true} />
                         </Col>
                         <Col lg="5">
@@ -320,7 +385,7 @@ class InstallForce extends React.Component {
                     {/*<p className="text-dark font-weight-bold">II.Installation of FORCE </p>
                     <p className="text-danger text-right font-weight-bold">* Always consult a Licensed Electrician before working on any electric.</p>
                     <p className="text-right font-weight-lighter">* In no way is this meant to be construed as instructional procedures to installing FORCE, or performing work in an Electrical panel.</p>
-                        <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable.)</p>*/}
+                        <p className="text-dark font-weight-bold">Parts: 2- Y-terminal (white), 2- Plugin terminal (yellow), 2- Cable, Device (FORCE), 2- Rubber ring, 2- Cap, 4- 1 inch screw (Y and Plugin terminals are attached to the cable.)</p>
                     <Row>
                       <Col lg="7">
                       <ReactMarkdown source={forceinstall.secondlist1}  allowDangerousHtml={true}/>
@@ -328,7 +393,7 @@ class InstallForce extends React.Component {
                           <li> First locate your MAIN BREAKER, then TURN OFF THE MAIN BREAKER, Turn OFF All Breakers. <span className="text-danger">(**Please double-check with an electrical meter to ensure the electricity is off before removing the panel cover**)</span></li>
                           <li> After double-checked the electricity is OFF, then carefully remove the panel cover.  </li>
                           <li> Put Rubber ring (the narrow side facing Y-terminal) through Plugin terminal, then connect Plugin terminal to the Force Device until you hear "click". </li>
-                        <li>Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>*/}
+                        <li>Put Cap through Y-terminal and bring it towards to device to close (twist), make sure Plugin terminal is connected to the Force Device fully, and seal properly with Cap. </li>
                           <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
                                 Click Here
                               </Link>
@@ -340,7 +405,7 @@ class InstallForce extends React.Component {
               <div className="modal-header">
                 {/*<h6 className="modal-title" id="modal-title-default">
                 Assemble Image
-                </h6>*/}
+                </h6>
                 <button
                   aria-label="Close"
                   className="close"
@@ -354,14 +419,15 @@ class InstallForce extends React.Component {
               <div className="modal-body">
                 <p>
                 <CardBody>
-                  <CardImg alt="Assemble-Image" src={`${require("assets/img/theme/Assemble-Image.jpg")}`}/>
+                  {/*<CardImg alt="Assemble-Image" src={`${require("assets/img/theme/Assemble-Image.jpg")}`}/>
+                  <CardImg alt="Assemble-Image" src={`${assembleimage.url}`}/>
                 </CardBody>
                 </p>
               </div>
               <div className="modal-footer">
                 {/*<Button color="primary" type="button">
                   Save changes
-                  </Button>*/}
+                  </Button>
                 <Button
                   className="ml-auto"
                   color="link"
@@ -381,7 +447,7 @@ class InstallForce extends React.Component {
                           <li> After installing the FORCE switches on the panel you selected, turn ON switches ONLY!<span className="text-danger">(NOT A MAIN BREAKER)</span>.</li> 
                           <li> Safely install the panel cover back.  </li>
                           <li> Turn ON the MAIN BREAKER. DONE!  </li>
-                          </ul>*/}
+                          </ul>
                           <ReactMarkdown source={forceinstall.secondlist2}  allowDangerousHtml={true}/>
                       </Col>
                       <Col lg="5">
@@ -393,8 +459,7 @@ class InstallForce extends React.Component {
                   </TabPane>
                 </TabContent>
               </CardBody>
-            </Card>
-            </Col>
+              </Card>*/}
             </Row>
             </Container>
           </section>
