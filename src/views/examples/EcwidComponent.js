@@ -3,8 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {
-  Card, Container, Row, Col, CardBody,
-  CardImg
+  Card, Container, Row, Col, //CardBody,
+  //CardImg
 } from "reactstrap";
 //import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
@@ -192,12 +192,10 @@ export default class EcwidComponent extends React.Component {
               </h4><br />
               <Link to="/contact" onClick={() => { window.location.href = "/contact" }} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
               <EcwidScript />
-              <div class="stamped-questions-placeholder"></div>
-
             </Card>
             {((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL === "http://localhost:3000/store#!/Force/p/296981076/category=0")) ?
               <Card className="card-profile shadow mt--50 bg-secondary p-4">
-                <h3 className="text-warning">Installation Rebate</h3>
+                {/*<h3 className="text-warning">Installation Rebate</h3>
                 <p style={{ fontSize: "18px" }}>upto $290 with validated installation receipt. Fill out the rebate form <strong>&#8595;</strong></p>
                 <a href="https://forms.gle/bSfvuVTyBgMJhcgB8" target="_blank" rel="noopener noreferrer">https://forms.gle/bSfvuVTyBgMJhcgB8</a> <br /><br />
                 <h2> Product Details</h2>
@@ -292,7 +290,7 @@ export default class EcwidComponent extends React.Component {
                   <li>For example, if your monthly electricity bill is about $200, your return of investment takes 30 month with 15% saving by FORCE</li>
                   <li>Four slashed cases are not recommended</li>
                 </ul>
-                {/*} <TableResponsive style={{textAlign: "center"}}></TableResponsive><br /><br />*/}
+                 <TableResponsive style={{textAlign: "center"}}></TableResponsive><br /><br />*
                 <Row className="justify-content-center text-center">
                   <Col lg="8">
                     <CardBody>
