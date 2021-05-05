@@ -338,7 +338,9 @@ export default class EcwidComponent extends React.Component {
                 </Row>*/} <br />
                 <Row className="justify-content-center text-center">
                   <Col lg="8">
-                    <UncontrolledCarousel items={items} /></Col></Row>
+                    <UncontrolledCarousel items={items} />
+                  </Col>
+                </Row>
               </Card> : ''}
           </Container>
         </section>
