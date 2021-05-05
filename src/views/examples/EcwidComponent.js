@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import {
-  Card, Container, Row, Col, //CardBody,
-  //CardImg
+  Card, Container, Row, Col
 } from "reactstrap";
 //import Background from 'assets/img/theme/purple.jpg';
 import CardsFooter from "components/Footers/CardsFooter.js";
