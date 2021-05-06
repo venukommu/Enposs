@@ -11,9 +11,9 @@ import { appConfig } from "services/config.js";
 import { Link } from "react-router-dom";
 //import Table from "views/examples/Table";
 //import TableResponsive from "views/examples/TableResponsive";
-import { UncontrolledCarousel } from "reactstrap";
+//import { UncontrolledCarousel } from "reactstrap";
 
-const items = [
+/*const items = [
   {
     src: require("assets/img/theme/image1.jpg"),
     altText: '',
@@ -32,7 +32,7 @@ const items = [
     caption: '',
     header: ''
   }
-];
+];*/
 class EcwidScript extends React.Component {
 
   componentDidMount() {
@@ -119,7 +119,7 @@ export default class EcwidComponent extends React.Component {
     }
   }
   render() {
-    const currentURL = window.location.href
+    //const currentURL = window.location.href
     const pathname = window.location.pathname
     console.log("pathname", pathname)
     const { error, storecontent } = this.state;
@@ -192,9 +192,9 @@ export default class EcwidComponent extends React.Component {
               <Link to="/contact" onClick={() => { window.location.href = "/contact" }} >{/*(Contact us for other use-cases.)*/}{storecontent.subheading}</Link>
               <EcwidScript />
             </Card>
-            {((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL === "http://localhost:3000/store#!/Force/p/296981076/category=0")) ?
+            {/*}{((currentURL === "https://www.enposs.us/store#!/Force/p/296981076/category=0") || (currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL === "http://localhost:3000/store#!/Force/p/296981076/category=0")) ?
               <Card className="card-profile shadow mt--50 bg-secondary p-4">
-                {/*<h3 className="text-warning">Installation Rebate</h3>
+                <h3 className="text-warning">Installation Rebate</h3>
                 <p style={{ fontSize: "18px" }}>upto $290 with validated installation receipt. Fill out the rebate form <strong>&#8595;</strong></p>
                 <a href="https://forms.gle/bSfvuVTyBgMJhcgB8" target="_blank" rel="noopener noreferrer">https://forms.gle/bSfvuVTyBgMJhcgB8</a> <br /><br />
                 <h2> Product Details</h2>
@@ -289,7 +289,7 @@ export default class EcwidComponent extends React.Component {
                   <li>For example, if your monthly electricity bill is about $200, your return of investment takes 30 month with 15% saving by FORCE</li>
                   <li>Four slashed cases are not recommended</li>
                 </ul>
-                 <TableResponsive style={{textAlign: "center"}}></TableResponsive><br /><br />*
+                <TableResponsive style={{ textAlign: "center" }}></TableResponsive><br /><br />*
                 <Row className="justify-content-center text-center">
                   <Col lg="8">
                     <CardBody>
@@ -297,11 +297,11 @@ export default class EcwidComponent extends React.Component {
                     </CardBody>
                   </Col>
                 </Row>
-                {/*<Table></Table>*/}
-                {" "}
+               */}
+            {/*}
                 <h4>Image Examples Of Installed FORCE</h4>
                 <p style={{ fontSize: "18px" }}>Residential Installation(United States)</p>
-                {/*} <Row>
+               <Row>
                             <Col className="mb-5 mb-lg-0" lg="4" md="6">
                               <div className="px-4">
                                 <img
@@ -332,13 +332,13 @@ export default class EcwidComponent extends React.Component {
                                 />
                               </div>
                             </Col> 
-                </Row>*/} <br />
+                </Row> <br />
                 <Row className="justify-content-center text-center">
                   <Col lg="8">
                     <UncontrolledCarousel items={items} />
                   </Col>
                 </Row>
-              </Card> : ''}
+              </Card> : ''}*/}
           </Container>
         </section>
         <CardsFooter />
