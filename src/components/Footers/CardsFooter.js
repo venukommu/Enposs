@@ -138,7 +138,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="facebook"
-                  href="https://www.facebook.com/ForceGlobal/"
+                  href="https://www.facebook.com/ForcePowerSavingDevice/"
                   id="tooltip837440414"
                   target="_blank"
                 >
