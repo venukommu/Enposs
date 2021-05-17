@@ -50,9 +50,9 @@ class Force extends React.Component {
     const headers = {
       'Content-Type': 'application/json',
     };
-
+    const language = window.localStorage.getItem('lang');
     try {
-      const force = await fetch(`${appConfig.apiURL}/force`, {
+      const force = await fetch(`${appConfig.apiURL}/force?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })
@@ -64,7 +64,7 @@ class Force extends React.Component {
     }
 
     try {
-      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets`, {
+      const forcewidgets = await fetch(`${appConfig.apiURL}/forcewidgets?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })
@@ -82,7 +82,6 @@ class Force extends React.Component {
   };
   render() {
     const { error, force, forcebackgroundimage, forcewidgets, forcefeatures} = this.state;
-    console.log(force);
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;

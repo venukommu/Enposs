@@ -57,8 +57,9 @@ class Timeline extends React.Component {
       'Content-Type': 'application/json',
     };
   
+    const language = window.localStorage.getItem('lang');
     try {
-      const timeline = await fetch(`${appConfig.apiURL}/timeline`, {
+      const timeline = await fetch(`${appConfig.apiURL}/timeline?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

@@ -69,8 +69,9 @@ class OurStory extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-        const companystory = await fetch(`${appConfig.apiURL}/ourstory`, {
+        const companystory = await fetch(`${appConfig.apiURL}/ourstory?_locale=${language}`, {
           method: 'GET',
           headers: headers,
         })

@@ -19,7 +19,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 //import Headroom from "headroom.js";
-import {CartContext} from "context/CartContext";
+//import {CartContext} from "context/CartContext";
+import {LanguageContext} from "context/LanguageProvider";
+import { appConfig } from "services/config.js";
 //import { UserContext } from 'context/user';
 // reactstrap components
 import {
@@ -32,25 +34,80 @@ import {
   Container,
   Row,
   Col,
-  NavItem,
+  //NavItem,
   //Button,
-  NavLink,
+  //NavLink,
+  Badge,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Media
 } from "reactstrap";
 
+export const languageOptions = {
+  en: 'English',
+  ko: 'Korean'
+};
+
 class DemoNavbar extends React.Component {
-  static contextType = CartContext
-  componentDidMount() {
+  state = {
+    collapseClasses: "",
+    collapseOpen: false,
+    menus: [],
+    menusections: [],
+    flagLink: "",
+    error: null
+  };
+  static contextType = LanguageContext
+  componentDidMount = async () => {
     //let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     //headroom.init();
-  }
-  state = {
-    collapseClasses: "",
-    collapseOpen: false
-  };
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    //this.refs.main.scrollTop = 0;
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
 
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+  
+    const language = window.localStorage.getItem('lang');
+    console.log(language);
+    try {
+      const menus = await fetch(`${appConfig.apiURL}/menu?_locale=${language}`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({  menus: menus.body  });
+    } catch (error) {
+      this.setState({ error });
+    };
+
+    try {
+      const menusections = await fetch(`${appConfig.apiURL}/sections?_locale=${language}`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({  menusections  });
+    } catch (error) {
+      this.setState({ error });
+    }
+    
+  };
+  
   onExiting = () => {
     this.setState({
       collapseClasses: "collapsing-out"
@@ -65,6 +122,24 @@ class DemoNavbar extends React.Component {
 
   render() {
     //const {qty} = this.context;
+    const { language, languageChange } = this.context;
+    const { error, menus, menusections } = this.state;
+
+    console.log(menusections);
+
+    // Print errors if any
+    if (error) {
+      return <div>An error occured: {error.message}</div>;
+    }
+    
+    const refreshPage = ()=>{
+      window.location.reload();
+    }
+
+    const handleLanguageChange = e => {
+      languageChange(e.target.value);
+    }
+  
     return (
       <>
         <header className="header-global">
@@ -206,7 +281,28 @@ class DemoNavbar extends React.Component {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav> */}
-                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                  <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                  {menus.map(menu => (
+                  <UncontrolledDropdown nav key={menu.id}>
+                      <DropdownToggle key={menu.id} to={menu.url} tag={Link} nav onClick={() => {window.location.href=menu.url}}>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>{menu.label}</span>
+                      </DropdownToggle>
+                    {menusections.map(section =>(
+                      (menu.label === section.label)?
+                      <DropdownMenu key={section.id}>
+                        {section.links.map(link => (
+                        <DropdownItem key={link.id} to={link.url} onClick={() => {window.location.href=link.url}} tag={Link}> 
+                          {link.label}
+                        </DropdownItem>
+                        ))}
+                      </DropdownMenu>
+                      : ""
+                    ))}
+                  </UncontrolledDropdown>
+                  ))}
+                  </Nav>
+                {/*<Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
@@ -256,7 +352,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="#" tag={Link}>
                           Announcement
                       </DropdownItem>
-                  </DropdownMenu>*/}
+                  </DropdownMenu>
                   </UncontrolledDropdown>                                                      
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}} nav>
@@ -270,7 +366,7 @@ class DemoNavbar extends React.Component {
                    <DropdownItem to="#" tag={Link}>
                         Overseas
                 </DropdownItem>
-                    </DropdownMenu>*/}
+                    </DropdownMenu>
                   </UncontrolledDropdown>                                                      
                 {/*  <UncontrolledDropdown nav>
                     <DropdownToggle to="/patents" tag={Link} nav>
@@ -283,7 +379,7 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Certifications</span>
                     </DropdownToggle>
-                </UncontrolledDropdown>  */}
+                </UncontrolledDropdown>  
                    <UncontrolledDropdown nav>
                     <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
@@ -304,12 +400,12 @@ class DemoNavbar extends React.Component {
                       </DropdownItem>
                       {/*<DropdownItem to="#" tag={Link}>
                         Q&A
-                      </DropdownItem>*/}
+                      </DropdownItem>
                       <DropdownItem to="/contact" tag={Link} onClick={() => {window.location.href="/contact"}}>
                        Contact Us
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>       
+                </UncontrolledDropdown> */}      
                  {/*} <UncontrolledDropdown nav>
                     <DropdownToggle to="/contact" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
@@ -411,10 +507,16 @@ class DemoNavbar extends React.Component {
                     <UncontrolledTooltip delay={0} target="tooltip112445449">
                       Star us on Github
                     </UncontrolledTooltip>
-                  </NavItem>*/}
+                  </NavItem>
                 </Nav>
                 <Nav className="ml-auto" navbar>
-                <NavItem className="d-none d-lg-block ml-xs-4" >
+                <select className="form-control mb-3" onChange={handleLinkChange}>
+                  <img  src={require("assets/img/flags/f_kr.png")}  height="18" alt="Korean Site" /> <option value="Korean">Korean</option>
+                  <img  src={require("assets/img/flags/f_jp.png")}  height="18" alt="Japanese Site" /> <option value="Japanese">Japanese</option>
+                  <img  src={require("assets/img/flags/f_ch.png")}  height="18" alt="Chinese Site" /> <option value="Chinese">Chinese</option>
+                  <img  src={require("assets/img/flags/f_vt.png")}  height="18" alt="Vietnamese Site" /> <option value="Vietnamese">Vietnamese</option>
+                </select>*/}
+                {/*<NavItem className="d-none d-lg-block ml-xs-4">
                 <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.kr/"
@@ -450,7 +552,61 @@ class DemoNavbar extends React.Component {
                       title="Vietnamese Site"
                     > 
                 <img  src={require("assets/img/flags/f_vt.png")}  height="18" alt="Vietnamese Site" /> </NavLink></NavItem> 
-                </Nav>
+              </Nav>*/}
+              <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      {/*<span className="nav-link-inner--text text-uppercase font-weight-bold">languages</span>*/}
+                      <img  src={require("assets/img/flags/f_kr.png")}  height="18" alt="Korean Site" />Korean
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <div className="dropdown-menu-inner">
+                        <Media
+                          className="d-flex align-items-center"
+                          href="http://www.enposs.kr/"
+                          target="_blank">
+                          <Badge><img  src={require("assets/img/flags/f_kr.png")}  height="18" alt="Korean Site" /></Badge>
+                          <Media body className="ml-2">
+                            <h6>Korean</h6>
+                          </Media>
+                        </Media>
+                        <Media
+                          className="d-flex align-items-center"
+                          href="http://www.enposs.jp/"
+                          target="_blank">
+                          <Badge><img  src={require("assets/img/flags/f_jp.png")}  height="18" alt="Japanese Site" /></Badge>
+                          <Media body className="ml-2">
+                            <h6>Japanese</h6>
+                          </Media>
+                        </Media>
+                        <Media
+                          className="d-flex align-items-center"
+                          href="http://www.enposs.com.cn/"
+                          target="_blank">
+                          <Badge><img  src={require("assets/img/flags/f_ch.png")}  height="18" alt="Chinese Site" /></Badge>
+                          <Media body className="ml-2">
+                            <h6>Chinese</h6>
+                          </Media>
+                        </Media>
+                        <Media
+                          className="d-flex align-items-center"
+                          href="http://enposs.vn/"
+                          target="_blank">
+                          <Badge><img  src={require("assets/img/flags/f_vt.png")}  height="18" alt="Vietnamese Site" /></Badge>
+                          <Media  className="ml-2">
+                            <h6>Vietnamese</h6>
+                          </Media>
+                        </Media>
+                      </div>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                  
+                  <select className="form-control-sm text-uppercase font-weight-bold" onChange={handleLanguageChange} onClick={refreshPage} value={language}>
+                  {Object.entries(languageOptions).map(([id, name]) => (
+                    <option key={id} value={id}>{name}</option>
+                  ))}
+                  </select>
+              </Nav>
               </UncontrolledCollapse>
             </Container>
           </Navbar>

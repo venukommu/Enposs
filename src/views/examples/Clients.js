@@ -58,8 +58,9 @@ class Clients extends React.Component {
       'Content-Type': 'application/json',
     };
 
+   const language = window.localStorage.getItem('lang'); 
    try {
-      const clientscontent = await fetch(`${appConfig.apiURL}/clients`, {
+      const clientscontent = await fetch(`${appConfig.apiURL}/clients?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })
@@ -71,7 +72,7 @@ class Clients extends React.Component {
     }
 
     try {
-      const clientsdata = await fetch(`${appConfig.apiURL}/clientsdata`, {
+      const clientsdata = await fetch(`${appConfig.apiURL}/clientsdata?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

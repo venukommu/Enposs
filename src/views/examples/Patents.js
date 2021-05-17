@@ -83,8 +83,9 @@ class Patents extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/patents`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/patents?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

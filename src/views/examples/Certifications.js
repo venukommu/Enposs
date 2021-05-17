@@ -108,8 +108,9 @@ class Certifications extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/certifications`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/certifications?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

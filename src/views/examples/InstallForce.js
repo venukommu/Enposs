@@ -72,8 +72,9 @@ class InstallForce extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-      const forceinstall = await fetch(`${appConfig.apiURL}/forceinstallsteps`, {
+      const forceinstall = await fetch(`${appConfig.apiURL}/forceinstallsteps?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

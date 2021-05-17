@@ -105,9 +105,9 @@ export default class EcwidComponent extends React.Component {
     const headers = {
       'Content-Type': 'application/json',
     };
-
+    const language = window.localStorage.getItem('lang');
     try {
-      const storecontent = await fetch(`${appConfig.apiURL}/shop`, {
+      const storecontent = await fetch(`${appConfig.apiURL}/shop?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

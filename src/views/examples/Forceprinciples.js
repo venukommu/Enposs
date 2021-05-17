@@ -53,8 +53,9 @@ class Forceprinciples extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-      const forceprinciple = await fetch(`${appConfig.apiURL}/forceprinciples`, {
+      const forceprinciple = await fetch(`${appConfig.apiURL}/forceprinciples?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

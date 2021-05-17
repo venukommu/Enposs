@@ -72,8 +72,9 @@ class Contact extends React.Component {
       'Content-Type': 'application/json',
     };
   
+    const language = window.localStorage.getItem('lang');
     try {
-      const contacts = await fetch(`${appConfig.apiURL}/contact`, {
+      const contacts = await fetch(`${appConfig.apiURL}/contact?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

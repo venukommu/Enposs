@@ -18,6 +18,7 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+import { appConfig } from "services/config.js";
 // reactstrap components
 import {
   Button,
@@ -33,7 +34,53 @@ import {
 } from "reactstrap";
 
 class CustomFooter extends React.Component {
+  /*executeOnClick(isExpanded) {
+    console.log(isExpanded);
+  }
+  state = {
+    footerdata: [],
+    error: null
+ }
+ componentDidMount = async () => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    //this.refs.main.scrollTop = 0;
+    const parseJSON = resp => (resp.json ? resp.json() : resp);
+
+    // Checks if a network request came back fine, and throws an error if not
+    const checkStatus = resp => {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return parseJSON(resp).then(resp => {
+        throw resp;
+      });
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+  
+    const language = window.localStorage.getItem('lang');
+    try {
+      const footerdata = await fetch(`${appConfig.apiURL}/customfooters?_locale=${language}`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ footerdata });
+    } catch (error) {
+      this.setState({ error });
+    }
+    
+  };*/
   render() {
+    //const { error, footerdata} = this.state;
+
+    // Print errors if any
+    //if (error) {
+    //  return <div>An error occured: {error.message}</div>;
+    //}
     return (
       <>
         <footer className="footer has-cards">
@@ -75,6 +122,20 @@ class CustomFooter extends React.Component {
 </Col>
               </Row>*/}
               <Row className="row-grid mt-5 text-center justify-content-left">
+              {/*footerdata.map(footer => (
+              <Col lg="3" key={footer.id}>
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i className="ni ni-settings text-primary" />
+                  </div>
+                  <h5 className="text-white mt-3">{footer.heading}</h5>
+                  {footer.link.map(footerlink => (
+                  <a href={footerlink.url} key={footerlink.id}>
+                  <p className="text-white mt-3">
+                    {footerlink.label}
+                  </p></a>
+                  ))}
+                </Col>
+                  ))*/}
                 <Col lg="3">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="ni ni-settings text-primary" />
@@ -136,10 +197,6 @@ class CustomFooter extends React.Component {
                   <a href="/installforce"><p className="text-white mt-3">
                     How to install FORCE
                   </p></a>
-                 {/*} <a href="#">
-                  <p className="text-white mt-3">
-                    FAQ
-                  </p></a>*/}
                   <a href="/faq">
                   <p className="text-white mt-3">
                     FAQ

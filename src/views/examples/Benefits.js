@@ -65,8 +65,9 @@ class Benefits extends React.Component {
       'Content-Type': 'application/json',
     };
 
-    try {
-        const forcebenefits = await fetch(`${appConfig.apiURL}/benefits`, {
+    const language = window.localStorage.getItem('lang');
+      try {
+        const forcebenefits = await fetch(`${appConfig.apiURL}/benefits?_locale=${language}`, {
           method: 'GET',
           headers: headers,
         })

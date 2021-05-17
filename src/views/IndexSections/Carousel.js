@@ -62,8 +62,9 @@ class Carousel extends React.Component {
       'Content-Type': 'application/json',
     };
 
+  const language = window.localStorage.getItem('lang'); 
   try {
-      const carouselcontent = await fetch(`${appConfig.apiURL}/homecarousel`, {
+      const carouselcontent = await fetch(`${appConfig.apiURL}/homecarousel?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

@@ -56,8 +56,9 @@ class CeoMessage extends React.Component {
       'Content-Type': 'application/json',
     };
   
+    const language = window.localStorage.getItem('lang');
     try {
-      const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage`, {
+      const ceomessage = await fetch(`${appConfig.apiURL}/ceomessage?_locale=${language}`, {
         method: 'GET',
         headers: headers,
       })

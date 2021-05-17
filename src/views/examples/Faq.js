@@ -66,8 +66,9 @@ class Faq extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-        const faqcontent = await fetch(`${appConfig.apiURL}/faq`, {
+        const faqcontent = await fetch(`${appConfig.apiURL}/faq?_locale=${language}`, {
           method: 'GET',
           headers: headers,
         })

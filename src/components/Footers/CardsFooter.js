@@ -60,8 +60,9 @@ class CardsFooter extends React.Component {
       'Content-Type': 'application/json',
     };
 
+    const language = window.localStorage.getItem('lang');
     try {
-        const footercontent = await fetch(`${appConfig.apiURL}/footer`, {
+        const footercontent = await fetch(`${appConfig.apiURL}/footer?_locale=${language}`, {
           method: 'GET',
           headers: headers,
         })

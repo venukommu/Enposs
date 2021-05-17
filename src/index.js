@@ -60,11 +60,13 @@ import Newsroom from "views/examples/Newsroom";
 import NewsArticle from "views/examples/NewsArticle";
 import Benefits from "views/examples/Benefits";
 import Faq from "views/examples/Faq";
+import LanguageProvider from "context/LanguageProvider";
 
 ReactDOM.render(
  <BrowserRouter>
  <UserProvider>
  <CartContextProvider>
+ <LanguageProvider>
  <Switch>
  <Route path="/" exact render={props => <Landing {...props} />} />
  <Route
@@ -225,6 +227,7 @@ ReactDOM.render(
 
  {/*<Redirect to="/" />*/}
  </Switch>
+ </LanguageProvider>
  </CartContextProvider>
  </UserProvider>
  </BrowserRouter>,
