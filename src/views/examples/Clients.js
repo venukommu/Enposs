@@ -187,7 +187,7 @@ class Clients extends React.Component {
                     </div>
                     <div className="modal-body">
 
-                        <UncontrolledCarousel items={ data.carouselimages.map(val => ({ src: `${val.url}`, altText: "", caption: ""}))} interval={1800} />
+                        <UncontrolledCarousel items={ data.carouselimages.map(val => ({ src: `${val.url}`, altText: "", caption: ""}))} interval={1600} />
                       {/*<ReactMarkdown source={newsdata.description} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a>}}/>*/}
                     </div>
                     <div className="modal-footer">

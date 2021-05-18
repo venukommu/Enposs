@@ -45,7 +45,7 @@ import ReactMarkdown from "react-markdown";
 
 // index page sections
 //import Download from "../IndexSections/Download.js";
-//import Background from 'assets/img/theme/bg.png';
+import Background from 'assets/img/theme/bg.png';
 import CountUp from 'react-countup';
 import CustomFooter from "components/Footers/CustomFooter";
 
@@ -179,7 +179,7 @@ class Landing extends React.Component {
  
   render() {
     //const { error,homepagebanner,productimage,homepageimage,forceimage,awesomefeaturesimage} = this.state;
-    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2, homepageimage, plantforceimage, clientsdata } = this.state;
+    const { error,homepagebanner, homewidgets, countupvalue1, countupvalue2, clientsdata } = this.state;
 
     // Print errors if any
     if (error) {
@@ -197,9 +197,9 @@ class Landing extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                //backgroundImage: `url("${Background}")`,
+                backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
-                backgroundImage:`url("${homepageimage.url}")`,
+                //backgroundImage:`url("${homepageimage.url}")`,
                }}>
                 <span />
                 <span />
@@ -268,8 +268,8 @@ class Landing extends React.Component {
                   </Col>
                   <Col md="8" lg="5" xs ="12" style={{ marginTop: "90px" }}>
                   <div>
-                    {/*<img src={require("assets/img/theme/plant-force.png")} alt ="" style={{ width: "100%" }}/>*/}
-                    <img src={`${plantforceimage.url}`} alt ="" style={{ width: "100%" }}/>
+                    <img src={require("assets/img/theme/plant-force.png")} alt ="" style={{ width: "100%" }}/>
+                    {/*<img src={`${plantforceimage.url}`} alt ="" style={{ width: "100%" }}/>*/}
                   </div>
                   </Col>
                 </Row>
