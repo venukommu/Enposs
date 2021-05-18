@@ -24,7 +24,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import "./style.css";
 
-const items = [
+/*const items = [
   {
     src: require("assets/img/theme/ce.d5231f30.jpg"),
     altText: "",
@@ -79,7 +79,7 @@ const items = [
     caption: "",
     header: ""
   }
-];
+];*/
 
 class Certifications extends React.Component {
     state = {
@@ -115,21 +115,20 @@ class Certifications extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ carouselcontent });
+      this.setState({ carouselcontent, carouselimage: carouselcontent.images });
     } catch (error) {
       this.setState({ error });
     }
   };
 
   render() {
-    const { error, carouselcontent} = this.state;
+    const { error, carouselcontent, carouselimage} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    //const items = carouselimage.map(val => ({ src: `${appConfig.apiURL}${val.url}`, altText: "",
-    //caption: ""}))
+    const items = carouselimage.map(val => ({ src: `${val.url}`, altText: "", caption: ""}))
 
     return (
       <>

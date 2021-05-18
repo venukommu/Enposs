@@ -16,11 +16,11 @@
 
 */
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { appConfig } from "services/config.js";
 
 // reactstrap components
-import { Card, CardBody,Container, Row, Col } from "reactstrap";
+import { Card, CardBody,Container, Row, Col, Button, Modal, UncontrolledCarousel } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -29,9 +29,16 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class Clients extends React.Component {
   state = {
     clientscontent: [],
+    clientsdata: [],
     //imagenames: [],
     error: null,
   }
+
+  toggleModal = state => {
+    this.setState({
+      [state]: !this.state[state]
+    });
+  };
   componentDidMount = async () => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -62,12 +69,23 @@ class Clients extends React.Component {
     } catch (error) {
       this.setState({ error });
     }
+
+    try {
+      const clientsdata = await fetch(`${appConfig.apiURL}/clientsdata`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ clientsdata });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
 
   render() {
-  const { error, clientscontent} = this.state;
+  const { error, clientscontent, clientsdata} = this.state;
  // const { error, portfoliocontent,imagenames} = this.state;
-
 
     // Print errors if any
     if (error) {
@@ -129,21 +147,63 @@ class Clients extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                   {/*} {imagenames.map((name, index) => (
-                    <Col lg="4" key={index}>
+                   {clientsdata.sort((a, b) =>  b.id - a.id).map(data => (
+                    <Col lg="4" key={data.id}>
                       <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5" to={`/${name.imagename}`} tag={Link}>*/}
-                        {/* <img 
+                      <CardBody className="py-5" onClick={() => this.toggleModal(data.Title)}>
+                        {/*<CardBody className="py-5" to={`/${name.imagename}`} tag={Link}>*/}
+                        <img 
                             alt="..."
                             style={{objectFit: "cover", width: "100%"}}
-                            src={`${appConfig.apiURL}${name.url}`}
-                            src={`${appConfig.apiURL}${name.url}`}
+                            src={`${data.image.url}`}
+                            //src={`${appConfig.apiURL}${name.url}`}
                           />
                         </CardBody>
                       </Card>
+                      <div className="pt-4 text-center">
+                      <h5 className="title">
+                        <span className="d-block mb-1">{data.Title}</span>
+                      </h5><h6 className="text-info">{data.subtitle}</h6>
+                      </div>
+                    <Modal
+                    className="modal-lg"
+                    isOpen={this.state[data.Title]}
+                    toggle={() => this.toggleModal(data.Title)}
+                    key={data.id}
+                    >
+                    <div className="modal-header bg-gradient-default">
+                      <h2 className="modal-title text-white">
+                        {data.Title}
+                      </h2>
+                      <button
+                        aria-label="Close"
+                        className="close"
+                        data-dismiss="modal"
+                        type="button"
+                        onClick={() => this.toggleModal(data.Title)}
+                      >
+                      <span aria-hidden={true} className="text-white">×</span>
+                      </button>
+                    </div>
+                    <div className="modal-body">
+
+                        <UncontrolledCarousel items={ data.carouselimages.map(val => ({ src: `${val.url}`, altText: "", caption: ""}))} interval={1800} />
+                      {/*<ReactMarkdown source={newsdata.description} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a>}}/>*/}
+                    </div>
+                    <div className="modal-footer">
+                      <Button
+                        className="ml-auto"
+                        color="link"
+                        data-dismiss="modal"
+                        type="button"
+                        onClick={() => this.toggleModal(data.Title)}
+                      > Close
+                      </Button>
+                    </div>
+                    </Modal>
                     </Col>
-                    ))}*/}
-                     <Col lg="4">
+                    ))}
+                    {/* <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5" to="/mcdonalds" tag={Link}>
                         <img
@@ -175,7 +235,7 @@ class Clients extends React.Component {
                           />
                         </CardBody>
                       </Card>
-                    </Col>
+                   </Col>*/}
                   </Row>
                 </Col>
               </Row>

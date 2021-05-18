@@ -67,11 +67,22 @@ class Newsroom extends React.Component {
     } catch (error) {
       this.setState({ error });
     }
+
+    try {
+      const newsarticles = await fetch(`${appConfig.apiURL}/newsarticles`, {
+        method: 'GET',
+        headers: headers,
+      })
+        .then(checkStatus)
+        .then(parseJSON);
+      this.setState({ newsarticles });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
 
   render() {
     const { error, newscontent,newsarticles} = this.state;
-
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -133,10 +144,10 @@ class Newsroom extends React.Component {
           </div>
         <section className="section section-lg pt-lg-0 mt--0">
         <Container>
-           {newsarticles.map((newsdata, index) => (
-            <Row key={index}>
+           {newsarticles.sort((a, b) =>  b.id - a.id).map(newsdata => (
+            <Row key={newsdata.id}>
             <Col lg="10">
-              <Row  onClick={() => this.toggleModal(newsdata.mname)}>
+              <Row  onClick={() => this.toggleModal(newsdata.Title)}>
               <Col lg="4">
                 <Card className={'bg-gradient-' + newsdata.classname + ' shadow border-0'}>
                 <CardBody className="py-3"> 
@@ -144,39 +155,44 @@ class Newsroom extends React.Component {
                     {newsdata.Title}
                     {/*Nuqul Group and Vardot Announce Collaboration*/}
                     </h6>
-                    
+                    {/*<img
+                    alt="..."
+                    className="img-fluid"
+                    src={`${appConfig.apiURL}${newsdata.image.url}`}
+                    />*/}
                 </CardBody>
                 </Card>
               </Col>
-              <Col><p className="text-uppercase">{/*News*/}{newsdata.subheading}<br />
-              {/*November 15, 2020*/}{newsdata.newsdate}</p>
+              <Col>
               <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}{newsdata.Title}</h5>
-              <p>{newsdata.description}</p>
+              <p><ReactMarkdown source={newsdata.summary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{maxWidth: '50%'}} /> }}/></p>
+              <p> <span className="text-uppercase">{/*News*/}{ newsdata.category }</span>&nbsp;
+              {/*November 15, 2020*/}{ newsdata.publishdate }</p>
               </Col>
             </Row>
             <hr />
             <Modal
               className="modal-xl"
-              isOpen={this.state[newsdata.mname]}
-              toggle={() => this.toggleModal(newsdata.mname)}
-              key={index}
+              isOpen={this.state[newsdata.Title]}
+              toggle={() => this.toggleModal(newsdata.Title)}
+              key={newsdata.id}
             >
               <div className={'modal-header bg-gradient-' + newsdata.classname} >
                 <h2 className="modal-title text-white">
-                  {newsdata.articletitle}
+                  {newsdata.Title}
                 </h2>
                 <button
                   aria-label="Close"
                   className="close"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.mname)}
+                  onClick={() => this.toggleModal(newsdata.Title)}
                 >
                 <span aria-hidden={true} className="text-white">×</span>
                 </button>
               </div>
               <div className="modal-body">
-                <ReactMarkdown source={newsdata.articledescription} />
+                <ReactMarkdown source={newsdata.description} allowDangerousHtml={true}  renderers={{link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a>}}/>
               </div>
               <div className="modal-footer">
                 <Button
@@ -184,7 +200,7 @@ class Newsroom extends React.Component {
                   color="link"
                   data-dismiss="modal"
                   type="button"
-                  onClick={() => this.toggleModal(newsdata.mname)}
+                  onClick={() => this.toggleModal(newsdata.Title)}
                 >
                   Close
                 </Button>

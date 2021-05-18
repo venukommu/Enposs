@@ -35,7 +35,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 //import ShowMoreText from 'react-show-more-text';
-import Background from 'assets/img/theme/pexels-flickr-149394-min-final.jpg';
+//import Background from 'assets/img/theme/pexels-flickr-149394-min-final.jpg';
 import ReactMarkdown from "react-markdown";
 
 class OurStory extends React.Component {
@@ -45,7 +45,7 @@ class OurStory extends React.Component {
   state = {
     error: null,
     companystory: [],
-    homepageimage: [],
+    ourstoryimage: [],
 
   };
 
@@ -76,7 +76,7 @@ class OurStory extends React.Component {
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ companystory });
+        this.setState({ companystory, ourstoryimage: companystory.image });
       } catch (error) {
         this.setState({ error });
       }
@@ -84,7 +84,7 @@ class OurStory extends React.Component {
   };
   
   render() {
-    const { error, companystory} = this.state;
+    const { error, companystory, ourstoryimage} = this.state;
 
     // Print errors if any
     if (error) {
@@ -99,7 +99,8 @@ class OurStory extends React.Component {
             <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage: `url("${ourstoryimage.url}")`,
                }}>
                {/*} <span />
                 <span />

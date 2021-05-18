@@ -26,7 +26,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Background from 'assets/img/theme/photo-1506784693919-ef06d93c28d2-min-final.jpg';
+//import Background from 'assets/img/theme/photo-1506784693919-ef06d93c28d2-min-final.jpg';
 import ReactMarkdown from "react-markdown";
 
 class Timeline extends React.Component {
@@ -34,6 +34,7 @@ class Timeline extends React.Component {
   state = {
     timeline: [],
     timelinearray: [],
+    timelinebackgroundimage: [],
     error: null
  }
 
@@ -63,14 +64,14 @@ class Timeline extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ timeline, timelinearray: timeline.timelinearray.timeline });
+      this.setState({ timeline, timelinearray: timeline.timelinearray.timeline, timelinebackgroundimage: timeline.image });
     } catch (error) {
       this.setState({ error });
     }
 
   };
   render() {
-    const { error, timeline, timelinearray} = this.state;
+    const { error, timeline, timelinearray, timelinebackgroundimage} = this.state;
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -85,8 +86,8 @@ class Timeline extends React.Component {
             <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                backgroundImage: `url("${Background}")`,
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                //backgroundImage: `url("${Background}")`,
+                backgroundImage:`url("${timelinebackgroundimage.url}")`,
                }}>
                 <span />
                 <span />

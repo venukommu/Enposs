@@ -22,13 +22,15 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 import ReactMarkdown from "react-markdown";
-import Background from 'assets/img/theme/265442.jpg';
+//import Background from 'assets/img/theme/265442.jpg';
 
 // index page sections
 class Forceprinciples extends React.Component {
   
   state = {
     forceprinciple: [],
+    forceprincipleimage: [],
+    forceimage: [],
     mainpoints: [],
     error: null,
   };
@@ -58,7 +60,7 @@ class Forceprinciples extends React.Component {
       })
         .then(checkStatus)
         .then(parseJSON);
-      this.setState({ forceprinciple,mainpoints: forceprinciple.mainpointsarray.mainpoints });
+      this.setState({ forceprinciple,mainpoints: forceprinciple.mainpointsarray.mainpoints, forceprincipleimage: forceprinciple.image, forceimage: forceprinciple.forceprinciplesimage });
     } catch (error) {
       this.setState({ error });
     }
@@ -69,7 +71,7 @@ class Forceprinciples extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error,forceprinciple, mainpoints} = this.state;
+    const { error,forceprinciple, mainpoints, forceprincipleimage, forceimage} = this.state;
 
     // Print errors if any
     if (error) {
@@ -87,9 +89,9 @@ class Forceprinciples extends React.Component {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundImage: `url("${Background}")`,
+                //backgroundImage: `url("${Background}")`,
                 //backgroundImage: `url(${require('assets/img/theme/main1.jpg')})`
-                //backgroundImage:`url(${appConfig.apiURL}${homepageimage.url})`,
+                backgroundImage:`url("${forceprincipleimage.url}")`,
                }}
              >
                 <span />
@@ -174,8 +176,8 @@ class Forceprinciples extends React.Component {
                           <Col lg="8">
                           <CardImg
                             alt="..."
-                            src={require("assets/img/theme/force.PNG")}
-                            //src={`${appConfig.apiURL}${productimage.url}`}
+                            //src={require("assets/img/theme/force.PNG")}
+                            src={`${forceimage.url}`}
                             top
                           /></Col></Row>
                           {/*<Row className="justify-content-center">
