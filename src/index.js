@@ -218,8 +218,6 @@ ReactDOM.render(
  exact
  render={props => <Benefits {...props} />}
  />
-{/*<Route path="/" exact component={ProductList} />
-<Route path="http://de9a342906f0.ngrok.io/enpossproducts/:id" component={Product} />*/}
 <Route path="/product/:id" component={Product} />
 <Route path="/logintest" exact render={props => <LoginTest {...props} />} />
 

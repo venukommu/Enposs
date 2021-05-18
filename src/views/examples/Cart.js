@@ -2,7 +2,6 @@ import React from "react";
 import {CartContext} from "context/CartContext";
 import { appConfig } from "services/config.js";
 import { Button,Card,Container,Row,Col } from "reactstrap";
-import StripeCheckout from "react-stripe-checkout";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -178,22 +177,11 @@ class Cart extends React.Component  {
                       <UserContext.Consumer> 
           {({user}) => ( 
             user.token ? (
-              <div><StripeCheckout stripeKey="pk_test_yGm3aklBsFBQqf4mprmEtuss"
-              token={(token) => {     
-                handleToken(token, user.token);
-              }}
-              billingAddress
-              shippingAddress
-              amount={totalPrice * 100}
-              name="All Products"></StripeCheckout></div>
+              <div></div>
             ) : (
         <Link to="/login" className="btn btn-primary btn-block">
           login
         </Link>
-        // or
-        //<Link to="/register" className="btn btn-primary btn-block">
-        //register
-        //</Link>
        )
        )}
       </UserContext.Consumer> 
