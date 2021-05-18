@@ -273,7 +273,7 @@ class Landing extends React.Component {
                   </div>
                   </Col>
                 </Row>
-                <Row className="mt--200">
+                <Row className="mt--150">
                   {/*<Col lg="2" xs="7"></Col>*/}
                   <Col lg="4" xs="8">
                     <p  className="text-dark text-lead font-weight-bold text-center" style={{ fontSize : "20px"}}>{/*Total CO<sub>2</sub> reduction*/}{homepagebanner.text1}</p>
