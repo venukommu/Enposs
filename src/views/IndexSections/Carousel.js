@@ -22,7 +22,7 @@ import { appConfig } from "services/config.js";
 import {Container, Row, Col, UncontrolledCarousel} from "reactstrap";
 import { Link } from "react-router-dom";
 
-/*const items = [
+const items = [
   {
     src: require("assets/img/theme/force-latest.jpg"),
     altText: "",
@@ -35,7 +35,7 @@ import { Link } from "react-router-dom";
     caption: "",
     header: ""
   }
-];*/
+];
 
 class Carousel extends React.Component {
     state = {
@@ -76,14 +76,14 @@ class Carousel extends React.Component {
   };
 
   render() {
-    const { error, carouselcontent, carouselimage} = this.state;
+    const { error, carouselcontent} = this.state;
 
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
     }
-    const items = carouselimage.map(val => ({ src: `${val.url}`, altText: "",
-    caption: ""}))
+    /*const items = carouselimage.map(val => ({ src: `${val.url}`, altText: "",
+    caption: ""}))*/
 
     return (
       <>
