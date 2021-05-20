@@ -6,20 +6,8 @@ import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col } from 'reactstrap';
 //import { PopoverBody, UncontrolledPopover } from "reactstrap";
 
-import {
-  Container,
-  Row,
-  Col
-} from "reactstrap";
-import {
-  InstantSearch,
-  InfiniteHits,
-  SearchBox,
-  Stats,
-  Highlight,
-  Configure,
-} from 'react-instantsearch-dom'
-import './App.css'
+import { InstantSearch,  InfiniteHits,  SearchBox,  Stats,  Highlight,  Configure,} from 'react-instantsearch-dom';
+import './App.css';
 import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
 import ReactDOM from 'react-dom';
 
