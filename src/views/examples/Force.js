@@ -81,7 +81,7 @@ class Force extends React.Component {
     console.log("load more");
   };
   render() {
-    const { error, force, forcebackgroundimage, forcewidgets, forcefeatures} = this.state;
+    const { error, force,  forcewidgets, forcefeatures} = this.state;
     console.log(force);
     // Print errors if any
     if (error) {
@@ -97,8 +97,8 @@ class Force extends React.Component {
               <div className="shape shape-default"
               style= {{
                 backgroundPosition: "center",
-                //backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min-final.jpg')})`
-                backgroundImage:`url("${forcebackgroundimage.url}")`,
+                backgroundImage: `url(${require('assets/img/theme/force-device-on-wooden-texture-with-layer-min-final.jpg')})`
+                //backgroundImage:`url("${forcebackgroundimage.url}")`,
                }}>
                 <span />
                 <span />

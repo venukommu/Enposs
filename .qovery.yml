@@ -1,0 +1,11 @@
+---
+application:
+  name: "enposs"
+  project: "Enposs"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-enposs"
+  routes:
+  - application_name: "enposs"
+    paths:
+    - "/*"

@@ -182,10 +182,6 @@ class Cart extends React.Component  {
         <Link to="/login" className="btn btn-primary btn-block">
           login
         </Link>
-        // or
-        //<Link to="/register" className="btn btn-primary btn-block">
-        //register
-        //</Link>
        )
        )}
       </UserContext.Consumer> 
