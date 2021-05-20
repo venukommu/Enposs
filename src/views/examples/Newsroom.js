@@ -98,9 +98,6 @@ class Newsroom extends React.Component {
       this.setState({ search: keyword })
     }
 
-    const styleInfo = {
-      paddingRight: '10px'
-    }
     const elementStyle = {
       border: 'solid',
       borderRadius: '10px',
@@ -120,12 +117,6 @@ class Newsroom extends React.Component {
     }).sort((a, b) => b.id - a.id).map(data => {
       return (
         <div>
-          {/*<ul>
-            <li style={{ position: 'relative', left: '10vh' }}>
-              <span style={styleInfo}>{data.Title}</span>
-
-            </li>
-          </ul>*/}
           <Row key={data.id}>
             <Col lg="10">
               <Row onClick={() => this.toggleModal(data.Title)}>
@@ -134,13 +125,7 @@ class Newsroom extends React.Component {
                     <CardBody className="py-3">
                       <h6 className="lead text-white text-uppercase">
                         {data.Title}
-                        {/*Nuqul Group and Vardot Announce Collaboration*/}
                       </h6>
-                      {/*<img
-                    alt="..."
-                    className="img-fluid"
-                    src={`${appConfig.apiURL}${newsdata.image.url}`}
-                    />*/}
                     </CardBody>
                   </Card>
                 </Col>

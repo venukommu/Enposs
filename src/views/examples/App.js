@@ -7,10 +7,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { PopoverBody, UncontrolledPopover } from "reactstrap";
 
 import {
-  //Badge,
-  //Card,
-  //CardBody,
-  //CardImg,
   Container,
   Row,
   Col
@@ -21,10 +17,6 @@ import {
   SearchBox,
   Stats,
   Highlight,
-  Index,
-  Hits,
-  //ClearRefinements,
-  //RefinementList,
   Configure,
 } from 'react-instantsearch-dom'
 import './App.css'
@@ -32,10 +24,6 @@ import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
 import ReactDOM from 'react-dom';
 
 function App(props) {
-  /*const {
-    //buttonLabel,
-    //className
-  } = props;*/
 
   const [modal, setModal] = useState(false);
 
@@ -72,14 +60,6 @@ function App(props) {
                 }}
               /><br />
               <Configure hitsPerPage={1} />
-              {/*<Index indexName="product">
-                    <h2>index: instant_search</h2>
-                    <Hits />
-                  </Index>
-                  <Index indexName="enpossproduct" searchClient={searchClient}>
-                    <h2>index: instant_search_price_desc</h2>
-                    <InfiniteHits hitComponent={tip} xs="6" />
-                    </Index>*/}
               <InfiniteHits hitComponent={Hit} xs="6" />
             </div>
           </InstantSearch>
@@ -94,17 +74,6 @@ function App(props) {
           <ModalHeader toggle={toggle}>Website content Search</ModalHeader>
           <ModalBody>
             <div className="ais-InstantSearch">
-              {/* <h1>MeiliSearch + React InstantSearch</h1>
-              <h2>
-                Search in website content{' '}
-                <span role="img" aria-label="emoji">
-                 🎮
-                </span>
-              </h2>
-              <p>
-                This is not the official dataset but only for demo purpose. Enjoy
-                searching with MeiliSearch!
-              </p>*/}
               <InstantSearch indexName={indexName} searchClient={searchClient}>
                 <Stats />
                 <div className="right-panel">
@@ -116,33 +85,9 @@ function App(props) {
                     }}
                   /><br />
                   <Configure hitsPerPage={1} />
-                  {/*<Index indexName="product">
-                    <h2>index: instant_search</h2>
-                    <Hits />
-                  </Index>
-                  <Index indexName="enpossproduct" searchClient={searchClient}>
-                    <h2>index: instant_search_price_desc</h2>
-                    <InfiniteHits hitComponent={tip} xs="6" />
-                    </Index>*/}
                   <InfiniteHits hitComponent={Hit} xs="6" />
                 </div>
               </InstantSearch>
-              {/*<InstantSearch indexName="enpossproduct" searchClient={searchClient}>
-                <Stats />
-                <div className="right-panel">
-                  <SearchBox searchAsYouType={true}
-                    focusShortcuts={['s']}
-                    onSubmit={event => {
-                      event.preventDefault();
-                    }}
-                  /><br />
-                  <Configure hitsPerPage={3} />
-                  <Index indexName="enpossproduct" searchClient={searchClient}>
-                    <h2>News Articles</h2>
-                    <InfiniteHits hitComponent={tip} xs="6" />
-                  </Index>
-                </div>
-                  </InstantSearch>*/}
             </div>
           </ModalBody>
           <ModalFooter>
@@ -151,42 +96,10 @@ function App(props) {
           </ModalFooter>
         </Modal>
       </div>
-      {/*<div className="ais-InstantSearch">
-      <h1>MeiliSearch + React InstantSearch</h1>
-      <h2>
-        Search in website content{' '}
-        <span role="img" aria-label="emoji">
-          {/*🎮
-        </span>
-      </h2>
-      <p>
-        This is not the official dataset but only for demo purpose. Enjoy
-        searching with MeiliSearch!
-      </p>
-      <InstantSearch indexName={indexName} searchClient={searchClient}>
-      <Stats />
-      
-        <div className="right-panel">
-          <SearchBox searchAsYouType={true} 
-          focusShortcuts={['s']}
-           onSubmit={event => {
-            event.preventDefault();
-            console.log(event.currentTarget);
-          }}
-          /><br />
-         
-          <InfiniteHits hitComponent={Hit} />
-        </div>
-      </InstantSearch>
-    </div>*/}
     </>
   )
 }
 function Hit(props) {
-  const [state] = useState([])
-  console.log(props);
-
-  console.log("hello");
   return (
     <Container>
       <Row key={props.hit.id}>
@@ -198,10 +111,6 @@ function Hit(props) {
             <Highlight attribute="description" hit={props.hit} />
           </Col>
         </Link>
-        {/*<Col className="hit-name">Title: {props.hit.price}</Col>
-       <img src={props.hit.image} align="left" alt={props.hit.name} />*/}<br />
-        {/*<Link className="hit-name" to={props.hit.url}>Link:{props.hit.url} </Link>
-       <div className="hit-description">description: {props.hit.description}</div>*/}
         <Highlight attribute="description" hit={props.hit.description} />
       </Row>
     </Container>
@@ -220,9 +129,6 @@ function tip(enpossproduct) {
           <Highlight attribute="description" hit={enpossproduct.hit} />
         </Col>
         <Col className="hit-name">Title: {enpossproduct.hit.label}</Col>
-        {/*<img src={props.hit.image} align="left" alt={props.hit.name} />
-        <Link className="hit-name" to={enpossproduct.hit.title}>Ref URl Link:{enpossproduct.hit.title} </Link>*/}
-        {/*<div className="hit-description">description: {props.hit.description}</div>*/}
         <Highlight attribute="description" hit={enpossproduct.hit.label} />
       </Row>
     </Container>
