@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 //import { ToggleRefinement } from 'react-instantsearch-dom';
 import { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { PopoverBody, UncontrolledPopover } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col } from 'reactstrap';
+//import { PopoverBody, UncontrolledPopover } from "reactstrap";
 
 import {
   Container,
@@ -31,7 +31,7 @@ function App(props) {
 
   const { indexName } = props
   const searchClient = instantMeiliSearch(
-    'http://127.0.0.1:7700',
+    'https://meili-router-go0pbh6e4nskckpq-gtw.qovery.io/',
     'masterKey',
     {
       paginationTotalHits: 60,
@@ -40,36 +40,8 @@ function App(props) {
   )
   return (
     <>
-      <Button color="white" id="tooltip348236073" type="button">
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </Button>
-      <UncontrolledPopover
-        placement="top"
-        target="tooltip348236073"
-        className="popover-secondary"
-      >
-        <PopoverBody>
-          <InstantSearch indexName={indexName} searchClient={searchClient}>
-            <Stats />
-            <div className="right-panel">
-              <SearchBox searchAsYouType={true}
-                focusShortcuts={['s']}
-                onSubmit={event => {
-                  event.preventDefault();
-                  //console.log(event.currentTarget);
-                }}
-              /><br />
-              <Configure hitsPerPage={1} />
-              <InfiniteHits hitComponent={Hit} xs="6" />
-            </div>
-          </InstantSearch>
-        </PopoverBody>
-      </UncontrolledPopover>
-
-
-
       <div lg="4" md="6">
-        <Button color="danger" height="18" onClick={toggle}> <i class="fa fa-search" aria-hidden="true"></i></Button>
+        <Button color="danger" height="18" onClick={toggle}> <i className="fa fa-search" aria-hidden="true"></i></Button>
         <Modal isOpen={modal} toggle={toggle} className="modal-xl">
           <ModalHeader toggle={toggle}>Website content Search</ModalHeader>
           <ModalBody>
@@ -104,7 +76,7 @@ function Hit(props) {
     <Container>
       <Row key={props.hit.id}>
         <Col className="hit-name" lg="4">
-          <Highlight attribute="title" hit={props.hit} />
+          <Highlight attribute="Title" hit={props.hit} />
         </Col>
         <Link className="hit-name" to={props.hit.url}>
           <Col className="hit-name text" >
@@ -117,25 +89,8 @@ function Hit(props) {
   )
 }
 
-function tip(enpossproduct) {
-  console.log(enpossproduct);
-  return (
-    <Container>
-      <Row key={enpossproduct.hit.id}>
-        <Col className="hit-name" lg="4">
-          <Highlight attribute="title" hit={enpossproduct.hit} />
-        </Col>
-        <Col className="hit-name" >
-          <Highlight attribute="description" hit={enpossproduct.hit} />
-        </Col>
-        <Col className="hit-name">Title: {enpossproduct.hit.label}</Col>
-        <Highlight attribute="description" hit={enpossproduct.hit.label} />
-      </Row>
-    </Container>
-  )
-}
 ReactDOM.render(
-  <App indexName="product" />,
+  <App indexName="searchdata" />,
   document.getElementById('root')
 );
 export default App
