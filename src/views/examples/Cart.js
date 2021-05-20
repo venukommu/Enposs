@@ -29,9 +29,9 @@ class Cart extends React.Component  {
   
   render() {
     const {shoppingCart,totalPrice, qty, dispatch} = this.context;
-    const { history } = this.props;
+    //const { history } = this.props;
     //console.log("user",user);
-    const handleToken = async (token, usertoken) => {
+    /*const handleToken = async (token, usertoken) => {
       console.log(token);
       console.log("usertoken",usertoken);
 
@@ -62,7 +62,7 @@ class Cart extends React.Component  {
         toast.error(data.raw.message,{position:toast.POSITION.TOP_RIGHT,autoClose: false});     
       }
     })
-    }
+    }*/
     
   return (
     <>

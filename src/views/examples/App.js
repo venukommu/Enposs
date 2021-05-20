@@ -3,26 +3,17 @@ import React from 'react';
 import { Link } from "react-router-dom";
 //import { ToggleRefinement } from 'react-instantsearch-dom';
 import { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { PopoverBody, UncontrolledPopover } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col } from 'reactstrap';
+//import { PopoverBody, UncontrolledPopover } from "reactstrap";
 
-import {
-  //Badge,
-  //Card,
-  //CardBody,
-  //CardImg,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
 import {
   InstantSearch,
   InfiniteHits,
   SearchBox,
   Stats,
   Highlight,
-  Index,
-  Hits,
+  //Index,
+  //Hits,
   //ClearRefinements,
   //RefinementList,
   Configure,
@@ -43,7 +34,7 @@ function App(props) {
 
   const { indexName } = props
   const searchClient = instantMeiliSearch(
-    'http://127.0.0.1:7700',
+    'https://meili-router-go0pbh6e4nskckpq-gtw.qovery.io/',
     'masterKey',
     {
       paginationTotalHits: 60,
@@ -52,7 +43,7 @@ function App(props) {
   )
   return (
     <>
-      <Button color="white" id="tooltip348236073" type="button">
+      {/*<Button color="white" id="tooltip348236073" type="button">
         <i class="fa fa-search" aria-hidden="true"></i>
       </Button>
       <UncontrolledPopover
@@ -79,17 +70,15 @@ function App(props) {
                   <Index indexName="enpossproduct" searchClient={searchClient}>
                     <h2>index: instant_search_price_desc</h2>
                     <InfiniteHits hitComponent={tip} xs="6" />
-                    </Index>*/}
+                    </Index>
               <InfiniteHits hitComponent={Hit} xs="6" />
             </div>
           </InstantSearch>
         </PopoverBody>
-      </UncontrolledPopover>
-
-
+      </UncontrolledPopover>*/}
 
       <div lg="4" md="6">
-        <Button color="danger" height="18" onClick={toggle}> <i class="fa fa-search" aria-hidden="true"></i></Button>
+        <Button color="danger" height="18" onClick={toggle}> <i className="fa fa-search" aria-hidden="true"></i></Button>
         <Modal isOpen={modal} toggle={toggle} className="modal-xl">
           <ModalHeader toggle={toggle}>Website content Search</ModalHeader>
           <ModalBody>
@@ -183,15 +172,13 @@ function App(props) {
   )
 }
 function Hit(props) {
-  const [state] = useState([])
-  console.log(props);
-
-  console.log("hello");
+  //const [state] = useState([])
+  //console.log(props);
   return (
     <Container>
       <Row key={props.hit.id}>
         <Col className="hit-name" lg="4">
-          <Highlight attribute="title" hit={props.hit} />
+          <Highlight attribute="Title" hit={props.hit} />
         </Col>
         <Link className="hit-name" to={props.hit.url}>
           <Col className="hit-name text" >
@@ -208,28 +195,27 @@ function Hit(props) {
   )
 }
 
-function tip(enpossproduct) {
-  console.log(enpossproduct);
+/*function tip(enpossproduct) {
   return (
     <Container>
       <Row key={enpossproduct.hit.id}>
         <Col className="hit-name" lg="4">
-          <Highlight attribute="title" hit={enpossproduct.hit} />
+          <Highlight attribute="Title" hit={enpossproduct.hit} />
         </Col>
         <Col className="hit-name" >
           <Highlight attribute="description" hit={enpossproduct.hit} />
         </Col>
         <Col className="hit-name">Title: {enpossproduct.hit.label}</Col>
-        {/*<img src={props.hit.image} align="left" alt={props.hit.name} />
-        <Link className="hit-name" to={enpossproduct.hit.title}>Ref URl Link:{enpossproduct.hit.title} </Link>*/}
-        {/*<div className="hit-description">description: {props.hit.description}</div>*/}
+        /*<img src={props.hit.image} align="left" alt={props.hit.name} />
+        <Link className="hit-name" to={enpossproduct.hit.title}>Ref URl Link:{enpossproduct.hit.title} </Link>*/
+        /*<div className="hit-description">description: {props.hit.description}</div>
         <Highlight attribute="description" hit={enpossproduct.hit.label} />
       </Row>
     </Container>
   )
-}
+}*/
 ReactDOM.render(
-  <App indexName="product" />,
+  <App indexName="searchdata" />,
   document.getElementById('root')
 );
 export default App

@@ -98,9 +98,9 @@ class Newsroom extends React.Component {
       this.setState({ search: keyword })
     }
 
-    const styleInfo = {
+    /*const styleInfo = {
       paddingRight: '10px'
-    }
+    }*/
     const elementStyle = {
       border: 'solid',
       borderRadius: '10px',
