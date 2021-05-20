@@ -17,11 +17,7 @@
 */
 import React from "react";
 import { Link } from "react-router-dom";
-// JavaScript plugin that hides or shows a component based on your scroll
-//import Headroom from "headroom.js";
-import {CartContext} from "context/CartContext";
-//import { UserContext } from 'context/user';
-// reactstrap components
+import { CartContext } from "context/CartContext";
 import {
   UncontrolledCollapse,
   DropdownToggle,
@@ -38,6 +34,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import App from "views/examples/App.js";
 
 class DemoNavbar extends React.Component {
   static contextType = CartContext
@@ -64,6 +61,9 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
+    const pathname = window.location.pathname
+    const currentURL = window.location.href
+    console.log(currentURL);
     //const {qty} = this.context;
     return (
       <>
@@ -72,10 +72,10 @@ class DemoNavbar extends React.Component {
             className="navbar-main navbar-transparent navbar-light bg-gradient-default"
             expand="lg"
             id="navbar-main"
-            style={{position:"fixed"}}
+            style={{ position: "fixed" }}
           >
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => {window.location.href="/"}}>
+              <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => { window.location.href = "/" }}>
                 <img
                   alt="..."
                   src={require("assets/img/brand/EnpossLogo.png")}
@@ -94,7 +94,7 @@ class DemoNavbar extends React.Component {
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
-                      <Link to="/" onClick={() => {window.location.href="/"}}>
+                      <Link to="/" onClick={() => { window.location.href = "/" }}>
                         <img
                           alt="..."
                           src={require("assets/img/brand/EnpossLogo.png")}
@@ -109,353 +109,130 @@ class DemoNavbar extends React.Component {
                     </Col>
                   </Row>
                 </div>
-                {/* <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                  <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
-                      <i className="ni ni-ui-04 d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Components</span>
-                    </DropdownToggle>
-                    <DropdownMenu className="dropdown-menu-xl">
-                      <div className="dropdown-menu-inner">
-                        <Media
-                          className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/overview?ref=adsr-navbar"
-                          target="_blank"
-                        >
-                          <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                            <i className="ni ni-spaceship" />
-                          </div>
-                          <Media body className="ml-3">
-                            <h6 className="heading text-primary mb-md-1">
-                              Getting started
-                            </h6>
-                            <p className="description d-none d-md-inline-block mb-0">
-                              Learn how to use Argon compiling Scss, change
-                              brand colors and more.
-                            </p>
-                          </Media>
-                        </Media>
-                        <Media
-                          className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/colors?ref=adsr-navbar"
-                          target="_blank"
-                        >
-                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-palette" />
-                          </div>
-                          <Media body className="ml-3">
-                            <h6 className="heading text-primary mb-md-1">
-                              Foundation
-                            </h6>
-                            <p className="description d-none d-md-inline-block mb-0">
-                              Learn more about colors, typography, icons and the
-                              grid system we used for Argon.
-                            </p>
-                          </Media>
-                        </Media>
-                        <Media
-                          className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alert?ref=adsr-navbar"
-                          target="_blank"
-                        >
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                            <i className="ni ni-ui-04" />
-                          </div>
-                          <Media body className="ml-3">
-                            <h5 className="heading text-warning mb-md-1">
-                              Components
-                            </h5>
-                            <p className="description d-none d-md-inline-block mb-0">
-                              Browse our 50 beautiful handcrafted components
-                              offered in the Free version.
-                            </p>
-                          </Media>
-                        </Media>
-                      </div>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
-                  <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Examples</span>
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem to="/landing" tag={Link}>
-                        Landing
-                      </DropdownItem>
-                      <DropdownItem to="/profile" tag={Link}>
-                        Profile
-                      <DropdownItem to="/about" tag={Link}>
-                        About Company
-                      </DropdownItem>
-                      <DropdownItem to="/forceSystem" tag={Link}>
-                        Force System
-                      </DropdownItem>
-                      <DropdownItem to="/portfolio" tag={Link}>
-                        Project Portfolio
-                      </DropdownItem>
-                      <DropdownItem to="/download" tag={Link}>
-                        Download
-                      </DropdownItem>
-                      <DropdownItem to="/login" tag={Link}>
-                        Login
-                      </DropdownItem>
-                      <DropdownItem to="/register" tag={Link}>
-                        Register
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
-                </Nav> */}
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>About</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>About</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/ourstory" onClick={() => {window.location.href="/ourstory"}} tag={Link}>
+                      <DropdownItem to="/ourstory" onClick={() => { window.location.href = "/ourstory" }} tag={Link}>
                         Our Story
                       </DropdownItem>
-                      <DropdownItem to="/ceomessage" onClick={() => {window.location.href="/ceomessage"}} tag={Link}>
+                      <DropdownItem to="/ceomessage" onClick={() => { window.location.href = "/ceomessage" }} tag={Link}>
                         CEO Message
                       </DropdownItem>
-                      <DropdownItem to="/timeline"  onClick={() => {window.location.href="/timeline"}}  tag={Link}>
+                      <DropdownItem to="/timeline" onClick={() => { window.location.href = "/timeline" }} tag={Link}>
                         Timeline
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>                  
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>Product</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>Product</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/force" tag={Link} onClick={() => {window.location.href="/force"}}>
+                      <DropdownItem to="/force" tag={Link} onClick={() => { window.location.href = "/force" }}>
                         What is FORCE?
                       </DropdownItem>
-                      <DropdownItem to="/benefits" tag={Link} onClick={() => {window.location.href="/benefits"}}>
+                      <DropdownItem to="/benefits" tag={Link} onClick={() => { window.location.href = "/benefits" }}>
                         Benefits of FORCE
                       </DropdownItem>
-                      <DropdownItem to="/forceprinciples" tag={Link}  onClick={() => {window.location.href="/forceprinciples"}}>
-                       Working Principle
+                      <DropdownItem to="/forceprinciples" tag={Link} onClick={() => { window.location.href = "/forceprinciples" }}>
+                        Working Principle
                       </DropdownItem>
-                      <DropdownItem to="/patents" tag={Link} onClick={() => {window.location.href="/patents"}}>
+                      <DropdownItem to="/patents" tag={Link} onClick={() => { window.location.href = "/patents" }}>
                         Patents
                       </DropdownItem>
-                      <DropdownItem to="/certifications" tag={Link} onClick={() => {window.location.href="/certifications"}}>
+                      <DropdownItem to="/certifications" tag={Link} onClick={() => { window.location.href = "/certifications" }}>
                         Certifications
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>                                    
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle  to="/news" tag={Link} nav onClick={() => {window.location.href="/news"}}>
+                    <DropdownToggle to="/news" tag={Link} nav onClick={() => { window.location.href = "/news" }}>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>News</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>News</span>
                     </DropdownToggle>
-                   {/*} <DropdownMenu>
-                      <DropdownItem to="#" tag={Link}>
-                          Announcement
-                      </DropdownItem>
-                  </DropdownMenu>*/}
-                  </UncontrolledDropdown>                                                      
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}} nav>
+                    <DropdownToggle to="/clients" tag={Link} onClick={() => { window.location.href = "/clients" }} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}} >Clients</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }} >Clients</span>
                     </DropdownToggle>
-                       {/*}<DropdownMenu>
-                      <DropdownItem to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}}>
-                        Domestic
-                      </DropdownItem>
-                   <DropdownItem to="#" tag={Link}>
-                        Overseas
-                </DropdownItem>
-                    </DropdownMenu>*/}
-                  </UncontrolledDropdown>                                                      
-                {/*  <UncontrolledDropdown nav>
-                    <DropdownToggle to="/patents" tag={Link} nav>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} onClick={() => { window.location.href = "/store#!/Force/p/296981076/category=0" }} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Patents</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>Shop</span>
                     </DropdownToggle>
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Certifications</span>
-                    </DropdownToggle>
-                </UncontrolledDropdown>  */}
-                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>Shop</span>
-                    </DropdownToggle>
-                  </UncontrolledDropdown>  
-                  <UncontrolledDropdown nav>
-                    <DropdownToggle to="#" tag={Link} nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>Support</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                    <DropdownItem to="/installforce" tag={Link} onClick={() => {window.location.href="/installforce"}}>
+                      <DropdownItem to="/installforce" tag={Link} onClick={() => { window.location.href = "/installforce" }}>
                         How to install FORCE
                       </DropdownItem>
-                      <DropdownItem to="/faq" tag={Link} onClick={() => {window.location.href="/faq"}}>
+                      <DropdownItem to="/faq" tag={Link} onClick={() => { window.location.href = "/faq" }}>
                         FAQ
                       </DropdownItem>
-                      {/*<DropdownItem to="#" tag={Link}>
-                        Q&A
-                      </DropdownItem>*/}
-                      <DropdownItem to="/contact" tag={Link} onClick={() => {window.location.href="/contact"}}>
-                       Contact Us
+                      <DropdownItem to="/contact" tag={Link} onClick={() => { window.location.href = "/contact" }}>
+                        Contact Us
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>       
-                 {/*} <UncontrolledDropdown nav>
-                    <DropdownToggle to="/contact" tag={Link} nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Contact</span>
-                    </DropdownToggle>
-              </UncontrolledDropdown> */}
-                  {/*<UncontrolledDropdown nav>
-                    <DropdownToggle to="/store" tag={Link}  onClick={() => {window.location.href="/store"}} nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">SHOP ENPOSS PRODUCTS</span>
-                    </DropdownToggle>
-                  </UncontrolledDropdown> 
-                  <NavItem>
-                    <NavLink to="/cart" tag={Link}
-                      className="nav-link-icon"
-                      //href="https://www.facebook.com/creativetim"
-                      //id="tooltip333589074"
-                      //target="_blank"
-                    >
-                      <i className="ni ni-cart" />
-                      <span >{qty}
-                      </span>
-                    </NavLink>
-                    {/*<UncontrolledTooltip delay={0} target="tooltip333589074">
-                      Like us on Facebook
-                      </UncontrolledTooltip>
-                  </NavItem>
-                  <UserContext.Consumer> 
-                  {({user,userLogout}) => ( 
-                    user.token ? (
-                    <UncontrolledDropdown nav>
-                      <DropdownToggle to="/" tag={Link} nav>
-                        <i className="ni ni-collection d-lg-none mr-1" />
-                        <span className="nav-link-inner--text" onClick={() => { userLogout(); }}>LOGOUT</span>
-                      </DropdownToggle>
-                    </UncontrolledDropdown>
-                    ) : '' )}
-                  </UserContext.Consumer>   */}                                                                    
-                  {/* <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.facebook.com/creativetim"
-                      id="tooltip333589074"
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Facebook
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip333589074">
-                      Like us on Facebook
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.instagram.com/creativetimofficial"
-                      id="tooltip356693867"
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Instagram
-                      </span>
-                    </NavLink> 
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
-                      Follow us on Instagram
-                    </UncontrolledTooltip>
-                  </NavItem> 
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://twitter.com/creativetim"
-                      id="tooltip184698705"
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Twitter
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
-                      Follow us on Twitter
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://github.com/creativetimofficial/argon-design-system-react"
-                      id="tooltip112445449"
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445449">
-                      Star us on Github
-                    </UncontrolledTooltip>
-                  </NavItem>*/}
+                  </UncontrolledDropdown>
                 </Nav>
                 <Nav className="ml-auto" navbar>
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.kr/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Korean Site"
-                    > 
-                <img  src={require("assets/img/flags/f_kr.png")}  height="18" alt="Korean Site" /> </NavLink></NavItem> 
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                    >
+                      <img src={require("assets/img/flags/f_kr.png")} height="18" alt="Korean Site" /> </NavLink></NavItem>
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.jp/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Japanese Site"
-                    > 
-                <img  src={require("assets/img/flags/f_jp.png")}  height="18" alt="Japanese Site" /> </NavLink></NavItem> 
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                    >
+                      <img src={require("assets/img/flags/f_jp.png")} height="18" alt="Japanese Site" /> </NavLink></NavItem>
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.com.cn/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Chinese Site"
                     >
-                <img  src={require("assets/img/flags/f_ch.png")}  height="18" alt="Chinese Site" /> </NavLink></NavItem> 
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                      <img src={require("assets/img/flags/f_ch.png")} height="18" alt="Chinese Site" /> </NavLink></NavItem>
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://enposs.vn/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Vietnamese Site"
-                    > 
-                <img  src={require("assets/img/flags/f_vt.png")}  height="18" alt="Vietnamese Site" /> </NavLink></NavItem> 
+                    >
+                      <img src={require("assets/img/flags/f_vt.png")} height="18" alt="Vietnamese Site" /> </NavLink></NavItem>
+                  {((currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL !== "http://localhost:3000/store#!/Force/p/296981076/category=0")) ?
+                    <App indexName="product" />
+                    : ""}
+
                 </Nav>
               </UncontrolledCollapse>
             </Container>
           </Navbar>
         </header>
-       
+
       </>
     );
   }
