@@ -19,7 +19,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 //import Headroom from "headroom.js";
-import {CartContext} from "context/CartContext";
+import { CartContext } from "context/CartContext";
 //import { UserContext } from 'context/user';
 // reactstrap components
 import {
@@ -38,6 +38,8 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import App from "views/examples/App.js";
+import Auto from "views/examples/Auto.js";
 
 class DemoNavbar extends React.Component {
   static contextType = CartContext
@@ -64,6 +66,9 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
+    const pathname = window.location.pathname
+    const currentURL = window.location.href
+    console.log(currentURL);
     //const {qty} = this.context;
     return (
       <>
@@ -72,10 +77,10 @@ class DemoNavbar extends React.Component {
             className="navbar-main navbar-transparent navbar-light bg-gradient-default"
             expand="lg"
             id="navbar-main"
-            style={{position:"fixed"}}
+            style={{ position: "fixed" }}
           >
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => {window.location.href="/"}}>
+              <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => { window.location.href = "/" }}>
                 <img
                   alt="..."
                   src={require("assets/img/brand/EnpossLogo.png")}
@@ -94,7 +99,7 @@ class DemoNavbar extends React.Component {
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
-                      <Link to="/" onClick={() => {window.location.href="/"}}>
+                      <Link to="/" onClick={() => { window.location.href = "/" }}>
                         <img
                           alt="..."
                           src={require("assets/img/brand/EnpossLogo.png")}
@@ -210,60 +215,60 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>About</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>About</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/ourstory" onClick={() => {window.location.href="/ourstory"}} tag={Link}>
+                      <DropdownItem to="/ourstory" onClick={() => { window.location.href = "/ourstory" }} tag={Link}>
                         Our Story
                       </DropdownItem>
-                      <DropdownItem to="/ceomessage" onClick={() => {window.location.href="/ceomessage"}} tag={Link}>
+                      <DropdownItem to="/ceomessage" onClick={() => { window.location.href = "/ceomessage" }} tag={Link}>
                         CEO Message
                       </DropdownItem>
-                      <DropdownItem to="/timeline"  onClick={() => {window.location.href="/timeline"}}  tag={Link}>
+                      <DropdownItem to="/timeline" onClick={() => { window.location.href = "/timeline" }} tag={Link}>
                         Timeline
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>                  
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>Product</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>Product</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/force" tag={Link} onClick={() => {window.location.href="/force"}}>
+                      <DropdownItem to="/force" tag={Link} onClick={() => { window.location.href = "/force" }}>
                         What is FORCE?
                       </DropdownItem>
-                      <DropdownItem to="/benefits" tag={Link} onClick={() => {window.location.href="/benefits"}}>
+                      <DropdownItem to="/benefits" tag={Link} onClick={() => { window.location.href = "/benefits" }}>
                         Benefits of FORCE
                       </DropdownItem>
-                      <DropdownItem to="/forceprinciples" tag={Link}  onClick={() => {window.location.href="/forceprinciples"}}>
-                       Working Principle
+                      <DropdownItem to="/forceprinciples" tag={Link} onClick={() => { window.location.href = "/forceprinciples" }}>
+                        Working Principle
                       </DropdownItem>
-                      <DropdownItem to="/patents" tag={Link} onClick={() => {window.location.href="/patents"}}>
+                      <DropdownItem to="/patents" tag={Link} onClick={() => { window.location.href = "/patents" }}>
                         Patents
                       </DropdownItem>
-                      <DropdownItem to="/certifications" tag={Link} onClick={() => {window.location.href="/certifications"}}>
+                      <DropdownItem to="/certifications" tag={Link} onClick={() => { window.location.href = "/certifications" }}>
                         Certifications
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>                                    
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle  to="/news" tag={Link} nav onClick={() => {window.location.href="/news"}}>
+                    <DropdownToggle to="/news" tag={Link} nav onClick={() => { window.location.href = "/news" }}>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>News</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>News</span>
                     </DropdownToggle>
-                   {/*} <DropdownMenu>
+                    {/*} <DropdownMenu>
                       <DropdownItem to="#" tag={Link}>
                           Announcement
                       </DropdownItem>
                   </DropdownMenu>*/}
-                  </UncontrolledDropdown>                                                      
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}} nav>
+                    <DropdownToggle to="/clients" tag={Link} onClick={() => { window.location.href = "/clients" }} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}} >Clients</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }} >Clients</span>
                     </DropdownToggle>
-                       {/*}<DropdownMenu>
+                    {/*}<DropdownMenu>
                       <DropdownItem to="/clients" tag={Link} onClick={() => {window.location.href="/clients"}}>
                         Domestic
                       </DropdownItem>
@@ -271,8 +276,8 @@ class DemoNavbar extends React.Component {
                         Overseas
                 </DropdownItem>
                     </DropdownMenu>*/}
-                  </UncontrolledDropdown>                                                      
-                {/*  <UncontrolledDropdown nav>
+                  </UncontrolledDropdown>
+                  {/*  <UncontrolledDropdown nav>
                     <DropdownToggle to="/patents" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Patents</span>
@@ -284,33 +289,33 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text">Certifications</span>
                     </DropdownToggle>
                 </UncontrolledDropdown>  */}
-                   <UncontrolledDropdown nav>
-                    <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} nav>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle to="/store#!/Force/p/296981076/category=0" tag={Link} onClick={() => { window.location.href = "/store#!/Force/p/296981076/category=0" }} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>Shop</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>Shop</span>
                     </DropdownToggle>
-                  </UncontrolledDropdown>  
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle to="#" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{fontSize:"17px"}}>Support</span>
+                      <span className="nav-link-inner--text text-uppercase font-weight-bold" style={{ fontSize: "17px" }}>Support</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                    <DropdownItem to="/installforce" tag={Link} onClick={() => {window.location.href="/installforce"}}>
+                      <DropdownItem to="/installforce" tag={Link} onClick={() => { window.location.href = "/installforce" }}>
                         How to install FORCE
                       </DropdownItem>
-                      <DropdownItem to="/faq" tag={Link} onClick={() => {window.location.href="/faq"}}>
+                      <DropdownItem to="/faq" tag={Link} onClick={() => { window.location.href = "/faq" }}>
                         FAQ
                       </DropdownItem>
                       {/*<DropdownItem to="#" tag={Link}>
                         Q&A
                       </DropdownItem>*/}
-                      <DropdownItem to="/contact" tag={Link} onClick={() => {window.location.href="/contact"}}>
-                       Contact Us
+                      <DropdownItem to="/contact" tag={Link} onClick={() => { window.location.href = "/contact" }}>
+                        Contact Us
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>       
-                 {/*} <UncontrolledDropdown nav>
+                  </UncontrolledDropdown>
+                  {/*} <UncontrolledDropdown nav>
                     <DropdownToggle to="/contact" tag={Link} nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Contact</span>
@@ -347,7 +352,7 @@ class DemoNavbar extends React.Component {
                       </DropdownToggle>
                     </UncontrolledDropdown>
                     ) : '' )}
-                  </UserContext.Consumer>   */}                                                                    
+                  </UserContext.Consumer>   */}
                   {/* <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -414,48 +419,52 @@ class DemoNavbar extends React.Component {
                   </NavItem>*/}
                 </Nav>
                 <Nav className="ml-auto" navbar>
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.kr/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Korean Site"
-                    > 
-                <img  src={require("assets/img/flags/f_kr.png")}  height="18" alt="Korean Site" /> </NavLink></NavItem> 
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                    >
+                      <img src={require("assets/img/flags/f_kr.png")} height="18" alt="Korean Site" /> </NavLink></NavItem>
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.jp/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Japanese Site"
-                    > 
-                <img  src={require("assets/img/flags/f_jp.png")}  height="18" alt="Japanese Site" /> </NavLink></NavItem> 
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                    >
+                      <img src={require("assets/img/flags/f_jp.png")} height="18" alt="Japanese Site" /> </NavLink></NavItem>
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://www.enposs.com.cn/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Chinese Site"
                     >
-                <img  src={require("assets/img/flags/f_ch.png")}  height="18" alt="Chinese Site" /> </NavLink></NavItem> 
-                <NavItem className="d-none d-lg-block ml-xs-4" >
-                <NavLink
+                      <img src={require("assets/img/flags/f_ch.png")} height="18" alt="Chinese Site" /> </NavLink></NavItem>
+                  <NavItem className="d-none d-lg-block ml-xs-4" >
+                    <NavLink
                       className="nav-link-icon"
                       href="http://enposs.vn/"
                       id="tooltip112445449"
                       target="_blank"
                       title="Vietnamese Site"
-                    > 
-                <img  src={require("assets/img/flags/f_vt.png")}  height="18" alt="Vietnamese Site" /> </NavLink></NavItem> 
+                    >
+                      <img src={require("assets/img/flags/f_vt.png")} height="18" alt="Vietnamese Site" /> </NavLink></NavItem>
+                  {((currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL !== "http://localhost:3000/store#!/Force/p/296981076/category=0")) ?
+                    <App indexName="product" />
+                    : ""}
+
                 </Nav>
               </UncontrolledCollapse>
             </Container>
           </Navbar>
         </header>
-       
+
       </>
     );
   }
