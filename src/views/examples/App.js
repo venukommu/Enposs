@@ -66,10 +66,10 @@ function Hit(props) {
         <Col className="hit-name" lg="4">
           <Highlight attribute="Title" hit={props.hit} />
         </Col>
-        <Link className="hit-name" to={props.hit.url}> 
+        <Link className="hit-name" to={props.hit.url} onClick={() => {window.location.href=props.hit.url}}> 
           <Col className="hit-name" >
             <Highlight attribute="description" hit={props.hit} />
-          </Col>
+        </Col>
         </Link>
         {/*<Highlight attribute="description" hit={props.hit.description} />*/}
       </Row>
