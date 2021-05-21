@@ -62,8 +62,8 @@ class DemoNavbar extends React.Component {
 
   render() {
     const pathname = window.location.pathname
-    const currentURL = window.location.href
-    console.log(currentURL);
+    //const currentURL = window.location.href
+    //console.log(currentURL);
     //const {qty} = this.context;
     return (
       <>

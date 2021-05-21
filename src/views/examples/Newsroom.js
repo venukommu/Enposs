@@ -111,12 +111,13 @@ class Newsroom extends React.Component {
     const items = newsarticles.filter((data) => {
       if (this.state.search == null)
         return data
-      else if (data.Title.toLowerCase().includes(this.state.search.toLowerCase()) || data.Title.toLowerCase().includes(this.state.search.toLowerCase())) {
+      else if (data.Title.toLowerCase().includes(this.state.search.toLowerCase()) || data.Title.toLowerCase().includes(this.state.search.toLowerCase())) 
         return data
-      }
+      else
+        return ''
     }).sort((a, b) => b.id - a.id).map(data => {
       return (
-        <div>
+
           <Row key={data.id}>
             <Col lg="10">
               <Row onClick={() => this.toggleModal(data.Title)}>
@@ -131,9 +132,9 @@ class Newsroom extends React.Component {
                 </Col>
                 <Col>
                   <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}{data.Title}</h5>
-                  <p><ReactMarkdown source={data.summary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{ maxWidth: '50%' }} /> }} /></p>
-                  <p> <span className="text-uppercase">{/*News*/}{data.category}</span>&nbsp;
-              {/*November 15, 2020*/}{data.publishdate}</p>
+                  <ReactMarkdown source={data.summary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{ maxWidth: '50%' }} /> }} />
+                  <span className="text-uppercase">{/*News*/}{data.category}</span>&nbsp;
+                  {/*November 15, 2020*/}{data.publishdate}
                 </Col>
               </Row>
               <hr />
@@ -174,7 +175,6 @@ class Newsroom extends React.Component {
               </Modal>
             </Col>
           </Row>
-        </div>
       )
     })
     return (

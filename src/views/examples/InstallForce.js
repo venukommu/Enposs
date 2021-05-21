@@ -204,7 +204,7 @@ class InstallForce extends React.Component {
                     </CardBody>
       </Card>*/}
             {forceinstall.map(forcesteps => (
-            <Col lg="6">
+            <Col lg="6" key={forcesteps.id}>
             <div className="nav-wrapper">
               <Nav
                 className="nav-fill flex-column flex-md-row"
@@ -244,7 +244,7 @@ class InstallForce extends React.Component {
             </Col>
             ))}
             {forceinstall.map(forcesteps => (
-            <Col lg="12">
+            <Col lg="12" key={forcesteps.id}>
             <Card className="shadow">
               <CardBody>
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>

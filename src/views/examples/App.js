@@ -66,12 +66,12 @@ function Hit(props) {
         <Col className="hit-name" lg="4">
           <Highlight attribute="Title" hit={props.hit} />
         </Col>
-        <Link className="hit-name" to={props.hit.url}>
-          <Col className="hit-name text" >
+        <Link className="hit-name" to={props.hit.url}> 
+          <Col className="hit-name" >
             <Highlight attribute="description" hit={props.hit} />
           </Col>
         </Link>
-        <Highlight attribute="description" hit={props.hit.description} />
+        {/*<Highlight attribute="description" hit={props.hit.description} />*/}
       </Row>
     </Container>
   )
