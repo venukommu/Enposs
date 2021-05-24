@@ -111,7 +111,8 @@ class Newsroom extends React.Component {
     const items = newsarticles.filter((data) => {
       if (this.state.search == null)
         return data
-      else if (data.Title.toLowerCase().includes(this.state.search.toLowerCase()) || data.Title.toLowerCase().includes(this.state.search.toLowerCase())) 
+      else if (data.Title.toLowerCase().includes(this.state.search.toLowerCase()) || data.Title.toLowerCase().includes(this.state.search.toLowerCase())
+      || data.description.toLowerCase().includes(this.state.search.toLowerCase()) || data.description.toLowerCase().includes(this.state.search.toLowerCase()))
         return data
       else
         return ''

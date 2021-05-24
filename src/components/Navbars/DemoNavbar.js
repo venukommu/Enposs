@@ -61,7 +61,7 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
-    const pathname = window.location.pathname
+    //const pathname = window.location.pathname
     //const currentURL = window.location.href
     //console.log(currentURL);
     //const {qty} = this.context;
@@ -224,9 +224,8 @@ class DemoNavbar extends React.Component {
                     >
                       <img src={require("assets/img/flags/f_vt.png")} height="18" alt="Vietnamese Site" /> </NavLink></NavItem>
                   {/*((currentURL === "https://www.enposs.com/store#!/Force/p/296981076/category=0") || (currentURL !== "http://localhost:3000/store#!/Force/p/296981076/category=0")) ?*/}
-                  { (pathname === "/")?
+                  {/* (pathname === "/")?*/}
                     <App indexName="searchdata" />
-                    : ""}
 
                 </Nav>
               </UncontrolledCollapse>

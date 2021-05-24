@@ -19,7 +19,7 @@ function App(props) {
 
   const { indexName } = props
   const searchClient = instantMeiliSearch(
-    'https://meili-router-go0pbh6e4nskckpq-gtw.qovery.io/',
+    'http://ec2-65-2-33-201.ap-south-1.compute.amazonaws.com/',
     'masterKey',
     {
       paginationTotalHits: 60,
@@ -29,7 +29,7 @@ function App(props) {
   return (
     <>
       <div lg="4" md="6">
-        <Button color="danger" height="18" onClick={toggle}> <i className="fa fa-search" aria-hidden="true"></i></Button>
+        <Button color="danger" className="btn-sm" style={{ height:"25px", width:"40px", top:"15px"}}  onClick={toggle}> <i className="fa fa-search" aria-hidden="true"></i></Button>
         <Modal isOpen={modal} toggle={toggle} className="modal-xl">
           <ModalHeader toggle={toggle}>Website content Search</ModalHeader>
           <ModalBody>
