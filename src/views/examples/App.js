@@ -19,7 +19,7 @@ function App(props) {
 
   const { indexName } = props
   const searchClient = instantMeiliSearch(
-    'https://ec2-65-2-33-201.ap-south-1.compute.amazonaws.com/',
+    'http://ec2-65-2-33-201.ap-south-1.compute.amazonaws.com/',
     'masterKey',
     {
       paginationTotalHits: 60,
