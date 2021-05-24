@@ -19,7 +19,8 @@ function App(props) {
 
   const { indexName } = props
   const searchClient = instantMeiliSearch(
-    'http://ec2-65-2-33-201.ap-south-1.compute.amazonaws.com/',
+    //'http://ec2-65-2-33-201.ap-south-1.compute.amazonaws.com/',
+    'https://meili-router-f1agakpcjuab75hu-gtw.qovery.io/',
     'masterKey',
     {
       paginationTotalHits: 60,
