@@ -23,6 +23,8 @@ import { Container, Row, Col, Card, CardBody, Button, Modal } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ReactMarkdown from "react-markdown";
+import Highlighter from "react-highlight-words";
+import './App.css';
 
 class Newsroom extends React.Component {
   state = {
@@ -118,7 +120,6 @@ class Newsroom extends React.Component {
         return ''
     }).sort((a, b) => b.id - a.id).map(data => {
       return (
-
           <Row key={data.id}>
             <Col lg="10">
               <Row onClick={() => this.toggleModal(data.Title)}>
@@ -126,13 +127,13 @@ class Newsroom extends React.Component {
                   <Card className={'bg-gradient-' + data.classname + ' shadow border-0'}>
                     <CardBody className="py-3">
                       <h6 className="lead text-white text-uppercase">
-                        {data.Title}
+                      <Highlighter highlightClassName="Highlight" searchWords={[this.state.search]}  textToHighlight={data.Title} />
                       </h6>
                     </CardBody>
                   </Card>
                 </Col>
                 <Col>
-                  <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}{data.Title}</h5>
+                  <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}<Highlighter highlightClassName="Highlight" searchWords={[this.state.search]}  textToHighlight={data.Title} /></h5>
                   <ReactMarkdown source={data.summary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{ maxWidth: '50%' }} /> }} />
                   <span className="text-uppercase">{/*News*/}{data.category}</span>&nbsp;
                   {/*November 15, 2020*/}{data.publishdate}
@@ -147,7 +148,7 @@ class Newsroom extends React.Component {
               >
                 <div className={'modal-header bg-gradient-' + data.classname} >
                   <h2 className="modal-title text-white">
-                    {data.Title}
+                  <Highlighter highlightClassName="Highlight" searchWords={[this.state.search]}  textToHighlight={data.Title} />
                   </h2>
                   <button
                     aria-label="Close"
@@ -160,7 +161,7 @@ class Newsroom extends React.Component {
                   </button>
                 </div>
                 <div className="modal-body">
-                  <ReactMarkdown source={data.description} allowDangerousHtml={true} renderers={{ link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a> }} />
+                <ReactMarkdown source={data.description} allowDangerousHtml={true} renderers={{ link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a> }} />
                 </div>
                 <div className="modal-footer">
                   <Button

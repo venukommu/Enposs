@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col } from 'reactstrap';
 //import { PopoverBody, UncontrolledPopover } from "reactstrap";
 
-import { InstantSearch,  InfiniteHits,  SearchBox,  Stats,  Highlight,  Configure,} from 'react-instantsearch-dom';
+import { InstantSearch,  InfiniteHits,  SearchBox,  Stats,  Highlight} from 'react-instantsearch-dom';
 import './App.css';
 import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
 import ReactDOM from 'react-dom';
@@ -45,7 +45,7 @@ function App(props) {
                       //console.log(event.currentTarget);
                     }}
                   /><br />
-                  <Configure hitsPerPage={1} />
+                  {/*<Configure hitsPerPage={1} />*/}
                   <InfiniteHits hitComponent={Hit} xs="6" />
                 </div>
               </InstantSearch>

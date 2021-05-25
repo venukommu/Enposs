@@ -67,3 +67,7 @@ body {
   -webkit-line-clamp: 1; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+.Highlight {
+  background-color: #ffd54f;
+}
