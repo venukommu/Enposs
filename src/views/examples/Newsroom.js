@@ -97,7 +97,7 @@ class Newsroom extends React.Component {
 
     const searchSpace = (event) => {
       let keyword = event.target.value;
-      this.setState({ search: keyword })
+      this.setState({ search: keyword });
     }
 
     const elementStyle = {
@@ -119,6 +119,13 @@ class Newsroom extends React.Component {
       else
         return ''
     }).sort((a, b) => b.id - a.id).map(data => {
+      const regexMdLinks = /\!\[([^\[]+)\](.+?\.(?:png|jpg|jpeg))\)/gm
+      const newdesc = data.description.split(this.state.search).join(`<style>cite{background-color:yellow;}</style><cite>${this.state.search}</cite>`)
+      const newsummary = data.summary.split(this.state.search).join(`<style>cite{background-color:yellow;}</style><cite>${this.state.search}</cite>`)
+      const baselinks = data.description.match(regexMdLinks);
+      const newlinks = newdesc.match(regexMdLinks);
+      const newdescription = newdesc.split(newlinks).join(baselinks);
+
       return (
           <Row key={data.id}>
             <Col lg="10">
@@ -134,7 +141,9 @@ class Newsroom extends React.Component {
                 </Col>
                 <Col>
                   <h5 className="lead text-dark mt-4">{/*Nuqul Group and Vardot Announce Collaboration*/}<Highlighter highlightClassName="Highlight" searchWords={[this.state.search]}  textToHighlight={data.Title} /></h5>
+                  {this.state.search === null || this.state.search === "" ?
                   <ReactMarkdown source={data.summary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{ maxWidth: '50%' }} /> }} />
+                  : <ReactMarkdown source={newsummary} allowDangerousHtml={true} renderers={{ image: props => <img {...props} alt="" style={{ maxWidth: '50%' }} /> }} />}
                   <span className="text-uppercase">{/*News*/}{data.category}</span>&nbsp;
                   {/*November 15, 2020*/}{data.publishdate}
                 </Col>
@@ -161,7 +170,9 @@ class Newsroom extends React.Component {
                   </button>
                 </div>
                 <div className="modal-body">
+                {this.state.search === null || this.state.search === "" || this.state.search.match('png|jpg|jpeg|pn|ng|jp|pg|jpe|peg|pe|eg') ?
                 <ReactMarkdown source={data.description} allowDangerousHtml={true} renderers={{ link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a> }} />
+                : <ReactMarkdown source={newdescription} allowDangerousHtml={true} renderers={{ link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a> }} />}
                 </div>
                 <div className="modal-footer">
                   <Button
@@ -234,7 +245,7 @@ class Newsroom extends React.Component {
         <section className="section section-lg pt-lg-0 mt--0">
           <Container>
             <div>
-              <input type="text" placeholder="Enter item to be searched" style={elementStyle} onChange={(e) => searchSpace(e)} />
+              <input type="text" placeholder="Enter item to be searched" style={elementStyle} onChange={(e) => searchSpace(e)}/>
               {items}
             </div>
           </Container>
