@@ -64,7 +64,7 @@ function Hit(props) {
   return (
     <Container>
       <Row key={props.hit.id}>
-        <Col className="hit-name" lg="4">
+        <Col className="hit-name" lg="12">
           <Highlight attribute="Title" hit={props.hit} />
         </Col>
         <Link className="hit-name" to={props.hit.url} onClick={() => {window.location.href=props.hit.url}}> 
