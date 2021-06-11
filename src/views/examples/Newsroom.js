@@ -163,16 +163,18 @@ class Newsroom extends React.Component {
                   </button>
                 </div>
                 <div className="modal-body">
+                {data.image !== null ? 
                 <Row className="row-grid">
                   <Col lg="10">
                     <Card><img alt="..." src={`${data.image.url}`} /></Card>
                   </Col>
                 </Row>
-                <br />  
+                : ""}
+                <br /> 
                 {this.state.search === null || this.state.search === "" ?
                 <ReactMarkdown source={data.description} allowDangerousHtml={true} renderers={{ link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a> }}/>
                 : <ReactMarkdown source={newdesc} allowDangerousHtml={true} renderers={{ link: props => <a href={props.href} target="_blank" rel="nofollow noopener noreferrer">{props.children}</a> }}/>}
-                <p>For detailed information, please visit <a href={data.referencelink} target="_blank" rel="noopener noreferrer">{data.referencelink}</a></p>
+                {data.referencelink !== null && data.referencelink.length > 0 ? <p>For detailed information, please visit <a href={data.referencelink} target="_blank" rel="noopener noreferrer">{data.referencelink}</a></p> : ""} 
                 </div>
                 <div className="modal-footer">
                   <Button
