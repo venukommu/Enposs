@@ -77,6 +77,21 @@ View [example pages here](https://demos.creative-tim.com/argon-design-system-rea
 - Clone the repo: `git clone https://github.com/creativetimofficial/argon-design-system-react.git`.
 
 
+## Deployment Steps
+
+- We are deploying Enposs Frontend application to Netlify (https://www.netlify.com/) using venu@baylogictech.com
+- Make sure that we are on L420 Laptop which is Venu's Old Laptop since there is a Netlify setup.
+- Checkout the branch that you wanted to deploy.
+- Make sure that you have a Netlify setup in your local machine. If not `npm i netlify-cli`
+- `npm install`
+- `npm run build`
+- `netlify deploy --prod`
+- `npm i argon-design-system-react`
+- [Download from Github](https://github.com/creativetimofficial/argon-design-system-react/archive/master.zip).
+- [Download from Creative Tim](https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-github-readme).
+- Install with [Bower](https://bower.io/?ref=creativetim): ```bower install argon-design-system-react```.
+- Clone the repo: `git clone https://github.com/creativetimofficial/argon-design-system-react.git`.
+
 ## Documentation
 The documentation for the Argon Design System React is hosted at our [website](https://demos.creative-tim.com/argon-design-system-react/#/documentation/overview).
 
