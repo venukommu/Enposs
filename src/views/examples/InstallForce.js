@@ -31,16 +31,15 @@ import ReactMarkdown from "react-markdown";
 // index page sections
 
 class InstallForce extends React.Component {
-  state = {
-    defaultModal: false
-  };
+
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state]
     });
   };
-  
+
   state = {
+    defaultModal: false,
     forceinstall: [],
     //forceinstallsteps: [],
     assembleimage: [],
@@ -85,13 +84,13 @@ class InstallForce extends React.Component {
     }
 
   };
-  
+
   handleEndReached = () => {
     console.log("load more");
   };
   render() {
-    const { error, forceinstall} = this.state;
-  
+    const { error, forceinstall } = this.state;
+
     // Print errors if any
     if (error) {
       return <div>An error occured: {error.message}</div>;
@@ -115,31 +114,31 @@ class InstallForce extends React.Component {
                 <span />
               </div>
               <Container className="py-lg-md d-flex">
-              
+
                 <div className="col px-0">
-                <div
-      className="video"
-      style={{
-        position: "relative",
-        paddingBottom: "56.25%" /* 16:9 */,
-        paddingTop: 25,
-        height: 0
-      }}
-    >
-      <iframe title="Enposs video"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%"
-        }}
-        src="https://www.youtube.com/embed/PCL1Y_3wUPM"
-        frameBorder="0"
-      />
-    </div>
-               
-                {/*}  <Row>
+                  <div
+                    className="video"
+                    style={{
+                      position: "relative",
+                      paddingBottom: "56.25%" /* 16:9 */,
+                      paddingTop: 25,
+                      height: 0
+                    }}
+                  >
+                    <iframe title="Enposs video"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%"
+                      }}
+                      src="https://www.youtube.com/embed/PCL1Y_3wUPM"
+                      frameBorder="0"
+                    />
+                  </div>
+
+                  {/*}  <Row>
                     <Col lg="6">
                       <div><h1 className="display-3 text-white">How To Install</h1>
                       </div>
@@ -169,7 +168,7 @@ class InstallForce extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                 {/*} <Card className="bg-gradient-white">
+                {/*} <Card className="bg-gradient-white">
                   <h4 className="display-3 font-weight-bold text-primary">
                        
                           How To Install
@@ -185,7 +184,7 @@ class InstallForce extends React.Component {
                   </CardBody>
                   
     </Card>*/}
-                  {/*<Card className="bg-gradient-info text-white">
+                {/*<Card className="bg-gradient-info text-white">
                     <CardBody>
                     <h4>Safety measures</h4>
                     <ul>
@@ -203,30 +202,30 @@ class InstallForce extends React.Component {
                     </ul><br/><br/>
                     </CardBody>
       </Card>*/}
-            {forceinstall.map(forcesteps => (
-            <Col lg="6" key={forcesteps.id}>
-            <div className="nav-wrapper">
-              <Nav
-                className="nav-fill flex-column flex-md-row"
-                id="tabs-icons-text"
-                pills
-                role="tablist"
-              >
-                <NavItem>
-                  <NavLink
-                    key={forcesteps.id}
-                    aria-selected={this.state.plainTabs === forcesteps.id}
-                    className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === forcesteps.id
-                    })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", forcesteps.id)}
-                    href="#pablo"
-                    role="tab"
-                  >
-                  {/*I.Installation of FORCE*/} {forcesteps.Title}
-                  </NavLink>
-                </NavItem>
-                  {/*<NavItem>
+                {forceinstall.map(forcesteps => (
+                  <Col lg="6" key={forcesteps.id}>
+                    <div className="nav-wrapper">
+                      <Nav
+                        className="nav-fill flex-column flex-md-row"
+                        id="tabs-icons-text"
+                        pills
+                        role="tablist"
+                      >
+                        <NavItem>
+                          <NavLink
+                            key={forcesteps.id}
+                            aria-selected={this.state.plainTabs === forcesteps.id}
+                            className={classnames("mb-sm-3 mb-md-0", {
+                              active: this.state.plainTabs === forcesteps.id
+                            })}
+                            onClick={e => this.toggleNavs(e, "plainTabs", forcesteps.id)}
+                            href="#pablo"
+                            role="tab"
+                          >
+                            {/*I.Installation of FORCE*/} {forcesteps.Title}
+                          </NavLink>
+                        </NavItem>
+                        {/*<NavItem>
                   <NavLink
                     aria-selected={this.state.plainTabs === 2}
                     className={classnames("mb-sm-3 mb-md-0", {
@@ -239,70 +238,70 @@ class InstallForce extends React.Component {
                    {/*II. Installation of FORCE {forceinstall.tab2title}
                   </NavLink>
                   </NavItem>*/}
-              </Nav>
-            </div>
-            </Col>
-            ))}
-            {forceinstall.map(forcesteps => (
-            <Col lg="12" key={forcesteps.id}>
-            <Card className="shadow">
-              <CardBody>
-                <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
-                  <TabPane tabId={"plainTabs" + forcesteps.id}>
-                  <ReactMarkdown source={forcesteps.description} allowDangerousHtml={true} />
-                  <Row>
-                    <Col lg="7">
-                      <ReactMarkdown source={forcesteps.list}  allowDangerousHtml={true} />
-                      <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
-                        Click Here
+                      </Nav>
+                    </div>
+                  </Col>
+                ))}
+                {forceinstall.map(forcesteps => (
+                  <Col lg="12" key={forcesteps.id}>
+                    <Card className="shadow">
+                      <CardBody>
+                        <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
+                          <TabPane tabId={"plainTabs" + forcesteps.id}>
+                            <ReactMarkdown source={forcesteps.description} allowDangerousHtml={true} />
+                            <Row>
+                              <Col lg="7">
+                                <ReactMarkdown source={forcesteps.list} allowDangerousHtml={true} />
+                                <p className="text-center"><Link onClick={() => this.toggleModal("defaultModal")}>
+                                  Click Here
                       </Link>
-                      <Modal
-                        className="modal-dialog-centered"
-                        isOpen={this.state.defaultModal}
-                        toggle={() => this.toggleModal("defaultModal")}>
-                        <div className="modal-header">
-                          <button
-                            aria-label="Close"
-                            className="close"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal")}>
-                            <span aria-hidden={true}>×</span>
-                          </button>
-                          </div>
-                          <div className="modal-body">
-                            <p>
-                            <CardBody>
-                              <CardImg alt="Assemble-Image" src={`${forcesteps.assembleimage.url}`}/>
-                            </CardBody>
-                            </p>
-                          </div>
-                          <div className="modal-footer">
-                            <Button
-                              className="ml-auto"
-                              color="link"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal")}>
-                              Close
+                                  <Modal
+                                    className="modal-dialog-centered"
+                                    isOpen={this.state.defaultModal}
+                                    toggle={() => this.toggleModal("defaultModal")}>
+                                    <div className="modal-header">
+                                      <button
+                                        aria-label="Close"
+                                        className="close"
+                                        data-dismiss="modal"
+                                        type="button"
+                                        onClick={() => this.toggleModal("defaultModal")}>
+                                        <span aria-hidden={true}>×</span>
+                                      </button>
+                                    </div>
+                                    <div className="modal-body">
+                                      <p>
+                                        <CardBody>
+                                          <CardImg alt="Assemble-Image" src={`${forcesteps.assembleimage.url}`} />
+                                        </CardBody>
+                                      </p>
+                                    </div>
+                                    <div className="modal-footer">
+                                      <Button
+                                        className="ml-auto"
+                                        color="link"
+                                        data-dismiss="modal"
+                                        type="button"
+                                        onClick={() => this.toggleModal("defaultModal")}>
+                                        Close
                             </Button>
-                          </div>
-                      </Modal> to see the detail Image of assembling the Force. </p>
-                      <ReactMarkdown source={forcesteps.list1}  allowDangerousHtml={true} />
-                      </Col>
-                      <Col lg="5">
-                        <CardBody>
-                          <CardImg alt="Installation of FORCE" src={`${forcesteps.image.url}`}/>
-                        </CardBody>
-                      </Col>
-                      </Row>
-                  </TabPane>
-                </TabContent>
-              </CardBody>
-            </Card>
-            </Col>
-            ))}
-            {/*<Card className="shadow">
+                                    </div>
+                                  </Modal> to see the detail Image of assembling the Force. </p>
+                                <ReactMarkdown source={forcesteps.list1} allowDangerousHtml={true} />
+                              </Col>
+                              <Col lg="5">
+                                <CardBody>
+                                  <CardImg alt="Installation of FORCE" src={`${forcesteps.image.url}`} />
+                                </CardBody>
+                              </Col>
+                            </Row>
+                          </TabPane>
+                        </TabContent>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                ))}
+                {/*<Card className="shadow">
               <CardBody>
                 <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
                   <TabPane tabId="plainTabs1">
@@ -460,14 +459,14 @@ class InstallForce extends React.Component {
                 </TabContent>
               </CardBody>
               </Card>*/}
-            </Row>
+              </Row>
             </Container>
           </section>
         </main>
         <CardsFooter />
       </>
     );
-}
+  }
 }
 
 export default InstallForce;
