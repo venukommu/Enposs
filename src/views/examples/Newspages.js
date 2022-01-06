@@ -54,7 +54,7 @@ class Newspages extends React.Component {
       const { params: { slug } } = this.props.match;
       //console.log(slug);
       const { error, newsarticles} = this.state;
-      //console.log(newsarticles);
+      console.log(newsarticles);
   
       // Print errors if any
       if (error) {
@@ -87,7 +87,9 @@ class Newspages extends React.Component {
                         <div>
                           <h6 className="display-3 text-white">
                           <MetaTags> 
-                            <meta property={news.Title} content={news.Title} />
+                            <meta property="og:title" content={news.Seo.metaTitle} key="og:title" />
+                            <meta property="og:description" content={news.Seo.metaDescription} key="og:description" />
+                            <meta property="keywords" content={news.keywords} />
                           </MetaTags>
                           {news.Title}
                           </h6>
