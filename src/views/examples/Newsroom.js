@@ -25,6 +25,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 import ReactMarkdown from "react-markdown";
 import Highlighter from "react-highlight-words";
 import './App.css';
+import MetaTags from 'react-meta-tags';
 
 class Newsroom extends React.Component {
   state = {
@@ -217,6 +218,10 @@ class Newsroom extends React.Component {
                   <Col lg="6">
                     {/*< ProductList />*/}
                     <div>
+                      <MetaTags> 
+                        <meta property="og:title" content={newscontent.Title} key="og:title" />
+                        <meta property="og:description" content={newscontent.subtitle} key="og:description" />
+                      </MetaTags>
                       <h1 className="display-3 text-white" style={{ textAlign: "left", fontFamily: "Noto Sans JP", fontSize: "48px", fontWeight: "900", marginTop: "90px", lineHeight: "125%" }}>
                         {/*The Newsroom*/}{newscontent.Title}
                       </h1><br />
