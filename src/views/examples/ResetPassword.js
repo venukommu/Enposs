@@ -58,11 +58,11 @@ class ResetPassword extends React.Component {
   }
 
   passwordHandler = (event) => {
-    this.setState({password: event.target.value});
+    this.setState({ password: event.target.value });
   }
 
   passwordConfirmationHandler = (event) => {
-    this.setState({passwordConfirmation: event.target.value});
+    this.setState({ passwordConfirmation: event.target.value });
   }
 
   //setIsMember = (isMember) => {
@@ -70,10 +70,10 @@ class ResetPassword extends React.Component {
   //}
 
   nameHandler = (setUsername) => {
-    this.setState({setUsername: setUsername});
+    this.setState({ setUsername: setUsername });
   }
 
-  static contextType  = UserContext;
+  static contextType = UserContext;
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -82,9 +82,9 @@ class ResetPassword extends React.Component {
   render() {
     const urlCode = queryString.parse(this.props.location.search)
     const urlLink = urlCode.code
-    
+
     const { history } = this.props;
-    const { password, passwordConfirmation} = this.state;
+    const { password, passwordConfirmation } = this.state;
     let isEmpty = !password || !passwordConfirmation;
 
     const handleSubmit = async (e) => {
@@ -93,29 +93,29 @@ class ResetPassword extends React.Component {
 
       let response;
       if (isEmpty) {
-        toast.error('Please fill out all form fields',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        toast.error('Please fill out all form fields', { position: toast.POSITION.TOP_RIGHT, autoClose: false });
       }
       else if (password !== passwordConfirmation) {
-        toast.error('Passwords do not match.',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
-        } 
-       else if (urlLink !== '') {
+        toast.error('Passwords do not match.', { position: toast.POSITION.TOP_RIGHT, autoClose: false });
+      }
+      else if (urlLink !== '') {
         console.log(urlLink);
-        response = await resetPassword( {urlLink, password, passwordConfirmation} );
-        console.log("response",response);
-  
-        if (response.status !== 400 && response.status === 200 ) {
+        response = await resetPassword({ urlLink, password, passwordConfirmation });
+        console.log("response", response);
+
+        if (response.status !== 400 && response.status === 200) {
           const {
             jwt: token,
             //user: { username },
           } = response.data;
           console.log(token);
-          toast.success(`Your user's password has been reset successfully.`,{position:toast.POSITION.TOP_RIGHT,autoClose: 5000,});    
+          toast.success(`Your user's password has been reset successfully.`, { position: toast.POSITION.TOP_RIGHT, autoClose: 5000, });
           history.push('/login');
         } else {
-          toast.error('there was an error. please try again...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+          toast.error('there was an error. please try again...', { position: toast.POSITION.TOP_RIGHT, autoClose: false });
         }
       } else {
-        toast.error('Code not found and click the reset password link in email...',{position:toast.POSITION.TOP_RIGHT,autoClose: false});
+        toast.error('Code not found and click the reset password link in email...', { position: toast.POSITION.TOP_RIGHT, autoClose: false });
       }
     };
     return (
@@ -138,11 +138,11 @@ class ResetPassword extends React.Component {
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
-                      
+
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
                       <Form role="form">
-                      <FormGroup>
+                        <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -184,7 +184,7 @@ class ResetPassword extends React.Component {
                             Reset Password
                           </Button>
                         </div>
-                        
+
                       </Form>
                     </CardBody>
                   </Card>

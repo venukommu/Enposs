@@ -167,9 +167,9 @@ class CardsFooter extends React.Component {
                   className="btn-icon-only rounded-circle ml-1"
                   color="facebook"
                   //href="https://github.com/creativetimofficial"
-                  href="#"
+                  href="#https://www.linkedin.com/company/73795058"
                   id="tooltip495507257"
-                  //target="_blank"
+                  target="_blank"
                 >
                   <span className="btn-inner--icon">
                     <i className="fa fa-linkedin" />

@@ -9,6 +9,7 @@ import {
 import CardsFooter from "components/Footers/CardsFooter.js";
 import { appConfig } from "services/config.js";
 import { Link } from "react-router-dom";
+//import App from "views/examples/App.js";
 //import Table from "views/examples/Table";
 //import TableResponsive from "views/examples/TableResponsive";
 //import { UncontrolledCarousel } from "reactstrap";

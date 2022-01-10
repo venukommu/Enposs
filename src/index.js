@@ -60,6 +60,7 @@ import Newsroom from "views/examples/Newsroom";
 import NewsArticle from "views/examples/NewsArticle";
 import Benefits from "views/examples/Benefits";
 import Faq from "views/examples/Faq";
+import Newspages from "views/examples/Newspages";
 
 ReactDOM.render(
  <BrowserRouter>
@@ -208,6 +209,7 @@ ReactDOM.render(
  exact
  render={props => <Newsroom {...props} />}
  />
+ <Route path="/news/:slug" component={Newspages} />
  <Route
  path="/newsarticle"
  exact

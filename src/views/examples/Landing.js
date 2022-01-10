@@ -275,7 +275,7 @@ class Landing extends React.Component {
                 </div>
               </Card>
          <Carousel />
-           <section className="section section-lg">
+          <section className="section section-lg">
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="12">
@@ -293,17 +293,16 @@ class Landing extends React.Component {
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
-                        <span className="d-block mb-1">{/*Blue Ash Recreation Center*/}{img.Title}</span>
-                        <h6 className="text-info">{img.subtitle}</h6>
+                      <span className="d-block mb-1">{/*Blue Ash Recreation Center*/}{img.Title}</span>
                       </h5>
+                      <h6 className="text-info">{img.subtitle}</h6>
                     </div>
                     </div>
                   </Col>
                   ))}
                   </Row>
-
-            </Col>
-         </Row>
+                </Col>
+              </Row>
             </Container>
           </section>
         </main>
