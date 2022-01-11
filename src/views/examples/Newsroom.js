@@ -195,6 +195,7 @@ class Newsroom extends React.Component {
     return (
       <>
         <DemoNavbar />
+        <main className="profile-page" ref="main">
         <div className="position-relative">
           <section className="section section-lg section-shaped pb-250">
             <div className="shape shape-default bg-gradient-default alpha-4">
@@ -252,6 +253,7 @@ class Newsroom extends React.Component {
             </div>
           </Container>
         </section>
+        </main>
         <CardsFooter />
       </>
     );
