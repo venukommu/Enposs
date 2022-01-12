@@ -17,14 +17,15 @@
 */
 import React from "react";
 import { appConfig } from "services/config.js";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // reactstrap components
-import { Container, Row, Col, Card, CardBody, Button, Modal } from "reactstrap";
+import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 import ReactMarkdown from "react-markdown";
 import Highlighter from "react-highlight-words";
 import './App.css';
+import MetaTags from 'react-meta-tags';
 
 class Newsroom extends React.Component {
   state = {
@@ -118,13 +119,15 @@ class Newsroom extends React.Component {
         return data
       else
         return ''
-    }).sort((a, b) => b.id - a.id).map(data => {
-      const newdesc = data.description.split(this.state.search).join(`<style>mark{background-color:yellow;}</style><mark>${this.state.search}</mark>`)
+    }).sort((a, b) => b.id - a.id).map((data,index) => {
+      //const newdesc = data.description.split(this.state.search).join(`<style>mark{background-color:yellow;}</style><mark>${this.state.search}</mark>`)
       const newsummary = data.summary.split(this.state.search).join(`<style>mark{background-color:yellow;}</style><mark>${this.state.search}</mark>`)
       return (
-          <Row key={data.id}>
+          <Row key={index}>
+            <Link to={`/news/${data.slug}`}>
             <Col lg="10">
-              <Row onClick={() => this.toggleModal(data.Title)}>
+              {/*<Row onClick={() => this.toggleModal(data.Title)}>*/}
+              <Row>
                 <Col lg="4">
                   <Card className={'bg-gradient-' + data.classname + ' shadow border-0'}>
                     <CardBody className="py-3">
@@ -144,7 +147,7 @@ class Newsroom extends React.Component {
                 </Col>
               </Row>
               <hr />
-              <Modal
+              {/*<Modal
                 className="modal-xl"
                 isOpen={this.state[data.Title]}
                 toggle={() => this.toggleModal(data.Title)}
@@ -187,8 +190,9 @@ class Newsroom extends React.Component {
                     Close
                 </Button>
                 </div>
-              </Modal>
+              </Modal>*/}
             </Col>
+            </Link>
           </Row>
       )
     })
@@ -210,6 +214,10 @@ class Newsroom extends React.Component {
               <span />
             </div>
             <Container className="py-lg-md d-flex">
+            <MetaTags> 
+              <meta property="og:title" content={newscontent.Title} key="og:title" />
+              <meta property="og:description" content={newscontent.subtitle} key="og:description" />
+            </MetaTags>
               <div className="col px-0">
                 <Row>
                   <Col lg="6">
