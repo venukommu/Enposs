@@ -83,6 +83,7 @@ View [example pages here](https://demos.creative-tim.com/argon-design-system-rea
 - Make sure that we are on L420 Laptop which is Venu's Old Laptop since there is a Netlify setup.
 - Checkout the branch that you wanted to deploy.
 - Make sure that you have a Netlify setup in your local machine. If not `npm i netlify-cli`
+- `npm i node-gyp` (If you aregetting any issues related node-gyp or fibers)
 - `npm install`
 - `npm run build`
 - `netlify deploy --prod`
