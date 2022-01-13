@@ -36,8 +36,8 @@ import { Link } from "react-router-dom";
 class EcwidScript extends React.Component {
 
   componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
+    //document.documentElement.scrollTop = 0;
+    //document.scrollingElement.scrollTop = 0;
     $(ReactDOM.findDOMNode(this)).html(`
         <div class="strikingly-ecwid-container-2">
           <div id="productBrowser"></div>
