@@ -71,7 +71,6 @@ class DemoNavbar extends React.Component {
             className="navbar-main navbar-transparent navbar-light bg-gradient-default"
             expand="lg"
             id="navbar-main"
-            style={{ position: "fixed" }}
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => { window.location.href = "/" }}>
