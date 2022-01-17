@@ -71,3 +71,8 @@ body {
 .Highlight {
   background-color: #ffd54f;
 }
+
+html#ecwid_html body#ecwid_body .hc-widget .hc-product-tabs#hc-product-tabs {
+  padding: 0 20px;
+  width: 90% !important;
+}
