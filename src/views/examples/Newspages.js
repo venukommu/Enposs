@@ -13,10 +13,15 @@ import { appConfig } from "services/config.js";
 import MetaTags from 'react-meta-tags';
 
 class Newspages extends React.Component {
-        state = {
-          error: null,
-          newsarticles: []
-       }
+        constructor(props) {
+          super(props);
+          this.state = {
+            error: null,
+            newsarticles: [],
+            newsimage: [],
+            seo: []
+          }
+        }
 
     componentDidMount = async () => {
       document.documentElement.scrollTop = 0;
@@ -37,13 +42,13 @@ class Newspages extends React.Component {
       };
 
       try {
-        const newsarticles = await fetch(`${appConfig.apiURL}/newsarticles`, {
+        const newsarticles = await fetch(`${appConfig.apiURL}/newsarticles/${this.props.match.params.slug}`, {
           method: 'GET',
           headers: headers,
         })
           .then(checkStatus)
           .then(parseJSON);
-        this.setState({ newsarticles });
+        this.setState({ newsarticles, newsimage: newsarticles.image, seo: newsarticles.Seo });
       } catch (error) {
         this.setState({ error });
       }
@@ -51,10 +56,9 @@ class Newspages extends React.Component {
 
     render() {
       //const { match } = this.props;
-      const { params: { slug } } = this.props.match;
+      //const { params: { slug } } = this.props.match;
       //console.log(slug);
-      const { error, newsarticles} = this.state;
-      //console.log(newsarticles);
+      const { error, newsarticles, newsimage, seo} = this.state;
 
       // Print errors if any
       if (error) {
@@ -64,12 +68,11 @@ class Newspages extends React.Component {
       return (
         <>
          <DemoNavbar />
-         {newsarticles.filter(newsarticle => newsarticle.slug === slug).map((news, index) => (
-          <div key={index}>
+          <div>
           <main className="profile-page" ref="main">
             <div className="position-relative">
               <section className="section section-lg section-shaped pb-250">
-                <div className={"shape shape-default bg-gradient-"+news.classname} >
+                <div className={"shape shape-default bg-gradient-"+newsarticles.classname} >
                   <span />
                   <span />
                   <span />
@@ -83,16 +86,16 @@ class Newspages extends React.Component {
 
                 <Container className="py-lg-md d-flex">
                 <MetaTags> 
-                    <meta property="og:title" content={news.Seo.metaTitle} key="og:title" />
-                    <meta property="og:description" content={news.Seo.metaDescription} key="og:description" />
-                    <meta property="keywords" content={news.keywords} />
+                    <meta property="og:title" content={seo.metaTitle} key="og:title" />
+                    <meta property="og:description" content={seo.metaDescription} key="og:description" />
+                    <meta property="keywords" content={newsarticles.keywords} />
                 </MetaTags>
                   <div className="col px-0">
                     <Row>
                       <Col lg="6">
                         <div>
                           <h6 className="display-3 text-white">
-                          {news.Title}
+                          {newsarticles.Title}
                           </h6>
                         </div>
                       </Col>
@@ -126,12 +129,12 @@ class Newspages extends React.Component {
                           <img
                           alt="..."
                           className="rectangle img-center img-fluid shadow shadow-lg--hover"
-                          src={`${news.image.url}`}
+                          src={`${newsimage.url}`}
                           //style={{ width: "200px" }}
                           />                          
                           <hr />
                           <p style={{ textAlign : "justify"}}>
-                          {news.description}
+                          {newsarticles.description}
                           </p>
                         </Col>
                       </Row>
@@ -142,7 +145,6 @@ class Newspages extends React.Component {
             </section>
           </main>  
           </div>          
-      ))}
           <CardsFooter />
         </>
       );
