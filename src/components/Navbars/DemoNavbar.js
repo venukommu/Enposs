@@ -72,13 +72,29 @@ class DemoNavbar extends React.Component {
             expand="lg"
             id="navbar-main"
           >
+            <Container style={{ margin: "10px" }}>
+              <NavbarBrand
+                // className="mr-lg-5"
+                to="/"
+                tag={Link}
+                onClick={() => {
+                  window.location.href = "/";
+                }}
+              >
+                <img
+                  style={{ backgroundColor: "none" }}
+                  alt="..."
+                  src="https://raw.githubusercontent.com/venukommu/Enposs/master/src/assets/img/brand/EnpossLogo.png"
+                />
+              </NavbarBrand>
+            </Container>
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => { window.location.href = "/" }}>
+              {/*<NavbarBrand className="mr-lg-5" to="/" tag={Link} onClick={() => { window.location.href = "/" }}>
                 <img
                   alt="..."
                   src={require("assets/img/brand/EnpossLogo.png")}
-                />
-              </NavbarBrand>
+              />
+              </NavbarBrand>*/}
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
               </button>

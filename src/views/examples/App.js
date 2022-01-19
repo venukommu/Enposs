@@ -31,7 +31,7 @@ function App(props) {
   return (
     <>
       <div lg="4" md="6">
-        <Button color="danger" className="btn-sm" style={{ height:"25px", width:"40px", top:"15px"}}  onClick={toggle}> <i className="fa fa-search" aria-hidden="true"></i></Button>
+        {/*<Button color="danger" className="btn-sm" style={{ height:"25px", width:"40px", top:"15px"}}  onClick={toggle}> <i className="fa fa-search" aria-hidden="true"></i></Button>
         <Modal isOpen={modal} toggle={toggle} className="modal-xl">
           <ModalHeader toggle={toggle}>Website content Search</ModalHeader>
           <ModalBody>
@@ -46,7 +46,42 @@ function App(props) {
                       //console.log(event.currentTarget);
                     }}
                   /><br />
-                  {/*<Configure hitsPerPage={1} />*/}
+                  {/*<Configure hitsPerPage={1} />
+                  <InfiniteHits hitComponent={Hit} xs="6" />
+                </div>
+              </InstantSearch>
+            </div>
+          </ModalBody>*/}
+          <Button
+          color="danger"
+          className="btn-sm"
+          style={{
+            height: "15px",
+            width: "30px",
+            top: "16px",
+            // alignItem: "center",
+            // justifyContent: "center",
+            paddingBottom: "20px",
+          }}
+          onClick={toggle}
+        >
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </Button>
+        <Modal isOpen={modal} toggle={toggle} className="modal-xl">
+          <ModalHeader toggle={toggle}>Website content Search</ModalHeader>
+          <ModalBody>
+            <div className="ais-InstantSearch">
+              <InstantSearch indexName={indexName} searchClient={searchClient}>
+                <Stats />
+                <div className="right-panel">
+                  <SearchBox
+                    searchAsYouType={true}
+                    focusShortcuts={["s"]}
+                    onSubmit={(event) => {
+                      event.preventDefault();
+                    }}
+                  />
+                  <br />
                   <InfiniteHits hitComponent={Hit} xs="6" />
                 </div>
               </InstantSearch>
