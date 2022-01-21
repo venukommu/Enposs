@@ -6,10 +6,11 @@ import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col } from 'reactstrap';
 //import { PopoverBody, UncontrolledPopover } from "reactstrap";
 
-import { InstantSearch,  InfiniteHits,  SearchBox,  Stats,  Highlight} from 'react-instantsearch-dom';
+import { InstantSearch, InfiniteHits, SearchBox, Stats, Highlight } from 'react-instantsearch-dom';
 import './App.css';
 import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
 import ReactDOM from 'react-dom';
+
 
 function App(props) {
 
@@ -19,15 +20,21 @@ function App(props) {
 
   const { indexName } = props
   const searchClient = instantMeiliSearch(
-    //'http://ec2-65-2-33-201.ap-south-1.compute.amazonaws.com/',
-    //'https://meili-router-f1agakpcjuab75hu-gtw.qovery.io/',
-    'https://z659d7281-z299709b6-gtw.qovery.io/',
+
+    'http://127.0.0.1:7700',
     'masterKey',
+
     {
       paginationTotalHits: 60,
       primaryKey: 'id',
-    }
+    },
+    /* {
+       Authorization: `Bearer masterKey`
+     },*/
   )
+  console.log("searchClient", searchClient);
+
+
   return (
     <>
       <div lg="4" md="6">
@@ -52,7 +59,7 @@ function App(props) {
               </InstantSearch>
             </div>
           </ModalBody>*/}
-          <Button
+        <Button
           color="danger"
           className="btn-sm"
           style={{
@@ -103,10 +110,10 @@ function Hit(props) {
         <Col className="hit-name" lg="12">
           <Highlight attribute="Title" hit={props.hit} />
         </Col>
-        <Link className="hit-name" to={props.hit.url} onClick={() => {window.location.href=props.hit.url}}> 
+        <Link className="hit-name" to={props.hit.url} onClick={() => { window.location.href = props.hit.url }}>
           <Col className="hit-name" >
             <Highlight attribute="description" hit={props.hit} />
-        </Col>
+          </Col>
         </Link>
         {/*<Highlight attribute="description" hit={props.hit.description} />*/}
       </Row>
